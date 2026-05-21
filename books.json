@@ -1099,28 +1099,32 @@
     "title": "سير أعلام النبلاء",
     "author": "محمد بن أحمد بن عثمان الذهبي",
     "category": "تاريخ وتراجم",
+    "notes": "بيان مفصل :\nhttps://www.facebook.com/groups/1834197839969355/permalink/3545406558848466",
     "best_editions": [
       {
         "name": "الرسالة العالمية",
-        "image": ""
+        "images": [],
+        "notes": ""
       },
       {
         "name": "الرسالة ناشرون (مع تتمة الرسالة العالمية)",
-        "image": ""
+        "images": [],
+        "notes": ""
       }
     ],
     "alt_editions": [
       {
         "name": "دار الفكر",
-        "image": ""
+        "images": [],
+        "notes": ""
       },
       {
         "name": "التوفيقية",
-        "image": ""
+        "images": [],
+        "notes": ""
       }
     ],
-    "links": [],
-    "notes": ""
+    "links": []
   },
   {
     "id": 50,
