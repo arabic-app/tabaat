@@ -1741,19 +1741,27 @@
     "title": "زاد المسير في علم التفسير",
     "author": "عبد الرحمن بن علي ابن الجوزي",
     "category": "التفسير",
-    "best_editions": [],
+    "notes": "",
+    "best_editions": [
+      {
+        "name": "الدار الشامية",
+        "images": [],
+        "notes": ""
+      }
+    ],
     "alt_editions": [
       {
         "name": "ابن حزم (مجلد واحد)",
-        "image": ""
+        "images": [],
+        "notes": ""
       },
       {
         "name": "دار الفكر",
-        "image": ""
+        "images": [],
+        "notes": ""
       }
     ],
-    "links": [],
-    "notes": ""
+    "links": []
   },
   {
     "id": 81,
