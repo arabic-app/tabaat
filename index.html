@@ -21,23 +21,27 @@
         .book-meta { color: #666; margin-bottom: 15px; font-size: 0.95rem; }
         .section-title { font-weight: 600; margin-top: 15px; color: #d35400; }
         ul { list-style-type: none; padding: 0; margin: 5px 0; }
-        li { margin-bottom: 8px; padding: 5px 10px; background: #f1f2f6; border-radius: 5px; }
-        .edition-hover { position: relative; cursor: pointer; color: #2980b9; font-weight: 600; border-bottom: 1px dashed #2980b9; }
-        .edition-hover .edition-img { display: none; position: absolute; top: 100%; right: 0; width: 180px; z-index: 100; border-radius: 5px; box-shadow: 0 8px 16px rgba(0,0,0,0.2); border: 2px solid white; margin-top: 5px; }
-        .edition-hover:hover .edition-img { display: block; }
+        
+        /* تنسيق سطور الطبعات */
+        li { margin-bottom: 8px; padding: 8px 12px; background: #f1f2f6; border-radius: 5px; }
+        .edition-item { display: flex; justify-content: space-between; align-items: center; }
+        .edition-name { font-weight: 600; color: #2c3e50; }
+        .edition-actions { display: flex; gap: 8px; }
+        .icon-btn { cursor: pointer; background: #dfe6e9; border: none; padding: 5px 10px; border-radius: 5px; font-size: 1.1rem; transition: 0.2s; }
+        .icon-btn:hover { background: #b2bec3; }
+        
         a { color: var(--secondary-color); text-decoration: none; }
         a:hover { text-decoration: underline; }
-        
-        /* تنسيق قسم الملاحظات */
-        .book-notes {
-            background-color: #fff3cd;
-            color: #856404;
-            padding: 12px 15px;
-            border-radius: 5px;
-            margin-top: 15px;
-            font-size: 0.95rem;
-            border-right: 4px solid #ffeeba;
-        }
+        .book-notes { background-color: #fff3cd; color: #856404; padding: 12px 15px; border-radius: 5px; margin-top: 15px; font-size: 0.95rem; border-right: 4px solid #ffeeba; }
+
+        /* نافذة العرض المنبثقة (Modal) */
+        .modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.6); backdrop-filter: blur(3px); }
+        .modal-content { background-color: #fff; margin: 10% auto; padding: 20px; border-radius: 10px; width: 90%; max-width: 500px; position: relative; box-shadow: 0 5px 15px rgba(0,0,0,0.3); text-align: center; }
+        .close-modal { position: absolute; top: 10px; left: 15px; font-size: 28px; font-weight: bold; color: #aaa; cursor: pointer; }
+        .close-modal:hover { color: #333; }
+        #modalTitle { color: var(--primary-color); margin-top: 0; border-bottom: 1px solid #eee; padding-bottom: 10px; }
+        #modalBody img { max-width: 100%; border-radius: 8px; margin-top: 10px; }
+        #modalBody p { font-size: 1.1rem; line-height: 1.6; color: #333; text-align: right; }
     </style>
 </head>
 <body>
@@ -50,6 +54,15 @@
     <div class="container">
         <input type="text" id="searchInput" class="search-box" placeholder="ابحث عن كتاب، مؤلف، أو علم...">
         <div id="booksContainer"></div>
+    </div>
+
+    <!-- النافذة المنبثقة للصور والملاحظات -->
+    <div id="infoModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+            <h3 id="modalTitle"></h3>
+            <div id="modalBody"></div>
+        </div>
     </div>
 
     <script>
@@ -78,11 +91,22 @@
 
                 const renderEditions = (editions) => {
                     return editions.map(ed => {
-                        if (ed.image) {
-                            return `<li><span class="edition-hover">${ed.name} <img src="${ed.image}" class="edition-img" alt="غلاف ${ed.name}"></span></li>`;
-                        } else {
-                            return `<li>${ed.name}</li>`;
+                        let actions = '';
+                        // زر الملاحظات (i)
+                        if (ed.notes && ed.notes.trim() !== '') {
+                            actions += `<button class="icon-btn" onclick="openModal('note', '${encodeURIComponent(ed.name)}', '${encodeURIComponent(ed.notes)}')" title="ملاحظات حول الطبعة">ℹ️</button>`;
                         }
+                        // زر الصورة
+                        if (ed.image && ed.image.trim() !== '') {
+                            actions += `<button class="icon-btn" onclick="openModal('image', '${encodeURIComponent(ed.name)}', '${encodeURIComponent(ed.image)}')" title="عرض صورة الغلاف">🖼️</button>`;
+                        }
+
+                        return `<li>
+                                    <div class="edition-item">
+                                        <span class="edition-name">${ed.name}</span>
+                                        <div class="edition-actions">${actions}</div>
+                                    </div>
+                                </li>`;
                     }).join('');
                 };
 
@@ -97,18 +121,45 @@
                     </div>
                     
                     <div class="section-title">أفضل الطبعات:</div>
-                    <ul>${renderEditions(book.best_editions)}</ul>
+                    <ul>${book.best_editions ? renderEditions(book.best_editions) : ''}</ul>
 
                     ${book.alt_editions && book.alt_editions.length > 0 ? `<div class="section-title">طبعات بديلة:</div><ul>${renderEditions(book.alt_editions)}</ul>` : ''}
                     
                     ${book.links && book.links.length > 0 ? `<div class="section-title">روابط مفيدة:</div><ul>${renderLinks(book.links)}</ul>` : ''}
                     
-                    ${book.notes ? `<div class="book-notes"><strong>📌 ملاحظات:</strong> ${book.notes}</div>` : ''}
+                    ${book.notes ? `<div class="book-notes"><strong>📌 ملاحظات الكتاب:</strong> ${book.notes}</div>` : ''}
                 `;
                 container.appendChild(card);
             });
         }
 
+        // دوال النافذة المنبثقة
+        function openModal(type, title, content) {
+            document.getElementById('modalTitle').innerText = decodeURIComponent(title);
+            const body = document.getElementById('modalBody');
+            
+            if (type === 'image') {
+                body.innerHTML = `<img src="${decodeURIComponent(content)}" alt="غلاف الطبعة">`;
+            } else if (type === 'note') {
+                body.innerHTML = `<p>${decodeURIComponent(content)}</p>`;
+            }
+            
+            document.getElementById('infoModal').style.display = 'block';
+        }
+
+        function closeModal() {
+            document.getElementById('infoModal').style.display = 'none';
+        }
+
+        // إغلاق النافذة عند النقر خارجها
+        window.onclick = function(event) {
+            const modal = document.getElementById('infoModal');
+            if (event.target == modal) {
+                closeModal();
+            }
+        }
+
+        // البحث
         document.getElementById('searchInput').addEventListener('input', (e) => {
             const searchTerm = e.target.value.toLowerCase();
             const filteredBooks = booksData.filter(book => 
