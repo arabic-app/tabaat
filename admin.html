@@ -3,48 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>لوحة الإدارة - إدارة الكتب</title>
+    <title>لوحة الإدارة - دليل طبعات الكتب الإسلامية</title>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
     <style>
-        :root { --primary: #2c3e50; --secondary: #27ae60; --danger: #e74c3c; --bg: #f4f6f7; --border: #ddd; --warning: #f39c12; }
+        :root { 
+            --primary: #2c3e50; 
+            --secondary: #27ae60; 
+            --danger: #e74c3c; 
+            --bg: #f4f6f7; 
+            --border: #ddd; 
+            --warning: #f39c12; 
+        }
         body { font-family: 'Cairo', sans-serif; margin: 0; background: var(--bg); color: #333; display: flex; height: 100vh; overflow: hidden; }
         
+        /* القائمة الجانبية (Sidebar) */
         .sidebar { width: 300px; background: white; border-left: 1px solid var(--border); display: flex; flex-direction: column; }
         .sidebar-header { padding: 15px; background: var(--primary); color: white; text-align: center; }
+        .sidebar-header h3 { margin: 0; font-size: 1.2rem; }
         .sidebar-list { flex: 1; overflow-y: auto; padding: 10px; list-style: none; margin: 0; }
-        .sidebar-list li { padding: 10px; border-bottom: 1px solid var(--border); cursor: pointer; transition: 0.2s; border-radius: 4px; }
+        .sidebar-list li { padding: 10px; border-bottom: 1px solid var(--border); cursor: pointer; transition: 0.2s; border-radius: 4px; font-size: 0.95rem; }
         .sidebar-list li:hover, .sidebar-list li.active { background: #e8f4f8; font-weight: 600; color: var(--primary); }
-        .btn-add-new { margin: 10px; padding: 10px; background: var(--secondary); color: white; border: none; cursor: pointer; font-family: inherit; font-weight: bold; border-radius: 5px; }
+        .btn-add-new { margin: 10px; padding: 12px; background: var(--secondary); color: white; border: none; cursor: pointer; font-family: inherit; font-weight: bold; border-radius: 5px; font-size: 1rem; }
 
+        /* منطقة العمل الرئيسية */
         .main-content { flex: 1; display: flex; flex-direction: column; overflow-y: auto; padding: 20px; }
-        .form-container { background: white; padding: 25px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); max-width: 800px; width: 100%; margin: 0 auto; display: none; }
+        .form-container { background: white; padding: 25px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); max-width: 800px; width: 100%; margin: 0 auto 40px auto; display: none; }
         
         h2 { color: var(--primary); margin-top: 0; border-bottom: 2px solid var(--border); padding-bottom: 10px; }
-        h3 { color: #d35400; font-size: 1.1rem; margin-top: 20px; border-bottom: 1px dashed var(--border); padding-bottom: 5px; }
+        h3 { color: #d35400; font-size: 1.1rem; margin-top: 25px; border-bottom: 1px dashed var(--border); padding-bottom: 5px; }
         
         .form-group { margin-bottom: 15px; position: relative; }
         .form-group label { display: block; margin-bottom: 5px; font-weight: 600; }
         .form-group input, .form-group textarea { width: 100%; padding: 10px; border: 1px solid var(--border); border-radius: 4px; font-family: inherit; box-sizing: border-box; }
         
-        /* تنبيه التكرار */
+        /* تنبيه التكرار (Doublons) */
         .duplicate-warning { display: none; background-color: #f8d7da; color: #721c24; padding: 10px 15px; border-radius: 5px; margin-top: 10px; border: 1px solid #f5c6cb; align-items: center; justify-content: space-between; }
         .btn-edit-duplicate { background: #dc3545; color: white; border: none; padding: 6px 12px; border-radius: 4px; cursor: pointer; font-family: inherit; font-weight: bold; transition: 0.2s; }
         .btn-edit-duplicate:hover { background: #c82333; }
 
         /* تصميم صفوف الطبعات */
-        .dynamic-row { display: flex; gap: 15px; margin-bottom: 15px; align-items: flex-start; background: #f9f9f9; padding: 15px; border-radius: 5px; border: 1px solid #eee; transition: background 0.3s; }
+        .dynamic-row { display: flex; gap: 15px; margin-bottom: 15px; align-items: flex-start; background: #f9f9f9; padding: 15px; border-radius: 5px; border: 1px solid #eee; }
         .dynamic-row.sortable-ghost { opacity: 0.4; background: #e8f4f8; border: 1px dashed var(--primary); }
         .row-inputs { flex: 1; display: flex; flex-direction: column; gap: 10px; }
         .row-inputs input { width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px; font-family: inherit; box-sizing: border-box;}
         
-        /* تصميم حقول الصور المتعددة */
-        .images-container { background: #fff; padding: 12px; border: 1px dashed #bbb; border-radius: 5px; }
+        /* حاوية الصور الديناميكية داخل الطبعة */
+        .images-container { background: white; padding: 12px; border: 1px dashed #bbb; border-radius: 5px; }
         .images-container-title { font-size: 0.9rem; font-weight: 600; color: #555; margin-bottom: 8px; display: block; }
         .image-input-group { display: flex; gap: 8px; margin-bottom: 8px; }
         .btn-remove-img { background: #e74c3c; color: white; border: none; padding: 0 12px; cursor: pointer; border-radius: 4px; font-size: 1.2rem; font-weight: bold; }
         .btn-add-img { background: #34495e; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-family: inherit; font-size: 0.85rem; margin-top: 5px; }
 
+        /* مقابض التحكم والأزرار */
         .drag-handle { cursor: grab; color: #888; font-size: 1.5rem; padding: 0 5px; user-select: none; margin-top: 5px; }
         .drag-handle:active { cursor: grabbing; }
         .btn-remove { background: var(--danger); color: white; border: none; padding: 10px 15px; cursor: pointer; border-radius: 4px; height: fit-content; margin-top: 5px;}
@@ -53,26 +64,38 @@
         .form-actions { margin-top: 30px; display: flex; gap: 10px; justify-content: flex-end; border-top: 2px solid var(--border); padding-top: 20px; }
         .btn-save { background: var(--secondary); color: white; border: none; padding: 12px 25px; font-size: 16px; cursor: pointer; border-radius: 5px; font-family: inherit; font-weight: bold; }
         
-        .export-section { margin: 20px auto; max-width: 800px; width: 100%; display: flex; gap: 10px; background: white; padding: 15px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
-        .export-section p { margin: 0 0 0 15px; align-self: center; font-weight: bold; color: var(--primary); }
-        .btn-export { background: #2980b9; color: white; border: none; padding: 10px 15px; cursor: pointer; border-radius: 5px; font-family: inherit; }
+        /* قسم المزامنة والرفع لـ GitHub */
+        .export-section { margin: 20px auto; max-width: 800px; width: 100%; display: flex; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); box-sizing: border-box; }
+        .export-section p { font-weight: bold; color: var(--primary); }
+        .btn-export { background: #2980b9; color: white; border: none; padding: 10px 15px; cursor: pointer; border-radius: 5px; font-family: inherit; font-weight: 600; }
 
-        #toast { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); background: #333; color: white; padding: 10px 20px; border-radius: 5px; display: none; z-index: 1000; }
+        #toast { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); background: #333; color: white; padding: 10px 20px; border-radius: 5px; display: none; z-index: 1000; font-weight: 600; text-align: center; }
     </style>
 </head>
 <body>
 
     <div class="sidebar">
-        <div class="sidebar-header"><h3>قاعدة البيانات</h3></div>
+        <div class="sidebar-header">
+            <h3>قائمة الكتب الحالية</h3>
+        </div>
         <button class="btn-add-new" onclick="createNewBook()">+ إضافة كتاب جديد</button>
         <ul class="sidebar-list" id="booksList"></ul>
     </div>
 
     <div class="main-content">
-        <div class="export-section">
-            <p>بعد الحفظ، قم بنسخ أو تحميل الملف لرفعه لـ GitHub:</p>
-            <button class="btn-export" onclick="copyJSON()">📋 نسخ JSON</button>
-            <button class="btn-export" style="background:#27ae60;" onclick="downloadJSON()">💾 تحميل books.json</button>
+        
+        <div class="export-section" style="flex-direction: column; align-items: stretch;">
+            <p style="margin: 0 0 10px 0; align-self: flex-start;">رفع وتحديث البيانات مباشرة على مستودع GitHub الخاص بك:</p>
+            <div style="display: flex; gap: 10px; width: 100%; margin-bottom: 15px;">
+                <input type="password" id="githubToken" placeholder="أدخل رمز GitHub Personal Access Token (classic) هنا..." style="flex: 1; padding: 10px; border: 1px solid #ccc; border-radius: 5px; direction: ltr;">
+                <button class="btn-export" style="background:#8e44ad;" onclick="syncToGitHub()">🚀 تحديث الموقع الآن</button>
+            </div>
+            
+            <p style="margin: 0 0 10px 0; align-self: flex-start; font-size: 0.9em; color: #666; font-weight: normal;">أو استخدم الطريقة اليدوية للنسخ الاحتياطي:</p>
+            <div style="display: flex; gap: 10px;">
+                <button class="btn-export" onclick="copyJSON()">📋 نسخ كود JSON</button>
+                <button class="btn-export" style="background:#27ae60;" onclick="downloadJSON()">💾 تحميل ملف books.json</button>
+            </div>
         </div>
 
         <div class="form-container" id="formContainer">
@@ -83,9 +106,10 @@
                 <div class="form-group">
                     <label>عنوان الكتاب *</label>
                     <input type="text" id="title" required autocomplete="off">
+                    
                     <div id="duplicateWarning" class="duplicate-warning">
                         <span>⚠️ هذا الكتاب مسجل مسبقاً في قاعدة البيانات!</span>
-                        <button type="button" class="btn-edit-duplicate" id="btnEditDuplicate">فتحه للتعديل</button>
+                        <button type="button" class="btn-edit-duplicate" id="btnEditDuplicate">فتحه للتعديل بدلاً من الإضافة</button>
                     </div>
                 </div>
 
@@ -95,27 +119,27 @@
                 </div>
                 <div class="form-group">
                     <label>العلم / التصنيف *</label>
-                    <input type="text" id="category" placeholder="مثال: الحديث، التفسير..." required>
+                    <input type="text" id="category" placeholder="مثال: الحديث، التفسير، الفقه..." required>
                 </div>
                 <div class="form-group">
-                    <label>ملاحظات الكتاب (اختياري)</label>
-                    <textarea id="notes" rows="3" placeholder="ملاحظات عامة حول الكتاب..."></textarea>
+                    <label>ملاحظات عامة حول الكتاب (اختياري)</label>
+                    <textarea id="notes" rows="3" placeholder="أي ملاحظات عامة تظهر للزوار أسفل تفاصيل الكتاب..."></textarea>
                 </div>
 
-                <h3>أفضل الطبعات المعتمدة</h3>
+                <h3>أفضل الطبعات المعتمدة (اسحب ☰ للترتيب)</h3>
                 <div id="bestEditions"></div>
-                <button type="button" class="btn-add-row" onclick="addEditionRow('bestEditions')">+ إضافة طبعة</button>
+                <button type="button" class="btn-add-row" onclick="addEditionRow('bestEditions')">+ إضافة طبعة معتمدة</button>
 
-                <h3>طبعات بديلة</h3>
+                <h3>طبعات بديلة (اسحب ☰ للترتيب)</h3>
                 <div id="altEditions"></div>
                 <button type="button" class="btn-add-row" onclick="addEditionRow('altEditions')">+ إضافة طبعة بديلة</button>
 
-                <h3>روابط مفيدة</h3>
+                <h3>روابط مفيدة (اسحب ☰ للترتيب)</h3>
                 <div id="links"></div>
-                <button type="button" class="btn-add-row" onclick="addLinkRow('links')">+ إضافة رابط</button>
+                <button type="button" class="btn-add-row" onclick="addLinkRow('links')">+ إضافة رابط مفيد</button>
 
                 <div class="form-actions">
-                    <button type="submit" class="btn-save">💾 حفظ التعديلات</button>
+                    <button type="submit" class="btn-save">💾 حفظ التعديلات داخلياً</button>
                 </div>
             </form>
         </div>
@@ -126,18 +150,23 @@
     <script>
         let booksData = [];
 
+        // تفعيل محرك السحب والإفلات للقوائم الثلاثة
         new Sortable(document.getElementById('bestEditions'), { handle: '.drag-handle', animation: 150 });
         new Sortable(document.getElementById('altEditions'), { handle: '.drag-handle', animation: 150 });
         new Sortable(document.getElementById('links'), { handle: '.drag-handle', animation: 150 });
 
+        // جلب البيانات الأساسية عند بدء تشغيل الصفحة
         fetch('books.json')
             .then(res => res.json())
             .then(data => {
                 booksData = data;
                 renderSidebar();
             })
-            .catch(err => console.log("ملف JSON غير متوفر بعد."));
+            .catch(err => {
+                showToast("تنبيه: ملف books.json غير موجود، سيتم تشغيل واجهة فارغة.");
+            });
 
+        // تحديث وعرض القائمة الجانبية للكتب
         function renderSidebar() {
             const list = document.getElementById('booksList');
             list.innerHTML = '';
@@ -149,14 +178,16 @@
             });
         }
 
-        // التحقق من التكرار
+        // فحص التكرار عند الخروج من حقل العنوان (Blur)
         document.getElementById('title').addEventListener('blur', function() {
             const enteredTitle = this.value.trim();
             const currentBookId = document.getElementById('bookId').value;
             const warningDiv = document.getElementById('duplicateWarning');
             
+            // نفحص التكرار فقط في حالة إضافة كتاب جديد ولم يكن الحقل فارغاً
             if (!currentBookId && enteredTitle !== '') {
-                const duplicateBook = booksData.find(b => b.title.trim() === enteredTitle);
+                const duplicateBook = booksData.find(b => b.title.trim().toLowerCase() === enteredTitle.toLowerCase());
+                
                 if (duplicateBook) {
                     warningDiv.style.display = 'flex';
                     document.getElementById('btnEditDuplicate').onclick = function() {
@@ -175,34 +206,33 @@
             }
         });
 
-        // دالة إضافة حقل صورة واحد داخل الطبعة
+        // إضافة حقل صورة فرعي جديد داخل مربع الطبعة
         window.addImageInputToEdition = function(buttonElement) {
             const listContainer = buttonElement.previousElementSibling;
             const div = document.createElement('div');
             div.className = 'image-input-group';
             div.innerHTML = `
-                <input type="text" class="ed-image-url" placeholder="رابط الصورة">
-                <button type="button" class="btn-remove-img" onclick="this.parentElement.remove()" title="حذف هذه الصورة">-</button>
+                <input type="text" class="ed-image-url" placeholder="رابط صورة غلاف أو صفحة من الطبعة..." style="direction: ltr;">
+                <button type="button" class="btn-remove-img" onclick="this.parentElement.remove()">-</button>
             `;
             listContainer.appendChild(div);
         };
 
-        // دالة إضافة طبعة كاملة
+        // إضافة سطر طبعة كاملة مع حاوية صورها الفرعية وملاحظاتها
         function addEditionRow(containerId, name = '', imagesArray = [], notes = '') {
             const container = document.getElementById(containerId);
             const row = document.createElement('div');
             row.className = 'dynamic-row';
             
-            // تحضير حقول الصور بناءً على المصفوفة
             let imagesHTML = '';
             let imagesToLoad = Array.isArray(imagesArray) ? imagesArray : (imagesArray ? [imagesArray] : []);
-            if (imagesToLoad.length === 0) imagesToLoad = ['']; // حقل فارغ افتراضي إذا لم تكن هناك صور
+            if (imagesToLoad.length === 0) imagesToLoad = ['']; 
 
             imagesToLoad.forEach(img => {
                 imagesHTML += `
                     <div class="image-input-group">
-                        <input type="text" class="ed-image-url" placeholder="رابط الصورة" value="${img}">
-                        <button type="button" class="btn-remove-img" onclick="this.parentElement.remove()" title="حذف هذه الصورة">-</button>
+                        <input type="text" class="ed-image-url" placeholder="رابط صورة غلاف أو صفحة من الطبعة..." value="${img}" style="direction: ltr;">
+                        <button type="button" class="btn-remove-img" onclick="this.parentElement.remove()">-</button>
                     </div>
                 `;
             });
@@ -210,42 +240,41 @@
             row.innerHTML = `
                 <span class="drag-handle" title="اسحب للترتيب">☰</span>
                 <div class="row-inputs">
-                    <input type="text" class="ed-name" placeholder="اسم الطبعة *" value="${name}" required>
+                    <input type="text" class="ed-name" placeholder="اسم دار النشر أو المحقق أو الطبعة *" value="${name}" required>
                     
-                    <!-- حاوية الصور الديناميكية -->
                     <div class="images-container">
-                        <span class="images-container-title">🖼️ صور الطبعة:</span>
-                        <div class="images-list">
-                            ${imagesHTML}
-                        </div>
-                        <button type="button" class="btn-add-img" onclick="addImageInputToEdition(this)">+ إضافة صورة أخرى</button>
+                        <span class="images-container-title">🖼️ روابط صور الطبعة (متعددة):</span>
+                        <div class="images-list">${imagesHTML}</div>
+                        <button type="button" class="btn-add-img" onclick="addImageInputToEdition(this)">+ إضافة صورة أخرى للطبعة</button>
                     </div>
 
-                    <input type="text" class="ed-notes" placeholder="ملاحظات خاصة بهذه الطبعة (اختياري)" value="${notes}">
+                    <input type="text" class="ed-notes" placeholder="ملاحظات خاصة بهذه الطبعة بالتحديد (تظهر كعلامة i في الموقع)..." value="${notes}">
                 </div>
                 <button type="button" class="btn-remove" onclick="this.parentElement.remove()" title="حذف الطبعة بالكامل">X</button>
             `;
             container.appendChild(row);
         }
 
+        // إضافة سطر للروابط الخارجية المفيدة
         function addLinkRow(containerId, title = '', url = '') {
             const container = document.getElementById(containerId);
             const row = document.createElement('div');
             row.className = 'dynamic-row';
             row.innerHTML = `
                 <span class="drag-handle" title="اسحب للترتيب">☰</span>
-                <div class="row-inputs" style="flex-direction: row;">
-                    <input type="text" class="link-title" placeholder="عنوان الرابط" value="${title}" required>
-                    <input type="text" class="link-url" placeholder="الرابط (URL)" value="${url}" required>
+                <div class="row-inputs" style="flex-direction: row; gap: 10px;">
+                    <input type="text" class="link-title" placeholder="عنوان الرابط (مثال: تصفح عبر الشاملة)" value="${title}" required style="flex:1;">
+                    <input type="text" class="link-url" placeholder="الرابط الكامل (URL)..." value="${url}" required style="flex:2; direction: ltr;">
                 </div>
                 <button type="button" class="btn-remove" onclick="this.parentElement.remove()">X</button>
             `;
             container.appendChild(row);
         }
 
+        // تهيئة الواجهة لإضافة كتاب جديد بالكامل
         function createNewBook() {
             document.getElementById('formContainer').style.display = 'block';
-            document.getElementById('formTitle').innerText = 'إضافة كتاب جديد';
+            document.getElementById('formTitle').innerText = 'إضافة كتاب جديد للقائمة';
             document.getElementById('bookForm').reset();
             document.getElementById('bookId').value = '';
             document.getElementById('notes').value = '';
@@ -260,6 +289,7 @@
             addEditionRow('bestEditions');
         }
 
+        // تحميل بيانات كتاب محدد من القائمة الجانبية إلى الاستمارة
         function loadBookIntoForm(id, liElement) {
             document.querySelectorAll('.sidebar-list li').forEach(li => li.classList.remove('active'));
             if(liElement) liElement.classList.add('active');
@@ -268,7 +298,7 @@
             if (!book) return;
 
             document.getElementById('formContainer').style.display = 'block';
-            document.getElementById('formTitle').innerText = `تعديل: ${book.title}`;
+            document.getElementById('formTitle').innerText = `تعديل تفاصيل: ${book.title}`;
             document.getElementById('duplicateWarning').style.display = 'none';
             
             document.getElementById('bookId').value = book.id;
@@ -296,6 +326,7 @@
             if(book.links) book.links.forEach(link => addLinkRow('links', link.title, link.url));
         }
 
+        // حفظ البيانات المدخلة في الاستمارة داخل مصفوفة الذاكرة المؤقتة
         function saveBook(e) {
             e.preventDefault();
 
@@ -304,10 +335,10 @@
 
             const newBook = {
                 id: id,
-                title: document.getElementById('title').value,
-                author: document.getElementById('author').value,
-                category: document.getElementById('category').value,
-                notes: document.getElementById('notes').value,
+                title: document.getElementById('title').value.trim(),
+                author: document.getElementById('author').value.trim(),
+                category: document.getElementById('category').value.trim(),
+                notes: document.getElementById('notes').value.trim(),
                 best_editions: [],
                 alt_editions: [],
                 links: []
@@ -315,7 +346,6 @@
 
             const collectEditions = (containerId, targetArray) => {
                 document.querySelectorAll(`#${containerId} .dynamic-row`).forEach(row => {
-                    // تجميع كل الروابط من حقول الصور المتعددة
                     let imagesArray = [];
                     row.querySelectorAll('.ed-image-url').forEach(input => {
                         let url = input.value.trim();
@@ -323,9 +353,9 @@
                     });
                     
                     targetArray.push({ 
-                        name: row.querySelector('.ed-name').value, 
+                        name: row.querySelector('.ed-name').value.trim(), 
                         images: imagesArray,
-                        notes: row.querySelector('.ed-notes').value
+                        notes: row.querySelector('.ed-notes').value.trim()
                     });
                 });
             };
@@ -334,7 +364,10 @@
             collectEditions('altEditions', newBook.alt_editions);
 
             document.querySelectorAll('#links .dynamic-row').forEach(row => {
-                newBook.links.push({ title: row.querySelector('.link-title').value, url: row.querySelector('.link-url').value });
+                newBook.links.push({ 
+                    title: row.querySelector('.link-title').value.trim(), 
+                    url: row.querySelector('.link-url').value.trim() 
+                });
             });
 
             const existingIndex = booksData.findIndex(b => b.id === id);
@@ -346,13 +379,14 @@
 
             renderSidebar();
             document.getElementById('bookId').value = id;
-            showToast("تم الحفظ! لا تنس استخراج JSON.");
+            showToast("💾 تم حفظ الكتاب في الذاكرة المحلية بنجاح! لا تنس المزامنة مع GitHub لتطبيق التغييرات.");
         }
 
+        // دالة تحويل البيانات لنص قياسي منسق
         function getJSONString() { return JSON.stringify(booksData, null, 2); }
         
         function copyJSON() {
-            navigator.clipboard.writeText(getJSONString()).then(() => showToast("تم نسخ الكود!"));
+            navigator.clipboard.writeText(getJSONString()).then(() => showToast("📋 تم نسخ النص البرمجي بالكامل للذاكرة."));
         }
 
         function downloadJSON() {
@@ -365,14 +399,75 @@
             a.click();
             document.body.removeChild(a);
             URL.revokeObjectURL(url);
-            showToast("تم التحميل!");
+            showToast("💾 تم تحميل الملف لجهازك بنجاح.");
         }
+
+        // ====================================================
+        // === محرك التحديث التلقائي والمزامنة المباشرة مع GitHub ===
+        // ====================================================
+        function utf8_to_b64(str) { return window.btoa(unescape(encodeURIComponent(str))); }
+
+        async function syncToGitHub() {
+            const token = document.getElementById('githubToken').value.trim();
+            if (!token) {
+                showToast("⚠️ يرجى إدخال رمز التحقق الخاص بك (Token) من حساب GitHub أولاً!");
+                return;
+            }
+
+            localStorage.setItem('github_token_secured', token);
+
+            // إعدادات مستودعك الخاص (تأكد من مطابقة هذه القيم لمستودعك)
+            const owner = 'arabic-app';
+            const repo = 'tabaat';
+            const path = 'books.json';
+            const apiUrl = `https://api.github.com/repos/${owner}/${repo}/contents/${path}`;
+
+            showToast("⏳ جاري إنشاء اتصال آمن بـ GitHub وفحص الملف الحالي...");
+
+            try {
+                let sha = '';
+                const getRes = await fetch(apiUrl, { headers: { 'Authorization': `token ${token}` } });
+                
+                if (getRes.ok) {
+                    const fileData = await getRes.json();
+                    sha = fileData.sha;
+                }
+
+                const base64Content = utf8_to_b64(getJSONString());
+
+                const putRes = await fetch(apiUrl, {
+                    method: 'PUT',
+                    headers: { 'Authorization': `token ${token}`, 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        message: 'تحديث قاعدة البيانات البرمجية تلقائياً عبر لوحة الإدارة المتقدمة',
+                        content: base64Content,
+                        sha: sha
+                    })
+                });
+
+                if (putRes.ok) {
+                    showToast("🚀 ممتاز! تم التحديث والرفع التلقائي لـ GitHub بنجاح تام. ستظهر التعديلات للزوار في غضون دقيقتين.");
+                } else {
+                    const err = await putRes.json();
+                    showToast("❌ فشل التحديث بسبب خطأ من GitHub: " + err.message);
+                }
+            } catch (error) {
+                showToast("❌ خطأ: تعذر الاتصال بخوادم GitHub. تأكد من جودة الإنترنت وصحة الـ Token.");
+                console.error(error);
+            }
+        }
+
+        // استعادة التوكين المخزن في المتصفح تلقائياً عند فتح اللوحة
+        window.addEventListener('DOMContentLoaded', () => {
+            const savedToken = localStorage.getItem('github_token_secured');
+            if (savedToken) document.getElementById('githubToken').value = savedToken;
+        });
 
         function showToast(msg) {
             const toast = document.getElementById('toast');
             toast.innerText = msg;
             toast.style.display = 'block';
-            setTimeout(() => toast.style.display = 'none', 3000);
+            setTimeout(() => toast.style.display = 'none', 4000);
         }
     </script>
 </body>
