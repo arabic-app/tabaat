@@ -2266,5 +2266,53 @@
     ],
     "alt_editions": [],
     "links": []
+  },
+  {
+    "id": 110,
+    "title": "فتح الرحيم الملك العلام",
+    "author": "عبد الرحمن السعدي",
+    "category": "التفسير",
+    "notes": "",
+    "best_editions": [
+      {
+        "name": "ابن الجوزي السعودية",
+        "images": [],
+        "notes": ""
+      }
+    ],
+    "alt_editions": [],
+    "links": []
+  },
+  {
+    "id": 111,
+    "title": "تيسير اللطيف المنان",
+    "author": "عبد الرحمن السعدي",
+    "category": "التفسير",
+    "notes": "",
+    "best_editions": [
+      {
+        "name": "ابن الجوزي السعودية",
+        "images": [],
+        "notes": ""
+      }
+    ],
+    "alt_editions": [],
+    "links": []
+  },
+  {
+    "id": 112,
+    "title": "عندة التفسير عن الحافظ ابن كثير",
+    "author": "أحمد شاكر",
+    "category": "التفسير",
+    "notes": "",
+    "best_editions": [
+      {
+        "name": "الوفاء",
+        "images": [],
+        "notes": "منها طبعة بيروتية أفضل فنيا"
+      }
+    ],
+    "alt_editions": [],
+    "links": []
   }
 ]
