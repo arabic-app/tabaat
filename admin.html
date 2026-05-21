@@ -27,7 +27,6 @@
         .form-group label { display: block; margin-bottom: 5px; font-weight: 600; }
         .form-group input, .form-group textarea { width: 100%; padding: 10px; border: 1px solid var(--border); border-radius: 4px; font-family: inherit; box-sizing: border-box; }
         
-        /* تصميم صفوف الطبعات */
         .dynamic-row { display: flex; gap: 10px; margin-bottom: 10px; align-items: center; background: #f9f9f9; padding: 15px; border-radius: 5px; border: 1px solid #eee; transition: background 0.3s; }
         .dynamic-row.sortable-ghost { opacity: 0.4; background: #e8f4f8; border: 1px dashed var(--primary); }
         .row-inputs { flex: 1; display: flex; flex-direction: column; gap: 8px; }
@@ -86,15 +85,15 @@
                     <textarea id="notes" rows="3" placeholder="ملاحظات عامة حول الكتاب..."></textarea>
                 </div>
 
-                <h3>أفضل الطبعات المعتمدة (اسحب ☰ لترتيبها)</h3>
+                <h3>أفضل الطبعات المعتمدة</h3>
                 <div id="bestEditions"></div>
                 <button type="button" class="btn-add-row" onclick="addEditionRow('bestEditions')">+ إضافة طبعة</button>
 
-                <h3>طبعات بديلة (اسحب ☰ لترتيبها)</h3>
+                <h3>طبعات بديلة</h3>
                 <div id="altEditions"></div>
                 <button type="button" class="btn-add-row" onclick="addEditionRow('altEditions')">+ إضافة طبعة بديلة</button>
 
-                <h3>روابط مفيدة (اسحب ☰ لترتيبها)</h3>
+                <h3>روابط مفيدة</h3>
                 <div id="links"></div>
                 <button type="button" class="btn-add-row" onclick="addLinkRow('links')">+ إضافة رابط</button>
 
@@ -133,19 +132,23 @@
             });
         }
 
-        // إضافة حقل Notes للطبعة
-        function addEditionRow(containerId, name = '', image = '', notes = '') {
+        // هنا التعديل: نستقبل مصفوفة صور ونحولها لنص مفصول بفاصلة لعرضها في حقل الإدخال
+        function addEditionRow(containerId, name = '', imagesArray = [], notes = '') {
             const container = document.getElementById(containerId);
             const row = document.createElement('div');
+            
+            // تحويل المصفوفة إلى نص (إذا كانت نصاً قديماً نضعه كما هو)
+            let imagesStr = Array.isArray(imagesArray) ? imagesArray.join(',') : imagesArray;
+
             row.className = 'dynamic-row';
             row.innerHTML = `
                 <span class="drag-handle" title="اسحب للترتيب">☰</span>
                 <div class="row-inputs">
                     <div class="row-inputs-top">
                         <input type="text" class="ed-name" placeholder="اسم الطبعة *" value="${name}" required style="flex: 2;">
-                        <input type="text" class="ed-image" placeholder="رابط الصورة (اختياري)" value="${image}" style="flex: 1;">
+                        <input type="text" class="ed-image" placeholder="روابط الصور (افصل بينها بفاصلة ,)" value="${imagesStr}" style="flex: 1;" title="إذا كان هناك أكثر من صورة، افصل بين الروابط بفاصلة">
                     </div>
-                    <input type="text" class="ed-notes" placeholder="ملاحظات خاصة بهذه الطبعة فقط (اختياري)" value="${notes}">
+                    <input type="text" class="ed-notes" placeholder="ملاحظات خاصة بهذه الطبعة (اختياري)" value="${notes}">
                 </div>
                 <button type="button" class="btn-remove" onclick="this.parentElement.remove()">X</button>
             `;
@@ -197,13 +200,20 @@
             document.getElementById('category').value = book.category;
             document.getElementById('notes').value = book.notes || '';
 
-            const bestContainer = document.getElementById('bestEditions');
-            bestContainer.innerHTML = '';
-            if(book.best_editions) book.best_editions.forEach(ed => addEditionRow('bestEditions', ed.name, ed.image, ed.notes));
+            const loadEditions = (containerId, editions) => {
+                const container = document.getElementById(containerId);
+                container.innerHTML = '';
+                if(editions) {
+                    editions.forEach(ed => {
+                        // التوافق مع البيانات القديمة (image) والجديدة (images)
+                        let imgs = ed.images ? ed.images : (ed.image ? ed.image : []);
+                        addEditionRow(containerId, ed.name, imgs, ed.notes || '');
+                    });
+                }
+            };
 
-            const altContainer = document.getElementById('altEditions');
-            altContainer.innerHTML = '';
-            if(book.alt_editions) book.alt_editions.forEach(ed => addEditionRow('altEditions', ed.name, ed.image, ed.notes));
+            loadEditions('bestEditions', book.best_editions);
+            loadEditions('altEditions', book.alt_editions);
 
             const linksContainer = document.getElementById('links');
             linksContainer.innerHTML = '';
@@ -227,21 +237,22 @@
                 links: []
             };
 
-            document.querySelectorAll('#bestEditions .dynamic-row').forEach(row => {
-                newBook.best_editions.push({ 
-                    name: row.querySelector('.ed-name').value, 
-                    image: row.querySelector('.ed-image').value,
-                    notes: row.querySelector('.ed-notes').value
+            // دالة مساعدة لجمع الطبعات وتحويل النص المفصول بفاصلة إلى مصفوفة (Array)
+            const collectEditions = (containerId, targetArray) => {
+                document.querySelectorAll(`#${containerId} .dynamic-row`).forEach(row => {
+                    let imagesInput = row.querySelector('.ed-image').value.trim();
+                    let imagesArray = imagesInput ? imagesInput.split(',').map(url => url.trim()).filter(url => url !== '') : [];
+                    
+                    targetArray.push({ 
+                        name: row.querySelector('.ed-name').value, 
+                        images: imagesArray,  // نستخدم المصفوفة الآن
+                        notes: row.querySelector('.ed-notes').value
+                    });
                 });
-            });
+            };
 
-            document.querySelectorAll('#altEditions .dynamic-row').forEach(row => {
-                newBook.alt_editions.push({ 
-                    name: row.querySelector('.ed-name').value, 
-                    image: row.querySelector('.ed-image').value,
-                    notes: row.querySelector('.ed-notes').value
-                });
-            });
+            collectEditions('bestEditions', newBook.best_editions);
+            collectEditions('altEditions', newBook.alt_editions);
 
             document.querySelectorAll('#links .dynamic-row').forEach(row => {
                 newBook.links.push({ title: row.querySelector('.link-title').value, url: row.querySelector('.link-url').value });
