@@ -5,17 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>لوحة الإدارة - إدارة الكتب</title>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800&display=swap" rel="stylesheet">
+    <!-- استدعاء مكتبة SortableJS للسحب والإفلات -->
+    <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
     <style>
-        :root {
-            --primary: #2c3e50;
-            --secondary: #27ae60;
-            --danger: #e74c3c;
-            --bg: #f4f6f7;
-            --border: #ddd;
-        }
+        :root { --primary: #2c3e50; --secondary: #27ae60; --danger: #e74c3c; --bg: #f4f6f7; --border: #ddd; }
         body { font-family: 'Cairo', sans-serif; margin: 0; background: var(--bg); color: #333; display: flex; height: 100vh; overflow: hidden; }
         
-        /* Sidebar (قائمة الكتب) */
         .sidebar { width: 300px; background: white; border-left: 1px solid var(--border); display: flex; flex-direction: column; }
         .sidebar-header { padding: 15px; background: var(--primary); color: white; text-align: center; }
         .sidebar-list { flex: 1; overflow-y: auto; padding: 10px; list-style: none; margin: 0; }
@@ -23,7 +18,6 @@
         .sidebar-list li:hover, .sidebar-list li.active { background: #e8f4f8; font-weight: 600; color: var(--primary); }
         .btn-add-new { margin: 10px; padding: 10px; background: var(--secondary); color: white; border: none; cursor: pointer; font-family: inherit; font-weight: bold; border-radius: 5px; }
 
-        /* Main Content (النموذج) */
         .main-content { flex: 1; display: flex; flex-direction: column; overflow-y: auto; padding: 20px; }
         .form-container { background: white; padding: 25px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); max-width: 800px; width: 100%; margin: 0 auto; display: none; }
         
@@ -32,19 +26,20 @@
         
         .form-group { margin-bottom: 15px; }
         .form-group label { display: block; margin-bottom: 5px; font-weight: 600; }
-        .form-group input { width: 100%; padding: 10px; border: 1px solid var(--border); border-radius: 4px; font-family: inherit; box-sizing: border-box; }
+        .form-group input, .form-group textarea { width: 100%; padding: 10px; border: 1px solid var(--border); border-radius: 4px; font-family: inherit; box-sizing: border-box; }
         
-        /* Dynamic Rows (الطبعات والروابط) */
-        .dynamic-row { display: flex; gap: 10px; margin-bottom: 10px; align-items: center; background: #f9f9f9; padding: 10px; border-radius: 5px; border: 1px solid #eee; }
+        /* تصميم صفوف الطبعات */
+        .dynamic-row { display: flex; gap: 10px; margin-bottom: 10px; align-items: center; background: #f9f9f9; padding: 10px; border-radius: 5px; border: 1px solid #eee; transition: background 0.3s; }
+        .dynamic-row.sortable-ghost { opacity: 0.4; background: #e8f4f8; border: 1px dashed var(--primary); }
         .dynamic-row input { flex: 1; }
+        .drag-handle { cursor: grab; color: #888; font-size: 1.2rem; padding: 0 5px; user-select: none; }
+        .drag-handle:active { cursor: grabbing; }
         .btn-remove { background: var(--danger); color: white; border: none; padding: 8px 12px; cursor: pointer; border-radius: 4px; }
         .btn-add-row { background: #3498db; color: white; border: none; padding: 8px 15px; cursor: pointer; border-radius: 4px; font-family: inherit; font-size: 0.9rem; margin-bottom: 10px; }
 
-        /* Actions */
         .form-actions { margin-top: 30px; display: flex; gap: 10px; justify-content: flex-end; border-top: 2px solid var(--border); padding-top: 20px; }
         .btn-save { background: var(--secondary); color: white; border: none; padding: 12px 25px; font-size: 16px; cursor: pointer; border-radius: 5px; font-family: inherit; font-weight: bold; }
         
-        /* Export Section */
         .export-section { margin: 20px auto; max-width: 800px; width: 100%; display: flex; gap: 10px; background: white; padding: 15px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
         .export-section p { margin: 0 0 0 15px; align-self: center; font-weight: bold; color: var(--primary); }
         .btn-export { background: #2980b9; color: white; border: none; padding: 10px 15px; cursor: pointer; border-radius: 5px; font-family: inherit; }
@@ -54,28 +49,19 @@
 </head>
 <body>
 
-    <!-- القائمة الجانبية -->
     <div class="sidebar">
-        <div class="sidebar-header">
-            <h3>قاعدة البيانات</h3>
-        </div>
+        <div class="sidebar-header"><h3>قاعدة البيانات</h3></div>
         <button class="btn-add-new" onclick="createNewBook()">+ إضافة كتاب جديد</button>
-        <ul class="sidebar-list" id="booksList">
-            <!-- سيتم إضافة الكتب هنا عبر JavaScript -->
-        </ul>
+        <ul class="sidebar-list" id="booksList"></ul>
     </div>
 
-    <!-- منطقة العمل الرئيسية -->
     <div class="main-content">
-        
-        <!-- قسم استخراج البيانات -->
         <div class="export-section">
-            <p>بعد حفظ التعديلات داخلياً، قم بنسخ أو تحميل الملف لرفعه:</p>
+            <p>بعد حفظ التعديلات، قم بنسخ أو تحميل الملف لرفعه:</p>
             <button class="btn-export" onclick="copyJSON()">📋 نسخ JSON</button>
             <button class="btn-export" style="background:#27ae60;" onclick="downloadJSON()">💾 تحميل books.json</button>
         </div>
 
-        <!-- نموذج الإضافة والتعديل -->
         <div class="form-container" id="formContainer">
             <h2 id="formTitle">تعديل كتاب</h2>
             <form id="bookForm" onsubmit="saveBook(event)">
@@ -91,18 +77,22 @@
                 </div>
                 <div class="form-group">
                     <label>العلم / التصنيف *</label>
-                    <input type="text" id="category" placeholder="مثال: الحديث، التفسير، الفقه..." required>
+                    <input type="text" id="category" placeholder="مثال: الحديث، التفسير..." required>
+                </div>
+                <div class="form-group">
+                    <label>ملاحظات (اختياري)</label>
+                    <textarea id="notes" rows="3" placeholder="ملاحظات إضافية حول الكتاب أو الطبعات..."></textarea>
                 </div>
 
-                <h3>أفضل الطبعات المعتمدة</h3>
+                <h3>أفضل الطبعات المعتمدة (اسحب ☰ لترتيبها)</h3>
                 <div id="bestEditions"></div>
                 <button type="button" class="btn-add-row" onclick="addEditionRow('bestEditions')">+ إضافة طبعة</button>
 
-                <h3>طبعات بديلة جيدة</h3>
+                <h3>طبعات بديلة (اسحب ☰ لترتيبها)</h3>
                 <div id="altEditions"></div>
                 <button type="button" class="btn-add-row" onclick="addEditionRow('altEditions')">+ إضافة طبعة بديلة</button>
 
-                <h3>روابط مفيدة</h3>
+                <h3>روابط مفيدة (اسحب ☰ لترتيبها)</h3>
                 <div id="links"></div>
                 <button type="button" class="btn-add-row" onclick="addLinkRow('links')">+ إضافة رابط</button>
 
@@ -118,18 +108,19 @@
     <script>
         let booksData = [];
 
-        // 1. تحميل البيانات عند فتح الصفحة
+        // تفعيل خاصية السحب والإفلات للقوائم
+        new Sortable(document.getElementById('bestEditions'), { handle: '.drag-handle', animation: 150 });
+        new Sortable(document.getElementById('altEditions'), { handle: '.drag-handle', animation: 150 });
+        new Sortable(document.getElementById('links'), { handle: '.drag-handle', animation: 150 });
+
         fetch('books.json')
             .then(res => res.json())
             .then(data => {
                 booksData = data;
                 renderSidebar();
             })
-            .catch(err => {
-                showToast("ملف books.json غير موجود. سيتم البدء بقائمة فارغة.");
-            });
+            .catch(err => console.log("ملف JSON غير متوفر بعد."));
 
-        // 2. تحديث القائمة الجانبية
         function renderSidebar() {
             const list = document.getElementById('booksList');
             list.innerHTML = '';
@@ -141,12 +132,12 @@
             });
         }
 
-        // 3. إضافة صف جديد (طبعة)
         function addEditionRow(containerId, name = '', image = '') {
             const container = document.getElementById(containerId);
             const row = document.createElement('div');
             row.className = 'dynamic-row';
             row.innerHTML = `
+                <span class="drag-handle" title="اسحب للترتيب">☰</span>
                 <input type="text" class="ed-name" placeholder="اسم الطبعة" value="${name}" required>
                 <input type="text" class="ed-image" placeholder="رابط الصورة (اختياري)" value="${image}">
                 <button type="button" class="btn-remove" onclick="this.parentElement.remove()">X</button>
@@ -154,12 +145,12 @@
             container.appendChild(row);
         }
 
-        // 4. إضافة صف جديد (رابط)
         function addLinkRow(containerId, title = '', url = '') {
             const container = document.getElementById(containerId);
             const row = document.createElement('div');
             row.className = 'dynamic-row';
             row.innerHTML = `
+                <span class="drag-handle" title="اسحب للترتيب">☰</span>
                 <input type="text" class="link-title" placeholder="عنوان الرابط" value="${title}" required>
                 <input type="text" class="link-url" placeholder="الرابط (URL)" value="${url}" required>
                 <button type="button" class="btn-remove" onclick="this.parentElement.remove()">X</button>
@@ -167,25 +158,21 @@
             container.appendChild(row);
         }
 
-        // 5. تهيئة النموذج لإضافة كتاب جديد
         function createNewBook() {
             document.getElementById('formContainer').style.display = 'block';
             document.getElementById('formTitle').innerText = 'إضافة كتاب جديد';
             document.getElementById('bookForm').reset();
             document.getElementById('bookId').value = '';
+            document.getElementById('notes').value = '';
             
-            // تفريغ القوائم الديناميكية
             document.getElementById('bestEditions').innerHTML = '';
             document.getElementById('altEditions').innerHTML = '';
             document.getElementById('links').innerHTML = '';
             
-            // إضافة صف فارغ كبداية
             addEditionRow('bestEditions');
         }
 
-        // 6. تحميل بيانات كتاب موجود داخل النموذج
         function loadBookIntoForm(id, liElement) {
-            // تمييز العنصر المختار في القائمة
             document.querySelectorAll('.sidebar-list li').forEach(li => li.classList.remove('active'));
             if(liElement) liElement.classList.add('active');
 
@@ -199,27 +186,24 @@
             document.getElementById('title').value = book.title;
             document.getElementById('author').value = book.author;
             document.getElementById('category').value = book.category;
+            document.getElementById('notes').value = book.notes || '';
 
-            // تفريغ وتعبئة الطبعات
             const bestContainer = document.getElementById('bestEditions');
             bestContainer.innerHTML = '';
             book.best_editions.forEach(ed => addEditionRow('bestEditions', ed.name, ed.image));
 
             const altContainer = document.getElementById('altEditions');
             altContainer.innerHTML = '';
-            book.alt_editions.forEach(ed => addEditionRow('altEditions', ed.name, ed.image));
+            if(book.alt_editions) book.alt_editions.forEach(ed => addEditionRow('altEditions', ed.name, ed.image));
 
-            // تفريغ وتعبئة الروابط
             const linksContainer = document.getElementById('links');
             linksContainer.innerHTML = '';
-            book.links.forEach(link => addLinkRow('links', link.title, link.url));
+            if(book.links) book.links.forEach(link => addLinkRow('links', link.title, link.url));
         }
 
-        // 7. حفظ البيانات من النموذج إلى المصفوفة
         function saveBook(e) {
             e.preventDefault();
 
-            // استخراج معرف الكتاب (إذا لم يكن موجوداً، نقوم بإنشاء واحد جديد)
             let id = document.getElementById('bookId').value;
             id = id ? parseInt(id) : (booksData.length > 0 ? Math.max(...booksData.map(b => b.id)) + 1 : 1);
 
@@ -228,36 +212,24 @@
                 title: document.getElementById('title').value,
                 author: document.getElementById('author').value,
                 category: document.getElementById('category').value,
+                notes: document.getElementById('notes').value,
                 best_editions: [],
                 alt_editions: [],
                 links: []
             };
 
-            // تجميع بيانات الطبعات الأفضل
             document.querySelectorAll('#bestEditions .dynamic-row').forEach(row => {
-                newBook.best_editions.push({
-                    name: row.querySelector('.ed-name').value,
-                    image: row.querySelector('.ed-image').value
-                });
+                newBook.best_editions.push({ name: row.querySelector('.ed-name').value, image: row.querySelector('.ed-image').value });
             });
 
-            // تجميع بيانات الطبعات البديلة
             document.querySelectorAll('#altEditions .dynamic-row').forEach(row => {
-                newBook.alt_editions.push({
-                    name: row.querySelector('.ed-name').value,
-                    image: row.querySelector('.ed-image').value
-                });
+                newBook.alt_editions.push({ name: row.querySelector('.ed-name').value, image: row.querySelector('.ed-image').value });
             });
 
-            // تجميع بيانات الروابط
             document.querySelectorAll('#links .dynamic-row').forEach(row => {
-                newBook.links.push({
-                    title: row.querySelector('.link-title').value,
-                    url: row.querySelector('.link-url').value
-                });
+                newBook.links.push({ title: row.querySelector('.link-title').value, url: row.querySelector('.link-url').value });
             });
 
-            // تحديث المصفوفة
             const existingIndex = booksData.findIndex(b => b.id === id);
             if (existingIndex >= 0) {
                 booksData[existingIndex] = newBook;
@@ -266,19 +238,14 @@
             }
 
             renderSidebar();
-            document.getElementById('bookId').value = id; // في حال كان جديداً
-            showToast("تم حفظ بيانات الكتاب في الذاكرة بنجاح! لا تنس استخراج JSON لرفعه.");
+            document.getElementById('bookId').value = id;
+            showToast("تم الحفظ! لا تنس استخراج JSON.");
         }
 
-        // 8. تصدير البيانات (نسخ / تحميل)
-        function getJSONString() {
-            return JSON.stringify(booksData, null, 2);
-        }
-
+        function getJSONString() { return JSON.stringify(booksData, null, 2); }
+        
         function copyJSON() {
-            navigator.clipboard.writeText(getJSONString()).then(() => {
-                showToast("تم نسخ الكود بنجاح! الصقه في GitHub.");
-            });
+            navigator.clipboard.writeText(getJSONString()).then(() => showToast("تم نسخ الكود!"));
         }
 
         function downloadJSON() {
@@ -291,14 +258,14 @@
             a.click();
             document.body.removeChild(a);
             URL.revokeObjectURL(url);
-            showToast("تم تحميل الملف!");
+            showToast("تم التحميل!");
         }
 
         function showToast(msg) {
             const toast = document.getElementById('toast');
             toast.innerText = msg;
             toast.style.display = 'block';
-            setTimeout(() => toast.style.display = 'none', 4000);
+            setTimeout(() => toast.style.display = 'none', 3000);
         }
     </script>
 </body>
