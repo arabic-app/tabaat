@@ -5,469 +5,1003 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>لوحة الإدارة - دليل طبعات الكتب الإسلامية</title>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
     <style>
-        :root { --primary: #2c3e50; --secondary: #27ae60; --danger: #e74c3c; --bg: #f4f6f7; --border: #ddd; }
-        body { font-family: 'Cairo', sans-serif; margin: 0; background: var(--bg); color: #333; display: flex; height: 100vh; overflow: hidden; }
-        
-        .sidebar { width: 320px; background: white; border-left: 1px solid var(--border); display: flex; flex-direction: column; }
-        .sidebar-header { padding: 15px; background: var(--primary); color: white; text-align: center; }
-        .sidebar-header h3 { margin: 0 0 10px 0; font-size: 1.2rem; }
-        .admin-search-box { width: 100%; padding: 8px 10px; border: none; border-radius: 4px; font-family: inherit; box-sizing: border-box; font-size: 0.95rem; }
-        .admin-search-box:focus { outline: 2px solid var(--secondary); }
-        .sidebar-list { flex: 1; overflow-y: auto; padding: 10px; list-style: none; margin: 0; }
-        .sidebar-list li { padding: 10px; border-bottom: 1px solid var(--border); cursor: pointer; transition: 0.2s; border-radius: 4px; font-size: 0.95rem; }
-        .sidebar-list li:hover, .sidebar-list li.active { background: #e8f4f8; font-weight: 600; color: var(--primary); }
-        .btn-add-new { margin: 10px; padding: 12px; background: var(--secondary); color: white; border: none; cursor: pointer; font-family: inherit; font-weight: bold; border-radius: 5px; font-size: 1rem; }
+        *, *::before, *::after { box-sizing: border-box; }
 
-        .main-content { flex: 1; display: flex; flex-direction: column; overflow-y: auto; padding: 20px; }
-        .form-container { background: white; padding: 25px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); max-width: 800px; width: 100%; margin: 0 auto 40px auto; display: none; }
-        
-        h2 { color: var(--primary); margin-top: 0; border-bottom: 2px solid var(--border); padding-bottom: 10px; }
-        h3 { color: #d35400; font-size: 1.1rem; margin-top: 25px; border-bottom: 1px dashed var(--border); padding-bottom: 5px; }
-        
-        .form-group { margin-bottom: 15px; position: relative; }
-        .form-group label { display: block; margin-bottom: 5px; font-weight: 600; }
-        .form-group input, .form-group textarea { width: 100%; padding: 10px; border: 1px solid var(--border); border-radius: 4px; font-family: inherit; box-sizing: border-box; }
-        
-        .duplicate-warning { display: none; background-color: #f8d7da; color: #721c24; padding: 10px 15px; border-radius: 5px; margin-top: 10px; border: 1px solid #f5c6cb; align-items: center; justify-content: space-between; }
-        .btn-edit-duplicate { background: #dc3545; color: white; border: none; padding: 6px 12px; border-radius: 4px; cursor: pointer; font-family: inherit; font-weight: bold; transition: 0.2s; }
-        .btn-edit-duplicate:hover { background: #c82333; }
+        :root {
+            --md-primary: #00695c;
+            --md-on-primary: #ffffff;
+            --md-primary-container: #b2dfdb;
+            --md-on-primary-container: #00201a;
+            --md-secondary: #006b5f;
+            --md-tertiary: #e65100;
+            --md-background: #f4f6f8;
+            --md-surface: #ffffff;
+            --md-surface-variant: #e8edec;
+            --md-on-surface: #191c1b;
+            --md-on-surface-variant: #3f4947;
+            --md-outline: #6f7977;
+            --md-outline-variant: #bec9c6;
+            --md-error: #c0392b;
+            --md-error-container: #fdecea;
+            --md-info: #1565c0;
+            --md-info-container: #e3f2fd;
+            --md-elevation-1: 0 1px 3px 1px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+            --md-elevation-2: 0 2px 6px 2px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+            --sidebar-width: 300px;
+        }
 
-        .dynamic-row { display: flex; gap: 15px; margin-bottom: 15px; align-items: flex-start; background: #f9f9f9; padding: 15px; border-radius: 5px; border: 1px solid #eee; }
-        .dynamic-row.sortable-ghost { opacity: 0.4; background: #e8f4f8; border: 1px dashed var(--primary); }
-        .row-inputs { flex: 1; display: flex; flex-direction: column; gap: 10px; }
-        .row-inputs input { width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px; font-family: inherit; box-sizing: border-box;}
-        
-        .images-container { background: white; padding: 12px; border: 1px dashed #bbb; border-radius: 5px; }
-        .images-container-title { font-size: 0.9rem; font-weight: 600; color: #555; margin-bottom: 8px; display: block; }
-        .image-input-group { display: flex; gap: 8px; margin-bottom: 8px; }
-        .btn-remove-img { background: #e74c3c; color: white; border: none; padding: 0 12px; cursor: pointer; border-radius: 4px; font-size: 1.2rem; font-weight: bold; }
-        .btn-add-img { background: #34495e; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-family: inherit; font-size: 0.85rem; margin-top: 5px; }
+        body {
+            font-family: 'Cairo', sans-serif;
+            margin: 0;
+            background: var(--md-background);
+            color: var(--md-on-surface);
+            -webkit-font-smoothing: antialiased;
+            min-height: 100vh;
+        }
 
-        .drag-handle { cursor: grab; color: #888; font-size: 1.5rem; padding: 0 5px; user-select: none; margin-top: 5px; }
+        /* ===== TOP APP BAR (mobile) ===== */
+        .top-app-bar {
+            display: none;
+            background: var(--md-primary);
+            color: var(--md-on-primary);
+            padding: 0 8px;
+            height: 56px;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 200;
+            box-shadow: var(--md-elevation-2);
+        }
+        .top-app-bar h1 {
+            font-size: 1.1rem;
+            font-weight: 800;
+            margin: 0;
+            flex: 1;
+            text-align: center;
+        }
+        .md-icon-btn-top {
+            background: transparent;
+            border: none;
+            color: var(--md-on-primary);
+            width: 44px; height: 44px;
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            cursor: pointer;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .md-icon-btn-top:hover { background: rgba(255,255,255,0.12); }
+        .md-icon-btn-top .material-icons-round { font-size: 24px; }
+
+        /* ===== LAYOUT ===== */
+        .layout {
+            display: flex;
+            min-height: 100vh;
+        }
+
+        /* ===== SIDEBAR / NAVIGATION DRAWER ===== */
+        .sidebar {
+            width: var(--sidebar-width);
+            background: var(--md-surface);
+            border-left: 1px solid var(--md-outline-variant);
+            display: flex;
+            flex-direction: column;
+            position: sticky;
+            top: 0;
+            height: 100vh;
+            flex-shrink: 0;
+            z-index: 100;
+        }
+        .sidebar-header {
+            background: var(--md-primary);
+            color: var(--md-on-primary);
+            padding: 16px;
+        }
+        .sidebar-header h2 {
+            margin: 0 0 12px 0;
+            font-size: 1.1rem;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .sidebar-header h2 .material-icons-round { font-size: 1.2rem; }
+
+        /* Search field in sidebar */
+        .search-field {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+        .search-field .material-icons-round {
+            position: absolute;
+            right: 10px;
+            font-size: 20px;
+            color: rgba(255,255,255,0.7);
+            pointer-events: none;
+        }
+        .admin-search-box {
+            width: 100%;
+            padding: 10px 38px 10px 14px;
+            border: none;
+            border-radius: 24px;
+            font-family: inherit;
+            font-size: 0.9rem;
+            background: rgba(255,255,255,0.2);
+            color: white;
+            outline: none;
+        }
+        .admin-search-box::placeholder { color: rgba(255,255,255,0.65); }
+        .admin-search-box:focus { background: rgba(255,255,255,0.28); }
+
+        .btn-add-new {
+            margin: 12px;
+            padding: 0 16px;
+            height: 40px;
+            background: var(--md-primary);
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-family: inherit;
+            font-weight: 700;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            transition: box-shadow 0.2s, background 0.2s;
+            box-shadow: var(--md-elevation-1);
+        }
+        .btn-add-new:hover { background: #00796b; box-shadow: var(--md-elevation-2); }
+        .btn-add-new .material-icons-round { font-size: 18px; }
+
+        .sidebar-list {
+            flex: 1;
+            overflow-y: auto;
+            padding: 8px;
+            list-style: none;
+            margin: 0;
+        }
+        .sidebar-list li {
+            padding: 10px 14px;
+            cursor: pointer;
+            border-radius: 28px;
+            font-size: 0.9rem;
+            line-height: 1.4;
+            color: var(--md-on-surface-variant);
+            transition: background 0.15s, color 0.15s;
+            margin-bottom: 2px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .sidebar-list li::before {
+            content: '';
+            width: 6px; height: 6px;
+            border-radius: 50%;
+            background: var(--md-outline-variant);
+            flex-shrink: 0;
+        }
+        .sidebar-list li:hover { background: var(--md-surface-variant); color: var(--md-on-surface); }
+        .sidebar-list li.active {
+            background: var(--md-primary-container);
+            color: var(--md-on-primary-container);
+            font-weight: 700;
+        }
+        .sidebar-list li.active::before { background: var(--md-primary); }
+
+        /* ===== MAIN CONTENT ===== */
+        .main-content {
+            flex: 1;
+            padding: 24px 20px;
+            overflow-y: auto;
+            min-width: 0;
+        }
+
+        /* ===== SYNC CARD ===== */
+        .sync-card {
+            background: var(--md-surface);
+            border-radius: 16px;
+            padding: 20px;
+            margin-bottom: 24px;
+            box-shadow: var(--md-elevation-1);
+            border: 1px solid var(--md-outline-variant);
+        }
+        .sync-card-title {
+            font-weight: 800;
+            font-size: 1rem;
+            color: var(--md-primary);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 16px;
+        }
+        .sync-card-title .material-icons-round { font-size: 1.2rem; }
+
+        .github-row {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 16px;
+            flex-wrap: wrap;
+        }
+        .github-token-input {
+            flex: 1;
+            min-width: 200px;
+            padding: 10px 14px;
+            border: 1px solid var(--md-outline-variant);
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 0.9rem;
+            direction: ltr;
+            background: var(--md-background);
+            color: var(--md-on-surface);
+            outline: none;
+            transition: border-color 0.2s;
+        }
+        .github-token-input:focus { border-color: var(--md-primary); }
+
+        .action-buttons { display: flex; gap: 8px; flex-wrap: wrap; }
+
+        .md-btn {
+            height: 36px;
+            padding: 0 16px;
+            border: none;
+            border-radius: 18px;
+            font-family: inherit;
+            font-weight: 700;
+            font-size: 0.85rem;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: box-shadow 0.2s, opacity 0.2s;
+            white-space: nowrap;
+        }
+        .md-btn .material-icons-round { font-size: 18px; }
+        .md-btn:hover { opacity: 0.88; }
+        .md-btn-primary { background: var(--md-primary); color: white; box-shadow: var(--md-elevation-1); }
+        .md-btn-secondary { background: var(--md-surface-variant); color: var(--md-on-surface); }
+        .md-btn-purple { background: #7b1fa2; color: white; box-shadow: var(--md-elevation-1); }
+        .md-btn-blue { background: var(--md-info); color: white; box-shadow: var(--md-elevation-1); }
+
+        /* ===== FORM CARD ===== */
+        .form-card {
+            background: var(--md-surface);
+            border-radius: 16px;
+            padding: 24px;
+            box-shadow: var(--md-elevation-1);
+            border: 1px solid var(--md-outline-variant);
+            display: none;
+        }
+        .form-card-title {
+            font-size: 1.2rem;
+            font-weight: 800;
+            color: var(--md-primary);
+            margin: 0 0 20px 0;
+            padding-bottom: 14px;
+            border-bottom: 2px solid var(--md-outline-variant);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .form-card-title .material-icons-round { font-size: 1.3rem; }
+
+        /* ===== FORM FIELDS ===== */
+        .form-group { margin-bottom: 18px; }
+        .form-group label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            color: var(--md-on-surface-variant);
+        }
+        .md-input {
+            width: 100%;
+            padding: 11px 14px;
+            border: 1px solid var(--md-outline-variant);
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 0.95rem;
+            background: var(--md-background);
+            color: var(--md-on-surface);
+            outline: none;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+        .md-input:focus {
+            border-color: var(--md-primary);
+            box-shadow: 0 0 0 2px rgba(0,105,92,0.15);
+        }
+        textarea.md-input { resize: vertical; min-height: 80px; }
+
+        /* Duplicate warning */
+        .duplicate-warning {
+            display: none;
+            background: var(--md-error-container);
+            color: var(--md-error);
+            padding: 10px 14px;
+            border-radius: 8px;
+            margin-top: 8px;
+            border: 1px solid #f5c6cb;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            flex-wrap: wrap;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+        .btn-edit-duplicate {
+            background: var(--md-error);
+            color: white;
+            border: none;
+            padding: 5px 12px;
+            border-radius: 14px;
+            cursor: pointer;
+            font-family: inherit;
+            font-weight: 700;
+            font-size: 0.85rem;
+            white-space: nowrap;
+        }
+
+        /* Section headers */
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 800;
+            font-size: 0.95rem;
+            color: var(--md-tertiary);
+            margin: 24px 0 10px 0;
+            padding-bottom: 8px;
+            border-bottom: 1px dashed var(--md-outline-variant);
+        }
+        .section-header .material-icons-round { font-size: 1.1rem; }
+
+        .btn-add-row {
+            height: 32px;
+            padding: 0 14px;
+            background: #e0f2f1;
+            color: var(--md-primary);
+            border: 1px dashed var(--md-primary);
+            border-radius: 16px;
+            font-family: inherit;
+            font-weight: 700;
+            font-size: 0.82rem;
+            cursor: pointer;
+            margin-bottom: 16px;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            transition: background 0.2s;
+        }
+        .btn-add-row:hover { background: var(--md-primary-container); }
+
+        /* ===== DYNAMIC ROWS (edition / link) ===== */
+        .dynamic-row {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 10px;
+            align-items: flex-start;
+            background: var(--md-background);
+            padding: 14px;
+            border-radius: 12px;
+            border: 1px solid var(--md-outline-variant);
+            transition: border-color 0.2s;
+        }
+        .dynamic-row.sortable-ghost {
+            opacity: 0.4;
+            background: var(--md-primary-container);
+            border: 1px dashed var(--md-primary);
+        }
+        .drag-handle {
+            cursor: grab;
+            color: var(--md-outline);
+            font-size: 1.4rem;
+            padding: 4px 2px;
+            user-select: none;
+            flex-shrink: 0;
+            margin-top: 4px;
+        }
         .drag-handle:active { cursor: grabbing; }
-        .btn-remove { background: var(--danger); color: white; border: none; padding: 10px 15px; cursor: pointer; border-radius: 4px; height: fit-content; margin-top: 5px;}
-        .btn-add-row { background: #3498db; color: white; border: none; padding: 8px 15px; cursor: pointer; border-radius: 4px; font-family: inherit; font-size: 0.9rem; margin-bottom: 10px; }
 
-        .form-actions { margin-top: 30px; display: flex; gap: 10px; justify-content: flex-end; border-top: 2px solid var(--border); padding-top: 20px; }
-        .btn-save { background: var(--secondary); color: white; border: none; padding: 12px 25px; font-size: 16px; cursor: pointer; border-radius: 5px; font-family: inherit; font-weight: bold; }
-        
-        .export-section { margin: 20px auto; max-width: 800px; width: 100%; display: flex; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); box-sizing: border-box; }
-        .export-section p { font-weight: bold; color: var(--primary); }
-        .btn-export { background: #2980b9; color: white; border: none; padding: 10px 15px; cursor: pointer; border-radius: 5px; font-family: inherit; font-weight: 600; }
+        .row-inputs {
+            flex: 1;
+            min-width: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .row-inputs-horizontal {
+            flex: 1;
+            min-width: 0;
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+        .row-inputs-horizontal .md-input { flex: 1; min-width: 120px; }
 
-        #toast { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); background: #333; color: white; padding: 10px 20px; border-radius: 5px; display: none; z-index: 1000; font-weight: 600; text-align: center; }
+        /* Images sub-section */
+        .images-container {
+            background: var(--md-surface);
+            padding: 10px 12px;
+            border: 1px solid var(--md-outline-variant);
+            border-radius: 8px;
+        }
+        .images-container-title {
+            font-size: 0.82rem;
+            font-weight: 700;
+            color: var(--md-on-surface-variant);
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+        .image-input-group {
+            display: flex;
+            gap: 6px;
+            margin-bottom: 6px;
+        }
+        .image-input-group .md-input { font-size: 0.85rem; padding: 7px 10px; direction: ltr; }
+        .btn-remove-img {
+            background: var(--md-error-container);
+            color: var(--md-error);
+            border: none;
+            width: 32px; height: 32px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            font-weight: bold;
+            display: flex; align-items: center; justify-content: center;
+            flex-shrink: 0;
+        }
+        .btn-add-img {
+            background: transparent;
+            color: var(--md-secondary);
+            border: none;
+            padding: 4px 8px;
+            cursor: pointer;
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 0.8rem;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+        }
+        .btn-add-img:hover { background: var(--md-surface-variant); }
+
+        .btn-remove {
+            background: var(--md-error-container);
+            color: var(--md-error);
+            border: none;
+            width: 36px; height: 36px;
+            border-radius: 8px;
+            cursor: pointer;
+            display: flex; align-items: center; justify-content: center;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+        .btn-remove:hover { background: #f5c6cb; }
+        .btn-remove .material-icons-round { font-size: 18px; }
+
+        /* ===== FORM ACTIONS ===== */
+        .form-actions {
+            margin-top: 24px;
+            display: flex;
+            gap: 10px;
+            justify-content: flex-end;
+            border-top: 1px solid var(--md-outline-variant);
+            padding-top: 20px;
+            flex-wrap: wrap;
+        }
+        .btn-save {
+            height: 44px;
+            padding: 0 24px;
+            background: var(--md-primary);
+            color: white;
+            border: none;
+            border-radius: 22px;
+            font-family: inherit;
+            font-weight: 800;
+            font-size: 1rem;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: var(--md-elevation-1);
+            transition: box-shadow 0.2s, background 0.2s;
+        }
+        .btn-save:hover { background: #00796b; box-shadow: var(--md-elevation-2); }
+        .btn-save .material-icons-round { font-size: 20px; }
+
+        /* ===== TOAST ===== */
+        #toast {
+            position: fixed;
+            bottom: 24px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #212121;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 8px;
+            display: none;
+            z-index: 9999;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-align: center;
+            max-width: 90vw;
+            box-shadow: var(--md-elevation-2);
+            animation: toastIn 0.25s ease;
+        }
+        @keyframes toastIn { from { opacity: 0; transform: translate(-50%, 12px); } to { opacity: 1; transform: translate(-50%, 0); } }
+
+        /* ===== OVERLAY (mobile drawer) ===== */
+        .overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.4);
+            z-index: 150;
+        }
+        .overlay.visible { display: block; }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .top-app-bar { display: flex; }
+
+            .layout { flex-direction: column; min-height: unset; }
+
+            .sidebar {
+                position: fixed;
+                top: 0; right: -100%;
+                height: 100%;
+                width: min(var(--sidebar-width), 85vw);
+                transition: right 0.28s cubic-bezier(0.4,0,0.2,1);
+                z-index: 160;
+                box-shadow: var(--md-elevation-2);
+            }
+            .sidebar.open { right: 0; }
+
+            .main-content { padding: 16px 12px; }
+
+            .sync-card { padding: 16px; }
+            .form-card { padding: 16px; }
+
+            .github-row { flex-direction: column; }
+            .github-token-input { min-width: 0; width: 100%; }
+
+            .action-buttons { gap: 6px; }
+            .md-btn { font-size: 0.82rem; padding: 0 12px; }
+
+            .row-inputs-horizontal { flex-direction: column; }
+            .row-inputs-horizontal .md-input { min-width: 0; }
+
+            .form-actions { justify-content: stretch; }
+            .btn-save { width: 100%; justify-content: center; }
+        }
+
+        @media (max-width: 400px) {
+            .md-btn { font-size: 0.78rem; padding: 0 10px; height: 34px; }
+            .form-card-title { font-size: 1rem; }
+        }
     </style>
 </head>
 <body>
 
-    <div class="sidebar">
+<!-- TOP BAR (mobile only) -->
+<div class="top-app-bar">
+    <button class="md-icon-btn-top" onclick="toggleSidebar()" aria-label="قائمة الكتب">
+        <span class="material-icons-round">menu</span>
+    </button>
+    <h1>لوحة الإدارة</h1>
+    <button class="md-icon-btn-top" onclick="createNewBook()" aria-label="كتاب جديد">
+        <span class="material-icons-round">add</span>
+    </button>
+</div>
+
+<div class="overlay" id="overlay" onclick="closeSidebar()"></div>
+
+<div class="layout">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
         <div class="sidebar-header">
-            <h3>قائمة الكتب الحالية</h3>
-            <input type="text" id="adminSearchInput" class="admin-search-box" placeholder="🔍 بحث في الكتب أو المؤلفين...">
+            <h2><span class="material-icons-round">menu_book</span> الكتب المسجّلة</h2>
+            <div class="search-field">
+                <span class="material-icons-round">search</span>
+                <input type="text" id="adminSearchInput" class="admin-search-box" placeholder="بحث بالعنوان أو المؤلف..." autocomplete="off">
+            </div>
         </div>
-        <button class="btn-add-new" onclick="createNewBook()">+ إضافة كتاب جديد</button>
+        <button class="btn-add-new" onclick="createNewBook()">
+            <span class="material-icons-round">add</span>
+            إضافة كتاب جديد
+        </button>
         <ul class="sidebar-list" id="booksList"></ul>
-    </div>
+    </aside>
 
-    <div class="main-content">
-        <div class="export-section" style="flex-direction: column; align-items: stretch;">
-            <p style="margin: 0 0 10px 0; align-self: flex-start;">رفع وتحديث البيانات مباشرة على مستودع GitHub الخاص بك:</p>
-            <div style="display: flex; gap: 10px; width: 100%; margin-bottom: 15px;">
-                <input type="password" id="githubToken" placeholder="أدخل رمز GitHub Personal Access Token هنا..." style="flex: 1; padding: 10px; border: 1px solid #ccc; border-radius: 5px; direction: ltr;">
-                <button class="btn-export" style="background:#8e44ad;" onclick="syncToGitHub()">🚀 تحديث الموقع الآن</button>
+    <!-- MAIN -->
+    <main class="main-content">
+
+        <!-- SYNC CARD -->
+        <div class="sync-card">
+            <div class="sync-card-title">
+                <span class="material-icons-round">cloud_sync</span>
+                مزامنة البيانات
             </div>
-            
-            <p style="margin: 0 0 10px 0; align-self: flex-start; font-size: 0.9em; color: #666; font-weight: normal;">أو استخدم الطريقة اليدوية للنسخ الاحتياطي:</p>
-            <div style="display: flex; gap: 10px;">
-                <button class="btn-export" onclick="copyJSON()">📋 نسخ كود JSON</button>
-                <button class="btn-export" style="background:#27ae60;" onclick="downloadJSON()">💾 تحميل ملف books.json</button>
+            <div class="github-row">
+                <input type="password" id="githubToken" class="github-token-input" placeholder="GitHub Personal Access Token...">
+                <button class="md-btn md-btn-purple" onclick="syncToGitHub()">
+                    <span class="material-icons-round">rocket_launch</span>
+                    تحديث الموقع
+                </button>
+            </div>
+            <p style="margin: 0 0 10px; font-size: 0.85rem; color: var(--md-on-surface-variant);">أو احفظ نسخة يدوية:</p>
+            <div class="action-buttons">
+                <button class="md-btn md-btn-secondary" onclick="copyJSON()">
+                    <span class="material-icons-round">content_copy</span>
+                    نسخ JSON
+                </button>
+                <button class="md-btn md-btn-primary" onclick="downloadJSON()">
+                    <span class="material-icons-round">download</span>
+                    تحميل books.json
+                </button>
             </div>
         </div>
 
-        <div class="form-container" id="formContainer">
-            <h2 id="formTitle">تعديل كتاب</h2>
+        <!-- FORM CARD -->
+        <div class="form-card" id="formContainer">
+            <div class="form-card-title">
+                <span class="material-icons-round" id="formIcon">edit</span>
+                <span id="formTitle">تعديل كتاب</span>
+            </div>
+
             <form id="bookForm" onsubmit="saveBook(event)">
                 <input type="hidden" id="bookId">
-                
+
                 <div class="form-group">
                     <label>عنوان الكتاب *</label>
-                    <input type="text" id="title" required autocomplete="off">
-                    
+                    <input type="text" id="title" class="md-input" required autocomplete="off">
                     <div id="duplicateWarning" class="duplicate-warning">
-                        <span>⚠️ هذا الكتاب مسجل مسبقاً في قاعدة البيانات!</span>
+                        <span>⚠️ هذا الكتاب مسجّل مسبقاً في قاعدة البيانات!</span>
                         <button type="button" class="btn-edit-duplicate" id="btnEditDuplicate">فتحه للتعديل</button>
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label>المؤلف *</label>
-                    <input type="text" id="author" required>
+                    <input type="text" id="author" class="md-input" required>
                 </div>
                 <div class="form-group">
                     <label>العلم / التصنيف *</label>
-                    <input type="text" id="category" placeholder="مثال: الحديث، التفسير، الفقه..." required>
+                    <input type="text" id="category" class="md-input" placeholder="مثال: الحديث، التفسير، الفقه..." required>
                 </div>
                 <div class="form-group">
-                    <label>ملاحظات عامة حول الكتاب (اختياري)</label>
-                    <textarea id="notes" rows="3" placeholder="أي ملاحظات عامة تظهر للزوار أسفل تفاصيل الكتاب..."></textarea>
+                    <label>ملاحظات عامة (اختياري)</label>
+                    <textarea id="notes" class="md-input" rows="3" placeholder="تظهر أسفل تفاصيل الكتاب للزوار..."></textarea>
                 </div>
 
-                <h3>أفضل الطبعات المعتمدة (اسحب ☰ للترتيب)</h3>
+                <div class="section-header">
+                    <span class="material-icons-round">verified</span>
+                    أفضل الطبعات المعتمدة
+                    <span style="font-size:0.78rem;color:var(--md-outline);font-weight:400;margin-right:4px;">(اسحب ☰ للترتيب)</span>
+                </div>
                 <div id="bestEditions"></div>
-                <button type="button" class="btn-add-row" onclick="addEditionRow('bestEditions')">+ إضافة طبعة معتمدة</button>
+                <button type="button" class="btn-add-row" onclick="addEditionRow('bestEditions')">
+                    <span class="material-icons-round" style="font-size:14px;">add</span>
+                    إضافة طبعة معتمدة
+                </button>
 
-                <h3>طبعات بديلة (اسحب ☰ للترتيب)</h3>
+                <div class="section-header">
+                    <span class="material-icons-round">rule</span>
+                    طبعات بديلة جيدة
+                </div>
                 <div id="altEditions"></div>
-                <button type="button" class="btn-add-row" onclick="addEditionRow('altEditions')">+ إضافة طبعة بديلة</button>
+                <button type="button" class="btn-add-row" onclick="addEditionRow('altEditions')">
+                    <span class="material-icons-round" style="font-size:14px;">add</span>
+                    إضافة طبعة بديلة
+                </button>
 
-                <h3>روابط مفيدة (اسحب ☰ للترتيب)</h3>
+                <div class="section-header">
+                    <span class="material-icons-round">link</span>
+                    روابط مفيدة
+                </div>
                 <div id="links"></div>
-                <button type="button" class="btn-add-row" onclick="addLinkRow('links')">+ إضافة رابط مفيد</button>
+                <button type="button" class="btn-add-row" onclick="addLinkRow('links')">
+                    <span class="material-icons-round" style="font-size:14px;">add</span>
+                    إضافة رابط
+                </button>
 
                 <div class="form-actions">
-                    <button type="submit" class="btn-save">💾 حفظ التعديلات داخلياً</button>
+                    <button type="submit" class="btn-save">
+                        <span class="material-icons-round">save</span>
+                        حفظ التعديلات
+                    </button>
                 </div>
             </form>
         </div>
-    </div>
+    </main>
+</div>
 
-    <div id="toast">تم الحفظ بنجاح!</div>
+<div id="toast"></div>
 
-    <script>
-        let booksData = [];
+<script>
+    let booksData = [];
 
-        new Sortable(document.getElementById('bestEditions'), { handle: '.drag-handle', animation: 150 });
-        new Sortable(document.getElementById('altEditions'), { handle: '.drag-handle', animation: 150 });
-        new Sortable(document.getElementById('links'), { handle: '.drag-handle', animation: 150 });
+    new Sortable(document.getElementById('bestEditions'), { handle: '.drag-handle', animation: 150, ghostClass: 'sortable-ghost' });
+    new Sortable(document.getElementById('altEditions'),  { handle: '.drag-handle', animation: 150, ghostClass: 'sortable-ghost' });
+    new Sortable(document.getElementById('links'),        { handle: '.drag-handle', animation: 150, ghostClass: 'sortable-ghost' });
 
-        // إضافة معلمة لتخطي الكاش وجلب أحدث نسخة
-        fetch('books.json?v=' + new Date().getTime())
-            .then(res => {
-                if(!res.ok) throw new Error("ملف JSON غير موجود");
-                return res.json();
-            })
-            .then(data => {
-                booksData = data;
-                renderSidebar();
-            })
-            .catch(err => {
-                console.error("Fetch error:", err);
-                showToast("تنبيه: ملف books.json غير موجود، سيتم تشغيل واجهة فارغة.");
-            });
+    fetch('books.json?v=' + Date.now())
+        .then(r => { if (!r.ok) throw new Error('not found'); return r.json(); })
+        .then(data => { booksData = data; renderSidebar(); })
+        .catch(() => showToast('تنبيه: ملف books.json غير موجود، سيتم التشغيل بقاعدة بيانات فارغة.'));
 
-        // دالة عرض القائمة مع حماية من الأخطاء
-        function renderSidebar(searchTerm = '') {
-            const list = document.getElementById('booksList');
-            if(!list) return;
-            list.innerHTML = '';
-            
-            const term = String(searchTerm).trim().toLowerCase();
-            
-            const filteredBooks = booksData.filter(book => {
-                const title = book.title ? String(book.title).toLowerCase() : '';
-                const author = book.author ? String(book.author).toLowerCase() : '';
-                return title.includes(term) || author.includes(term);
-            });
+    /* ---- SIDEBAR ---- */
+    function renderSidebar(searchTerm = '') {
+        const list = document.getElementById('booksList');
+        list.innerHTML = '';
+        const term = String(searchTerm).trim().toLowerCase();
+        const currentId = document.getElementById('bookId').value;
 
-            const currentBookIdElem = document.getElementById('bookId');
-            const currentBookId = currentBookIdElem ? currentBookIdElem.value : null;
-
-            filteredBooks.forEach(book => {
+        booksData
+            .filter(b =>
+                (b.title  && b.title.toLowerCase().includes(term)) ||
+                (b.author && b.author.toLowerCase().includes(term))
+            )
+            .forEach(book => {
                 const li = document.createElement('li');
-                li.innerText = book.title || 'بدون عنوان';
-                
-                if (currentBookId && parseInt(currentBookId) === book.id) {
-                    li.classList.add('active');
-                }
-
-                li.onclick = () => loadBookIntoForm(book.id, li);
+                li.textContent = book.title || 'بدون عنوان';
+                if (currentId && parseInt(currentId) === book.id) li.classList.add('active');
+                li.onclick = () => { loadBookIntoForm(book.id, li); closeSidebar(); };
                 list.appendChild(li);
             });
-        }
+    }
 
-        document.getElementById('adminSearchInput').addEventListener('input', (e) => {
-            renderSidebar(e.target.value);
-        });
+    document.getElementById('adminSearchInput').addEventListener('input', e => renderSidebar(e.target.value));
 
-        document.getElementById('title').addEventListener('blur', function() {
-            const enteredTitle = this.value.trim();
-            const currentBookId = document.getElementById('bookId').value;
-            const warningDiv = document.getElementById('duplicateWarning');
-            
-            if (!currentBookId && enteredTitle !== '') {
-                const duplicateBook = booksData.find(b => b.title && b.title.trim().toLowerCase() === enteredTitle.toLowerCase());
-                
-                if (duplicateBook) {
-                    warningDiv.style.display = 'flex';
-                    document.getElementById('btnEditDuplicate').onclick = function() {
-                        warningDiv.style.display = 'none';
-                        let targetLi = null;
-                        document.querySelectorAll('.sidebar-list li').forEach(li => {
-                            if (li.innerText === duplicateBook.title) targetLi = li;
-                        });
-                        loadBookIntoForm(duplicateBook.id, targetLi);
-                    };
-                } else {
-                    warningDiv.style.display = 'none';
-                }
-            } else {
-                warningDiv.style.display = 'none';
-            }
-        });
+    document.getElementById('title').addEventListener('blur', function () {
+        const val = this.value.trim();
+        const currentId = document.getElementById('bookId').value;
+        const warn = document.getElementById('duplicateWarning');
+        if (!currentId && val) {
+            const dup = booksData.find(b => b.title && b.title.trim().toLowerCase() === val.toLowerCase());
+            if (dup) {
+                warn.style.display = 'flex';
+                document.getElementById('btnEditDuplicate').onclick = () => {
+                    warn.style.display = 'none';
+                    const li = [...document.querySelectorAll('.sidebar-list li')].find(l => l.textContent === dup.title);
+                    loadBookIntoForm(dup.id, li);
+                };
+            } else { warn.style.display = 'none'; }
+        } else { warn.style.display = 'none'; }
+    });
 
-        window.addImageInputToEdition = function(buttonElement) {
-            const listContainer = buttonElement.previousElementSibling;
-            const div = document.createElement('div');
-            div.className = 'image-input-group';
-            div.innerHTML = `
-                <input type="text" class="ed-image-url" placeholder="رابط صورة غلاف أو صفحة من الطبعة..." style="direction: ltr;">
-                <button type="button" class="btn-remove-img" onclick="this.parentElement.remove()">-</button>
-            `;
-            listContainer.appendChild(div);
+    /* ---- MOBILE DRAWER ---- */
+    function toggleSidebar() {
+        const s = document.getElementById('sidebar');
+        s.classList.contains('open') ? closeSidebar() : openSidebar();
+    }
+    function openSidebar() {
+        document.getElementById('sidebar').classList.add('open');
+        document.getElementById('overlay').classList.add('visible');
+    }
+    function closeSidebar() {
+        document.getElementById('sidebar').classList.remove('open');
+        document.getElementById('overlay').classList.remove('visible');
+    }
+
+    /* ---- ROWS ---- */
+    window.addImageInputToEdition = function (btn) {
+        const list = btn.previousElementSibling;
+        const div = document.createElement('div');
+        div.className = 'image-input-group';
+        div.innerHTML = `
+            <input type="text" class="md-input ed-image-url" placeholder="رابط صورة الطبعة..." style="direction:ltr">
+            <button type="button" class="btn-remove-img" onclick="this.parentElement.remove()">−</button>`;
+        list.appendChild(div);
+    };
+
+    function addEditionRow(containerId, name = '', imagesArray = [], notes = '') {
+        const container = document.getElementById(containerId);
+        const row = document.createElement('div');
+        row.className = 'dynamic-row';
+
+        let imgs = Array.isArray(imagesArray) ? imagesArray : (imagesArray ? [imagesArray] : []);
+        if (imgs.length === 0) imgs = [''];
+
+        const imgsHTML = imgs.map(img => `
+            <div class="image-input-group">
+                <input type="text" class="md-input ed-image-url" placeholder="رابط صورة الطبعة..." value="${img}" style="direction:ltr">
+                <button type="button" class="btn-remove-img" onclick="this.parentElement.remove()">−</button>
+            </div>`).join('');
+
+        row.innerHTML = `
+            <span class="drag-handle" title="اسحب للترتيب">☰</span>
+            <div class="row-inputs">
+                <input type="text" class="md-input ed-name" placeholder="اسم دار النشر أو المحقق *" value="${name}" required>
+                <div class="images-container">
+                    <div class="images-container-title">
+                        <span class="material-icons-round" style="font-size:14px;color:var(--md-primary)">image</span>
+                        صور الطبعة:
+                    </div>
+                    <div class="images-list">${imgsHTML}</div>
+                    <button type="button" class="btn-add-img" onclick="addImageInputToEdition(this)">
+                        <span class="material-icons-round" style="font-size:14px">add_photo_alternate</span>
+                        إضافة صورة
+                    </button>
+                </div>
+                <input type="text" class="md-input ed-notes" placeholder="ملاحظات خاصة بهذه الطبعة (تظهر كـ ℹ في الموقع)..." value="${notes}">
+            </div>
+            <button type="button" class="btn-remove" onclick="this.parentElement.remove()" title="حذف">
+                <span class="material-icons-round">delete</span>
+            </button>`;
+        container.appendChild(row);
+    }
+
+    function addLinkRow(containerId, title = '', url = '') {
+        const container = document.getElementById(containerId);
+        const row = document.createElement('div');
+        row.className = 'dynamic-row';
+        row.innerHTML = `
+            <span class="drag-handle" title="اسحب للترتيب">☰</span>
+            <div class="row-inputs-horizontal">
+                <input type="text" class="md-input link-title" placeholder="عنوان الرابط..." value="${title}" required>
+                <input type="text" class="md-input link-url"  placeholder="الرابط الكامل (URL)..." value="${url}" required style="direction:ltr">
+            </div>
+            <button type="button" class="btn-remove" onclick="this.parentElement.remove()" title="حذف">
+                <span class="material-icons-round">delete</span>
+            </button>`;
+        container.appendChild(row);
+    }
+
+    /* ---- CREATE / LOAD ---- */
+    function createNewBook() {
+        document.getElementById('formContainer').style.display = 'block';
+        document.getElementById('formTitle').textContent = 'إضافة كتاب جديد';
+        document.getElementById('formIcon').textContent = 'add_circle';
+        document.getElementById('bookForm').reset();
+        document.getElementById('bookId').value = '';
+        document.getElementById('notes').value = '';
+        document.getElementById('duplicateWarning').style.display = 'none';
+        document.querySelectorAll('.sidebar-list li').forEach(li => li.classList.remove('active'));
+        document.getElementById('bestEditions').innerHTML = '';
+        document.getElementById('altEditions').innerHTML = '';
+        document.getElementById('links').innerHTML = '';
+        addEditionRow('bestEditions');
+        document.getElementById('formContainer').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    function loadBookIntoForm(id, liElement) {
+        document.querySelectorAll('.sidebar-list li').forEach(li => li.classList.remove('active'));
+        if (liElement) liElement.classList.add('active');
+
+        const book = booksData.find(b => b.id === id);
+        if (!book) return;
+
+        document.getElementById('formContainer').style.display = 'block';
+        document.getElementById('formTitle').textContent = 'تعديل: ' + book.title;
+        document.getElementById('formIcon').textContent = 'edit';
+        document.getElementById('duplicateWarning').style.display = 'none';
+        document.getElementById('bookId').value = book.id;
+        document.getElementById('title').value = book.title || '';
+        document.getElementById('author').value = book.author || '';
+        document.getElementById('category').value = book.category || '';
+        document.getElementById('notes').value = book.notes || '';
+
+        const loadEditions = (cid, arr) => {
+            const c = document.getElementById(cid);
+            c.innerHTML = '';
+            (arr || []).forEach(ed => {
+                const imgs = ed.images ? ed.images : (ed.image ? [ed.image] : []);
+                addEditionRow(cid, ed.name, imgs, ed.notes || '');
+            });
+        };
+        loadEditions('bestEditions', book.best_editions);
+        loadEditions('altEditions', book.alt_editions);
+
+        const lc = document.getElementById('links');
+        lc.innerHTML = '';
+        (book.links || []).forEach(l => addLinkRow('links', l.title, l.url));
+
+        document.getElementById('formContainer').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    /* ---- SAVE ---- */
+    function saveBook(e) {
+        e.preventDefault();
+        let id = document.getElementById('bookId').value;
+        id = id ? parseInt(id) : (booksData.length > 0 ? Math.max(...booksData.map(b => b.id)) + 1 : 1);
+
+        const newBook = {
+            id,
+            title:    document.getElementById('title').value.trim(),
+            author:   document.getElementById('author').value.trim(),
+            category: document.getElementById('category').value.trim(),
+            notes:    document.getElementById('notes').value.trim(),
+            best_editions: [], alt_editions: [], links: []
         };
 
-        function addEditionRow(containerId, name = '', imagesArray = [], notes = '') {
-            const container = document.getElementById(containerId);
-            const row = document.createElement('div');
-            row.className = 'dynamic-row';
-            
-            let imagesHTML = '';
-            let imagesToLoad = Array.isArray(imagesArray) ? imagesArray : (imagesArray ? [imagesArray] : []);
-            if (imagesToLoad.length === 0) imagesToLoad = ['']; 
-
-            imagesToLoad.forEach(img => {
-                imagesHTML += `
-                    <div class="image-input-group">
-                        <input type="text" class="ed-image-url" placeholder="رابط صورة غلاف أو صفحة من الطبعة..." value="${img}" style="direction: ltr;">
-                        <button type="button" class="btn-remove-img" onclick="this.parentElement.remove()">-</button>
-                    </div>
-                `;
+        const collectEditions = (cid, arr) => {
+            document.querySelectorAll(`#${cid} .dynamic-row`).forEach(row => {
+                const images = [...row.querySelectorAll('.ed-image-url')].map(i => i.value.trim()).filter(Boolean);
+                arr.push({ name: row.querySelector('.ed-name').value.trim(), images, notes: row.querySelector('.ed-notes').value.trim() });
             });
-
-            row.innerHTML = `
-                <span class="drag-handle" title="اسحب للترتيب">☰</span>
-                <div class="row-inputs">
-                    <input type="text" class="ed-name" placeholder="اسم دار النشر أو المحقق أو الطبعة *" value="${name}" required>
-                    <div class="images-container">
-                        <span class="images-container-title">🖼️ روابط صور الطبعة (متعددة):</span>
-                        <div class="images-list">${imagesHTML}</div>
-                        <button type="button" class="btn-add-img" onclick="addImageInputToEdition(this)">+ إضافة صورة أخرى للطبعة</button>
-                    </div>
-                    <input type="text" class="ed-notes" placeholder="ملاحظات خاصة بهذه الطبعة بالتحديد (تظهر كعلامة i في الموقع)..." value="${notes}">
-                </div>
-                <button type="button" class="btn-remove" onclick="this.parentElement.remove()" title="حذف الطبعة بالكامل">X</button>
-            `;
-            container.appendChild(row);
-        }
-
-        function addLinkRow(containerId, title = '', url = '') {
-            const container = document.getElementById(containerId);
-            const row = document.createElement('div');
-            row.className = 'dynamic-row';
-            row.innerHTML = `
-                <span class="drag-handle" title="اسحب للترتيب">☰</span>
-                <div class="row-inputs" style="flex-direction: row; gap: 10px;">
-                    <input type="text" class="link-title" placeholder="عنوان الرابط (مثال: تصفح عبر الشاملة)" value="${title}" required style="flex:1;">
-                    <input type="text" class="link-url" placeholder="الرابط الكامل (URL)..." value="${url}" required style="flex:2; direction: ltr;">
-                </div>
-                <button type="button" class="btn-remove" onclick="this.parentElement.remove()">X</button>
-            `;
-            container.appendChild(row);
-        }
-
-        function createNewBook() {
-            document.getElementById('formContainer').style.display = 'block';
-            document.getElementById('formTitle').innerText = 'إضافة كتاب جديد للقائمة';
-            document.getElementById('bookForm').reset();
-            document.getElementById('bookId').value = '';
-            document.getElementById('notes').value = '';
-            document.getElementById('duplicateWarning').style.display = 'none';
-            
-            document.querySelectorAll('.sidebar-list li').forEach(li => li.classList.remove('active'));
-
-            document.getElementById('bestEditions').innerHTML = '';
-            document.getElementById('altEditions').innerHTML = '';
-            document.getElementById('links').innerHTML = '';
-            
-            addEditionRow('bestEditions');
-        }
-
-        function loadBookIntoForm(id, liElement) {
-            document.querySelectorAll('.sidebar-list li').forEach(li => li.classList.remove('active'));
-            if(liElement) liElement.classList.add('active');
-
-            const book = booksData.find(b => b.id === id);
-            if (!book) return;
-
-            document.getElementById('formContainer').style.display = 'block';
-            document.getElementById('formTitle').innerText = `تعديل تفاصيل: ${book.title}`;
-            document.getElementById('duplicateWarning').style.display = 'none';
-            
-            document.getElementById('bookId').value = book.id;
-            document.getElementById('title').value = book.title || '';
-            document.getElementById('author').value = book.author || '';
-            document.getElementById('category').value = book.category || '';
-            document.getElementById('notes').value = book.notes || '';
-
-            const loadEditions = (containerId, editions) => {
-                const container = document.getElementById(containerId);
-                container.innerHTML = '';
-                if(editions) {
-                    editions.forEach(ed => {
-                        let imgs = ed.images ? ed.images : (ed.image ? ed.image : []);
-                        addEditionRow(containerId, ed.name, imgs, ed.notes || '');
-                    });
-                }
-            };
-
-            loadEditions('bestEditions', book.best_editions);
-            loadEditions('altEditions', book.alt_editions);
-
-            const linksContainer = document.getElementById('links');
-            linksContainer.innerHTML = '';
-            if(book.links) book.links.forEach(link => addLinkRow('links', link.title, link.url));
-        }
-
-        function saveBook(e) {
-            e.preventDefault();
-
-            let id = document.getElementById('bookId').value;
-            id = id ? parseInt(id) : (booksData.length > 0 ? Math.max(...booksData.map(b => b.id)) + 1 : 1);
-
-            const newBook = {
-                id: id,
-                title: document.getElementById('title').value.trim(),
-                author: document.getElementById('author').value.trim(),
-                category: document.getElementById('category').value.trim(),
-                notes: document.getElementById('notes').value.trim(),
-                best_editions: [],
-                alt_editions: [],
-                links: []
-            };
-
-            const collectEditions = (containerId, targetArray) => {
-                document.querySelectorAll(`#${containerId} .dynamic-row`).forEach(row => {
-                    let imagesArray = [];
-                    row.querySelectorAll('.ed-image-url').forEach(input => {
-                        let url = input.value.trim();
-                        if (url !== '') imagesArray.push(url);
-                    });
-                    
-                    targetArray.push({ 
-                        name: row.querySelector('.ed-name').value.trim(), 
-                        images: imagesArray,
-                        notes: row.querySelector('.ed-notes').value.trim()
-                    });
-                });
-            };
-
-            collectEditions('bestEditions', newBook.best_editions);
-            collectEditions('altEditions', newBook.alt_editions);
-
-            document.querySelectorAll('#links .dynamic-row').forEach(row => {
-                newBook.links.push({ 
-                    title: row.querySelector('.link-title').value.trim(), 
-                    url: row.querySelector('.link-url').value.trim() 
-                });
-            });
-
-            const existingIndex = booksData.findIndex(b => b.id === id);
-            if (existingIndex >= 0) {
-                booksData[existingIndex] = newBook;
-            } else {
-                booksData.push(newBook);
-            }
-
-            const currentSearch = document.getElementById('adminSearchInput').value;
-            renderSidebar(currentSearch);
-            
-            document.getElementById('bookId').value = id;
-            showToast("💾 تم حفظ الكتاب في الذاكرة المحلية بنجاح! لا تنس المزامنة مع GitHub لتطبيق التغييرات.");
-        }
-
-        function getJSONString() { return JSON.stringify(booksData, null, 2); }
-        
-        function copyJSON() {
-            navigator.clipboard.writeText(getJSONString()).then(() => showToast("📋 تم نسخ النص البرمجي بالكامل للذاكرة."));
-        }
-
-        function downloadJSON() {
-            const blob = new Blob([getJSONString()], { type: "application/json" });
-            const url = URL.createObjectURL(blob);
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = "books.json";
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
-            URL.revokeObjectURL(url);
-            showToast("💾 تم تحميل الملف لجهازك بنجاح.");
-        }
-
-        function utf8_to_b64(str) { return window.btoa(unescape(encodeURIComponent(str))); }
-
-        async function syncToGitHub() {
-            const token = document.getElementById('githubToken').value.trim();
-            if (!token) {
-                showToast("⚠️ يرجى إدخال رمز التحقق الخاص بك (Token) من حساب GitHub أولاً!");
-                return;
-            }
-
-            localStorage.setItem('github_token_secured', token);
-
-            const owner = 'arabic-app';
-            const repo = 'tabaat';
-            const path = 'books.json';
-            const apiUrl = `https://api.github.com/repos/${owner}/${repo}/contents/${path}`;
-
-            showToast("⏳ جاري إنشاء اتصال آمن بـ GitHub وفحص الملف الحالي...");
-
-            try {
-                let sha = '';
-                const getRes = await fetch(apiUrl, { headers: { 'Authorization': `token ${token}` } });
-                
-                if (getRes.ok) {
-                    const fileData = await getRes.json();
-                    sha = fileData.sha;
-                }
-
-                const base64Content = utf8_to_b64(getJSONString());
-
-                const putRes = await fetch(apiUrl, {
-                    method: 'PUT',
-                    headers: { 'Authorization': `token ${token}`, 'Content-Type': 'application/json' },
-                    body: JSON.stringify({
-                        message: 'تحديث قاعدة البيانات البرمجية تلقائياً عبر لوحة الإدارة المتقدمة',
-                        content: base64Content,
-                        sha: sha
-                    })
-                });
-
-                if (putRes.ok) {
-                    showToast("🚀 ممتاز! تم التحديث والرفع التلقائي لـ GitHub بنجاح تام. ستظهر التعديلات للزوار في غضون دقيقتين.");
-                } else {
-                    const err = await putRes.json();
-                    showToast("❌ فشل التحديث بسبب خطأ من GitHub: " + err.message);
-                }
-            } catch (error) {
-                showToast("❌ خطأ: تعذر الاتصال بخوادم GitHub. تأكد من جودة الإنترنت وصحة الـ Token.");
-                console.error(error);
-            }
-        }
-
-        window.addEventListener('DOMContentLoaded', () => {
-            const savedToken = localStorage.getItem('github_token_secured');
-            if (savedToken) document.getElementById('githubToken').value = savedToken;
+        };
+        collectEditions('bestEditions', newBook.best_editions);
+        collectEditions('altEditions', newBook.alt_editions);
+        document.querySelectorAll('#links .dynamic-row').forEach(row => {
+            newBook.links.push({ title: row.querySelector('.link-title').value.trim(), url: row.querySelector('.link-url').value.trim() });
         });
 
-        function showToast(msg) {
-            const toast = document.getElementById('toast');
-            toast.innerText = msg;
-            toast.style.display = 'block';
-            setTimeout(() => toast.style.display = 'none', 4000);
+        const idx = booksData.findIndex(b => b.id === id);
+        if (idx >= 0) booksData[idx] = newBook; else booksData.push(newBook);
+
+        document.getElementById('bookId').value = id;
+        renderSidebar(document.getElementById('adminSearchInput').value);
+        showToast('💾 تم الحفظ في الذاكرة. لا تنسَ المزامنة مع GitHub!');
+    }
+
+    /* ---- EXPORT ---- */
+    const getJSONString = () => JSON.stringify(booksData, null, 2);
+
+    function copyJSON() {
+        navigator.clipboard.writeText(getJSONString()).then(() => showToast('📋 تم نسخ JSON إلى الحافظة.'));
+    }
+    function downloadJSON() {
+        const a = Object.assign(document.createElement('a'), {
+            href: URL.createObjectURL(new Blob([getJSONString()], { type: 'application/json' })),
+            download: 'books.json'
+        });
+        document.body.appendChild(a); a.click(); document.body.removeChild(a);
+        showToast('💾 تم تحميل books.json بنجاح.');
+    }
+
+    function utf8_to_b64(str) { return btoa(unescape(encodeURIComponent(str))); }
+
+    async function syncToGitHub() {
+        const token = document.getElementById('githubToken').value.trim();
+        if (!token) { showToast('⚠️ يرجى إدخال رمز GitHub Token أولاً!'); return; }
+        localStorage.setItem('github_token_secured', token);
+
+        const owner = 'arabic-app', repo = 'tabaat', path = 'books.json';
+        const apiUrl = `https://api.github.com/repos/${owner}/${repo}/contents/${path}`;
+        showToast('⏳ جاري الاتصال بـ GitHub...');
+
+        try {
+            let sha = '';
+            const getRes = await fetch(apiUrl, { headers: { Authorization: `token ${token}` } });
+            if (getRes.ok) sha = (await getRes.json()).sha;
+
+            const putRes = await fetch(apiUrl, {
+                method: 'PUT',
+                headers: { Authorization: `token ${token}`, 'Content-Type': 'application/json' },
+                body: JSON.stringify({ message: 'تحديث قاعدة البيانات عبر لوحة الإدارة', content: utf8_to_b64(getJSONString()), sha })
+            });
+
+            if (putRes.ok) showToast('🚀 تم الرفع إلى GitHub بنجاح! ستظهر التغييرات خلال دقيقتين.');
+            else { const err = await putRes.json(); showToast('❌ فشل: ' + err.message); }
+        } catch (err) {
+            showToast('❌ خطأ في الاتصال. تحقق من الإنترنت والـ Token.');
         }
-    </script>
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+        const saved = localStorage.getItem('github_token_secured');
+        if (saved) document.getElementById('githubToken').value = saved;
+    });
+
+    /* ---- TOAST ---- */
+    let toastTimer;
+    function showToast(msg) {
+        const t = document.getElementById('toast');
+        t.textContent = msg;
+        t.style.display = 'block';
+        clearTimeout(toastTimer);
+        toastTimer = setTimeout(() => t.style.display = 'none', 4500);
+    }
+</script>
 </body>
 </html>
