@@ -2681,5 +2681,37 @@
     ],
     "alt_editions": [],
     "links": []
+  },
+  {
+    "id": 134,
+    "title": "المتنبي",
+    "author": "محمود شاكر",
+    "category": "اللغة والأدب",
+    "notes": "",
+    "best_editions": [
+      {
+        "name": "الخانجي",
+        "images": [],
+        "notes": ""
+      }
+    ],
+    "alt_editions": [],
+    "links": []
+  },
+  {
+    "id": 135,
+    "title": "جمهرة مقالات الأستاذ محمود شاكر",
+    "author": "محمود شاكر",
+    "category": "اللغة والأدب",
+    "notes": "",
+    "best_editions": [
+      {
+        "name": "ت عادل جمال ط الخانجي",
+        "images": [],
+        "notes": ""
+      }
+    ],
+    "alt_editions": [],
+    "links": []
   }
 ]
