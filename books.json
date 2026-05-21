@@ -2497,5 +2497,37 @@
     ],
     "alt_editions": [],
     "links": []
+  },
+  {
+    "id": 124,
+    "title": "جمهرة خطب العرب",
+    "author": "أحمد زكي صفوت",
+    "category": "اللغة والأدب",
+    "notes": "",
+    "best_editions": [
+      {
+        "name": "ط المكتبة العلمية ببيروت",
+        "images": [],
+        "notes": ""
+      }
+    ],
+    "alt_editions": [],
+    "links": []
+  },
+  {
+    "id": 125,
+    "title": "جمهرة رسائل العرب",
+    "author": "أحمد زكي صفوت",
+    "category": "اللغة و الأدب",
+    "notes": "",
+    "best_editions": [
+      {
+        "name": "ط المكتبة العلمية ببيروت",
+        "images": [],
+        "notes": ""
+      }
+    ],
+    "alt_editions": [],
+    "links": []
   }
 ]
