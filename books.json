@@ -2617,5 +2617,53 @@
     ],
     "alt_editions": [],
     "links": []
+  },
+  {
+    "id": 130,
+    "title": "كليلة ودمنة",
+    "author": "ابن المقفع",
+    "category": "اللغة والأدب",
+    "notes": "",
+    "best_editions": [
+      {
+        "name": "ت عبد الوهاب عزام ط الشروق أو المعارف",
+        "images": [],
+        "notes": ""
+      }
+    ],
+    "alt_editions": [],
+    "links": []
+  },
+  {
+    "id": 131,
+    "title": "الدرة اليتيمة (الأدب الكبير)",
+    "author": "ابن المقفع",
+    "category": "اللغة والأدب",
+    "notes": "",
+    "best_editions": [
+      {
+        "name": "ت عماد الدين دولة ط القلم",
+        "images": [],
+        "notes": ""
+      }
+    ],
+    "alt_editions": [],
+    "links": []
+  },
+  {
+    "id": 132,
+    "title": "الأدب الصغير",
+    "author": "ابن المقفع",
+    "category": "اللغة والأدب",
+    "notes": "",
+    "best_editions": [
+      {
+        "name": "ت عماد الدين دولة ط القلم",
+        "images": [],
+        "notes": ""
+      }
+    ],
+    "alt_editions": [],
+    "links": []
   }
 ]
