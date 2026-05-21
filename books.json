@@ -834,23 +834,26 @@
     "title": "الأذكار المنتخبة من كلام سيد الأبرار",
     "author": "يحيى بن شرف النووي",
     "category": "الحديث (متون)",
+    "notes": "",
     "best_editions": [
       {
         "name": "دار ابن الجوزي (ابن خزيمة)",
-        "image": ""
+        "images": [],
+        "notes": ""
       },
       {
         "name": "دار البشائر",
-        "image": ""
+        "images": [],
+        "notes": ""
       },
       {
         "name": "دار المنهاج",
-        "image": ""
+        "images": [],
+        "notes": "ينتبه للتعليقات"
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "notes": ""
+    "links": []
   },
   {
     "id": 37,
