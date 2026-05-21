@@ -7,7 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
     <style>
-        :root { --primary: #2c3e50; --secondary: #27ae60; --danger: #e74c3c; --bg: #f4f6f7; --border: #ddd; }
+        :root { --primary: #2c3e50; --secondary: #27ae60; --danger: #e74c3c; --bg: #f4f6f7; --border: #ddd; --warning: #f39c12; }
         body { font-family: 'Cairo', sans-serif; margin: 0; background: var(--bg); color: #333; display: flex; height: 100vh; overflow: hidden; }
         
         .sidebar { width: 300px; background: white; border-left: 1px solid var(--border); display: flex; flex-direction: column; }
@@ -23,10 +23,15 @@
         h2 { color: var(--primary); margin-top: 0; border-bottom: 2px solid var(--border); padding-bottom: 10px; }
         h3 { color: #d35400; font-size: 1.1rem; margin-top: 20px; border-bottom: 1px dashed var(--border); padding-bottom: 5px; }
         
-        .form-group { margin-bottom: 15px; }
+        .form-group { margin-bottom: 15px; position: relative; }
         .form-group label { display: block; margin-bottom: 5px; font-weight: 600; }
         .form-group input, .form-group textarea { width: 100%; padding: 10px; border: 1px solid var(--border); border-radius: 4px; font-family: inherit; box-sizing: border-box; }
         
+        /* تنبيه التكرار */
+        .duplicate-warning { display: none; background-color: #f8d7da; color: #721c24; padding: 10px 15px; border-radius: 5px; margin-top: 10px; border: 1px solid #f5c6cb; align-items: center; justify-content: space-between; }
+        .btn-edit-duplicate { background: #dc3545; color: white; border: none; padding: 6px 12px; border-radius: 4px; cursor: pointer; font-family: inherit; font-weight: bold; transition: 0.2s; }
+        .btn-edit-duplicate:hover { background: #c82333; }
+
         .dynamic-row { display: flex; gap: 10px; margin-bottom: 10px; align-items: center; background: #f9f9f9; padding: 15px; border-radius: 5px; border: 1px solid #eee; transition: background 0.3s; }
         .dynamic-row.sortable-ghost { opacity: 0.4; background: #e8f4f8; border: 1px dashed var(--primary); }
         .row-inputs { flex: 1; display: flex; flex-direction: column; gap: 8px; }
@@ -70,8 +75,15 @@
                 
                 <div class="form-group">
                     <label>عنوان الكتاب *</label>
-                    <input type="text" id="title" required>
+                    <input type="text" id="title" required autocomplete="off">
+                    
+                    <!-- رسالة التنبيه بالتكرار -->
+                    <div id="duplicateWarning" class="duplicate-warning">
+                        <span>⚠️ هذا الكتاب مسجل مسبقاً في قاعدة البيانات!</span>
+                        <button type="button" class="btn-edit-duplicate" id="btnEditDuplicate">فتحه للتعديل</button>
+                    </div>
                 </div>
+
                 <div class="form-group">
                     <label>المؤلف *</label>
                     <input type="text" id="author" required>
@@ -132,12 +144,41 @@
             });
         }
 
-        // هنا التعديل: نستقبل مصفوفة صور ونحولها لنص مفصول بفاصلة لعرضها في حقل الإدخال
+        // === دالة التحقق من التكرار عند الانتهاء من كتابة العنوان ===
+        document.getElementById('title').addEventListener('blur', function() {
+            const enteredTitle = this.value.trim();
+            const currentBookId = document.getElementById('bookId').value;
+            const warningDiv = document.getElementById('duplicateWarning');
+            
+            // التحقق فقط إذا كنا نضيف كتاباً جديداً (لا يوجد معرف) وتم إدخال نص
+            if (!currentBookId && enteredTitle !== '') {
+                // البحث عن تطابق تام أو شبه تام (تجاهل المسافات)
+                const duplicateBook = booksData.find(b => b.title.trim() === enteredTitle);
+                
+                if (duplicateBook) {
+                    warningDiv.style.display = 'flex';
+                    // برمجة الزر لفتح الكتاب القديم
+                    document.getElementById('btnEditDuplicate').onclick = function() {
+                        warningDiv.style.display = 'none';
+                        // البحث عن عنصر القائمة الجانبية لتحديده
+                        let targetLi = null;
+                        document.querySelectorAll('.sidebar-list li').forEach(li => {
+                            if (li.innerText === duplicateBook.title) targetLi = li;
+                        });
+                        loadBookIntoForm(duplicateBook.id, targetLi);
+                    };
+                } else {
+                    warningDiv.style.display = 'none';
+                }
+            } else {
+                warningDiv.style.display = 'none';
+            }
+        });
+
         function addEditionRow(containerId, name = '', imagesArray = [], notes = '') {
             const container = document.getElementById(containerId);
             const row = document.createElement('div');
             
-            // تحويل المصفوفة إلى نص (إذا كانت نصاً قديماً نضعه كما هو)
             let imagesStr = Array.isArray(imagesArray) ? imagesArray.join(',') : imagesArray;
 
             row.className = 'dynamic-row';
@@ -146,7 +187,7 @@
                 <div class="row-inputs">
                     <div class="row-inputs-top">
                         <input type="text" class="ed-name" placeholder="اسم الطبعة *" value="${name}" required style="flex: 2;">
-                        <input type="text" class="ed-image" placeholder="روابط الصور (افصل بينها بفاصلة ,)" value="${imagesStr}" style="flex: 1;" title="إذا كان هناك أكثر من صورة، افصل بين الروابط بفاصلة">
+                        <input type="text" class="ed-image" placeholder="روابط الصور (افصل بينها بفاصلة ,)" value="${imagesStr}" style="flex: 1;">
                     </div>
                     <input type="text" class="ed-notes" placeholder="ملاحظات خاصة بهذه الطبعة (اختياري)" value="${notes}">
                 </div>
@@ -176,7 +217,11 @@
             document.getElementById('bookForm').reset();
             document.getElementById('bookId').value = '';
             document.getElementById('notes').value = '';
+            document.getElementById('duplicateWarning').style.display = 'none'; // إخفاء التنبيه
             
+            // إزالة التحديد من القائمة الجانبية
+            document.querySelectorAll('.sidebar-list li').forEach(li => li.classList.remove('active'));
+
             document.getElementById('bestEditions').innerHTML = '';
             document.getElementById('altEditions').innerHTML = '';
             document.getElementById('links').innerHTML = '';
@@ -193,6 +238,7 @@
 
             document.getElementById('formContainer').style.display = 'block';
             document.getElementById('formTitle').innerText = `تعديل: ${book.title}`;
+            document.getElementById('duplicateWarning').style.display = 'none'; // إخفاء التنبيه عند التعديل
             
             document.getElementById('bookId').value = book.id;
             document.getElementById('title').value = book.title;
@@ -205,7 +251,6 @@
                 container.innerHTML = '';
                 if(editions) {
                     editions.forEach(ed => {
-                        // التوافق مع البيانات القديمة (image) والجديدة (images)
                         let imgs = ed.images ? ed.images : (ed.image ? ed.image : []);
                         addEditionRow(containerId, ed.name, imgs, ed.notes || '');
                     });
@@ -237,7 +282,6 @@
                 links: []
             };
 
-            // دالة مساعدة لجمع الطبعات وتحويل النص المفصول بفاصلة إلى مصفوفة (Array)
             const collectEditions = (containerId, targetArray) => {
                 document.querySelectorAll(`#${containerId} .dynamic-row`).forEach(row => {
                     let imagesInput = row.querySelector('.ed-image').value.trim();
@@ -245,7 +289,7 @@
                     
                     targetArray.push({ 
                         name: row.querySelector('.ed-name').value, 
-                        images: imagesArray,  // نستخدم المصفوفة الآن
+                        images: imagesArray,
                         notes: row.querySelector('.ed-notes').value
                     });
                 });
