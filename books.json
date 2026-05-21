@@ -1573,28 +1573,37 @@
     "title": "الآداب الشرعية والمنح المرعية",
     "author": "محمد بن مفلح المقدسي",
     "category": "كتب متنوعة",
+    "notes": "",
     "best_editions": [
       {
-        "name": "دار الفتح",
-        "image": ""
+        "name": "دار ركائز",
+        "images": [],
+        "notes": ""
       },
       {
-        "name": "دار الوفاء",
-        "image": ""
+        "name": "دار الفتح",
+        "images": [],
+        "notes": ""
+      },
+      {
+        "name": "الوفاء",
+        "images": [],
+        "notes": ""
       },
       {
         "name": "الرسالة",
-        "image": ""
+        "images": [],
+        "notes": ""
       }
     ],
     "alt_editions": [
       {
         "name": "دار الوفاء مصر",
-        "image": ""
+        "images": [],
+        "notes": ""
       }
     ],
-    "links": [],
-    "notes": ""
+    "links": []
   },
   {
     "id": 72,
