@@ -1370,15 +1370,22 @@
     "title": "مجموعة رسائل ابن رجب",
     "author": "عبد الرحمن بن أحمد بن رجب الحنبلي",
     "category": "مجاميع",
+    "notes": "",
     "best_editions": [
       {
         "name": "دار اللباب",
-        "image": ""
+        "images": [],
+        "notes": ""
       }
     ],
-    "alt_editions": [],
-    "links": [],
-    "notes": ""
+    "alt_editions": [
+      {
+        "name": "دار الفاروق",
+        "images": [],
+        "notes": ""
+      }
+    ],
+    "links": []
   },
   {
     "id": 61,
