@@ -32,15 +32,22 @@
         .btn-edit-duplicate { background: #dc3545; color: white; border: none; padding: 6px 12px; border-radius: 4px; cursor: pointer; font-family: inherit; font-weight: bold; transition: 0.2s; }
         .btn-edit-duplicate:hover { background: #c82333; }
 
-        .dynamic-row { display: flex; gap: 10px; margin-bottom: 10px; align-items: center; background: #f9f9f9; padding: 15px; border-radius: 5px; border: 1px solid #eee; transition: background 0.3s; }
+        /* تصميم صفوف الطبعات */
+        .dynamic-row { display: flex; gap: 15px; margin-bottom: 15px; align-items: flex-start; background: #f9f9f9; padding: 15px; border-radius: 5px; border: 1px solid #eee; transition: background 0.3s; }
         .dynamic-row.sortable-ghost { opacity: 0.4; background: #e8f4f8; border: 1px dashed var(--primary); }
-        .row-inputs { flex: 1; display: flex; flex-direction: column; gap: 8px; }
-        .row-inputs-top { display: flex; gap: 8px; }
+        .row-inputs { flex: 1; display: flex; flex-direction: column; gap: 10px; }
         .row-inputs input { width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px; font-family: inherit; box-sizing: border-box;}
         
-        .drag-handle { cursor: grab; color: #888; font-size: 1.5rem; padding: 0 10px; user-select: none; }
+        /* تصميم حقول الصور المتعددة */
+        .images-container { background: #fff; padding: 12px; border: 1px dashed #bbb; border-radius: 5px; }
+        .images-container-title { font-size: 0.9rem; font-weight: 600; color: #555; margin-bottom: 8px; display: block; }
+        .image-input-group { display: flex; gap: 8px; margin-bottom: 8px; }
+        .btn-remove-img { background: #e74c3c; color: white; border: none; padding: 0 12px; cursor: pointer; border-radius: 4px; font-size: 1.2rem; font-weight: bold; }
+        .btn-add-img { background: #34495e; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-family: inherit; font-size: 0.85rem; margin-top: 5px; }
+
+        .drag-handle { cursor: grab; color: #888; font-size: 1.5rem; padding: 0 5px; user-select: none; margin-top: 5px; }
         .drag-handle:active { cursor: grabbing; }
-        .btn-remove { background: var(--danger); color: white; border: none; padding: 10px 15px; cursor: pointer; border-radius: 4px; height: fit-content;}
+        .btn-remove { background: var(--danger); color: white; border: none; padding: 10px 15px; cursor: pointer; border-radius: 4px; height: fit-content; margin-top: 5px;}
         .btn-add-row { background: #3498db; color: white; border: none; padding: 8px 15px; cursor: pointer; border-radius: 4px; font-family: inherit; font-size: 0.9rem; margin-bottom: 10px; }
 
         .form-actions { margin-top: 30px; display: flex; gap: 10px; justify-content: flex-end; border-top: 2px solid var(--border); padding-top: 20px; }
@@ -76,8 +83,6 @@
                 <div class="form-group">
                     <label>عنوان الكتاب *</label>
                     <input type="text" id="title" required autocomplete="off">
-                    
-                    <!-- رسالة التنبيه بالتكرار -->
                     <div id="duplicateWarning" class="duplicate-warning">
                         <span>⚠️ هذا الكتاب مسجل مسبقاً في قاعدة البيانات!</span>
                         <button type="button" class="btn-edit-duplicate" id="btnEditDuplicate">فتحه للتعديل</button>
@@ -144,23 +149,18 @@
             });
         }
 
-        // === دالة التحقق من التكرار عند الانتهاء من كتابة العنوان ===
+        // التحقق من التكرار
         document.getElementById('title').addEventListener('blur', function() {
             const enteredTitle = this.value.trim();
             const currentBookId = document.getElementById('bookId').value;
             const warningDiv = document.getElementById('duplicateWarning');
             
-            // التحقق فقط إذا كنا نضيف كتاباً جديداً (لا يوجد معرف) وتم إدخال نص
             if (!currentBookId && enteredTitle !== '') {
-                // البحث عن تطابق تام أو شبه تام (تجاهل المسافات)
                 const duplicateBook = booksData.find(b => b.title.trim() === enteredTitle);
-                
                 if (duplicateBook) {
                     warningDiv.style.display = 'flex';
-                    // برمجة الزر لفتح الكتاب القديم
                     document.getElementById('btnEditDuplicate').onclick = function() {
                         warningDiv.style.display = 'none';
-                        // البحث عن عنصر القائمة الجانبية لتحديده
                         let targetLi = null;
                         document.querySelectorAll('.sidebar-list li').forEach(li => {
                             if (li.innerText === duplicateBook.title) targetLi = li;
@@ -175,23 +175,55 @@
             }
         });
 
+        // دالة إضافة حقل صورة واحد داخل الطبعة
+        window.addImageInputToEdition = function(buttonElement) {
+            const listContainer = buttonElement.previousElementSibling;
+            const div = document.createElement('div');
+            div.className = 'image-input-group';
+            div.innerHTML = `
+                <input type="text" class="ed-image-url" placeholder="رابط الصورة">
+                <button type="button" class="btn-remove-img" onclick="this.parentElement.remove()" title="حذف هذه الصورة">-</button>
+            `;
+            listContainer.appendChild(div);
+        };
+
+        // دالة إضافة طبعة كاملة
         function addEditionRow(containerId, name = '', imagesArray = [], notes = '') {
             const container = document.getElementById(containerId);
             const row = document.createElement('div');
-            
-            let imagesStr = Array.isArray(imagesArray) ? imagesArray.join(',') : imagesArray;
-
             row.className = 'dynamic-row';
+            
+            // تحضير حقول الصور بناءً على المصفوفة
+            let imagesHTML = '';
+            let imagesToLoad = Array.isArray(imagesArray) ? imagesArray : (imagesArray ? [imagesArray] : []);
+            if (imagesToLoad.length === 0) imagesToLoad = ['']; // حقل فارغ افتراضي إذا لم تكن هناك صور
+
+            imagesToLoad.forEach(img => {
+                imagesHTML += `
+                    <div class="image-input-group">
+                        <input type="text" class="ed-image-url" placeholder="رابط الصورة" value="${img}">
+                        <button type="button" class="btn-remove-img" onclick="this.parentElement.remove()" title="حذف هذه الصورة">-</button>
+                    </div>
+                `;
+            });
+
             row.innerHTML = `
                 <span class="drag-handle" title="اسحب للترتيب">☰</span>
                 <div class="row-inputs">
-                    <div class="row-inputs-top">
-                        <input type="text" class="ed-name" placeholder="اسم الطبعة *" value="${name}" required style="flex: 2;">
-                        <input type="text" class="ed-image" placeholder="روابط الصور (افصل بينها بفاصلة ,)" value="${imagesStr}" style="flex: 1;">
+                    <input type="text" class="ed-name" placeholder="اسم الطبعة *" value="${name}" required>
+                    
+                    <!-- حاوية الصور الديناميكية -->
+                    <div class="images-container">
+                        <span class="images-container-title">🖼️ صور الطبعة:</span>
+                        <div class="images-list">
+                            ${imagesHTML}
+                        </div>
+                        <button type="button" class="btn-add-img" onclick="addImageInputToEdition(this)">+ إضافة صورة أخرى</button>
                     </div>
+
                     <input type="text" class="ed-notes" placeholder="ملاحظات خاصة بهذه الطبعة (اختياري)" value="${notes}">
                 </div>
-                <button type="button" class="btn-remove" onclick="this.parentElement.remove()">X</button>
+                <button type="button" class="btn-remove" onclick="this.parentElement.remove()" title="حذف الطبعة بالكامل">X</button>
             `;
             container.appendChild(row);
         }
@@ -202,7 +234,7 @@
             row.className = 'dynamic-row';
             row.innerHTML = `
                 <span class="drag-handle" title="اسحب للترتيب">☰</span>
-                <div class="row-inputs row-inputs-top">
+                <div class="row-inputs" style="flex-direction: row;">
                     <input type="text" class="link-title" placeholder="عنوان الرابط" value="${title}" required>
                     <input type="text" class="link-url" placeholder="الرابط (URL)" value="${url}" required>
                 </div>
@@ -217,9 +249,8 @@
             document.getElementById('bookForm').reset();
             document.getElementById('bookId').value = '';
             document.getElementById('notes').value = '';
-            document.getElementById('duplicateWarning').style.display = 'none'; // إخفاء التنبيه
+            document.getElementById('duplicateWarning').style.display = 'none';
             
-            // إزالة التحديد من القائمة الجانبية
             document.querySelectorAll('.sidebar-list li').forEach(li => li.classList.remove('active'));
 
             document.getElementById('bestEditions').innerHTML = '';
@@ -238,7 +269,7 @@
 
             document.getElementById('formContainer').style.display = 'block';
             document.getElementById('formTitle').innerText = `تعديل: ${book.title}`;
-            document.getElementById('duplicateWarning').style.display = 'none'; // إخفاء التنبيه عند التعديل
+            document.getElementById('duplicateWarning').style.display = 'none';
             
             document.getElementById('bookId').value = book.id;
             document.getElementById('title').value = book.title;
@@ -284,8 +315,12 @@
 
             const collectEditions = (containerId, targetArray) => {
                 document.querySelectorAll(`#${containerId} .dynamic-row`).forEach(row => {
-                    let imagesInput = row.querySelector('.ed-image').value.trim();
-                    let imagesArray = imagesInput ? imagesInput.split(',').map(url => url.trim()).filter(url => url !== '') : [];
+                    // تجميع كل الروابط من حقول الصور المتعددة
+                    let imagesArray = [];
+                    row.querySelectorAll('.ed-image-url').forEach(input => {
+                        let url = input.value.trim();
+                        if (url !== '') imagesArray.push(url);
+                    });
                     
                     targetArray.push({ 
                         name: row.querySelector('.ed-name').value, 
