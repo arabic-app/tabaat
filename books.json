@@ -2426,5 +2426,37 @@
     ],
     "alt_editions": [],
     "links": []
+  },
+  {
+    "id": 120,
+    "title": "المذيل على الروضتين",
+    "author": "عبد الرحمن المقدسي أبو شامة",
+    "category": "التاريخ",
+    "notes": "",
+    "best_editions": [
+      {
+        "name": "ت إبراهيم الزيبق ط الرسالة",
+        "images": [],
+        "notes": ""
+      }
+    ],
+    "alt_editions": [],
+    "links": []
+  },
+  {
+    "id": 121,
+    "title": "مختصر كتاب الروضتين",
+    "author": "محمد بن حسن الشريف",
+    "category": "التاريخ",
+    "notes": "",
+    "best_editions": [
+      {
+        "name": "ط ابن كثير",
+        "images": [],
+        "notes": ""
+      }
+    ],
+    "alt_editions": [],
+    "links": []
   }
 ]
