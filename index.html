@@ -5,50 +5,107 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>دليل طبعات الكتب الإسلامية</title>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
     <style>
-        :root { --primary-color: #2c3e50; --secondary-color: #27ae60; --bg-color: #f8f9fa; }
-        body { font-family: 'Cairo', sans-serif; background-color: var(--bg-color); margin: 0; padding: 0; color: #333; }
-        header { background-color: var(--primary-color); color: white; text-align: center; padding: 2rem 1rem; }
-        .container { max-width: 1000px; margin: 2rem auto; padding: 0 1rem; }
-        .search-box { width: 100%; padding: 15px; font-size: 1.1rem; border: 2px solid #ddd; border-radius: 8px; margin-bottom: 2rem; font-family: inherit; box-sizing: border-box; }
-        .search-box:focus { border-color: var(--secondary-color); outline: none; }
-        .book-card { background: white; border-radius: 10px; padding: 1.5rem; margin-bottom: 1.5rem; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border-right: 5px solid var(--secondary-color); }
-        .book-title { font-size: 1.5rem; color: var(--primary-color); margin: 0 0 10px 0; }
-        .book-meta { color: #666; margin-bottom: 15px; font-size: 0.95rem; }
-        .section-title { font-weight: 600; margin-top: 15px; color: #d35400; }
-        ul { list-style-type: none; padding: 0; margin: 5px 0; }
-        
-        li { margin-bottom: 8px; padding: 8px 12px; background: #f1f2f6; border-radius: 5px; }
-        .edition-item { display: flex; justify-content: space-between; align-items: center; }
-        .edition-name { font-weight: 600; color: #2c3e50; }
-        .edition-actions { display: flex; gap: 8px; }
-        .icon-btn { cursor: pointer; background: #dfe6e9; border: none; padding: 5px 10px; border-radius: 5px; font-size: 1.1rem; transition: 0.2s; }
-        .icon-btn:hover { background: #b2bec3; }
-        
-        a { color: var(--secondary-color); text-decoration: none; }
-        a:hover { text-decoration: underline; }
-        .book-notes { background-color: #fff3cd; color: #856404; padding: 12px 15px; border-radius: 5px; margin-top: 15px; font-size: 0.95rem; border-right: 4px solid #ffeeba; }
+        /* ألوان وتغيرات Material Design 3 */
+        :root { 
+            --md-primary: #00695c; /* لون أخضر مزرق عميق */
+            --md-on-primary: #ffffff;
+            --md-primary-container: #80cbc4;
+            --md-on-primary-container: #00201a;
+            --md-background: #f4f6f8;
+            --md-surface: #ffffff;
+            --md-surface-variant: #e1e2e4;
+            --md-on-surface: #191c1b;
+            --md-on-surface-variant: #404947;
+            --md-outline: #707977;
+            --md-outline-variant: #bfc9c6;
+            --md-secondary: #006b5f;
+            --md-elevation-1: 0px 1px 3px 1px rgba(0, 0, 0, 0.15), 0px 1px 2px 0px rgba(0, 0, 0, 0.30);
+            --md-elevation-2: 0px 2px 6px 2px rgba(0, 0, 0, 0.15), 0px 1px 2px 0px rgba(0, 0, 0, 0.30);
+        }
 
-        /* النافذة المنبثقة (Modal) والكاروسيل */
-        .modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.7); backdrop-filter: blur(3px); }
-        .modal-content { background-color: #fff; margin: 5vh auto; padding: 20px; border-radius: 10px; width: 90%; max-width: 600px; position: relative; box-shadow: 0 5px 15px rgba(0,0,0,0.3); text-align: center; }
-        .close-modal { position: absolute; top: 10px; left: 15px; font-size: 28px; font-weight: bold; color: #aaa; cursor: pointer; z-index: 10; }
-        .close-modal:hover { color: #333; }
-        #modalTitle { color: var(--primary-color); margin-top: 0; border-bottom: 1px solid #eee; padding-bottom: 10px; }
-        #modalBody p { font-size: 1.1rem; line-height: 1.6; color: #333; text-align: right; }
+        body { font-family: 'Cairo', sans-serif; background-color: var(--md-background); margin: 0; padding: 0; color: var(--md-on-surface); -webkit-font-smoothing: antialiased; }
         
-        /* تصميم الكاروسيل */
-        .carousel-container { position: relative; display: flex; justify-content: center; align-items: center; }
-        .carousel-img { max-width: 100%; max-height: 65vh; border-radius: 8px; object-fit: contain; }
-        .carousel-btn { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(44, 62, 80, 0.8); color: white; border: none; font-size: 20px; width: 40px; height: 40px; border-radius: 50%; cursor: pointer; transition: 0.3s; display: flex; align-items: center; justify-content: center;}
-        .carousel-btn:hover { background: rgba(44, 62, 80, 1); }
-        .carousel-btn.right { right: -15px; }
-        .carousel-btn.left { left: -15px; }
-        .carousel-dots { margin-top: 15px; font-weight: bold; color: #666; }
+        /* App Bar (الهيدر العلوي) */
+        header { background-color: var(--md-primary); color: var(--md-on-primary); padding: 24px 16px; box-shadow: var(--md-elevation-2); text-align: center; position: sticky; top: 0; z-index: 100; }
+        header h1 { margin: 0 0 8px 0; font-size: 1.75rem; font-weight: 800; letter-spacing: 0.5px; }
+        header p { margin: 0; font-size: 1rem; opacity: 0.9; }
+
+        .container { max-width: 900px; margin: 32px auto; padding: 0 16px; }
+
+        /* شريط البحث (Material Text Field) */
+        .search-wrapper { position: relative; margin-bottom: 32px; display: flex; align-items: center; background: var(--md-surface); border-radius: 28px; box-shadow: var(--md-elevation-1); transition: box-shadow 0.2s; }
+        .search-wrapper:focus-within { box-shadow: var(--md-elevation-2); outline: 2px solid var(--md-primary); }
+        .search-icon { position: absolute; right: 16px; color: var(--md-on-surface-variant); font-size: 28px; pointer-events: none; }
+        .search-box { width: 100%; padding: 16px 56px 16px 24px; font-size: 1.1rem; border: none; border-radius: 28px; font-family: inherit; background: transparent; color: var(--md-on-surface); }
+        .search-box:focus { outline: none; }
+
+        /* بطاقات الكتب (Material Cards) */
+        .md-card { background: var(--md-surface); border-radius: 16px; padding: 24px; margin-bottom: 24px; box-shadow: var(--md-elevation-1); transition: box-shadow 0.2s; border: 1px solid var(--md-outline-variant); }
+        .md-card:hover { box-shadow: var(--md-elevation-2); }
+        .book-title { font-size: 1.5rem; color: var(--md-primary); margin: 0 0 8px 0; font-weight: 800; }
+        .book-meta { color: var(--md-on-surface-variant); font-size: 0.95rem; margin-bottom: 20px; display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+        .meta-chip { background: var(--md-background); padding: 4px 12px; border-radius: 16px; border: 1px solid var(--md-outline-variant); font-weight: 600; display: inline-flex; align-items: center; gap: 6px; }
+        .meta-chip .material-icons-round { font-size: 1.1rem; color: var(--md-primary); }
+
+        .section-title { font-weight: 800; margin: 24px 0 12px 0; color: var(--md-secondary); display: flex; align-items: center; gap: 8px; font-size: 1.1rem; }
         
+        /* القوائم (Material Lists) */
+        ul { list-style: none; padding: 0; margin: 0; }
+        .md-list-item { display: flex; justify-content: space-between; align-items: center; padding: 12px 16px; margin-bottom: 8px; background: var(--md-background); border-radius: 12px; transition: background 0.2s; }
+        .md-list-item:hover { background: var(--md-surface-variant); }
+        
+        /* التجاوب في نصوص الطبعات */
+        .edition-name { font-weight: 600; font-size: 1rem; color: var(--md-on-surface); flex: 1; min-width: 0; word-wrap: break-word; line-height: 1.5; margin-left: 12px; }
+        .edition-actions { display: flex; gap: 8px; flex-shrink: 0; }
+        
+        /* الأزرار الدائرية (Icon Buttons) */
+        .md-icon-btn { background: transparent; color: var(--md-primary); border: none; width: 40px; height: 40px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background-color 0.2s; }
+        .md-icon-btn:hover { background: rgba(0, 105, 92, 0.12); }
+        .md-icon-btn .material-icons-round { font-size: 22px; }
+
+        /* الروابط */
+        .link-item { text-decoration: none; color: var(--md-primary); font-weight: 600; display: flex; align-items: center; gap: 8px; width: 100%; }
+        .link-item:hover { text-decoration: underline; }
+
+        /* ملاحظات الكتاب (Tonal Surface) */
+        .book-notes { background-color: #e8f5e9; color: #1b5e20; padding: 16px; border-radius: 12px; margin-top: 24px; font-size: 0.95rem; line-height: 1.6; display: flex; gap: 12px; align-items: flex-start; }
+        .book-notes .material-icons-round { color: #2e7d32; flex-shrink: 0; }
+
+        /* النافذة المنبثقة (Material Dialog) */
+        .modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5); backdrop-filter: blur(2px); align-items: center; justify-content: center; }
+        .modal-content { background-color: var(--md-surface); border-radius: 28px; width: 90%; max-width: 500px; padding: 24px; position: relative; box-shadow: 0px 11px 15px -7px rgba(0,0,0,0.2), 0px 24px 38px 3px rgba(0,0,0,0.14), 0px 9px 46px 8px rgba(0,0,0,0.12); animation: dialogFadeIn 0.2s ease-out; }
+        @keyframes dialogFadeIn { from { opacity: 0; transform: scale(0.9); } to { opacity: 1; transform: scale(1); } }
+        
+        .close-modal { position: absolute; top: 16px; left: 16px; background: var(--md-surface-variant); color: var(--md-on-surface); width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: 0.2s; z-index: 10; }
+        .close-modal:hover { background: var(--md-outline-variant); }
+        
+        #modalTitle { margin: 0 0 16px 0; color: var(--md-on-surface); font-size: 1.25rem; font-weight: 800; padding-left: 40px; }
+        #modalBody { font-size: 1rem; line-height: 1.6; color: var(--md-on-surface-variant); }
+        
+        /* الكاروسيل للتجاوب الكامل */
+        .carousel-container { position: relative; display: flex; justify-content: center; align-items: center; width: 100%; background: var(--md-background); border-radius: 12px; overflow: hidden; }
+        .carousel-img { max-width: 100%; max-height: 60vh; object-fit: contain; display: block; }
+        .carousel-btn { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(255,255,255,0.8); color: var(--md-primary); border: none; width: 40px; height: 40px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: var(--md-elevation-1); transition: 0.2s; }
+        .carousel-btn:hover { background: white; box-shadow: var(--md-elevation-2); }
+        .carousel-btn.right { right: 8px; }
+        .carousel-btn.left { left: 8px; }
+        .carousel-dots { text-align: center; margin-top: 16px; font-weight: 600; color: var(--md-outline); font-size: 0.9rem; }
+
+        /* إعدادات التجاوب المخصصة للهواتف (Responsive) */
         @media (max-width: 600px) {
-            .carousel-btn.right { right: 5px; }
-            .carousel-btn.left { left: 5px; }
+            header { padding: 16px; }
+            header h1 { font-size: 1.4rem; }
+            .container { margin: 16px auto; }
+            .md-card { padding: 16px; border-radius: 16px; }
+            .book-title { font-size: 1.3rem; }
+            .md-list-item { padding: 10px 12px; }
+            .edition-name { font-size: 0.95rem; }
+            .modal-content { padding: 20px 16px; border-radius: 20px; }
+            .carousel-img { max-height: 50vh; }
+            .search-box { padding-right: 48px; }
+            .search-icon { font-size: 24px; }
         }
     </style>
 </head>
@@ -60,13 +117,19 @@
     </header>
 
     <div class="container">
-        <input type="text" id="searchInput" class="search-box" placeholder="ابحث عن كتاب، مؤلف، أو علم...">
+        <div class="search-wrapper">
+            <span class="material-icons-round search-icon">search</span>
+            <input type="text" id="searchInput" class="search-box" placeholder="ابحث عن كتاب، مؤلف، أو علم..." autocomplete="off">
+        </div>
+
         <div id="booksContainer"></div>
     </div>
 
     <div id="infoModal" class="modal">
         <div class="modal-content">
-            <span class="close-modal" onclick="closeModal()">&times;</span>
+            <div class="close-modal" onclick="closeModal()">
+                <span class="material-icons-round">close</span>
+            </div>
             <h3 id="modalTitle"></h3>
             <div id="modalBody"></div>
         </div>
@@ -77,7 +140,7 @@
         let currentCarouselImages = [];
         let currentSlideIndex = 0;
 
-        fetch('books.json')
+        fetch('books.json?v=' + new Date().getTime())
             .then(response => response.json())
             .then(data => {
                 booksData = data;
@@ -90,103 +153,123 @@
             container.innerHTML = '';
 
             if(books.length === 0) {
-                container.innerHTML = '<p style="text-align:center;">لا توجد نتائج مطابقة لبحثك.</p>';
+                container.innerHTML = `
+                    <div style="text-align:center; padding: 40px; color: var(--md-outline);">
+                        <span class="material-icons-round" style="font-size: 48px; margin-bottom: 10px; display: block;">search_off</span>
+                        <h3>لا توجد نتائج مطابقة لبحثك.</h3>
+                    </div>`;
                 return;
             }
 
             books.forEach(book => {
                 const card = document.createElement('div');
-                card.className = 'book-card';
+                card.className = 'md-card';
 
                 const renderEditions = (editions, type) => {
                     return editions.map((ed, index) => {
                         let actions = '';
                         
-                        // التحقق من وجود ملاحظات
                         if (ed.notes && ed.notes.trim() !== '') {
-                            actions += `<button class="icon-btn" onclick="openNoteModal('${encodeURIComponent(ed.name)}', '${encodeURIComponent(ed.notes)}')" title="ملاحظات حول الطبعة">ℹ️</button>`;
+                            actions += `<button class="md-icon-btn" onclick="openNoteModal('${encodeURIComponent(ed.name)}', '${encodeURIComponent(ed.notes)}')" title="ملاحظات حول الطبعة">
+                                            <span class="material-icons-round">info</span>
+                                        </button>`;
                         }
                         
-                        // التحقق من وجود صور (مصفوفة images الجديدة أو image القديمة)
                         let hasImages = (ed.images && ed.images.length > 0) || (ed.image && ed.image.trim() !== '');
                         if (hasImages) {
-                            actions += `<button class="icon-btn" onclick="openImageModal(${book.id}, '${type}', ${index})" title="عرض صور الطبعة">🖼️</button>`;
+                            actions += `<button class="md-icon-btn" onclick="openImageModal(${book.id}, '${type}', ${index})" title="عرض صور الطبعة">
+                                            <span class="material-icons-round">photo_library</span>
+                                        </button>`;
                         }
 
-                        return `<li>
-                                    <div class="edition-item">
-                                        <span class="edition-name">${ed.name}</span>
-                                        <div class="edition-actions">${actions}</div>
-                                    </div>
+                        return `<li class="md-list-item">
+                                    <span class="edition-name">${ed.name}</span>
+                                    <div class="edition-actions">${actions}</div>
                                 </li>`;
                     }).join('');
                 };
 
                 const renderLinks = (links) => {
-                    return links.map(link => `<li><a href="${link.url}" target="_blank">🔗 ${link.title}</a></li>`).join('');
+                    return links.map(link => `
+                        <li class="md-list-item">
+                            <a href="${link.url}" target="_blank" class="link-item">
+                                <span class="material-icons-round">open_in_new</span>
+                                <span class="edition-name">${link.title}</span>
+                            </a>
+                        </li>`).join('');
                 };
 
                 card.innerHTML = `
                     <h2 class="book-title">${book.title}</h2>
                     <div class="book-meta">
-                        <strong>المؤلف:</strong> ${book.author} | <strong>العلم:</strong> ${book.category}
+                        <span class="meta-chip"><span class="material-icons-round">person</span> ${book.author}</span>
+                        <span class="meta-chip"><span class="material-icons-round">category</span> ${book.category}</span>
                     </div>
                     
-                    <div class="section-title">أفضل الطبعات:</div>
-                    <ul>${book.best_editions ? renderEditions(book.best_editions, 'best_editions') : ''}</ul>
+                    ${book.best_editions && book.best_editions.length > 0 ? `
+                        <div class="section-title"><span class="material-icons-round">verified</span> أفضل الطبعات:</div>
+                        <ul>${renderEditions(book.best_editions, 'best_editions')}</ul>
+                    ` : ''}
 
-                    ${book.alt_editions && book.alt_editions.length > 0 ? `<div class="section-title">طبعات بديلة:</div><ul>${renderEditions(book.alt_editions, 'alt_editions')}</ul>` : ''}
+                    ${book.alt_editions && book.alt_editions.length > 0 ? `
+                        <div class="section-title"><span class="material-icons-round">rule</span> طبعات بديلة جيدة:</div>
+                        <ul>${renderEditions(book.alt_editions, 'alt_editions')}</ul>
+                    ` : ''}
                     
-                    ${book.links && book.links.length > 0 ? `<div class="section-title">روابط مفيدة:</div><ul>${renderLinks(book.links)}</ul>` : ''}
+                    ${book.links && book.links.length > 0 ? `
+                        <div class="section-title"><span class="material-icons-round">link</span> روابط مفيدة:</div>
+                        <ul>${renderLinks(book.links)}</ul>
+                    ` : ''}
                     
-                    ${book.notes ? `<div class="book-notes"><strong>📌 ملاحظات الكتاب:</strong> ${book.notes}</div>` : ''}
+                    ${book.notes ? `
+                        <div class="book-notes">
+                            <span class="material-icons-round">lightbulb</span>
+                            <div><strong>ملاحظات:</strong> <br>${book.notes}</div>
+                        </div>
+                    ` : ''}
                 `;
                 container.appendChild(card);
             });
         }
 
-        // 1. نافذة الملاحظات
         function openNoteModal(title, content) {
             document.getElementById('modalTitle').innerText = decodeURIComponent(title);
             document.getElementById('modalBody').innerHTML = `<p>${decodeURIComponent(content)}</p>`;
-            document.getElementById('infoModal').style.display = 'block';
+            document.getElementById('infoModal').style.display = 'flex';
         }
 
-        // 2. نافذة الصور (الكاروسيل)
         function openImageModal(bookId, edType, index) {
             const book = booksData.find(b => b.id === bookId);
             const ed = book[edType][index];
             
             document.getElementById('modalTitle').innerText = ed.name;
             
-            // تجميع الصور
             currentCarouselImages = [];
             if (ed.images && ed.images.length > 0) {
                 currentCarouselImages = ed.images;
             } else if (ed.image && ed.image.trim() !== '') {
-                currentCarouselImages = [ed.image]; // للتوافق مع البيانات القديمة
+                currentCarouselImages = [ed.image];
             }
 
             currentSlideIndex = 0;
             renderCarousel();
-            document.getElementById('infoModal').style.display = 'block';
+            document.getElementById('infoModal').style.display = 'flex';
         }
 
         function renderCarousel() {
             const body = document.getElementById('modalBody');
             
             if (currentCarouselImages.length === 1) {
-                // صورة واحدة فقط
-                body.innerHTML = `<img src="${currentCarouselImages[0]}" class="carousel-img" alt="غلاف الطبعة">`;
-            } else {
-                // عدة صور
-                // تم إضافة dir="ltr" للأزرار لمنع المتصفح من عكس اتجاه الأقواس
-                // وتم تغيير شكل العداد ليكون نصياً لتجنب انعكاس الأرقام
                 body.innerHTML = `
                     <div class="carousel-container">
-                        <button class="carousel-btn right" dir="ltr" onclick="changeSlide(-1)" title="السابق">&#10095;</button>
+                        <img src="${currentCarouselImages[0]}" class="carousel-img" alt="غلاف الطبعة">
+                    </div>`;
+            } else {
+                body.innerHTML = `
+                    <div class="carousel-container">
+                        <button class="carousel-btn right" dir="ltr" onclick="changeSlide(-1)" title="السابق"><span class="material-icons-round">chevron_right</span></button>
                         <img src="${currentCarouselImages[currentSlideIndex]}" class="carousel-img" alt="غلاف الطبعة">
-                        <button class="carousel-btn left" dir="ltr" onclick="changeSlide(1)" title="التالي">&#10094;</button>
+                        <button class="carousel-btn left" dir="ltr" onclick="changeSlide(1)" title="التالي"><span class="material-icons-round">chevron_left</span></button>
                     </div>
                     <div class="carousel-dots">صورة ${currentSlideIndex + 1} من ${currentCarouselImages.length}</div>
                 `;
@@ -200,25 +283,21 @@
             renderCarousel();
         }
 
-        // إغلاق النافذة
         function closeModal() {
             document.getElementById('infoModal').style.display = 'none';
         }
 
         window.onclick = function(event) {
             const modal = document.getElementById('infoModal');
-            if (event.target == modal) {
-                closeModal();
-            }
+            if (event.target == modal) closeModal();
         }
 
-        // محرك البحث
         document.getElementById('searchInput').addEventListener('input', (e) => {
             const searchTerm = e.target.value.toLowerCase();
             const filteredBooks = booksData.filter(book => 
-                book.title.includes(searchTerm) || 
-                book.author.includes(searchTerm) || 
-                book.category.includes(searchTerm)
+                (book.title && book.title.toLowerCase().includes(searchTerm)) || 
+                (book.author && book.author.toLowerCase().includes(searchTerm)) || 
+                (book.category && book.category.toLowerCase().includes(searchTerm))
             );
             displayBooks(filteredBooks);
         });
