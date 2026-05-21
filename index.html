@@ -179,12 +179,13 @@
                 // صورة واحدة فقط
                 body.innerHTML = `<img src="${currentCarouselImages[0]}" class="carousel-img" alt="غلاف الطبعة">`;
             } else {
-                // عدة صور (نضيف أسهم التنقل)
+                // عدة صور (تم عكس القيم هنا لتناسب اللغة العربية RTL)
+                // الزر الأيمن يرجع للخلف (-1) والزر الأيسر يتقدم للأمام (1)
                 body.innerHTML = `
                     <div class="carousel-container">
-                        <button class="carousel-btn right" onclick="changeSlide(1)">&#10095;</button>
+                        <button class="carousel-btn right" onclick="changeSlide(-1)" title="السابق">&#10095;</button>
                         <img src="${currentCarouselImages[currentSlideIndex]}" class="carousel-img" alt="غلاف الطبعة">
-                        <button class="carousel-btn left" onclick="changeSlide(-1)">&#10094;</button>
+                        <button class="carousel-btn left" onclick="changeSlide(1)" title="التالي">&#10094;</button>
                     </div>
                     <div class="carousel-dots">${currentSlideIndex + 1} / ${currentCarouselImages.length}</div>
                 `;
