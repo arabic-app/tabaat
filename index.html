@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>دليل طبعات الكتب الإسلامية</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #27ae60;
+            --bg-color: #f8f9fa;
+        }
+        body {
+            font-family: 'Cairo', sans-serif;
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 2rem 1rem;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        .search-box {
+            width: 100%;
+            padding: 15px;
+            font-size: 1.1rem;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            font-family: inherit;
+        }
+        .search-box:focus {
+            border-color: var(--secondary-color);
+            outline: none;
+        }
+        .book-card {
+            background: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border-right: 5px solid var(--secondary-color);
+        }
+        .book-title {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin: 0 0 10px 0;
+        }
+        .book-meta {
+            color: #666;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+        }
+        .section-title {
+            font-weight: 600;
+            margin-top: 15px;
+            color: #d35400;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 5px 0;
+        }
+        li {
+            margin-bottom: 8px;
+            padding: 5px;
+            background: #f1f2f6;
+            border-radius: 5px;
+        }
+        .edition-hover {
+            position: relative;
+            cursor: pointer;
+            color: #2980b9;
+            font-weight: 600;
+            border-bottom: 1px dashed #2980b9;
+        }
+        .edition-hover .edition-img {
+            display: none;
+            position: absolute;
+            top: 100%;
+            right: 0;
+            width: 180px;
+            z-index: 100;
+            border-radius: 5px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            border: 2px solid white;
+            margin-top: 5px;
+        }
+        .edition-hover:hover .edition-img {
+            display: block;
+        }
+        a {
+            color: var(--secondary-color);
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>دليل أفضل طبعات الكتب الإسلامية</h1>
+        <p>ابحث عن الكتاب، المؤلف، أو العلم لتعرف أفضل الطبعات المعتمدة</p>
+    </header>
+
+    <div class="container">
+        <input type="text" id="searchInput" class="search-box" placeholder="ابحث عن كتاب، مؤلف، أو علم...">
+        <div id="booksContainer"></div>
+    </div>
+
+    <script>
+        let booksData = [];
+
+        // جلب البيانات من ملف JSON
+        fetch('books.json')
+            .then(response => response.json())
+            .then(data => {
+                booksData = data;
+                displayBooks(booksData);
+            })
+            .catch(error => console.error('Error loading JSON:', error));
+
+        // دالة عرض الكتب
+        function displayBooks(books) {
+            const container = document.getElementById('booksContainer');
+            container.innerHTML = '';
+
+            if(books.length === 0) {
+                container.innerHTML = '<p style="text-align:center;">لا توجد نتائج مطابقة لبحثك.</p>';
+                return;
+            }
+
+            books.forEach(book => {
+                const card = document.createElement('div');
+                card.className = 'book-card';
+
+                // معالجة الطبعات
+                const renderEditions = (editions) => {
+                    return editions.map(ed => {
+                        if (ed.image) {
+                            return `<li><span class="edition-hover">${ed.name} <img src="${ed.image}" class="edition-img" alt="غلاف ${ed.name}"></span></li>`;
+                        } else {
+                            return `<li>${ed.name}</li>`;
+                        }
+                    }).join('');
+                };
+
+                // معالجة الروابط
+                const renderLinks = (links) => {
+                    return links.map(link => `<li><a href="${link.url}" target="_blank">🔗 ${link.title}</a></li>`).join('');
+                };
+
+                card.innerHTML = `
+                    <h2 class="book-title">${book.title}</h2>
+                    <div class="book-meta">
+                        <strong>المؤلف:</strong> ${book.author} | <strong>العلم:</strong> ${book.category}
+                    </div>
+                    
+                    <div class="section-title">أفضل الطبعات:</div>
+                    <ul>${renderEditions(book.best_editions)}</ul>
+
+                    ${book.alt_editions.length > 0 ? `<div class="section-title">طبعات بديلة جيدة:</div><ul>${renderEditions(book.alt_editions)}</ul>` : ''}
+                    
+                    ${book.links.length > 0 ? `<div class="section-title">روابط مفيدة:</div><ul>${renderLinks(book.links)}</ul>` : ''}
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        // دالة البحث
+        document.getElementById('searchInput').addEventListener('input', (e) => {
+            const searchTerm = e.target.value.toLowerCase();
+            const filteredBooks = booksData.filter(book => 
+                book.title.includes(searchTerm) || 
+                book.author.includes(searchTerm) || 
+                book.category.includes(searchTerm)
+            );
+            displayBooks(filteredBooks);
+        });
+    </script>
+</body>
+</html>

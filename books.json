@@ -1,0 +1,33 @@
+[
+  {
+    "id": 1,
+    "title": "صحيح البخاري",
+    "author": "محمد بن إسماعيل البخاري",
+    "category": "الحديث",
+    "best_editions": [
+      { "name": "طبعة دار طوق النجاة", "image": "https://via.placeholder.com/150/0000FF/808080?Text=طوق+النجاة" },
+      { "name": "طبعة دار التأصيل", "image": "https://via.placeholder.com/150/FF0000/FFFFFF?Text=التأصيل" }
+    ],
+    "alt_editions": [
+      { "name": "طبعة دار السلام", "image": "" }
+    ],
+    "links": [
+      { "title": "تحميل الكتاب (المكتبة الوقفية)", "url": "#" }
+    ]
+  },
+  {
+    "id": 2,
+    "title": "تفسير ابن كثير",
+    "author": "إسماعيل بن عمر بن كثير",
+    "category": "التفسير",
+    "best_editions": [
+      { "name": "طبعة دار طيبة (تحقيق سامي السلامة)", "image": "https://via.placeholder.com/150" }
+    ],
+    "alt_editions": [
+      { "name": "طبعة دار ابن الجوزي", "image": "" }
+    ],
+    "links": [
+      { "title": "تصفح عبر الشاملة", "url": "#" }
+    ]
+  }
+]
