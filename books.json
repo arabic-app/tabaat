@@ -2202,5 +2202,69 @@
     ],
     "alt_editions": [],
     "links": []
+  },
+  {
+    "id": 106,
+    "title": "التسهيل لعلوم التنزيل",
+    "author": "ابن جزى الكلبي",
+    "category": "التفسير",
+    "notes": "الطبعة السادسة هي الأخيرة",
+    "best_editions": [
+      {
+        "name": "ت علي الصالحي ط طيبة الخضراء",
+        "images": [],
+        "notes": ""
+      }
+    ],
+    "alt_editions": [],
+    "links": []
+  },
+  {
+    "id": 107,
+    "title": "إعراب القرآن وبيانه",
+    "author": "محمود درويش",
+    "category": "التفسير و علوم القرآن",
+    "notes": "",
+    "best_editions": [
+      {
+        "name": "ابن كثير",
+        "images": [],
+        "notes": "منها ط بيروتية أفضل فنيا"
+      }
+    ],
+    "alt_editions": [],
+    "links": []
+  },
+  {
+    "id": 108,
+    "title": "التفسير البسيط",
+    "author": "الواحدي",
+    "category": "التفسير",
+    "notes": "",
+    "best_editions": [
+      {
+        "name": "العبيكان",
+        "images": [],
+        "notes": ""
+      }
+    ],
+    "alt_editions": [],
+    "links": []
+  },
+  {
+    "id": 109,
+    "title": "الوجيز في تفسير الكتاب العزيز",
+    "author": "الواحدي",
+    "category": "التفسير",
+    "notes": "",
+    "best_editions": [
+      {
+        "name": "اللؤلؤة",
+        "images": [],
+        "notes": ""
+      }
+    ],
+    "alt_editions": [],
+    "links": []
   }
 ]
