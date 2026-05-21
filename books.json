@@ -1768,15 +1768,22 @@
     "title": "المحرر الوجيز في تفسير الكتاب العزيز",
     "author": "عبد الحق بن غالب ابن عطية الأندلسي",
     "category": "التفسير",
-    "best_editions": [],
+    "notes": "",
+    "best_editions": [
+      {
+        "name": "أوقاف قطر",
+        "images": [],
+        "notes": ""
+      }
+    ],
     "alt_editions": [
       {
         "name": "مصورة أوقاف قطر دار الأمة مصر",
-        "image": ""
+        "images": [],
+        "notes": "من أفضلها العالمية"
       }
     ],
-    "links": [],
-    "notes": ""
+    "links": []
   },
   {
     "id": 82,
@@ -1843,15 +1850,22 @@
     "title": "شرح رياض الصالحين",
     "author": "محمد بن صالح العثيمين",
     "category": "الحديث",
-    "best_editions": [],
+    "notes": "",
+    "best_editions": [
+      {
+        "name": "مؤسسة العثيمين",
+        "images": [],
+        "notes": ""
+      }
+    ],
     "alt_editions": [
       {
         "name": "الرسالة",
-        "image": ""
+        "images": [],
+        "notes": ""
       }
     ],
-    "links": [],
-    "notes": ""
+    "links": []
   },
   {
     "id": 87,
@@ -2069,63 +2083,124 @@
     "title": "أدب الكاتب",
     "author": "عبد الله بن مسلم ابن قتيبة الدينوري",
     "category": "اللغة والأدب",
-    "best_editions": [],
+    "notes": "",
+    "best_editions": [
+      {
+        "name": "ت محمد الدالي ط الرسالة",
+        "images": [],
+        "notes": ""
+      }
+    ],
     "alt_editions": [
       {
         "name": "دار الطلائع",
-        "image": ""
+        "images": [],
+        "notes": ""
       }
     ],
-    "links": [],
-    "notes": ""
+    "links": []
   },
   {
     "id": 101,
     "title": "الكامل في اللغة والأدب",
     "author": "أبو العباس المبرد",
     "category": "اللغة والأدب",
-    "best_editions": [],
+    "notes": "",
+    "best_editions": [
+      {
+        "name": "ط الرسالة ت محمد الدالي",
+        "images": [],
+        "notes": ""
+      }
+    ],
     "alt_editions": [
       {
         "name": "المكتبة العصرية بيروت",
-        "image": ""
+        "images": [],
+        "notes": ""
       }
     ],
-    "links": [],
-    "notes": ""
+    "links": []
   },
   {
     "id": 102,
     "title": "البيان والتبيين",
     "author": "عمرو بن بحر الجاحظ",
     "category": "اللغة والأدب",
-    "best_editions": [],
+    "notes": "",
+    "best_editions": [
+      {
+        "name": "ت عبد السلام هارون ط الخانجي او مصوراتها",
+        "images": [],
+        "notes": ""
+      }
+    ],
     "alt_editions": [
       {
         "name": "مكتبة ابن سينا مصر",
-        "image": ""
+        "images": [],
+        "notes": ""
       }
     ],
-    "links": [],
-    "notes": ""
+    "links": []
   },
   {
     "id": 103,
     "title": "الأمالي",
     "author": "أبو علي القالي",
     "category": "اللغة والأدب",
-    "best_editions": [],
+    "notes": "",
+    "best_editions": [
+      {
+        "name": "دار الكتب المصرية أو الرسالة",
+        "images": [],
+        "notes": ""
+      }
+    ],
     "alt_editions": [
       {
         "name": "دار الكتب المصرية",
-        "image": ""
+        "images": [],
+        "notes": ""
       },
       {
         "name": "المكتبة العصرية بيروت",
-        "image": ""
+        "images": [],
+        "notes": ""
       }
     ],
-    "links": [],
-    "notes": ""
+    "links": []
+  },
+  {
+    "id": 104,
+    "title": "الحيوان",
+    "author": "الجاحظ",
+    "category": "الغة و الأدب",
+    "notes": "",
+    "best_editions": [
+      {
+        "name": "ت عبد السلام هارون",
+        "images": [],
+        "notes": ""
+      }
+    ],
+    "alt_editions": [],
+    "links": []
+  },
+  {
+    "id": 105,
+    "title": "عيون الأخبار",
+    "author": "ابن قتيبة الدينوري",
+    "category": "اللغة والأدب",
+    "notes": "",
+    "best_editions": [
+      {
+        "name": "ت محمد منذر أبي شعر ط المكتب الإسلامي",
+        "images": [],
+        "notes": ""
+      }
+    ],
+    "alt_editions": [],
+    "links": []
   }
 ]
