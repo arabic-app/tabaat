@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>لوحة الإدارة - إدارة الكتب</title>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800&display=swap" rel="stylesheet">
-    <!-- استدعاء مكتبة SortableJS للسحب والإفلات -->
     <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
     <style>
         :root { --primary: #2c3e50; --secondary: #27ae60; --danger: #e74c3c; --bg: #f4f6f7; --border: #ddd; }
@@ -29,12 +28,15 @@
         .form-group input, .form-group textarea { width: 100%; padding: 10px; border: 1px solid var(--border); border-radius: 4px; font-family: inherit; box-sizing: border-box; }
         
         /* تصميم صفوف الطبعات */
-        .dynamic-row { display: flex; gap: 10px; margin-bottom: 10px; align-items: center; background: #f9f9f9; padding: 10px; border-radius: 5px; border: 1px solid #eee; transition: background 0.3s; }
+        .dynamic-row { display: flex; gap: 10px; margin-bottom: 10px; align-items: center; background: #f9f9f9; padding: 15px; border-radius: 5px; border: 1px solid #eee; transition: background 0.3s; }
         .dynamic-row.sortable-ghost { opacity: 0.4; background: #e8f4f8; border: 1px dashed var(--primary); }
-        .dynamic-row input { flex: 1; }
-        .drag-handle { cursor: grab; color: #888; font-size: 1.2rem; padding: 0 5px; user-select: none; }
+        .row-inputs { flex: 1; display: flex; flex-direction: column; gap: 8px; }
+        .row-inputs-top { display: flex; gap: 8px; }
+        .row-inputs input { width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px; font-family: inherit; box-sizing: border-box;}
+        
+        .drag-handle { cursor: grab; color: #888; font-size: 1.5rem; padding: 0 10px; user-select: none; }
         .drag-handle:active { cursor: grabbing; }
-        .btn-remove { background: var(--danger); color: white; border: none; padding: 8px 12px; cursor: pointer; border-radius: 4px; }
+        .btn-remove { background: var(--danger); color: white; border: none; padding: 10px 15px; cursor: pointer; border-radius: 4px; height: fit-content;}
         .btn-add-row { background: #3498db; color: white; border: none; padding: 8px 15px; cursor: pointer; border-radius: 4px; font-family: inherit; font-size: 0.9rem; margin-bottom: 10px; }
 
         .form-actions { margin-top: 30px; display: flex; gap: 10px; justify-content: flex-end; border-top: 2px solid var(--border); padding-top: 20px; }
@@ -57,7 +59,7 @@
 
     <div class="main-content">
         <div class="export-section">
-            <p>بعد حفظ التعديلات، قم بنسخ أو تحميل الملف لرفعه:</p>
+            <p>بعد الحفظ، قم بنسخ أو تحميل الملف لرفعه لـ GitHub:</p>
             <button class="btn-export" onclick="copyJSON()">📋 نسخ JSON</button>
             <button class="btn-export" style="background:#27ae60;" onclick="downloadJSON()">💾 تحميل books.json</button>
         </div>
@@ -80,8 +82,8 @@
                     <input type="text" id="category" placeholder="مثال: الحديث، التفسير..." required>
                 </div>
                 <div class="form-group">
-                    <label>ملاحظات (اختياري)</label>
-                    <textarea id="notes" rows="3" placeholder="ملاحظات إضافية حول الكتاب أو الطبعات..."></textarea>
+                    <label>ملاحظات الكتاب (اختياري)</label>
+                    <textarea id="notes" rows="3" placeholder="ملاحظات عامة حول الكتاب..."></textarea>
                 </div>
 
                 <h3>أفضل الطبعات المعتمدة (اسحب ☰ لترتيبها)</h3>
@@ -97,7 +99,7 @@
                 <button type="button" class="btn-add-row" onclick="addLinkRow('links')">+ إضافة رابط</button>
 
                 <div class="form-actions">
-                    <button type="submit" class="btn-save">💾 حفظ الكتاب (في الذاكرة)</button>
+                    <button type="submit" class="btn-save">💾 حفظ التعديلات</button>
                 </div>
             </form>
         </div>
@@ -108,7 +110,6 @@
     <script>
         let booksData = [];
 
-        // تفعيل خاصية السحب والإفلات للقوائم
         new Sortable(document.getElementById('bestEditions'), { handle: '.drag-handle', animation: 150 });
         new Sortable(document.getElementById('altEditions'), { handle: '.drag-handle', animation: 150 });
         new Sortable(document.getElementById('links'), { handle: '.drag-handle', animation: 150 });
@@ -132,14 +133,20 @@
             });
         }
 
-        function addEditionRow(containerId, name = '', image = '') {
+        // إضافة حقل Notes للطبعة
+        function addEditionRow(containerId, name = '', image = '', notes = '') {
             const container = document.getElementById(containerId);
             const row = document.createElement('div');
             row.className = 'dynamic-row';
             row.innerHTML = `
                 <span class="drag-handle" title="اسحب للترتيب">☰</span>
-                <input type="text" class="ed-name" placeholder="اسم الطبعة" value="${name}" required>
-                <input type="text" class="ed-image" placeholder="رابط الصورة (اختياري)" value="${image}">
+                <div class="row-inputs">
+                    <div class="row-inputs-top">
+                        <input type="text" class="ed-name" placeholder="اسم الطبعة *" value="${name}" required style="flex: 2;">
+                        <input type="text" class="ed-image" placeholder="رابط الصورة (اختياري)" value="${image}" style="flex: 1;">
+                    </div>
+                    <input type="text" class="ed-notes" placeholder="ملاحظات خاصة بهذه الطبعة فقط (اختياري)" value="${notes}">
+                </div>
                 <button type="button" class="btn-remove" onclick="this.parentElement.remove()">X</button>
             `;
             container.appendChild(row);
@@ -151,8 +158,10 @@
             row.className = 'dynamic-row';
             row.innerHTML = `
                 <span class="drag-handle" title="اسحب للترتيب">☰</span>
-                <input type="text" class="link-title" placeholder="عنوان الرابط" value="${title}" required>
-                <input type="text" class="link-url" placeholder="الرابط (URL)" value="${url}" required>
+                <div class="row-inputs row-inputs-top">
+                    <input type="text" class="link-title" placeholder="عنوان الرابط" value="${title}" required>
+                    <input type="text" class="link-url" placeholder="الرابط (URL)" value="${url}" required>
+                </div>
                 <button type="button" class="btn-remove" onclick="this.parentElement.remove()">X</button>
             `;
             container.appendChild(row);
@@ -190,11 +199,11 @@
 
             const bestContainer = document.getElementById('bestEditions');
             bestContainer.innerHTML = '';
-            book.best_editions.forEach(ed => addEditionRow('bestEditions', ed.name, ed.image));
+            if(book.best_editions) book.best_editions.forEach(ed => addEditionRow('bestEditions', ed.name, ed.image, ed.notes));
 
             const altContainer = document.getElementById('altEditions');
             altContainer.innerHTML = '';
-            if(book.alt_editions) book.alt_editions.forEach(ed => addEditionRow('altEditions', ed.name, ed.image));
+            if(book.alt_editions) book.alt_editions.forEach(ed => addEditionRow('altEditions', ed.name, ed.image, ed.notes));
 
             const linksContainer = document.getElementById('links');
             linksContainer.innerHTML = '';
@@ -219,11 +228,19 @@
             };
 
             document.querySelectorAll('#bestEditions .dynamic-row').forEach(row => {
-                newBook.best_editions.push({ name: row.querySelector('.ed-name').value, image: row.querySelector('.ed-image').value });
+                newBook.best_editions.push({ 
+                    name: row.querySelector('.ed-name').value, 
+                    image: row.querySelector('.ed-image').value,
+                    notes: row.querySelector('.ed-notes').value
+                });
             });
 
             document.querySelectorAll('#altEditions .dynamic-row').forEach(row => {
-                newBook.alt_editions.push({ name: row.querySelector('.ed-name').value, image: row.querySelector('.ed-image').value });
+                newBook.alt_editions.push({ 
+                    name: row.querySelector('.ed-name').value, 
+                    image: row.querySelector('.ed-image').value,
+                    notes: row.querySelector('.ed-notes').value
+                });
             });
 
             document.querySelectorAll('#links .dynamic-row').forEach(row => {
