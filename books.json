@@ -2068,15 +2068,22 @@
     "title": "الشريعة",
     "author": "محمد بن الحسين الآجري",
     "category": "العقيدة",
-    "best_editions": [],
+    "notes": "",
+    "best_editions": [
+      {
+        "name": "ت نشأت كمال ط ابن الجوزي السعودية",
+        "images": [],
+        "notes": ""
+      }
+    ],
     "alt_editions": [
       {
         "name": "مكتبة غرناطة مصر",
-        "image": ""
+        "images": [],
+        "notes": ""
       }
     ],
-    "links": [],
-    "notes": ""
+    "links": []
   },
   {
     "id": 100,
