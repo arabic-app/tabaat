@@ -2713,5 +2713,37 @@
     ],
     "alt_editions": [],
     "links": []
+  },
+  {
+    "id": 136,
+    "title": "الأصمعيات",
+    "author": "الأصمعي",
+    "category": "اللغة والأدب",
+    "notes": "",
+    "best_editions": [
+      {
+        "name": "ت أحمد شاكر وعبد السلام هارون ط المعارف",
+        "images": [],
+        "notes": ""
+      }
+    ],
+    "alt_editions": [],
+    "links": []
+  },
+  {
+    "id": 137,
+    "title": "المفضليات",
+    "author": "المفضل الضبي",
+    "category": "اللغة والأدب",
+    "notes": "",
+    "best_editions": [
+      {
+        "name": "ت أحمد شاكر و عبد السلام هارون ط المعارف",
+        "images": [],
+        "notes": ""
+      }
+    ],
+    "alt_editions": [],
+    "links": []
   }
 ]
