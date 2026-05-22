@@ -1713,16 +1713,19 @@
     "id": 77,
     "title": "الملل والنحل",
     "author": "محمد بن عبد الكريم الشهرستاني",
-    "category": "عقيدة وفرق",
+    "category": [
+      "الأديان و الفرق"
+    ],
+    "notes": "",
     "best_editions": [
       {
         "name": "دار الفضيلة",
-        "image": ""
+        "images": [],
+        "notes": ""
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "notes": ""
+    "links": []
   },
   {
     "id": 78,
