@@ -26,445 +26,83 @@
 
         *, *::before, *::after { box-sizing: border-box; }
 
-        body {
-            font-family: 'Cairo', sans-serif;
-            background-color: var(--md-background);
-            margin: 0;
-            padding: 0;
-            color: var(--md-on-surface);
-            -webkit-font-smoothing: antialiased;
-        }
+        body { font-family: 'Cairo', sans-serif; background-color: var(--md-background); margin: 0; padding: 0; color: var(--md-on-surface); -webkit-font-smoothing: antialiased; }
+        header { background-color: var(--md-primary); color: var(--md-on-primary); padding: 20px 16px; box-shadow: var(--md-elevation-2); text-align: center; position: sticky; top: 0; z-index: 100; }
+        header h1 { margin: 0 0 6px 0; font-size: clamp(1.1rem, 4vw, 1.75rem); font-weight: 800; }
+        header p { margin: 0; font-size: clamp(0.8rem, 3vw, 1rem); opacity: 0.9; }
 
-        /* ===== HEADER ===== */
-        header {
-            background-color: var(--md-primary);
-            color: var(--md-on-primary);
-            padding: 20px 16px;
-            box-shadow: var(--md-elevation-2);
-            text-align: center;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        header h1 {
-            margin: 0 0 6px 0;
-            font-size: clamp(1.1rem, 4vw, 1.75rem);
-            font-weight: 800;
-            line-height: 1.3;
-        }
-        header p {
-            margin: 0;
-            font-size: clamp(0.8rem, 3vw, 1rem);
-            opacity: 0.9;
-        }
+        .container { max-width: 900px; margin: 24px auto; padding: 0 12px; }
 
-        /* ===== CONTAINER ===== */
-        .container {
-            max-width: 900px;
-            margin: 24px auto;
-            padding: 0 12px;
-        }
-
-        /* ===== MAIN SEARCH ===== */
-        .search-wrapper {
-            position: relative;
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            background: var(--md-surface);
-            border-radius: 28px;
-            box-shadow: var(--md-elevation-1);
-            transition: box-shadow 0.2s;
-        }
-        .search-wrapper:focus-within {
-            box-shadow: var(--md-elevation-2);
-            outline: 2px solid var(--md-primary);
-        }
-        .search-icon {
-            position: absolute;
-            right: 16px;
-            color: var(--md-on-surface-variant);
-            font-size: 26px;
-            pointer-events: none;
-            flex-shrink: 0;
-        }
-        .search-box {
-            width: 100%;
-            padding: 16px 48px 16px 20px;
-            font-size: 1rem;
-            border: none;
-            border-radius: 28px;
-            font-family: inherit;
-            background: transparent;
-            color: var(--md-on-surface);
-            min-width: 0;
-        }
+        /* ===== SEARCH ===== */
+        .search-wrapper { position: relative; margin-bottom: 20px; display: flex; align-items: center; background: var(--md-surface); border-radius: 28px; box-shadow: var(--md-elevation-1); transition: box-shadow 0.2s; }
+        .search-wrapper:focus-within { box-shadow: var(--md-elevation-2); outline: 2px solid var(--md-primary); }
+        .search-icon { position: absolute; right: 16px; color: var(--md-on-surface-variant); font-size: 26px; pointer-events: none; }
+        .search-box { width: 100%; padding: 16px 48px 16px 20px; font-size: 1rem; border: none; border-radius: 28px; font-family: inherit; background: transparent; color: var(--md-on-surface); }
         .search-box:focus { outline: none; }
 
-        /* ===== CHIPS ROW & SCIENCE FILTER ===== */
-        .chips-row {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            margin-bottom: 20px;
-        }
-
-        /* حاوية بحث العلوم */
-        .science-filter-wrapper {
-            display: flex;
-            align-items: center;
-            background: var(--md-surface);
-            border-radius: 24px;
-            border: 1px solid var(--md-outline-variant);
-            height: 42px;
-            width: 42px;
-            overflow: hidden;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            flex-shrink: 0;
-            box-shadow: var(--md-elevation-1);
-        }
-        .science-filter-wrapper.expanded {
-            width: 200px;
-            padding-left: 12px;
-        }
-        .science-filter-btn {
-            background: transparent;
-            border: none;
-            color: var(--md-primary);
-            width: 42px;
-            height: 42px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            flex-shrink: 0;
-            outline: none;
-        }
-        .science-filter-input {
-            border: none;
-            background: transparent;
-            font-family: inherit;
-            font-size: 0.95rem;
-            color: var(--md-on-surface);
-            width: 100%;
-            padding: 0;
-            opacity: 0;
-            pointer-events: none;
-            transition: opacity 0.3s ease;
-        }
+        /* ===== SCIENCE CHIPS & FILTER ===== */
+        .chips-row { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
+        .science-filter-wrapper { display: flex; align-items: center; background: var(--md-surface); border-radius: 24px; border: 1px solid var(--md-outline-variant); height: 42px; width: 42px; overflow: hidden; transition: all 0.3s; flex-shrink: 0; box-shadow: var(--md-elevation-1); }
+        .science-filter-wrapper.expanded { width: 200px; padding-left: 12px; }
+        .science-filter-btn { background: transparent; border: none; color: var(--md-primary); width: 42px; height: 42px; display: flex; align-items: center; justify-content: center; cursor: pointer; flex-shrink: 0; outline: none; }
+        .science-filter-input { border: none; background: transparent; font-family: inherit; font-size: 0.95rem; color: var(--md-on-surface); width: 100%; padding: 0; opacity: 0; pointer-events: none; transition: opacity 0.3s ease; }
         .science-filter-input:focus { outline: none; }
-        .science-filter-wrapper.expanded .science-filter-input {
-            opacity: 1;
-            pointer-events: auto;
-        }
+        .science-filter-wrapper.expanded .science-filter-input { opacity: 1; pointer-events: auto; }
 
-        .category-chips {
-            display: flex;
-            flex: 1;
-            gap: 8px;
-            overflow-x: auto;
-            padding: 4px 0;
-            -ms-overflow-style: none; 
-            scrollbar-width: none; 
-        }
-        .category-chips::-webkit-scrollbar { display: none; } 
-
-        .chip {
-            background: var(--md-surface);
-            border: 1px solid var(--md-outline-variant);
-            padding: 8px 16px;
-            border-radius: 20px;
-            cursor: pointer;
-            white-space: nowrap;
-            font-weight: 600;
-            font-size: 0.95rem;
-            color: var(--md-on-surface-variant);
-            font-family: inherit;
-            transition: all 0.2s ease;
-            user-select: none;
-            -webkit-tap-highlight-color: transparent;
-            display: inline-flex;
-            box-shadow: var(--md-elevation-1);
-        }
+        .category-chips { display: flex; flex: 1; gap: 8px; overflow-x: auto; padding: 4px 0; -ms-overflow-style: none; scrollbar-width: none; }
+        .category-chips::-webkit-scrollbar { display: none; }
+        .chip { background: var(--md-surface); border: 1px solid var(--md-outline-variant); padding: 8px 16px; border-radius: 20px; cursor: pointer; white-space: nowrap; font-weight: 600; font-size: 0.95rem; color: var(--md-on-surface-variant); font-family: inherit; transition: 0.2s; display: inline-flex; box-shadow: var(--md-elevation-1); }
         .chip:hover { background: var(--md-surface-variant); }
-        .chip.active {
-            background: var(--md-primary-container);
-            color: var(--md-on-primary-container);
-            border-color: var(--md-primary-container);
-            box-shadow: none;
-        }
+        .chip.active { background: var(--md-primary-container); color: var(--md-on-primary-container); border-color: var(--md-primary-container); box-shadow: none; }
 
-        /* ===== CARDS ===== */
-        .md-card {
-            background: var(--md-surface);
-            border-radius: 16px;
-            padding: 20px;
-            margin-bottom: 20px;
-            box-shadow: var(--md-elevation-1);
-            border: 1px solid var(--md-outline-variant);
-            overflow: hidden; 
-        }
-        .md-card:hover { box-shadow: var(--md-elevation-2); }
-
-        .book-title {
-            font-size: clamp(1.1rem, 4vw, 1.5rem);
-            color: var(--md-primary);
-            margin: 0 0 10px 0;
-            font-weight: 800;
-            word-break: break-word;
-        }
-
-        /* ===== META CHIPS ===== */
-        .book-meta {
-            color: var(--md-on-surface-variant);
-            font-size: 0.9rem;
-            margin-bottom: 16px;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            align-items: center;
-        }
-        .meta-chip {
-            background: var(--md-background);
-            padding: 4px 10px;
-            border-radius: 16px;
-            border: 1px solid var(--md-outline-variant);
-            font-weight: 600;
-            display: inline-flex;
-            align-items: center;
-            gap: 4px;
-            max-width: 100%;
-            overflow: hidden;
-        }
-        .meta-chip span.text { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-        .meta-chip .material-icons-round { font-size: 1rem; color: var(--md-primary); flex-shrink: 0; }
-
-        /* ===== SECTION TITLE ===== */
-        .section-title {
-            font-weight: 800;
-            margin: 20px 0 10px 0;
-            color: var(--md-secondary);
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            font-size: 1rem;
-        }
-        .section-title .material-icons-round { font-size: 1.1rem; flex-shrink: 0; }
-
-        /* ===== LISTS ===== */
+        /* ===== CARDS & DETAILS ===== */
+        .md-card { background: var(--md-surface); border-radius: 16px; padding: 20px; margin-bottom: 20px; box-shadow: var(--md-elevation-1); border: 1px solid var(--md-outline-variant); }
+        .book-title { font-size: clamp(1.1rem, 4vw, 1.5rem); color: var(--md-primary); margin: 0 0 10px 0; font-weight: 800; word-break: break-word; }
+        
+        .book-meta { color: var(--md-on-surface-variant); font-size: 0.9rem; margin-bottom: 16px; display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+        .meta-chip { background: var(--md-background); padding: 4px 10px; border-radius: 16px; border: 1px solid var(--md-outline-variant); font-weight: 600; display: inline-flex; align-items: center; gap: 4px; }
+        .meta-chip .material-icons-round { font-size: 1rem; color: var(--md-primary); }
+        
+        .section-title { font-weight: 800; margin: 20px 0 10px 0; color: var(--md-secondary); display: flex; align-items: center; gap: 6px; font-size: 1rem; }
+        .section-title .material-icons-round { font-size: 1.1rem; }
+        
         ul { list-style: none; padding: 0; margin: 0; }
-
-        .md-list-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px 12px;
-            margin-bottom: 6px;
-            background: var(--md-background);
-            border-radius: 12px;
-            transition: background 0.2s;
-            gap: 8px;
-            min-width: 0; 
-        }
-        .md-list-item:hover { background: var(--md-surface-variant); }
-
-        .edition-name {
-            font-weight: 600;
-            font-size: 0.95rem;
-            color: var(--md-on-surface);
-            flex: 1;
-            min-width: 0; 
-            word-break: break-word;
-            line-height: 1.5;
-        }
+        .md-list-item { display: flex; justify-content: space-between; align-items: center; padding: 10px 12px; margin-bottom: 6px; background: var(--md-background); border-radius: 12px; }
+        .edition-name { font-weight: 600; font-size: 0.95rem; line-height: 1.5; flex: 1; word-break: break-word; }
         .edition-actions { display: flex; gap: 4px; flex-shrink: 0; }
-
-        /* ===== ICON BUTTONS ===== */
-        .md-icon-btn {
-            background: transparent;
-            color: var(--md-primary);
-            border: none;
-            width: 38px;
-            height: 38px;
-            border-radius: 50%;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: background-color 0.2s;
-            flex-shrink: 0;
-            -webkit-tap-highlight-color: transparent;
-        }
+        
+        .md-icon-btn { background: transparent; color: var(--md-primary); border: none; width: 38px; height: 38px; border-radius: 50%; cursor: pointer; }
         .md-icon-btn:hover { background: rgba(0, 105, 92, 0.12); }
         .md-icon-btn .material-icons-round { font-size: 20px; }
-
-        /* ===== LINKS ===== */
-        .link-item {
-            text-decoration: none;
-            color: var(--md-primary);
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            width: 100%;
-            min-width: 0;
-        }
-        .link-item:hover { text-decoration: underline; }
-        .link-item .material-icons-round { flex-shrink: 0; font-size: 18px; }
-
-        /* ===== BOOK NOTES ===== */
-        .book-notes {
-            background-color: #e8f5e9;
-            color: #1b5e20;
-            padding: 14px;
-            border-radius: 12px;
-            margin-top: 20px;
-            font-size: 0.9rem;
-            line-height: 1.6;
-            display: flex;
-            gap: 10px;
-            align-items: flex-start;
-            word-break: break-word;
-        }
-        .book-notes .material-icons-round { color: #2e7d32; flex-shrink: 0; margin-top: 2px; }
+        
+        .link-item { text-decoration: none; color: var(--md-primary); font-weight: 600; display: flex; align-items: center; gap: 8px; width: 100%; }
+        .book-notes { background-color: #e8f5e9; color: #1b5e20; padding: 14px; border-radius: 12px; margin-top: 20px; font-size: 0.9rem; line-height: 1.6; display: flex; gap: 10px; }
+        .book-notes .material-icons-round { color: #2e7d32; }
 
         /* ===== MODAL ===== */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0,0,0,0.5);
-            backdrop-filter: blur(2px);
-            align-items: center;
-            justify-content: center;
-            padding: 16px;
-        }
-        .modal-content {
-            background-color: var(--md-surface);
-            border-radius: 24px;
-            width: 100%;
-            max-width: 500px;
-            padding: 24px;
-            position: relative;
-            box-shadow: 0px 11px 15px -7px rgba(0,0,0,0.2), 0px 24px 38px 3px rgba(0,0,0,0.14), 0px 9px 46px 8px rgba(0,0,0,0.12);
-            animation: dialogFadeIn 0.2s ease-out;
-            max-height: 90vh;
-            overflow-y: auto;
-        }
-        @keyframes dialogFadeIn {
-            from { opacity: 0; transform: scale(0.92); }
-            to   { opacity: 1; transform: scale(1); }
-        }
-
-        .close-modal {
-            position: absolute;
-            top: 14px;
-            left: 14px;
-            background: var(--md-surface-variant);
-            color: var(--md-on-surface);
-            width: 34px;
-            height: 34px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: 0.2s;
-            z-index: 10;
-            border: none;
-        }
-        .close-modal:hover { background: var(--md-outline-variant); }
-
-        #modalTitle {
-            margin: 0 0 14px 0;
-            color: var(--md-on-surface);
-            font-size: 1.1rem;
-            font-weight: 800;
-            padding-left: 40px;
-            word-break: break-word;
-            line-height: 1.4;
-        }
-        #modalBody { font-size: 0.95rem; line-height: 1.6; color: var(--md-on-surface-variant); }
-
+        .modal { display: none; position: fixed; z-index: 1000; inset: 0; background: rgba(0,0,0,0.5); backdrop-filter: blur(2px); align-items: center; justify-content: center; padding: 16px; }
+        .modal-content { background: var(--md-surface); border-radius: 24px; width: 100%; max-width: 500px; padding: 24px; position: relative; max-height: 90vh; overflow-y: auto; }
+        .close-modal { position: absolute; top: 14px; left: 14px; background: var(--md-surface-variant); border: none; width: 34px; height: 34px; border-radius: 50%; cursor: pointer; }
+        #modalTitle { margin: 0 0 14px 0; font-size: 1.1rem; padding-left: 40px; color: var(--md-primary); font-weight: 800; }
+        
         /* ===== CAROUSEL ===== */
-        .carousel-container {
-            position: relative;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 100%;
-            background: var(--md-background);
-            border-radius: 12px;
-            overflow: hidden;
-            min-height: 120px;
-        }
-        .carousel-img {
-            max-width: 100%;
-            max-height: 55vh;
-            object-fit: contain;
-            display: block;
-        }
-        .carousel-btn {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background: rgba(255,255,255,0.85);
-            color: var(--md-primary);
-            border: none;
-            width: 38px;
-            height: 38px;
-            border-radius: 50%;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: var(--md-elevation-1);
-            transition: 0.2s;
-        }
-        .carousel-btn:hover { background: white; box-shadow: var(--md-elevation-2); }
+        .carousel-container { position: relative; display: flex; justify-content: center; align-items: center; background: var(--md-background); border-radius: 12px; min-height: 120px; }
+        .carousel-img { max-width: 100%; max-height: 55vh; object-fit: contain; }
+        .carousel-btn { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(255,255,255,0.85); color: var(--md-primary); border: none; width: 38px; height: 38px; border-radius: 50%; cursor: pointer; box-shadow: var(--md-elevation-1); }
         .carousel-btn.right { right: 8px; }
         .carousel-btn.left  { left: 8px; }
-        .carousel-dots {
-            text-align: center;
-            margin-top: 12px;
-            font-weight: 600;
-            color: var(--md-outline);
-            font-size: 0.88rem;
-        }
+        .carousel-dots { text-align: center; margin-top: 12px; font-weight: 600; color: var(--md-outline); font-size: 0.88rem; }
+        
+        .empty-state { text-align: center; padding: 40px 20px; color: var(--md-outline); }
 
-        /* ===== EMPTY STATE ===== */
-        .empty-state {
-            text-align: center;
-            padding: 40px 20px;
-            color: var(--md-outline);
-        }
-        .empty-state .material-icons-round {
-            font-size: 48px;
-            margin-bottom: 10px;
-            display: block;
-        }
-
-        /* ===== RESPONSIVE ===== */
         @media (max-width: 480px) {
             .container { padding: 0 10px; margin: 16px auto; }
             .search-box { padding: 12px 40px 12px 16px; font-size: 0.95rem; }
-            .search-icon { font-size: 22px; right: 12px; }
             .md-card { padding: 14px; border-radius: 14px; }
             .book-title { font-size: 1.05rem; }
-            .book-meta { gap: 6px; font-size: 0.82rem; }
-            .meta-chip { padding: 3px 8px; }
-            .section-title { font-size: 0.9rem; }
+            .book-meta { font-size: 0.82rem; }
             .edition-name { font-size: 0.88rem; }
-            .md-list-item { padding: 8px 10px; border-radius: 10px; }
             .md-icon-btn { width: 34px; height: 34px; }
-            .md-icon-btn .material-icons-round { font-size: 18px; }
-            .modal-content { padding: 18px 14px; border-radius: 18px; }
-            .carousel-img { max-height: 45vh; }
-            .book-notes { font-size: 0.85rem; padding: 12px; }
         }
     </style>
 </head>
@@ -476,7 +114,6 @@
     </header>
 
     <div class="container">
-        
         <div class="search-wrapper">
             <span class="material-icons-round search-icon">search</span>
             <input type="text" id="searchInput" class="search-box" placeholder="ابحث عن كتاب أو مؤلف..." autocomplete="off">
@@ -484,14 +121,10 @@
         
         <div class="chips-row">
             <div class="science-filter-wrapper" id="scienceFilterWrapper">
-                <button class="science-filter-btn" id="scienceFilterBtn" aria-label="ابحث في العلوم">
-                    <span class="material-icons-round">search</span>
-                </button>
+                <button class="science-filter-btn" id="scienceFilterBtn"><span class="material-icons-round">search</span></button>
                 <input type="text" id="scienceSearchInput" class="science-filter-input" placeholder="ابحث في العلوم..." autocomplete="off">
             </div>
-
-            <div class="category-chips" id="categoryChips">
-                </div>
+            <div class="category-chips" id="categoryChips"></div>
         </div>
 
         <div id="booksContainer"></div>
@@ -499,9 +132,7 @@
 
     <div id="infoModal" class="modal">
         <div class="modal-content">
-            <button class="close-modal" onclick="closeModal()" aria-label="إغلاق">
-                <span class="material-icons-round">close</span>
-            </button>
+            <button class="close-modal" onclick="closeModal()"><span class="material-icons-round">close</span></button>
             <h3 id="modalTitle"></h3>
             <div id="modalBody"></div>
         </div>
@@ -511,149 +142,95 @@
         let booksData = [];
         let currentCarouselImages = [];
         let currentSlideIndex = 0;
-        
-        // متغيرات الفلترة
         let currentSearchTerm = '';
         let currentCategory = 'الكل';
 
-        // جلب البيانات
-        fetch('books.json?v=' + new Date().getTime())
+        fetch('books.json?v=' + Date.now())
             .then(r => r.json())
             .then(data => { 
-                // ترتيب الكتب أبجدياً حسب العنوان باستخدام localeCompare
-                booksData = data.sort((a, b) => {
-                    const titleA = a.title || '';
-                    const titleB = b.title || '';
-                    return titleA.localeCompare(titleB, 'ar');
-                });
-                
+                booksData = data.sort((a, b) => (a.title || '').localeCompare(b.title || '', 'ar'));
                 initCategories();
                 filterAndDisplayBooks(); 
-            })
-            .catch(e => console.error('Error loading JSON:', e));
-
-        // تهيئة تصنيفات الكتب في شريط الأزرار (Chips)
-        function initCategories() {
-            const chipsContainer = document.getElementById('categoryChips');
-            chipsContainer.innerHTML = '';
-            
-            // استخراج جميع التصنيفات وترتيبها أبجدياً
-            const categories = [...new Set(booksData.map(b => b.category).filter(c => c))]
-                               .sort((a, b) => a.localeCompare(b, 'ar'));
-            
-            // إضافة زر "الكل" في البداية
-            chipsContainer.appendChild(createChip('الكل', 'الكل', true));
-            
-            // إضافة باقي العلوم
-            categories.forEach(cat => {
-                chipsContainer.appendChild(createChip(cat, cat, false));
             });
+
+        // دوال مساعدة للتعامل مع التصنيفات بأمان (قد تكون نصاً أو مصفوفة)
+        function getBookCategories(book) {
+            if (Array.isArray(book.category)) return book.category;
+            if (book.category) return [book.category];
+            return [];
         }
 
-        // دالة إنشاء زر التصنيف
+        function initCategories() {
+            const container = document.getElementById('categoryChips');
+            container.innerHTML = '';
+            
+            // استخراج جميع العلوم الفريدة
+            let allCategories = [];
+            booksData.forEach(b => allCategories.push(...getBookCategories(b)));
+            const uniqueCategories = [...new Set(allCategories.filter(Boolean))].sort((a, b) => a.localeCompare(b, 'ar'));
+            
+            container.appendChild(createChip('الكل', 'الكل', true));
+            uniqueCategories.forEach(cat => container.appendChild(createChip(cat, cat, false)));
+        }
+
         function createChip(label, value, isActive) {
             const btn = document.createElement('button');
             btn.className = `chip ${isActive ? 'active' : ''}`;
             btn.innerText = label;
             btn.dataset.value = value;
             btn.onclick = () => {
-                // تحديث حالة الأزرار
                 document.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
                 btn.classList.add('active');
-                
-                // تحديث النطاق وعرض الكتب
                 currentCategory = value;
                 filterAndDisplayBooks();
             };
             return btn;
         }
 
-        // ==========================================
-        // منطق بحث العلوم المخصص (العدسة الجانبية)
-        // ==========================================
-        const scienceFilterWrapper = document.getElementById('scienceFilterWrapper');
-        const scienceFilterBtn = document.getElementById('scienceFilterBtn');
-        const scienceSearchInput = document.getElementById('scienceSearchInput');
+        // تفاعلات البحث والفلترة
+        const sfWrapper = document.getElementById('scienceFilterWrapper');
+        const sfBtn = document.getElementById('scienceFilterBtn');
+        const sfInput = document.getElementById('scienceSearchInput');
 
-        // التمدد عند النقر
-        scienceFilterBtn.addEventListener('click', () => {
-            scienceFilterWrapper.classList.toggle('expanded');
-            if (scienceFilterWrapper.classList.contains('expanded')) {
-                scienceSearchInput.focus();
-            }
-        });
+        sfBtn.onclick = () => {
+            sfWrapper.classList.toggle('expanded');
+            if (sfWrapper.classList.contains('expanded')) sfInput.focus();
+        };
 
-        // إخفاء لوحة المفاتيح والطي عند الضغط على Enter
-        scienceSearchInput.addEventListener('keydown', (e) => {
-            if (e.key === 'Enter') {
-                e.preventDefault();
-                scienceSearchInput.blur(); // إخفاء الكيبورد على الهاتف
-                scienceFilterWrapper.classList.remove('expanded'); // طي الحقل
-            }
-        });
+        sfInput.onkeydown = (e) => {
+            if (e.key === 'Enter') { e.preventDefault(); sfInput.blur(); sfWrapper.classList.remove('expanded'); }
+        };
 
-        // فلترة أزرار العلوم أثناء الكتابة
-        scienceSearchInput.addEventListener('input', (e) => {
-            filterChips(e.target.value.toLowerCase());
-        });
-
-        function filterChips(term) {
+        sfInput.oninput = (e) => {
+            const term = e.target.value.toLowerCase();
             document.querySelectorAll('.chip').forEach(chip => {
-                if (chip.dataset.value === 'الكل' || chip.dataset.value.toLowerCase().includes(term)) {
-                    chip.style.display = 'inline-flex';
-                } else {
-                    chip.style.display = 'none';
-                }
+                chip.style.display = (chip.dataset.value === 'الكل' || chip.dataset.value.toLowerCase().includes(term)) ? 'inline-flex' : 'none';
             });
-        }
+        };
 
-        // ==========================================
-        // منطق البحث الرئيسي والفلترة
-        // ==========================================
-        const mainSearchInput = document.getElementById('searchInput');
-        
-        mainSearchInput.addEventListener('input', (e) => {
-            currentSearchTerm = e.target.value.toLowerCase();
-            filterAndDisplayBooks();
-        });
-
-        // إخفاء الكيبورد للبحث الرئيسي عند الضغط على Enter
-        mainSearchInput.addEventListener('keydown', (e) => {
-            if (e.key === 'Enter') {
-                e.preventDefault();
-                mainSearchInput.blur();
-            }
-        });
+        const mainSearch = document.getElementById('searchInput');
+        mainSearch.oninput = (e) => { currentSearchTerm = e.target.value.toLowerCase(); filterAndDisplayBooks(); };
+        mainSearch.onkeydown = (e) => { if(e.key === 'Enter') { e.preventDefault(); mainSearch.blur(); } };
 
         function filterAndDisplayBooks() {
             const filtered = booksData.filter(book => {
-                // البحث النصي يقتصر على العنوان والمؤلف فقط
-                const matchesSearch = 
-                    (book.title && book.title.toLowerCase().includes(currentSearchTerm)) ||
-                    (book.author && book.author.toLowerCase().includes(currentSearchTerm));
+                const matchesSearch = (book.title && book.title.toLowerCase().includes(currentSearchTerm)) ||
+                                      (book.author && book.author.toLowerCase().includes(currentSearchTerm));
                 
-                // فلتر العلم المختار من الأزرار (Chips)
-                const matchesCategory = currentCategory === 'الكل' || book.category === currentCategory;
+                const cats = getBookCategories(book);
+                const matchesCategory = currentCategory === 'الكل' || cats.includes(currentCategory);
                 
                 return matchesSearch && matchesCategory;
             });
-            
             displayBooks(filtered);
         }
 
-        // ==========================================
-        // دوال عرض الكتب والكاروسيل
-        // ==========================================
         function displayBooks(books) {
             const container = document.getElementById('booksContainer');
             container.innerHTML = '';
 
             if (books.length === 0) {
-                container.innerHTML = `
-                    <div class="empty-state">
-                        <span class="material-icons-round">search_off</span>
-                        <h3>لا توجد نتائج مطابقة لبحثك في هذا القسم.</h3>
-                    </div>`;
+                container.innerHTML = `<div class="empty-state"><span class="material-icons-round">search_off</span><h3>لا نتائج</h3></div>`;
                 return;
             }
 
@@ -661,68 +238,41 @@
                 const card = document.createElement('div');
                 card.className = 'md-card';
 
-                const renderEditions = (editions, type) => {
-                    return editions.map((ed, index) => {
-                        let actions = '';
-                        if (ed.notes && ed.notes.trim() !== '') {
-                            actions += `<button class="md-icon-btn" onclick="openNoteModal('${encodeURIComponent(ed.name)}', '${encodeURIComponent(ed.notes)}')" title="ملاحظات حول الطبعة" aria-label="ملاحظات">
-                                <span class="material-icons-round">info</span>
-                            </button>`;
-                        }
-                        const hasImages = (ed.images && ed.images.length > 0) || (ed.image && ed.image.trim() !== '');
-                        if (hasImages) {
-                            actions += `<button class="md-icon-btn" onclick="openImageModal(${book.id}, '${type}', ${index})" title="عرض صور الطبعة" aria-label="صور">
-                                <span class="material-icons-round">photo_library</span>
-                            </button>`;
-                        }
-                        return `<li class="md-list-item">
-                            <span class="edition-name">${ed.name}</span>
-                            <div class="edition-actions">${actions}</div>
-                        </li>`;
-                    }).join('');
-                };
+                // رسم تصنيفات الكتاب كـ Chips متعددة
+                const bookCats = getBookCategories(book);
+                const catsHTML = bookCats.map(cat => `
+                    <span class="meta-chip">
+                        <span class="material-icons-round">category</span>
+                        <span class="text">${cat}</span>
+                    </span>
+                `).join('');
 
-                const renderLinks = (links) => {
-                    return links.map(link => `
-                        <li class="md-list-item">
-                            <a href="${link.url}" target="_blank" rel="noopener" class="link-item">
-                                <span class="material-icons-round">open_in_new</span>
-                                <span class="edition-name">${link.title}</span>
-                            </a>
-                        </li>`).join('');
-                };
+                const renderList = (editions, isEdition, type) => (editions || []).map((ed, idx) => {
+                    let actions = '';
+                    if (isEdition && ed.notes) actions += `<button class="md-icon-btn" onclick="openNoteModal('${encodeURIComponent(ed.name)}', '${encodeURIComponent(ed.notes)}')"><span class="material-icons-round">info</span></button>`;
+                    if (isEdition && ((ed.images && ed.images.length) || ed.image)) actions += `<button class="md-icon-btn" onclick="openImageModal(${book.id}, '${type}', ${idx})"><span class="material-icons-round">photo_library</span></button>`;
+                    
+                    return isEdition 
+                        ? `<li class="md-list-item"><span class="edition-name">${ed.name}</span><div class="edition-actions">${actions}</div></li>`
+                        : `<li class="md-list-item"><a href="${ed.url}" target="_blank" class="link-item"><span class="material-icons-round">open_in_new</span><span class="edition-name">${ed.title}</span></a></li>`;
+                }).join('');
 
                 card.innerHTML = `
                     <h2 class="book-title">${book.title}</h2>
                     <div class="book-meta">
-                        <span class="meta-chip">
-                            <span class="material-icons-round">person</span>
-                            <span class="text">${book.author}</span>
-                        </span>
-                        <span class="meta-chip">
-                            <span class="material-icons-round">category</span>
-                            <span class="text">${book.category}</span>
-                        </span>
+                        <span class="meta-chip"><span class="material-icons-round">person</span><span class="text">${book.author}</span></span>
+                        ${catsHTML}
                     </div>
-                    ${book.best_editions && book.best_editions.length > 0 ? `
-                        <div class="section-title"><span class="material-icons-round">verified</span> أفضل الطبعات:</div>
-                        <ul>${renderEditions(book.best_editions, 'best_editions')}</ul>` : ''}
-                    ${book.alt_editions && book.alt_editions.length > 0 ? `
-                        <div class="section-title"><span class="material-icons-round">rule</span> طبعات بديلة جيدة:</div>
-                        <ul>${renderEditions(book.alt_editions, 'alt_editions')}</ul>` : ''}
-                    ${book.links && book.links.length > 0 ? `
-                        <div class="section-title"><span class="material-icons-round">link</span> روابط مفيدة:</div>
-                        <ul>${renderLinks(book.links)}</ul>` : ''}
-                    ${book.notes ? `
-                        <div class="book-notes">
-                            <span class="material-icons-round">lightbulb</span>
-                            <div><strong>ملاحظات:</strong><br>${book.notes}</div>
-                        </div>` : ''}
+                    ${book.best_editions?.length ? `<div class="section-title"><span class="material-icons-round">verified</span> أفضل الطبعات:</div><ul>${renderList(book.best_editions, true, 'best_editions')}</ul>` : ''}
+                    ${book.alt_editions?.length ? `<div class="section-title"><span class="material-icons-round">rule</span> بدائل جيدة:</div><ul>${renderList(book.alt_editions, true, 'alt_editions')}</ul>` : ''}
+                    ${book.links?.length ? `<div class="section-title"><span class="material-icons-round">link</span> روابط:</div><ul>${renderList(book.links, false)}</ul>` : ''}
+                    ${book.notes ? `<div class="book-notes"><span class="material-icons-round">lightbulb</span><div>${book.notes}</div></div>` : ''}
                 `;
                 container.appendChild(card);
             });
         }
 
+        /* دوال العرض المنبثق (Modal & Carousel) */
         function openNoteModal(title, content) {
             document.getElementById('modalTitle').innerText = decodeURIComponent(title);
             document.getElementById('modalBody').innerHTML = `<p>${decodeURIComponent(content)}</p>`;
@@ -730,17 +280,9 @@
         }
 
         function openImageModal(bookId, edType, index) {
-            const book = booksData.find(b => b.id === bookId);
-            const ed = book[edType][index];
+            const ed = booksData.find(b => b.id === bookId)[edType][index];
             document.getElementById('modalTitle').innerText = ed.name;
-
-            currentCarouselImages = [];
-            if (ed.images && ed.images.length > 0) {
-                currentCarouselImages = ed.images;
-            } else if (ed.image && ed.image.trim() !== '') {
-                currentCarouselImages = [ed.image];
-            }
-
+            currentCarouselImages = ed.images?.length ? ed.images : (ed.image ? [ed.image] : []);
             currentSlideIndex = 0;
             renderCarousel();
             document.getElementById('infoModal').style.display = 'flex';
@@ -748,38 +290,21 @@
 
         function renderCarousel() {
             const body = document.getElementById('modalBody');
-            if (currentCarouselImages.length === 1) {
-                body.innerHTML = `
-                    <div class="carousel-container">
-                        <img src="${currentCarouselImages[0]}" class="carousel-img" alt="غلاف الطبعة">
-                    </div>`;
+            if (currentCarouselImages.length <= 1) {
+                body.innerHTML = `<div class="carousel-container"><img src="${currentCarouselImages[0]}" class="carousel-img"></div>`;
             } else {
                 body.innerHTML = `
                     <div class="carousel-container">
-                        <button class="carousel-btn right" dir="ltr" onclick="changeSlide(-1)" aria-label="السابق">
-                            <span class="material-icons-round">chevron_right</span>
-                        </button>
-                        <img src="${currentCarouselImages[currentSlideIndex]}" class="carousel-img" alt="غلاف الطبعة">
-                        <button class="carousel-btn left" dir="ltr" onclick="changeSlide(1)" aria-label="التالي">
-                            <span class="material-icons-round">chevron_left</span>
-                        </button>
+                        <button class="carousel-btn right" dir="ltr" onclick="changeSlide(-1)"><span class="material-icons-round">chevron_right</span></button>
+                        <img src="${currentCarouselImages[currentSlideIndex]}" class="carousel-img">
+                        <button class="carousel-btn left" dir="ltr" onclick="changeSlide(1)"><span class="material-icons-round">chevron_left</span></button>
                     </div>
                     <div class="carousel-dots">صورة ${currentSlideIndex + 1} من ${currentCarouselImages.length}</div>`;
             }
         }
-
-        function changeSlide(direction) {
-            currentSlideIndex = (currentSlideIndex + direction + currentCarouselImages.length) % currentCarouselImages.length;
-            renderCarousel();
-        }
-
-        function closeModal() {
-            document.getElementById('infoModal').style.display = 'none';
-        }
-
-        window.addEventListener('click', (e) => {
-            if (e.target === document.getElementById('infoModal')) closeModal();
-        });
+        function changeSlide(dir) { currentSlideIndex = (currentSlideIndex + dir + currentCarouselImages.length) % currentCarouselImages.length; renderCarousel(); }
+        function closeModal() { document.getElementById('infoModal').style.display = 'none'; }
+        window.onclick = e => { if (e.target.id === 'infoModal') closeModal(); };
     </script>
 </body>
 </html>
