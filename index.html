@@ -26,59 +26,46 @@
 
         *, *::before, *::after { box-sizing: border-box; }
 
-        body {
-            font-family: 'Cairo', sans-serif;
-            background-color: var(--md-background);
-            margin: 0; padding: 0;
-            color: var(--md-on-surface);
-            -webkit-font-smoothing: antialiased;
-        }
+        body { font-family: 'Cairo', sans-serif; background-color: var(--md-background); margin: 0; padding: 0; color: var(--md-on-surface); -webkit-font-smoothing: antialiased; }
 
-        header {
-            background-color: var(--md-primary);
-            color: var(--md-on-primary);
-            padding: 20px 16px;
-            box-shadow: var(--md-elevation-2);
-            text-align: center;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
+        header { background-color: var(--md-primary); color: var(--md-on-primary); padding: 20px 16px; box-shadow: var(--md-elevation-2); text-align: center; position: sticky; top: 0; z-index: 100; }
         header h1 { margin: 0 0 6px 0; font-size: clamp(1.1rem, 4vw, 1.75rem); font-weight: 800; line-height: 1.3; }
         header p  { margin: 0; font-size: clamp(0.8rem, 3vw, 1rem); opacity: 0.9; }
 
         .container { max-width: 900px; margin: 24px auto; padding: 0 12px; }
 
         /* SEARCH */
-        .search-wrapper {
-            position: relative;
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            background: var(--md-surface);
-            border-radius: 28px;
-            box-shadow: var(--md-elevation-1);
-            transition: box-shadow 0.2s;
-        }
+        .search-wrapper { position: relative; margin-bottom: 20px; display: flex; align-items: center; background: var(--md-surface); border-radius: 28px; box-shadow: var(--md-elevation-1); transition: box-shadow 0.2s; }
         .search-wrapper:focus-within { box-shadow: var(--md-elevation-2); outline: 2px solid var(--md-primary); }
-        .search-icon { position: absolute; right: 14px; color: var(--md-on-surface-variant); font-size: 24px; pointer-events: none; flex-shrink: 0; }
+        .search-icon { position: absolute; right: 14px; color: var(--md-on-surface-variant); font-size: 24px; pointer-events: none; }
         .search-box { width: 100%; padding: 14px 48px 14px 20px; font-size: 1rem; border: none; border-radius: 28px; font-family: inherit; background: transparent; color: var(--md-on-surface); min-width: 0; }
         .search-box:focus { outline: none; }
 
-        /* CHIPS ROW — scrollable, science filter sticky at the left end */
+        /* ─── CHIPS AREA ───
+           Outer = flex row: [scrollable chips] [search button fixed on the right]
+           The button never enters the scroll area so it never overlaps chips.        */
+        .chips-area {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        /* Scrollable strip */
         .chips-row {
+            flex: 1;
             display: flex;
             align-items: center;
             gap: 8px;
-            margin-bottom: 20px;
             overflow-x: auto;
             -ms-overflow-style: none;
             scrollbar-width: none;
             padding-bottom: 2px;
+            min-width: 0;
         }
         .chips-row::-webkit-scrollbar { display: none; }
 
-        /* CHIPS */
+        /* Individual chip */
         .chip {
             background: var(--md-surface);
             border: 1px solid var(--md-outline-variant);
@@ -97,17 +84,17 @@
             box-shadow: var(--md-elevation-1);
             flex-shrink: 0;
         }
-        .chip:hover { background: var(--md-surface-variant); }
+        .chip:hover  { background: var(--md-surface-variant); }
         .chip.active { background: var(--md-primary-container); color: var(--md-on-primary-container); border-color: var(--md-primary-container); box-shadow: none; }
         .chip.hidden { display: none; }
 
-        /* SCIENCE FILTER — sticky at the LEFT (end in RTL) of the scrollable row */
+        /* Science-filter button — sits on the RIGHT, outside the scroll strip */
         .science-filter-wrapper {
-            position: sticky;
-            left: 0;
             flex-shrink: 0;
             display: flex;
             align-items: center;
+            /* field expands to the LEFT (toward chips, in RTL layout) */
+            flex-direction: row-reverse;
             background: var(--md-surface);
             border-radius: 21px;
             border: 1px solid var(--md-outline-variant);
@@ -116,14 +103,12 @@
             overflow: hidden;
             transition: width 0.3s cubic-bezier(0.4,0,0.2,1), border-color 0.2s, box-shadow 0.2s;
             box-shadow: var(--md-elevation-1);
-            z-index: 10;
         }
         .science-filter-wrapper.expanded {
             width: 200px;
             border-color: var(--md-primary);
             box-shadow: var(--md-elevation-2), 0 0 0 2px rgba(0,105,92,0.18);
         }
-        /* tint button when a filter is active */
         .science-filter-wrapper.has-filter {
             border-color: var(--md-primary);
             background: var(--md-primary-container);
@@ -153,11 +138,13 @@
             font-size: 0.9rem;
             color: var(--md-on-surface);
             width: 100%;
-            padding: 0 4px 0 10px;
+            /* padding-right pushes text away from the button; padding-left = breathing room */
+            padding: 0 4px 0 12px;
             opacity: 0;
             pointer-events: none;
             transition: opacity 0.25s ease;
             min-width: 0;
+            text-align: right;
         }
         .science-filter-input:focus { outline: none; }
         .science-filter-input::placeholder { color: var(--md-outline); }
@@ -218,8 +205,8 @@
             .container { padding: 0 10px; margin: 16px auto; }
             .search-box { padding: 12px 40px 12px 16px; font-size: 0.95rem; }
             .search-icon { font-size: 22px; right: 12px; }
-            .science-filter-wrapper.expanded { width: 170px; }
-            .chip { font-size: 0.88rem; padding: 7px 13px; }
+            .science-filter-wrapper.expanded { width: 160px; }
+            .chip { font-size: 0.88rem; padding: 7px 12px; }
             .md-card { padding: 14px; border-radius: 14px; }
             .book-title { font-size: 1.05rem; }
             .book-meta { gap: 6px; font-size: 0.82rem; }
@@ -249,8 +236,16 @@
             <input type="text" id="searchInput" class="search-box" placeholder="ابحث عن كتاب أو مؤلف..." autocomplete="off">
         </div>
 
-        <!-- chips row: chips injected before the sticky science-filter -->
-        <div class="chips-row" id="chipsRow">
+        <!--
+          chips-area: [scrollable chips strip]  [science filter button — RIGHT]
+          The button is a sibling of the strip, NOT inside it.
+        -->
+        <div class="chips-area">
+            <div class="chips-row" id="chipsRow">
+                <!-- chips injected by JS -->
+            </div>
+
+            <!-- Science filter: always on the far right, never in the scroll -->
             <div class="science-filter-wrapper" id="scienceFilterWrapper">
                 <button class="science-filter-btn" id="scienceFilterBtn" title="فلترة العلوم" aria-label="فلترة العلوم">
                     <span class="material-icons-round">search</span>
@@ -299,21 +294,19 @@
 
         function initCategories() {
             const row = document.getElementById('chipsRow');
-            const filterWrapper = document.getElementById('scienceFilterWrapper');
-            // Remove old chips (keep filterWrapper)
-            [...row.children].forEach(c => { if (c !== filterWrapper) c.remove(); });
+            row.innerHTML = '';
 
             let allCats = [];
             booksData.forEach(b => allCats.push(...getBookCategories(b)));
-            const unique = [...new Set(allCats.filter(Boolean))].sort((a,b) => a.localeCompare(b,'ar'));
+            const unique = [...new Set(allCats.filter(Boolean))].sort((a, b) => a.localeCompare(b, 'ar'));
 
-            [{ label:'الكل', value:'الكل' }, ...unique.map(c=>({label:c, value:c}))]
-                .forEach(({label, value}) => row.insertBefore(createChip(label, value, value===currentCategory), filterWrapper));
+            [{ label:'الكل', value:'الكل' }, ...unique.map(c => ({ label:c, value:c }))]
+                .forEach(({ label, value }) => row.appendChild(createChip(label, value, value === currentCategory)));
         }
 
         function createChip(label, value, isActive) {
             const btn = document.createElement('button');
-            btn.className = `chip${isActive?' active':''}`;
+            btn.className = `chip${isActive ? ' active' : ''}`;
             btn.textContent = label;
             btn.dataset.value = value;
             btn.onclick = () => {
@@ -335,7 +328,7 @@
             sfWrapper.classList.contains('expanded') ? collapseFilter() : expandFilter();
         });
 
-        sfInput.addEventListener('click', e => e.stopPropagation()); // prevent immediate collapse
+        sfInput.addEventListener('click', e => e.stopPropagation());
 
         sfInput.addEventListener('keydown', e => {
             if (e.key === 'Enter') {
@@ -349,7 +342,7 @@
             applyChipFilter();
         });
 
-        // Collapse on outside click — but DO NOT clear results
+        // Collapse on outside click — results preserved
         document.addEventListener('click', () => collapseFilter());
 
         function expandFilter() {
@@ -360,7 +353,7 @@
         function collapseFilter() {
             sfWrapper.classList.remove('expanded');
             sfInput.blur();
-            // scienceFilterTerm and chip visibility are intentionally preserved
+            // scienceFilterTerm and chip visibility preserved intentionally
         }
 
         function applyChipFilter() {
@@ -415,10 +408,10 @@
                         <span class="text">${cat}</span>
                     </span>`).join('');
 
-                const renderList = (items, isEdition, type) => (items||[]).map((ed,idx) => {
+                const renderList = (items, isEdition, type) => (items || []).map((ed, idx) => {
                     let actions = '';
                     if (isEdition && ed.notes) actions += `<button class="md-icon-btn" onclick="openNoteModal('${encodeURIComponent(ed.name)}','${encodeURIComponent(ed.notes)}')" title="ملاحظات"><span class="material-icons-round">info</span></button>`;
-                    if (isEdition && ((ed.images&&ed.images.length)||ed.image)) actions += `<button class="md-icon-btn" onclick="openImageModal(${book.id},'${type}',${idx})" title="صور"><span class="material-icons-round">photo_library</span></button>`;
+                    if (isEdition && ((ed.images && ed.images.length) || ed.image)) actions += `<button class="md-icon-btn" onclick="openImageModal(${book.id},'${type}',${idx})" title="صور"><span class="material-icons-round">photo_library</span></button>`;
                     return isEdition
                         ? `<li class="md-list-item"><span class="edition-name">${ed.name}</span><div class="edition-actions">${actions}</div></li>`
                         : `<li class="md-list-item"><a href="${ed.url}" target="_blank" rel="noopener" class="link-item"><span class="material-icons-round">open_in_new</span><span class="edition-name">${ed.title}</span></a></li>`;
@@ -430,9 +423,9 @@
                         <span class="meta-chip"><span class="material-icons-round">person</span><span class="text">${book.author}</span></span>
                         ${catsHTML}
                     </div>
-                    ${book.best_editions?.length ? `<div class="section-title"><span class="material-icons-round">verified</span> أفضل الطبعات:</div><ul>${renderList(book.best_editions,true,'best_editions')}</ul>` : ''}
-                    ${book.alt_editions?.length  ? `<div class="section-title"><span class="material-icons-round">rule</span> طبعات بديلة جيدة:</div><ul>${renderList(book.alt_editions,true,'alt_editions')}</ul>` : ''}
-                    ${book.links?.length         ? `<div class="section-title"><span class="material-icons-round">link</span> روابط مفيدة:</div><ul>${renderList(book.links,false)}</ul>` : ''}
+                    ${book.best_editions?.length ? `<div class="section-title"><span class="material-icons-round">verified</span> أفضل الطبعات:</div><ul>${renderList(book.best_editions, true, 'best_editions')}</ul>` : ''}
+                    ${book.alt_editions?.length  ? `<div class="section-title"><span class="material-icons-round">rule</span> طبعات بديلة جيدة:</div><ul>${renderList(book.alt_editions, true, 'alt_editions')}</ul>` : ''}
+                    ${book.links?.length         ? `<div class="section-title"><span class="material-icons-round">link</span> روابط مفيدة:</div><ul>${renderList(book.links, false)}</ul>` : ''}
                     ${book.notes ? `<div class="book-notes"><span class="material-icons-round">lightbulb</span><div>${book.notes}</div></div>` : ''}
                 `;
                 container.appendChild(card);
@@ -447,7 +440,7 @@
         }
 
         function openImageModal(bookId, edType, index) {
-            const ed = booksData.find(b => b.id===bookId)[edType][index];
+            const ed = booksData.find(b => b.id === bookId)[edType][index];
             document.getElementById('modalTitle').innerText = ed.name;
             currentCarouselImages = ed.images?.length ? ed.images : (ed.image ? [ed.image] : []);
             currentSlideIndex = 0;
@@ -466,17 +459,17 @@
                         <img src="${currentCarouselImages[currentSlideIndex]}" class="carousel-img" alt="غلاف الطبعة">
                         <button class="carousel-btn left"  onclick="changeSlide(1)"><span class="material-icons-round">chevron_left</span></button>
                     </div>
-                    <div class="carousel-dots">صورة ${currentSlideIndex+1} من ${currentCarouselImages.length}</div>`;
+                    <div class="carousel-dots">صورة ${currentSlideIndex + 1} من ${currentCarouselImages.length}</div>`;
             }
         }
 
         function changeSlide(dir) {
-            currentSlideIndex = (currentSlideIndex+dir+currentCarouselImages.length) % currentCarouselImages.length;
+            currentSlideIndex = (currentSlideIndex + dir + currentCarouselImages.length) % currentCarouselImages.length;
             renderCarousel();
         }
 
-        function closeModal() { document.getElementById('infoModal').style.display='none'; }
-        window.addEventListener('click', e => { if (e.target.id==='infoModal') closeModal(); });
+        function closeModal() { document.getElementById('infoModal').style.display = 'none'; }
+        window.addEventListener('click', e => { if (e.target.id === 'infoModal') closeModal(); });
     </script>
 </body>
 </html>
