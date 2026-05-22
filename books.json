@@ -2977,5 +2977,23 @@
     ],
     "alt_editions": [],
     "links": []
+  },
+  {
+    "id": 152,
+    "title": "ديوان الحماسة",
+    "author": "أبو تمام الطائي",
+    "category": [
+      "اللغة والأدب"
+    ],
+    "notes": "",
+    "best_editions": [
+      {
+        "name": "ط ابن الجوزي السعودية",
+        "images": [],
+        "notes": "الطبعة الثانية"
+      }
+    ],
+    "alt_editions": [],
+    "links": []
   }
 ]
