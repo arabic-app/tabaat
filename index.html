@@ -101,17 +101,17 @@
         }
         .search-box:focus { outline: none; }
 
-        /* ===== CATEGORY CHIPS (شريط التصنيفات) ===== */
+        /* ===== CATEGORY CHIPS ===== */
         .category-chips {
             display: flex;
             gap: 8px;
             overflow-x: auto;
             padding-bottom: 12px;
             margin-bottom: 16px;
-            -ms-overflow-style: none; /* إخفاء شريط التمرير في إنترنت إكسبلورر */
-            scrollbar-width: none; /* إخفاء شريط التمرير في فايرفوكس */
+            -ms-overflow-style: none; 
+            scrollbar-width: none; 
         }
-        .category-chips::-webkit-scrollbar { display: none; } /* إخفاء شريط التمرير في كروم وسفاري */
+        .category-chips::-webkit-scrollbar { display: none; } 
 
         .chip {
             background: var(--md-surface);
@@ -127,6 +127,7 @@
             transition: all 0.2s ease;
             user-select: none;
             -webkit-tap-highlight-color: transparent;
+            display: inline-flex;
         }
         .chip:hover {
             background: var(--md-surface-variant);
@@ -145,7 +146,7 @@
             margin-bottom: 20px;
             box-shadow: var(--md-elevation-1);
             border: 1px solid var(--md-outline-variant);
-            overflow: hidden;
+            overflow: hidden; 
         }
         .md-card:hover { box-shadow: var(--md-elevation-2); }
 
@@ -215,7 +216,7 @@
             border-radius: 12px;
             transition: background 0.2s;
             gap: 8px;
-            min-width: 0;
+            min-width: 0; 
         }
         .md-list-item:hover { background: var(--md-surface-variant); }
 
@@ -224,7 +225,7 @@
             font-size: 0.95rem;
             color: var(--md-on-surface);
             flex: 1;
-            min-width: 0;
+            min-width: 0; 
             word-break: break-word;
             line-height: 1.5;
         }
@@ -470,15 +471,16 @@
             })
             .catch(e => console.error('Error loading JSON:', e));
 
-        // تهيئة تصنيفات الكتب (العلوم)
+        // تهيئة تصنيفات الكتب (العلوم) وترتيبها أبجدياً
         function initCategories() {
             const chipsContainer = document.getElementById('categoryChips');
             chipsContainer.innerHTML = '';
             
-            // استخراج جميع التصنيفات الفريدة من البيانات وإزالة القيم الفارغة
-            const categories = [...new Set(booksData.map(b => b.category).filter(c => c))].sort();
+            // استخراج جميع التصنيفات، إزالة القيم الفارغة، ثم ترتيبها أبجدياً باللغة العربية
+            const categories = [...new Set(booksData.map(b => b.category).filter(c => c))]
+                               .sort((a, b) => a.localeCompare(b, 'ar'));
             
-            // إضافة زر "الكل" افتراضياً
+            // إضافة زر "الكل" افتراضياً في البداية
             chipsContainer.appendChild(createChip('الكل', 'الكل', true));
             
             // إضافة باقي العلوم
@@ -492,6 +494,7 @@
             const btn = document.createElement('button');
             btn.className = `chip ${isActive ? 'active' : ''}`;
             btn.innerText = label;
+            btn.dataset.value = value; // تخزين القيمة للبحث داخلها لاحقاً
             btn.onclick = () => {
                 // تحديث حالة الأزرار
                 document.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
@@ -513,7 +516,7 @@
                     (book.author && book.author.toLowerCase().includes(currentSearchTerm)) ||
                     (book.category && book.category.toLowerCase().includes(currentSearchTerm));
                 
-                // فلتر التصنيف (العلم)
+                // فلتر التصنيف (العلم) - بحث ضمن العلم المختار
                 const matchesCategory = currentCategory === 'الكل' || book.category === currentCategory;
                 
                 return matchesSearch && matchesCategory;
@@ -525,6 +528,17 @@
         // مستمع أحداث مربع البحث
         document.getElementById('searchInput').addEventListener('input', (e) => {
             currentSearchTerm = e.target.value.toLowerCase();
+            
+            // تصفية أزرار التصنيفات (Chips) بناءً على البحث
+            document.querySelectorAll('.chip').forEach(chip => {
+                if (chip.dataset.value === 'الكل' || chip.dataset.value.toLowerCase().includes(currentSearchTerm)) {
+                    chip.style.display = 'inline-flex';
+                } else {
+                    chip.style.display = 'none';
+                }
+            });
+
+            // تصفية الكتب
             filterAndDisplayBooks();
         });
 
@@ -642,11 +656,11 @@
             } else {
                 body.innerHTML = `
                     <div class="carousel-container">
-                        <button class="carousel-btn right" onclick="changeSlide(-1)" aria-label="السابق">
+                        <button class="carousel-btn right" dir="ltr" onclick="changeSlide(-1)" aria-label="السابق">
                             <span class="material-icons-round">chevron_right</span>
                         </button>
                         <img src="${currentCarouselImages[currentSlideIndex]}" class="carousel-img" alt="غلاف الطبعة">
-                        <button class="carousel-btn left" onclick="changeSlide(1)" aria-label="التالي">
+                        <button class="carousel-btn left" dir="ltr" onclick="changeSlide(1)" aria-label="التالي">
                             <span class="material-icons-round">chevron_left</span>
                         </button>
                     </div>
