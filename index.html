@@ -335,4 +335,337 @@
         }
         .close-modal:hover { background: var(--md-outline-variant); }
 
-        #modal
+        #modalTitle {
+            margin: 0 0 14px 0;
+            color: var(--md-on-surface);
+            font-size: 1.1rem;
+            font-weight: 800;
+            padding-left: 40px;
+            word-break: break-word;
+            line-height: 1.4;
+        }
+        #modalBody { font-size: 0.95rem; line-height: 1.6; color: var(--md-on-surface-variant); }
+
+        /* ===== CAROUSEL ===== */
+        .carousel-container {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            background: var(--md-background);
+            border-radius: 12px;
+            overflow: hidden;
+            min-height: 120px;
+        }
+        .carousel-img {
+            max-width: 100%;
+            max-height: 55vh;
+            object-fit: contain;
+            display: block;
+        }
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255,255,255,0.85);
+            color: var(--md-primary);
+            border: none;
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--md-elevation-1);
+            transition: 0.2s;
+        }
+        .carousel-btn:hover { background: white; box-shadow: var(--md-elevation-2); }
+        .carousel-btn.right { right: 8px; }
+        .carousel-btn.left  { left: 8px; }
+        .carousel-dots {
+            text-align: center;
+            margin-top: 12px;
+            font-weight: 600;
+            color: var(--md-outline);
+            font-size: 0.88rem;
+        }
+
+        /* ===== EMPTY STATE ===== */
+        .empty-state {
+            text-align: center;
+            padding: 40px 20px;
+            color: var(--md-outline);
+        }
+        .empty-state .material-icons-round {
+            font-size: 48px;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 480px) {
+            .container { padding: 0 10px; margin: 16px auto; }
+            .md-card { padding: 14px; border-radius: 14px; }
+            .book-title { font-size: 1.05rem; }
+            .book-meta { gap: 6px; font-size: 0.82rem; }
+            .meta-chip { padding: 3px 8px; }
+            .section-title { font-size: 0.9rem; }
+            .edition-name { font-size: 0.88rem; }
+            .md-list-item { padding: 8px 10px; border-radius: 10px; }
+            .md-icon-btn { width: 34px; height: 34px; }
+            .md-icon-btn .material-icons-round { font-size: 18px; }
+            .modal-content { padding: 18px 14px; border-radius: 18px; }
+            .carousel-img { max-height: 45vh; }
+            .book-notes { font-size: 0.85rem; padding: 12px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>دليل أفضل طبعات الكتب الإسلامية</h1>
+        <p>ابحث عن الكتاب، المؤلف، أو العلم لتعرف أفضل الطبعات المعتمدة</p>
+    </header>
+
+    <div class="container">
+        <div class="search-wrapper">
+            <span class="material-icons-round search-icon">search</span>
+            <input type="text" id="searchInput" class="search-box" placeholder="ابحث عن كتاب، مؤلف، أو علم..." autocomplete="off">
+        </div>
+        
+        <div class="category-chips" id="categoryChips">
+            </div>
+
+        <div id="booksContainer"></div>
+    </div>
+
+    <div id="infoModal" class="modal">
+        <div class="modal-content">
+            <button class="close-modal" onclick="closeModal()" aria-label="إغلاق">
+                <span class="material-icons-round">close</span>
+            </button>
+            <h3 id="modalTitle"></h3>
+            <div id="modalBody"></div>
+        </div>
+    </div>
+
+    <script>
+        let booksData = [];
+        let currentCarouselImages = [];
+        let currentSlideIndex = 0;
+        
+        // متغيرات الفلترة
+        let currentSearchTerm = '';
+        let currentCategory = 'الكل';
+
+        // جلب البيانات
+        fetch('books.json?v=' + new Date().getTime())
+            .then(r => r.json())
+            .then(data => { 
+                booksData = data; 
+                initCategories();
+                filterAndDisplayBooks(); 
+            })
+            .catch(e => console.error('Error loading JSON:', e));
+
+        // تهيئة تصنيفات الكتب (العلوم)
+        function initCategories() {
+            const chipsContainer = document.getElementById('categoryChips');
+            chipsContainer.innerHTML = '';
+            
+            // استخراج جميع التصنيفات الفريدة من البيانات وإزالة القيم الفارغة
+            const categories = [...new Set(booksData.map(b => b.category).filter(c => c))].sort();
+            
+            // إضافة زر "الكل" افتراضياً
+            chipsContainer.appendChild(createChip('الكل', 'الكل', true));
+            
+            // إضافة باقي العلوم
+            categories.forEach(cat => {
+                chipsContainer.appendChild(createChip(cat, cat, false));
+            });
+        }
+
+        // دالة مساعدة لإنشاء زر التصنيف (Chip)
+        function createChip(label, value, isActive) {
+            const btn = document.createElement('button');
+            btn.className = `chip ${isActive ? 'active' : ''}`;
+            btn.innerText = label;
+            btn.onclick = () => {
+                // تحديث حالة الأزرار
+                document.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
+                btn.classList.add('active');
+                
+                // تحديث المتغير وإعادة عرض الكتب
+                currentCategory = value;
+                filterAndDisplayBooks();
+            };
+            return btn;
+        }
+
+        // دالة الفلترة الشاملة (للبحث والتصنيف معاً)
+        function filterAndDisplayBooks() {
+            const filtered = booksData.filter(book => {
+                // فلتر البحث النصي
+                const matchesSearch = 
+                    (book.title && book.title.toLowerCase().includes(currentSearchTerm)) ||
+                    (book.author && book.author.toLowerCase().includes(currentSearchTerm)) ||
+                    (book.category && book.category.toLowerCase().includes(currentSearchTerm));
+                
+                // فلتر التصنيف (العلم)
+                const matchesCategory = currentCategory === 'الكل' || book.category === currentCategory;
+                
+                return matchesSearch && matchesCategory;
+            });
+            
+            displayBooks(filtered);
+        }
+
+        // مستمع أحداث مربع البحث
+        document.getElementById('searchInput').addEventListener('input', (e) => {
+            currentSearchTerm = e.target.value.toLowerCase();
+            filterAndDisplayBooks();
+        });
+
+        // دالة عرض الكروت
+        function displayBooks(books) {
+            const container = document.getElementById('booksContainer');
+            container.innerHTML = '';
+
+            if (books.length === 0) {
+                container.innerHTML = `
+                    <div class="empty-state">
+                        <span class="material-icons-round">search_off</span>
+                        <h3>لا توجد نتائج مطابقة لبحثك في هذا القسم.</h3>
+                    </div>`;
+                return;
+            }
+
+            books.forEach(book => {
+                const card = document.createElement('div');
+                card.className = 'md-card';
+
+                const renderEditions = (editions, type) => {
+                    return editions.map((ed, index) => {
+                        let actions = '';
+                        if (ed.notes && ed.notes.trim() !== '') {
+                            actions += `<button class="md-icon-btn" onclick="openNoteModal('${encodeURIComponent(ed.name)}', '${encodeURIComponent(ed.notes)}')" title="ملاحظات حول الطبعة" aria-label="ملاحظات">
+                                <span class="material-icons-round">info</span>
+                            </button>`;
+                        }
+                        const hasImages = (ed.images && ed.images.length > 0) || (ed.image && ed.image.trim() !== '');
+                        if (hasImages) {
+                            actions += `<button class="md-icon-btn" onclick="openImageModal(${book.id}, '${type}', ${index})" title="عرض صور الطبعة" aria-label="صور">
+                                <span class="material-icons-round">photo_library</span>
+                            </button>`;
+                        }
+                        return `<li class="md-list-item">
+                            <span class="edition-name">${ed.name}</span>
+                            <div class="edition-actions">${actions}</div>
+                        </li>`;
+                    }).join('');
+                };
+
+                const renderLinks = (links) => {
+                    return links.map(link => `
+                        <li class="md-list-item">
+                            <a href="${link.url}" target="_blank" rel="noopener" class="link-item">
+                                <span class="material-icons-round">open_in_new</span>
+                                <span class="edition-name">${link.title}</span>
+                            </a>
+                        </li>`).join('');
+                };
+
+                card.innerHTML = `
+                    <h2 class="book-title">${book.title}</h2>
+                    <div class="book-meta">
+                        <span class="meta-chip">
+                            <span class="material-icons-round">person</span>
+                            <span class="text">${book.author}</span>
+                        </span>
+                        <span class="meta-chip">
+                            <span class="material-icons-round">category</span>
+                            <span class="text">${book.category}</span>
+                        </span>
+                    </div>
+                    ${book.best_editions && book.best_editions.length > 0 ? `
+                        <div class="section-title"><span class="material-icons-round">verified</span> أفضل الطبعات:</div>
+                        <ul>${renderEditions(book.best_editions, 'best_editions')}</ul>` : ''}
+                    ${book.alt_editions && book.alt_editions.length > 0 ? `
+                        <div class="section-title"><span class="material-icons-round">rule</span> طبعات بديلة جيدة:</div>
+                        <ul>${renderEditions(book.alt_editions, 'alt_editions')}</ul>` : ''}
+                    ${book.links && book.links.length > 0 ? `
+                        <div class="section-title"><span class="material-icons-round">link</span> روابط مفيدة:</div>
+                        <ul>${renderLinks(book.links)}</ul>` : ''}
+                    ${book.notes ? `
+                        <div class="book-notes">
+                            <span class="material-icons-round">lightbulb</span>
+                            <div><strong>ملاحظات:</strong><br>${book.notes}</div>
+                        </div>` : ''}
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        // دوال النافذة المنبثقة والكاروسيل
+        function openNoteModal(title, content) {
+            document.getElementById('modalTitle').innerText = decodeURIComponent(title);
+            document.getElementById('modalBody').innerHTML = `<p>${decodeURIComponent(content)}</p>`;
+            document.getElementById('infoModal').style.display = 'flex';
+        }
+
+        function openImageModal(bookId, edType, index) {
+            const book = booksData.find(b => b.id === bookId);
+            const ed = book[edType][index];
+            document.getElementById('modalTitle').innerText = ed.name;
+
+            currentCarouselImages = [];
+            if (ed.images && ed.images.length > 0) {
+                currentCarouselImages = ed.images;
+            } else if (ed.image && ed.image.trim() !== '') {
+                currentCarouselImages = [ed.image];
+            }
+
+            currentSlideIndex = 0;
+            renderCarousel();
+            document.getElementById('infoModal').style.display = 'flex';
+        }
+
+        function renderCarousel() {
+            const body = document.getElementById('modalBody');
+            if (currentCarouselImages.length === 1) {
+                body.innerHTML = `
+                    <div class="carousel-container">
+                        <img src="${currentCarouselImages[0]}" class="carousel-img" alt="غلاف الطبعة">
+                    </div>`;
+            } else {
+                body.innerHTML = `
+                    <div class="carousel-container">
+                        <button class="carousel-btn right" onclick="changeSlide(-1)" aria-label="السابق">
+                            <span class="material-icons-round">chevron_right</span>
+                        </button>
+                        <img src="${currentCarouselImages[currentSlideIndex]}" class="carousel-img" alt="غلاف الطبعة">
+                        <button class="carousel-btn left" onclick="changeSlide(1)" aria-label="التالي">
+                            <span class="material-icons-round">chevron_left</span>
+                        </button>
+                    </div>
+                    <div class="carousel-dots">صورة ${currentSlideIndex + 1} من ${currentCarouselImages.length}</div>`;
+            }
+        }
+
+        function changeSlide(direction) {
+            currentSlideIndex = (currentSlideIndex + direction + currentCarouselImages.length) % currentCarouselImages.length;
+            renderCarousel();
+        }
+
+        function closeModal() {
+            document.getElementById('infoModal').style.display = 'none';
+        }
+
+        window.addEventListener('click', (e) => {
+            if (e.target === document.getElementById('infoModal')) closeModal();
+        });
+    </script>
+</body>
+</html>
