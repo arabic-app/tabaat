@@ -1192,24 +1192,29 @@
     "id": 51,
     "title": "الإصابة في تمييز الصحابة",
     "author": "أحمد بن علي بن حجر العسقلاني",
-    "category": "تراجم ورجال",
+    "category": [
+      "التراجم و الرجال"
+    ],
+    "notes": "",
     "best_editions": [
       {
         "name": "طبعة التركي (دار الإمام مسلم - مركز سطور)",
-        "image": ""
+        "images": [],
+        "notes": ""
       },
       {
         "name": "دار عالم الكتب",
-        "image": ""
+        "images": [],
+        "notes": ""
       },
       {
         "name": "دار هجر",
-        "image": ""
+        "images": [],
+        "notes": ""
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "notes": ""
+    "links": []
   },
   {
     "id": 52,
