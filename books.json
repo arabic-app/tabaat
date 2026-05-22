@@ -1104,7 +1104,9 @@
     "id": 49,
     "title": "سير أعلام النبلاء",
     "author": "محمد بن أحمد بن عثمان الذهبي",
-    "category": "تاريخ وتراجم",
+    "category": [
+      "التراجم و الرجال"
+    ],
     "notes": "بيان مفصل :\nhttps://www.facebook.com/groups/1834197839969355/permalink/3545406558848466",
     "best_editions": [
       {
@@ -1136,111 +1138,98 @@
     "id": 50,
     "title": "البداية والنهاية",
     "author": "إسماعيل بن عمر بن كثير",
-    "category": [
-      "التاريخ",
-      "التراجم و الرجال"
-    ],
-    "notes": "",
+    "category": "تاريخ",
     "best_editions": [
       {
         "name": "طبعة التركي (مركز سطور)",
-        "images": [],
-        "notes": ""
+        "image": ""
       },
       {
         "name": "دار عالم الكتب",
-        "images": [],
-        "notes": ""
+        "image": ""
       },
       {
         "name": "دار هجر",
-        "images": [],
-        "notes": ""
+        "image": ""
       }
     ],
     "alt_editions": [
       {
         "name": "دار ابن رجب",
-        "images": [],
-        "notes": ""
+        "image": ""
       },
       {
         "name": "الدار العالمية",
-        "images": [],
-        "notes": ""
+        "image": ""
       },
       {
         "name": "ابداع ابن الجوزي القاهرة",
-        "images": [],
-        "notes": ""
+        "image": ""
       }
     ],
-    "links": []
+    "links": [],
+    "notes": ""
   },
   {
     "id": 51,
     "title": "الإصابة في تمييز الصحابة",
     "author": "أحمد بن علي بن حجر العسقلاني",
-    "category": [
-      "التراجم و الرجال"
-    ],
-    "notes": "",
+    "category": "تراجم ورجال",
     "best_editions": [
       {
         "name": "طبعة التركي (دار الإمام مسلم - مركز سطور)",
-        "images": [],
-        "notes": ""
-      },
-      {
-        "name": "دار عالم الكتب",
-        "images": [],
-        "notes": ""
-      },
-      {
-        "name": "دار هجر",
-        "images": [],
-        "notes": ""
-      }
-    ],
-    "alt_editions": [],
-    "links": []
-  },
-  {
-    "id": 52,
-    "title": "تاريخ ابن خلدون (ديوان المبتدأ والخبر)",
-    "author": "عبد الرحمن بن محمد ابن خلدون",
-    "category": [
-      "التاريخ"
-    ],
-    "notes": "",
-    "best_editions": [
-      {
-        "name": "الطبعة التونسية",
-        "images": [],
-        "notes": ""
-      }
-    ],
-    "alt_editions": [],
-    "links": []
-  },
-  {
-    "id": 53,
-    "title": "الكامل في التاريخ",
-    "author": "علي بن محمد ابن الأثير",
-    "category": "تاريخ",
-    "best_editions": [
-      {
-        "name": "دار صادر",
         "image": ""
       },
       {
-        "name": "دار الكتاب العربي",
+        "name": "دار عالم الكتب",
+        "image": ""
+      },
+      {
+        "name": "دار هجر",
         "image": ""
       }
     ],
     "alt_editions": [],
     "links": [],
-    "notes": "تنتظر إصدار جديد"
+    "notes": ""
+  },
+  {
+    "id": 52,
+    "title": "تاريخ ابن خلدون (ديوان المبتدأ والخبر)",
+    "author": "عبد الرحمن بن محمد ابن خلدون",
+    "category": "تاريخ",
+    "best_editions": [
+      {
+        "name": "الطبعة التونسية",
+        "image": ""
+      }
+    ],
+    "alt_editions": [],
+    "links": [],
+    "notes": ""
+  },
+  {
+    "id": 53,
+    "title": "الكامل في التاريخ",
+    "author": "علي بن محمد ابن الأثير",
+    "category": [
+      "التاريخ"
+    ],
+    "notes": "تنتظر إصدار جديد",
+    "best_editions": [
+      {
+        "name": "دار صادر",
+        "images": [],
+        "notes": ""
+      },
+      {
+        "name": "دار الكتاب العربي",
+        "images": [],
+        "notes": ""
+      }
+    ],
+    "alt_editions": [],
+    "links": []
   },
   {
     "id": 54,
@@ -2029,24 +2018,20 @@
     "id": 94,
     "title": "تاريخ الأمم والملوك (تاريخ الطبري)",
     "author": "محمد بن جرير الطبري",
-    "category": [
-      "التاريخ"
-    ],
-    "notes": "",
+    "category": "تاريخ",
     "best_editions": [],
     "alt_editions": [
       {
         "name": "دار المعارف مصر",
-        "images": [],
-        "notes": ""
+        "image": ""
       },
       {
         "name": "ابداع ابن الجوزي القاهرة",
-        "images": [],
-        "notes": ""
+        "image": ""
       }
     ],
-    "links": []
+    "links": [],
+    "notes": ""
   },
   {
     "id": 95,
