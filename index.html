@@ -574,9 +574,15 @@
             scienceFilterWrapper.classList.toggle('expanded');
             if (scienceFilterWrapper.classList.contains('expanded')) {
                 scienceSearchInput.focus();
-            } else {
-                scienceSearchInput.value = '';
-                filterChips(''); // إرجاع جميع التصنيفات
+            }
+        });
+
+        // إخفاء لوحة المفاتيح والطي عند الضغط على Enter
+        scienceSearchInput.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                scienceSearchInput.blur(); // إخفاء الكيبورد على الهاتف
+                scienceFilterWrapper.classList.remove('expanded'); // طي الحقل
             }
         });
 
@@ -598,9 +604,19 @@
         // ==========================================
         // منطق البحث الرئيسي والفلترة
         // ==========================================
-        document.getElementById('searchInput').addEventListener('input', (e) => {
+        const mainSearchInput = document.getElementById('searchInput');
+        
+        mainSearchInput.addEventListener('input', (e) => {
             currentSearchTerm = e.target.value.toLowerCase();
             filterAndDisplayBooks();
+        });
+
+        // إخفاء الكيبورد للبحث الرئيسي عند الضغط على Enter
+        mainSearchInput.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                mainSearchInput.blur();
+            }
         });
 
         function filterAndDisplayBooks() {
