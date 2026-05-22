@@ -1148,91 +1148,75 @@
     "id": 50,
     "title": "البداية والنهاية",
     "author": "إسماعيل بن عمر بن كثير",
-    "category": [
-      "التاريخ"
-    ],
-    "notes": "",
+    "category": "تاريخ",
     "best_editions": [
       {
         "name": "طبعة التركي (مركز سطور)",
-        "images": [],
-        "notes": ""
+        "image": ""
       },
       {
         "name": "دار عالم الكتب",
-        "images": [],
-        "notes": ""
+        "image": ""
       },
       {
         "name": "دار هجر",
-        "images": [],
-        "notes": ""
+        "image": ""
       }
     ],
     "alt_editions": [
       {
         "name": "دار ابن رجب",
-        "images": [],
-        "notes": ""
+        "image": ""
       },
       {
         "name": "الدار العالمية",
-        "images": [],
-        "notes": ""
+        "image": ""
       },
       {
         "name": "ابداع ابن الجوزي القاهرة",
-        "images": [],
-        "notes": ""
+        "image": ""
       }
     ],
-    "links": []
+    "links": [],
+    "notes": ""
   },
   {
     "id": 51,
     "title": "الإصابة في تمييز الصحابة",
     "author": "أحمد بن علي بن حجر العسقلاني",
-    "category": [
-      "التراجم و الرجال"
-    ],
-    "notes": "",
+    "category": "تراجم ورجال",
     "best_editions": [
       {
         "name": "طبعة التركي (دار الإمام مسلم - مركز سطور)",
-        "images": [],
-        "notes": ""
+        "image": ""
       },
       {
         "name": "دار عالم الكتب",
-        "images": [],
-        "notes": ""
+        "image": ""
       },
       {
         "name": "دار هجر",
-        "images": [],
-        "notes": ""
+        "image": ""
       }
     ],
     "alt_editions": [],
-    "links": []
+    "links": [],
+    "notes": ""
   },
   {
     "id": 52,
     "title": "تاريخ ابن خلدون (ديوان المبتدأ والخبر)",
     "author": "عبد الرحمن بن محمد ابن خلدون",
-    "category": [
-      "التاريخ"
-    ],
-    "notes": "",
+    "category": "تاريخ",
     "best_editions": [
       {
         "name": "الطبعة التونسية",
-        "images": [],
-        "notes": ""
+        "image": ""
       }
     ],
     "alt_editions": [],
-    "links": []
+    "links": [],
+    "notes": ""
   },
   {
     "id": 53,
@@ -1439,36 +1423,6 @@
     "best_editions": [
       {
         "name": "عالم الفوائد",
-        "image": ""
-      }
-    ],
-    "alt_editions": [],
-    "links": [],
-    "notes": ""
-  },
-  {
-    "id": 62,
-    "title": "آثار ابن القيم",
-    "author": "محمد بن أبي بكر ابن قيم الجوزية",
-    "category": "مجاميع",
-    "best_editions": [
-      {
-        "name": "عالم الفوائد (نفسها عطاءات العلم مع ابن حزم)",
-        "image": ""
-      }
-    ],
-    "alt_editions": [],
-    "links": [],
-    "notes": ""
-  },
-  {
-    "id": 63,
-    "title": "آثار ابن تيمية",
-    "author": "أحمد بن عبد الحليم ابن تيمية",
-    "category": "مجاميع",
-    "best_editions": [
-      {
-        "name": "عالم الفوائد (نفسها عطاءات العلم مع ابن حزم)",
         "image": ""
       }
     ],
@@ -2044,24 +1998,20 @@
     "id": 94,
     "title": "تاريخ الأمم والملوك (تاريخ الطبري)",
     "author": "محمد بن جرير الطبري",
-    "category": [
-      "التاريخ"
-    ],
-    "notes": "",
+    "category": "تاريخ",
     "best_editions": [],
     "alt_editions": [
       {
         "name": "دار المعارف مصر",
-        "images": [],
-        "notes": ""
+        "image": ""
       },
       {
         "name": "ابداع ابن الجوزي القاهرة",
-        "images": [],
-        "notes": ""
+        "image": ""
       }
     ],
-    "links": []
+    "links": [],
+    "notes": ""
   },
   {
     "id": 95,
