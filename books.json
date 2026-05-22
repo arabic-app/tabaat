@@ -2065,16 +2065,31 @@
     "id": 97,
     "title": "الشفا بتعريف حقوق المصطفى",
     "author": "القاضي عياض بن موسى",
-    "category": "السيرة النبوية والشمائل",
-    "best_editions": [],
+    "category": [
+      "السيرة",
+      "الشمائل النبوية"
+    ],
+    "notes": "",
+    "best_editions": [
+      {
+        "name": "دار اللباب",
+        "images": [],
+        "notes": ""
+      },
+      {
+        "name": "دار الفتح",
+        "images": [],
+        "notes": ""
+      }
+    ],
     "alt_editions": [
       {
         "name": "دار ابن حزم بيروت",
-        "image": ""
+        "images": [],
+        "notes": ""
       }
     ],
-    "links": [],
-    "notes": ""
+    "links": []
   },
   {
     "id": 98,
