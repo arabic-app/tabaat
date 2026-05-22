@@ -2942,5 +2942,37 @@
     ],
     "alt_editions": [],
     "links": []
+  },
+  {
+    "id": 150,
+    "title": "المحاضرات في اللغة و الأدب",
+    "author": "الحسن اليوسي",
+    "category": "اللغة والأدب",
+    "notes": "",
+    "best_editions": [
+      {
+        "name": "ت محمد حجي و أحمد الشرقاوي ط دار الغرب الإسلامي",
+        "images": [],
+        "notes": ""
+      }
+    ],
+    "alt_editions": [],
+    "links": []
+  },
+  {
+    "id": 151,
+    "title": "الحديقة",
+    "author": "محب الدين الخطيب",
+    "category": "اللغة والأدب",
+    "notes": "",
+    "best_editions": [
+      {
+        "name": "دار العاصمة",
+        "images": [],
+        "notes": ""
+      }
+    ],
+    "alt_editions": [],
+    "links": []
   }
 ]
