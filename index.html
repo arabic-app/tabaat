@@ -109,7 +109,7 @@
             margin-bottom: 20px;
         }
 
-        /* حاوية بحث العلوم (تتمدد عند النقر) */
+        /* حاوية بحث العلوم */
         .science-filter-wrapper {
             display: flex;
             align-items: center;
@@ -124,7 +124,7 @@
             box-shadow: var(--md-elevation-1);
         }
         .science-filter-wrapper.expanded {
-            width: 200px; /* العرض بعد التمدد */
+            width: 200px;
             padding-left: 12px;
         }
         .science-filter-btn {
@@ -520,7 +520,13 @@
         fetch('books.json?v=' + new Date().getTime())
             .then(r => r.json())
             .then(data => { 
-                booksData = data; 
+                // ترتيب الكتب أبجدياً حسب العنوان باستخدام localeCompare
+                booksData = data.sort((a, b) => {
+                    const titleA = a.title || '';
+                    const titleB = b.title || '';
+                    return titleA.localeCompare(titleB, 'ar');
+                });
+                
                 initCategories();
                 filterAndDisplayBooks(); 
             })
