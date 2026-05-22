@@ -2761,5 +2761,37 @@
     ],
     "alt_editions": [],
     "links": []
+  },
+  {
+    "id": 139,
+    "title": "العظمة",
+    "author": "أبو الشيخ الأصبهاني",
+    "category": "كتب متنوعة",
+    "notes": "",
+    "best_editions": [
+      {
+        "name": "ت رضاء الله المباركفوري ط العاصمة",
+        "images": [],
+        "notes": ""
+      }
+    ],
+    "alt_editions": [],
+    "links": []
+  },
+  {
+    "id": 140,
+    "title": "الأخلاق والسير",
+    "author": "على بن حزم الأندلسي",
+    "category": "كتب متنوعة",
+    "notes": "",
+    "best_editions": [
+      {
+        "name": "ت عبد الحق التركماني ط ابن حزم",
+        "images": [],
+        "notes": ""
+      }
+    ],
+    "alt_editions": [],
+    "links": []
   }
 ]
