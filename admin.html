@@ -24,10 +24,10 @@
             --md-on-surface-variant: #3f4947;
             --md-outline: #6f7977;
             --md-outline-variant: #bec9c6;
-            --md-error: #c0392b;
-            --md-error-container: #fdecea;
+            --md-error: #ba1a1a;
+            --md-error-container: #ffdad6;
+            --md-on-error-container: #410002;
             --md-info: #1565c0;
-            --md-info-container: #e3f2fd;
             --md-elevation-1: 0 1px 3px 1px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
             --md-elevation-2: 0 2px 6px 2px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
             --sidebar-width: 300px;
@@ -82,7 +82,7 @@
             min-height: 100vh;
         }
 
-        /* ===== SIDEBAR / NAVIGATION DRAWER ===== */
+        /* ===== SIDEBAR ===== */
         .sidebar {
             width: var(--sidebar-width);
             background: var(--md-surface);
@@ -108,9 +108,7 @@
             align-items: center;
             gap: 8px;
         }
-        .sidebar-header h2 .material-icons-round { font-size: 1.2rem; }
 
-        /* Search field in sidebar */
         .search-field {
             position: relative;
             display: flex;
@@ -153,11 +151,10 @@
             align-items: center;
             justify-content: center;
             gap: 6px;
-            transition: box-shadow 0.2s, background 0.2s;
             box-shadow: var(--md-elevation-1);
+            transition: box-shadow 0.2s, background 0.2s;
         }
         .btn-add-new:hover { background: #00796b; box-shadow: var(--md-elevation-2); }
-        .btn-add-new .material-icons-round { font-size: 18px; }
 
         .sidebar-list {
             flex: 1;
@@ -220,7 +217,6 @@
             gap: 8px;
             margin-bottom: 16px;
         }
-        .sync-card-title .material-icons-round { font-size: 1.2rem; }
 
         .github-row {
             display: flex;
@@ -240,7 +236,6 @@
             background: var(--md-background);
             color: var(--md-on-surface);
             outline: none;
-            transition: border-color 0.2s;
         }
         .github-token-input:focus { border-color: var(--md-primary); }
 
@@ -261,11 +256,11 @@
             transition: box-shadow 0.2s, opacity 0.2s;
             white-space: nowrap;
         }
-        .md-btn .material-icons-round { font-size: 18px; }
         .md-btn:hover { opacity: 0.88; }
         .md-btn-primary { background: var(--md-primary); color: white; box-shadow: var(--md-elevation-1); }
         .md-btn-secondary { background: var(--md-surface-variant); color: var(--md-on-surface); }
         .md-btn-purple { background: #7b1fa2; color: white; box-shadow: var(--md-elevation-1); }
+        .md-btn-error { background: var(--md-error); color: white; box-shadow: var(--md-elevation-1); }
 
         /* ===== FORM CARD ===== */
         .form-card {
@@ -287,9 +282,7 @@
             align-items: center;
             gap: 8px;
         }
-        .form-card-title .material-icons-round { font-size: 1.3rem; }
 
-        /* ===== FORM FIELDS ===== */
         .form-group { margin-bottom: 18px; }
         .form-group label {
             display: block;
@@ -310,10 +303,7 @@
             outline: none;
             transition: border-color 0.2s, box-shadow 0.2s;
         }
-        .md-input:focus {
-            border-color: var(--md-primary);
-            box-shadow: 0 0 0 2px rgba(0,105,92,0.15);
-        }
+        .md-input:focus { border-color: var(--md-primary); box-shadow: 0 0 0 2px rgba(0,105,92,0.15); }
         textarea.md-input { resize: vertical; min-height: 80px; }
 
         .duplicate-warning {
@@ -341,7 +331,6 @@
             font-family: inherit;
             font-weight: 700;
             font-size: 0.85rem;
-            white-space: nowrap;
         }
 
         .section-header {
@@ -355,7 +344,6 @@
             padding-bottom: 8px;
             border-bottom: 1px dashed var(--md-outline-variant);
         }
-        .section-header .material-icons-round { font-size: 1.1rem; }
 
         .btn-add-row {
             height: 32px;
@@ -372,7 +360,6 @@
             display: inline-flex;
             align-items: center;
             gap: 4px;
-            transition: background 0.2s;
         }
         .btn-add-row:hover { background: var(--md-primary-container); }
 
@@ -387,100 +374,27 @@
             border-radius: 12px;
             border: 1px solid var(--md-outline-variant);
         }
-        .dynamic-row.sortable-ghost {
-            opacity: 0.4;
-            background: var(--md-primary-container);
-            border: 1px dashed var(--md-primary);
-        }
-        .drag-handle {
-            cursor: grab;
-            color: var(--md-outline);
-            font-size: 1.4rem;
-            padding: 4px 2px;
-            user-select: none;
-            flex-shrink: 0;
-            margin-top: 4px;
-        }
-        .drag-handle:active { cursor: grabbing; }
-
-        .row-inputs {
-            flex: 1;
-            min-width: 0;
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-        }
-        .row-inputs-horizontal {
-            flex: 1;
-            min-width: 0;
-            display: flex;
-            gap: 8px;
-            flex-wrap: wrap;
-        }
+        .dynamic-row.sortable-ghost { opacity: 0.4; background: var(--md-primary-container); border: 1px dashed var(--md-primary); }
+        .drag-handle { cursor: grab; color: var(--md-outline); font-size: 1.4rem; padding: 4px 2px; flex-shrink: 0; margin-top: 4px; }
+        
+        .row-inputs { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 8px; }
+        .row-inputs-horizontal { flex: 1; min-width: 0; display: flex; gap: 8px; flex-wrap: wrap; }
         .row-inputs-horizontal .md-input { flex: 1; min-width: 120px; }
 
-        /* Sub-containers for multiple inputs (Images & Categories) */
-        .sub-container {
-            background: var(--md-surface);
-            padding: 10px 12px;
-            border: 1px solid var(--md-outline-variant);
-            border-radius: 8px;
-        }
-        .sub-container-title {
-            font-size: 0.82rem;
-            font-weight: 700;
-            color: var(--md-on-surface-variant);
-            margin-bottom: 8px;
-            display: flex;
-            align-items: center;
-            gap: 4px;
-        }
-        .dynamic-input-group {
-            display: flex;
-            gap: 6px;
-            margin-bottom: 6px;
-        }
+        .sub-container { background: var(--md-surface); padding: 10px 12px; border: 1px solid var(--md-outline-variant); border-radius: 8px; }
+        .sub-container-title { font-size: 0.82rem; font-weight: 700; color: var(--md-on-surface-variant); margin-bottom: 8px; display: flex; align-items: center; gap: 4px; }
+        .dynamic-input-group { display: flex; gap: 6px; margin-bottom: 6px; }
         .dynamic-input-group .md-input { font-size: 0.85rem; padding: 7px 10px; }
         
         .btn-remove-item {
-            background: var(--md-error-container);
-            color: var(--md-error);
-            border: none;
-            width: 32px; height: 32px;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 1.1rem;
-            font-weight: bold;
-            display: flex; align-items: center; justify-content: center;
-            flex-shrink: 0;
+            background: var(--md-error-container); color: var(--md-error); border: none;
+            width: 32px; height: 32px; border-radius: 8px; cursor: pointer; font-size: 1.1rem; font-weight: bold;
+            display: flex; align-items: center; justify-content: center; flex-shrink: 0;
         }
-        .btn-add-item {
-            background: transparent;
-            color: var(--md-secondary);
-            border: none;
-            padding: 4px 8px;
-            cursor: pointer;
-            border-radius: 8px;
-            font-family: inherit;
-            font-size: 0.8rem;
-            font-weight: 700;
-            display: inline-flex;
-            align-items: center;
-            gap: 4px;
-        }
+        .btn-add-item { background: transparent; color: var(--md-secondary); border: none; padding: 4px 8px; cursor: pointer; border-radius: 8px; font-family: inherit; font-size: 0.8rem; font-weight: 700; display: inline-flex; align-items: center; gap: 4px; }
         .btn-add-item:hover { background: var(--md-surface-variant); }
 
-        .btn-remove {
-            background: var(--md-error-container);
-            color: var(--md-error);
-            border: none;
-            width: 36px; height: 36px;
-            border-radius: 8px;
-            cursor: pointer;
-            display: flex; align-items: center; justify-content: center;
-            flex-shrink: 0;
-            margin-top: 2px;
-        }
+        .btn-remove { background: var(--md-error-container); color: var(--md-error); border: none; width: 36px; height: 36px; border-radius: 8px; cursor: pointer; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
         .btn-remove:hover { background: #f5c6cb; }
 
         /* ===== FORM ACTIONS ===== */
@@ -488,9 +402,10 @@
             margin-top: 24px;
             display: flex;
             gap: 10px;
-            justify-content: flex-end;
+            justify-content: space-between; /* To push buttons to opposite sides */
             border-top: 1px solid var(--md-outline-variant);
             padding-top: 20px;
+            flex-wrap: wrap;
         }
         .btn-save {
             height: 44px;
@@ -509,6 +424,36 @@
             box-shadow: var(--md-elevation-1);
         }
         .btn-save:hover { background: #00796b; box-shadow: var(--md-elevation-2); }
+
+        /* ===== DELETE MODAL ===== */
+        .delete-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.6);
+            backdrop-filter: blur(2px);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+            padding: 16px;
+        }
+        .delete-overlay.visible { display: flex; }
+        .delete-modal {
+            background: var(--md-surface);
+            border-radius: 24px;
+            padding: 24px;
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+            box-shadow: var(--md-elevation-2);
+            animation: dialogFadeIn 0.2s ease-out;
+        }
+        @keyframes dialogFadeIn { from { opacity: 0; transform: scale(0.92); } to { opacity: 1; transform: scale(1); } }
+        .delete-modal .material-icons-round { font-size: 56px; color: var(--md-error); margin-bottom: 10px; }
+        .delete-modal h3 { margin: 0 0 10px 0; color: var(--md-on-surface); font-size: 1.3rem; }
+        .delete-modal p { margin: 0 0 24px 0; color: var(--md-on-surface-variant); font-size: 0.95rem; line-height: 1.5; }
+        .delete-modal-actions { display: flex; gap: 12px; justify-content: center; }
+        .delete-modal-actions .md-btn { flex: 1; justify-content: center; height: 42px; font-size: 1rem; }
 
         /* ===== TOAST ===== */
         #toast {
@@ -529,14 +474,8 @@
             box-shadow: var(--md-elevation-2);
         }
 
-        /* ===== OVERLAY (mobile) ===== */
-        .overlay {
-            display: none;
-            position: fixed;
-            inset: 0;
-            background: rgba(0,0,0,0.4);
-            z-index: 150;
-        }
+        /* ===== OVERLAY (mobile drawer) ===== */
+        .overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.4); z-index: 150; }
         .overlay.visible { display: block; }
 
         /* ===== RESPONSIVE ===== */
@@ -556,6 +495,8 @@
             .main-content { padding: 16px 12px; }
             .github-row { flex-direction: column; }
             .row-inputs-horizontal { flex-direction: column; }
+            .form-actions { justify-content: stretch; }
+            .form-actions .btn-save, .form-actions .md-btn-error { width: 100%; justify-content: center; margin-bottom: 8px;}
         }
     </style>
 </head>
@@ -579,7 +520,7 @@
             <h2><span class="material-icons-round">menu_book</span> الكتب المسجّلة</h2>
             <div class="search-field">
                 <span class="material-icons-round">search</span>
-                <input type="text" id="adminSearchInput" class="admin-search-box" placeholder="بحث..." autocomplete="off">
+                <input type="text" id="adminSearchInput" class="admin-search-box" placeholder="بحث بالعنوان أو المؤلف..." autocomplete="off">
             </div>
         </div>
         <button class="btn-add-new" onclick="createNewBook()">
@@ -594,11 +535,12 @@
                 <span class="material-icons-round">cloud_sync</span> مزامنة البيانات
             </div>
             <div class="github-row">
-                <input type="password" id="githubToken" class="github-token-input" placeholder="GitHub Token...">
+                <input type="password" id="githubToken" class="github-token-input" placeholder="GitHub Personal Access Token...">
                 <button class="md-btn md-btn-purple" onclick="syncToGitHub()">
                     <span class="material-icons-round">rocket_launch</span> تحديث الموقع
                 </button>
             </div>
+            <p style="margin: 0 0 10px; font-size: 0.85rem; color: var(--md-on-surface-variant);">أو احفظ نسخة يدوية:</p>
             <div class="action-buttons">
                 <button class="md-btn md-btn-secondary" onclick="copyJSON()">
                     <span class="material-icons-round">content_copy</span> نسخ JSON
@@ -622,7 +564,7 @@
                     <label>عنوان الكتاب *</label>
                     <input type="text" id="title" class="md-input" required autocomplete="off">
                     <div id="duplicateWarning" class="duplicate-warning">
-                        <span>⚠️ هذا الكتاب مسجّل مسبقاً!</span>
+                        <span>⚠️ هذا الكتاب مسجّل مسبقاً في قاعدة البيانات!</span>
                         <button type="button" class="btn-edit-duplicate" id="btnEditDuplicate">فتحه للتعديل</button>
                     </div>
                 </div>
@@ -644,28 +586,39 @@
 
                 <div class="form-group">
                     <label>ملاحظات عامة (اختياري)</label>
-                    <textarea id="notes" class="md-input" rows="3"></textarea>
+                    <textarea id="notes" class="md-input" rows="3" placeholder="تظهر أسفل تفاصيل الكتاب للزوار..."></textarea>
                 </div>
 
-                <div class="section-header"><span class="material-icons-round">verified</span> أفضل الطبعات</div>
+                <div class="section-header">
+                    <span class="material-icons-round">verified</span> أفضل الطبعات المعتمدة
+                    <span style="font-size:0.78rem;color:var(--md-outline);font-weight:400;margin-right:4px;">(اسحب ☰ للترتيب)</span>
+                </div>
                 <div id="bestEditions"></div>
                 <button type="button" class="btn-add-row" onclick="addEditionRow('bestEditions')">
-                    <span class="material-icons-round" style="font-size:14px;">add</span> إضافة طبعة
+                    <span class="material-icons-round" style="font-size:14px;">add</span> إضافة طبعة معتمدة
                 </button>
 
-                <div class="section-header"><span class="material-icons-round">rule</span> طبعات بديلة جيدة</div>
+                <div class="section-header">
+                    <span class="material-icons-round">rule</span> طبعات بديلة جيدة
+                </div>
                 <div id="altEditions"></div>
                 <button type="button" class="btn-add-row" onclick="addEditionRow('altEditions')">
-                    <span class="material-icons-round" style="font-size:14px;">add</span> إضافة طبعة
+                    <span class="material-icons-round" style="font-size:14px;">add</span> إضافة طبعة بديلة
                 </button>
 
-                <div class="section-header"><span class="material-icons-round">link</span> روابط مفيدة</div>
+                <div class="section-header">
+                    <span class="material-icons-round">link</span> روابط مفيدة
+                </div>
                 <div id="links"></div>
                 <button type="button" class="btn-add-row" onclick="addLinkRow('links')">
                     <span class="material-icons-round" style="font-size:14px;">add</span> إضافة رابط
                 </button>
 
                 <div class="form-actions">
+                    <button type="button" id="btnDeleteBook" class="md-btn md-btn-error" style="height: 44px; display: none;" onclick="openDeleteModal()">
+                        <span class="material-icons-round">delete_forever</span> حذف الكتاب
+                    </button>
+                    <div style="flex: 1;"></div>
                     <button type="submit" class="btn-save">
                         <span class="material-icons-round">save</span> حفظ التعديلات
                     </button>
@@ -675,27 +628,43 @@
     </main>
 </div>
 
+<div id="deleteModal" class="delete-overlay">
+    <div class="delete-modal">
+        <span class="material-icons-round">warning</span>
+        <h3>تأكيد الحذف</h3>
+        <p>هل أنت متأكد أنك تريد حذف هذا الكتاب نهائياً من الموسوعة؟ لا يمكن التراجع عن هذه الخطوة.</p>
+        <div class="delete-modal-actions">
+            <button class="md-btn md-btn-secondary" onclick="closeDeleteModal()">إلغاء</button>
+            <button class="md-btn md-btn-error" onclick="executeDeleteBook()">نعم، احذف الكتاب</button>
+        </div>
+    </div>
+</div>
+
 <div id="toast"></div>
 
 <script>
     let booksData = [];
 
-    new Sortable(document.getElementById('bestEditions'), { handle: '.drag-handle', animation: 150 });
-    new Sortable(document.getElementById('altEditions'),  { handle: '.drag-handle', animation: 150 });
-    new Sortable(document.getElementById('links'),        { handle: '.drag-handle', animation: 150 });
+    new Sortable(document.getElementById('bestEditions'), { handle: '.drag-handle', animation: 150, ghostClass: 'sortable-ghost' });
+    new Sortable(document.getElementById('altEditions'),  { handle: '.drag-handle', animation: 150, ghostClass: 'sortable-ghost' });
+    new Sortable(document.getElementById('links'),        { handle: '.drag-handle', animation: 150, ghostClass: 'sortable-ghost' });
 
     fetch('books.json?v=' + Date.now())
-        .then(r => r.json())
+        .then(r => { if (!r.ok) throw new Error('not found'); return r.json(); })
         .then(data => { booksData = data; renderSidebar(); })
-        .catch(() => showToast('ملف books.json غير موجود، سيتم التشغيل بقاعدة فارغة.'));
+        .catch(() => showToast('تنبيه: ملف books.json غير موجود، سيتم التشغيل بقاعدة بيانات فارغة.'));
 
+    /* ---- SIDEBAR ---- */
     function renderSidebar(searchTerm = '') {
         const list = document.getElementById('booksList');
         list.innerHTML = '';
         const term = String(searchTerm).trim().toLowerCase();
         const currentId = document.getElementById('bookId').value;
 
-        booksData
+        // ترتيب الكتب أبجدياً في القائمة الجانبية
+        const sortedBooks = [...booksData].sort((a, b) => (a.title || '').localeCompare(b.title || '', 'ar'));
+
+        sortedBooks
             .filter(b => (b.title && b.title.toLowerCase().includes(term)) || (b.author && b.author.toLowerCase().includes(term)))
             .forEach(book => {
                 const li = document.createElement('li');
@@ -708,7 +677,6 @@
 
     document.getElementById('adminSearchInput').addEventListener('input', e => renderSidebar(e.target.value));
 
-    // فحص التكرار
     document.getElementById('title').addEventListener('blur', function () {
         const val = this.value.trim();
         const currentId = document.getElementById('bookId').value;
@@ -726,7 +694,7 @@
         } else { warn.style.display = 'none'; }
     });
 
-    // إغلاق الموبايل
+    /* ---- MOBILE DRAWER ---- */
     function toggleSidebar() {
         const s = document.getElementById('sidebar');
         s.classList.contains('open') ? closeSidebar() : openSidebar();
@@ -740,7 +708,7 @@
         document.getElementById('overlay').classList.remove('visible');
     }
 
-    /* ---- الدوال الديناميكية (فئات، صور، روابط) ---- */
+    /* ---- ROWS ---- */
     window.addCategoryInput = function (containerId, val = '') {
         const list = document.getElementById(containerId);
         const div = document.createElement('div');
@@ -771,22 +739,30 @@
 
         const imgsHTML = imgs.map(img => `
             <div class="dynamic-input-group">
-                <input type="text" class="md-input ed-image-url" placeholder="رابط الصورة..." value="${img}" style="direction:ltr">
+                <input type="text" class="md-input ed-image-url" placeholder="رابط صورة الطبعة..." value="${img}" style="direction:ltr">
                 <button type="button" class="btn-remove-item" onclick="this.parentElement.remove()">−</button>
             </div>`).join('');
 
         row.innerHTML = `
-            <span class="drag-handle">☰</span>
+            <span class="drag-handle" title="اسحب للترتيب">☰</span>
             <div class="row-inputs">
-                <input type="text" class="md-input ed-name" placeholder="اسم الطبعة *" value="${name}" required>
+                <input type="text" class="md-input ed-name" placeholder="اسم دار النشر أو المحقق *" value="${name}" required>
                 <div class="sub-container">
-                    <div class="sub-container-title"><span class="material-icons-round" style="font-size:14px;color:var(--md-primary)">image</span> صور الطبعة:</div>
+                    <div class="sub-container-title">
+                        <span class="material-icons-round" style="font-size:14px;color:var(--md-primary)">image</span>
+                        صور الطبعة:
+                    </div>
                     <div class="images-list">${imgsHTML}</div>
-                    <button type="button" class="btn-add-item" onclick="addImageInputToEdition(this)"><span class="material-icons-round" style="font-size:14px">add</span> إضافة صورة</button>
+                    <button type="button" class="btn-add-item" onclick="addImageInputToEdition(this)">
+                        <span class="material-icons-round" style="font-size:14px">add_photo_alternate</span>
+                        إضافة صورة
+                    </button>
                 </div>
-                <input type="text" class="md-input ed-notes" placeholder="ملاحظات الطبعة..." value="${notes}">
+                <input type="text" class="md-input ed-notes" placeholder="ملاحظات خاصة بهذه الطبعة (تظهر كـ ℹ في الموقع)..." value="${notes}">
             </div>
-            <button type="button" class="btn-remove" onclick="this.parentElement.remove()"><span class="material-icons-round">delete</span></button>`;
+            <button type="button" class="btn-remove" onclick="this.parentElement.remove()" title="حذف">
+                <span class="material-icons-round">delete</span>
+            </button>`;
         container.appendChild(row);
     }
 
@@ -795,16 +771,18 @@
         const row = document.createElement('div');
         row.className = 'dynamic-row';
         row.innerHTML = `
-            <span class="drag-handle">☰</span>
+            <span class="drag-handle" title="اسحب للترتيب">☰</span>
             <div class="row-inputs-horizontal">
                 <input type="text" class="md-input link-title" placeholder="عنوان الرابط..." value="${title}" required>
-                <input type="text" class="md-input link-url"  placeholder="الرابط الكامل..." value="${url}" required style="direction:ltr">
+                <input type="text" class="md-input link-url"  placeholder="الرابط الكامل (URL)..." value="${url}" required style="direction:ltr">
             </div>
-            <button type="button" class="btn-remove" onclick="this.parentElement.remove()"><span class="material-icons-round">delete</span></button>`;
+            <button type="button" class="btn-remove" onclick="this.parentElement.remove()" title="حذف">
+                <span class="material-icons-round">delete</span>
+            </button>`;
         container.appendChild(row);
     }
 
-    /* ---- إضافة و جلب ---- */
+    /* ---- CREATE / LOAD ---- */
     function createNewBook() {
         document.getElementById('formContainer').style.display = 'block';
         document.getElementById('formTitle').textContent = 'إضافة كتاب جديد';
@@ -813,8 +791,11 @@
         document.getElementById('bookId').value = '';
         document.getElementById('duplicateWarning').style.display = 'none';
         
+        // إخفاء زر الحذف عند إنشاء كتاب جديد
+        document.getElementById('btnDeleteBook').style.display = 'none';
+
         document.getElementById('categoriesList').innerHTML = '';
-        addCategoryInput('categoriesList'); // خانة علم واحدة فارغة على الأقل
+        addCategoryInput('categoriesList'); 
 
         document.querySelectorAll('.sidebar-list li').forEach(li => li.classList.remove('active'));
         document.getElementById('bestEditions').innerHTML = '';
@@ -822,6 +803,7 @@
         document.getElementById('links').innerHTML = '';
         addEditionRow('bestEditions');
         window.scrollTo({ top: 0, behavior: 'smooth' });
+        closeSidebar(); // للموبايل
     }
 
     function loadBookIntoForm(id, liElement) {
@@ -835,19 +817,23 @@
         document.getElementById('formTitle').textContent = 'تعديل: ' + book.title;
         document.getElementById('formIcon').textContent = 'edit';
         document.getElementById('duplicateWarning').style.display = 'none';
+        
+        // إظهار زر الحذف عند تعديل كتاب موجود
+        document.getElementById('btnDeleteBook').style.display = 'inline-flex';
+
         document.getElementById('bookId').value = book.id;
         document.getElementById('title').value = book.title || '';
         document.getElementById('author').value = book.author || '';
         document.getElementById('notes').value = book.notes || '';
 
-        // جلب العلوم (سواء كانت نص أو مصفوفة من الإصدارات القديمة)
         document.getElementById('categoriesList').innerHTML = '';
         let cats = Array.isArray(book.category) ? book.category : (book.category ? [book.category] : []);
         if (cats.length === 0) cats = [''];
         cats.forEach(c => addCategoryInput('categoriesList', c));
 
         const loadEditions = (cid, arr) => {
-            document.getElementById(cid).innerHTML = '';
+            const c = document.getElementById(cid);
+            c.innerHTML = '';
             (arr || []).forEach(ed => {
                 const imgs = ed.images ? ed.images : (ed.image ? [ed.image] : []);
                 addEditionRow(cid, ed.name, imgs, ed.notes || '');
@@ -856,28 +842,28 @@
         loadEditions('bestEditions', book.best_editions);
         loadEditions('altEditions', book.alt_editions);
 
-        document.getElementById('links').innerHTML = '';
+        const lc = document.getElementById('links');
+        lc.innerHTML = '';
         (book.links || []).forEach(l => addLinkRow('links', l.title, l.url));
 
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
-    /* ---- الحفظ ---- */
+    /* ---- SAVE & DELETE ---- */
     function saveBook(e) {
         e.preventDefault();
         let id = document.getElementById('bookId').value;
         id = id ? parseInt(id) : (booksData.length > 0 ? Math.max(...booksData.map(b => b.id)) + 1 : 1);
 
-        // تجميع التصنيفات
         const catInputs = [...document.querySelectorAll('#categoriesList .cat-input')];
         const categoriesArray = catInputs.map(i => i.value.trim()).filter(Boolean);
 
         const newBook = {
             id,
-            title: document.getElementById('title').value.trim(),
-            author: document.getElementById('author').value.trim(),
-            category: categoriesArray, // سيتم حفظها كمصفوفة دائماً
-            notes: document.getElementById('notes').value.trim(),
+            title:    document.getElementById('title').value.trim(),
+            author:   document.getElementById('author').value.trim(),
+            category: categoriesArray,
+            notes:    document.getElementById('notes').value.trim(),
             best_editions: [], alt_editions: [], links: []
         };
 
@@ -889,7 +875,6 @@
         };
         collectEditions('bestEditions', newBook.best_editions);
         collectEditions('altEditions', newBook.alt_editions);
-        
         document.querySelectorAll('#links .dynamic-row').forEach(row => {
             newBook.links.push({ title: row.querySelector('.link-title').value.trim(), url: row.querySelector('.link-url').value.trim() });
         });
@@ -898,27 +883,67 @@
         if (idx >= 0) booksData[idx] = newBook; else booksData.push(newBook);
 
         document.getElementById('bookId').value = id;
+        
+        // إظهار زر الحذف (في حال كان كتاباً جديداً وتم حفظه الآن)
+        document.getElementById('btnDeleteBook').style.display = 'inline-flex';
+        
         renderSidebar(document.getElementById('adminSearchInput').value);
-        showToast('💾 تم الحفظ. لا تنسَ الضغط على زر التحديث لرفعها لـ GitHub!');
+        showToast('💾 تم الحفظ في الذاكرة. لا تنسَ تحديث الموقع ليتم الرفع!');
     }
 
-    /* ---- الأدوات والمزامنة ---- */
-    const getJSONString = () => JSON.stringify(booksData, null, 2);
-    function copyJSON() { navigator.clipboard.writeText(getJSONString()).then(() => showToast('📋 تم نسخ الكود.')); }
-    function downloadJSON() {
-        const a = Object.assign(document.createElement('a'), { href: URL.createObjectURL(new Blob([getJSONString()], { type: 'application/json' })), download: 'books.json' });
-        document.body.appendChild(a); a.click(); document.body.removeChild(a); showToast('💾 تم التحميل.');
+    // دوال نافذة الحذف المنبثقة
+    function openDeleteModal() {
+        document.getElementById('deleteModal').classList.add('visible');
     }
+
+    function closeDeleteModal() {
+        document.getElementById('deleteModal').classList.remove('visible');
+    }
+
+    function executeDeleteBook() {
+        const id = parseInt(document.getElementById('bookId').value);
+        if (!id) return;
+
+        // حذف الكتاب من المصفوفة
+        booksData = booksData.filter(b => b.id !== id);
+
+        // إغلاق النافذة المنبثقة
+        closeDeleteModal();
+        
+        // تحديث القائمة الجانبية وإخفاء استمارة الكتاب المحذوف
+        renderSidebar(document.getElementById('adminSearchInput').value);
+        document.getElementById('formContainer').style.display = 'none';
+        
+        showToast('🗑️ تم حذف الكتاب بنجاح. لا تنسَ تحديث الموقع (مزامنة)!');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    /* ---- EXPORT / SYNC ---- */
+    const getJSONString = () => JSON.stringify(booksData, null, 2);
+
+    function copyJSON() {
+        navigator.clipboard.writeText(getJSONString()).then(() => showToast('📋 تم نسخ JSON إلى الحافظة.'));
+    }
+    
+    function downloadJSON() {
+        const a = Object.assign(document.createElement('a'), {
+            href: URL.createObjectURL(new Blob([getJSONString()], { type: 'application/json' })),
+            download: 'books.json'
+        });
+        document.body.appendChild(a); a.click(); document.body.removeChild(a);
+        showToast('💾 تم تحميل books.json بنجاح.');
+    }
+
     function utf8_to_b64(str) { return btoa(unescape(encodeURIComponent(str))); }
 
     async function syncToGitHub() {
         const token = document.getElementById('githubToken').value.trim();
-        if (!token) return showToast('⚠️ يرجى إدخال التوكن!');
+        if (!token) { showToast('⚠️ يرجى إدخال رمز GitHub Token أولاً!'); return; }
         localStorage.setItem('github_token_secured', token);
 
         const owner = 'arabic-app', repo = 'tabaat', path = 'books.json';
         const apiUrl = `https://api.github.com/repos/${owner}/${repo}/contents/${path}`;
-        showToast('⏳ جاري الاتصال...');
+        showToast('⏳ جاري الاتصال بـ GitHub...');
 
         try {
             let sha = '';
@@ -926,13 +951,16 @@
             if (getRes.ok) sha = (await getRes.json()).sha;
 
             const putRes = await fetch(apiUrl, {
-                method: 'PUT', headers: { Authorization: `token ${token}`, 'Content-Type': 'application/json' },
-                body: JSON.stringify({ message: 'تحديث عبر اللوحة', content: utf8_to_b64(getJSONString()), sha })
+                method: 'PUT',
+                headers: { Authorization: `token ${token}`, 'Content-Type': 'application/json' },
+                body: JSON.stringify({ message: 'تحديث قاعدة البيانات عبر لوحة الإدارة', content: utf8_to_b64(getJSONString()), sha })
             });
 
-            if (putRes.ok) showToast('🚀 تم الرفع بنجاح! التغييرات ستظهر للجميع قريباً.');
+            if (putRes.ok) showToast('🚀 تم الرفع إلى GitHub بنجاح! ستظهر التغييرات خلال دقيقتين.');
             else { const err = await putRes.json(); showToast('❌ فشل: ' + err.message); }
-        } catch (err) { showToast('❌ خطأ في الاتصال.'); }
+        } catch (err) {
+            showToast('❌ خطأ في الاتصال. تحقق من الإنترنت والـ Token.');
+        }
     }
 
     window.addEventListener('DOMContentLoaded', () => {
@@ -940,11 +968,14 @@
         if (saved) document.getElementById('githubToken').value = saved;
     });
 
+    /* ---- TOAST ---- */
     let toastTimer;
     function showToast(msg) {
         const t = document.getElementById('toast');
-        t.textContent = msg; t.style.display = 'block';
-        clearTimeout(toastTimer); toastTimer = setTimeout(() => t.style.display = 'none', 4500);
+        t.textContent = msg;
+        t.style.display = 'block';
+        clearTimeout(toastTimer);
+        toastTimer = setTimeout(() => t.style.display = 'none', 4500);
     }
 </script>
 </body>
