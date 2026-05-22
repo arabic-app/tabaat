@@ -26,83 +26,446 @@
 
         *, *::before, *::after { box-sizing: border-box; }
 
-        body { font-family: 'Cairo', sans-serif; background-color: var(--md-background); margin: 0; padding: 0; color: var(--md-on-surface); -webkit-font-smoothing: antialiased; }
-        header { background-color: var(--md-primary); color: var(--md-on-primary); padding: 20px 16px; box-shadow: var(--md-elevation-2); text-align: center; position: sticky; top: 0; z-index: 100; }
-        header h1 { margin: 0 0 6px 0; font-size: clamp(1.1rem, 4vw, 1.75rem); font-weight: 800; }
-        header p { margin: 0; font-size: clamp(0.8rem, 3vw, 1rem); opacity: 0.9; }
+        body {
+            font-family: 'Cairo', sans-serif;
+            background-color: var(--md-background);
+            margin: 0;
+            padding: 0;
+            color: var(--md-on-surface);
+            -webkit-font-smoothing: antialiased;
+        }
 
-        .container { max-width: 900px; margin: 24px auto; padding: 0 12px; }
+        /* ===== HEADER ===== */
+        header {
+            background-color: var(--md-primary);
+            color: var(--md-on-primary);
+            padding: 20px 16px;
+            box-shadow: var(--md-elevation-2);
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        header h1 {
+            margin: 0 0 6px 0;
+            font-size: clamp(1.1rem, 4vw, 1.75rem);
+            font-weight: 800;
+            line-height: 1.3;
+        }
+        header p {
+            margin: 0;
+            font-size: clamp(0.8rem, 3vw, 1rem);
+            opacity: 0.9;
+        }
+
+        /* ===== CONTAINER ===== */
+        .container {
+            max-width: 900px;
+            margin: 24px auto;
+            padding: 0 12px;
+        }
 
         /* ===== SEARCH ===== */
-        .search-wrapper { position: relative; margin-bottom: 20px; display: flex; align-items: center; background: var(--md-surface); border-radius: 28px; box-shadow: var(--md-elevation-1); transition: box-shadow 0.2s; }
-        .search-wrapper:focus-within { box-shadow: var(--md-elevation-2); outline: 2px solid var(--md-primary); }
-        .search-icon { position: absolute; right: 16px; color: var(--md-on-surface-variant); font-size: 26px; pointer-events: none; }
-        .search-box { width: 100%; padding: 16px 48px 16px 20px; font-size: 1rem; border: none; border-radius: 28px; font-family: inherit; background: transparent; color: var(--md-on-surface); }
+        .search-wrapper {
+            position: relative;
+            margin-bottom: 24px;
+            display: flex;
+            align-items: center;
+            background: var(--md-surface);
+            border-radius: 28px;
+            box-shadow: var(--md-elevation-1);
+            transition: box-shadow 0.2s;
+        }
+        .search-wrapper:focus-within {
+            box-shadow: var(--md-elevation-2);
+            outline: 2px solid var(--md-primary);
+        }
+        .search-icon {
+            position: absolute;
+            right: 14px;
+            color: var(--md-on-surface-variant);
+            font-size: 24px;
+            pointer-events: none;
+            flex-shrink: 0;
+        }
+        .search-box {
+            width: 100%;
+            padding: 14px 48px 14px 20px;
+            font-size: 1rem;
+            border: none;
+            border-radius: 28px;
+            font-family: inherit;
+            background: transparent;
+            color: var(--md-on-surface);
+            min-width: 0;
+        }
         .search-box:focus { outline: none; }
 
-        /* ===== SCIENCE CHIPS & FILTER ===== */
-        .chips-row { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
-        .science-filter-wrapper { display: flex; align-items: center; background: var(--md-surface); border-radius: 24px; border: 1px solid var(--md-outline-variant); height: 42px; width: 42px; overflow: hidden; transition: all 0.3s; flex-shrink: 0; box-shadow: var(--md-elevation-1); }
+        /* ===== CHIPS ROW & SCIENCE FILTER ===== */
+        .chips-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .science-filter-wrapper {
+            display: flex;
+            align-items: center;
+            background: var(--md-surface);
+            border-radius: 24px;
+            border: 1px solid var(--md-outline-variant);
+            height: 42px;
+            width: 42px;
+            overflow: hidden;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            flex-shrink: 0;
+            box-shadow: var(--md-elevation-1);
+        }
         .science-filter-wrapper.expanded { width: 200px; padding-left: 12px; }
-        .science-filter-btn { background: transparent; border: none; color: var(--md-primary); width: 42px; height: 42px; display: flex; align-items: center; justify-content: center; cursor: pointer; flex-shrink: 0; outline: none; }
-        .science-filter-input { border: none; background: transparent; font-family: inherit; font-size: 0.95rem; color: var(--md-on-surface); width: 100%; padding: 0; opacity: 0; pointer-events: none; transition: opacity 0.3s ease; }
+        
+        .science-filter-btn {
+            background: transparent;
+            border: none;
+            color: var(--md-primary);
+            width: 42px;
+            height: 42px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            flex-shrink: 0;
+            outline: none;
+        }
+        .science-filter-input {
+            border: none;
+            background: transparent;
+            font-family: inherit;
+            font-size: 0.95rem;
+            color: var(--md-on-surface);
+            width: 100%;
+            padding: 0;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
         .science-filter-input:focus { outline: none; }
         .science-filter-wrapper.expanded .science-filter-input { opacity: 1; pointer-events: auto; }
 
-        .category-chips { display: flex; flex: 1; gap: 8px; overflow-x: auto; padding: 4px 0; -ms-overflow-style: none; scrollbar-width: none; }
-        .category-chips::-webkit-scrollbar { display: none; }
-        .chip { background: var(--md-surface); border: 1px solid var(--md-outline-variant); padding: 8px 16px; border-radius: 20px; cursor: pointer; white-space: nowrap; font-weight: 600; font-size: 0.95rem; color: var(--md-on-surface-variant); font-family: inherit; transition: 0.2s; display: inline-flex; box-shadow: var(--md-elevation-1); }
-        .chip:hover { background: var(--md-surface-variant); }
-        .chip.active { background: var(--md-primary-container); color: var(--md-on-primary-container); border-color: var(--md-primary-container); box-shadow: none; }
+        .category-chips {
+            display: flex;
+            flex: 1;
+            gap: 8px;
+            overflow-x: auto;
+            padding: 4px 0;
+            -ms-overflow-style: none; 
+            scrollbar-width: none; 
+        }
+        .category-chips::-webkit-scrollbar { display: none; } 
 
-        /* ===== CARDS & DETAILS ===== */
-        .md-card { background: var(--md-surface); border-radius: 16px; padding: 20px; margin-bottom: 20px; box-shadow: var(--md-elevation-1); border: 1px solid var(--md-outline-variant); }
-        .book-title { font-size: clamp(1.1rem, 4vw, 1.5rem); color: var(--md-primary); margin: 0 0 10px 0; font-weight: 800; word-break: break-word; }
-        
-        .book-meta { color: var(--md-on-surface-variant); font-size: 0.9rem; margin-bottom: 16px; display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
-        .meta-chip { background: var(--md-background); padding: 4px 10px; border-radius: 16px; border: 1px solid var(--md-outline-variant); font-weight: 600; display: inline-flex; align-items: center; gap: 4px; }
-        .meta-chip .material-icons-round { font-size: 1rem; color: var(--md-primary); }
-        
-        .section-title { font-weight: 800; margin: 20px 0 10px 0; color: var(--md-secondary); display: flex; align-items: center; gap: 6px; font-size: 1rem; }
-        .section-title .material-icons-round { font-size: 1.1rem; }
-        
+        .chip {
+            background: var(--md-surface);
+            border: 1px solid var(--md-outline-variant);
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            white-space: nowrap;
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: var(--md-on-surface-variant);
+            font-family: inherit;
+            transition: all 0.2s ease;
+            user-select: none;
+            -webkit-tap-highlight-color: transparent;
+            display: inline-flex;
+            box-shadow: var(--md-elevation-1);
+        }
+        .chip:hover { background: var(--md-surface-variant); }
+        .chip.active {
+            background: var(--md-primary-container);
+            color: var(--md-on-primary-container);
+            border-color: var(--md-primary-container);
+            box-shadow: none;
+        }
+
+        /* ===== CARDS ===== */
+        .md-card {
+            background: var(--md-surface);
+            border-radius: 16px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: var(--md-elevation-1);
+            border: 1px solid var(--md-outline-variant);
+            overflow: hidden; 
+        }
+        .md-card:hover { box-shadow: var(--md-elevation-2); }
+
+        .book-title {
+            font-size: clamp(1.1rem, 4vw, 1.5rem);
+            color: var(--md-primary);
+            margin: 0 0 10px 0;
+            font-weight: 800;
+            word-break: break-word;
+        }
+
+        /* ===== META CHIPS ===== */
+        .book-meta {
+            color: var(--md-on-surface-variant);
+            font-size: 0.9rem;
+            margin-bottom: 16px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            align-items: center;
+        }
+        .meta-chip {
+            background: var(--md-background);
+            padding: 4px 10px;
+            border-radius: 16px;
+            border: 1px solid var(--md-outline-variant);
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            max-width: 100%;
+            overflow: hidden;
+        }
+        .meta-chip span.text { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+        .meta-chip .material-icons-round { font-size: 1rem; color: var(--md-primary); flex-shrink: 0; }
+
+        /* ===== SECTION TITLE ===== */
+        .section-title {
+            font-weight: 800;
+            margin: 20px 0 10px 0;
+            color: var(--md-secondary);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 1rem;
+        }
+        .section-title .material-icons-round { font-size: 1.1rem; flex-shrink: 0; }
+
+        /* ===== LISTS ===== */
         ul { list-style: none; padding: 0; margin: 0; }
-        .md-list-item { display: flex; justify-content: space-between; align-items: center; padding: 10px 12px; margin-bottom: 6px; background: var(--md-background); border-radius: 12px; }
-        .edition-name { font-weight: 600; font-size: 0.95rem; line-height: 1.5; flex: 1; word-break: break-word; }
+
+        .md-list-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 12px;
+            margin-bottom: 6px;
+            background: var(--md-background);
+            border-radius: 12px;
+            transition: background 0.2s;
+            gap: 8px;
+            min-width: 0; 
+        }
+        .md-list-item:hover { background: var(--md-surface-variant); }
+
+        .edition-name {
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: var(--md-on-surface);
+            flex: 1;
+            min-width: 0; 
+            word-break: break-word;
+            line-height: 1.5;
+        }
+
         .edition-actions { display: flex; gap: 4px; flex-shrink: 0; }
-        
-        .md-icon-btn { background: transparent; color: var(--md-primary); border: none; width: 38px; height: 38px; border-radius: 50%; cursor: pointer; }
+
+        /* ===== ICON BUTTONS ===== */
+        .md-icon-btn {
+            background: transparent;
+            color: var(--md-primary);
+            border: none;
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.2s;
+            flex-shrink: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
         .md-icon-btn:hover { background: rgba(0, 105, 92, 0.12); }
         .md-icon-btn .material-icons-round { font-size: 20px; }
-        
-        .link-item { text-decoration: none; color: var(--md-primary); font-weight: 600; display: flex; align-items: center; gap: 8px; width: 100%; }
-        .book-notes { background-color: #e8f5e9; color: #1b5e20; padding: 14px; border-radius: 12px; margin-top: 20px; font-size: 0.9rem; line-height: 1.6; display: flex; gap: 10px; }
-        .book-notes .material-icons-round { color: #2e7d32; }
+
+        /* ===== LINKS ===== */
+        .link-item {
+            text-decoration: none;
+            color: var(--md-primary);
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            width: 100%;
+            min-width: 0;
+        }
+        .link-item:hover { text-decoration: underline; }
+        .link-item .material-icons-round { flex-shrink: 0; font-size: 18px; }
+
+        /* ===== BOOK NOTES ===== */
+        .book-notes {
+            background-color: #e8f5e9;
+            color: #1b5e20;
+            padding: 14px;
+            border-radius: 12px;
+            margin-top: 20px;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            display: flex;
+            gap: 10px;
+            align-items: flex-start;
+            word-break: break-word;
+        }
+        .book-notes .material-icons-round { color: #2e7d32; flex-shrink: 0; margin-top: 2px; }
 
         /* ===== MODAL ===== */
-        .modal { display: none; position: fixed; z-index: 1000; inset: 0; background: rgba(0,0,0,0.5); backdrop-filter: blur(2px); align-items: center; justify-content: center; padding: 16px; }
-        .modal-content { background: var(--md-surface); border-radius: 24px; width: 100%; max-width: 500px; padding: 24px; position: relative; max-height: 90vh; overflow-y: auto; }
-        .close-modal { position: absolute; top: 14px; left: 14px; background: var(--md-surface-variant); border: none; width: 34px; height: 34px; border-radius: 50%; cursor: pointer; }
-        #modalTitle { margin: 0 0 14px 0; font-size: 1.1rem; padding-left: 40px; color: var(--md-primary); font-weight: 800; }
-        
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            backdrop-filter: blur(2px);
+            align-items: center;
+            justify-content: center;
+            padding: 16px;
+        }
+        .modal-content {
+            background-color: var(--md-surface);
+            border-radius: 24px;
+            width: 100%;
+            max-width: 500px;
+            padding: 24px;
+            position: relative;
+            box-shadow: 0px 11px 15px -7px rgba(0,0,0,0.2), 0px 24px 38px 3px rgba(0,0,0,0.14), 0px 9px 46px 8px rgba(0,0,0,0.12);
+            animation: dialogFadeIn 0.2s ease-out;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+        @keyframes dialogFadeIn {
+            from { opacity: 0; transform: scale(0.92); }
+            to   { opacity: 1; transform: scale(1); }
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 14px;
+            left: 14px;
+            background: var(--md-surface-variant);
+            color: var(--md-on-surface);
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: 0.2s;
+            z-index: 10;
+            border: none;
+        }
+        .close-modal:hover { background: var(--md-outline-variant); }
+
+        #modalTitle {
+            margin: 0 0 14px 0;
+            color: var(--md-on-surface);
+            font-size: 1.1rem;
+            font-weight: 800;
+            padding-left: 40px;
+            word-break: break-word;
+            line-height: 1.4;
+        }
+        #modalBody { font-size: 0.95rem; line-height: 1.6; color: var(--md-on-surface-variant); }
+
         /* ===== CAROUSEL ===== */
-        .carousel-container { position: relative; display: flex; justify-content: center; align-items: center; background: var(--md-background); border-radius: 12px; min-height: 120px; }
-        .carousel-img { max-width: 100%; max-height: 55vh; object-fit: contain; }
-        .carousel-btn { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(255,255,255,0.85); color: var(--md-primary); border: none; width: 38px; height: 38px; border-radius: 50%; cursor: pointer; box-shadow: var(--md-elevation-1); }
+        .carousel-container {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            background: var(--md-background);
+            border-radius: 12px;
+            overflow: hidden;
+            min-height: 120px;
+        }
+        .carousel-img {
+            max-width: 100%;
+            max-height: 55vh;
+            object-fit: contain;
+            display: block;
+        }
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255,255,255,0.85);
+            color: var(--md-primary);
+            border: none;
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--md-elevation-1);
+            transition: 0.2s;
+        }
+        .carousel-btn:hover { background: white; box-shadow: var(--md-elevation-2); }
         .carousel-btn.right { right: 8px; }
         .carousel-btn.left  { left: 8px; }
-        .carousel-dots { text-align: center; margin-top: 12px; font-weight: 600; color: var(--md-outline); font-size: 0.88rem; }
-        
-        .empty-state { text-align: center; padding: 40px 20px; color: var(--md-outline); }
+        .carousel-dots {
+            text-align: center;
+            margin-top: 12px;
+            font-weight: 600;
+            color: var(--md-outline);
+            font-size: 0.88rem;
+        }
 
+        /* ===== EMPTY STATE ===== */
+        .empty-state {
+            text-align: center;
+            padding: 40px 20px;
+            color: var(--md-outline);
+        }
+        .empty-state .material-icons-round {
+            font-size: 48px;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        /* ===== RESPONSIVE ===== */
         @media (max-width: 480px) {
             .container { padding: 0 10px; margin: 16px auto; }
             .search-box { padding: 12px 40px 12px 16px; font-size: 0.95rem; }
+            .search-icon { font-size: 22px; right: 12px; }
+            .chips-row { flex-direction: column; align-items: stretch; gap: 8px; }
+            .science-filter-wrapper { width: 100%; border-radius: 20px; }
+            .science-filter-wrapper.expanded { width: 100%; }
+            .category-chips { padding-bottom: 4px; }
+            
             .md-card { padding: 14px; border-radius: 14px; }
             .book-title { font-size: 1.05rem; }
-            .book-meta { font-size: 0.82rem; }
+            .book-meta { gap: 6px; font-size: 0.82rem; }
+            .meta-chip { padding: 3px 8px; }
+            .section-title { font-size: 0.9rem; }
             .edition-name { font-size: 0.88rem; }
+            .md-list-item { padding: 8px 10px; border-radius: 10px; }
             .md-icon-btn { width: 34px; height: 34px; }
+            .md-icon-btn .material-icons-round { font-size: 18px; }
+            
+            .modal-content { padding: 18px 14px; border-radius: 18px; }
+            .carousel-img { max-height: 45vh; }
+            .book-notes { font-size: 0.85rem; padding: 12px; }
         }
     </style>
 </head>
@@ -114,6 +477,7 @@
     </header>
 
     <div class="container">
+        
         <div class="search-wrapper">
             <span class="material-icons-round search-icon">search</span>
             <input type="text" id="searchInput" class="search-box" placeholder="ابحث عن كتاب أو مؤلف..." autocomplete="off">
@@ -121,9 +485,12 @@
         
         <div class="chips-row">
             <div class="science-filter-wrapper" id="scienceFilterWrapper">
-                <button class="science-filter-btn" id="scienceFilterBtn"><span class="material-icons-round">search</span></button>
+                <button class="science-filter-btn" id="scienceFilterBtn" aria-label="ابحث في العلوم">
+                    <span class="material-icons-round">search</span>
+                </button>
                 <input type="text" id="scienceSearchInput" class="science-filter-input" placeholder="ابحث في العلوم..." autocomplete="off">
             </div>
+
             <div class="category-chips" id="categoryChips"></div>
         </div>
 
@@ -132,7 +499,9 @@
 
     <div id="infoModal" class="modal">
         <div class="modal-content">
-            <button class="close-modal" onclick="closeModal()"><span class="material-icons-round">close</span></button>
+            <button class="close-modal" onclick="closeModal()" aria-label="إغلاق">
+                <span class="material-icons-round">close</span>
+            </button>
             <h3 id="modalTitle"></h3>
             <div id="modalBody"></div>
         </div>
@@ -142,6 +511,7 @@
         let booksData = [];
         let currentCarouselImages = [];
         let currentSlideIndex = 0;
+        
         let currentSearchTerm = '';
         let currentCategory = 'الكل';
 
@@ -153,7 +523,6 @@
                 filterAndDisplayBooks(); 
             });
 
-        // دوال مساعدة للتعامل مع التصنيفات بأمان (قد تكون نصاً أو مصفوفة)
         function getBookCategories(book) {
             if (Array.isArray(book.category)) return book.category;
             if (book.category) return [book.category];
@@ -164,7 +533,6 @@
             const container = document.getElementById('categoryChips');
             container.innerHTML = '';
             
-            // استخراج جميع العلوم الفريدة
             let allCategories = [];
             booksData.forEach(b => allCategories.push(...getBookCategories(b)));
             const uniqueCategories = [...new Set(allCategories.filter(Boolean))].sort((a, b) => a.localeCompare(b, 'ar'));
@@ -187,7 +555,6 @@
             return btn;
         }
 
-        // تفاعلات البحث والفلترة
         const sfWrapper = document.getElementById('scienceFilterWrapper');
         const sfBtn = document.getElementById('scienceFilterBtn');
         const sfInput = document.getElementById('scienceSearchInput');
@@ -230,7 +597,7 @@
             container.innerHTML = '';
 
             if (books.length === 0) {
-                container.innerHTML = `<div class="empty-state"><span class="material-icons-round">search_off</span><h3>لا نتائج</h3></div>`;
+                container.innerHTML = `<div class="empty-state"><span class="material-icons-round">search_off</span><h3>لا توجد نتائج مطابقة لبحثك في هذا القسم.</h3></div>`;
                 return;
             }
 
@@ -238,7 +605,6 @@
                 const card = document.createElement('div');
                 card.className = 'md-card';
 
-                // رسم تصنيفات الكتاب كـ Chips متعددة
                 const bookCats = getBookCategories(book);
                 const catsHTML = bookCats.map(cat => `
                     <span class="meta-chip">
@@ -249,8 +615,8 @@
 
                 const renderList = (editions, isEdition, type) => (editions || []).map((ed, idx) => {
                     let actions = '';
-                    if (isEdition && ed.notes) actions += `<button class="md-icon-btn" onclick="openNoteModal('${encodeURIComponent(ed.name)}', '${encodeURIComponent(ed.notes)}')"><span class="material-icons-round">info</span></button>`;
-                    if (isEdition && ((ed.images && ed.images.length) || ed.image)) actions += `<button class="md-icon-btn" onclick="openImageModal(${book.id}, '${type}', ${idx})"><span class="material-icons-round">photo_library</span></button>`;
+                    if (isEdition && ed.notes) actions += `<button class="md-icon-btn" onclick="openNoteModal('${encodeURIComponent(ed.name)}', '${encodeURIComponent(ed.notes)}')" title="ملاحظات حول الطبعة"><span class="material-icons-round">info</span></button>`;
+                    if (isEdition && ((ed.images && ed.images.length) || ed.image)) actions += `<button class="md-icon-btn" onclick="openImageModal(${book.id}, '${type}', ${idx})" title="عرض صور الطبعة"><span class="material-icons-round">photo_library</span></button>`;
                     
                     return isEdition 
                         ? `<li class="md-list-item"><span class="edition-name">${ed.name}</span><div class="edition-actions">${actions}</div></li>`
@@ -264,15 +630,14 @@
                         ${catsHTML}
                     </div>
                     ${book.best_editions?.length ? `<div class="section-title"><span class="material-icons-round">verified</span> أفضل الطبعات:</div><ul>${renderList(book.best_editions, true, 'best_editions')}</ul>` : ''}
-                    ${book.alt_editions?.length ? `<div class="section-title"><span class="material-icons-round">rule</span> بدائل جيدة:</div><ul>${renderList(book.alt_editions, true, 'alt_editions')}</ul>` : ''}
-                    ${book.links?.length ? `<div class="section-title"><span class="material-icons-round">link</span> روابط:</div><ul>${renderList(book.links, false)}</ul>` : ''}
+                    ${book.alt_editions?.length ? `<div class="section-title"><span class="material-icons-round">rule</span> طبعات بديلة جيدة:</div><ul>${renderList(book.alt_editions, true, 'alt_editions')}</ul>` : ''}
+                    ${book.links?.length ? `<div class="section-title"><span class="material-icons-round">link</span> روابط مفيدة:</div><ul>${renderList(book.links, false)}</ul>` : ''}
                     ${book.notes ? `<div class="book-notes"><span class="material-icons-round">lightbulb</span><div>${book.notes}</div></div>` : ''}
                 `;
                 container.appendChild(card);
             });
         }
 
-        /* دوال العرض المنبثق (Modal & Carousel) */
         function openNoteModal(title, content) {
             document.getElementById('modalTitle').innerText = decodeURIComponent(title);
             document.getElementById('modalBody').innerHTML = `<p>${decodeURIComponent(content)}</p>`;
@@ -302,6 +667,7 @@
                     <div class="carousel-dots">صورة ${currentSlideIndex + 1} من ${currentCarouselImages.length}</div>`;
             }
         }
+        
         function changeSlide(dir) { currentSlideIndex = (currentSlideIndex + dir + currentCarouselImages.length) % currentCarouselImages.length; renderCarousel(); }
         function closeModal() { document.getElementById('infoModal').style.display = 'none'; }
         window.onclick = e => { if (e.target.id === 'infoModal') closeModal(); };
