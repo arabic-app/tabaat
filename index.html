@@ -65,7 +65,7 @@
             padding: 0 12px;
         }
 
-        /* ===== SEARCH ===== */
+        /* ===== MAIN SEARCH ===== */
         .search-wrapper {
             position: relative;
             margin-bottom: 24px;
@@ -448,9 +448,13 @@
             .container { padding: 0 10px; margin: 16px auto; }
             .search-box { padding: 12px 40px 12px 16px; font-size: 0.95rem; }
             .search-icon { font-size: 22px; right: 12px; }
-            .chips-row { flex-direction: column; align-items: stretch; gap: 8px; }
-            .science-filter-wrapper { width: 100%; border-radius: 20px; }
-            .science-filter-wrapper.expanded { width: 100%; }
+            
+            /* -- تم إصلاح التجاوب هنا ليبقى في نفس السطر -- */
+            .chips-row { flex-direction: row; align-items: center; gap: 8px; }
+            .science-filter-wrapper { width: 40px; height: 40px; border-radius: 20px; }
+            .science-filter-btn { width: 40px; height: 40px; }
+            .science-filter-wrapper.expanded { width: 160px; }
+            
             .category-chips { padding-bottom: 4px; }
             
             .md-card { padding: 14px; border-radius: 14px; }
@@ -561,7 +565,11 @@
 
         sfBtn.onclick = () => {
             sfWrapper.classList.toggle('expanded');
-            if (sfWrapper.classList.contains('expanded')) sfInput.focus();
+            if (sfWrapper.classList.contains('expanded')) {
+                sfInput.focus();
+            } else {
+                filterChips(''); // إعادة إظهار التصنيفات عند إغلاق العدسة
+            }
         };
 
         sfInput.onkeydown = (e) => {
@@ -570,10 +578,22 @@
 
         sfInput.oninput = (e) => {
             const term = e.target.value.toLowerCase();
-            document.querySelectorAll('.chip').forEach(chip => {
-                chip.style.display = (chip.dataset.value === 'الكل' || chip.dataset.value.toLowerCase().includes(term)) ? 'inline-flex' : 'none';
-            });
+            filterChips(term);
         };
+
+        function filterChips(term) {
+            document.querySelectorAll('.chip').forEach(chip => {
+                if (chip.dataset.value === 'الكل' || chip.dataset.value.toLowerCase().includes(term)) {
+                    chip.style.display = 'inline-flex';
+                } else {
+                    chip.style.display = 'none';
+                    if (chip.classList.contains('active')) {
+                        // إذا اختفى التصنيف المحدد، نعود لـ "الكل"
+                        document.querySelector('.chip[data-value="الكل"]').click();
+                    }
+                }
+            });
+        }
 
         const mainSearch = document.getElementById('searchInput');
         mainSearch.oninput = (e) => { currentSearchTerm = e.target.value.toLowerCase(); filterAndDisplayBooks(); };
@@ -674,5 +694,3 @@
     </script>
 </body>
 </html>
-
-
