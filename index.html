@@ -65,69 +65,105 @@
             padding: 0 12px;
         }
 
-        /* ===== SEARCH BAR WITH SCOPE ===== */
+        /* ===== MAIN SEARCH ===== */
         .search-wrapper {
             position: relative;
-            margin-bottom: 16px;
+            margin-bottom: 20px;
             display: flex;
             align-items: center;
             background: var(--md-surface);
             border-radius: 28px;
             box-shadow: var(--md-elevation-1);
             transition: box-shadow 0.2s;
-            padding: 4px 8px;
         }
         .search-wrapper:focus-within {
             box-shadow: var(--md-elevation-2);
             outline: 2px solid var(--md-primary);
         }
-        
-        .search-scope {
-            background: transparent;
-            border: none;
-            color: var(--md-primary);
-            font-family: inherit;
-            font-weight: 800;
-            font-size: 0.95rem;
-            padding: 10px 8px 10px 16px;
-            outline: none;
-            cursor: pointer;
-            border-left: 1px solid var(--md-outline-variant);
-            max-width: 140px;
-            text-overflow: ellipsis;
+        .search-icon {
+            position: absolute;
+            right: 16px;
+            color: var(--md-on-surface-variant);
+            font-size: 26px;
+            pointer-events: none;
+            flex-shrink: 0;
         }
-        .search-scope option {
-            color: var(--md-on-surface);
-            font-weight: 600;
-        }
-
         .search-box {
-            flex: 1;
-            padding: 12px 16px;
+            width: 100%;
+            padding: 16px 48px 16px 20px;
             font-size: 1rem;
             border: none;
+            border-radius: 28px;
+            font-family: inherit;
             background: transparent;
             color: var(--md-on-surface);
-            font-family: inherit;
             min-width: 0;
         }
         .search-box:focus { outline: none; }
 
-        .search-icon {
-            color: var(--md-on-surface-variant);
-            font-size: 24px;
-            padding: 0 8px;
-            pointer-events: none;
-            flex-shrink: 0;
+        /* ===== CHIPS ROW & SCIENCE FILTER ===== */
+        .chips-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
         }
 
-        /* ===== CATEGORY CHIPS ===== */
+        /* حاوية بحث العلوم (تتمدد عند النقر) */
+        .science-filter-wrapper {
+            display: flex;
+            align-items: center;
+            background: var(--md-surface);
+            border-radius: 24px;
+            border: 1px solid var(--md-outline-variant);
+            height: 42px;
+            width: 42px;
+            overflow: hidden;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            flex-shrink: 0;
+            box-shadow: var(--md-elevation-1);
+        }
+        .science-filter-wrapper.expanded {
+            width: 200px; /* العرض بعد التمدد */
+            padding-left: 12px;
+        }
+        .science-filter-btn {
+            background: transparent;
+            border: none;
+            color: var(--md-primary);
+            width: 42px;
+            height: 42px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            flex-shrink: 0;
+            outline: none;
+        }
+        .science-filter-input {
+            border: none;
+            background: transparent;
+            font-family: inherit;
+            font-size: 0.95rem;
+            color: var(--md-on-surface);
+            width: 100%;
+            padding: 0;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+        .science-filter-input:focus { outline: none; }
+        .science-filter-wrapper.expanded .science-filter-input {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
         .category-chips {
             display: flex;
+            flex: 1;
             gap: 8px;
             overflow-x: auto;
-            padding-bottom: 12px;
-            margin-bottom: 16px;
+            padding: 4px 0;
             -ms-overflow-style: none; 
             scrollbar-width: none; 
         }
@@ -148,12 +184,14 @@
             user-select: none;
             -webkit-tap-highlight-color: transparent;
             display: inline-flex;
+            box-shadow: var(--md-elevation-1);
         }
         .chip:hover { background: var(--md-surface-variant); }
         .chip.active {
             background: var(--md-primary-container);
             color: var(--md-on-primary-container);
             border-color: var(--md-primary-container);
+            box-shadow: none;
         }
 
         /* ===== CARDS ===== */
@@ -198,16 +236,8 @@
             max-width: 100%;
             overflow: hidden;
         }
-        .meta-chip span.text {
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: nowrap;
-        }
-        .meta-chip .material-icons-round {
-            font-size: 1rem;
-            color: var(--md-primary);
-            flex-shrink: 0;
-        }
+        .meta-chip span.text { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+        .meta-chip .material-icons-round { font-size: 1rem; color: var(--md-primary); flex-shrink: 0; }
 
         /* ===== SECTION TITLE ===== */
         .section-title {
@@ -247,12 +277,7 @@
             word-break: break-word;
             line-height: 1.5;
         }
-
-        .edition-actions {
-            display: flex;
-            gap: 4px;
-            flex-shrink: 0;
-        }
+        .edition-actions { display: flex; gap: 4px; flex-shrink: 0; }
 
         /* ===== ICON BUTTONS ===== */
         .md-icon-btn {
@@ -426,8 +451,8 @@
         /* ===== RESPONSIVE ===== */
         @media (max-width: 480px) {
             .container { padding: 0 10px; margin: 16px auto; }
-            .search-scope { max-width: 100px; font-size: 0.85rem; padding: 8px 4px 8px 8px; }
-            .search-box { padding: 10px 12px; font-size: 0.95rem; }
+            .search-box { padding: 12px 40px 12px 16px; font-size: 0.95rem; }
+            .search-icon { font-size: 22px; right: 12px; }
             .md-card { padding: 14px; border-radius: 14px; }
             .book-title { font-size: 1.05rem; }
             .book-meta { gap: 6px; font-size: 0.82rem; }
@@ -451,15 +476,23 @@
     </header>
 
     <div class="container">
+        
         <div class="search-wrapper">
-            <select id="searchScope" class="search-scope" aria-label="نطاق البحث">
-                </select>
-            <input type="text" id="searchInput" class="search-box" placeholder="ابحث عن كتاب أو مؤلف..." autocomplete="off">
             <span class="material-icons-round search-icon">search</span>
+            <input type="text" id="searchInput" class="search-box" placeholder="ابحث عن كتاب أو مؤلف..." autocomplete="off">
         </div>
         
-        <div class="category-chips" id="categoryChips">
+        <div class="chips-row">
+            <div class="science-filter-wrapper" id="scienceFilterWrapper">
+                <button class="science-filter-btn" id="scienceFilterBtn" aria-label="ابحث في العلوم">
+                    <span class="material-icons-round">search</span>
+                </button>
+                <input type="text" id="scienceSearchInput" class="science-filter-input" placeholder="ابحث في العلوم..." autocomplete="off">
             </div>
+
+            <div class="category-chips" id="categoryChips">
+                </div>
+        </div>
 
         <div id="booksContainer"></div>
     </div>
@@ -493,31 +526,21 @@
             })
             .catch(e => console.error('Error loading JSON:', e));
 
-        // تهيئة تصنيفات الكتب في القائمة المنسدلة وشريط الأزرار
+        // تهيئة تصنيفات الكتب في شريط الأزرار (Chips)
         function initCategories() {
             const chipsContainer = document.getElementById('categoryChips');
-            const scopeSelect = document.getElementById('searchScope');
-            
             chipsContainer.innerHTML = '';
-            scopeSelect.innerHTML = '<option value="الكل">كل العلوم</option>';
             
             // استخراج جميع التصنيفات وترتيبها أبجدياً
             const categories = [...new Set(booksData.map(b => b.category).filter(c => c))]
                                .sort((a, b) => a.localeCompare(b, 'ar'));
             
-            // إضافة زر "الكل" افتراضياً
+            // إضافة زر "الكل" في البداية
             chipsContainer.appendChild(createChip('الكل', 'الكل', true));
             
-            // إضافة باقي العلوم للقائمة المنسدلة وللأزرار
+            // إضافة باقي العلوم
             categories.forEach(cat => {
-                // للـ Chips
                 chipsContainer.appendChild(createChip(cat, cat, false));
-                
-                // للـ Select Dropdown
-                const opt = document.createElement('option');
-                opt.value = cat;
-                opt.innerText = cat;
-                scopeSelect.appendChild(opt);
             });
         }
 
@@ -528,71 +551,77 @@
             btn.innerText = label;
             btn.dataset.value = value;
             btn.onclick = () => {
-                updateScope(value);
+                // تحديث حالة الأزرار
+                document.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
+                btn.classList.add('active');
+                
+                // تحديث النطاق وعرض الكتب
+                currentCategory = value;
+                filterAndDisplayBooks();
             };
             return btn;
         }
 
-        // دالة موحدة لتحديث نطاق البحث (من القائمة أو من الأزرار)
-        function updateScope(newScope) {
-            currentCategory = newScope;
-            
-            // 1. تحديث القائمة المنسدلة
-            document.getElementById('searchScope').value = newScope;
-            
-            // 2. تحديث الأزرار (Chips)
-            document.querySelectorAll('.chip').forEach(c => {
-                if (c.dataset.value === newScope) c.classList.add('active');
-                else c.classList.remove('active');
-            });
-            
-            // 3. إعادة فلترة وعرض الكتب
-            filterAndDisplayBooks();
-        }
+        // ==========================================
+        // منطق بحث العلوم المخصص (العدسة الجانبية)
+        // ==========================================
+        const scienceFilterWrapper = document.getElementById('scienceFilterWrapper');
+        const scienceFilterBtn = document.getElementById('scienceFilterBtn');
+        const scienceSearchInput = document.getElementById('scienceSearchInput');
 
-        // الاستماع لتغيير القائمة المنسدلة (Dropdown)
-        document.getElementById('searchScope').addEventListener('change', (e) => {
-            updateScope(e.target.value);
+        // التمدد عند النقر
+        scienceFilterBtn.addEventListener('click', () => {
+            scienceFilterWrapper.classList.toggle('expanded');
+            if (scienceFilterWrapper.classList.contains('expanded')) {
+                scienceSearchInput.focus();
+            } else {
+                scienceSearchInput.value = '';
+                filterChips(''); // إرجاع جميع التصنيفات
+            }
         });
 
-        // الاستماع لكتابة نص البحث
+        // فلترة أزرار العلوم أثناء الكتابة
+        scienceSearchInput.addEventListener('input', (e) => {
+            filterChips(e.target.value.toLowerCase());
+        });
+
+        function filterChips(term) {
+            document.querySelectorAll('.chip').forEach(chip => {
+                if (chip.dataset.value === 'الكل' || chip.dataset.value.toLowerCase().includes(term)) {
+                    chip.style.display = 'inline-flex';
+                } else {
+                    chip.style.display = 'none';
+                }
+            });
+        }
+
+        // ==========================================
+        // منطق البحث الرئيسي والفلترة
+        // ==========================================
         document.getElementById('searchInput').addEventListener('input', (e) => {
             currentSearchTerm = e.target.value.toLowerCase();
             filterAndDisplayBooks();
         });
 
-        // دالة الفلترة الشاملة
         function filterAndDisplayBooks() {
             const filtered = booksData.filter(book => {
-                // فلتر البحث النصي (في العنوان أو المؤلف فقط، لأن العلم محدد من النطاق)
+                // البحث النصي يقتصر على العنوان والمؤلف فقط
                 const matchesSearch = 
                     (book.title && book.title.toLowerCase().includes(currentSearchTerm)) ||
                     (book.author && book.author.toLowerCase().includes(currentSearchTerm));
                 
-                // فلتر النطاق/العلم
+                // فلتر العلم المختار من الأزرار (Chips)
                 const matchesCategory = currentCategory === 'الكل' || book.category === currentCategory;
                 
                 return matchesSearch && matchesCategory;
             });
             
-            // فلترة بصرية لأزرار الـ Chips أثناء البحث إذا كان النطاق هو "الكل"
-            if (currentCategory === 'الكل') {
-                document.querySelectorAll('.chip').forEach(chip => {
-                    if (chip.dataset.value === 'الكل' || chip.dataset.value.toLowerCase().includes(currentSearchTerm)) {
-                        chip.style.display = 'inline-flex';
-                    } else {
-                        chip.style.display = 'none';
-                    }
-                });
-            } else {
-                // إذا كان هناك نطاق محدد مسبقاً، نظهر جميع الأزرار كالمعتاد
-                document.querySelectorAll('.chip').forEach(chip => chip.style.display = 'inline-flex');
-            }
-            
             displayBooks(filtered);
         }
 
-        // دالة عرض الكروت
+        // ==========================================
+        // دوال عرض الكتب والكاروسيل
+        // ==========================================
         function displayBooks(books) {
             const container = document.getElementById('booksContainer');
             container.innerHTML = '';
@@ -672,7 +701,6 @@
             });
         }
 
-        // دوال النافذة المنبثقة والكاروسيل
         function openNoteModal(title, content) {
             document.getElementById('modalTitle').innerText = decodeURIComponent(title);
             document.getElementById('modalBody').innerHTML = `<p>${decodeURIComponent(content)}</p>`;
