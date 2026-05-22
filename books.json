@@ -1136,75 +1136,92 @@
     "id": 50,
     "title": "البداية والنهاية",
     "author": "إسماعيل بن عمر بن كثير",
-    "category": "تاريخ",
+    "category": [
+      "التاريخ",
+      "التراجم و الرجال"
+    ],
+    "notes": "",
     "best_editions": [
       {
         "name": "طبعة التركي (مركز سطور)",
-        "image": ""
+        "images": [],
+        "notes": ""
       },
       {
         "name": "دار عالم الكتب",
-        "image": ""
+        "images": [],
+        "notes": ""
       },
       {
         "name": "دار هجر",
-        "image": ""
+        "images": [],
+        "notes": ""
       }
     ],
     "alt_editions": [
       {
         "name": "دار ابن رجب",
-        "image": ""
+        "images": [],
+        "notes": ""
       },
       {
         "name": "الدار العالمية",
-        "image": ""
+        "images": [],
+        "notes": ""
       },
       {
         "name": "ابداع ابن الجوزي القاهرة",
-        "image": ""
+        "images": [],
+        "notes": ""
       }
     ],
-    "links": [],
-    "notes": ""
+    "links": []
   },
   {
     "id": 51,
     "title": "الإصابة في تمييز الصحابة",
     "author": "أحمد بن علي بن حجر العسقلاني",
-    "category": "تراجم ورجال",
+    "category": [
+      "التراجم و الرجال"
+    ],
+    "notes": "",
     "best_editions": [
       {
         "name": "طبعة التركي (دار الإمام مسلم - مركز سطور)",
-        "image": ""
+        "images": [],
+        "notes": ""
       },
       {
         "name": "دار عالم الكتب",
-        "image": ""
+        "images": [],
+        "notes": ""
       },
       {
         "name": "دار هجر",
-        "image": ""
+        "images": [],
+        "notes": ""
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "notes": ""
+    "links": []
   },
   {
     "id": 52,
     "title": "تاريخ ابن خلدون (ديوان المبتدأ والخبر)",
     "author": "عبد الرحمن بن محمد ابن خلدون",
-    "category": "تاريخ",
+    "category": [
+      "التاريخ"
+    ],
+    "notes": "",
     "best_editions": [
       {
         "name": "الطبعة التونسية",
-        "image": ""
+        "images": [],
+        "notes": ""
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "notes": ""
+    "links": []
   },
   {
     "id": 53,
@@ -2012,20 +2029,24 @@
     "id": 94,
     "title": "تاريخ الأمم والملوك (تاريخ الطبري)",
     "author": "محمد بن جرير الطبري",
-    "category": "تاريخ",
+    "category": [
+      "التاريخ"
+    ],
+    "notes": "",
     "best_editions": [],
     "alt_editions": [
       {
         "name": "دار المعارف مصر",
-        "image": ""
+        "images": [],
+        "notes": ""
       },
       {
         "name": "ابداع ابن الجوزي القاهرة",
-        "image": ""
+        "images": [],
+        "notes": ""
       }
     ],
-    "links": [],
-    "notes": ""
+    "links": []
   },
   {
     "id": 95,
