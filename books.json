@@ -1229,29 +1229,35 @@
     "id": 54,
     "title": "سيرة ابن هشام",
     "author": "عبد الملك بن هشام",
-    "category": "السيرة النبوية",
+    "category": [
+      "السيرة"
+    ],
+    "notes": "",
     "best_editions": [
       {
         "name": "دار الفاروق",
-        "image": ""
+        "images": [],
+        "notes": ""
       },
       {
         "name": "إقليد المعرفة",
-        "image": ""
+        "images": [],
+        "notes": ""
       },
       {
         "name": "دار ابن كثير",
-        "image": ""
+        "images": [],
+        "notes": ""
       }
     ],
     "alt_editions": [
       {
         "name": "دار ابن كثير بيروت",
-        "image": ""
+        "images": [],
+        "notes": ""
       }
     ],
-    "links": [],
-    "notes": ""
+    "links": []
   },
   {
     "id": 55,
