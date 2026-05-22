@@ -1055,50 +1055,60 @@
     "id": 46,
     "title": "تهذيب الكمال في أسماء الرجال",
     "author": "يوسف بن عبد الرحمن المزي",
-    "category": "تراجم ورجال",
+    "category": [
+      "التراجم و الرجال"
+    ],
+    "notes": "",
     "best_editions": [
       {
         "name": "طبعة الرسالة ناشرون (8 مجلدات قطع كبير)",
-        "image": ""
+        "images": [],
+        "notes": ""
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "notes": ""
+    "links": []
   },
   {
     "id": 47,
     "title": "تهذيب التهذيب",
     "author": "أحمد بن علي بن حجر العسقلاني",
-    "category": "تراجم ورجال",
+    "category": [
+      "التراجم و الرجال"
+    ],
+    "notes": "",
     "best_editions": [
       {
         "name": "جمعية دار البر",
-        "image": ""
+        "images": [],
+        "notes": ""
       },
       {
         "name": "الرسالة",
-        "image": ""
+        "images": [],
+        "notes": ""
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "notes": ""
+    "links": []
   },
   {
     "id": 48,
     "title": "تقريب التهذيب",
     "author": "أحمد بن علي بن حجر العسقلاني",
-    "category": "تراجم ورجال",
+    "category": [
+      "التراجم و الرجال"
+    ],
+    "notes": "",
     "best_editions": [
       {
         "name": "مؤسسة الرسالة",
-        "image": ""
+        "images": [],
+        "notes": ""
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "notes": ""
+    "links": []
   },
   {
     "id": 49,
