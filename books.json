@@ -1148,37 +1148,45 @@
     "id": 50,
     "title": "البداية والنهاية",
     "author": "إسماعيل بن عمر بن كثير",
-    "category": "تاريخ",
+    "category": [
+      "التاريخ"
+    ],
+    "notes": "",
     "best_editions": [
       {
         "name": "طبعة التركي (مركز سطور)",
-        "image": ""
+        "images": [],
+        "notes": ""
       },
       {
         "name": "دار عالم الكتب",
-        "image": ""
+        "images": [],
+        "notes": ""
       },
       {
         "name": "دار هجر",
-        "image": ""
+        "images": [],
+        "notes": ""
       }
     ],
     "alt_editions": [
       {
         "name": "دار ابن رجب",
-        "image": ""
+        "images": [],
+        "notes": ""
       },
       {
         "name": "الدار العالمية",
-        "image": ""
+        "images": [],
+        "notes": ""
       },
       {
         "name": "ابداع ابن الجوزي القاهرة",
-        "image": ""
+        "images": [],
+        "notes": ""
       }
     ],
-    "links": [],
-    "notes": ""
+    "links": []
   },
   {
     "id": 51,
@@ -1207,16 +1215,19 @@
     "id": 52,
     "title": "تاريخ ابن خلدون (ديوان المبتدأ والخبر)",
     "author": "عبد الرحمن بن محمد ابن خلدون",
-    "category": "تاريخ",
+    "category": [
+      "التاريخ"
+    ],
+    "notes": "",
     "best_editions": [
       {
         "name": "الطبعة التونسية",
-        "image": ""
+        "images": [],
+        "notes": ""
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "notes": ""
+    "links": []
   },
   {
     "id": 53,
