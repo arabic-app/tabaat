@@ -2230,7 +2230,9 @@
     "id": 104,
     "title": "الحيوان",
     "author": "الجاحظ",
-    "category": "الغة و الأدب",
+    "category": [
+      "اللغة و الأدب"
+    ],
     "notes": "",
     "best_editions": [
       {
