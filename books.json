@@ -1502,16 +1502,19 @@
     "id": 66,
     "title": "الإمام عبد الحميد بن باديس حياته وآثاره",
     "author": "عبد الحميد بن باديس / عمار طالبي",
-    "category": "مجاميع",
+    "category": [
+      "المجاميع"
+    ],
+    "notes": "",
     "best_editions": [
       {
         "name": "دار ابن حزم",
-        "image": ""
+        "images": [],
+        "notes": ""
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "notes": ""
+    "links": []
   },
   {
     "id": 67,
