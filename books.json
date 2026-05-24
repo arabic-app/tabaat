@@ -1420,52 +1420,63 @@
     "id": 61,
     "title": "مجموع آثار المعلمي",
     "author": "عبد الرحمن بن يحيى المعلمي اليماني",
-    "category": "مجاميع",
+    "category": [
+      "المجاميع"
+    ],
+    "notes": "",
     "best_editions": [
       {
-        "name": "عالم الفوائد",
-        "image": ""
+        "name": "ط دار عطاءات العلم",
+        "images": [],
+        "notes": ""
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "notes": ""
+    "links": []
   },
   {
     "id": 64,
     "title": "مجموع فتاوى شيخ الإسلام ابن تيمية",
     "author": "أحمد بن عبد الحليم ابن تيمية",
-    "category": "مجاميع",
+    "category": [
+      "المجاميع"
+    ],
+    "notes": "",
     "best_editions": [
       {
         "name": "دار الكلمة الطيبة",
-        "image": ""
+        "images": [],
+        "notes": ""
       },
       {
         "name": "الصفوة",
-        "image": ""
+        "images": [],
+        "notes": ""
       },
       {
         "name": "طبعة المجمع",
-        "image": ""
+        "images": [],
+        "notes": ""
       },
       {
         "name": "دار القاسم الجديدة (مصورة على طبعة المجمع)",
-        "image": ""
+        "images": [],
+        "notes": ""
       }
     ],
     "alt_editions": [
       {
         "name": "الصفوة",
-        "image": ""
+        "images": [],
+        "notes": ""
       },
       {
         "name": "العبيكان",
-        "image": ""
+        "images": [],
+        "notes": ""
       }
     ],
-    "links": [],
-    "notes": ""
+    "links": []
   },
   {
     "id": 65,
@@ -4840,6 +4851,24 @@
     "author": "بكر بن عبد الله أبو زيد",
     "category": [
       "مجاميع"
+    ],
+    "notes": "",
+    "best_editions": [
+      {
+        "name": "ط دار عطاءات العلم",
+        "images": [],
+        "notes": ""
+      }
+    ],
+    "alt_editions": [],
+    "links": []
+  },
+  {
+    "id": 253,
+    "title": "مجموعة آثار شيخ الإسلام ابن تيمية وما لحقها من أعمال",
+    "author": "أحمد بن عبد الحليم بن تيمية",
+    "category": [
+      "المجاميع"
     ],
     "notes": "",
     "best_editions": [
