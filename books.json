@@ -1383,16 +1383,19 @@
     "id": 59,
     "title": "موسوعة ابن أبي الدنيا مع تتمتها",
     "author": "عبد الله بن محمد ابن أبي الدنيا",
-    "category": "مجاميع",
+    "category": [
+      "المجاميع"
+    ],
+    "notes": "",
     "best_editions": [
       {
         "name": "دار أطلس الخضراء",
-        "image": ""
+        "images": [],
+        "notes": ""
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "notes": ""
+    "links": []
   },
   {
     "id": 60,
