@@ -4912,5 +4912,24 @@
     ],
     "alt_editions": [],
     "links": []
+  },
+  {
+    "id": 255,
+    "title": "كتاب الزهد",
+    "author": "أحمد بن محمد بن حنبل",
+    "category": [
+      "الحديث",
+      "كتب متنوعة"
+    ],
+    "notes": "",
+    "best_editions": [
+      {
+        "name": "ت عادل مرشد ط دار الفاروق",
+        "images": [],
+        "notes": ""
+      }
+    ],
+    "alt_editions": [],
+    "links": []
   }
 ]
