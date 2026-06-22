@@ -598,18 +598,31 @@
   },
   {
     "id": 25,
-    "title": "الإعلام بسنته عليه السلام",
+    "title": "الإعلام بسنته عليه الصلاة والسلام - شرح سنن ابن ماجه",
     "author": "مغلطاي بن قليج",
-    "category": "الحديث",
+    "category": [
+      "الحديث",
+      "شروح الحديث"
+    ],
+    "notes": "شرح غير كامل على سنن ابن ماجه",
     "best_editions": [
       {
         "name": "مكتبة ابن عباس",
-        "image": ""
+        "images": [
+          "https://www.zakariyyabooks.com/wp-content/uploads/%D8%A7%D9%84%D8%A5%D8%B9%D9%84%D8%A7%D9%85-%D8%A8%D8%B3%D9%86%D8%AA%D9%87-%D8%B9%D9%84%D9%8A%D9%87-%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85-scaled.jpg"
+        ],
+        "notes": ""
+      },
+      {
+        "name": "دار كنوز اشبيليا",
+        "images": [
+          "https://media.zid.store/eff9677f-02f2-4fdd-acd0-68b53135df0b/5040e079-3286-4ac3-b00c-b28bcd1767e7.jpg"
+        ],
+        "notes": "طبعة ناقصة (مجلدان فقط)"
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "notes": "الشرح غير كامل"
+    "links": []
   },
   {
     "id": 26,
