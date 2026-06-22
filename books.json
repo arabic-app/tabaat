@@ -776,16 +776,19 @@
     "id": 33,
     "title": "الترغيب والترهيب",
     "author": "عبد العظيم بن عبد القوي المنذري",
-    "category": "الحديث (متون)",
+    "category": [
+      "الحديث"
+    ],
+    "notes": "",
     "best_editions": [
       {
         "name": "المعارف",
-        "image": ""
+        "images": [],
+        "notes": ""
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "notes": ""
+    "links": []
   },
   {
     "id": 34,
