@@ -305,6 +305,7 @@
         }
         .md-input:focus { border-color: var(--md-primary); box-shadow: 0 0 0 2px rgba(0,105,92,0.15); }
         textarea.md-input { resize: vertical; min-height: 80px; }
+        select.md-input { cursor: pointer; }
 
         .duplicate-warning {
             display: none;
@@ -644,15 +645,20 @@
 
 <script>
     let booksData = [];
+    let sciencesData = [];
 
     new Sortable(document.getElementById('bestEditions'), { handle: '.drag-handle', animation: 150, ghostClass: 'sortable-ghost' });
     new Sortable(document.getElementById('altEditions'),  { handle: '.drag-handle', animation: 150, ghostClass: 'sortable-ghost' });
     new Sortable(document.getElementById('links'),        { handle: '.drag-handle', animation: 150, ghostClass: 'sortable-ghost' });
 
-    fetch('books.json?v=' + Date.now())
-        .then(r => { if (!r.ok) throw new Error('not found'); return r.json(); })
-        .then(data => { booksData = data; renderSidebar(); })
-        .catch(() => showToast('تنبيه: ملف books.json غير موجود، سيتم التشغيل بقاعدة بيانات فارغة.'));
+    Promise.all([
+        fetch('books.json?v=' + Date.now()).then(r => { if (!r.ok) throw new Error('not found'); return r.json(); }).catch(() => { showToast('تنبيه: ملف books.json غير موجود، سيتم التشغيل بقاعدة بيانات فارغة.'); return []; }),
+        fetch('sciences.json?v=' + Date.now()).then(r => { if (!r.ok) throw new Error('not found'); return r.json(); }).catch(() => { showToast('⚠️ ملف sciences.json غير موجود، لن تتمكن من اختيار العلوم.'); return []; })
+    ]).then(([books, sciences]) => {
+        booksData = books;
+        sciencesData = sciences;
+        renderSidebar();
+    });
 
     /* ---- SIDEBAR ---- */
     function renderSidebar(searchTerm = '') {
@@ -713,8 +719,20 @@
         const list = document.getElementById(containerId);
         const div = document.createElement('div');
         div.className = 'dynamic-input-group';
+
+        // إذا كانت القيمة الحالية (من كتاب قديم) غير موجودة في sciences.json، نضيفها مؤقتاً للقائمة حتى لا تضيع
+        let options = [...sciencesData];
+        if (val && !options.includes(val)) options.unshift(val);
+
+        const optionsHTML = options.map(s =>
+            `<option value="${s}"${s === val ? ' selected' : ''}>${s}</option>`
+        ).join('');
+
         div.innerHTML = `
-            <input type="text" class="md-input cat-input" placeholder="مثال: الحديث، الفقه..." value="${val}" required>
+            <select class="md-input cat-input" required>
+                <option value="" disabled${val ? '' : ' selected'}>اختر العلم من القائمة...</option>
+                ${optionsHTML}
+            </select>
             <button type="button" class="btn-remove-item" onclick="if(this.parentElement.parentElement.children.length > 1) this.parentElement.remove()" title="حذف">−</button>`;
         list.appendChild(div);
     };
