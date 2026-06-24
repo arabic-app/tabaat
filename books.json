@@ -5191,5 +5191,26 @@
     ],
     "alt_editions": [],
     "links": []
+  },
+  {
+    "id": 261,
+    "title": "إرشاد الساري لشرح صحيح البخاري",
+    "author": "شهاب الدين أبو العباس أحمد بن محمد الشافعي القسطلاني",
+    "category": [
+      "الحديث",
+      "شروح الحديث"
+    ],
+    "notes": "",
+    "best_editions": [
+      {
+        "name": "دار عطاءات العلم",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782305864805-.png"
+        ],
+        "notes": ""
+      }
+    ],
+    "alt_editions": [],
+    "links": []
   }
 ]
