@@ -1190,16 +1190,21 @@
     "best_editions": [
       {
         "name": "جمعية دار البر",
-        "images": [],
-        "notes": ""
-      },
-      {
-        "name": "الرسالة",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782310833821-47762023624173711186178016039187345317028932n.jpg"
+        ],
         "notes": ""
       }
     ],
-    "alt_editions": [],
+    "alt_editions": [
+      {
+        "name": "الرسالة",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782310852775-47758278724173710252844778528326861031562815n.jpg"
+        ],
+        "notes": ""
+      }
+    ],
     "links": []
   },
   {
