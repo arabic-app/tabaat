@@ -1172,7 +1172,9 @@
     "best_editions": [
       {
         "name": "طبعة الرسالة ناشرون (8 مجلدات قطع كبير)",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782310870451-4776019242417371248617788140465933938052635n.jpg"
+        ],
         "notes": ""
       }
     ],
