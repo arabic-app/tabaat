@@ -313,7 +313,9 @@
     "id": 10,
     "title": "فتح الباري شرح صحيح البخاري - ابن رجب الحنبلي",
     "author": "عبد الرحمن بن أحمد بن رجب الحنبلي",
-    "category": "الحديث",
+    "category": [
+      "الحديث"
+    ],
     "notes": "",
     "best_editions": [
       {
@@ -323,7 +325,9 @@
       },
       {
         "name": "دار ابن الجوزي",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782302605929-.png"
+        ],
         "notes": ""
       }
     ],
