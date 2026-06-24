@@ -1984,16 +1984,27 @@
     "id": 84,
     "title": "الكتاب المصنف في الأحاديث والآثار",
     "author": "أبو بكر بن أبي شيبة",
-    "category": "الحديث",
-    "best_editions": [],
+    "category": [
+      "الحديث"
+    ],
+    "notes": "",
+    "best_editions": [
+      {
+        "name": "دار كنوز اشبيليا - ت الشثري",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782303976978-.png"
+        ],
+        "notes": ""
+      }
+    ],
     "alt_editions": [
       {
         "name": "دار الفاروق الحديثة",
-        "image": ""
+        "images": [],
+        "notes": ""
       }
     ],
-    "links": [],
-    "notes": ""
+    "links": []
   },
   {
     "id": 85,
