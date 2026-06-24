@@ -1271,20 +1271,24 @@
     "notes": "",
     "best_editions": [
       {
-        "name": "مركز سطور - ت التركي",
+        "name": "مركز سطور - طبعة التركي",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782310581768-bidayasoutour.jpg"
         ],
         "notes": ""
       },
       {
-        "name": "دار عالم الكتب - ت التركي",
-        "images": [],
+        "name": "دار عالم الكتب - طبعة التركي",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782310649238-nidayaalam.jpg"
+        ],
         "notes": ""
       },
       {
-        "name": "دار هجر - ت التركي",
-        "images": [],
+        "name": "دار هجر - طبعة التركي",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782310714079-48125660824244369679112166497156030803560300n.jpg"
+        ],
         "notes": ""
       }
     ],
