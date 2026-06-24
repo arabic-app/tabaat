@@ -784,29 +784,39 @@
     "id": 30,
     "title": "مسند الإمام أحمد",
     "author": "أحمد بن حنبل",
-    "category": "الحديث",
+    "category": [
+      "الحديث"
+    ],
+    "notes": "",
     "best_editions": [
       {
+        "name": "دار التأصيل",
+        "images": [],
+        "notes": ""
+      },
+      {
         "name": "المكنز (دار المنهاج)",
-        "image": ""
+        "images": [],
+        "notes": ""
       },
       {
         "name": "الرسالة",
-        "image": ""
-      },
-      {
-        "name": "ابن الجوزي القاهرة",
-        "image": ""
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782307073639-.png"
+        ],
+        "notes": "مهمة للمعتنين بالتخريج"
       }
     ],
     "alt_editions": [
       {
         "name": "دار ابن الجوزي القاهرة",
-        "image": ""
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782307106243-.png"
+        ],
+        "notes": ""
       }
     ],
-    "links": [],
-    "notes": ""
+    "links": []
   },
   {
     "id": 31,
