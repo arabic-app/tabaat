@@ -3895,7 +3895,9 @@
     "best_editions": [
       {
         "name": "دار عطاءات العلم - ت سالم بلفقيه",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782304160586-.png"
+        ],
         "notes": ""
       }
     ],
