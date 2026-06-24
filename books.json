@@ -3767,7 +3767,9 @@
     "best_editions": [
       {
         "name": "دار عطاءات العلم - ت محمد عزير و محمد أجمل",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782304349823-.png"
+        ],
         "notes": ""
       }
     ],
