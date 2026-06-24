@@ -1243,7 +1243,9 @@
     "alt_editions": [
       {
         "name": "دار الفكر",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782308406334-sl1600.jpeg"
+        ],
         "notes": ""
       },
       {
