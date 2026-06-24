@@ -3918,7 +3918,9 @@
     "best_editions": [
       {
         "name": "دار عطاءات العلم - ت حسين عكاشة",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782304219697-.png"
+        ],
         "notes": ""
       }
     ],
