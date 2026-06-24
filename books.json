@@ -3637,7 +3637,9 @@
     "best_editions": [
       {
         "name": "دار تأصيل",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782305911573-.png"
+        ],
         "notes": ""
       }
     ],
