@@ -166,16 +166,12 @@
     "id": 5,
     "title": "تيسير الكريم الرحمن في تفسير كلام المنان",
     "author": "عبد الرحمن بن ناصر السعدي",
-    "category": [
-      "التفسير"
-    ],
+    "category": "التفسير",
     "notes": "",
     "best_editions": [
       {
         "name": "دار ابن الجوزي 4 مجلدات",
-        "images": [
-          "https://arabic-app.github.io/tabaat/images/1782310771353-47683783424173711752844628917825563208893249n.jpg"
-        ],
+        "images": [],
         "notes": ""
       },
       {
@@ -655,24 +651,18 @@
     "id": 24,
     "title": "سنن ابن ماجه",
     "author": "محمد بن يزيد بن ماجه",
-    "category": [
-      "الحديث"
-    ],
+    "category": "الحديث",
     "notes": "",
     "best_editions": [
       {
-        "name": "دار الصديق - ت عصام موسى هادي",
-        "images": [
-          "https://arabic-app.github.io/tabaat/images/1782311230493-47757658424173722986176835642629134635286023n.jpg"
-        ],
-        "notes": "الطبعة الثانية وما بعدها"
+        "name": "دار الصديق (مجلد واحد)",
+        "images": [],
+        "notes": ""
       },
       {
-        "name": "دار التأصيل",
-        "images": [
-          "https://arabic-app.github.io/tabaat/images/1782311313755-47972023524173711252844675772007664386129417n.jpg"
-        ],
-        "notes": "عدة مجلدات، الطبعة الثانية وما بعدها"
+        "name": "دار التأصيل (عدة مجلدات، الطبعة الثانية وما بعدها)",
+        "images": [],
+        "notes": ""
       }
     ],
     "alt_editions": [
@@ -972,26 +962,20 @@
     "id": 37,
     "title": "رياض الصالحين",
     "author": "يحيى بن شرف النووي",
-    "category": [
-      "الحديث"
-    ],
-    "notes": "",
+    "category": "الحديث",
     "best_editions": [
       {
-        "name": "دار الحضارة - ت علي العمران",
-        "images": [
-          "https://arabic-app.github.io/tabaat/images/1782311028341-47972881324173709086178222877491447485082406n.jpg"
-        ],
-        "notes": ""
+        "name": "دار الحضارة",
+        "image": ""
       },
       {
-        "name": "ت الفحل",
-        "images": [],
-        "notes": ""
+        "name": "الفحل",
+        "image": ""
       }
     ],
     "alt_editions": [],
-    "links": []
+    "links": [],
+    "notes": ""
   },
   {
     "id": 38,
@@ -1184,9 +1168,7 @@
     "best_editions": [
       {
         "name": "طبعة الرسالة ناشرون (8 مجلدات قطع كبير)",
-        "images": [
-          "https://arabic-app.github.io/tabaat/images/1782310870451-4776019242417371248617788140465933938052635n.jpg"
-        ],
+        "images": [],
         "notes": ""
       }
     ],
@@ -1204,21 +1186,16 @@
     "best_editions": [
       {
         "name": "جمعية دار البر",
-        "images": [
-          "https://arabic-app.github.io/tabaat/images/1782310833821-47762023624173711186178016039187345317028932n.jpg"
-        ],
+        "images": [],
         "notes": ""
-      }
-    ],
-    "alt_editions": [
+      },
       {
         "name": "الرسالة",
-        "images": [
-          "https://arabic-app.github.io/tabaat/images/1782310852775-47758278724173710252844778528326861031562815n.jpg"
-        ],
+        "images": [],
         "notes": ""
       }
     ],
+    "alt_editions": [],
     "links": []
   },
   {
@@ -1302,16 +1279,12 @@
       },
       {
         "name": "دار عالم الكتب - طبعة التركي",
-        "images": [
-          "https://arabic-app.github.io/tabaat/images/1782310649238-nidayaalam.jpg"
-        ],
+        "images": [],
         "notes": ""
       },
       {
         "name": "دار هجر - طبعة التركي",
-        "images": [
-          "https://arabic-app.github.io/tabaat/images/1782310714079-48125660824244369679112166497156030803560300n.jpg"
-        ],
+        "images": [],
         "notes": ""
       }
     ],
@@ -3288,7 +3261,7 @@
   },
   {
     "id": 154,
-    "title": "سبل الهدى والرشاد في سيرة خير العباد",
+    "title": "سبل الهدى والإرشاد في سيرة خير العباد",
     "author": "محمد بن يوسف الصالحي",
     "category": [
       "السيرة"
