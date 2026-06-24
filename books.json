@@ -5238,5 +5238,33 @@
     ],
     "alt_editions": [],
     "links": []
+  },
+  {
+    "id": 263,
+    "title": "المبدع شرح المقنع",
+    "author": "إبراهيم بن محمد بن عبد الله بن محمد ابن مفلح",
+    "category": [
+      "الفقه",
+      "الفقه الحنبلي"
+    ],
+    "notes": "",
+    "best_editions": [
+      {
+        "name": "ركائز",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782306889719-.png"
+        ],
+        "notes": ""
+      },
+      {
+        "name": "أجيال التوحيد",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782306907912-.png"
+        ],
+        "notes": ""
+      }
+    ],
+    "alt_editions": [],
+    "links": []
   }
 ]
