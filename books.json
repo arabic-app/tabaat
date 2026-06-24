@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "title": "تفسير الطبري (جامع البيان عن تأويل آي القرآن)",
+    "title": "جامع البيان عن تأويل آي القرآن (تفسير الطبري)",
     "author": "محمد بن جرير الطبري",
     "category": [
       "التفسير",
@@ -11,14 +11,16 @@
     "best_editions": [
       {
         "name": "دار ابن الجوزي السعودية",
-        "images": [],
+        "images": [
+          "https://archive.org/download/hq_books/tabari_jawzi.png"
+        ],
         "notes": ""
       },
       {
         "name": "طبعة التركي (سطور / دار عالم الكتب / دار هجر )",
         "images": [
-          "https://www.zakariyyabooks.com/wp-content/uploads/Tabari-Turki-4.jpg",
-          "https://www.zakariyyabooks.com/wp-content/uploads/%D8%AC%D8%A7%D9%85%D8%B9-%D8%A7%D9%84%D8%A8%D9%8A%D8%A7%D9%86-%D8%B9%D9%86-%D8%AA%D9%81%D8%B3%D9%8A%D8%B1-%D8%A2%D9%8A-%D8%A7%D9%84%D9%82%D8%B1%D8%A2%D9%86-%D8%AA%D8%AD%D9%82%D9%8A%D9%82-%D8%A7%D9%84%D8%AA%D8%B1%D9%83%D9%8A-%D8%AF%D8%A7%D8%B1-%D9%87%D8%AC%D8%B1-scaled.jpg"
+          "https://archive.org/download/hq_books/tabari_turki.jpeg",
+          "https://www.zakariyyabooks.com/wp-content/uploads/Tabari-Turki-4.jpg"
         ],
         "notes": ""
       }
@@ -26,7 +28,9 @@
     "alt_editions": [
       {
         "name": "دار الحديث",
-        "images": [],
+        "images": [
+          "https://archive.org/download/hq_books/tabari_hadith.png"
+        ],
         "notes": ""
       }
     ],
