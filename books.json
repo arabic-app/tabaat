@@ -966,20 +966,26 @@
     "id": 37,
     "title": "رياض الصالحين",
     "author": "يحيى بن شرف النووي",
-    "category": "الحديث",
+    "category": [
+      "الحديث"
+    ],
+    "notes": "",
     "best_editions": [
       {
-        "name": "دار الحضارة",
-        "image": ""
+        "name": "دار الحضارة - ت علي العمران",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782311028341-47972881324173709086178222877491447485082406n.jpg"
+        ],
+        "notes": ""
       },
       {
-        "name": "الفحل",
-        "image": ""
+        "name": "ت الفحل",
+        "images": [],
+        "notes": ""
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "notes": ""
+    "links": []
   },
   {
     "id": 38,
