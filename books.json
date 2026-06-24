@@ -776,29 +776,32 @@
     "id": 32,
     "title": "السنن الكبرى",
     "author": "أحمد بن الحسين البيهقي",
-    "category": "الحديث",
+    "category": [
+      "الحديث"
+    ],
+    "notes": "",
     "best_editions": [
       {
         "name": "دار الإمام مسلم",
-        "image": ""
+        "images": [],
+        "notes": ""
       },
       {
         "name": "دار عالم الكتب",
-        "image": ""
-      },
-      {
-        "name": "دار الحديث",
-        "image": ""
+        "images": [],
+        "notes": ""
       }
     ],
     "alt_editions": [
       {
         "name": "دار الحديث",
-        "image": ""
+        "images": [
+          "https://archive.org/download/hq_books/sounan_bayhaki%202.jpeg"
+        ],
+        "notes": ""
       }
     ],
-    "links": [],
-    "notes": ""
+    "links": []
   },
   {
     "id": 33,
