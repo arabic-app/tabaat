@@ -384,8 +384,16 @@
 
         .sub-container { background: var(--md-surface); padding: 10px 12px; border: 1px solid var(--md-outline-variant); border-radius: 8px; }
         .sub-container-title { font-size: 0.82rem; font-weight: 700; color: var(--md-on-surface-variant); margin-bottom: 8px; display: flex; align-items: center; gap: 4px; }
-        .dynamic-input-group { display: flex; gap: 6px; margin-bottom: 6px; }
-        .dynamic-input-group .md-input { font-size: 0.85rem; padding: 7px 10px; }
+        
+        .dynamic-input-group { display: flex; gap: 6px; margin-bottom: 6px; align-items: center;}
+        .dynamic-input-group .md-input { font-size: 0.85rem; padding: 7px 10px; flex: 1;}
+        
+        .btn-upload-img {
+            background: var(--md-secondary); color: white; border: none;
+            height: 32px; padding: 0 10px; border-radius: 8px; cursor: pointer; font-size: 0.8rem; font-weight: bold;
+            display: flex; align-items: center; justify-content: center; gap:4px; flex-shrink: 0;
+        }
+        .btn-upload-img:hover { background: #004d40; }
         
         .btn-remove-item {
             background: var(--md-error-container); color: var(--md-error); border: none;
@@ -403,7 +411,7 @@
             margin-top: 24px;
             display: flex;
             gap: 10px;
-            justify-content: space-between; /* To push buttons to opposite sides */
+            justify-content: space-between;
             border-top: 1px solid var(--md-outline-variant);
             padding-top: 20px;
             flex-wrap: wrap;
@@ -456,7 +464,7 @@
         .delete-modal-actions { display: flex; gap: 12px; justify-content: center; }
         .delete-modal-actions .md-btn { flex: 1; justify-content: center; height: 42px; font-size: 1rem; }
 
-        /* ===== TOAST ===== */
+        /* ===== TOAST & LOADER ===== */
         #toast {
             position: fixed;
             bottom: 24px;
@@ -474,6 +482,14 @@
             max-width: 90vw;
             box-shadow: var(--md-elevation-2);
         }
+        
+        .loader-overlay {
+            display: none; position: fixed; inset: 0; background: rgba(255,255,255,0.7);
+            z-index: 2000; align-items: center; justify-content: center; flex-direction: column;
+        }
+        .loader-overlay.visible { display: flex; }
+        .spinner { border: 4px solid var(--md-surface-variant); border-top: 4px solid var(--md-primary); border-radius: 50%; width: 40px; height: 40px; animation: spin 1s linear infinite; margin-bottom: 10px;}
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
 
         /* ===== OVERLAY (mobile drawer) ===== */
         .overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.4); z-index: 150; }
@@ -514,6 +530,11 @@
 </div>
 
 <div class="overlay" id="overlay" onclick="closeSidebar()"></div>
+
+<div class="loader-overlay" id="loaderOverlay">
+    <div class="spinner"></div>
+    <div style="font-weight: bold; color: var(--md-primary);">جاري الرفع لـ GitHub...</div>
+</div>
 
 <div class="layout">
     <aside class="sidebar" id="sidebar">
@@ -647,13 +668,17 @@
     let booksData = [];
     let sciencesData = [];
 
+    // Configuration GitHub pour l'upload d'images
+    const GH_OWNER = 'arabic-app';
+    const GH_REPO = 'tabaat';
+
     new Sortable(document.getElementById('bestEditions'), { handle: '.drag-handle', animation: 150, ghostClass: 'sortable-ghost' });
     new Sortable(document.getElementById('altEditions'),  { handle: '.drag-handle', animation: 150, ghostClass: 'sortable-ghost' });
     new Sortable(document.getElementById('links'),        { handle: '.drag-handle', animation: 150, ghostClass: 'sortable-ghost' });
 
     Promise.all([
-        fetch('books.json?v=' + Date.now()).then(r => { if (!r.ok) throw new Error('not found'); return r.json(); }).catch(() => { showToast('تنبيه: ملف books.json غير موجود، سيتم التشغيل بقاعدة بيانات فارغة.'); return []; }),
-        fetch('sciences.json?v=' + Date.now()).then(r => { if (!r.ok) throw new Error('not found'); return r.json(); }).catch(() => { showToast('⚠️ ملف sciences.json غير موجود، لن تتمكن من اختيار العلوم.'); return []; })
+        fetch('books.json?v=' + Date.now()).then(r => { if (!r.ok) throw new Error('not found'); return r.json(); }).catch(() => { showToast('تنبيه: ملف books.json غير موجود.'); return []; }),
+        fetch('sciences.json?v=' + Date.now()).then(r => { if (!r.ok) throw new Error('not found'); return r.json(); }).catch(() => { return []; })
     ]).then(([books, sciences]) => {
         booksData = books;
         sciencesData = sciences;
@@ -667,7 +692,6 @@
         const term = String(searchTerm).trim().toLowerCase();
         const currentId = document.getElementById('bookId').value;
 
-        // ترتيب الكتب أبجدياً في القائمة الجانبية
         const sortedBooks = [...booksData].sort((a, b) => (a.title || '').localeCompare(b.title || '', 'ar'));
 
         sortedBooks
@@ -720,7 +744,6 @@
         const div = document.createElement('div');
         div.className = 'dynamic-input-group';
 
-        // إذا كانت القيمة الحالية (من كتاب قديم) غير موجودة في sciences.json، نضيفها مؤقتاً للقائمة حتى لا تضيع
         let options = [...sciencesData];
         if (val && !options.includes(val)) options.unshift(val);
 
@@ -742,8 +765,10 @@
         const div = document.createElement('div');
         div.className = 'dynamic-input-group';
         div.innerHTML = `
-            <input type="text" class="md-input ed-image-url" placeholder="رابط صورة الطبعة..." style="direction:ltr">
-            <button type="button" class="btn-remove-item" onclick="this.parentElement.remove()">−</button>`;
+            <input type="text" class="md-input ed-image-url" placeholder="رابط صورة الطبعة (أو اضغط رفع)..." style="direction:ltr">
+            <input type="file" accept="image/png, image/jpeg, image/webp" style="display:none;" onchange="uploadImageToGitHub(this)">
+            <button type="button" class="btn-upload-img" onclick="this.previousElementSibling.click()" title="رفع صورة"><span class="material-icons-round">file_upload</span></button>
+            <button type="button" class="btn-remove-item" onclick="this.parentElement.remove()" title="حذف">−</button>`;
         list.appendChild(div);
     };
 
@@ -757,8 +782,10 @@
 
         const imgsHTML = imgs.map(img => `
             <div class="dynamic-input-group">
-                <input type="text" class="md-input ed-image-url" placeholder="رابط صورة الطبعة..." value="${img}" style="direction:ltr">
-                <button type="button" class="btn-remove-item" onclick="this.parentElement.remove()">−</button>
+                <input type="text" class="md-input ed-image-url" placeholder="رابط صورة الطبعة (أو اضغط رفع)..." value="${img}" style="direction:ltr">
+                <input type="file" accept="image/png, image/jpeg, image/webp" style="display:none;" onchange="uploadImageToGitHub(this)">
+                <button type="button" class="btn-upload-img" onclick="this.previousElementSibling.click()" title="رفع صورة من الجهاز"><span class="material-icons-round">file_upload</span></button>
+                <button type="button" class="btn-remove-item" onclick="this.parentElement.remove()" title="حذف الرابط">−</button>
             </div>`).join('');
 
         row.innerHTML = `
@@ -772,8 +799,7 @@
                     </div>
                     <div class="images-list">${imgsHTML}</div>
                     <button type="button" class="btn-add-item" onclick="addImageInputToEdition(this)">
-                        <span class="material-icons-round" style="font-size:14px">add_photo_alternate</span>
-                        إضافة صورة
+                        <span class="material-icons-round" style="font-size:14px">add_photo_alternate</span> إضافة حقل صورة
                     </button>
                 </div>
                 <input type="text" class="md-input ed-notes" placeholder="ملاحظات خاصة بهذه الطبعة (تظهر كـ ℹ في الموقع)..." value="${notes}">
@@ -800,6 +826,65 @@
         container.appendChild(row);
     }
 
+    /* ---- GITHUB IMAGE UPLOAD ---- */
+    async function uploadImageToGitHub(fileInput) {
+        const file = fileInput.files[0];
+        if (!file) return;
+
+        const token = document.getElementById('githubToken').value.trim();
+        if (!token) {
+            alert('⚠️ يرجى إدخال GitHub Token في الأعلى لتمكين رفع الصور!');
+            fileInput.value = ''; // reset
+            return;
+        }
+
+        // Récupération de l'input texte correspondant pour y placer l'URL finale
+        const textInput = fileInput.previousElementSibling;
+
+        // Préparation du fichier
+        const reader = new FileReader();
+        reader.onload = async function(event) {
+            const base64Content = event.target.result.split(',')[1];
+            // Créer un nom de fichier unique pour éviter d'écraser des fichiers existants
+            const uniqueName = Date.now() + '-' + file.name.replace(/[^a-zA-Z0-9.]/g, '');
+            const filePath = 'images/' + uniqueName;
+            const apiUrl = `https://api.github.com/repos/${GH_OWNER}/${GH_REPO}/contents/${filePath}`;
+
+            document.getElementById('loaderOverlay').classList.add('visible');
+
+            try {
+                const response = await fetch(apiUrl, {
+                    method: 'PUT',
+                    headers: {
+                        'Authorization': `token ${token}`,
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        message: `Upload image: ${uniqueName}`,
+                        content: base64Content
+                    })
+                });
+
+                if (response.ok) {
+                    // L'image a été uploadée avec succès.
+                    // On construit l'URL publique de GitHub Pages
+                    const publicUrl = `https://${GH_OWNER}.github.io/${GH_REPO}/${filePath}`;
+                    textInput.value = publicUrl;
+                    showToast('✅ تم رفع الصورة بنجاح!');
+                } else {
+                    const err = await response.json();
+                    alert('❌ فشل الرفع: ' + err.message);
+                }
+            } catch (error) {
+                alert('❌ حدث خطأ أثناء الاتصال بـ GitHub.');
+            } finally {
+                document.getElementById('loaderOverlay').classList.remove('visible');
+                fileInput.value = ''; // reset input
+            }
+        };
+        reader.readAsDataURL(file);
+    }
+
     /* ---- CREATE / LOAD ---- */
     function createNewBook() {
         document.getElementById('formContainer').style.display = 'block';
@@ -809,7 +894,6 @@
         document.getElementById('bookId').value = '';
         document.getElementById('duplicateWarning').style.display = 'none';
         
-        // إخفاء زر الحذف عند إنشاء كتاب جديد
         document.getElementById('btnDeleteBook').style.display = 'none';
 
         document.getElementById('categoriesList').innerHTML = '';
@@ -821,7 +905,7 @@
         document.getElementById('links').innerHTML = '';
         addEditionRow('bestEditions');
         window.scrollTo({ top: 0, behavior: 'smooth' });
-        closeSidebar(); // للموبايل
+        closeSidebar();
     }
 
     function loadBookIntoForm(id, liElement) {
@@ -836,7 +920,6 @@
         document.getElementById('formIcon').textContent = 'edit';
         document.getElementById('duplicateWarning').style.display = 'none';
         
-        // إظهار زر الحذف عند تعديل كتاب موجود
         document.getElementById('btnDeleteBook').style.display = 'inline-flex';
 
         document.getElementById('bookId').value = book.id;
@@ -901,47 +984,32 @@
         if (idx >= 0) booksData[idx] = newBook; else booksData.push(newBook);
 
         document.getElementById('bookId').value = id;
-        
-        // إظهار زر الحذف (في حال كان كتاباً جديداً وتم حفظه الآن)
         document.getElementById('btnDeleteBook').style.display = 'inline-flex';
         
         renderSidebar(document.getElementById('adminSearchInput').value);
         showToast('💾 تم الحفظ في الذاكرة. لا تنسَ تحديث الموقع ليتم الرفع!');
     }
 
-    // دوال نافذة الحذف المنبثقة
-    function openDeleteModal() {
-        document.getElementById('deleteModal').classList.add('visible');
-    }
-
-    function closeDeleteModal() {
-        document.getElementById('deleteModal').classList.remove('visible');
-    }
+    function openDeleteModal() { document.getElementById('deleteModal').classList.add('visible'); }
+    function closeDeleteModal() { document.getElementById('deleteModal').classList.remove('visible'); }
 
     function executeDeleteBook() {
         const id = parseInt(document.getElementById('bookId').value);
         if (!id) return;
 
-        // حذف الكتاب من المصفوفة
         booksData = booksData.filter(b => b.id !== id);
-
-        // إغلاق النافذة المنبثقة
         closeDeleteModal();
-        
-        // تحديث القائمة الجانبية وإخفاء استمارة الكتاب المحذوف
         renderSidebar(document.getElementById('adminSearchInput').value);
         document.getElementById('formContainer').style.display = 'none';
         
-        showToast('🗑️ تم حذف الكتاب بنجاح. لا تنسَ تحديث الموقع (مزامنة)!');
+        showToast('🗑️ تم حذف الكتاب بنجاح. لا تنسَ التحديث!');
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
     /* ---- EXPORT / SYNC ---- */
     const getJSONString = () => JSON.stringify(booksData, null, 2);
 
-    function copyJSON() {
-        navigator.clipboard.writeText(getJSONString()).then(() => showToast('📋 تم نسخ JSON إلى الحافظة.'));
-    }
+    function copyJSON() { navigator.clipboard.writeText(getJSONString()).then(() => showToast('📋 تم نسخ JSON إلى الحافظة.')); }
     
     function downloadJSON() {
         const a = Object.assign(document.createElement('a'), {
@@ -949,7 +1017,7 @@
             download: 'books.json'
         });
         document.body.appendChild(a); a.click(); document.body.removeChild(a);
-        showToast('💾 تم تحميل books.json بنجاح.');
+        showToast('💾 تم التحميل.');
     }
 
     function utf8_to_b64(str) { return btoa(unescape(encodeURIComponent(str))); }
@@ -959,9 +1027,10 @@
         if (!token) { showToast('⚠️ يرجى إدخال رمز GitHub Token أولاً!'); return; }
         localStorage.setItem('github_token_secured', token);
 
-        const owner = 'arabic-app', repo = 'tabaat', path = 'books.json';
-        const apiUrl = `https://api.github.com/repos/${owner}/${repo}/contents/${path}`;
-        showToast('⏳ جاري الاتصال بـ GitHub...');
+        const path = 'books.json';
+        const apiUrl = `https://api.github.com/repos/${GH_OWNER}/${GH_REPO}/contents/${path}`;
+        
+        document.getElementById('loaderOverlay').classList.add('visible');
 
         try {
             let sha = '';
@@ -974,10 +1043,12 @@
                 body: JSON.stringify({ message: 'تحديث قاعدة البيانات عبر لوحة الإدارة', content: utf8_to_b64(getJSONString()), sha })
             });
 
-            if (putRes.ok) showToast('🚀 تم الرفع إلى GitHub بنجاح! ستظهر التغييرات خلال دقيقتين.');
+            if (putRes.ok) showToast('🚀 تم الرفع إلى GitHub بنجاح!');
             else { const err = await putRes.json(); showToast('❌ فشل: ' + err.message); }
         } catch (err) {
-            showToast('❌ خطأ في الاتصال. تحقق من الإنترنت والـ Token.');
+            showToast('❌ خطأ في الاتصال.');
+        } finally {
+            document.getElementById('loaderOverlay').classList.remove('visible');
         }
     }
 
