@@ -404,16 +404,22 @@
     "id": 14,
     "title": "البحر المحيط الثجاج في شرح صحيح الإمام مسلم بن الحجاج",
     "author": "محمد بن علي بن آدم الإثيوبي",
-    "category": "الحديث",
+    "category": [
+      "الحديث"
+    ],
+    "notes": "له طبعة واحدة",
     "best_editions": [
       {
         "name": "دار ابن الجوزي",
-        "image": ""
+        "images": [
+          "https://archive.org/download/hq_books/%D8%A7%D9%84%D8%A8%D8%AD%D8%B1%20%D8%A7%D9%84%D9%85%D8%AD%D9%8A%D8%B7%20%D8%A7%D9%84%D8%AB%D8%AC%D8%A7%D8%AC%201.png",
+          "https://archive.org/download/hq_books/%D8%A7%D9%84%D8%A8%D8%AD%D8%B1%20%D8%A7%D9%84%D9%85%D8%AD%D9%8A%D8%B7%20%D8%A7%D9%84%D8%AB%D8%AC%D8%A7%D8%AC%202.png"
+        ],
+        "notes": ""
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "notes": "له طبعة واحدة"
+    "links": []
   },
   {
     "id": 15,
