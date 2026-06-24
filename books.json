@@ -5101,7 +5101,9 @@
       },
       {
         "name": "دار الرسالة العالمية",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782303800122-.png"
+        ],
         "notes": ""
       }
     ],
