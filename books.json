@@ -375,33 +375,47 @@
     "id": 12,
     "title": "المنهاج شرح صحيح مسلم بن الحجاج",
     "author": "يحيى بن شرف النووي",
-    "category": "الحديث",
+    "category": [
+      "الحديث"
+    ],
+    "notes": "",
     "best_editions": [
       {
-        "name": "دار المنهاج القويم تحقيق السرساوي",
-        "image": ""
+        "name": "مركز سطور - ت السرساوي",
+        "images": [],
+        "notes": ""
+      },
+      {
+        "name": "دار المنهاج القويم - ت السرساوي",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782303762491-.png"
+        ],
+        "notes": ""
       }
     ],
     "alt_editions": [
       {
         "name": "المعرفة",
-        "image": ""
+        "images": [],
+        "notes": ""
       },
       {
         "name": "ابن رجب",
-        "image": ""
+        "images": [],
+        "notes": ""
       },
       {
         "name": "الصديق",
-        "image": ""
+        "images": [],
+        "notes": ""
       },
       {
         "name": "مؤسسة قرطبة مصر",
-        "image": ""
+        "images": [],
+        "notes": ""
       }
     ],
-    "links": [],
-    "notes": "من أراد طبعة أقل سعراً: المعرفة أو الفيحاء أو الرسالة ناشرون"
+    "links": []
   },
   {
     "id": 13,
