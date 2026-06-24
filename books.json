@@ -2350,7 +2350,9 @@
     "best_editions": [
       {
         "name": "طيبة الخضراء - ت علي الصالحي",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782297650559-.png"
+        ],
         "notes": "إصدار الثلاث مجلدات"
       }
     ],
