@@ -1880,16 +1880,25 @@
     "id": 82,
     "title": "فتح القدير",
     "author": "محمد بن علي الشوكاني",
-    "category": "التفسير",
-    "best_editions": [],
+    "category": [
+      "التفسير"
+    ],
+    "notes": "",
+    "best_editions": [
+      {
+        "name": "دار ابن الجوزي السعودية",
+        "images": [],
+        "notes": ""
+      }
+    ],
     "alt_editions": [
       {
         "name": "دار الوفاء",
-        "image": ""
+        "images": [],
+        "notes": ""
       }
     ],
-    "links": [],
-    "notes": ""
+    "links": []
   },
   {
     "id": 83,
