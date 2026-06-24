@@ -1106,18 +1106,24 @@
   },
   {
     "id": 44,
-    "title": "علل الحديث",
+    "title": "كتاب العلل",
     "author": "عبد الرحمن بن أبي حاتم الرازي",
-    "category": "علل الحديث",
+    "category": [
+      "علل الحديث"
+    ],
+    "notes": "",
     "best_editions": [
       {
         "name": "طبعة سعد الحميد والجريسي",
-        "image": ""
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782308331299-FBIMG1615656241046.jpeg",
+          "https://arabic-app.github.io/tabaat/images/1782308355742-ilal.jpeg"
+        ],
+        "notes": "لهم طبعة جديدة في الطريق إن شاء الله"
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "notes": "لهم طبعة جديدة في الطريق إن شاء الله"
+    "links": []
   },
   {
     "id": 45,
