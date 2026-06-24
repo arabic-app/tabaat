@@ -5171,5 +5171,25 @@
     ],
     "alt_editions": [],
     "links": []
+  },
+  {
+    "id": 260,
+    "title": "الأوسط من السنن والإجماع والاختلاف",
+    "author": "الإمام ابن المنذر",
+    "category": [
+      "الفقه"
+    ],
+    "notes": "",
+    "best_editions": [
+      {
+        "name": "دار الفلاح",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782305699923-.png"
+        ],
+        "notes": ""
+      }
+    ],
+    "alt_editions": [],
+    "links": []
   }
 ]
