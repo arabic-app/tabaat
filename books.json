@@ -428,16 +428,21 @@
     "id": 13,
     "title": "إكمال المعلم بفوائد مسلم",
     "author": "القاضي عياض بن موسى",
-    "category": "الحديث",
+    "category": [
+      "الحديث"
+    ],
+    "notes": "",
     "best_editions": [
       {
         "name": "دار الوفاء",
-        "image": ""
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782308232404-ikmal.jpg"
+        ],
+        "notes": ""
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "notes": ""
+    "links": []
   },
   {
     "id": 14,
