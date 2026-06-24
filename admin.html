@@ -77,10 +77,7 @@
         .md-icon-btn-top .material-icons-round { font-size: 24px; }
 
         /* ===== LAYOUT ===== */
-        .layout {
-            display: flex;
-            min-height: 100vh;
-        }
+        .layout { display: flex; min-height: 100vh; }
 
         /* ===== SIDEBAR ===== */
         .sidebar {
@@ -95,166 +92,61 @@
             flex-shrink: 0;
             z-index: 100;
         }
-        .sidebar-header {
-            background: var(--md-primary);
-            color: var(--md-on-primary);
-            padding: 16px;
-        }
-        .sidebar-header h2 {
-            margin: 0 0 12px 0;
-            font-size: 1.1rem;
-            font-weight: 800;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
+        .sidebar-header { background: var(--md-primary); color: var(--md-on-primary); padding: 16px; }
+        .sidebar-header h2 { margin: 0 0 12px 0; font-size: 1.1rem; font-weight: 800; display: flex; align-items: center; gap: 8px; }
 
-        .search-field {
-            position: relative;
-            display: flex;
-            align-items: center;
-        }
-        .search-field .material-icons-round {
-            position: absolute;
-            right: 10px;
-            font-size: 20px;
-            color: rgba(255,255,255,0.7);
-            pointer-events: none;
-        }
+        .search-field { position: relative; display: flex; align-items: center; }
+        .search-field .material-icons-round { position: absolute; right: 10px; font-size: 20px; color: rgba(255,255,255,0.7); pointer-events: none; }
         .admin-search-box {
-            width: 100%;
-            padding: 10px 38px 10px 14px;
-            border: none;
-            border-radius: 24px;
-            font-family: inherit;
-            font-size: 0.9rem;
-            background: rgba(255,255,255,0.2);
-            color: white;
-            outline: none;
+            width: 100%; padding: 10px 38px 10px 14px; border: none; border-radius: 24px;
+            font-family: inherit; font-size: 0.9rem; background: rgba(255,255,255,0.2); color: white; outline: none;
         }
         .admin-search-box::placeholder { color: rgba(255,255,255,0.65); }
         .admin-search-box:focus { background: rgba(255,255,255,0.28); }
 
         .btn-add-new {
-            margin: 12px;
-            padding: 0 16px;
-            height: 40px;
-            background: var(--md-primary);
-            color: white;
-            border: none;
-            cursor: pointer;
-            font-family: inherit;
-            font-weight: 700;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 6px;
-            box-shadow: var(--md-elevation-1);
-            transition: box-shadow 0.2s, background 0.2s;
+            margin: 12px; padding: 0 16px; height: 40px; background: var(--md-primary); color: white;
+            border: none; cursor: pointer; font-family: inherit; font-weight: 700; border-radius: 20px;
+            font-size: 0.9rem; display: flex; align-items: center; justify-content: center; gap: 6px;
+            box-shadow: var(--md-elevation-1); transition: box-shadow 0.2s, background 0.2s;
         }
         .btn-add-new:hover { background: #00796b; box-shadow: var(--md-elevation-2); }
 
-        .sidebar-list {
-            flex: 1;
-            overflow-y: auto;
-            padding: 8px;
-            list-style: none;
-            margin: 0;
-        }
+        .sidebar-list { flex: 1; overflow-y: auto; padding: 8px; list-style: none; margin: 0; }
         .sidebar-list li {
-            padding: 10px 14px;
-            cursor: pointer;
-            border-radius: 28px;
-            font-size: 0.9rem;
-            line-height: 1.4;
-            color: var(--md-on-surface-variant);
-            transition: background 0.15s, color 0.15s;
-            margin-bottom: 2px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
+            padding: 10px 14px; cursor: pointer; border-radius: 28px; font-size: 0.9rem; line-height: 1.4;
+            color: var(--md-on-surface-variant); transition: background 0.15s, color 0.15s; margin-bottom: 2px;
+            display: flex; align-items: center; gap: 8px;
         }
-        .sidebar-list li::before {
-            content: '';
-            width: 6px; height: 6px;
-            border-radius: 50%;
-            background: var(--md-outline-variant);
-            flex-shrink: 0;
-        }
+        .sidebar-list li::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--md-outline-variant); flex-shrink: 0; }
         .sidebar-list li:hover { background: var(--md-surface-variant); color: var(--md-on-surface); }
-        .sidebar-list li.active {
-            background: var(--md-primary-container);
-            color: var(--md-on-primary-container);
-            font-weight: 700;
-        }
+        .sidebar-list li.active { background: var(--md-primary-container); color: var(--md-on-primary-container); font-weight: 700; }
         .sidebar-list li.active::before { background: var(--md-primary); }
 
         /* ===== MAIN CONTENT ===== */
-        .main-content {
-            flex: 1;
-            padding: 24px 20px;
-            overflow-y: auto;
-            min-width: 0;
-        }
+        .main-content { flex: 1; padding: 24px 20px; overflow-y: auto; min-width: 0; }
 
         /* ===== SYNC CARD ===== */
         .sync-card {
-            background: var(--md-surface);
-            border-radius: 16px;
-            padding: 20px;
-            margin-bottom: 24px;
-            box-shadow: var(--md-elevation-1);
-            border: 1px solid var(--md-outline-variant);
+            background: var(--md-surface); border-radius: 16px; padding: 20px; margin-bottom: 24px;
+            box-shadow: var(--md-elevation-1); border: 1px solid var(--md-outline-variant);
         }
-        .sync-card-title {
-            font-weight: 800;
-            font-size: 1rem;
-            color: var(--md-primary);
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            margin-bottom: 16px;
-        }
+        .sync-card-title { font-weight: 800; font-size: 1rem; color: var(--md-primary); display: flex; align-items: center; gap: 8px; margin-bottom: 16px; }
 
-        .github-row {
-            display: flex;
-            gap: 10px;
-            margin-bottom: 16px;
-            flex-wrap: wrap;
-        }
+        .github-row { display: flex; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
         .github-token-input {
-            flex: 1;
-            min-width: 200px;
-            padding: 10px 14px;
-            border: 1px solid var(--md-outline-variant);
-            border-radius: 8px;
-            font-family: inherit;
-            font-size: 0.9rem;
-            direction: ltr;
-            background: var(--md-background);
-            color: var(--md-on-surface);
-            outline: none;
+            flex: 1; min-width: 200px; padding: 10px 14px; border: 1px solid var(--md-outline-variant);
+            border-radius: 8px; font-family: inherit; font-size: 0.9rem; direction: ltr; background: var(--md-background);
+            color: var(--md-on-surface); outline: none;
         }
         .github-token-input:focus { border-color: var(--md-primary); }
 
         .action-buttons { display: flex; gap: 8px; flex-wrap: wrap; }
 
         .md-btn {
-            height: 36px;
-            padding: 0 16px;
-            border: none;
-            border-radius: 18px;
-            font-family: inherit;
-            font-weight: 700;
-            font-size: 0.85rem;
-            cursor: pointer;
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            transition: box-shadow 0.2s, opacity 0.2s;
-            white-space: nowrap;
+            height: 36px; padding: 0 16px; border: none; border-radius: 18px; font-family: inherit;
+            font-weight: 700; font-size: 0.85rem; cursor: pointer; display: inline-flex; align-items: center;
+            gap: 6px; transition: box-shadow 0.2s, opacity 0.2s; white-space: nowrap;
         }
         .md-btn:hover { opacity: 0.88; }
         .md-btn-primary { background: var(--md-primary); color: white; box-shadow: var(--md-elevation-1); }
@@ -264,116 +156,52 @@
 
         /* ===== FORM CARD ===== */
         .form-card {
-            background: var(--md-surface);
-            border-radius: 16px;
-            padding: 24px;
-            box-shadow: var(--md-elevation-1);
-            border: 1px solid var(--md-outline-variant);
-            display: none;
+            background: var(--md-surface); border-radius: 16px; padding: 24px;
+            box-shadow: var(--md-elevation-1); border: 1px solid var(--md-outline-variant); display: none;
         }
         .form-card-title {
-            font-size: 1.2rem;
-            font-weight: 800;
-            color: var(--md-primary);
-            margin: 0 0 20px 0;
-            padding-bottom: 14px;
-            border-bottom: 2px solid var(--md-outline-variant);
-            display: flex;
-            align-items: center;
-            gap: 8px;
+            font-size: 1.2rem; font-weight: 800; color: var(--md-primary); margin: 0 0 20px 0;
+            padding-bottom: 14px; border-bottom: 2px solid var(--md-outline-variant); display: flex; align-items: center; gap: 8px;
         }
 
         .form-group { margin-bottom: 18px; }
-        .form-group label {
-            display: block;
-            margin-bottom: 6px;
-            font-weight: 700;
-            font-size: 0.9rem;
-            color: var(--md-on-surface-variant);
-        }
+        .form-group label { display: block; margin-bottom: 6px; font-weight: 700; font-size: 0.9rem; color: var(--md-on-surface-variant); }
         .md-input {
-            width: 100%;
-            padding: 11px 14px;
-            border: 1px solid var(--md-outline-variant);
-            border-radius: 8px;
-            font-family: inherit;
-            font-size: 0.95rem;
-            background: var(--md-background);
-            color: var(--md-on-surface);
-            outline: none;
-            transition: border-color 0.2s, box-shadow 0.2s;
+            width: 100%; padding: 11px 14px; border: 1px solid var(--md-outline-variant); border-radius: 8px;
+            font-family: inherit; font-size: 0.95rem; background: var(--md-background); color: var(--md-on-surface);
+            outline: none; transition: all 0.2s;
         }
         .md-input:focus { border-color: var(--md-primary); box-shadow: 0 0 0 2px rgba(0,105,92,0.15); }
         textarea.md-input { resize: vertical; min-height: 80px; }
         select.md-input { cursor: pointer; }
 
         .duplicate-warning {
-            display: none;
-            background: var(--md-error-container);
-            color: var(--md-error);
-            padding: 10px 14px;
-            border-radius: 8px;
-            margin-top: 8px;
-            border: 1px solid #f5c6cb;
-            align-items: center;
-            justify-content: space-between;
-            gap: 10px;
-            flex-wrap: wrap;
-            font-size: 0.9rem;
-            font-weight: 600;
+            display: none; background: var(--md-error-container); color: var(--md-error); padding: 10px 14px;
+            border-radius: 8px; margin-top: 8px; border: 1px solid #f5c6cb; align-items: center;
+            justify-content: space-between; gap: 10px; flex-wrap: wrap; font-size: 0.9rem; font-weight: 600;
         }
         .btn-edit-duplicate {
-            background: var(--md-error);
-            color: white;
-            border: none;
-            padding: 5px 12px;
-            border-radius: 14px;
-            cursor: pointer;
-            font-family: inherit;
-            font-weight: 700;
-            font-size: 0.85rem;
+            background: var(--md-error); color: white; border: none; padding: 5px 12px;
+            border-radius: 14px; cursor: pointer; font-family: inherit; font-weight: 700; font-size: 0.85rem;
         }
 
         .section-header {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-weight: 800;
-            font-size: 0.95rem;
-            color: var(--md-tertiary);
-            margin: 24px 0 10px 0;
-            padding-bottom: 8px;
-            border-bottom: 1px dashed var(--md-outline-variant);
+            display: flex; align-items: center; gap: 8px; font-weight: 800; font-size: 0.95rem;
+            color: var(--md-tertiary); margin: 24px 0 10px 0; padding-bottom: 8px; border-bottom: 1px dashed var(--md-outline-variant);
         }
 
         .btn-add-row {
-            height: 32px;
-            padding: 0 14px;
-            background: #e0f2f1;
-            color: var(--md-primary);
-            border: 1px dashed var(--md-primary);
-            border-radius: 16px;
-            font-family: inherit;
-            font-weight: 700;
-            font-size: 0.82rem;
-            cursor: pointer;
-            margin-bottom: 16px;
-            display: inline-flex;
-            align-items: center;
-            gap: 4px;
+            height: 32px; padding: 0 14px; background: #e0f2f1; color: var(--md-primary);
+            border: 1px dashed var(--md-primary); border-radius: 16px; font-family: inherit;
+            font-weight: 700; font-size: 0.82rem; cursor: pointer; margin-bottom: 16px;
+            display: inline-flex; align-items: center; gap: 4px;
         }
         .btn-add-row:hover { background: var(--md-primary-container); }
 
         /* ===== DYNAMIC ROWS ===== */
         .dynamic-row {
-            display: flex;
-            gap: 10px;
-            margin-bottom: 10px;
-            align-items: flex-start;
-            background: var(--md-background);
-            padding: 14px;
-            border-radius: 12px;
-            border: 1px solid var(--md-outline-variant);
+            display: flex; gap: 10px; margin-bottom: 10px; align-items: flex-start;
+            background: var(--md-background); padding: 14px; border-radius: 12px; border: 1px solid var(--md-outline-variant);
         }
         .dynamic-row.sortable-ghost { opacity: 0.4; background: var(--md-primary-container); border: 1px dashed var(--md-primary); }
         .drag-handle { cursor: grab; color: var(--md-outline); font-size: 1.4rem; padding: 4px 2px; flex-shrink: 0; margin-top: 4px; }
@@ -385,13 +213,25 @@
         .sub-container { background: var(--md-surface); padding: 10px 12px; border: 1px solid var(--md-outline-variant); border-radius: 8px; }
         .sub-container-title { font-size: 0.82rem; font-weight: 700; color: var(--md-on-surface-variant); margin-bottom: 8px; display: flex; align-items: center; gap: 4px; }
         
-        .dynamic-input-group { display: flex; gap: 6px; margin-bottom: 6px; align-items: center;}
+        /* -- Drag and Drop Styles -- */
+        .dynamic-input-group { display: flex; gap: 6px; margin-bottom: 6px; align-items: center; transition: all 0.2s ease;}
         .dynamic-input-group .md-input { font-size: 0.85rem; padding: 7px 10px; flex: 1;}
+        
+        .dynamic-input-group.drag-over .md-input {
+            border-color: var(--md-primary);
+            background-color: rgba(0, 105, 92, 0.1);
+            border-style: dashed;
+            border-width: 2px;
+        }
+        .dynamic-input-group.drag-over .btn-upload-img {
+            background-color: var(--md-primary);
+            transform: scale(1.05);
+        }
         
         .btn-upload-img {
             background: var(--md-secondary); color: white; border: none;
             height: 32px; padding: 0 10px; border-radius: 8px; cursor: pointer; font-size: 0.8rem; font-weight: bold;
-            display: flex; align-items: center; justify-content: center; gap:4px; flex-shrink: 0;
+            display: flex; align-items: center; justify-content: center; gap:4px; flex-shrink: 0; transition: all 0.2s;
         }
         .btn-upload-img:hover { background: #004d40; }
         
@@ -408,55 +248,20 @@
 
         /* ===== FORM ACTIONS ===== */
         .form-actions {
-            margin-top: 24px;
-            display: flex;
-            gap: 10px;
-            justify-content: space-between;
-            border-top: 1px solid var(--md-outline-variant);
-            padding-top: 20px;
-            flex-wrap: wrap;
+            margin-top: 24px; display: flex; gap: 10px; justify-content: space-between;
+            border-top: 1px solid var(--md-outline-variant); padding-top: 20px; flex-wrap: wrap;
         }
         .btn-save {
-            height: 44px;
-            padding: 0 24px;
-            background: var(--md-primary);
-            color: white;
-            border: none;
-            border-radius: 22px;
-            font-family: inherit;
-            font-weight: 800;
-            font-size: 1rem;
-            cursor: pointer;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            box-shadow: var(--md-elevation-1);
+            height: 44px; padding: 0 24px; background: var(--md-primary); color: white;
+            border: none; border-radius: 22px; font-family: inherit; font-weight: 800;
+            font-size: 1rem; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; box-shadow: var(--md-elevation-1);
         }
         .btn-save:hover { background: #00796b; box-shadow: var(--md-elevation-2); }
 
         /* ===== DELETE MODAL ===== */
-        .delete-overlay {
-            display: none;
-            position: fixed;
-            inset: 0;
-            background: rgba(0,0,0,0.6);
-            backdrop-filter: blur(2px);
-            z-index: 1000;
-            align-items: center;
-            justify-content: center;
-            padding: 16px;
-        }
+        .delete-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.6); backdrop-filter: blur(2px); z-index: 1000; align-items: center; justify-content: center; padding: 16px; }
         .delete-overlay.visible { display: flex; }
-        .delete-modal {
-            background: var(--md-surface);
-            border-radius: 24px;
-            padding: 24px;
-            width: 100%;
-            max-width: 400px;
-            text-align: center;
-            box-shadow: var(--md-elevation-2);
-            animation: dialogFadeIn 0.2s ease-out;
-        }
+        .delete-modal { background: var(--md-surface); border-radius: 24px; padding: 24px; width: 100%; max-width: 400px; text-align: center; box-shadow: var(--md-elevation-2); animation: dialogFadeIn 0.2s ease-out; }
         @keyframes dialogFadeIn { from { opacity: 0; transform: scale(0.92); } to { opacity: 1; transform: scale(1); } }
         .delete-modal .material-icons-round { font-size: 56px; color: var(--md-error); margin-bottom: 10px; }
         .delete-modal h3 { margin: 0 0 10px 0; color: var(--md-on-surface); font-size: 1.3rem; }
@@ -466,27 +271,11 @@
 
         /* ===== TOAST & LOADER ===== */
         #toast {
-            position: fixed;
-            bottom: 24px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: #212121;
-            color: white;
-            padding: 12px 20px;
-            border-radius: 8px;
-            display: none;
-            z-index: 9999;
-            font-weight: 600;
-            font-size: 0.9rem;
-            text-align: center;
-            max-width: 90vw;
-            box-shadow: var(--md-elevation-2);
+            position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%); background: #212121;
+            color: white; padding: 12px 20px; border-radius: 8px; display: none; z-index: 9999;
+            font-weight: 600; font-size: 0.9rem; text-align: center; max-width: 90vw; box-shadow: var(--md-elevation-2);
         }
-        
-        .loader-overlay {
-            display: none; position: fixed; inset: 0; background: rgba(255,255,255,0.7);
-            z-index: 2000; align-items: center; justify-content: center; flex-direction: column;
-        }
+        .loader-overlay { display: none; position: fixed; inset: 0; background: rgba(255,255,255,0.7); z-index: 2000; align-items: center; justify-content: center; flex-direction: column; }
         .loader-overlay.visible { display: flex; }
         .spinner { border: 4px solid var(--md-surface-variant); border-top: 4px solid var(--md-primary); border-radius: 50%; width: 40px; height: 40px; animation: spin 1s linear infinite; margin-bottom: 10px;}
         @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
@@ -499,15 +288,7 @@
         @media (max-width: 768px) {
             .top-app-bar { display: flex; }
             .layout { flex-direction: column; min-height: unset; }
-            .sidebar {
-                position: fixed;
-                top: 0; right: -100%;
-                height: 100%;
-                width: min(var(--sidebar-width), 85vw);
-                transition: right 0.28s;
-                z-index: 160;
-                box-shadow: var(--md-elevation-2);
-            }
+            .sidebar { position: fixed; top: 0; right: -100%; height: 100%; width: min(var(--sidebar-width), 85vw); transition: right 0.28s; z-index: 160; box-shadow: var(--md-elevation-2); }
             .sidebar.open { right: 0; }
             .main-content { padding: 16px 12px; }
             .github-row { flex-direction: column; }
@@ -738,6 +519,39 @@
         document.getElementById('overlay').classList.remove('visible');
     }
 
+    /* ---- DRAG AND DROP BINDING ---- */
+    function bindDragAndDrop(containerGroup, fileInput) {
+        // Empêche le comportement par défaut (qui ouvrirait l'image dans le navigateur)
+        ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+            containerGroup.addEventListener(eventName, preventDefaults, false);
+        });
+
+        function preventDefaults(e) { e.preventDefault(); e.stopPropagation(); }
+
+        ['dragenter', 'dragover'].forEach(eventName => {
+            containerGroup.addEventListener(eventName, () => containerGroup.classList.add('drag-over'), false);
+        });
+
+        ['dragleave', 'drop'].forEach(eventName => {
+            containerGroup.addEventListener(eventName, () => containerGroup.classList.remove('drag-over'), false);
+        });
+
+        containerGroup.addEventListener('drop', (e) => {
+            const dt = e.dataTransfer;
+            const files = dt.files;
+            
+            if (files && files.length > 0) {
+                // Vérifier si c'est bien une image
+                if (files[0].type.startsWith('image/')) {
+                    fileInput.files = files; // Transférer le fichier à l'input invisible
+                    uploadImageToGitHub(fileInput); // Lancer l'upload
+                } else {
+                    alert("الرجاء إسقاط ملف صورة فقط (JPG, PNG, WEBP).");
+                }
+            }
+        }, false);
+    }
+
     /* ---- ROWS ---- */
     window.addCategoryInput = function (containerId, val = '') {
         const list = document.getElementById(containerId);
@@ -765,11 +579,14 @@
         const div = document.createElement('div');
         div.className = 'dynamic-input-group';
         div.innerHTML = `
-            <input type="text" class="md-input ed-image-url" placeholder="رابط صورة الطبعة (أو اضغط رفع)..." style="direction:ltr">
+            <input type="text" class="md-input ed-image-url" placeholder="اسحب الصورة هنا أو اضغط رفع... أو ضع رابطاً" style="direction:ltr">
             <input type="file" accept="image/png, image/jpeg, image/webp" style="display:none;" onchange="uploadImageToGitHub(this)">
             <button type="button" class="btn-upload-img" onclick="this.previousElementSibling.click()" title="رفع صورة"><span class="material-icons-round">file_upload</span></button>
-            <button type="button" class="btn-remove-item" onclick="this.parentElement.remove()" title="حذف">−</button>`;
+            <button type="button" class="btn-remove-item" onclick="this.parentElement.remove()">−</button>`;
         list.appendChild(div);
+        
+        // Attacher les événements Drag & Drop au nouveau groupe
+        bindDragAndDrop(div, div.querySelector('input[type="file"]'));
     };
 
     function addEditionRow(containerId, name = '', imagesArray = [], notes = '') {
@@ -782,7 +599,7 @@
 
         const imgsHTML = imgs.map(img => `
             <div class="dynamic-input-group">
-                <input type="text" class="md-input ed-image-url" placeholder="رابط صورة الطبعة (أو اضغط رفع)..." value="${img}" style="direction:ltr">
+                <input type="text" class="md-input ed-image-url" placeholder="اسحب الصورة هنا أو اضغط رفع... أو ضع رابطاً" value="${img}" style="direction:ltr">
                 <input type="file" accept="image/png, image/jpeg, image/webp" style="display:none;" onchange="uploadImageToGitHub(this)">
                 <button type="button" class="btn-upload-img" onclick="this.previousElementSibling.click()" title="رفع صورة من الجهاز"><span class="material-icons-round">file_upload</span></button>
                 <button type="button" class="btn-remove-item" onclick="this.parentElement.remove()" title="حذف الرابط">−</button>
@@ -808,6 +625,13 @@
                 <span class="material-icons-round">delete</span>
             </button>`;
         container.appendChild(row);
+
+        // Attacher le drag and drop à tous les champs d'images créés dans cette ligne
+        const imageGroups = row.querySelectorAll('.dynamic-input-group');
+        imageGroups.forEach(group => {
+            const fileInput = group.querySelector('input[type="file"]');
+            if(fileInput) bindDragAndDrop(group, fileInput);
+        });
     }
 
     function addLinkRow(containerId, title = '', url = '') {
@@ -831,21 +655,25 @@
         const file = fileInput.files[0];
         if (!file) return;
 
-        const token = document.getElementById('githubToken').value.trim();
-        if (!token) {
-            alert('⚠️ يرجى إدخال GitHub Token في الأعلى لتمكين رفع الصور!');
-            fileInput.value = ''; // reset
+        // Vérification de sécurité basique
+        if (!file.type.startsWith('image/')) {
+            alert("الرجاء اختيار ملف صورة فقط.");
+            fileInput.value = '';
             return;
         }
 
-        // Récupération de l'input texte correspondant pour y placer l'URL finale
-        const textInput = fileInput.previousElementSibling;
+        const token = document.getElementById('githubToken').value.trim();
+        if (!token) {
+            alert('⚠️ يرجى إدخال GitHub Token في الأعلى لتمكين رفع الصور!');
+            fileInput.value = ''; 
+            return;
+        }
 
-        // Préparation du fichier
+        const textInput = fileInput.previousElementSibling;
         const reader = new FileReader();
+        
         reader.onload = async function(event) {
             const base64Content = event.target.result.split(',')[1];
-            // Créer un nom de fichier unique pour éviter d'écraser des fichiers existants
             const uniqueName = Date.now() + '-' + file.name.replace(/[^a-zA-Z0-9.]/g, '');
             const filePath = 'images/' + uniqueName;
             const apiUrl = `https://api.github.com/repos/${GH_OWNER}/${GH_REPO}/contents/${filePath}`;
@@ -866,8 +694,6 @@
                 });
 
                 if (response.ok) {
-                    // L'image a été uploadée avec succès.
-                    // On construit l'URL publique de GitHub Pages
                     const publicUrl = `https://${GH_OWNER}.github.io/${GH_REPO}/${filePath}`;
                     textInput.value = publicUrl;
                     showToast('✅ تم رفع الصورة بنجاح!');
@@ -879,7 +705,7 @@
                 alert('❌ حدث خطأ أثناء الاتصال بـ GitHub.');
             } finally {
                 document.getElementById('loaderOverlay').classList.remove('visible');
-                fileInput.value = ''; // reset input
+                fileInput.value = ''; 
             }
         };
         reader.readAsDataURL(file);
