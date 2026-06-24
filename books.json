@@ -1615,7 +1615,9 @@
     "best_editions": [
       {
         "name": "دار الغرب الإسلامي",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782306772574-06bce09010ff4dba9a8d0724ef20341c.jpg"
+        ],
         "notes": ""
       }
     ],
