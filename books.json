@@ -1167,12 +1167,16 @@
     "best_editions": [
       {
         "name": "الرسالة العالمية",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782302806905-2.png"
+        ],
         "notes": ""
       },
       {
         "name": "الرسالة ناشرون (مع تتمة الرسالة العالمية)",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782302766274-.jpeg"
+        ],
         "notes": ""
       }
     ],
@@ -1184,6 +1188,11 @@
       },
       {
         "name": "التوفيقية",
+        "images": [],
+        "notes": ""
+      },
+      {
+        "name": "الدار العالمية",
         "images": [],
         "notes": ""
       }
