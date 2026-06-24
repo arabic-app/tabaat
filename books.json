@@ -791,7 +791,10 @@
     "best_editions": [
       {
         "name": "دار التأصيل",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782307600352-musnadtaasilcover.jpeg",
+          "https://arabic-app.github.io/tabaat/images/1782307606434-musnadtaasil.jpeg"
+        ],
         "notes": ""
       },
       {
@@ -802,7 +805,8 @@
       {
         "name": "الرسالة",
         "images": [
-          "https://arabic-app.github.io/tabaat/images/1782307073639-.png"
+          "https://arabic-app.github.io/tabaat/images/1782307073639-.png",
+          "https://arabic-app.github.io/tabaat/images/1782307363431-musnadalamia.png"
         ],
         "notes": "مهمة للمعتنين بالتخريج"
       }
