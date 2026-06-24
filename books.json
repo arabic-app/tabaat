@@ -452,21 +452,34 @@
     "id": 16,
     "title": "عون المعبود شرح سنن أبي داود",
     "author": "محمد شمس الحق العظيم آبادي",
-    "category": "الحديث",
+    "category": [
+      "الحديث"
+    ],
+    "notes": "",
     "best_editions": [
       {
         "name": "الفيحاء",
-        "image": ""
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782302506832-.png"
+        ],
+        "notes": ""
+      },
+      {
+        "name": "مؤسسة الرسالة ناشرون",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782302558397-.png"
+        ],
+        "notes": ""
       }
     ],
     "alt_editions": [
       {
         "name": "دار العقيدة مصر",
-        "image": ""
+        "images": [],
+        "notes": ""
       }
     ],
-    "links": [],
-    "notes": ""
+    "links": []
   },
   {
     "id": 17,
