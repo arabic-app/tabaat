@@ -1898,7 +1898,9 @@
     "id": 81,
     "title": "المحرر الوجيز في تفسير الكتاب العزيز",
     "author": "عبد الحق بن غالب ابن عطية الأندلسي",
-    "category": "التفسير",
+    "category": [
+      "التفسير"
+    ],
     "notes": "",
     "best_editions": [
       {
@@ -1910,7 +1912,9 @@
     "alt_editions": [
       {
         "name": "مصورة أوقاف قطر دار الأمة مصر",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782303369969-.png"
+        ],
         "notes": "من أفضلها العالمية"
       }
     ],
