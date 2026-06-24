@@ -1743,16 +1743,21 @@
     "id": 73,
     "title": "الموافقات",
     "author": "إبراهيم بن موسى الشاطبي",
-    "category": "أصول الفقه",
+    "category": [
+      "أصول الفقه"
+    ],
+    "notes": "",
     "best_editions": [
       {
-        "name": "منشورات البشير تحقيق آيت سعيد",
-        "image": ""
+        "name": "منشورات البشير - ت آيت سعيد",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782303631165-.png"
+        ],
+        "notes": ""
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "notes": ""
+    "links": []
   },
   {
     "id": 74,
