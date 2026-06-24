@@ -3841,7 +3841,9 @@
     "best_editions": [
       {
         "name": "دار عطاءات العلم - ت نبيل السندي و على العمران",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782304193236-.png"
+        ],
         "notes": ""
       }
     ],
