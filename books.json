@@ -4752,7 +4752,9 @@
     "best_editions": [
       {
         "name": "دار عطاءات العلم - ت العمران و عزير و زصلاحي",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782305934225-.png"
+        ],
         "notes": ""
       }
     ],
