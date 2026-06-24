@@ -5216,5 +5216,25 @@
     ],
     "alt_editions": [],
     "links": []
+  },
+  {
+    "id": 262,
+    "title": "التاريخ الكبير",
+    "author": "محمد بن إسماعيل البخاري",
+    "category": [
+      "الحديث"
+    ],
+    "notes": "",
+    "best_editions": [
+      {
+        "name": "الناشر المتميز",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782306065076-.png"
+        ],
+        "notes": ""
+      }
+    ],
+    "alt_editions": [],
+    "links": []
   }
 ]
