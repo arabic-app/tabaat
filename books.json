@@ -2572,19 +2572,25 @@
     "best_editions": [
       {
         "name": "دار الرسالة العالمية - ت محمد الدالي",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782558077257-images20260627T140011.590.jpeg"
+        ],
         "notes": ""
       },
       {
         "name": "مؤسسة الرسالة ناشرون - ت علي محمد زينو",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782558070662-311695.jpg"
+        ],
         "notes": ""
       }
     ],
     "alt_editions": [
       {
-        "name": "دار الطلائع",
-        "images": [],
+        "name": "دار الطلاع ت محمد محي الدين عبد الحميد",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782558059474-images20260627T140035.271.jpeg"
+        ],
         "notes": ""
       }
     ],
