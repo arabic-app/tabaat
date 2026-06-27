@@ -5230,7 +5230,9 @@
     "best_editions": [
       {
         "name": "دار عطاءات العلم - ت سامي جاد الله",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782557732815-08097070aa65b97c9895be6c350dce0b.jpg.webp"
+        ],
         "notes": ""
       }
     ],
