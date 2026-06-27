@@ -3284,12 +3284,16 @@
     "id": 140,
     "title": "الأخلاق والسير",
     "author": "على بن حزم الأندلسي",
-    "category": "كتب متنوعة",
+    "category": [
+      "كتب متنوعة"
+    ],
     "notes": "",
     "best_editions": [
       {
         "name": "ابن حزم - ت عبد الحق التركماني",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782559283063-images20260627T142037.204.jpeg"
+        ],
         "notes": ""
       }
     ],
