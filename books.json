@@ -5260,7 +5260,9 @@
     "best_editions": [
       {
         "name": "دار عطاءات العلم - ت عبد الله المزروع",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782589841004-images20260627T224150.997.jpeg"
+        ],
         "notes": ""
       }
     ],
