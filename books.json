@@ -3254,12 +3254,16 @@
     "id": 131,
     "title": "الدرة اليتيمة (الأدب الكبير)",
     "author": "ابن المقفع",
-    "category": "اللغة والأدب",
+    "category": [
+      "اللغة والأدب"
+    ],
     "notes": "",
     "best_editions": [
       {
         "name": "القلم - ت عماد الدين دولة",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782589816083-images20260627T224100.596.jpeg"
+        ],
         "notes": ""
       }
     ],
