@@ -3247,12 +3247,16 @@
     "id": 136,
     "title": "الأصمعيات",
     "author": "الأصمعي",
-    "category": "اللغة والأدب",
+    "category": [
+      "اللغة والأدب"
+    ],
     "notes": "",
     "best_editions": [
       {
         "name": "المعارف - ت أحمد شاكر وعبد السلام هارون",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782571206253-images20260627T173934.678.jpeg"
+        ],
         "notes": ""
       }
     ],
