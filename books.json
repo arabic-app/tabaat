@@ -1445,12 +1445,16 @@
       },
       {
         "name": "دار ابن رجب",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782572674332-images20260627T180340.091.jpeg"
+        ],
         "notes": "لا تشتمل على جزء النهاية في الفتن والملاحم، يشترى مفردا"
       },
       {
         "name": "الدار العالمية",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782572681609-images20260627T180355.586.jpeg"
+        ],
         "notes": "لا تشتمل على جزء النهاية في الفتن والملاحم، يشترى مفردا"
       },
       {
@@ -1462,7 +1466,9 @@
       },
       {
         "name": "ابداع ابن الجوزي القاهرة",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782572688389-images20260627T180411.790.jpeg"
+        ],
         "notes": "لا تشتمل على جزء النهاية في الفتن والملاحم، يشترى مفردا"
       }
     ],
