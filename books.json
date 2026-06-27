@@ -297,22 +297,30 @@
       },
       {
         "name": "بيت السنة",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782579386789-48014315924173709052844896363330708385614310n.jpg"
+        ],
         "notes": ""
       },
       {
         "name": "التأصيل",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782579407411-47757527024173713119511156367729419178237330n.jpg"
+        ],
         "notes": "الطبعة الثانية وما بعدها"
       },
       {
         "name": "دار ابن الجوزي تحقيق الفحل",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782579439815-47697390624173722919510176028677084410553888n.jpg"
+        ],
         "notes": ""
       },
       {
         "name": "السلطانية دار المنهاج",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782579472469-47701442524173710852844717625350440410297329n.jpg"
+        ],
         "notes": ""
       }
     ],
