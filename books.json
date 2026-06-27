@@ -1429,7 +1429,9 @@
     "alt_editions": [
       {
         "name": "دار ابن كثير",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782572111755-images20260627T175402.774.jpeg"
+        ],
         "notes": ""
       },
       {
@@ -1444,7 +1446,9 @@
       },
       {
         "name": "دار الإفهام",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782572121996-images20260627T175423.525.jpeg"
+        ],
         "notes": ""
       },
       {
