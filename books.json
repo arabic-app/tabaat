@@ -863,7 +863,9 @@
     "best_editions": [
       {
         "name": "دار الفاروق الحديثة",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782568101699-47697000224173710719511393276495993117755882n1.jpg"
+        ],
         "notes": ""
       }
     ],
