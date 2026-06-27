@@ -3052,12 +3052,17 @@
     "id": 119,
     "title": "الروضتين في أخبار الدولتين",
     "author": "عبد الرحمن المقدسي أبو شامة",
-    "category": "التاريخ",
+    "category": [
+      "التاريخ"
+    ],
     "notes": "",
     "best_editions": [
       {
         "name": "الرسالة - ت إبراهيم الزيبق",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782589937004-images20260627T224507.919.jpeg",
+          "https://arabic-app.github.io/tabaat/images/1782589944041-images20260627T224520.032.jpeg"
+        ],
         "notes": ""
       }
     ],
