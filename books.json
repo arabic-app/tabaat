@@ -833,21 +833,27 @@
       "الحديث",
       "شروح الحديث"
     ],
-    "notes": "طبعة بشار عواد فيها خلل كبير لذلك لم تذكر",
+    "notes": "*صدر مؤخرا ط سطور ت مركز هجر فلتنظر. \n*طبعة بشار عواد فيها خلل كبير لذلك لم تذكر",
     "best_editions": [
       {
         "name": "موسوعة شروح الموطأ (دار عالم الكتب / دار هجر)",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782575920511-images20260627T185657.533.jpeg"
+        ],
         "notes": ""
       },
       {
         "name": "دار الفاروق الحديثة",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782575933738-images20260627T185405.421.jpeg"
+        ],
         "notes": ""
       },
       {
         "name": "الطبعة المغربية",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782575940291-images20260627T185824.569.jpeg"
+        ],
         "notes": ""
       }
     ],
