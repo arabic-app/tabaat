@@ -2004,16 +2004,21 @@
     "id": 72,
     "title": "الاعتصام",
     "author": "إبراهيم بن موسى الشاطبي",
-    "category": "كتب متنوعة",
+    "category": [
+      "كتب متنوعة"
+    ],
+    "notes": "",
     "best_editions": [
       {
         "name": "دار ابن الجوزي",
-        "image": ""
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782573865234-56492542.jpg"
+        ],
+        "notes": ""
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "notes": ""
+    "links": []
   },
   {
     "id": 73,
