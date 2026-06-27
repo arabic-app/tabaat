@@ -2688,19 +2688,25 @@
     "best_editions": [
       {
         "name": "دار الكتب المصرية",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782571776412-48583.jpg"
+        ],
         "notes": ""
       },
       {
         "name": "مؤسسة الرسالة ناشرون",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782571783420-images20260627T174540.160.jpeg"
+        ],
         "notes": ""
       }
     ],
     "alt_editions": [
       {
         "name": "المكتبة العصرية بيروت",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782571835733-.jpg"
+        ],
         "notes": ""
       }
     ],
