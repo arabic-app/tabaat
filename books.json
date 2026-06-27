@@ -4618,7 +4618,9 @@
     "best_editions": [
       {
         "name": "دار عطاءات العلم - ت محمد أجمل إصلاحي",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782596177737-DNOWQMPaKKGexns58EYLEvSOaayqqpTgHx72S6Fc.jpg"
+        ],
         "notes": ""
       }
     ],
