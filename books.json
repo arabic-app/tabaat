@@ -4051,7 +4051,9 @@
     "best_editions": [
       {
         "name": "الدرر السنية",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782568163506-images20260627T164910.020.jpeg"
+        ],
         "notes": ""
       }
     ],
