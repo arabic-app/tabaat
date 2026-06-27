@@ -1827,9 +1827,7 @@
     "best_editions": [
       {
         "name": "دار ابن حزم",
-        "images": [
-          "https://arabic-app.github.io/tabaat/images/1782571855423-16.png"
-        ],
+        "images": [],
         "notes": ""
       }
     ],
@@ -2690,25 +2688,19 @@
     "best_editions": [
       {
         "name": "دار الكتب المصرية",
-        "images": [
-          "https://arabic-app.github.io/tabaat/images/1782571776412-48583.jpg"
-        ],
+        "images": [],
         "notes": ""
       },
       {
         "name": "مؤسسة الرسالة ناشرون",
-        "images": [
-          "https://arabic-app.github.io/tabaat/images/1782571783420-images20260627T174540.160.jpeg"
-        ],
+        "images": [],
         "notes": ""
       }
     ],
     "alt_editions": [
       {
         "name": "المكتبة العصرية بيروت",
-        "images": [
-          "https://arabic-app.github.io/tabaat/images/1782571835733-.jpg"
-        ],
+        "images": [],
         "notes": ""
       }
     ],
@@ -3119,16 +3111,12 @@
     "id": 128,
     "title": "الألفاظ الكتابية",
     "author": "عبد الرحمن الهمذاني",
-    "category": [
-      "اللغة والأدب"
-    ],
+    "category": "اللغة والأدب",
     "notes": "",
     "best_editions": [
       {
         "name": "الرسالة ناشرون - ت موفق صالح",
-        "images": [
-          "https://arabic-app.github.io/tabaat/images/1782571757291-images20260627T174458.427.jpeg"
-        ],
+        "images": [],
         "notes": ""
       }
     ],
@@ -3259,16 +3247,12 @@
     "id": 136,
     "title": "الأصمعيات",
     "author": "الأصمعي",
-    "category": [
-      "اللغة والأدب"
-    ],
+    "category": "اللغة والأدب",
     "notes": "",
     "best_editions": [
       {
         "name": "المعارف - ت أحمد شاكر وعبد السلام هارون",
-        "images": [
-          "https://arabic-app.github.io/tabaat/images/1782571206253-images20260627T173934.678.jpeg"
-        ],
+        "images": [],
         "notes": ""
       }
     ],
@@ -3295,17 +3279,12 @@
     "id": 138,
     "title": "الإمتاع والمؤانسة",
     "author": "أبو حيان التوحيدي",
-    "category": [
-      "اللغة والأدب"
-    ],
+    "category": "اللغة والأدب",
     "notes": "",
     "best_editions": [
       {
         "name": "لجنة التأليف والترجمة والنشر - ت أحمد أمين و أحمد الزين",
-        "images": [
-          "https://arabic-app.github.io/tabaat/images/1782571920724-3592ced277ce884ec271b0ea8190609c.png.webp",
-          "https://arabic-app.github.io/tabaat/images/1782571927815-images20260627T175149.451.jpeg"
-        ],
+        "images": [],
         "notes": ""
       }
     ],
@@ -5145,7 +5124,9 @@
     "best_editions": [
       {
         "name": "دار عطاءات العلم - ت عبد الرحمن قائد",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782572089247-images20260627T175313.213.jpeg"
+        ],
         "notes": ""
       }
     ],
@@ -5405,9 +5386,7 @@
     "best_editions": [
       {
         "name": "دار عطاءات العلم - ت علي العمران",
-        "images": [
-          "https://arabic-app.github.io/tabaat/images/1782571355303-images20260627T174226.286.jpeg"
-        ],
+        "images": [],
         "notes": ""
       }
     ],
