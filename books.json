@@ -3789,7 +3789,7 @@
   },
   {
     "id": 169,
-    "title": "أصول في التفسير",
+    "title": "أصول في التفسير وشرحه",
     "author": "محمد بن صالح العثيمين",
     "category": [
       "أصول التفسير",
@@ -3799,7 +3799,10 @@
     "best_editions": [
       {
         "name": "مؤسسة العثيمين",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782558198971-ddc2229f879b4821a08d65ec0e701921.png",
+          "https://arabic-app.github.io/tabaat/images/1782558231287-images20260627T140242.427.jpeg"
+        ],
         "notes": ""
       }
     ],
