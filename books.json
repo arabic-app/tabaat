@@ -984,17 +984,24 @@
     "best_editions": [
       {
         "name": "مركز سطور (دار الإمام مسلم) - طبعة التركي",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782596491372-images20260628T003947.701.jpeg",
+          "https://arabic-app.github.io/tabaat/images/1782596497138-images20260628T004001.535.jpeg"
+        ],
         "notes": ""
       },
       {
         "name": "دار عالم الكتب - طبعة التركي",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782596263170-47757854324173712752844523388026014782410360n.jpg"
+        ],
         "notes": ""
       },
       {
         "name": "دار هجر - طبعة التركي",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782596481881-images20260628T004105.850.jpeg"
+        ],
         "notes": ""
       }
     ],
