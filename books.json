@@ -2915,12 +2915,17 @@
     "id": 114,
     "title": "التذكرة الحمدونية",
     "author": "ابن حمدون",
-    "category": "اللغة والأدب",
+    "category": [
+      "اللغة والأدب"
+    ],
     "notes": "",
     "best_editions": [
       {
         "name": "صادر - ت إحسان عباس",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782574373353-images20260627T182858.533.jpeg",
+          "https://arabic-app.github.io/tabaat/images/1782574380069-images20260627T182851.260.jpeg"
+        ],
         "notes": ""
       }
     ],
