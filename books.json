@@ -1875,12 +1875,16 @@
       },
       {
         "name": "دار ابن كثير",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782557868782-images20260627T135739.254.jpeg"
+        ],
         "notes": ""
       },
       {
         "name": "دار المنهاج",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782557834626-47990437124173733419509127006597511774585341n.jpg"
+        ],
         "notes": ""
       }
     ],
