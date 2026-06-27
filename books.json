@@ -1716,7 +1716,9 @@
     "best_editions": [
       {
         "name": "طبعة مؤسسة الشيخ",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782598493345-17d5ed9ecf0f456e8c2bf421469859761000x659.1796875Lg9Y9BJ1qflekp0RGZinbfnuEToEmP8Z09V00uWn.jpg"
+        ],
         "notes": ""
       },
       {
