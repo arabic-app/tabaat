@@ -47,7 +47,10 @@
     "best_editions": [
       {
         "name": "مؤسسة الرسالة ناشرون - طبعة التركي",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782587878510-images20260627T220729.528.jpeg",
+          "https://arabic-app.github.io/tabaat/images/1782587885085-images20260627T220656.445.jpeg"
+        ],
         "notes": "أجودها مؤسسة الرسالة ناشرون"
       },
       {
@@ -59,24 +62,32 @@
       },
       {
         "name": "دار عالم الكتب - طبعة التركي",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782587952362-images20260627T221902.339.jpeg"
+        ],
         "notes": ""
       }
     ],
     "alt_editions": [
       {
         "name": "دار الكتاب العربي  - ت عبد الرزاق المهدي",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782587965270-images20260627T220648.003.jpeg"
+        ],
         "notes": ""
       },
       {
         "name": "دار الريان",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782587973497-images20260627T220849.959.jpeg"
+        ],
         "notes": ""
       },
       {
         "name": "دار ابن الجوزي مصر",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782587981172-cl8ujcz6n0em201dwc4fv6sdlcl70ky84c09zi01kshkhhb4irD8A7D984D8ACD8A7D985D8B9D984D8A3D8ADD983D8A7D985D8A7D984D982D8B1D8A2D986.webp"
+        ],
         "notes": ""
       }
     ],
