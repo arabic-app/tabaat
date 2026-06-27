@@ -292,7 +292,9 @@
     "best_editions": [
       {
         "name": "بحاشية السهارنفوري (دار البشائر / دار القلم)",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782579823190-ea9d3ec1f28a4be6acf4d65543e37c331000x10002wHhqGSw1zuZUO4WYuJafuNdy9xil88xrtlfnLMt.jpg"
+        ],
         "notes": ""
       },
       {
@@ -327,12 +329,16 @@
     "alt_editions": [
       {
         "name": "مؤسسة الرسالة ناشرون",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782579897379-9916df083dc6433989cca8ac9ad51eb6944.88188976378x1000AZ5R7ThhTS8DTJSiPgfKKn4CAe5gjQjr693D0Gy5.jpg"
+        ],
         "notes": ""
       },
       {
         "name": "دار التأصيل مجلد واحد",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782579890821-images20260627T200443.775.jpeg"
+        ],
         "notes": ""
       }
     ],
