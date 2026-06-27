@@ -3727,7 +3727,9 @@
     "best_editions": [
       {
         "name": "مكتبة الرشد",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782598520417-images20260628T011308.546.jpeg"
+        ],
         "notes": ""
       }
     ],
