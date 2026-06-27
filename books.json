@@ -1854,28 +1854,36 @@
     "id": 69,
     "title": "أدب الدين والدنيا",
     "author": "علي بن محمد الماوردي",
-    "category": "كتب متنوعة",
+    "category": [
+      "كتب متنوعة"
+    ],
+    "notes": "",
     "best_editions": [
       {
         "name": "الدار الشامية",
-        "image": ""
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782554139073-48634319824521971084685356771879302379975264n.jpg"
+        ],
+        "notes": ""
       },
       {
         "name": "دار ابن الجوزي",
-        "image": ""
+        "images": [],
+        "notes": ""
       },
       {
         "name": "دار ابن كثير",
-        "image": ""
+        "images": [],
+        "notes": ""
       },
       {
         "name": "دار المنهاج",
-        "image": ""
+        "images": [],
+        "notes": ""
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "notes": ""
+    "links": []
   },
   {
     "id": 70,
