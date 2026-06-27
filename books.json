@@ -3731,7 +3731,10 @@
     "best_editions": [
       {
         "name": "جائزة دبي - ت محمد إبراهيم البنا",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782589906904-images20260627T224348.669.jpeg",
+          "https://arabic-app.github.io/tabaat/images/1782589913749-images20260627T224406.904.jpeg"
+        ],
         "notes": ""
       }
     ],
