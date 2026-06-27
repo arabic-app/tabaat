@@ -1085,24 +1085,35 @@
     "id": 38,
     "title": "الأدب المفرد",
     "author": "محمد بن إسماعيل البخاري",
-    "category": "الحديث",
+    "category": [
+      "الحديث"
+    ],
+    "notes": "",
     "best_editions": [
       {
         "name": "دار الصديق",
-        "image": ""
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782559434617-LapdeBv9vQI0DAIyaUuFsroyE0dYKWvukr58621Q.jpg"
+        ],
+        "notes": ""
       },
       {
         "name": "دار ابن الجوزي",
-        "image": ""
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782559425326-images20260627T142241.383.jpeg"
+        ],
+        "notes": ""
       },
       {
         "name": "دار أطلس الخضراء",
-        "image": ""
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782559419503-images20260627T142247.583.jpeg"
+        ],
+        "notes": ""
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "notes": ""
+    "links": []
   },
   {
     "id": 39,
