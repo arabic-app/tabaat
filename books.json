@@ -3603,12 +3603,16 @@
     "id": 151,
     "title": "الحديقة",
     "author": "محب الدين الخطيب",
-    "category": "اللغة والأدب",
+    "category": [
+      "اللغة والأدب"
+    ],
     "notes": "",
     "best_editions": [
       {
         "name": "دار العاصمة",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782587714739-cover.jpg"
+        ],
         "notes": ""
       }
     ],
