@@ -607,19 +607,25 @@
     "best_editions": [
       {
         "name": "دار الصديق - ت عصام موسى هادي",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782578983835-47972881324173722819510184255296148190746736n.jpg"
+        ],
         "notes": ""
       },
       {
         "name": "دار التأصيل",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782578991897-images20260627T194833.753.jpeg"
+        ],
         "notes": "عدة مجلدات، الطبعة الثانية وما بعدها"
       }
     ],
     "alt_editions": [
       {
         "name": "مكتبة المعارف",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782579052813-90f4eceb7f418ac71fe5ca82c63d419b.png.webp"
+        ],
         "notes": "إن كانت رخيصة"
       }
     ],
