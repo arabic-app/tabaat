@@ -3136,12 +3136,16 @@
     "id": 133,
     "title": "أباطيل و أسمار",
     "author": "محمود شاكر",
-    "category": "اللغة والأدب",
+    "category": [
+      "اللغة والأدب"
+    ],
     "notes": "",
     "best_editions": [
       {
         "name": "الخانجي",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782557190614-images20260627T133823.690.jpeg"
+        ],
         "notes": ""
       }
     ],
