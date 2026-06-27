@@ -2690,7 +2690,9 @@
     "best_editions": [
       {
         "name": "الخانجي و مصوراتها - ت عبد السلام هارون",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782574348726-images20260627T182837.824.jpeg"
+        ],
         "notes": ""
       }
     ],
