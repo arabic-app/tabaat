@@ -3150,12 +3150,16 @@
     "id": 132,
     "title": "الأدب الصغير",
     "author": "ابن المقفع",
-    "category": "اللغة والأدب",
+    "category": [
+      "اللغة والأدب"
+    ],
     "notes": "",
     "best_editions": [
       {
         "name": "القلم - ت عماد الدين دولة",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782559302794-4.jpeg"
+        ],
         "notes": ""
       }
     ],
