@@ -3038,12 +3038,16 @@
     "id": 126,
     "title": "إصلاح المنطق",
     "author": "ابن السكيت",
-    "category": "اللغة والأدب",
+    "category": [
+      "اللغة والأدب"
+    ],
     "notes": "",
     "best_editions": [
       {
         "name": "المعارف - ت أحمد شاكر و عبد السلام هارون",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782558123586-images20260627T125727.344.jpeg"
+        ],
         "notes": ""
       }
     ],
