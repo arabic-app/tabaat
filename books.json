@@ -2945,12 +2945,17 @@
     "id": 116,
     "title": "البصائر والذخائر",
     "author": "أبو حيان التوحيدي",
-    "category": "اللغة والأدب",
+    "category": [
+      "اللغة والأدب"
+    ],
     "notes": "",
     "best_editions": [
       {
         "name": "صادر - ت وداد القاضي",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782574319933-images20260627T182817.594.jpeg",
+          "https://arabic-app.github.io/tabaat/images/1782574330398-images20260627T182812.914.jpeg"
+        ],
         "notes": ""
       }
     ],
