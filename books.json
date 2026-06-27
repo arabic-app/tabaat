@@ -4502,7 +4502,9 @@
     "best_editions": [
       {
         "name": "دار عطاءات العلم - ت عبد الله البطاطي",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782575275661-FrontCoverWithSideView1116c83aa9ba4852890cd924bfbdbbe2.jpg"
+        ],
         "notes": ""
       }
     ],
