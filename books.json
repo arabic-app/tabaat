@@ -2737,7 +2737,9 @@
     "best_editions": [
       {
         "name": "ابن كثير",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782558500119-images20260627T140629.295.jpeg"
+        ],
         "notes": "منها ط بيروتية أفضل فنيا"
       }
     ],
