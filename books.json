@@ -3970,7 +3970,9 @@
     "best_editions": [
       {
         "name": "الرئاسة العامة للبحوث الإفتاء بالسعودية - ت محمد احمد زملكاوي",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782558481888-images20260627T140549.761.jpeg"
+        ],
         "notes": ""
       }
     ],
