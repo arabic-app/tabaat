@@ -1919,19 +1919,25 @@
     "best_editions": [
       {
         "name": "دار ركائز",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782558812461-images20260627T141305.674.jpeg"
+        ],
         "notes": ""
       },
       {
         "name": "دار الفتح",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782558821386-images20260627T141302.022.jpeg"
+        ],
         "notes": ""
       }
     ],
     "alt_editions": [
       {
         "name": "دار الوفاء",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782558827759-images20260627T141323.599.jpeg"
+        ],
         "notes": ""
       },
       {
