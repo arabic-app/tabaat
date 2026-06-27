@@ -3295,12 +3295,17 @@
     "id": 138,
     "title": "الإمتاع والمؤانسة",
     "author": "أبو حيان التوحيدي",
-    "category": "اللغة والأدب",
+    "category": [
+      "اللغة والأدب"
+    ],
     "notes": "",
     "best_editions": [
       {
         "name": "لجنة التأليف والترجمة والنشر - ت أحمد أمين و أحمد الزين",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782571920724-3592ced277ce884ec271b0ea8190609c.png.webp",
+          "https://arabic-app.github.io/tabaat/images/1782571927815-images20260627T175149.451.jpeg"
+        ],
         "notes": ""
       }
     ],
