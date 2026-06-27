@@ -257,12 +257,16 @@
     "alt_editions": [
       {
         "name": "دار الحديث",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782559010375-images20260627T141608.547.jpeg"
+        ],
         "notes": ""
       },
       {
         "name": "دار السلام مصر",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782559016889-images20260627T141617.183.jpeg"
+        ],
         "notes": ""
       }
     ],
