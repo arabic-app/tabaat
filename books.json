@@ -1846,7 +1846,9 @@
     "best_editions": [
       {
         "name": "دار ابن حزم",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782573590516-16.png"
+        ],
         "notes": ""
       }
     ],
