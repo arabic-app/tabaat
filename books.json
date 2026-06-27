@@ -2831,12 +2831,17 @@
     "id": 108,
     "title": "التفسير البسيط",
     "author": "الواحدي",
-    "category": "التفسير",
+    "category": [
+      "التفسير"
+    ],
     "notes": "",
     "best_editions": [
       {
         "name": "العبيكان",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782577914807-images20260627T185334.035.jpeg",
+          "https://arabic-app.github.io/tabaat/images/1782577922257-altfsyralbsytllwahdy.jpg"
+        ],
         "notes": ""
       }
     ],
