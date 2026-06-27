@@ -3111,12 +3111,16 @@
     "id": 128,
     "title": "الألفاظ الكتابية",
     "author": "عبد الرحمن الهمذاني",
-    "category": "اللغة والأدب",
+    "category": [
+      "اللغة والأدب"
+    ],
     "notes": "",
     "best_editions": [
       {
         "name": "الرسالة ناشرون - ت موفق صالح",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782571757291-images20260627T174458.427.jpeg"
+        ],
         "notes": ""
       }
     ],
