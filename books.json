@@ -3709,7 +3709,16 @@
     "best_editions": [
       {
         "name": "مكتبة العلوم والحكم",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782598544449-images20260628T011245.343.jpeg"
+        ],
+        "notes": ""
+      },
+      {
+        "name": "العبيكان",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782598555485-16884018199x67hSav9c7skpf06du0nVfleakwDywo7yloGGDy.jpg"
+        ],
         "notes": ""
       }
     ],
