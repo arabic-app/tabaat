@@ -2783,7 +2783,10 @@
     "best_editions": [
       {
         "name": "ت عبد السلام هارون",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782587639909-.jpg",
+          "https://arabic-app.github.io/tabaat/images/1782587652692-images20260627T221252.104.jpeg"
+        ],
         "notes": ""
       }
     ],
