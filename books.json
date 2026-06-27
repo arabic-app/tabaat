@@ -1473,12 +1473,16 @@
       },
       {
         "name": "دار عالم الكتب - ت التركي",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782568368530-images20260627T165207.768.jpeg"
+        ],
         "notes": ""
       },
       {
         "name": "دار هجر - ت التركي",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782568380797-images20260627T165234.458.jpeg"
+        ],
         "notes": ""
       }
     ],
