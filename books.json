@@ -4870,7 +4870,9 @@
     "best_editions": [
       {
         "name": "دار الفتح - ت عمر شوقي",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782558856894-images20260627T135049.831.jpeg"
+        ],
         "notes": ""
       }
     ],
