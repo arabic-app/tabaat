@@ -4410,7 +4410,9 @@
     "best_editions": [
       {
         "name": "مؤسسة العثيمين",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782676296491-5.jpeg"
+        ],
         "notes": ""
       }
     ],
