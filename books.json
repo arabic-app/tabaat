@@ -782,12 +782,16 @@
     "best_editions": [
       {
         "name": "دار ابن الجوزي",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782666016618-images20260628T200007.891.jpeg"
+        ],
         "notes": ""
       },
       {
         "name": "دار آل بروم (الطبعة القديمة)",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782666026640-1.jpeg"
+        ],
         "notes": ""
       }
     ],
