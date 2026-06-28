@@ -2696,19 +2696,27 @@
     "best_editions": [
       {
         "name": "دار المعارف مصر - ت أبي الفضل إبراهيم",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782661169825-images20260628T183906.460.jpeg",
+          "https://arabic-app.github.io/tabaat/images/1782661175321-mbc.jpg"
+        ],
         "notes": ""
       },
       {
         "name": "دارة الملك عبد العزيز - ت بشار عواد",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782661180069-G1It6kIWUAAxy53.jpg",
+          "https://arabic-app.github.io/tabaat/images/1782661185518-images20260628T183834.954.jpeg"
+        ],
         "notes": ""
       }
     ],
     "alt_editions": [
       {
         "name": "ابن الجوزي القاهرة (ابداع)",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782661191869-images20260628T183815.085.jpeg"
+        ],
         "notes": ""
       }
     ],
