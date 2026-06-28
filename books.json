@@ -2608,19 +2608,26 @@
     "best_editions": [
       {
         "name": "دار اللباب",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782622338973-images20260628T074534.049.jpeg",
+          "https://arabic-app.github.io/tabaat/images/1782622351291-GiztG8WgAAVKtJ.jpg"
+        ],
         "notes": ""
       },
       {
         "name": "دار الفتح",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782622362806-images20260628T074614.177.jpeg"
+        ],
         "notes": ""
       }
     ],
     "alt_editions": [
       {
         "name": "دار ابن حزم بيروت",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782622371279-images20260628T074704.272.jpeg"
+        ],
         "notes": ""
       }
     ],
