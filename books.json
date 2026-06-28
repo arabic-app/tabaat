@@ -3362,12 +3362,17 @@
     "id": 122,
     "title": "زهر الآداب و ثمر الألباب",
     "author": "الحصري القيرواني",
-    "category": "اللغة والأدب",
+    "category": [
+      "اللغة والأدب"
+    ],
     "notes": "",
     "best_editions": [
       {
         "name": "ت علي البجاوي",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782667107985-GfG3jptXQAAHP02.jpg",
+          "https://arabic-app.github.io/tabaat/images/1782667114170-ZhrolAadab.jpeg"
+        ],
         "notes": ""
       }
     ],
