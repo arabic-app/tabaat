@@ -1470,7 +1470,9 @@
     "best_editions": [
       {
         "name": "مؤسسة الرسالة",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782660488181-4798997312417370851951161917521951672161142n.jpg"
+        ],
         "notes": ""
       }
     ],
