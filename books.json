@@ -5176,7 +5176,10 @@
     "best_editions": [
       {
         "name": "دار عطاءات العلم - ت عبد الله المديفر",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782666093654-bf1f8130c3c6459e85374c1185273892thumbnail1000x100070.jpg",
+          "https://arabic-app.github.io/tabaat/images/1782666099509-images20260628T195526.697.jpeg"
+        ],
         "notes": ""
       }
     ],
