@@ -457,7 +457,15 @@
         "notes": ""
       }
     ],
-    "alt_editions": [],
+    "alt_editions": [
+      {
+        "name": "الرسالة",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782633084363-47689151824173709286178208705605142039291752n.jpg"
+        ],
+        "notes": ""
+      }
+    ],
     "links": []
   },
   {
