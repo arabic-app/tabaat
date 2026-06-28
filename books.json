@@ -1835,7 +1835,9 @@
     "best_editions": [
       {
         "name": "دار القاسم",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782658756224-images81.jpeg"
+        ],
         "notes": ""
       }
     ],
