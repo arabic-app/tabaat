@@ -2129,16 +2129,22 @@
     "id": 70,
     "title": "روضة العقلاء ونزهة الفضلاء",
     "author": "محمد بن حبان البُستي",
-    "category": "كتب متنوعة",
+    "category": [
+      "كتب متنوعة"
+    ],
+    "notes": "",
     "best_editions": [
       {
-        "name": "أروقة",
-        "image": ""
+        "name": "أروقة ت محمد عايش",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782666142622-images20260628T195651.032.jpeg",
+          "https://arabic-app.github.io/tabaat/images/1782666149112-cm21x2yx70e6o01kf73pd7czfScreenshot20241009160649.jpg"
+        ],
+        "notes": ""
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "notes": ""
+    "links": []
   },
   {
     "id": 71,
