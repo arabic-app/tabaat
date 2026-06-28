@@ -135,12 +135,16 @@
     "alt_editions": [
       {
         "name": "دار الكتاب العربي - ت عبد الرزاق المهدي",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782660848863-1774971.jpg"
+        ],
         "notes": ""
       },
       {
         "name": "دار الشعب أو شروق البدر مصر - ت أنور الباز",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782660835965-images20260628T183332.279.jpeg"
+        ],
         "notes": "يُنصح أن يُشترى معها كتاب فضائل القرآن طبعة دار التقوى تحقيق الحويني."
       }
     ],
