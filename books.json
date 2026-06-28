@@ -851,7 +851,9 @@
     "best_editions": [
       {
         "name": "مكتبة نبت السلام",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782653452749-explicationdesunanibnmajahjanbazanjazalhajtshrhsnnabnmajhjanbaz.jpg"
+        ],
         "notes": ""
       }
     ],
