@@ -1320,16 +1320,21 @@
     "id": 42,
     "title": "تدريب الراوي في شرح تقريب النواوي",
     "author": "جلال الدين السيوطي",
-    "category": "مصطلح الحديث",
+    "category": [
+      "مصطلح الحديث"
+    ],
+    "notes": "",
     "best_editions": [
       {
         "name": "دار ابن الجوزي",
-        "image": ""
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782660921368-47756847624173712052844595222847720586818676n.jpg"
+        ],
+        "notes": ""
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "notes": ""
+    "links": []
   },
   {
     "id": 43,
