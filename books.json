@@ -4720,7 +4720,9 @@
     "best_editions": [
       {
         "name": "دار عطاءات العلم - ت يحيى الثمالي",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782642331231-images67.jpeg"
+        ],
         "notes": ""
       }
     ],
