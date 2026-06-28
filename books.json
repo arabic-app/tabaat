@@ -1682,7 +1682,9 @@
     "best_editions": [
       {
         "name": "طبعة التركي (مركز سطور)",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782633395773-almughniofibnqudamaalmaqdissi.jpg"
+        ],
         "notes": ""
       },
       {
@@ -1694,7 +1696,9 @@
       },
       {
         "name": "هجر",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782633402606-images20260628T105412.986.jpeg"
+        ],
         "notes": ""
       },
       {
@@ -1713,7 +1717,9 @@
       },
       {
         "name": "طبعة دار الحديث مصر",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782633413815-.jpg"
+        ],
         "notes": ""
       }
     ],
