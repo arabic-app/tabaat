@@ -2876,19 +2876,26 @@
     "best_editions": [
       {
         "name": "دار اللؤلؤة",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782673501189-images69.jpeg"
+        ],
         "notes": "لا تشتمل على كتاب كرامات الأولياء"
       },
       {
         "name": "الناشر المتميز - ت الرياشي",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782673509379-dKw8Fd9PbikPmfkDqI3uDS7KsC9eCtErTvb0uqaf.jpg"
+        ],
         "notes": "تشتمل على كتاب كرامات الأولياء"
       }
     ],
     "alt_editions": [
       {
         "name": "مكتبة غرناطة مصر",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782673517808-iathumb.jpg",
+          "https://arabic-app.github.io/tabaat/images/1782673523593-images71.jpeg"
+        ],
         "notes": ""
       }
     ],
