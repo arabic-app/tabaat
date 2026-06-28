@@ -2362,24 +2362,34 @@
     "best_editions": [
       {
         "name": "دار الفتح",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782680190639-images81.jpeg",
+          "https://arabic-app.github.io/tabaat/images/1782680197663-images87.jpeg"
+        ],
         "notes": "خالية من التعليقات العقدية"
       },
       {
         "name": "دار ابن الجوزي (ابن خزيمة)",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782680204658-images89.jpeg",
+          "https://arabic-app.github.io/tabaat/images/1782680213187-images88.jpeg"
+        ],
         "notes": "فيها تعليقات عقدية مفيدة"
       }
     ],
     "alt_editions": [
       {
         "name": "مدار الوطن",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782680220179-images90.jpeg"
+        ],
         "notes": ""
       },
       {
         "name": "دار القلم",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782680227364-images20260628T225932.389.jpeg"
+        ],
         "notes": ""
       }
     ],
