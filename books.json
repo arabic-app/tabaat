@@ -1726,19 +1726,25 @@
     "best_editions": [
       {
         "name": "دار الفاروق",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782667666360-cmqpo9gsz0h9b01jn3ou346fu444.webp"
+        ],
         "notes": ""
       },
       {
         "name": "إقليد المعرفة",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782667659730-images68.jpeg"
+        ],
         "notes": ""
       }
     ],
     "alt_editions": [
       {
         "name": "إقليد المعرفة مجلد واحد",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782667653465-d4c127cd9f8d49ea91dcb37ea51512a51000x750cD3NImpGnDnJC42sJhRq9wbySL31jcPdt5fad4Ns.jpg"
+        ],
         "notes": ""
       },
       {
