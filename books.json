@@ -2514,20 +2514,29 @@
     "id": 88,
     "title": "بدائع الصنائع في ترتيب الشرائع",
     "author": "أبو بكر بن مسعود الكاساني",
-    "category": "الفقه الحنفي",
+    "category": [
+      "الفقه الحنفي"
+    ],
+    "notes": "",
     "best_editions": [],
     "alt_editions": [
       {
         "name": "دار إحياء التراث",
-        "image": ""
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782653603995-images27.jpeg",
+          "https://arabic-app.github.io/tabaat/images/1782653691980-ABL7860000303BadaeaaalSinaafitrtibalSharaea6vols2scaled.jpg"
+        ],
+        "notes": ""
       },
       {
         "name": "دار الحديث",
-        "image": ""
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782653749213-images5.jpeg"
+        ],
+        "notes": ""
       }
     ],
-    "links": [],
-    "notes": ""
+    "links": []
   },
   {
     "id": 89,
