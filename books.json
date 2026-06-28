@@ -4833,7 +4833,9 @@
     "best_editions": [
       {
         "name": "دار عطاءات العلم - ت زائد النشيري",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782624397048-ca71bf74157b48a3b7d99f9951993958335.61058923997x500QsePml1LfPUs1G3k9gPa0QAdIm7TSG23xJs6eqIR.png"
+        ],
         "notes": ""
       }
     ],
