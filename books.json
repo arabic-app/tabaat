@@ -2505,16 +2505,21 @@
     "id": 92,
     "title": "المجموع شرح المهذب",
     "author": "يحيى بن شرف النووي",
-    "category": "الفقه الشافعي",
+    "category": [
+      "الفقه الشافعي"
+    ],
+    "notes": "",
     "best_editions": [],
     "alt_editions": [
       {
         "name": "المكتبة التوفيقية",
-        "image": ""
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782631264465-images20260628T101731.045.jpeg"
+        ],
+        "notes": ""
       }
     ],
-    "links": [],
-    "notes": ""
+    "links": []
   },
   {
     "id": 93,
