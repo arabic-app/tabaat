@@ -1667,37 +1667,49 @@
     "id": 55,
     "title": "المغني",
     "author": "عبد الله بن أحمد ابن قدامة",
-    "category": "الفقه",
+    "category": [
+      "الفقه"
+    ],
+    "notes": "هناك عدة أعمال في الطريق إن شاء الله",
     "best_editions": [
       {
         "name": "طبعة التركي (مركز سطور)",
-        "image": ""
+        "images": [],
+        "notes": ""
       },
       {
         "name": "دار عالم الكتب",
-        "image": ""
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782632974532-47759139924173723319510135013143413284544895n.jpg"
+        ],
+        "notes": ""
       },
       {
         "name": "هجر",
-        "image": ""
+        "images": [],
+        "notes": ""
       },
       {
         "name": "الدارة",
-        "image": ""
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782633006559-48052864424237170679832067059185720790152408n.jpg"
+        ],
+        "notes": ""
       }
     ],
     "alt_editions": [
       {
         "name": "طبعة الدارة المصورة",
-        "image": ""
+        "images": [],
+        "notes": ""
       },
       {
         "name": "طبعة دار الحديث مصر",
-        "image": ""
+        "images": [],
+        "notes": ""
       }
     ],
-    "links": [],
-    "notes": "هناك عدة أعمال في الطريق إن شاء الله"
+    "links": []
   },
   {
     "id": 56,
