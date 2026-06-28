@@ -3435,12 +3435,16 @@
     "id": 129,
     "title": "تصحيح الفصيح وشرحه",
     "author": "ابن درستويه",
-    "category": "اللغة والأدب",
+    "category": [
+      "اللغة والأدب"
+    ],
     "notes": "",
     "best_editions": [
       {
         "name": "أوقاف مصر - ت محمد بدوي",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782660890821-correctionoftheeloquentanditsexplanation.jpg"
+        ],
         "notes": ""
       }
     ],
