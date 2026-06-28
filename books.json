@@ -5567,7 +5567,9 @@
     "best_editions": [
       {
         "name": "دار عطاءات العلم - ت محمد عزير شمس",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782658709978-images76.jpeg"
+        ],
         "notes": ""
       }
     ],
