@@ -4906,7 +4906,9 @@
     "best_editions": [
       {
         "name": "دار عطاءات العلم - ت عبد الرحمن قائد",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782641158027-b84130d2bdc84af69cb9cbd587d06512335.61058923997x500cn4A7jOcXaOceQr49uSrEVoaCNqayrZcv3XXv8Xa.png"
+        ],
         "notes": ""
       }
     ],
