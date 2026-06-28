@@ -435,7 +435,10 @@
     "best_editions": [
       {
         "name": "اللؤلؤة ( دار الكلمة الطيبة - مكتبة الغرباء)",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782681150652-images68.jpeg",
+          "https://arabic-app.github.io/tabaat/images/1782681157132-G5AYeDTXIAAaUbv.jpg"
+        ],
         "notes": ""
       },
       {
