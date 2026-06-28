@@ -1583,16 +1583,22 @@
     "category": [
       "التاريخ"
     ],
-    "notes": "تنتظر إصدار جديد",
+    "notes": "صدرت مؤخرا ط دار ابن كثير",
     "best_editions": [
       {
         "name": "دار صادر",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782627920171-images20260628T092317.399.jpeg",
+          "https://arabic-app.github.io/tabaat/images/1782627930618-images20260628T092241.207.jpeg",
+          "https://arabic-app.github.io/tabaat/images/1782627937749-images20260628T092230.375.jpeg"
+        ],
         "notes": ""
       },
       {
         "name": "دار الكتاب العربي",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782627950518-HWgLRtDsG3nH7FwCIzVk6qjrnQFlsdlbZ9vmObKv.jpg"
+        ],
         "notes": ""
       }
     ],
