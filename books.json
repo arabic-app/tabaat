@@ -2599,14 +2599,18 @@
     "best_editions": [
       {
         "name": "مؤسسة العثيمين",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782683205046-images741796238921091009.jpeg"
+        ],
         "notes": ""
       }
     ],
     "alt_editions": [
       {
         "name": "مؤسسة الرسالة ناشرون",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782683240928-1270x1444.jpg"
+        ],
         "notes": ""
       }
     ],
