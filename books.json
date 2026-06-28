@@ -5026,7 +5026,9 @@
     "best_editions": [
       {
         "name": "دار عطاءات العلم - ت عثمان ضميرية",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782660951434-images20260628T183546.235.jpeg"
+        ],
         "notes": ""
       }
     ],
