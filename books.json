@@ -2203,16 +2203,21 @@
     "id": 74,
     "title": "تلبيس إبليس",
     "author": "عبد الرحمن بن علي ابن الجوزي",
-    "category": "كتب متنوعة",
+    "category": [
+      "كتب متنوعة"
+    ],
+    "notes": "",
     "best_editions": [
       {
         "name": "مدار الوطن",
-        "image": ""
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782659617498-47757880624173734352842361276487431564931181n.jpg"
+        ],
+        "notes": ""
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "notes": ""
+    "links": []
   },
   {
     "id": 75,
