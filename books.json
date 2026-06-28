@@ -191,24 +191,32 @@
       },
       {
         "name": "دار ابن الجوزي مجلد واحد",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782659493970-OZ2qjLmFZBmg6qlXxvo8RMO74REOZJbN6Ui7WtMv.jpg"
+        ],
         "notes": ""
       }
     ],
     "alt_editions": [
       {
         "name": "طيبة الخضراء",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782659487366-images90.jpeg"
+        ],
         "notes": ""
       },
       {
         "name": "دار الإمام مالك",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782659482155-images20260628T181056.799.jpeg"
+        ],
         "notes": ""
       },
       {
         "name": "دار عباد الرحمن ودار الفرقان بالإمارات ومصر",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782659475336-images89.jpeg"
+        ],
         "notes": ""
       }
     ],
