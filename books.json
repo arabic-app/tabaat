@@ -3493,12 +3493,16 @@
     "id": 137,
     "title": "المفضليات",
     "author": "المفضل الضبي",
-    "category": "اللغة والأدب",
+    "category": [
+      "اللغة والأدب"
+    ],
     "notes": "",
     "best_editions": [
       {
         "name": "المعارف - ت أحمد شاكر و عبد السلام هارون",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782640969552-images63.jpeg"
+        ],
         "notes": ""
       }
     ],
