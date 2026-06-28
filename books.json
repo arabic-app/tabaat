@@ -430,24 +430,33 @@
     "id": 11,
     "title": "المسند الصحيح المختصر (صحيح مسلم)",
     "author": "مسلم بن الحجاج النيسابوري",
-    "category": "الحديث",
+    "category": [
+      "الحديث"
+    ],
+    "notes": "من أراد طبعة في مجلد واحد: الرسالة ناشرون",
     "best_editions": [
       {
         "name": "التأصيل",
-        "image": ""
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782632476136-47757959624173712986177835519393077196940699n.jpg"
+        ],
+        "notes": ""
       },
       {
         "name": "دار قرطبة تحقيق نظر الفاريابي",
-        "image": ""
+        "images": [],
+        "notes": ""
       },
       {
         "name": "مصورة العامرة دار المنهاج",
-        "image": ""
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782632603062-47697390624173711419511326317269452434028510n.jpg"
+        ],
+        "notes": ""
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "notes": "من أراد طبعة في مجلد واحد: الرسالة ناشرون"
+    "links": []
   },
   {
     "id": 12,
@@ -3079,12 +3088,17 @@
     "id": 117,
     "title": "المستطرف في كل فن مستظرف",
     "author": "الأبشيهي",
-    "category": "اللغة والأدب",
+    "category": [
+      "اللغة والأدب"
+    ],
     "notes": "",
     "best_editions": [
       {
         "name": "صادر - ت إبراهيم صالح",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782632407218-fe8d9bf570c94244a8c66fa5c2d18053343.54688950789x10005y4JGLNMhbsxTtOjiuIDKUuw4maWCZbfXv6mzLAM.jpg",
+          "https://arabic-app.github.io/tabaat/images/1782632413464-images20260628T103946.373.jpeg"
+        ],
         "notes": "في ثلاث مجلدات لا المجلد الواحد"
       }
     ],
