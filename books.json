@@ -2350,7 +2350,9 @@
     "alt_editions": [
       {
         "name": "دار الفاروق الحديثة",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782629456834-xHzD5bBTNKR0Zqj6RPN60RZfjQAUGHwhsTUPPtgm.jpg"
+        ],
         "notes": ""
       }
     ],
