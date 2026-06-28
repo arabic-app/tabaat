@@ -2876,26 +2876,19 @@
     "best_editions": [
       {
         "name": "دار اللؤلؤة",
-        "images": [
-          "https://arabic-app.github.io/tabaat/images/1782674129144-images69.jpeg"
-        ],
+        "images": [],
         "notes": "لا تشتمل على كتاب كرامات الأولياء"
       },
       {
         "name": "الناشر المتميز - ت الرياشي",
-        "images": [
-          "https://arabic-app.github.io/tabaat/images/1782674135250-dKw8Fd9PbikPmfkDqI3uDS7KsC9eCtErTvb0uqaf.jpg"
-        ],
+        "images": [],
         "notes": "تشتمل على كتاب كرامات الأولياء"
       }
     ],
     "alt_editions": [
       {
         "name": "مكتبة غرناطة مصر",
-        "images": [
-          "https://arabic-app.github.io/tabaat/images/1782674142213-iathumb.jpg",
-          "https://arabic-app.github.io/tabaat/images/1782674148814-images71.jpeg"
-        ],
+        "images": [],
         "notes": ""
       }
     ],
@@ -4030,9 +4023,9 @@
     "notes": "",
     "best_editions": [
       {
-        "name": "ت عبد السلام هارون. أفضل مصوراتها مكتبة المتنبي",
+        "name": "ت عبد السلام هارون أفضل مصوراتها مكتبة المتنبي",
         "images": [
-          "https://arabic-app.github.io/tabaat/images/1782674215987-images72.jpeg"
+          "https://arabic-app.github.io/tabaat/images/1782674379659-images72.jpeg"
         ],
         "notes": ""
       }
@@ -4334,7 +4327,7 @@
   },
   {
     "id": 168,
-    "title": "التعليق على القواعد الحسان",
+    "title": "شرح القواعد الحسان",
     "author": "محمد بن صالح العثيمين",
     "category": [
       "أصول التفسير",
@@ -4387,9 +4380,7 @@
     "best_editions": [
       {
         "name": "مؤسسة العثيمين",
-        "images": [
-          "https://arabic-app.github.io/tabaat/images/1782674195833-images73.jpeg"
-        ],
+        "images": [],
         "notes": ""
       }
     ],
