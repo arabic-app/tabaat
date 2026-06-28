@@ -4360,7 +4360,9 @@
     "best_editions": [
       {
         "name": "مركز تفسير للدراسات القرإنية",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782682408849-images761796239004718092.jpeg"
+        ],
         "notes": ""
       }
     ],
