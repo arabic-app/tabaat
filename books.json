@@ -2232,7 +2232,9 @@
     "best_editions": [
       {
         "name": "دار الفضيلة",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782641004491-images66.jpeg"
+        ],
         "notes": ""
       }
     ],
