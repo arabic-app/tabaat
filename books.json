@@ -1950,15 +1950,10 @@
     "best_editions": [
       {
         "name": "دار الكلمة الطيبة",
-        "images": [],
-        "notes": ""
-      },
-      {
-        "name": "الصفوة",
         "images": [
-          "https://arabic-app.github.io/tabaat/images/1782377539126-fatawasafwa.jpg"
+          "https://arabic-app.github.io/tabaat/images/1782660407987-43043.jpg"
         ],
-        "notes": "خطها صغير، الصفحة عمودان"
+        "notes": ""
       },
       {
         "name": "طبعة المجمع",
@@ -1971,6 +1966,13 @@
           "https://arabic-app.github.io/tabaat/images/1782377495562-fatawakacem.jpg"
         ],
         "notes": "مصورة على طبعة المجمع"
+      },
+      {
+        "name": "الصفوة",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782377539126-fatawasafwa.jpg"
+        ],
+        "notes": "خطها صغير، الصفحة عمودان"
       }
     ],
     "alt_editions": [
