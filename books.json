@@ -4023,8 +4023,10 @@
     "notes": "",
     "best_editions": [
       {
-        "name": "ت عبد السلام هارون أفضل مصوراتها مكتبة المتنبي",
-        "images": [],
+        "name": "ت عبد السلام هارون. أفضل مصوراتها مكتبة المتنبي",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782673462061-images72.jpeg"
+        ],
         "notes": ""
       }
     ],
