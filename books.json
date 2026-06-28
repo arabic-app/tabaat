@@ -3471,12 +3471,18 @@
     "id": 141,
     "title": "العود الهندي",
     "author": "عبد الرحمن السقاف",
-    "category": "اللغة والأدب",
+    "category": [
+      "اللغة والأدب"
+    ],
     "notes": "",
     "best_editions": [
       {
         "name": "ط المنهاج بجدة",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782624322204-179b98a2b2a44ea6a0d57917d470a6de709.375x1000hER7JXYahZjcJGidvcm7J5NPuYSDMfGn9mc02un5.jpg",
+          "https://arabic-app.github.io/tabaat/images/1782624332406-images20260628T081329.214.jpeg",
+          "https://arabic-app.github.io/tabaat/images/1782624339570-85bae39642134e62b1d783535488554a991.25x1000BqAlzKjEyxNHhsJu1z7ft8ld56TFsvsId503ESoM.jpg"
+        ],
         "notes": ""
       }
     ],
