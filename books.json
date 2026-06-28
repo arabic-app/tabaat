@@ -4098,7 +4098,17 @@
     "best_editions": [
       {
         "name": "دار النفائس",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782667059100-61ijKLxJ4rL.ACUF10001000QL80.jpg",
+          "https://arabic-app.github.io/tabaat/images/1782667066871-images27.jpeg"
+        ],
+        "notes": ""
+      },
+      {
+        "name": "السلام بمصر _النفائس",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782667089612-12012.jpg"
+        ],
         "notes": ""
       }
     ],
