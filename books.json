@@ -2588,20 +2588,29 @@
     "id": 89,
     "title": "بلغة السالك لأقرب المسالك (حاشية الصاوي على الشرح الصغير)",
     "author": "أحمد بن محمد الصاوي",
-    "category": "الفقه المالكي",
+    "category": [
+      "الفقه المالكي"
+    ],
+    "notes": "",
     "best_editions": [],
     "alt_editions": [
       {
         "name": "دار الفضيلة مصر",
-        "image": ""
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782663029860-175740.jpg",
+          "https://arabic-app.github.io/tabaat/images/1782663035027-images20260628T190841.938.jpeg"
+        ],
+        "notes": ""
       },
       {
         "name": "دار المعارف مصر",
-        "image": ""
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782663023484-images20260628T191001.105.jpeg"
+        ],
+        "notes": ""
       }
     ],
-    "links": [],
-    "notes": ""
+    "links": []
   },
   {
     "id": 90,
