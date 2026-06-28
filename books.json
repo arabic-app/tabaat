@@ -4270,7 +4270,9 @@
     "best_editions": [
       {
         "name": "دار ابن الجوزي السعودية",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782676412938-3.jpeg"
+        ],
         "notes": ""
       }
     ],
