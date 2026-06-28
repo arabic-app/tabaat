@@ -3565,12 +3565,16 @@
     "id": 146,
     "title": "الفاضل",
     "author": "المبرد",
-    "category": "اللغة والأدب",
+    "category": [
+      "اللغة والأدب"
+    ],
     "notes": "",
     "best_editions": [
       {
         "name": "دار الكتب المصرية - ت الميمني",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782624357636-400f2710f41446e4a2373cbcaf286088338.37890625x500h9pMN0pfY3175f2Mn46puhpYqXXBkyi4EQrp7AlH.jpg"
+        ],
         "notes": ""
       }
     ],
