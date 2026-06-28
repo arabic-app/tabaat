@@ -4017,7 +4017,10 @@
     "best_editions": [
       {
         "name": "المجلس الأعلى للشئون الإسلامية بمصر",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782667129409-images29.jpeg",
+          "https://arabic-app.github.io/tabaat/images/1782667136820-images63.jpeg"
+        ],
         "notes": ""
       }
     ],
