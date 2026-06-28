@@ -3133,12 +3133,16 @@
     "id": 120,
     "title": "المذيل على الروضتين",
     "author": "عبد الرحمن المقدسي أبو شامة",
-    "category": "التاريخ",
+    "category": [
+      "التاريخ"
+    ],
     "notes": "",
     "best_editions": [
       {
         "name": "الرسالة - ت إبراهيم الزيبق",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782631421816-images20260628T102009.152.jpeg"
+        ],
         "notes": ""
       }
     ],
