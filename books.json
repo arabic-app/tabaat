@@ -2379,24 +2379,32 @@
     "id": 80,
     "title": "زاد المسير في علم التفسير",
     "author": "عبد الرحمن بن علي ابن الجوزي",
-    "category": "التفسير",
+    "category": [
+      "التفسير"
+    ],
     "notes": "",
     "best_editions": [
       {
         "name": "الدار الشامية",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782667025626-aIhOvEqcar6x8Z9FMEfjOxuippqShuQqHILo1fMf.webp"
+        ],
         "notes": ""
       }
     ],
     "alt_editions": [
       {
         "name": "ابن حزم (مجلد واحد)",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782667032718-705a3bc520a244b59cfec1a7867a6f99.jpeg"
+        ],
         "notes": ""
       },
       {
         "name": "دار الفكر",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782667039429-images5.jpeg"
+        ],
         "notes": ""
       }
     ],
