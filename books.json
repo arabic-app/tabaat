@@ -3842,7 +3842,9 @@
     "best_editions": [
       {
         "name": "ابن الجوزي السعودية - ت خالد السبت",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782624855143-44abde5a592941088886cc753bd485eb1000x1000Z5MGcIlmdQLoG9JwAnDRmVL1xniovtPctzFcwd9x.jpg"
+        ],
         "notes": ""
       }
     ],
