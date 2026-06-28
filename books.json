@@ -1808,7 +1808,9 @@
     "alt_editions": [
       {
         "name": "دار ابن الهيثم",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782645168750-.jpg"
+        ],
         "notes": ""
       }
     ],
