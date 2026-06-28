@@ -2659,12 +2659,16 @@
     "id": 99,
     "title": "الشريعة",
     "author": "محمد بن الحسين الآجري",
-    "category": "العقيدة",
+    "category": [
+      "العقيدة"
+    ],
     "notes": "",
     "best_editions": [
       {
         "name": "ابن الجوزي السعودية - ت نشأت كمال",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782622309653-f83e2146cfcf47ff947ab161bc63bac61000x922rPTXElfOvI6waUbCHshZjydtwLRZblvJuR5oU6dn.jpg"
+        ],
         "notes": ""
       }
     ],
