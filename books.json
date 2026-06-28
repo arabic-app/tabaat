@@ -6034,7 +6034,9 @@
     "best_editions": [
       {
         "name": "المكتب الإسلامي - ت محمد سعيد مولوي",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782665940196-images20260628T194844.120.jpeg"
+        ],
         "notes": ""
       }
     ],
