@@ -1652,7 +1652,9 @@
     "best_editions": [
       {
         "name": "الطبعة التونسية",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782661240884-47749034124173711819511281414428992132843586n.jpg"
+        ],
         "notes": ""
       }
     ],
