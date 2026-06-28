@@ -1234,17 +1234,23 @@
     "best_editions": [
       {
         "name": "دار البشائر",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782658275671-47756683924173712152844584989850114068466780n.jpg"
+        ],
         "notes": ""
       },
       {
         "name": "دار ابن الجوزي - ت طارق عوض الله",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782658539924-48008553324173708852844915201437015327089534n.jpg"
+        ],
         "notes": ""
       },
       {
         "name": "دار ابن الجوزي - ت الفحل",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782658528589-E1kRIqWYAQn0E6.jpg"
+        ],
         "notes": "يعاد العمل عليه في مؤسسة دار الحديث"
       }
     ],
