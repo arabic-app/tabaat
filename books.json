@@ -3866,8 +3866,17 @@
     "best_editions": [
       {
         "name": "ط ابن الجوزي السعودية",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782658769654-images87.jpeg"
+        ],
         "notes": "الطبعة الثانية"
+      },
+      {
+        "name": "ت عبد الرحمن عسيلان",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782658786877-576ca1b0a15ee236824ce7af9fc5eb5f102d3c87602536.jpg"
+        ],
+        "notes": ""
       }
     ],
     "alt_editions": [],
