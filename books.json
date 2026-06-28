@@ -2573,16 +2573,21 @@
     "id": 90,
     "title": "حاشية الدسوقي على الشرح الكبير",
     "author": "محمد بن أحمد الدسوقي",
-    "category": "الفقه المالكي",
+    "category": [
+      "الفقه المالكي"
+    ],
+    "notes": "",
     "best_editions": [],
     "alt_editions": [
       {
         "name": "دار الفكر بيروت",
-        "image": ""
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782658741064-images78.jpeg"
+        ],
+        "notes": ""
       }
     ],
-    "links": [],
-    "notes": ""
+    "links": []
   },
   {
     "id": 91,
