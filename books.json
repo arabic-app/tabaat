@@ -699,12 +699,16 @@
     "best_editions": [
       {
         "name": "الفيحاء",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782661017318-.png"
+        ],
         "notes": ""
       },
       {
         "name": "الرسالة ناشرون",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782661039211-.png"
+        ],
         "notes": ""
       }
     ],
