@@ -2551,16 +2551,21 @@
     "id": 87,
     "title": "رَدُّ المحتار على الدُّر المختار (حاشية ابن عابدين)",
     "author": "محمد أمين بن عابدين",
-    "category": "الفقه الحنفي",
+    "category": [
+      "الفقه الحنفي"
+    ],
+    "notes": "",
     "best_editions": [],
     "alt_editions": [
       {
         "name": "دار الكتب العلمية",
-        "image": ""
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782666077719-81ibC6YICUL.ACUF10001000QL80.jpg"
+        ],
+        "notes": ""
       }
     ],
-    "links": [],
-    "notes": ""
+    "links": []
   },
   {
     "id": 88,
