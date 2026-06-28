@@ -5764,12 +5764,17 @@
     "best_editions": [
       {
         "name": "دار المنهاج بجدة - ت محمود ميرة",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782632145328-1992d5b0b3ff4418a700be9263123826685.18518518519x1000sZnhKJ2rgDEwlSjGubSofF9bbUkBoKmMBJ0ThyYM.jpg",
+          "https://arabic-app.github.io/tabaat/images/1782632154182-01a2a3d9f9c94e43be47a37e51e327331000x379.79797979798hNKdfsj3wivyc0nGYI9CDjzMOOvuutlhva6ENzek.jpg"
+        ],
         "notes": ""
       },
       {
         "name": "دار المنهاج القويم",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782632161664-DZJ3EK6X0AAPAt5.jpg"
+        ],
         "notes": ""
       },
       {
