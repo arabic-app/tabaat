@@ -2287,7 +2287,10 @@
     "best_editions": [
       {
         "name": "أوقاف قطر",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782631735237-images20260628T102821.917.jpeg",
+          "https://arabic-app.github.io/tabaat/images/1782631751755-images20260628T102837.559.jpeg"
+        ],
         "notes": ""
       }
     ],
