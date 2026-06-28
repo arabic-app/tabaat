@@ -805,7 +805,9 @@
     "alt_editions": [
       {
         "name": "مكتبة المعارف",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782658894635-ccfb3b8e9a0f4d58833dd971d829792d750x1000p5vaCpTA8wzz2pErP1FdBZfgSy2HAi2bIWADlPgN1.jpg"
+        ],
         "notes": "إن كانت رخيصة"
       }
     ],
