@@ -3333,7 +3333,10 @@
     "best_editions": [
       {
         "name": "ط المكتبة العلمية ببيروت",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782658674622-78328.jpg",
+          "https://arabic-app.github.io/tabaat/images/1782658682467-images75.jpeg"
+        ],
         "notes": ""
       }
     ],
