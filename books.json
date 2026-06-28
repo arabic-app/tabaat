@@ -2025,19 +2025,25 @@
     "best_editions": [
       {
         "name": "روائع الكتب",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782658586621-images29.jpeg"
+        ],
         "notes": ""
       }
     ],
     "alt_editions": [
       {
         "name": "دار ابن الجوزي السعودية",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782658593988-images63.jpeg"
+        ],
         "notes": ""
       },
       {
         "name": "دار الرسالة",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782658602582-images66.jpeg"
+        ],
         "notes": ""
       }
     ],
