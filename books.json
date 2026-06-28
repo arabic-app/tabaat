@@ -2678,19 +2678,25 @@
     "best_editions": [
       {
         "name": "دار السمان",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782663208993-G8mnCtqXkAAc9un.jpg"
+        ],
         "notes": ""
       },
       {
         "name": "دار ابن الجوزي",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782663203729-images20260628T191208.559.jpeg"
+        ],
         "notes": "الطبعة الثانية"
       }
     ],
     "alt_editions": [
       {
         "name": "دار السلام مصر",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782663196627-82cfa777cc81476f99783c949cc3a5de342.97648514851x500jNTQpgwOHm71wpp3ST5P1VdCFAWUavLGEd7x0Dmk.jpg"
+        ],
         "notes": ""
       }
     ],
