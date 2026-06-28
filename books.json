@@ -2876,26 +2876,19 @@
     "best_editions": [
       {
         "name": "دار اللؤلؤة",
-        "images": [
-          "https://arabic-app.github.io/tabaat/images/1782673166555-images69.jpeg"
-        ],
+        "images": [],
         "notes": "لا تشتمل على كتاب كرامات الأولياء"
       },
       {
         "name": "الناشر المتميز - ت الرياشي",
-        "images": [
-          "https://arabic-app.github.io/tabaat/images/1782673201178-dKw8Fd9PbikPmfkDqI3uDS7KsC9eCtErTvb0uqaf.jpg"
-        ],
+        "images": [],
         "notes": "تشتمل على كتاب كرامات الأولياء"
       }
     ],
     "alt_editions": [
       {
         "name": "مكتبة غرناطة مصر",
-        "images": [
-          "https://arabic-app.github.io/tabaat/images/1782673212382-iathumb.jpg",
-          "https://arabic-app.github.io/tabaat/images/1782673218984-images71.jpeg"
-        ],
+        "images": [],
         "notes": ""
       }
     ],
@@ -4030,10 +4023,8 @@
     "notes": "",
     "best_editions": [
       {
-        "name": "ت عبد السلام هارون. أفضل مصوراتها مكتبة المتنبي",
-        "images": [
-          "https://arabic-app.github.io/tabaat/images/1782673289472-images72.jpeg"
-        ],
+        "name": "ت عبد السلام هارون أفضل مصوراتها مكتبة المتنبي",
+        "images": [],
         "notes": ""
       }
     ],
@@ -4345,7 +4336,7 @@
       {
         "name": "مؤسسة العثيمين",
         "images": [
-          "https://arabic-app.github.io/tabaat/images/1782673250550-default1.jpg"
+          "https://arabic-app.github.io/tabaat/images/1782673442434-default1.jpg"
         ],
         "notes": ""
       }
@@ -4387,9 +4378,7 @@
     "best_editions": [
       {
         "name": "مؤسسة العثيمين",
-        "images": [
-          "https://arabic-app.github.io/tabaat/images/1782673136138-images73.jpeg"
-        ],
+        "images": [],
         "notes": ""
       }
     ],
@@ -5670,7 +5659,7 @@
     "notes": "",
     "best_editions": [
       {
-        "name": "دار عطاءات العلم - ت العمران و عزير و إصلاحي",
+        "name": "دار عطاءات العلم - ت العمران و عزير و زصلاحي",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782305934225-.png"
         ],
