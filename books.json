@@ -862,24 +862,36 @@
     "id": 27,
     "title": "الموطأ (رواية يحيى بن يحيى الليثي)",
     "author": "مالك بن أنس",
-    "category": "الحديث",
+    "category": [
+      "الحديث"
+    ],
+    "notes": "",
     "best_editions": [
       {
         "name": "الطبعة المغربية الثانية",
-        "image": ""
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782641739934-images75.jpeg",
+          "https://arabic-app.github.io/tabaat/images/1782641746688-4799492172417370828617830824058624194841538n.jpg"
+        ],
+        "notes": ""
       },
       {
         "name": "مؤسسة الرسالة ناشرون",
-        "image": ""
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782641763365-47811487724173709952844804815478883368362008n.jpg"
+        ],
+        "notes": ""
       },
       {
         "name": "دار الغرب",
-        "image": ""
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782641769323-a3b5006872504fe1800c7ad823f3528f974.02597402597x1000bC5Ronu4A9Y0nn3q96WjzS6MW6Gcfeg1gxyobdkb.jpg"
+        ],
+        "notes": ""
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "notes": ""
+    "links": []
   },
   {
     "id": 28,
