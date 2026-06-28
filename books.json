@@ -3741,14 +3741,18 @@
     "best_editions": [
       {
         "name": "ت مرسي الخولي",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782662044672-images20260628T185336.131.jpeg"
+        ],
         "notes": ""
       }
     ],
     "alt_editions": [
       {
         "name": "مؤسسة إبداع",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782662050143-images20260628T185354.630.jpeg"
+        ],
         "notes": ""
       }
     ],
