@@ -3306,12 +3306,16 @@
     "id": 124,
     "title": "جمهرة خطب العرب",
     "author": "أحمد زكي صفوت",
-    "category": "اللغة والأدب",
+    "category": [
+      "اللغة والأدب"
+    ],
     "notes": "",
     "best_editions": [
       {
         "name": "ط المكتبة العلمية ببيروت",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782658657030-images74.jpeg"
+        ],
         "notes": ""
       }
     ],
