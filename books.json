@@ -2876,26 +2876,19 @@
     "best_editions": [
       {
         "name": "دار اللؤلؤة",
-        "images": [
-          "https://arabic-app.github.io/tabaat/images/1782673501189-images69.jpeg"
-        ],
+        "images": [],
         "notes": "لا تشتمل على كتاب كرامات الأولياء"
       },
       {
         "name": "الناشر المتميز - ت الرياشي",
-        "images": [
-          "https://arabic-app.github.io/tabaat/images/1782673509379-dKw8Fd9PbikPmfkDqI3uDS7KsC9eCtErTvb0uqaf.jpg"
-        ],
+        "images": [],
         "notes": "تشتمل على كتاب كرامات الأولياء"
       }
     ],
     "alt_editions": [
       {
         "name": "مكتبة غرناطة مصر",
-        "images": [
-          "https://arabic-app.github.io/tabaat/images/1782673517808-iathumb.jpg",
-          "https://arabic-app.github.io/tabaat/images/1782673523593-images71.jpeg"
-        ],
+        "images": [],
         "notes": ""
       }
     ],
@@ -4030,10 +4023,8 @@
     "notes": "",
     "best_editions": [
       {
-        "name": "ت عبد السلام هارون. أفضل مصوراتها مكتبة المتنبي",
-        "images": [
-          "https://arabic-app.github.io/tabaat/images/1782673462061-images72.jpeg"
-        ],
+        "name": "ت عبد السلام هارون أفضل مصوراتها مكتبة المتنبي",
+        "images": [],
         "notes": ""
       }
     ],
@@ -4345,7 +4336,7 @@
       {
         "name": "مؤسسة العثيمين",
         "images": [
-          "https://arabic-app.github.io/tabaat/images/1782673442434-default1.jpg"
+          "https://arabic-app.github.io/tabaat/images/1782673731849-default1.jpg"
         ],
         "notes": ""
       }
@@ -4387,9 +4378,7 @@
     "best_editions": [
       {
         "name": "مؤسسة العثيمين",
-        "images": [
-          "https://arabic-app.github.io/tabaat/images/1782673483710-images73.jpeg"
-        ],
+        "images": [],
         "notes": ""
       }
     ],
