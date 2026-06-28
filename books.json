@@ -4845,7 +4845,9 @@
     "best_editions": [
       {
         "name": "دار عطاءات العلم - ت محمد إصلاحي",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782680170585-images20260628T230026.472.jpeg"
+        ],
         "notes": ""
       }
     ],
