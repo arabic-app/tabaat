@@ -1241,16 +1241,21 @@
     "id": 41,
     "title": "الكفاية في علم الرواية",
     "author": "أحمد بن علي الخطيب البغدادي",
-    "category": "مصطلح الحديث",
+    "category": [
+      "مصطلح الحديث"
+    ],
+    "notes": "",
     "best_editions": [
       {
-        "name": "دار ابن الجوزي",
-        "image": ""
+        "name": "دار ابن الجوزي ت ماهر الفحل",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782629534877-8kgOqmUfL6M1u2Al3ahoSnoJqNywY1sf2YKMHblG.jpg"
+        ],
+        "notes": ""
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "notes": ""
+    "links": []
   },
   {
     "id": 42,
