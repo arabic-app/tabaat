@@ -5024,7 +5024,9 @@
     "best_editions": [
       {
         "name": "دار عطاءات العلم - ت إسماعيل غازي مرحبا",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782680154549-images20260628T230050.260.jpeg"
+        ],
         "notes": ""
       }
     ],
