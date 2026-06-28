@@ -5695,7 +5695,10 @@
     "best_editions": [
       {
         "name": "الرشد - ت مازن السرساوي",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782629147413-bb4bb4526264430d8a1038b403271b80.jpeg",
+          "https://arabic-app.github.io/tabaat/images/1782629158302-default1.jpg"
+        ],
         "notes": ""
       }
     ],
