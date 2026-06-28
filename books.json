@@ -2232,9 +2232,7 @@
     "best_editions": [
       {
         "name": "دار الفضيلة",
-        "images": [
-          "https://arabic-app.github.io/tabaat/images/1782641004491-images66.jpeg"
-        ],
+        "images": [],
         "notes": ""
       }
     ],
@@ -3495,16 +3493,12 @@
     "id": 137,
     "title": "المفضليات",
     "author": "المفضل الضبي",
-    "category": [
-      "اللغة والأدب"
-    ],
+    "category": "اللغة والأدب",
     "notes": "",
     "best_editions": [
       {
         "name": "المعارف - ت أحمد شاكر و عبد السلام هارون",
-        "images": [
-          "https://arabic-app.github.io/tabaat/images/1782640969552-images63.jpeg"
-        ],
+        "images": [],
         "notes": ""
       }
     ],
@@ -3652,16 +3646,12 @@
     "id": 145,
     "title": "المنتخب من أدب العرب",
     "author": "طه حسين ورفاقه",
-    "category": [
-      "اللغة والأدب"
-    ],
+    "category": "اللغة والأدب",
     "notes": "",
     "best_editions": [
       {
         "name": "عالم الأدب - ت محمد بركات",
-        "images": [
-          "https://arabic-app.github.io/tabaat/images/1782641066317-IMG.jpg"
-        ],
+        "images": [],
         "notes": ""
       }
     ],
@@ -4705,9 +4695,7 @@
     "best_editions": [
       {
         "name": "دار عطاءات العلم - ت يحيى الثمالي",
-        "images": [
-          "https://arabic-app.github.io/tabaat/images/1782641042071-images67.jpeg"
-        ],
+        "images": [],
         "notes": ""
       }
     ],
@@ -5305,7 +5293,9 @@
     "best_editions": [
       {
         "name": "المجلس الأعلى للشئون الإسلامية بمصر - ت محمد حسن الزفيتي",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782641137662-CLpy5AmXAAEdgZy.jpg"
+        ],
         "notes": ""
       }
     ],
