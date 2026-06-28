@@ -3652,12 +3652,16 @@
     "id": 145,
     "title": "المنتخب من أدب العرب",
     "author": "طه حسين ورفاقه",
-    "category": "اللغة والأدب",
+    "category": [
+      "اللغة والأدب"
+    ],
     "notes": "",
     "best_editions": [
       {
         "name": "عالم الأدب - ت محمد بركات",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782641066317-IMG.jpg"
+        ],
         "notes": ""
       }
     ],
