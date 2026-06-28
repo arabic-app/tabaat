@@ -4473,7 +4473,10 @@
     "best_editions": [
       {
         "name": "دار عطاءات العلم - ت علي العمران",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782653774104-images63.jpeg",
+          "https://arabic-app.github.io/tabaat/images/1782653782332-images29.jpeg"
+        ],
         "notes": ""
       }
     ],
