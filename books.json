@@ -3071,12 +3071,16 @@
     "id": 105,
     "title": "عيون الأخبار",
     "author": "ابن قتيبة الدينوري",
-    "category": "اللغة والأدب",
+    "category": [
+      "اللغة والأدب"
+    ],
     "notes": "",
     "best_editions": [
       {
         "name": "المكتب الإسلامي - ت محمد منذر أبي شعر",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782680101499-.png"
+        ],
         "notes": ""
       }
     ],
