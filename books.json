@@ -1547,12 +1547,16 @@
       },
       {
         "name": "التوفيقية",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782667525506-images66.jpeg"
+        ],
         "notes": ""
       },
       {
         "name": "الدار العالمية",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782667508433-images67.jpeg"
+        ],
         "notes": ""
       }
     ],
