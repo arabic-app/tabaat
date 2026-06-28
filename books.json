@@ -2727,19 +2727,26 @@
     "id": 101,
     "title": "الكامل في اللغة والأدب",
     "author": "أبو العباس المبرد",
-    "category": "اللغة والأدب",
+    "category": [
+      "اللغة والأدب"
+    ],
     "notes": "",
     "best_editions": [
       {
         "name": "الرسالة - ت محمد الدالي",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782627878530-images20260628T092342.351.jpeg",
+          "https://arabic-app.github.io/tabaat/images/1782627893994-images20260628T092336.196.jpeg"
+        ],
         "notes": ""
       }
     ],
     "alt_editions": [
       {
         "name": "المكتبة العصرية بيروت",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782627866773-images20260628T092414.929.jpeg"
+        ],
         "notes": ""
       }
     ],
