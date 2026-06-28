@@ -4359,7 +4359,10 @@
     "best_editions": [
       {
         "name": "دار عطاءات العلم",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782624880058-5db93ad83f674ac596ed7cda9968f780thumbnail1000x100070.jpg",
+          "https://arabic-app.github.io/tabaat/images/1782624886362-24f007a42a5d4680aef5af26fc71fefa785.71428571429x1000VBMfdtsYtEyXPWCCQZwpf0QPnpmMyS643zzeM5lT.jpg"
+        ],
         "notes": ""
       }
     ],
