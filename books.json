@@ -3522,12 +3522,16 @@
     "id": 135,
     "title": "جمهرة مقالات الأستاذ محمود شاكر",
     "author": "محمود شاكر",
-    "category": "اللغة والأدب",
+    "category": [
+      "اللغة والأدب"
+    ],
     "notes": "",
     "best_editions": [
       {
         "name": "الخانجي - ت عادل جمال",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782658696962-images73.jpeg"
+        ],
         "notes": ""
       }
     ],
