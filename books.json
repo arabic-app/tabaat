@@ -5581,7 +5581,9 @@
     "best_editions": [
       {
         "name": "دار عطاءات العلم - ت علي العمران و عزير شمس",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782659579527-images20260628T181252.245.jpeg"
+        ],
         "notes": ""
       }
     ],
