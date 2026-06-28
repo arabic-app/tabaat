@@ -3000,12 +3000,17 @@
     "id": 109,
     "title": "الوجيز في تفسير الكتاب العزيز",
     "author": "الواحدي",
-    "category": "التفسير",
+    "category": [
+      "التفسير"
+    ],
     "notes": "",
     "best_editions": [
       {
-        "name": "اللؤلؤة",
-        "images": [],
+        "name": "اللؤلؤة ت شعبان العودة",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782641881485-images69.jpeg",
+          "https://arabic-app.github.io/tabaat/images/1782641889966-images71.jpeg"
+        ],
         "notes": ""
       }
     ],
