@@ -3839,17 +3839,24 @@
     "id": 147,
     "title": "ربيع الأبرار ونصوص الأخبار",
     "author": "محمود بن عمر الزمخشري",
-    "category": "اللغة والأدب",
+    "category": [
+      "اللغة والأدب"
+    ],
     "notes": "",
     "best_editions": [
       {
         "name": "أوقاف العراق - ت سليم النعيمي",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782666044014-7aeacb2b795c4b07b258f65c4971ef14987.76908023483x1000NXlrnX9NF9SY6zEcbttrpdstS72aJ386rmoEP4VF.jpg",
+          "https://arabic-app.github.io/tabaat/images/1782666052211-images20260628T195257.472.jpeg"
+        ],
         "notes": ""
       },
       {
         "name": "دار الكتب المصرية - ت عبد المجيد دياب",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782666058025-images20260628T195141.131.jpeg"
+        ],
         "notes": ""
       }
     ],
