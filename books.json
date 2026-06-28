@@ -3057,12 +3057,16 @@
     "id": 118,
     "title": "العقد الفريد",
     "author": "ابن عبد ربه",
-    "category": "اللغة والأدب",
+    "category": [
+      "اللغة والأدب"
+    ],
     "notes": "",
     "best_editions": [
       {
         "name": "لجنة التأليف والترجمة - ت أحمد أمين ورفاقه",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782622556212-images20260628T075101.220.jpeg"
+        ],
         "notes": ""
       }
     ],
