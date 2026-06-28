@@ -3366,12 +3366,23 @@
     "id": 134,
     "title": "المتنبي",
     "author": "محمود شاكر",
-    "category": "اللغة والأدب",
+    "category": [
+      "اللغة والأدب"
+    ],
     "notes": "",
     "best_editions": [
       {
         "name": "الخانجي",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782629849589-6750053.jpg"
+        ],
+        "notes": ""
+      },
+      {
+        "name": "القدس",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782629859219-K55a33TGJcQbARK8Dd3ZXOUL5eweUN3RJtQ6nZNT.jpg"
+        ],
         "notes": ""
       }
     ],
