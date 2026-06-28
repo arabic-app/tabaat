@@ -5033,7 +5033,10 @@
     "best_editions": [
       {
         "name": "دار القبس للنشر و التوزيع - ت صبري شاهين",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782622511749-images20260628T074750.205.jpeg",
+          "https://arabic-app.github.io/tabaat/images/1782622519150-8e86ce665c7644a8b2acc394e4167d6b666x1000o1X48Ssdclo1M3zzIaU9QsvVh8EonNgFG7U6jYNJ.jpg"
+        ],
         "notes": ""
       }
     ],
