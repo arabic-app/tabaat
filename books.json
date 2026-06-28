@@ -4022,7 +4022,9 @@
     "best_editions": [
       {
         "name": "ابن الجوزي السعودية",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782653510265-rFmLnbemzFbkpd8CK945NW7h29Cx6h8LwZiKkTHd1.jpg"
+        ],
         "notes": ""
       }
     ],
