@@ -3210,12 +3210,17 @@
     "id": 112,
     "title": "عمدة التفسير عن الحافظ ابن كثير",
     "author": "أحمد شاكر",
-    "category": "التفسير",
+    "category": [
+      "التفسير"
+    ],
     "notes": "",
     "best_editions": [
       {
         "name": "الوفاء",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782680133601-images20260628T230848.809.jpeg",
+          "https://arabic-app.github.io/tabaat/images/1782680139292-images20260628T230458.858.jpeg"
+        ],
         "notes": "منها طبعة بيروتية أفضل فنيا"
       }
     ],
