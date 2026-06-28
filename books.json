@@ -3285,12 +3285,17 @@
     "id": 123,
     "title": "جمع الجواهر في الملح والنوادر",
     "author": "الحصري القيرواني",
-    "category": "اللغة والأدب",
+    "category": [
+      "اللغة والأدب"
+    ],
     "notes": "",
     "best_editions": [
       {
         "name": "ت علي البجاوي",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782658634286-images71.jpeg",
+          "https://arabic-app.github.io/tabaat/images/1782658641760-images72.jpeg"
+        ],
         "notes": ""
       }
     ],
