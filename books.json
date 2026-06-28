@@ -4431,7 +4431,9 @@
     "best_editions": [
       {
         "name": "دار المنهاج بالرياض",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782676324408-4.jpeg"
+        ],
         "notes": ""
       }
     ],
