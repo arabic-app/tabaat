@@ -1025,20 +1025,29 @@
     "id": 31,
     "title": "سنن الدارمي",
     "author": "عبد الله بن عبد الرحمن الدارمي",
-    "category": "الحديث",
+    "category": [
+      "الحديث"
+    ],
+    "notes": "",
     "best_editions": [
       {
         "name": "دار البشائر",
-        "image": ""
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782667432323-WlfJhRrEGyzXmRRwYBxOtV22mhfYKoSuCU1pkxmf.png",
+          "https://arabic-app.github.io/tabaat/images/1782667438242-47690245224173708152844988494720905113000917n.jpg"
+        ],
+        "notes": ""
       },
       {
         "name": "الرسالة ناشرون",
-        "image": ""
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782667423689-47992680724173710419511428850424238285337923n.jpg"
+        ],
+        "notes": ""
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "notes": ""
+    "links": []
   },
   {
     "id": 32,
