@@ -5622,7 +5622,9 @@
     "best_editions": [
       {
         "name": "مركز الملك فيصل - ت أبي جنة الحنبلي",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782719006624-images90.jpeg"
+        ],
         "notes": ""
       }
     ],
