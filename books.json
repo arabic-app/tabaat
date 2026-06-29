@@ -5472,7 +5472,9 @@
     "best_editions": [
       {
         "name": "دار الخزانة و دار العمرية - ت محمد عزير و عبد الله آل غيهب",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782721431162-images20260629T112345.583.jpeg"
+        ],
         "notes": ""
       }
     ],
