@@ -5548,8 +5548,11 @@
     "best_editions": [
       {
         "name": "أسفار - ت عمرو شريف الحويني",
-        "images": [],
-        "notes": ""
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782722807552-images20260629T114619.947.jpeg",
+          "https://arabic-app.github.io/tabaat/images/1782722815924-97c4f3cdf25e478481a0c9f0d9ad16a9thumbnail1000x100070.jpg"
+        ],
+        "notes": "استعجال الصواعق المرسلة"
       },
       {
         "name": "أضواء السلف و دار ابن حزم - ت الحسن العلوي",
