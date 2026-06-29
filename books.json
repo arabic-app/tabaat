@@ -2443,15 +2443,17 @@
           "https://arabic-app.github.io/tabaat/images/1782680190639-images81.jpeg",
           "https://arabic-app.github.io/tabaat/images/1782680197663-images87.jpeg"
         ],
-        "notes": "خالية من التعليقات العقدية"
+        "notes": "خالية من التعليقات العقدية",
+        "corrections": []
       },
       {
-        "name": "دار ابن الجوزي (ابن خزيمة)",
+        "name": "دار ابن الجوزي (ابن خزيمة) - ت عامر علي ياسين",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782680204658-images89.jpeg",
           "https://arabic-app.github.io/tabaat/images/1782680213187-images88.jpeg"
         ],
-        "notes": "فيها تعليقات عقدية مفيدة"
+        "notes": "فيها تعليقات عقدية مفيدة",
+        "corrections": []
       }
     ],
     "alt_editions": [
@@ -2460,14 +2462,16 @@
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782680220179-images90.jpeg"
         ],
-        "notes": ""
+        "notes": "",
+        "corrections": []
       },
       {
         "name": "دار القلم",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782680227364-images20260628T225932.389.jpeg"
         ],
-        "notes": ""
+        "notes": "",
+        "corrections": []
       }
     ],
     "links": []
