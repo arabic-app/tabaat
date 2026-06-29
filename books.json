@@ -3629,12 +3629,24 @@
     "id": 130,
     "title": "كليلة ودمنة",
     "author": "ابن المقفع",
-    "category": "اللغة والأدب",
+    "category": [
+      "اللغة والأدب"
+    ],
     "notes": "",
     "best_editions": [
       {
-        "name": "الشروق أو المعارف - ت عبد الوهاب عزام",
-        "images": [],
+        "name": "الشروق  - ت عبد الوهاب عزام",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782719460617-DeyJqA8WkAQBUTa.jpg",
+          "https://arabic-app.github.io/tabaat/images/1782719467134-images20260629T105016.859.jpeg"
+        ],
+        "notes": ""
+      },
+      {
+        "name": "المعارف ت  عبد الوهاب عزام",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782719493647-68d1b32f4bfa49da8626a9aba096e0bc722.65625x1000AXzjh2Lys87rz77pes6PyTH8rTGcrL2sC5ILDtmG.jpg"
+        ],
         "notes": ""
       }
     ],
