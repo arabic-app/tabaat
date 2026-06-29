@@ -6672,5 +6672,27 @@
     ],
     "alt_editions": [],
     "links": []
+  },
+  {
+    "id": 270,
+    "title": "يتيمة الدهر في محاسن أهل العصر وتتمتها",
+    "author": "ابو منصور الثعالبي",
+    "category": [
+      "اللغة والأدب"
+    ],
+    "notes": "",
+    "best_editions": [
+      {
+        "name": "دار القلم ت محمد عبد الله قاسم",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782762259626-IMG20260629214157158.jpg",
+          "https://arabic-app.github.io/tabaat/images/1782762272079-IMG20260629214156283.jpg"
+        ],
+        "notes": "",
+        "corrections": []
+      }
+    ],
+    "alt_editions": [],
+    "links": []
   }
 ]
