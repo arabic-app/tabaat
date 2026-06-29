@@ -520,38 +520,54 @@
     "notes": "",
     "best_editions": [
       {
-        "name": "مركز سطور - ت السرساوي",
-        "images": [],
-        "notes": ""
+        "name": "مركز سطور - ت مازن السرساوي",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782750774814-images20260629T174051.551.jpeg"
+        ],
+        "notes": "",
+        "corrections": []
       },
       {
-        "name": "دار المنهاج القويم - ت السرساوي",
+        "name": "دار المنهاج القويم - ت مازن السرساوي السرساوي",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782303762491-.png"
         ],
-        "notes": ""
+        "notes": "",
+        "corrections": []
       }
     ],
     "alt_editions": [
       {
-        "name": "المعرفة",
-        "images": [],
-        "notes": ""
+        "name": "المعرفة ت شيحا",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782750811444-images20260629T173927.467.jpeg"
+        ],
+        "notes": "",
+        "corrections": []
       },
       {
         "name": "ابن رجب",
-        "images": [],
-        "notes": ""
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782750832317-images20260629T173953.183.jpeg"
+        ],
+        "notes": "",
+        "corrections": []
       },
       {
         "name": "الصديق",
-        "images": [],
-        "notes": ""
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782750840271-images20260629T173911.519.jpeg"
+        ],
+        "notes": "",
+        "corrections": []
       },
       {
         "name": "مؤسسة قرطبة مصر",
-        "images": [],
-        "notes": ""
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782750849614-images20260629T174015.498.jpeg"
+        ],
+        "notes": "",
+        "corrections": []
       }
     ],
     "links": []
