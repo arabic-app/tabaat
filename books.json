@@ -6064,7 +6064,9 @@
     "best_editions": [
       {
         "name": "دار عطاءات العلم - ت علي العمران",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782722696858-images20260629T114447.117.jpeg"
+        ],
         "notes": ""
       }
     ],
