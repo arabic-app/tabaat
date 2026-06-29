@@ -4775,8 +4775,11 @@
     "best_editions": [
       {
         "name": "دار التوحيد للنشر",
-        "images": [],
-        "notes": "الطبعة الثانية"
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782744431931-.png"
+        ],
+        "notes": "الطبعة الثانية",
+        "corrections": []
       }
     ],
     "alt_editions": [],
