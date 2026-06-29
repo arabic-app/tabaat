@@ -5779,7 +5779,10 @@
     "best_editions": [
       {
         "name": "دار ابن كثير",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782722619920-images20260629T114324.984.jpeg",
+          "https://arabic-app.github.io/tabaat/images/1782722625536-95ba3c22f77ae2f19c8705bca4bcd376.jpg.webp"
+        ],
         "notes": ""
       }
     ],
