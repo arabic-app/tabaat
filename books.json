@@ -5735,7 +5735,12 @@
     "best_editions": [
       {
         "name": "دار المنارة",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782720139523-images20260629T110128.217.jpeg",
+          "https://arabic-app.github.io/tabaat/images/1782720146474-images20260629T110103.662.jpeg",
+          "https://arabic-app.github.io/tabaat/images/1782720152033-images20260629T110113.028.jpeg",
+          "https://arabic-app.github.io/tabaat/images/1782720157374-images20260629T110119.751.jpeg"
+        ],
         "notes": ""
       }
     ],
