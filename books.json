@@ -674,7 +674,9 @@
     "best_editions": [
       {
         "name": "مؤسسة الرسالة ناشرون",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782723616592-images20260629T120004.364.jpeg"
+        ],
         "notes": ""
       }
     ],
