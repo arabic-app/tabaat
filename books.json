@@ -3475,14 +3475,18 @@
   },
   {
     "id": 121,
-    "title": "مختصر كتاب الروضتين",
+    "title": "مختصر كتاب الروتين في أخبار الدولتين",
     "author": "محمد بن حسن الشريف",
-    "category": "التاريخ",
+    "category": [
+      "التاريخ"
+    ],
     "notes": "",
     "best_editions": [
       {
         "name": "ط ابن كثير",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782723011633-images20260629T114955.217.jpeg"
+        ],
         "notes": ""
       }
     ],
