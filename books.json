@@ -4534,7 +4534,9 @@
     "best_editions": [
       {
         "name": "دار ابن عفان",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782717414542-images77.jpeg"
+        ],
         "notes": ""
       }
     ],
