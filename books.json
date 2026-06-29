@@ -6186,7 +6186,9 @@
     "best_editions": [
       {
         "name": "دار عطاءات العلم",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782721561676-majmuatatharshaykhalislamibntaymiyyah30volumes.jpg"
+        ],
         "notes": ""
       }
     ],
