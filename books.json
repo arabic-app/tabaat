@@ -2419,16 +2419,21 @@
     "id": 79,
     "title": "لوامع الأنوار البهية وسواطع الأسرار الأثرية",
     "author": "محمد بن أحمد السفاريني",
-    "category": "العقيدة",
+    "category": [
+      "العقيدة"
+    ],
+    "notes": "",
     "best_editions": [
       {
-        "name": "دار التوحيد للنشر",
-        "image": ""
+        "name": "دار التوحيد للنشر ت خالد القحطاني، اسماعيل العدوى، مبارك المطيري",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782719944534-EqvljlW8AEDv9t.jpg"
+        ],
+        "notes": ""
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "notes": ""
+    "links": []
   },
   {
     "id": 80,
