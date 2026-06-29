@@ -1343,30 +1343,20 @@
     "id": 40,
     "title": "نزهة النظر في توضيح نخبة الفكر",
     "author": "أحمد بن علي بن حجر العسقلاني",
-    "category": [
-      "مصطلح الحديث"
-    ],
-    "notes": "",
+    "category": "مصطلح الحديث",
     "best_editions": [
       {
         "name": "دار المنهاج القويم",
-        "images": [
-          "https://arabic-app.github.io/tabaat/images/1782748583019-images20260629T175846.103.jpeg"
-        ],
-        "notes": "",
-        "corrections": []
+        "image": ""
       },
       {
         "name": "دار ابن كثير",
-        "images": [
-          "https://arabic-app.github.io/tabaat/images/1782748595630-images20260629T175912.638.jpeg"
-        ],
-        "notes": "",
-        "corrections": []
+        "image": ""
       }
     ],
     "alt_editions": [],
-    "links": []
+    "links": [],
+    "notes": ""
   },
   {
     "id": 41,
@@ -1979,15 +1969,12 @@
     "category": [
       "المجاميع"
     ],
-    "notes": "يقال انه ستصدر طبعة ثانية افضل",
+    "notes": "",
     "best_editions": [
       {
         "name": "دار أطلس الخضراء",
-        "images": [
-          "https://arabic-app.github.io/tabaat/images/1782748764128-images20260629T174611.558.jpeg"
-        ],
-        "notes": "تبين أن فيها خللا من ناحية التحقيق، بعضها غير محقق",
-        "corrections": []
+        "images": [],
+        "notes": "تبين أن فيها خللا من ناحية التحقيق، بعضها غير محقق"
       }
     ],
     "alt_editions": [],
@@ -3996,19 +3983,13 @@
     "id": 142,
     "title": "نضرة النعيم في مكارم أخلاق الرسول الكريم",
     "author": "مجموعة من المختصين",
-    "category": [
-      "السيرة"
-    ],
+    "category": "السيرة",
     "notes": "",
     "best_editions": [
       {
         "name": "دار الوسيلة",
-        "images": [
-          "https://arabic-app.github.io/tabaat/images/1782748524117-mawsuatnadratalnaim12vol51.jpg",
-          "https://arabic-app.github.io/tabaat/images/1782748531572-.png"
-        ],
-        "notes": "",
-        "corrections": []
+        "images": [],
+        "notes": ""
       }
     ],
     "alt_editions": [],
@@ -4134,18 +4115,13 @@
     "id": 148,
     "title": "نثر الدر",
     "author": "منصور بن الحسين الآبي",
-    "category": [
-      "اللغة والأدب"
-    ],
+    "category": "اللغة والأدب",
     "notes": "",
     "best_editions": [
       {
         "name": "دار الكتب المصرية",
-        "images": [
-          "https://arabic-app.github.io/tabaat/images/1782748616756-0a21d75f4d2243d8bb6d82470b5580e3thumbnail770x77070.jpg"
-        ],
-        "notes": "",
-        "corrections": []
+        "images": [],
+        "notes": ""
       }
     ],
     "alt_editions": [],
@@ -4753,7 +4729,7 @@
       {
         "name": "عطاءات العلم - ت عثمان ضميرية",
         "images": [
-          "https://arabic-app.github.io/tabaat/images/1782748493746-images20260629T180451.590.jpeg"
+          "https://arabic-app.github.io/tabaat/images/1782748930333-images20260629T180451.590.jpeg"
         ],
         "notes": "",
         "corrections": []
@@ -4813,11 +4789,8 @@
     "best_editions": [
       {
         "name": "دار ابن الجوزي السعودية",
-        "images": [
-          "https://arabic-app.github.io/tabaat/images/1782748643584-646x1000.jpg"
-        ],
-        "notes": "",
-        "corrections": []
+        "images": [],
+        "notes": ""
       }
     ],
     "alt_editions": [],
@@ -5611,11 +5584,8 @@
     "best_editions": [
       {
         "name": "تكوين - ت عبد الرحمن قائد",
-        "images": [
-          "https://arabic-app.github.io/tabaat/images/1782748549855-images20260629T180032.859.jpeg"
-        ],
-        "notes": "",
-        "corrections": []
+        "images": [],
+        "notes": ""
       }
     ],
     "alt_editions": [],
