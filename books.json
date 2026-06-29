@@ -5873,21 +5873,24 @@
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782718257634-images87.jpeg"
         ],
-        "notes": "كتاب الرقائق (رواية نعيم بن حماد المروزي)"
+        "notes": "كتاب الرقائق (رواية نعيم بن حماد المروزي)",
+        "corrections": []
       },
       {
         "name": "دار الفاروق - ت عادل مرشد",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782718264695-FT9Hpj0XEAA3E6y.jpg"
         ],
-        "notes": "الزهد والرقائق (رواية الحسين بن الحسن المروزي)"
+        "notes": "الزهد والرقائق (رواية الحسين بن الحسن المروزي)",
+        "corrections": []
       },
       {
-        "name": "دار الصحابة ت عبد الفتاح سرور",
+        "name": "دار الصحابة - ت عبد الفتاح سرور",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782718284193-IMG20260629093017185.jpg"
         ],
-        "notes": "رواية المروزي مع زيادات نعيم بن حماد"
+        "notes": "رواية المروزي مع زيادات نعيم بن حماد",
+        "corrections": []
       }
     ],
     "alt_editions": [],
