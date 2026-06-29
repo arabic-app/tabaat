@@ -152,26 +152,35 @@
   },
   {
     "id": 4,
-    "title": "معالم التنزيل",
+    "title": "معالم التنزيل (تفسير البغوي)",
     "author": "الحسين بن مسعود البغوي",
-    "category": "التفسير",
+    "category": [
+      "التفسير"
+    ],
     "notes": "",
     "best_editions": [
       {
         "name": "دار إحياء التراث",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782723482210-images20260629T115718.479.jpeg",
+          "https://arabic-app.github.io/tabaat/images/1782723487877-images20260629T115634.988.jpeg"
+        ],
         "notes": ""
       },
       {
         "name": "دار طيبة",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782723464019-AzLfIxPhn88vD0J9dBa0zR1SyGGly2uHQtYC0LT3.png"
+        ],
         "notes": ""
       }
     ],
     "alt_editions": [
       {
         "name": "دار المعرفة بيروت",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782723474066-images20260629T115733.574.jpeg"
+        ],
         "notes": ""
       }
     ],
