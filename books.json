@@ -5642,7 +5642,9 @@
     "best_editions": [
       {
         "name": "أروقة - ت أبي جنة الحنبلي",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782719022994-1b2a734b1beb4368a7d6199525fecf5e790x1000H6LRGYdr155dRZkGvvMTJFSLHX0xLENd0iiXKvxV.jpg"
+        ],
         "notes": ""
       }
     ],
