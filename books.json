@@ -3359,13 +3359,18 @@
     "id": 113,
     "title": "مفردات ألفاظ القرآن",
     "author": "الراغب الأصفهاني",
-    "category": "التفسير",
+    "category": [
+      "التفسير"
+    ],
     "notes": "",
     "best_editions": [
       {
         "name": "القلم - ت صفوان داوودي",
-        "images": [],
-        "notes": ""
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782743573877-images20260629T173247.155.jpeg"
+        ],
+        "notes": "",
+        "corrections": []
       }
     ],
     "alt_editions": [],
@@ -4944,8 +4949,12 @@
     "best_editions": [
       {
         "name": "دار عطاءات العلم - ت عبد الرحمن قائد",
-        "images": [],
-        "notes": ""
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782743533222-images20260629T173040.904.jpeg",
+          "https://arabic-app.github.io/tabaat/images/1782743538311-images20260629T173146.130.jpeg"
+        ],
+        "notes": "",
+        "corrections": []
       }
     ],
     "alt_editions": [],
