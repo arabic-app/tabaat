@@ -2783,16 +2783,22 @@
     "id": 91,
     "title": "مغني المحتاج إلى معرفة معاني ألفاظ المنهاج",
     "author": "محمد الخطيب الشربيني",
-    "category": "الفقه الشافعي",
+    "category": [
+      "الفقه الشافعي"
+    ],
+    "notes": "",
     "best_editions": [],
     "alt_editions": [
       {
         "name": "دار الحديث مصر",
-        "image": ""
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782743317552-mughanaaalmuhtajalkhatibalshirbiniu.jpg"
+        ],
+        "notes": "",
+        "corrections": []
       }
     ],
-    "links": [],
-    "notes": ""
+    "links": []
   },
   {
     "id": 92,
