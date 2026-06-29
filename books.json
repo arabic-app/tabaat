@@ -3452,15 +3452,21 @@
   },
   {
     "id": 115,
-    "title": "محاضرات الأدباء",
+    "title": "محاضرات الأدباء ومحاوارات الشعراء والبلغاء",
     "author": "الراغب الأصفهاني",
-    "category": "اللغة والأدب",
+    "category": [
+      "اللغة والأدب"
+    ],
     "notes": "",
     "best_editions": [
       {
         "name": "صادر - ت رياض مراد",
-        "images": [],
-        "notes": ""
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782754257789-e966a734d3c040b8a23ebb49939715151000x838.18915284626we81Ylg9hG8SL34uGrBSG0fk7BuIQRQokDvzkER9.jpg",
+          "https://arabic-app.github.io/tabaat/images/1782754265836-600x600h.jpeg"
+        ],
+        "notes": "",
+        "corrections": []
       }
     ],
     "alt_editions": [],
