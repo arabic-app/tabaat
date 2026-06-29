@@ -1979,12 +1979,15 @@
     "category": [
       "المجاميع"
     ],
-    "notes": "",
+    "notes": "يقال انه ستصدر طبعة ثانية افضل",
     "best_editions": [
       {
         "name": "دار أطلس الخضراء",
-        "images": [],
-        "notes": "تبين أن فيها خللا من ناحية التحقيق، بعضها غير محقق"
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782748764128-images20260629T174611.558.jpeg"
+        ],
+        "notes": "تبين أن فيها خللا من ناحية التحقيق، بعضها غير محقق",
+        "corrections": []
       }
     ],
     "alt_editions": [],
