@@ -468,28 +468,31 @@
     "category": [
       "الحديث"
     ],
-    "notes": "من أراد طبعة في مجلد واحد: الرسالة ناشرون",
+    "notes": "",
     "best_editions": [
       {
         "name": "التأصيل",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782632476136-47757959624173712986177835519393077196940699n.jpg"
         ],
-        "notes": ""
+        "notes": "",
+        "corrections": []
       },
       {
         "name": "دار قرطبة تحقيق نظر الفاريابي",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782632797085-89a17d7a60214c4bad09d59b472986aa.jpg"
         ],
-        "notes": ""
+        "notes": "",
+        "corrections": []
       },
       {
         "name": "مصورة العامرة دار المنهاج",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782632603062-47697390624173711419511326317269452434028510n.jpg"
         ],
-        "notes": ""
+        "notes": "",
+        "corrections": []
       }
     ],
     "alt_editions": [
@@ -498,7 +501,8 @@
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782633084363-47689151824173709286178208705605142039291752n.jpg"
         ],
-        "notes": ""
+        "notes": "",
+        "corrections": []
       }
     ],
     "links": []
@@ -514,54 +518,38 @@
     "notes": "",
     "best_editions": [
       {
-        "name": "مركز سطور - ت مازن السرساوي",
-        "images": [
-          "https://arabic-app.github.io/tabaat/images/1782744286447-images20260629T174051.551.jpeg"
-        ],
-        "notes": "",
-        "corrections": []
+        "name": "مركز سطور - ت السرساوي",
+        "images": [],
+        "notes": ""
       },
       {
-        "name": "دار المنهاج القويم - ت مازن السرساوي",
+        "name": "دار المنهاج القويم - ت السرساوي",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782303762491-.png"
         ],
-        "notes": "",
-        "corrections": []
+        "notes": ""
       }
     ],
     "alt_editions": [
       {
-        "name": "المعرفة ت خليل شيحا",
-        "images": [
-          "https://arabic-app.github.io/tabaat/images/1782744214447-images20260629T173927.467.jpeg"
-        ],
-        "notes": "",
-        "corrections": []
+        "name": "المعرفة",
+        "images": [],
+        "notes": ""
       },
       {
-        "name": "ابن رجب ت يحيى الأزهري",
-        "images": [
-          "https://arabic-app.github.io/tabaat/images/1782744270011-images20260629T173953.183.jpeg"
-        ],
-        "notes": "",
-        "corrections": []
+        "name": "ابن رجب",
+        "images": [],
+        "notes": ""
       },
       {
-        "name": "الصديق ت ابو معاوية البيروتي",
-        "images": [
-          "https://arabic-app.github.io/tabaat/images/1782744254529-images20260629T173911.519.jpeg"
-        ],
-        "notes": "",
-        "corrections": []
+        "name": "الصديق",
+        "images": [],
+        "notes": ""
       },
       {
         "name": "مؤسسة قرطبة مصر",
-        "images": [
-          "https://arabic-app.github.io/tabaat/images/1782744261725-images20260629T174015.498.jpeg"
-        ],
-        "notes": "",
-        "corrections": []
+        "images": [],
+        "notes": ""
       }
     ],
     "links": []
@@ -1204,11 +1192,8 @@
     "best_editions": [
       {
         "name": "دار ابن الجوزي",
-        "images": [
-          "https://arabic-app.github.io/tabaat/images/1782743826609-47745156124173710819511384571621464475014353n.jpg"
-        ],
-        "notes": "",
-        "corrections": []
+        "images": [],
+        "notes": ""
       }
     ],
     "alt_editions": [],
@@ -1353,30 +1338,20 @@
     "id": 40,
     "title": "نزهة النظر في توضيح نخبة الفكر",
     "author": "أحمد بن علي بن حجر العسقلاني",
-    "category": [
-      "مصطلح الحديث"
-    ],
-    "notes": "",
+    "category": "مصطلح الحديث",
     "best_editions": [
       {
-        "name": "دار المنهاج القويم ت نور الدين عتر",
-        "images": [
-          "https://arabic-app.github.io/tabaat/images/1782745166737-images20260629T175846.103.jpeg"
-        ],
-        "notes": "",
-        "corrections": []
+        "name": "دار المنهاج القويم",
+        "image": ""
       },
       {
-        "name": "دار ابن كثير ت محمد مرابي",
-        "images": [
-          "https://arabic-app.github.io/tabaat/images/1782745159327-images20260629T175912.638.jpeg"
-        ],
-        "notes": "",
-        "corrections": []
+        "name": "دار ابن كثير",
+        "image": ""
       }
     ],
     "alt_editions": [],
-    "links": []
+    "links": [],
+    "notes": ""
   },
   {
     "id": 41,
@@ -1388,11 +1363,12 @@
     "notes": "",
     "best_editions": [
       {
-        "name": "دار ابن الجوزي ت ماهر الفحل",
+        "name": "دار ابن الجوزي - ت ماهر الفحل",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782629534877-8kgOqmUfL6M1u2Al3ahoSnoJqNywY1sf2YKMHblG.jpg"
         ],
-        "notes": ""
+        "notes": "",
+        "corrections": []
       }
     ],
     "alt_editions": [],
@@ -1555,17 +1531,20 @@
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782310833821-47762023624173711186178016039187345317028932n.jpg"
         ],
-        "notes": ""
-      },
+        "notes": "",
+        "corrections": []
+      }
+    ],
+    "alt_editions": [
       {
-        "name": "الرسالة",
+        "name": "مؤسسة الرسالة",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782310852775-47758278724173710252844778528326861031562815n.jpg"
         ],
-        "notes": ""
+        "notes": "",
+        "corrections": []
       }
     ],
-    "alt_editions": [],
     "links": []
   },
   {
@@ -1846,42 +1825,42 @@
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782633395773-almughniofibnqudamaalmaqdissi.jpg"
         ],
-        "notes": ""
+        "notes": "",
+        "corrections": []
       },
       {
         "name": "دار عالم الكتب",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782632974532-47759139924173723319510135013143413284544895n.jpg"
         ],
-        "notes": ""
+        "notes": "",
+        "corrections": []
       },
       {
         "name": "هجر",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782633402606-images20260628T105412.986.jpeg"
         ],
-        "notes": ""
+        "notes": "",
+        "corrections": []
       },
       {
         "name": "الدارة",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782633006559-48052864424237170679832067059185720790152408n.jpg"
         ],
-        "notes": ""
+        "notes": "",
+        "corrections": []
       }
     ],
     "alt_editions": [
-      {
-        "name": "طبعة الدارة المصورة",
-        "images": [],
-        "notes": ""
-      },
       {
         "name": "طبعة دار الحديث مصر",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782633413815-.jpg"
         ],
-        "notes": ""
+        "notes": "",
+        "corrections": []
       }
     ],
     "links": []
@@ -1984,15 +1963,12 @@
     "category": [
       "المجاميع"
     ],
-    "notes": "يقال ان هناك طبعة ثانية ستصدر منقحة",
+    "notes": "",
     "best_editions": [
       {
-        "name": "دار أطلس الخضراء ت فاضل الرقي",
-        "images": [
-          "https://arabic-app.github.io/tabaat/images/1782744378069-images20260629T174611.558.jpeg"
-        ],
-        "notes": "تبين أن فيها خللا من ناحية التحقيق، بعضها غير محقق",
-        "corrections": []
+        "name": "دار أطلس الخضراء",
+        "images": [],
+        "notes": "تبين أن فيها خللا من ناحية التحقيق، بعضها غير محقق"
       }
     ],
     "alt_editions": [],
@@ -2556,10 +2532,10 @@
       {
         "name": "أوقاف قطر",
         "images": [
-          "https://arabic-app.github.io/tabaat/images/1782631735237-images20260628T102821.917.jpeg",
-          "https://arabic-app.github.io/tabaat/images/1782631751755-images20260628T102837.559.jpeg"
+          "https://arabic-app.github.io/tabaat/images/1782631735237-images20260628T102821.917.jpeg"
         ],
-        "notes": ""
+        "notes": "",
+        "corrections": []
       }
     ],
     "alt_editions": [
@@ -2568,7 +2544,8 @@
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782303369969-.png"
         ],
-        "notes": "من أفضلها العالمية"
+        "notes": "من أفضلها العالمية",
+        "corrections": []
       }
     ],
     "links": []
@@ -3315,12 +3292,13 @@
     "notes": "",
     "best_editions": [
       {
-        "name": "اللؤلؤة ت شعبان العودة",
+        "name": "اللؤلؤة - ت شعبان العودة",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782641881485-images69.jpeg",
           "https://arabic-app.github.io/tabaat/images/1782641889966-images71.jpeg"
         ],
-        "notes": ""
+        "notes": "",
+        "corrections": []
       }
     ],
     "alt_editions": [],
@@ -3993,19 +3971,13 @@
     "id": 142,
     "title": "نضرة النعيم في مكارم أخلاق الرسول الكريم",
     "author": "مجموعة من المختصين",
-    "category": [
-      "السيرة"
-    ],
+    "category": "السيرة",
     "notes": "",
     "best_editions": [
       {
         "name": "دار الوسيلة",
-        "images": [
-          "https://arabic-app.github.io/tabaat/images/1782745284551-.png",
-          "https://arabic-app.github.io/tabaat/images/1782745291332-mawsuatnadratalnaim12vol51.jpg"
-        ],
-        "notes": "",
-        "corrections": []
+        "images": [],
+        "notes": ""
       }
     ],
     "alt_editions": [],
@@ -4131,18 +4103,13 @@
     "id": 148,
     "title": "نثر الدر",
     "author": "منصور بن الحسين الآبي",
-    "category": [
-      "اللغة والأدب"
-    ],
+    "category": "اللغة والأدب",
     "notes": "",
     "best_editions": [
       {
         "name": "دار الكتب المصرية",
-        "images": [
-          "https://arabic-app.github.io/tabaat/images/1782744551285-0a21d75f4d2243d8bb6d82470b5580e3thumbnail770x77070.jpg"
-        ],
-        "notes": "",
-        "corrections": []
+        "images": [],
+        "notes": ""
       }
     ],
     "alt_editions": [],
@@ -4697,11 +4664,8 @@
     "best_editions": [
       {
         "name": "دار المنهاج بجدة",
-        "images": [
-          "https://arabic-app.github.io/tabaat/images/1782743631309-images20260629T173330.593.jpeg"
-        ],
-        "notes": "",
-        "corrections": []
+        "images": [],
+        "notes": ""
       }
     ],
     "alt_editions": [],
@@ -4796,11 +4760,8 @@
     "best_editions": [
       {
         "name": "دار التوحيد للنشر",
-        "images": [
-          "https://arabic-app.github.io/tabaat/images/1782744431931-.png"
-        ],
-        "notes": "الطبعة الثانية",
-        "corrections": []
+        "images": [],
+        "notes": "الطبعة الثانية"
       }
     ],
     "alt_editions": [],
@@ -4837,11 +4798,8 @@
     "best_editions": [
       {
         "name": "دار ابن الجوزي السعودية",
-        "images": [
-          "https://arabic-app.github.io/tabaat/images/1782744491971-646x1000.jpg"
-        ],
-        "notes": "",
-        "corrections": []
+        "images": [],
+        "notes": ""
       }
     ],
     "alt_editions": [],
@@ -5635,11 +5593,8 @@
     "best_editions": [
       {
         "name": "تكوين - ت عبد الرحمن قائد",
-        "images": [
-          "https://arabic-app.github.io/tabaat/images/1782745237529-images20260629T180032.859.jpeg"
-        ],
-        "notes": "",
-        "corrections": []
+        "images": [],
+        "notes": ""
       }
     ],
     "alt_editions": [],
@@ -5685,10 +5640,10 @@
       {
         "name": "دار ابن الجوزي السعودية",
         "images": [
-          "https://arabic-app.github.io/tabaat/images/1782653551136-images29.jpeg",
-          "https://arabic-app.github.io/tabaat/images/1782653560675-images63.jpeg"
+          "https://arabic-app.github.io/tabaat/images/1782741579000-badaiitafsir.jpg"
         ],
-        "notes": ""
+        "notes": "",
+        "corrections": []
       }
     ],
     "alt_editions": [],
@@ -5767,11 +5722,8 @@
     "best_editions": [
       {
         "name": "دار الأمين - ت أبي جنة الحنبلي",
-        "images": [
-          "https://arabic-app.github.io/tabaat/images/1782743690288-HCl7S5NawAAPGpx.jpg"
-        ],
-        "notes": "",
-        "corrections": []
+        "images": [],
+        "notes": ""
       }
     ],
     "alt_editions": [],
