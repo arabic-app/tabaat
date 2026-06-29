@@ -1945,19 +1945,26 @@
     "best_editions": [
       {
         "name": "دار اللباب",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782722230412-images20260629T112639.383.jpeg",
+          "https://arabic-app.github.io/tabaat/images/1782722239169-images20260629T112633.293.jpeg"
+        ],
         "notes": ""
       }
     ],
     "alt_editions": [
       {
         "name": "دار الفاروق",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782722249534-cfee7c2bf30a44b086cd119f6ee15d3d624.13594470046x1000QWOmQU9OxMXykpGvO7AT2pOwgKfP174x2pev2Jc4.jpg"
+        ],
         "notes": ""
       },
       {
         "name": "دار أولاد الشيخ",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782722257464-majmurasailalhafidhibnrajabalhanbali5vol.jpg"
+        ],
         "notes": ""
       }
     ],
