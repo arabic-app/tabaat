@@ -4031,12 +4031,16 @@
     "id": 149,
     "title": "كنز الكتاب و منتخب الآداب",
     "author": "أبو إسحاق البونسي",
-    "category": "اللغة والأدب",
+    "category": [
+      "اللغة والأدب"
+    ],
     "notes": "",
     "best_editions": [
       {
         "name": "المجمع الثقافي بأبي ظبي",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782719576209-6aea4bec2c4c9c5cb.jpg"
+        ],
         "notes": ""
       }
     ],
