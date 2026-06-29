@@ -3983,13 +3983,19 @@
     "id": 142,
     "title": "نضرة النعيم في مكارم أخلاق الرسول الكريم",
     "author": "مجموعة من المختصين",
-    "category": "السيرة",
+    "category": [
+      "السيرة"
+    ],
     "notes": "",
     "best_editions": [
       {
         "name": "دار الوسيلة",
-        "images": [],
-        "notes": ""
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782748524117-mawsuatnadratalnaim12vol51.jpg",
+          "https://arabic-app.github.io/tabaat/images/1782748531572-.png"
+        ],
+        "notes": "",
+        "corrections": []
       }
     ],
     "alt_editions": [],
