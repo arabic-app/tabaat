@@ -6469,5 +6469,67 @@
     ],
     "alt_editions": [],
     "links": []
+  },
+  {
+    "id": 265,
+    "title": "الجامع لشعب الإيمان",
+    "author": "أحمد بن الحسين البيهقي",
+    "category": [
+      "الحديث"
+    ],
+    "notes": "",
+    "best_editions": [
+      {
+        "name": "مكتبة الرشد",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782731166349-.png"
+        ],
+        "notes": ""
+      }
+    ],
+    "alt_editions": [],
+    "links": []
+  },
+  {
+    "id": 266,
+    "title": "شرح مشكل الآثار",
+    "author": "أبو جعفر الطحاوي",
+    "category": [
+      "الحديث",
+      "شروح الحديث"
+    ],
+    "notes": "",
+    "best_editions": [
+      {
+        "name": "الرسالة",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782731289214-.png"
+        ],
+        "notes": ""
+      }
+    ],
+    "alt_editions": [],
+    "links": []
+  },
+  {
+    "id": 267,
+    "title": "شرح معاني الآثار",
+    "author": "أبو جعفر الطحاوي",
+    "category": [
+      "الحديث",
+      "شروح الحديث"
+    ],
+    "notes": "",
+    "best_editions": [
+      {
+        "name": "دار ابن حزم",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782731340081-.png"
+        ],
+        "notes": ""
+      }
+    ],
+    "alt_editions": [],
+    "links": []
   }
 ]
