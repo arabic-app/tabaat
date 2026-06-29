@@ -3289,12 +3289,13 @@
     "notes": "",
     "best_editions": [
       {
-        "name": "اللؤلؤة ت شعبان العودة",
+        "name": "اللؤلؤة - ت شعبان العودة",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782641881485-images69.jpeg",
           "https://arabic-app.github.io/tabaat/images/1782641889966-images71.jpeg"
         ],
-        "notes": ""
+        "notes": "",
+        "corrections": []
       }
     ],
     "alt_editions": [],
