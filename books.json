@@ -6150,12 +6150,16 @@
     "best_editions": [
       {
         "name": "دار المغني الثانية - ت سمير الزهيري",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782717563923-images80.jpeg"
+        ],
         "notes": ""
       },
       {
         "name": "الناشر المتميز - ت الرياشي",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782717556889-images78.jpeg"
+        ],
         "notes": "الطبعة الأخيرة"
       }
     ],
