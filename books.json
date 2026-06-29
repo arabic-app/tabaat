@@ -107,31 +107,34 @@
       {
         "name": "دار ابن حزم - ت محمد ابراهيم البنا",
         "images": [
-          "https://dn760006.eu.archive.org/0/items/tafsir-ibn-kathir-albana/Cover.jpg",
-          "https://scontent-mrs2-3.xx.fbcdn.net/v/t39.30808-6/486600248_2452197008468545_8535203844146355908_n.jpg?stp=dst-jpg_tt6&cstp=mx728x970&ctp=s728x970&_nc_cat=111&ccb=1-7&_nc_sid=33274f&_nc_ohc=bfiiUdDE1ZwQ7kNvwFM1FRh&_nc_oc=AdrKKpL7JNmrcer_350PF9Wb0ES7WsK0G_8Nse-7VBbdTo5C7gI6TFgnGkDfSrs15Xo&_nc_zt=23&_nc_ht=scontent-mrs2-3.xx&_nc_gid=Xt7rJWc4H1OKCl3oam13UA&_nc_ss=7b2a8&oh=00_Af9YlzzNi_RKjGA1tIhapX9kOxmyzMwHwNpLan7u6dgl6w&oe=6A3EF92F"
+          "https://arabic-app.github.io/tabaat/images/1782765975752-images27.jpeg"
         ],
-        "notes": ""
+        "notes": "",
+        "corrections": []
       },
       {
         "name": "دار عالم الكتب (أولاد الشيخ)",
         "images": [
-          "https://scontent-mrs2-1.xx.fbcdn.net/v/t39.30808-6/479515102_2417370931951153_1368334725488158731_n.jpg?stp=dst-jpg_tt6&cstp=mx789x482&ctp=s789x482&_nc_cat=100&ccb=1-7&_nc_sid=33274f&_nc_ohc=_uP8WrQl8DMQ7kNvwGOn0IO&_nc_oc=Adoqzrg0k9Y9aJdzlILXI65aQSEElUyN05ra0nmbbYaK8A5XfEb8ODgtBiXv2EeLeqA&_nc_zt=23&_nc_ht=scontent-mrs2-1.xx&_nc_gid=OuIgmcytLIZEg5LUb1o5MQ&_nc_ss=7b2a8&oh=00_Af8EsrFZ7TkFpvUGO8CBan1CcAI5JwJkKqE04HKiwtmArg&oe=6A3F0A1C"
+          "https://arabic-app.github.io/tabaat/images/1782765983441-images5.jpeg"
         ],
-        "notes": ""
+        "notes": "",
+        "corrections": []
       },
       {
         "name": "دار طيبة - ت سامي بن محمد السلامة",
         "images": [
-          "https://scontent-mrs2-1.xx.fbcdn.net/v/t39.30808-6/479303849_2417371145284465_4867236222127303953_n.jpg?stp=dst-jpg_tt6&cstp=mx838x838&ctp=s838x838&_nc_cat=105&ccb=1-7&_nc_sid=33274f&_nc_ohc=JKUmHkoTFlQQ7kNvwHag97V&_nc_oc=AdqAgAKJZZIg1frE0hhMkmL9VD8HBR5HxdVMPiXcOh8GKBsh31Lejop2EnpsJ4cpgTw&_nc_zt=23&_nc_ht=scontent-mrs2-1.xx&_nc_gid=izuoWwBEfa7U0cVTmpbhQw&_nc_ss=7b2a8&oh=00_Af_Us5it4GPaQPSermRtaEjO6kD2kRxQRFaWRbLSFSAD-g&oe=6A3F0D06"
+          "https://arabic-app.github.io/tabaat/images/1782765993003-images29.jpeg"
         ],
-        "notes": "الإصدار الثاني - 5 مجلدات قطع كبير"
+        "notes": "الإصدار الثاني - 5 مجلدات قطع كبير",
+        "corrections": []
       },
       {
         "name": "دار ابن الجوزي",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782303334712-.png"
         ],
-        "notes": "الطبعة الثانية وما بعدها"
+        "notes": "الطبعة الثانية وما بعدها",
+        "corrections": []
       }
     ],
     "alt_editions": [
@@ -140,14 +143,16 @@
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782660848863-1774971.jpg"
         ],
-        "notes": ""
+        "notes": "",
+        "corrections": []
       },
       {
         "name": "دار الشعب أو شروق البدر مصر - ت أنور الباز",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782660835965-images20260628T183332.279.jpeg"
         ],
-        "notes": "يُنصح أن يُشترى معها كتاب فضائل القرآن طبعة دار التقوى تحقيق الحويني."
+        "notes": "يُنصح أن يُشترى معها كتاب فضائل القرآن طبعة دار التقوى تحقيق الحويني.",
+        "corrections": []
       }
     ],
     "links": []
