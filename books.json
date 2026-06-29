@@ -5726,13 +5726,24 @@
     "best_editions": [
       {
         "name": "دار البشائر الإسلامية - ت عامر صبري",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782718257634-images87.jpeg"
+        ],
         "notes": "كتاب الرقائق (رواية نعيم بن حماد المروزي)"
       },
       {
         "name": "دار الفاروق - ت عادل مرشد",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782718264695-FT9Hpj0XEAA3E6y.jpg"
+        ],
         "notes": "الزهد والرقائق (رواية الحسين بن الحسن المروزي)"
+      },
+      {
+        "name": "دار الصحابة ت عبد الفتاح سرور",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782718284193-IMG20260629093017185.jpg"
+        ],
+        "notes": "رواية المروزي مع زيادات نعيم بن حماد"
       }
     ],
     "alt_editions": [],
