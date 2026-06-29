@@ -2940,36 +2940,25 @@
     "notes": "",
     "best_editions": [
       {
-        "name": "سطور ت أسامة عطايا",
+        "name": "مركز سطور - ت أسامة عطايا العتيبي",
         "images": [
-          "https://arabic-app.github.io/tabaat/images/1782716935655-2fca2f403c0a477ca7e1a4be6f65dd90.jpg"
+          "https://arabic-app.github.io/tabaat/images/1782716935655-2fca2f403c0a477ca7e1a4be6f65dd90.jpg",
+          "https://arabic-app.github.io/tabaat/images/1782716945353-CV3hjmKdpwcgGWL9aB1SOudgNLK18tE8MeU53Y3n.jpg",
+          "https://arabic-app.github.io/tabaat/images/1782716953452-1679130496202202136209191d1277f.png"
         ],
-        "notes": ""
+        "notes": "<span style=\"font-size: 15.2px;\">طبع في دور أخرى مثل أضواء السلف </span><span style=\"font-size: 15.2px;\">و</span><span style=\"font-size: 15.2px;\">دار الفرقان</span>",
+        "corrections": []
       },
       {
-        "name": "عالم الفوائد ت الوليد الفريان",
+        "name": "عالم الفوائد - ت الوليد الفريان",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782716977399-vDHi62b1JNK4yIpOht0a4ByamIIyF7fwsyeH5mv4.jpg"
         ],
-        "notes": ""
+        "notes": "",
+        "corrections": []
       }
     ],
-    "alt_editions": [
-      {
-        "name": "مكتبة أضواء السلف المصرية",
-        "images": [
-          "https://arabic-app.github.io/tabaat/images/1782716945353-CV3hjmKdpwcgGWL9aB1SOudgNLK18tE8MeU53Y3n.jpg"
-        ],
-        "notes": ""
-      },
-      {
-        "name": "دار الفرقان",
-        "images": [
-          "https://arabic-app.github.io/tabaat/images/1782716953452-1679130496202202136209191d1277f.png"
-        ],
-        "notes": ""
-      }
-    ],
+    "alt_editions": [],
     "links": []
   },
   {
