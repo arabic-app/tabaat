@@ -3227,12 +3227,16 @@
     "id": 110,
     "title": "فتح الرحيم الملك العلام",
     "author": "عبد الرحمن السعدي",
-    "category": "التفسير",
+    "category": [
+      "التفسير"
+    ],
     "notes": "",
     "best_editions": [
       {
         "name": "ابن الجوزي السعودية",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782717009647-16810765675.jpg"
+        ],
         "notes": ""
       }
     ],
