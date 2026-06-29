@@ -2229,12 +2229,13 @@
     "notes": "",
     "best_editions": [
       {
-        "name": "أروقة ت محمد عايش",
+        "name": "أروقة - ت محمد عايش",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782666142622-images20260628T195651.032.jpeg",
           "https://arabic-app.github.io/tabaat/images/1782666149112-cm21x2yx70e6o01kf73pd7czfScreenshot20241009160649.jpg"
         ],
-        "notes": ""
+        "notes": "",
+        "corrections": []
       }
     ],
     "alt_editions": [],
@@ -4329,14 +4330,8 @@
           "https://arabic-app.github.io/tabaat/images/1782667059100-61ijKLxJ4rL.ACUF10001000QL80.jpg",
           "https://arabic-app.github.io/tabaat/images/1782667066871-images27.jpeg"
         ],
-        "notes": ""
-      },
-      {
-        "name": "السلام بمصر _النفائس",
-        "images": [
-          "https://arabic-app.github.io/tabaat/images/1782667089612-12012.jpg"
-        ],
-        "notes": ""
+        "notes": "",
+        "corrections": []
       }
     ],
     "alt_editions": [],
