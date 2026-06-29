@@ -48,7 +48,7 @@
       {
         "name": "مؤسسة الرسالة ناشرون - طبعة التركي",
         "images": [
-          "https://arabic-app.github.io/tabaat/images/1782729226229-68457110414916589760409617283073222551480932n.jpg",
+          "https://arabic-app.github.io/tabaat/images/1782587878510-images20260627T220729.528.jpeg",
           "https://arabic-app.github.io/tabaat/images/1782587885085-images20260627T220656.445.jpeg"
         ],
         "notes": "أجودها مؤسسة الرسالة ناشرون"
@@ -584,8 +584,8 @@
       {
         "name": "دار ابن الجوزي",
         "images": [
-          "https://arabic-app.github.io/tabaat/images/1782728990263-2.png",
-          "https://arabic-app.github.io/tabaat/images/1782728997158-1.png"
+          "https://archive.org/download/hq_books/%D8%A7%D9%84%D8%A8%D8%AD%D8%B1%20%D8%A7%D9%84%D9%85%D8%AD%D9%8A%D8%B7%20%D8%A7%D9%84%D8%AB%D8%AC%D8%A7%D8%AC%201.png",
+          "https://archive.org/download/hq_books/%D8%A7%D9%84%D8%A8%D8%AD%D8%B1%20%D8%A7%D9%84%D9%85%D8%AD%D9%8A%D8%B7%20%D8%A7%D9%84%D8%AB%D8%AC%D8%A7%D8%AC%202.png"
         ],
         "notes": ""
       }
@@ -1853,14 +1853,27 @@
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782304818204-.png"
         ],
-        "notes": "<span style=\"color: rgb(0, 0, 0); font-family: Tahoma; font-size: 14px; white-space: pre-wrap; background-color: rgb(253, 253, 253);\">قد يشتري أحد طلبة العلم الطبعة الثانية من المحلى تحقيق دار الفلاح ويتفاجأ بمجلدات مكتوب عليها \"الطبعة الأولى\" فيردها ويظنها معيوبة.</span><br style=\"color: rgb(0, 0, 0); font-family: Tahoma; font-size: 14px; background-color: rgb(253, 253, 253);\"><span style=\"color: rgb(0, 0, 0); font-family: Tahoma; font-size: 14px; white-space: pre-wrap; background-color: rgb(253, 253, 253);\">والواقع أن المجلد الأول فقط مكتوب عليه \"الطبعة الثانية\" وبه تصويبات كثيرة جدا وأما باقي المجلدات فمكتوب عليها \"الطبعة الأولى\" وهي مطابقة تماما للطبعة الأولى فقط تم تصويب الصفحتين 249 و 250 الساقطتين من المجلد الثالث في الطبعة الأولى.</span><br style=\"color: rgb(0, 0, 0); font-family: Tahoma; font-size: 14px; background-color: rgb(253, 253, 253);\"><span style=\"color: rgb(0, 0, 0); font-family: Tahoma; font-size: 14px; white-space: pre-wrap; background-color: rgb(253, 253, 253);\">دونكم رابط تحميل الصفحتين :</span><br style=\"color: rgb(0, 0, 0); font-family: Tahoma; font-size: 14px; background-color: rgb(253, 253, 253);\"><a href=\"https://drive.google.com/file/d/1ik6Poa5O2bLlnykauTq1kdCgDVyRPAOL/view?usp=share_link\" class=\"x1fey0fg xmper1u x1edh9d7\" style=\"font-family: Tahoma; font-size: 14px; background-color: rgb(253, 253, 253);\"><span style=\"white-space: pre-wrap;\">https://drive.google.com/file/d/1ik6Poa5O2bLlnykauTq1kdCgDVyRPAOL/view?usp=share_link</span></a>"
+        "notes": "<span style=\"color: rgb(0, 0, 0); font-family: Tahoma; font-size: 14px; white-space: pre-wrap; background-color: rgb(253, 253, 253);\">قد يشتري أحد طلبة العلم الطبعة الثانية من المحلى تحقيق دار الفلاح ويتفاجأ بمجلدات مكتوب عليها \"الطبعة الأولى\" فيردها ويظنها معيوبة.</span><br style=\"color: rgb(0, 0, 0); font-family: Tahoma; font-size: 14px; background-color: rgb(253, 253, 253);\"><span style=\"color: rgb(0, 0, 0); font-family: Tahoma; font-size: 14px; white-space: pre-wrap; background-color: rgb(253, 253, 253);\">والواقع أن المجلد الأول فقط مكتوب عليه \"الطبعة الثانية\" وبه تصويبات كثيرة جدا وأما باقي المجلدات فمكتوب عليها \"الطبعة الأولى\" وهي مطابقة تماما للطبعة الأولى فقط تم تصويب الصفحتين 249 و 250 الساقطتين من المجلد الثالث في الطبعة الأولى.</span><br>",
+        "corrections": [
+          {
+            "title": "الصفحتان الساقطتان من المجلد الثالث الطبعة الأولى",
+            "body": "<span style=\"white-space: pre-wrap; color: rgb(0, 0, 0); font-family: Tahoma; font-size: 14px; background-color: rgb(253, 253, 253);\">دونكم رابط تحميل الصفحتين </span><span style=\"color: rgb(0, 0, 0); font-family: Tahoma; font-size: 14px; white-space: pre-wrap; background-color: rgb(253, 253, 253);\">الساقطتين من المجلد الثالث في الطبعة الأولى</span><span style=\"white-space: pre-wrap; color: rgb(0, 0, 0); font-family: Tahoma; font-size: 14px; background-color: rgb(253, 253, 253);\"> :</span><br style=\"color: rgb(0, 0, 0); font-family: Tahoma; font-size: 14px; background-color: rgb(253, 253, 253);\"><a href=\"https://drive.google.com/file/d/1ik6Poa5O2bLlnykauTq1kdCgDVyRPAOL/view?usp=share_link\" class=\"x1fey0fg xmper1u x1edh9d7\" style=\"font-family: Tahoma; font-size: 14px; background-color: rgb(253, 253, 253);\"><span style=\"white-space: pre-wrap;\">https://drive.google.com/file/d/1ik6Poa5O2bLlnykauTq1kdCgDVyRPAOL/view?usp=share_link</span></a>",
+            "attachments": [
+              {
+                "title": "الصفحتان 249 و 250 من المجلد الثالث",
+                "url": "https://arabic-app.github.io/tabaat/corrections/1782726097408-.pdf"
+              }
+            ]
+          }
+        ]
       },
       {
         "name": "تحقيق بشار عواد",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782378236772-mouhallabachar.jpg"
         ],
-        "notes": ""
+        "notes": "",
+        "corrections": []
       }
     ],
     "alt_editions": [
@@ -1869,7 +1882,8 @@
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782631398787-scaled.jpg"
         ],
-        "notes": ""
+        "notes": "",
+        "corrections": []
       }
     ],
     "links": []
@@ -4662,11 +4676,12 @@
     "notes": "",
     "best_editions": [
       {
-        "name": "دار تأصيل",
+        "name": "مركز تأصيل",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782305911573-.png"
         ],
-        "notes": ""
+        "notes": "",
+        "corrections": []
       }
     ],
     "alt_editions": [],
