@@ -2571,19 +2571,25 @@
     "best_editions": [
       {
         "name": "مؤسسة العثيمين",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782717156374-images71.jpeg"
+        ],
         "notes": ""
       },
       {
         "name": "مدار الوطن",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782717161809-images73.jpeg"
+        ],
         "notes": ""
       }
     ],
     "alt_editions": [
       {
         "name": "مكتبة الطبري",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782717167462-images72.jpeg"
+        ],
         "notes": ""
       }
     ],
