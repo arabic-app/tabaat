@@ -6134,7 +6134,9 @@
     "best_editions": [
       {
         "name": "دار الفاروق - ت عادل مرشد",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782717700556-HGhhUSBWQAEDJyU.jpg"
+        ],
         "notes": ""
       }
     ],
