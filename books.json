@@ -5658,7 +5658,9 @@
     "best_editions": [
       {
         "name": "مسك - ت أبي جنة الحنبلي",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782718983118-0437589af0264c84bfe08cb294765d52thumbnail1000x100070.jpg"
+        ],
         "notes": ""
       }
     ],
