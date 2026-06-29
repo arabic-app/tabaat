@@ -5597,7 +5597,9 @@
     "best_editions": [
       {
         "name": "دار الفتح - ت عمر شوقي و عمرو الحويني",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782720261366-images20260629T110411.707.jpeg"
+        ],
         "notes": ""
       }
     ],
