@@ -1188,8 +1188,11 @@
     "best_editions": [
       {
         "name": "دار ابن الجوزي",
-        "images": [],
-        "notes": ""
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782743826609-47745156124173710819511384571621464475014353n.jpg"
+        ],
+        "notes": "",
+        "corrections": []
       }
     ],
     "alt_editions": [],
