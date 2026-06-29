@@ -2841,20 +2841,43 @@
     "id": 96,
     "title": "فتح المجيد شرح كتاب التوحيد",
     "author": "عبد الرحمن بن حسن آل الشيخ",
-    "category": "العقيدة",
-    "best_editions": [],
+    "category": [
+      "العقيدة"
+    ],
+    "notes": "",
+    "best_editions": [
+      {
+        "name": "سطور ت أسامة عطايا",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782716935655-2fca2f403c0a477ca7e1a4be6f65dd90.jpg"
+        ],
+        "notes": ""
+      },
+      {
+        "name": "عالم الفوائد ت الوليد الفريان",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782716977399-vDHi62b1JNK4yIpOht0a4ByamIIyF7fwsyeH5mv4.jpg"
+        ],
+        "notes": ""
+      }
+    ],
     "alt_editions": [
       {
         "name": "مكتبة أضواء السلف المصرية",
-        "image": ""
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782716945353-CV3hjmKdpwcgGWL9aB1SOudgNLK18tE8MeU53Y3n.jpg"
+        ],
+        "notes": ""
       },
       {
         "name": "دار الفرقان",
-        "image": ""
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782716953452-1679130496202202136209191d1277f.png"
+        ],
+        "notes": ""
       }
     ],
-    "links": [],
-    "notes": ""
+    "links": []
   },
   {
     "id": 97,
