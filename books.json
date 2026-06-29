@@ -2486,11 +2486,12 @@
     "notes": "",
     "best_editions": [
       {
-        "name": "دار التوحيد للنشر ت خالد القحطاني، اسماعيل العدوى، مبارك المطيري",
+        "name": "دار التوحيد للنشر - ت خالد القحطاني، اسماعيل العدوى، مبارك المطيري",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782719944534-EqvljlW8AEDv9t.jpg"
         ],
-        "notes": ""
+        "notes": "",
+        "corrections": []
       }
     ],
     "alt_editions": [],
@@ -3546,11 +3547,12 @@
     "notes": "",
     "best_editions": [
       {
-        "name": "ط ابن كثير",
+        "name": "دار ابن كثير",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782723011633-images20260629T114955.217.jpeg"
         ],
-        "notes": ""
+        "notes": "",
+        "corrections": []
       }
     ],
     "alt_editions": [],
@@ -4748,24 +4750,6 @@
           "https://arabic-app.github.io/tabaat/images/1782558481888-images20260627T140549.761.jpeg"
         ],
         "notes": ""
-      }
-    ],
-    "alt_editions": [],
-    "links": []
-  },
-  {
-    "id": 179,
-    "title": "موسوعة العقيدة الأديان والفرق والمذاهب المعاصرة",
-    "author": "إشراف سعود آل سعود",
-    "category": [
-      "الأديان و الفرق"
-    ],
-    "notes": "",
-    "best_editions": [
-      {
-        "name": "دار التوحيد للنشر",
-        "images": [],
-        "notes": "الطبعة الثانية"
       }
     ],
     "alt_editions": [],
