@@ -3816,7 +3816,9 @@
     "best_editions": [
       {
         "name": "العاصمة - ت رضاء الله المباركفوري",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782718718725-images89.jpeg"
+        ],
         "notes": ""
       }
     ],
