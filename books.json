@@ -5229,7 +5229,9 @@
     "best_editions": [
       {
         "name": "دار عطاءات العلم - ت عدنان البخاري",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782718686047-images88.jpeg"
+        ],
         "notes": ""
       }
     ],
