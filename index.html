@@ -384,6 +384,10 @@
             line-height: 1.4;
         }
         #modalBody { font-size: 0.95rem; line-height: 1.6; color: var(--md-on-surface-variant); }
+        #modalBody ul { list-style: disc; padding-right: 20px; margin: 8px 0; }
+        #modalBody ol { list-style: decimal; padding-right: 20px; margin: 8px 0; }
+        #modalBody li { margin-bottom: 4px; }
+        #modalBody a { color: var(--md-primary); text-decoration: underline; }
 
         /* ===== CAROUSEL ===== */
         .carousel-container {
@@ -660,7 +664,7 @@
 
         function openNoteModal(title, content) {
             document.getElementById('modalTitle').innerText = decodeURIComponent(title);
-            document.getElementById('modalBody').innerHTML = `<p>${decodeURIComponent(content)}</p>`;
+            document.getElementById('modalBody').innerHTML = decodeURIComponent(content);
             document.getElementById('infoModal').style.display = 'flex';
         }
 

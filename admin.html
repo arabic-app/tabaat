@@ -296,6 +296,70 @@
             .form-actions { justify-content: stretch; }
             .form-actions .btn-save, .form-actions .md-btn-error { width: 100%; justify-content: center; margin-bottom: 8px;}
         }
+
+        /* ===== RICH TEXT EDITOR ===== */
+        .rich-editor {
+            border: 1px solid var(--md-outline-variant);
+            border-radius: 8px;
+            background: var(--md-surface);
+            overflow: hidden;
+            margin-top: 8px;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+        .rich-toolbar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2px;
+            padding: 4px;
+            background: var(--md-surface-variant);
+            border-bottom: 1px solid var(--md-outline-variant);
+            direction: rtl;
+        }
+        .tb-btn {
+            background: none;
+            border: none;
+            color: var(--md-on-surface-variant);
+            cursor: pointer;
+            width: 28px;
+            height: 28px;
+            border-radius: 4px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s, color 0.2s;
+        }
+        .tb-btn:hover {
+            background: rgba(0, 105, 92, 0.1);
+            color: var(--md-primary);
+        }
+        .tb-btn span {
+            font-size: 18px;
+        }
+        .rich-editor-content {
+            padding: 10px 12px;
+            min-height: 80px;
+            max-height: 250px;
+            overflow-y: auto;
+            outline: none;
+            background: var(--md-surface);
+            color: var(--md-on-surface);
+            font-family: inherit;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            text-align: right;
+            direction: rtl;
+        }
+        .rich-editor-content:focus {
+            background: var(--md-surface);
+        }
+        .rich-editor-content[contenteditable=true]:empty:before {
+            content: attr(placeholder);
+            color: var(--md-outline);
+            pointer-events: none;
+            display: block;
+        }
     </style>
 </head>
 <body>
@@ -389,7 +453,18 @@
 
                 <div class="form-group">
                     <label>ملاحظات عامة (اختياري)</label>
-                    <textarea id="notes" class="md-input" rows="3" placeholder="تظهر أسفل تفاصيل الكتاب للزوار..."></textarea>
+                    <div class="rich-editor">
+                        <div class="rich-toolbar">
+                            <button type="button" class="tb-btn" onmousedown="event.preventDefault(); document.execCommand('bold', false, null);" title="خط عريض"><span class="material-icons-round">format_bold</span></button>
+                            <button type="button" class="tb-btn" onmousedown="event.preventDefault(); document.execCommand('italic', false, null);" title="خط مائل"><span class="material-icons-round">format_italic</span></button>
+                            <button type="button" class="tb-btn" onmousedown="event.preventDefault(); document.execCommand('underline', false, null);" title="تحته خط"><span class="material-icons-round">format_underlined</span></button>
+                            <button type="button" class="tb-btn" onmousedown="event.preventDefault(); document.execCommand('insertUnorderedList', false, null);" title="قائمة نقطية"><span class="material-icons-round">format_list_bulleted</span></button>
+                            <button type="button" class="tb-btn" onmousedown="event.preventDefault(); const url = prompt('أدخل رابط URL:'); if(url) document.execCommand('createLink', false, url);" title="إضافة رابط"><span class="material-icons-round">link</span></button>
+                            <button type="button" class="tb-btn" onmousedown="event.preventDefault(); document.execCommand('unlink', false, null);" title="إزالة الرابط"><span class="material-icons-round">link_off</span></button>
+                            <button type="button" class="tb-btn" onmousedown="event.preventDefault(); document.execCommand('removeFormat', false, null);" title="مسح التنسيق"><span class="material-icons-round">format_clear</span></button>
+                        </div>
+                        <div id="notes" class="rich-editor-content" contenteditable="true" placeholder="تظهر أسفل تفاصيل الكتاب للزوار..."></div>
+                    </div>
                 </div>
 
                 <div class="section-header">
@@ -619,7 +694,18 @@
                         <span class="material-icons-round" style="font-size:14px">add_photo_alternate</span> إضافة حقل صورة
                     </button>
                 </div>
-                <input type="text" class="md-input ed-notes" placeholder="ملاحظات خاصة بهذه الطبعة (تظهر كـ ℹ في الموقع)..." value="${notes}">
+                <div class="rich-editor">
+                    <div class="rich-toolbar">
+                        <button type="button" class="tb-btn" onmousedown="event.preventDefault(); document.execCommand('bold', false, null);" title="خط عريض"><span class="material-icons-round">format_bold</span></button>
+                        <button type="button" class="tb-btn" onmousedown="event.preventDefault(); document.execCommand('italic', false, null);" title="خط مائل"><span class="material-icons-round">format_italic</span></button>
+                        <button type="button" class="tb-btn" onmousedown="event.preventDefault(); document.execCommand('underline', false, null);" title="تحته خط"><span class="material-icons-round">format_underlined</span></button>
+                        <button type="button" class="tb-btn" onmousedown="event.preventDefault(); document.execCommand('insertUnorderedList', false, null);" title="قائمة نقطية"><span class="material-icons-round">format_list_bulleted</span></button>
+                        <button type="button" class="tb-btn" onmousedown="event.preventDefault(); const url = prompt('أدخل رابط URL:'); if(url) document.execCommand('createLink', false, url);" title="إضافة رابط"><span class="material-icons-round">link</span></button>
+                        <button type="button" class="tb-btn" onmousedown="event.preventDefault(); document.execCommand('unlink', false, null);" title="إزالة الرابط"><span class="material-icons-round">link_off</span></button>
+                        <button type="button" class="tb-btn" onmousedown="event.preventDefault(); document.execCommand('removeFormat', false, null);" title="مسح التنسيق"><span class="material-icons-round">format_clear</span></button>
+                    </div>
+                    <div class="rich-editor-content ed-notes" contenteditable="true" placeholder="ملاحظات خاصة بهذه الطبعة (تظهر كـ ℹ في الموقع)...">${notes}</div>
+                </div>
             </div>
             <button type="button" class="btn-remove" onclick="this.parentElement.remove()" title="حذف">
                 <span class="material-icons-round">delete</span>
@@ -717,6 +803,7 @@
         document.getElementById('formTitle').textContent = 'إضافة كتاب جديد';
         document.getElementById('formIcon').textContent = 'add_circle';
         document.getElementById('bookForm').reset();
+        document.getElementById('notes').innerHTML = '';
         document.getElementById('bookId').value = '';
         document.getElementById('duplicateWarning').style.display = 'none';
         
@@ -751,7 +838,7 @@
         document.getElementById('bookId').value = book.id;
         document.getElementById('title').value = book.title || '';
         document.getElementById('author').value = book.author || '';
-        document.getElementById('notes').value = book.notes || '';
+        document.getElementById('notes').innerHTML = book.notes || '';
 
         document.getElementById('categoriesList').innerHTML = '';
         let cats = Array.isArray(book.category) ? book.category : (book.category ? [book.category] : []);
@@ -790,14 +877,21 @@
             title:    document.getElementById('title').value.trim(),
             author:   document.getElementById('author').value.trim(),
             category: categoriesArray,
-            notes:    document.getElementById('notes').value.trim(),
+            notes:    (() => {
+                let n = document.getElementById('notes').innerHTML.trim();
+                return (n === '<br>' || n === '<div><br></div>' || n === '<p><br></p>') ? '' : n;
+            })(),
             best_editions: [], alt_editions: [], links: []
         };
 
         const collectEditions = (cid, arr) => {
             document.querySelectorAll(`#${cid} .dynamic-row`).forEach(row => {
                 const images = [...row.querySelectorAll('.ed-image-url')].map(i => i.value.trim()).filter(Boolean);
-                arr.push({ name: row.querySelector('.ed-name').value.trim(), images, notes: row.querySelector('.ed-notes').value.trim() });
+                let notesHtml = row.querySelector('.ed-notes').innerHTML.trim();
+                if (notesHtml === '<br>' || notesHtml === '<div><br></div>' || notesHtml === '<p><br></p>') {
+                    notesHtml = '';
+                }
+                arr.push({ name: row.querySelector('.ed-name').value.trim(), images, notes: notesHtml });
             });
         };
         collectEditions('bestEditions', newBook.best_editions);
