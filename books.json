@@ -6553,5 +6553,26 @@
     ],
     "alt_editions": [],
     "links": []
+  },
+  {
+    "id": 269,
+    "title": "جامع الأصول في أحاديث الرسول",
+    "author": "مجد الدين أبي السعادات المبارك بن محمد ابن الأثير الجزري",
+    "category": [
+      "الحديث"
+    ],
+    "notes": "",
+    "best_editions": [
+      {
+        "name": "دار ابن كثير",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782732350402-.png"
+        ],
+        "notes": "",
+        "corrections": []
+      }
+    ],
+    "alt_editions": [],
+    "links": []
   }
 ]
