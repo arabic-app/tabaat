@@ -6737,5 +6737,26 @@
     ],
     "alt_editions": [],
     "links": []
+  },
+  {
+    "id": 273,
+    "title": "الأصبهانية",
+    "author": "أحمد بن عبد الحليم بن تيمية",
+    "category": [
+      "العقيدة"
+    ],
+    "notes": "",
+    "best_editions": [
+      {
+        "name": "دار العمرية ت عبد الله آل غيهب",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782764669392-IMG20260629214218631.jpg"
+        ],
+        "notes": "",
+        "corrections": []
+      }
+    ],
+    "alt_editions": [],
+    "links": []
   }
 ]
