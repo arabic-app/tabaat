@@ -4728,8 +4728,11 @@
     "best_editions": [
       {
         "name": "عطاءات العلم - ت عثمان ضميرية",
-        "images": [],
-        "notes": ""
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782748493746-images20260629T180451.590.jpeg"
+        ],
+        "notes": "",
+        "corrections": []
       }
     ],
     "alt_editions": [],
