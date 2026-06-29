@@ -3569,12 +3569,16 @@
     "id": 127,
     "title": "كتاب الفصيح",
     "author": "أحمد بن يحيى الشيباني الملقب بثعلب",
-    "category": "اللغة والأدب",
+    "category": [
+      "اللغة والأدب"
+    ],
     "notes": "",
     "best_editions": [
       {
         "name": "طيبة الخضراء - ت علي الصالحي",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782718783887-DXXn9vhqHr6RvdKSHe0p75q9Js4HQNHVVITjM8OV.jpg"
+        ],
         "notes": ""
       }
     ],
