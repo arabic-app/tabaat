@@ -2300,17 +2300,23 @@
     "best_editions": [
       {
         "name": "دار ابن الجوزي (ابن خزيمة) - ت عامر علي ياسين",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782719669506-48206509724365180367031098258730087937348946n.jpg"
+        ],
         "notes": ""
       },
       {
         "name": "دار ابن كثير",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782719879674-images20260629T105533.263.jpeg"
+        ],
         "notes": ""
       },
       {
         "name": "دار الصديق - ت عصام موسى هادي",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782719873148-lataaifmaarifbyibnrajabalhanbaliknowledgeislamicgoodsdirect.jpg"
+        ],
         "notes": ""
       }
     ],
