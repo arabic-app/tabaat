@@ -6694,5 +6694,27 @@
     ],
     "alt_editions": [],
     "links": []
+  },
+  {
+    "id": 271,
+    "title": "موسوعة التفسير المأثور",
+    "author": "مركز الدراسات والمعلومات القرآنية",
+    "category": [
+      "التفسير"
+    ],
+    "notes": "",
+    "best_editions": [
+      {
+        "name": "معهد الإمام الشاطبي و دار ابن حزم اشراف مساعد الطيار",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782762475741-images20260629T180757.823.jpeg",
+          "https://arabic-app.github.io/tabaat/images/1782762499744-images20260629T180749.729.jpeg"
+        ],
+        "notes": "",
+        "corrections": []
+      }
+    ],
+    "alt_editions": [],
+    "links": []
   }
 ]
