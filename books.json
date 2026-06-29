@@ -4654,8 +4654,11 @@
     "best_editions": [
       {
         "name": "دار المنهاج بجدة",
-        "images": [],
-        "notes": ""
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782743631309-images20260629T173330.593.jpeg"
+        ],
+        "notes": "",
+        "corrections": []
       }
     ],
     "alt_editions": [],
