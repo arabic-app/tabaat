@@ -2002,7 +2002,10 @@
       },
       {
         "name": "طبعة المجمع",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782721496106-ESvEskXQAAHv2.jpg",
+          "https://arabic-app.github.io/tabaat/images/1782721503225-DWO6jPpXkAAQLDy.jpg"
+        ],
         "notes": ""
       },
       {
