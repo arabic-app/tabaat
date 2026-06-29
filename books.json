@@ -2541,16 +2541,22 @@
     "id": 83,
     "title": "محاسن التأويل (تفسير القاسمي)",
     "author": "محمد جمال الدين القاسمي",
-    "category": "التفسير",
+    "category": [
+      "التفسير"
+    ],
+    "notes": "",
     "best_editions": [],
     "alt_editions": [
       {
         "name": "دار الحديث مصر",
-        "image": ""
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782722487945-images20260629T114117.026.jpeg",
+          "https://arabic-app.github.io/tabaat/images/1782722493236-images20260629T114105.645.jpeg"
+        ],
+        "notes": ""
       }
     ],
-    "links": [],
-    "notes": ""
+    "links": []
   },
   {
     "id": 84,
