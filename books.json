@@ -1393,28 +1393,46 @@
     "id": 43,
     "title": "معرفة أنواع علوم الحديث (مقدمة ابن الصلاح)",
     "author": "عثمان بن عبد الرحمن ابن الصلاح",
-    "category": "مصطلح الحديث",
+    "category": [
+      "مصطلح الحديث"
+    ],
+    "notes": "",
     "best_editions": [
       {
         "name": "دار المنهاج القويم",
-        "image": ""
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782743137789-images20260629T172518.575.jpeg"
+        ],
+        "notes": "",
+        "corrections": []
       },
       {
         "name": "دار الفكر",
-        "image": ""
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782743209312-images20260629T120208.759.jpeg"
+        ],
+        "notes": "",
+        "corrections": []
       },
       {
         "name": "تحقيق الفحل",
-        "image": ""
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782743215982-images20260629T172455.366.jpeg"
+        ],
+        "notes": "",
+        "corrections": []
       },
       {
         "name": "تحقيق بنت الشاطئ",
-        "image": ""
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782743223920-images20260629T120305.812.jpeg"
+        ],
+        "notes": "",
+        "corrections": []
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "notes": ""
+    "links": []
   },
   {
     "id": 44,
