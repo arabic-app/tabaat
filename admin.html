@@ -360,6 +360,29 @@
             pointer-events: none;
             display: block;
         }
+
+        /* ===== CORRECTIONS EDITING ===== */
+        .correction-card {
+            background: var(--md-surface);
+            border: 1px solid var(--md-outline-variant);
+            border-radius: 10px;
+            padding: 12px;
+            margin-top: 10px;
+            box-shadow: var(--md-elevation-1);
+        }
+        .correction-header {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            margin-bottom: 6px;
+        }
+        .correction-header .corr-title {
+            font-weight: bold;
+            font-size: 0.95rem;
+        }
+        .attachment-row {
+            margin-bottom: 6px;
+        }
     </style>
 </head>
 <body>
@@ -595,7 +618,7 @@
     }
 
     /* ---- DRAG AND DROP BINDING ---- */
-    function bindDragAndDrop(containerGroup, fileInput) {
+    function bindDragAndDrop(containerGroup, fileInput, dirPath = 'images', allowedExtensions = ['png', 'jpg', 'jpeg', 'webp']) {
         // Empêche le comportement par défaut (qui ouvrirait l'image dans le navigateur)
         ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
             containerGroup.addEventListener(eventName, preventDefaults, false);
@@ -616,12 +639,12 @@
             const files = dt.files;
             
             if (files && files.length > 0) {
-                // Vérifier si c'est bien une image
-                if (files[0].type.startsWith('image/')) {
+                const ext = files[0].name.split('.').pop().toLowerCase();
+                if (allowedExtensions.includes(ext)) {
                     fileInput.files = files; // Transférer le fichier à l'input invisible
-                    uploadImageToGitHub(fileInput); // Lancer l'upload
+                    uploadFileToGitHub(fileInput, dirPath, allowedExtensions); // Lancer l'upload
                 } else {
-                    alert("الرجاء إسقاط ملف صورة فقط (JPG, PNG, WEBP).");
+                    alert("الملف غير مدعوم. الامتدادات المسموحة: " + allowedExtensions.join(', '));
                 }
             }
         }, false);
@@ -655,7 +678,7 @@
         div.className = 'dynamic-input-group';
         div.innerHTML = `
             <input type="text" class="md-input ed-image-url" placeholder="اسحب الصورة هنا أو اضغط رفع... أو ضع رابطاً" style="direction:ltr">
-            <input type="file" accept="image/png, image/jpeg, image/webp" style="display:none;" onchange="uploadImageToGitHub(this)">
+            <input type="file" accept="image/png, image/jpeg, image/webp" style="display:none;" onchange="uploadFileToGitHub(this, 'images', ['png', 'jpg', 'jpeg', 'webp'])">
             <button type="button" class="btn-upload-img" onclick="this.previousElementSibling.click()" title="رفع صورة"><span class="material-icons-round">file_upload</span></button>
             <button type="button" class="btn-remove-item" onclick="this.parentElement.remove()">−</button>`;
         list.appendChild(div);
@@ -664,7 +687,74 @@
         bindDragAndDrop(div, div.querySelector('input[type="file"]'));
     };
 
-    function addEditionRow(containerId, name = '', imagesArray = [], notes = '') {
+    window.renderCorrectionCard = function(container, corrTitle = '', corrBody = '', attachments = []) {
+        const card = document.createElement('div');
+        card.className = 'correction-card';
+        
+        card.innerHTML = `
+            <div class="correction-header">
+                <input type="text" class="md-input corr-title" placeholder="عنوان التصويب (مثال: خطأ في صفحة 25)..." value="${corrTitle}" required>
+                <button type="button" class="btn-remove-item" onclick="this.closest('.correction-card').remove()" title="حذف التصويب">−</button>
+            </div>
+            <div class="rich-editor" style="margin-top: 6px;">
+                <div class="rich-toolbar">
+                    <button type="button" class="tb-btn" onmousedown="event.preventDefault(); document.execCommand('bold', false, null);" title="خط عريض"><span class="material-icons-round">format_bold</span></button>
+                    <button type="button" class="tb-btn" onmousedown="event.preventDefault(); document.execCommand('italic', false, null);" title="خط مائل"><span class="material-icons-round">format_italic</span></button>
+                    <button type="button" class="tb-btn" onmousedown="event.preventDefault(); document.execCommand('underline', false, null);" title="تحته خط"><span class="material-icons-round">format_underlined</span></button>
+                    <button type="button" class="tb-btn" onmousedown="event.preventDefault(); document.execCommand('insertUnorderedList', false, null);" title="قائمة نقطية"><span class="material-icons-round">format_list_bulleted</span></button>
+                    <button type="button" class="tb-btn" onmousedown="event.preventDefault(); const url = prompt('أدخل رابط URL:'); if(url) document.execCommand('createLink', false, url);" title="إضافة رابط"><span class="material-icons-round">link</span></button>
+                    <button type="button" class="tb-btn" onmousedown="event.preventDefault(); document.execCommand('unlink', false, null);" title="إزالة الرابط"><span class="material-icons-round">link_off</span></button>
+                    <button type="button" class="tb-btn" onmousedown="event.preventDefault(); document.execCommand('removeFormat', false, null);" title="مسح التنسيق"><span class="material-icons-round">format_clear</span></button>
+                </div>
+                <div class="rich-editor-content corr-body" contenteditable="true" placeholder="تفاصيل التصويب...">${corrBody}</div>
+            </div>
+            <div class="sub-container" style="margin-top: 8px; background: var(--md-background)">
+                <div class="sub-container-title">
+                    <span class="material-icons-round" style="font-size:14px;color:var(--md-primary)">attachment</span>
+                    الملحقات (صور أو ملفات PDF):
+                </div>
+                <div class="attachments-list"></div>
+                <button type="button" class="btn-add-item" onclick="window.addNewAttachmentRow(this)">
+                    <span class="material-icons-round" style="font-size:14px">attach_file</span> إضافة ملحق
+                </button>
+            </div>
+        `;
+        container.appendChild(card);
+        
+        const attachListContainer = card.querySelector('.attachments-list');
+        (attachments || []).forEach(attach => {
+            renderAttachmentRow(attachListContainer, attach.title, attach.url);
+        });
+    };
+
+    window.addNewCorrectionRow = function(btn) {
+        const container = btn.previousElementSibling;
+        renderCorrectionCard(container);
+    };
+
+    window.renderAttachmentRow = function(container, title = '', url = '') {
+        const div = document.createElement('div');
+        div.className = 'attachment-row dynamic-input-group';
+        
+        div.innerHTML = `
+            <input type="text" class="md-input attach-title" placeholder="عنوان الملحق (مثال: صورة الصفحة قبل التصحيح)..." value="${title}" style="flex: 1;" required>
+            <input type="text" class="md-input attach-url" placeholder="رابط الملف أو اسحب/ارفع..." value="${url}" style="flex: 1.5; direction:ltr;" required>
+            <input type="file" accept="image/*,application/pdf" style="display:none;" onchange="uploadFileToGitHub(this, 'corrections', ['png', 'jpg', 'jpeg', 'webp', 'pdf'])">
+            <button type="button" class="btn-upload-img" onclick="this.previousElementSibling.click()" title="رفع ملف (صورة أو PDF)"><span class="material-icons-round">file_upload</span></button>
+            <button type="button" class="btn-remove-item" onclick="this.parentElement.remove()" title="حذف الملحق">−</button>
+        `;
+        container.appendChild(div);
+        
+        const fileInput = div.querySelector('input[type="file"]');
+        bindDragAndDrop(div, fileInput, 'corrections', ['png', 'jpg', 'jpeg', 'webp', 'pdf']);
+    };
+
+    window.addNewAttachmentRow = function(btn) {
+        const container = btn.previousElementSibling;
+        renderAttachmentRow(container);
+    };
+
+    function addEditionRow(containerId, name = '', imagesArray = [], notes = '', corrections = []) {
         const container = document.getElementById(containerId);
         const row = document.createElement('div');
         row.className = 'dynamic-row';
@@ -675,7 +765,7 @@
         const imgsHTML = imgs.map(img => `
             <div class="dynamic-input-group">
                 <input type="text" class="md-input ed-image-url" placeholder="اسحب الصورة هنا أو اضغط رفع... أو ضع رابطاً" value="${img}" style="direction:ltr">
-                <input type="file" accept="image/png, image/jpeg, image/webp" style="display:none;" onchange="uploadImageToGitHub(this)">
+                <input type="file" accept="image/png, image/jpeg, image/webp" style="display:none;" onchange="uploadFileToGitHub(this, 'images', ['png', 'jpg', 'jpeg', 'webp'])">
                 <button type="button" class="btn-upload-img" onclick="this.previousElementSibling.click()" title="رفع صورة من الجهاز"><span class="material-icons-round">file_upload</span></button>
                 <button type="button" class="btn-remove-item" onclick="this.parentElement.remove()" title="حذف الرابط">−</button>
             </div>`).join('');
@@ -706,11 +796,26 @@
                     </div>
                     <div class="rich-editor-content ed-notes" contenteditable="true" placeholder="ملاحظات خاصة بهذه الطبعة (تظهر كـ ℹ في الموقع)...">${notes}</div>
                 </div>
+                <div class="sub-container" style="margin-top: 10px;">
+                    <div class="sub-container-title" style="margin-bottom: 8px;">
+                        <span class="material-icons-round" style="font-size:14px;color:var(--md-primary)">report_problem</span>
+                        تصويبات الطبعة (أخطاء مطبعية أو علمية):
+                    </div>
+                    <div class="corrections-list"></div>
+                    <button type="button" class="btn-add-item" onclick="window.addNewCorrectionRow(this)" style="margin-top: 6px;">
+                        <span class="material-icons-round" style="font-size:14px">add_alert</span> إضافة تصويب
+                    </button>
+                </div>
             </div>
             <button type="button" class="btn-remove" onclick="this.parentElement.remove()" title="حذف">
                 <span class="material-icons-round">delete</span>
             </button>`;
         container.appendChild(row);
+
+        const corrListContainer = row.querySelector('.corrections-list');
+        (corrections || []).forEach(corr => {
+            renderCorrectionCard(corrListContainer, corr.title, corr.body, corr.attachments);
+        });
 
         // Attacher le drag and drop à tous les champs d'images créés dans cette ligne
         const imageGroups = row.querySelectorAll('.dynamic-input-group');
@@ -736,21 +841,22 @@
         container.appendChild(row);
     }
 
-    /* ---- GITHUB IMAGE UPLOAD ---- */
-    async function uploadImageToGitHub(fileInput) {
+    /* ---- GITHUB FILE UPLOAD ---- */
+    async function uploadFileToGitHub(fileInput, dirPath = 'images', allowedExtensions = ['png', 'jpg', 'jpeg', 'webp']) {
         const file = fileInput.files[0];
         if (!file) return;
 
-        // Vérification de sécurité basique
-        if (!file.type.startsWith('image/')) {
-            alert("الرجاء اختيار ملف صورة فقط.");
+        // Check extension
+        const ext = file.name.split('.').pop().toLowerCase();
+        if (!allowedExtensions.includes(ext)) {
+            alert("الرجاء اختيار ملف ذو امتداد مسموح: " + allowedExtensions.join(', '));
             fileInput.value = '';
             return;
         }
 
         const token = document.getElementById('githubToken').value.trim();
         if (!token) {
-            alert('⚠️ يرجى إدخال GitHub Token في الأعلى لتمكين رفع الصور!');
+            alert('⚠️ يرجى إدخال GitHub Token في الأعلى لتمكين الرفع!');
             fileInput.value = ''; 
             return;
         }
@@ -761,7 +867,7 @@
         reader.onload = async function(event) {
             const base64Content = event.target.result.split(',')[1];
             const uniqueName = Date.now() + '-' + file.name.replace(/[^a-zA-Z0-9.]/g, '');
-            const filePath = 'images/' + uniqueName;
+            const filePath = dirPath + '/' + uniqueName;
             const apiUrl = `https://api.github.com/repos/${GH_OWNER}/${GH_REPO}/contents/${filePath}`;
 
             document.getElementById('loaderOverlay').classList.add('visible');
@@ -774,7 +880,7 @@
                         'Content-Type': 'application/json'
                     },
                     body: JSON.stringify({
-                        message: `Upload image: ${uniqueName}`,
+                        message: `Upload file: ${uniqueName} to ${dirPath}`,
                         content: base64Content
                     })
                 });
@@ -782,7 +888,7 @@
                 if (response.ok) {
                     const publicUrl = `https://${GH_OWNER}.github.io/${GH_REPO}/${filePath}`;
                     textInput.value = publicUrl;
-                    showToast('✅ تم رفع الصورة بنجاح!');
+                    showToast('✅ تم رفع الملف بنجاح!');
                 } else {
                     const err = await response.json();
                     alert('❌ فشل الرفع: ' + err.message);
@@ -850,7 +956,7 @@
             c.innerHTML = '';
             (arr || []).forEach(ed => {
                 const imgs = ed.images ? ed.images : (ed.image ? [ed.image] : []);
-                addEditionRow(cid, ed.name, imgs, ed.notes || '');
+                addEditionRow(cid, ed.name, imgs, ed.notes || '', ed.corrections || []);
             });
         };
         loadEditions('bestEditions', book.best_editions);
@@ -884,14 +990,21 @@
             best_editions: [], alt_editions: [], links: []
         };
 
+        const cleanHtml = h => (h === '<br>' || h === '<div><br></div>' || h === '<p><br></p>') ? '' : h;
         const collectEditions = (cid, arr) => {
             document.querySelectorAll(`#${cid} .dynamic-row`).forEach(row => {
                 const images = [...row.querySelectorAll('.ed-image-url')].map(i => i.value.trim()).filter(Boolean);
-                let notesHtml = row.querySelector('.ed-notes').innerHTML.trim();
-                if (notesHtml === '<br>' || notesHtml === '<div><br></div>' || notesHtml === '<p><br></p>') {
-                    notesHtml = '';
-                }
-                arr.push({ name: row.querySelector('.ed-name').value.trim(), images, notes: notesHtml });
+                let notesHtml = cleanHtml(row.querySelector('.ed-notes').innerHTML.trim());
+                const corrections = [...row.querySelectorAll('.correction-card')].map(card => {
+                    const title = card.querySelector('.corr-title').value.trim();
+                    let body = cleanHtml(card.querySelector('.corr-body').innerHTML.trim());
+                    const attachments = [...card.querySelectorAll('.attachment-row')].map(att => ({
+                        title: att.querySelector('.attach-title').value.trim(),
+                        url:   att.querySelector('.attach-url').value.trim()
+                    })).filter(a => a.title || a.url);
+                    return { title, body, attachments };
+                }).filter(c => c.title || c.body || c.attachments.length);
+                arr.push({ name: row.querySelector('.ed-name').value.trim(), images, notes: notesHtml, corrections });
             });
         };
         collectEditions('bestEditions', newBook.best_editions);

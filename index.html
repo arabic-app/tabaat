@@ -475,6 +475,64 @@
             .carousel-img { max-height: 45vh; }
             .book-notes { font-size: 0.85rem; padding: 12px; }
         }
+
+        /* ===== CORRECTIONS MODAL ===== */
+        .modal-corrections-list { list-style: none; padding: 0; margin: 0; }
+        .corr-item-clickable {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 14px;
+            border-radius: 10px;
+            cursor: pointer;
+            border: 1px solid var(--md-outline-variant);
+            margin-bottom: 8px;
+            background: var(--md-surface-variant);
+            transition: background 0.2s, transform 0.15s;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+        .corr-item-clickable:hover { background: var(--md-primary-container); transform: translateX(-3px); }
+        .corr-item-clickable .material-icons-round { color: var(--md-primary); flex-shrink: 0; }
+        .corr-detail-body { font-size: 0.95rem; line-height: 1.6; color: var(--md-on-surface-variant); margin-bottom: 16px; }
+        .corr-detail-body ul { list-style: disc; padding-right: 20px; margin: 8px 0; }
+        .corr-detail-body ol { list-style: decimal; padding-right: 20px; margin: 8px 0; }
+        .corr-detail-body a { color: var(--md-primary); text-decoration: underline; }
+        .corr-attachments-title {
+            font-size: 0.85rem; font-weight: 700; color: var(--md-on-surface-variant);
+            display: flex; align-items: center; gap: 6px; margin-bottom: 8px;
+        }
+        .corr-attachments-list { display: flex; flex-direction: column; gap: 8px; }
+        .attach-thumb {
+            border-radius: 10px; overflow: hidden;
+            border: 1px solid var(--md-outline-variant); display: block;
+        }
+        .attach-thumb img { width: 100%; max-height: 200px; object-fit: cover; display: block; }
+        .attach-thumb span, .pdf-link span { font-size: 0.88rem; padding: 6px 10px; display: block; text-align: center; background: var(--md-surface-variant); }
+        .pdf-link {
+            display: flex; align-items: center; gap: 8px; padding: 10px 14px;
+            border-radius: 10px; border: 1px solid var(--md-outline-variant);
+            background: var(--md-surface-variant); color: var(--md-on-surface);
+            text-decoration: none; font-size: 0.9rem; font-weight: 600;
+            transition: background 0.2s;
+        }
+        .pdf-link:hover { background: var(--md-primary-container); }
+        .pdf-link .material-icons-round { color: #c62828; font-size: 22px; }
+        .corr-back-btn {
+            display: inline-flex; align-items: center; gap: 6px;
+            padding: 7px 14px; border-radius: 20px; border: none;
+            background: var(--md-surface-variant); color: var(--md-on-surface);
+            font-family: inherit; font-size: 0.9rem; cursor: pointer;
+            margin-bottom: 14px; transition: background 0.2s;
+        }
+        .corr-back-btn:hover { background: var(--md-outline-variant); }
+        .corr-detail-title {
+            font-size: 1rem; font-weight: 800; color: var(--md-on-surface);
+            margin-bottom: 12px; padding-bottom: 8px;
+            border-bottom: 2px solid var(--md-primary-container);
+        }
+        .md-icon-btn.warn-btn { color: #e65100; }
+        .md-icon-btn.warn-btn:hover { background: rgba(230,81,0,0.1); }
     </style>
 </head>
 <body>
@@ -639,6 +697,7 @@
 
                 const renderList = (editions, isEdition, type) => (editions || []).map((ed, idx) => {
                     let actions = '';
+                    if (isEdition && ed.corrections && ed.corrections.length) actions += `<button class="md-icon-btn" onclick="openCorrectionsModal(${book.id}, '${type}', ${idx})" title="تصويبات الطبعة"><span class="material-icons-round">report_problem</span></button>`;
                     if (isEdition && ed.notes) actions += `<button class="md-icon-btn" onclick="openNoteModal('${encodeURIComponent(ed.name)}', '${encodeURIComponent(ed.notes)}')" title="ملاحظات حول الطبعة"><span class="material-icons-round">info</span></button>`;
                     if (isEdition && ((ed.images && ed.images.length) || ed.image)) actions += `<button class="md-icon-btn" onclick="openImageModal(${book.id}, '${type}', ${idx})" title="عرض صور الطبعة"><span class="material-icons-round">photo_library</span></button>`;
                     
@@ -693,6 +752,55 @@
         }
         
         function changeSlide(dir) { currentSlideIndex = (currentSlideIndex + dir + currentCarouselImages.length) % currentCarouselImages.length; renderCarousel(); }
+
+        function openCorrectionsModal(bookId, edType, edIdx) {
+            const ed = booksData.find(b => b.id === bookId)[edType][edIdx];
+            document.getElementById('modalTitle').innerText = 'صحح نسختك';
+            const list = (ed.corrections || []).map((corr, ci) => `
+                <div class="corr-item-clickable" onclick="showCorrectionDetail(${bookId}, '${edType}', ${edIdx}, ${ci})">
+                    <span class="material-icons-round">chevron_left</span>
+                    <span>${corr.title || 'تصويب ' + (ci + 1)}</span>
+                </div>
+            `).join('');
+            document.getElementById('modalBody').innerHTML = `
+                <p style="font-size:0.85rem;color:var(--md-outline);margin-bottom:12px;">اضغط على تصويب لعرض تفاصيله:</p>
+                <div class="modal-corrections-list">${list}</div>
+            `;
+            document.getElementById('infoModal').style.display = 'flex';
+        }
+
+        function showCorrectionDetail(bookId, edType, edIdx, corrIdx) {
+            const ed = booksData.find(b => b.id === bookId)[edType][edIdx];
+            const corr = ed.corrections[corrIdx];
+            const attachmentsHTML = (corr.attachments || []).map(att => {
+                const isPdf = att.url && att.url.toLowerCase().endsWith('.pdf');
+                if (isPdf) {
+                    return `<a href="${att.url}" target="_blank" class="pdf-link">
+                        <span class="material-icons-round">picture_as_pdf</span>
+                        <span>${att.title || 'ملف PDF'}</span>
+                    </a>`;
+                } else {
+                    return `<div class="attach-thumb">
+                        <img src="${att.url}" alt="${att.title || 'مرفق'}" loading="lazy" onerror="this.parentElement.style.display='none'">
+                        <span>${att.title || 'مرفق'}</span>
+                    </div>`;
+                }
+            }).join('');
+            document.getElementById('modalBody').innerHTML = `
+                <button class="corr-back-btn" onclick="openCorrectionsModal(${bookId}, '${edType}', ${edIdx})">
+                    <span class="material-icons-round" style="font-size:18px">arrow_forward</span> رجوع للقائمة
+                </button>
+                <div class="corr-detail-title">${corr.title || ''}</div>
+                ${corr.body ? `<div class="corr-detail-body">${corr.body}</div>` : ''}
+                ${attachmentsHTML ? `
+                    <div class="corr-attachments-title">
+                        <span class="material-icons-round" style="font-size:16px">attachment</span> الملحقات:
+                    </div>
+                    <div class="corr-attachments-list">${attachmentsHTML}</div>
+                ` : ''}
+            `;
+        }
+
         function closeModal() { document.getElementById('infoModal').style.display = 'none'; }
         window.onclick = e => { if (e.target.id === 'infoModal') closeModal(); };
     </script>
