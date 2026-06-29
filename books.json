@@ -1346,20 +1346,30 @@
     "id": 40,
     "title": "نزهة النظر في توضيح نخبة الفكر",
     "author": "أحمد بن علي بن حجر العسقلاني",
-    "category": "مصطلح الحديث",
+    "category": [
+      "مصطلح الحديث"
+    ],
+    "notes": "",
     "best_editions": [
       {
         "name": "دار المنهاج القويم",
-        "image": ""
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782752429065-images20260629T175846.103.jpeg"
+        ],
+        "notes": "",
+        "corrections": []
       },
       {
         "name": "دار ابن كثير",
-        "image": ""
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782752436135-images20260629T175912.638.jpeg"
+        ],
+        "notes": "",
+        "corrections": []
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "notes": ""
+    "links": []
   },
   {
     "id": 41,
