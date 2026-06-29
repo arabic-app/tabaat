@@ -6531,5 +6531,27 @@
     ],
     "alt_editions": [],
     "links": []
+  },
+  {
+    "id": 268,
+    "title": "شرح صحيح البخاري - ابن بطال",
+    "author": "ابن بطال أبو الحسن علي بن خلف بن عبد الملك",
+    "category": [
+      "الحديث",
+      "شروح الحديث"
+    ],
+    "notes": "",
+    "best_editions": [
+      {
+        "name": "مكتبة الرشد",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782732062274-.jpeg"
+        ],
+        "notes": "",
+        "corrections": []
+      }
+    ],
+    "alt_editions": [],
+    "links": []
   }
 ]
