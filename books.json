@@ -4134,13 +4134,18 @@
     "id": 148,
     "title": "نثر الدر",
     "author": "منصور بن الحسين الآبي",
-    "category": "اللغة والأدب",
+    "category": [
+      "اللغة والأدب"
+    ],
     "notes": "",
     "best_editions": [
       {
         "name": "دار الكتب المصرية",
-        "images": [],
-        "notes": ""
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782750521387-0a21d75f4d2243d8bb6d82470b5580e3thumbnail770x77070.jpg"
+        ],
+        "notes": "",
+        "corrections": []
       }
     ],
     "alt_editions": [],
