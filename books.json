@@ -4632,7 +4632,9 @@
     "best_editions": [
       {
         "name": "ابن الجوزي السعودية - ت صبحي حلاق",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782723207285-images20260629T115313.214.jpeg"
+        ],
         "notes": ""
       }
     ],
