@@ -3931,12 +3931,16 @@
     "id": 144,
     "title": "لباب الآداب",
     "author": "أسامة بن منقذ",
-    "category": "اللغة والأدب",
+    "category": [
+      "اللغة والأدب"
+    ],
     "notes": "",
     "best_editions": [
       {
-        "name": "ت أحمد شاكر",
-        "images": [],
+        "name": "مكتبة السنة ت أحمد شاكر",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782719629566-images20260629T105328.029.jpeg"
+        ],
         "notes": ""
       }
     ],
