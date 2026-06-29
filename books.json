@@ -6716,5 +6716,26 @@
     ],
     "alt_editions": [],
     "links": []
+  },
+  {
+    "id": 272,
+    "title": "الصارم المسلول على شاتم الرسول صلى الله عليه وسلم",
+    "author": "أحمد بن عبد الحليم بن تيمية",
+    "category": [
+      "العقيدة"
+    ],
+    "notes": "",
+    "best_editions": [
+      {
+        "name": "دار التوحيد و دار باب العلم ت حسني الجهني",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782764464389-IMG20260629214219172.jpg"
+        ],
+        "notes": "",
+        "corrections": []
+      }
+    ],
+    "alt_editions": [],
+    "links": []
   }
 ]
