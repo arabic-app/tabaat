@@ -4,6 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>دليل طبعات الكتب الإسلامية</title>
+
+    <!-- PWA -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#00695c">
+    <meta name="mobile-web-app-capable" content="yes">
+    <!-- iOS PWA -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="أفضل طبعة">
+    <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+    <!-- SEO -->
+    <meta name="description" content="دليل شامل لأفضل طبعات الكتب الإسلامية - ابحث عن الكتاب، المؤلف، أو العلم">
+
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
     <style>
@@ -534,8 +547,170 @@
         .md-icon-btn.warn-btn { color: #e65100; }
         .md-icon-btn.warn-btn:hover { background: rgba(230,81,0,0.1); }
     </style>
+
+    <style>
+        /* ===== PULL-TO-REFRESH ===== */
+        #ptr-indicator {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 0;
+            overflow: hidden;
+            background: var(--md-primary);
+            transition: height 0.2s ease;
+            pointer-events: none;
+        }
+        #ptr-indicator.ptr-pulling {
+            height: 60px;
+        }
+        #ptr-indicator.ptr-loading {
+            height: 60px;
+        }
+        .ptr-spinner {
+            width: 28px;
+            height: 28px;
+            border: 3px solid rgba(255,255,255,0.3);
+            border-top-color: #fff;
+            border-radius: 50%;
+            animation: ptr-spin 0.8s linear infinite;
+        }
+        .ptr-arrow {
+            font-size: 28px;
+            color: white;
+            transition: transform 0.3s ease;
+            font-family: 'Material Icons Round';
+        }
+        .ptr-arrow.flipped { transform: rotate(180deg); }
+        @keyframes ptr-spin { to { transform: rotate(360deg); } }
+
+        /* ===== PWA INSTALL BANNER ===== */
+        #pwa-banner {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 5000;
+            padding: 12px 16px;
+            background: #1a2a27;
+            color: #fff;
+            box-shadow: 0 -4px 24px rgba(0,0,0,0.3);
+            animation: slideUp 0.4s cubic-bezier(0.34,1.56,0.64,1);
+            safe-area-inset-bottom: env(safe-area-inset-bottom);
+            padding-bottom: calc(12px + env(safe-area-inset-bottom));
+        }
+        #pwa-banner.visible { display: block; }
+        @keyframes slideUp {
+            from { transform: translateY(100%); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        .pwa-banner-inner {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .pwa-banner-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            flex-shrink: 0;
+            object-fit: cover;
+        }
+        .pwa-banner-text {
+            flex: 1;
+        }
+        .pwa-banner-text strong {
+            display: block;
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 2px;
+        }
+        .pwa-banner-text span {
+            font-size: 0.78rem;
+            color: rgba(255,255,255,0.75);
+            line-height: 1.4;
+        }
+        .pwa-banner-actions {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+            flex-shrink: 0;
+        }
+        #pwa-install-btn {
+            background: var(--md-primary);
+            color: #fff;
+            border: none;
+            border-radius: 20px;
+            padding: 8px 18px;
+            font-family: 'Cairo', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background 0.2s;
+            white-space: nowrap;
+        }
+        #pwa-install-btn:hover { background: #00897b; }
+        #pwa-dismiss-btn {
+            background: transparent;
+            border: none;
+            color: rgba(255,255,255,0.6);
+            cursor: pointer;
+            padding: 4px;
+            display: flex;
+            align-items: center;
+            font-size: 20px;
+            font-family: 'Material Icons Round';
+        }
+        /* iOS specific instructions */
+        .pwa-ios-steps {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            margin-top: 6px;
+        }
+        .pwa-ios-step {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.78rem;
+            color: rgba(255,255,255,0.85);
+        }
+        .pwa-ios-step .step-icon {
+            font-size: 16px;
+            font-family: 'Material Icons Round';
+            color: var(--md-primary-container);
+        }
+    </style>
 </head>
 <body>
+
+    <!-- Pull-to-Refresh Indicator -->
+    <div id="ptr-indicator" role="status" aria-live="polite">
+        <span class="ptr-arrow" id="ptr-arrow">arrow_downward</span>
+    </div>
+
+    <!-- PWA Install Banner -->
+    <div id="pwa-banner" role="complementary" aria-label="تثبيت التطبيق">
+        <div class="pwa-banner-inner">
+            <img src="icons/apple-touch-icon.png" class="pwa-banner-icon" alt="أيقونة التطبيق">
+            <div class="pwa-banner-text" id="pwa-banner-text">
+                <strong>تثبيت تطبيق «أفضل طبعة»</strong>
+                <span>أضف التطبيق إلى شاشتك الرئيسية للوصول السريع</span>
+            </div>
+            <div class="pwa-banner-actions">
+                <button id="pwa-install-btn">تثبيت</button>
+                <button id="pwa-dismiss-btn" aria-label="إغلاق" class="material-icons-round">close</button>
+            </div>
+        </div>
+    </div>
 
     <header>
         <h1>دليل أفضل طبعات الكتب الإسلامية</h1>
@@ -803,6 +978,166 @@
 
         function closeModal() { document.getElementById('infoModal').style.display = 'none'; }
         window.onclick = e => { if (e.target.id === 'infoModal') closeModal(); };
+    </script>
+
+    <!-- ===== PWA + PULL-TO-REFRESH SCRIPT ===== -->
+    <script>
+    (function() {
+        'use strict';
+
+        /* ── 1. SERVICE WORKER REGISTRATION ── */
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('./sw.js', { scope: './' })
+                    .then(reg => {
+                        // Vérifier les mises à jour
+                        reg.addEventListener('updatefound', () => {
+                            const newWorker = reg.installing;
+                            newWorker.addEventListener('statechange', () => {
+                                if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+                                    // Nouveau contenu disponible, forcer l'activation
+                                    newWorker.postMessage({ type: 'SKIP_WAITING' });
+                                }
+                            });
+                        });
+                    })
+                    .catch(err => console.warn('[PWA] SW non enregistré:', err));
+            });
+        }
+
+        /* ── 2. DÉTECTION OS ── */
+        const ua = navigator.userAgent || '';
+        const isIOS = /iP(hone|od|ad)/.test(ua);
+        const isAndroid = /Android/.test(ua);
+        const isInStandalone = window.matchMedia('(display-mode: standalone)').matches
+            || window.navigator.standalone === true;
+
+        /* ── 3. INSTALL BANNER ── */
+        const banner   = document.getElementById('pwa-banner');
+        const installBtn = document.getElementById('pwa-install-btn');
+        const dismissBtn = document.getElementById('pwa-dismiss-btn');
+        const bannerText = document.getElementById('pwa-banner-text');
+        let deferredPrompt = null;
+        const DISMISS_KEY = 'pwa_dismissed_tabaat';
+
+        function showBanner() {
+            if (localStorage.getItem(DISMISS_KEY)) return;
+            banner.classList.add('visible');
+        }
+
+        function hideBanner() {
+            banner.classList.remove('visible');
+        }
+
+        dismissBtn.addEventListener('click', () => {
+            hideBanner();
+            localStorage.setItem(DISMISS_KEY, '1');
+        });
+
+        if (!isInStandalone) {
+            if (isIOS) {
+                // iOS : instructions manuelles Partager → Ajouter
+                bannerText.innerHTML = `
+                    <strong>أضف «أفضل طبعة» لشاشتك الرئيسية</strong>
+                    <div class="pwa-ios-steps">
+                        <div class="pwa-ios-step">
+                            <span class="step-icon material-icons-round">ios_share</span>
+                            <span>اضغط على زر المشاركة ثم</span>
+                        </div>
+                        <div class="pwa-ios-step">
+                            <span class="step-icon material-icons-round">add_box</span>
+                            <span>اختر «إضافة إلى الشاشة الرئيسية»</span>
+                        </div>
+                    </div>`;
+                installBtn.style.display = 'none';
+                // Afficher après 2 secondes
+                setTimeout(showBanner, 2000);
+
+            } else if (isAndroid || (!isIOS && !isAndroid)) {
+                // Android/Chrome/Desktop : beforeinstallprompt
+                window.addEventListener('beforeinstallprompt', (e) => {
+                    e.preventDefault();
+                    deferredPrompt = e;
+                    setTimeout(showBanner, 1500);
+                });
+
+                installBtn.addEventListener('click', async () => {
+                    if (!deferredPrompt) return;
+                    deferredPrompt.prompt();
+                    const { outcome } = await deferredPrompt.userChoice;
+                    deferredPrompt = null;
+                    hideBanner();
+                    if (outcome === 'accepted') {
+                        localStorage.setItem(DISMISS_KEY, '1');
+                    }
+                });
+
+                window.addEventListener('appinstalled', () => {
+                    hideBanner();
+                    deferredPrompt = null;
+                });
+            }
+        }
+
+        /* ── 4. PULL-TO-REFRESH ── */
+        const ptrIndicator = document.getElementById('ptr-indicator');
+        const ptrArrow     = document.getElementById('ptr-arrow');
+        const PTR_THRESHOLD = 80;   // pixels pour déclencher
+        const PTR_MAX       = 110;  // pixels max d'étirement
+        let touchStartY = 0;
+        let pulling     = false;
+        let ptTriggered = false;
+
+        document.addEventListener('touchstart', (e) => {
+            if (window.scrollY === 0 && e.touches.length === 1) {
+                touchStartY = e.touches[0].clientY;
+                pulling     = true;
+                ptTriggered = false;
+            }
+        }, { passive: true });
+
+        document.addEventListener('touchmove', (e) => {
+            if (!pulling) return;
+            const dy = e.touches[0].clientY - touchStartY;
+            if (dy <= 0) { pulling = false; return; }
+
+            const progress = Math.min(dy, PTR_MAX);
+            const reached  = dy >= PTR_THRESHOLD;
+
+            ptrIndicator.classList.add('ptr-pulling');
+            ptrIndicator.style.height = Math.min(progress * 0.6, 60) + 'px';
+
+            if (ptrIndicator.querySelector('.ptr-spinner')) {
+                // déjà en loading, on ne fait rien
+            } else {
+                ptrArrow.style.display = 'block';
+                ptrArrow.classList.toggle('flipped', reached);
+            }
+
+            if (reached && !ptTriggered) ptTriggered = true;
+        }, { passive: true });
+
+        document.addEventListener('touchend', () => {
+            if (!pulling) return;
+            pulling = false;
+
+            if (ptTriggered) {
+                // Montrer le spinner et recharger
+                ptrArrow.style.display = 'none';
+                const spinner = document.createElement('span');
+                spinner.className = 'ptr-spinner';
+                ptrIndicator.appendChild(spinner);
+                ptrIndicator.style.height = '60px';
+                setTimeout(() => location.reload(), 600);
+            } else {
+                // Rétraction
+                ptrIndicator.style.height = '0';
+                ptrIndicator.classList.remove('ptr-pulling');
+                ptrArrow.classList.remove('flipped');
+            }
+        }, { passive: true });
+
+    })();
     </script>
 </body>
 </html>

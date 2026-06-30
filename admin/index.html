@@ -1,0 +1,1396 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لوحة الإدارة - دليل طبعات الكتب الإسلامية</title>
+
+    <!-- PWA -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#00695c">
+    <meta name="mobile-web-app-capable" content="yes">
+    <!-- iOS PWA -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="إعدادات أفضل طبعة">
+    <link rel="apple-touch-icon" href="../icons/apple-touch-icon-admin.png">
+    <!-- SEO -->
+    <meta name="description" content="لوحة إدارة دليل طبعات الكتب الإسلامية">
+
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
+    <style>
+        *, *::before, *::after { box-sizing: border-box; }
+
+        :root {
+            --md-primary: #00695c;
+            --md-on-primary: #ffffff;
+            --md-primary-container: #b2dfdb;
+            --md-on-primary-container: #00201a;
+            --md-secondary: #006b5f;
+            --md-tertiary: #e65100;
+            --md-background: #f4f6f8;
+            --md-surface: #ffffff;
+            --md-surface-variant: #e8edec;
+            --md-on-surface: #191c1b;
+            --md-on-surface-variant: #3f4947;
+            --md-outline: #6f7977;
+            --md-outline-variant: #bec9c6;
+            --md-error: #ba1a1a;
+            --md-error-container: #ffdad6;
+            --md-on-error-container: #410002;
+            --md-info: #1565c0;
+            --md-elevation-1: 0 1px 3px 1px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+            --md-elevation-2: 0 2px 6px 2px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+            --sidebar-width: 300px;
+        }
+
+        body {
+            font-family: 'Cairo', sans-serif;
+            margin: 0;
+            background: var(--md-background);
+            color: var(--md-on-surface);
+            -webkit-font-smoothing: antialiased;
+            min-height: 100vh;
+        }
+
+        /* ===== TOP APP BAR (mobile) ===== */
+        .top-app-bar {
+            display: none;
+            background: var(--md-primary);
+            color: var(--md-on-primary);
+            padding: 0 8px;
+            height: 56px;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 200;
+            box-shadow: var(--md-elevation-2);
+        }
+        .top-app-bar h1 {
+            font-size: 1.1rem;
+            font-weight: 800;
+            margin: 0;
+            flex: 1;
+            text-align: center;
+        }
+        .md-icon-btn-top {
+            background: transparent;
+            border: none;
+            color: var(--md-on-primary);
+            width: 44px; height: 44px;
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            cursor: pointer;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .md-icon-btn-top:hover { background: rgba(255,255,255,0.12); }
+        .md-icon-btn-top .material-icons-round { font-size: 24px; }
+
+        /* ===== LAYOUT ===== */
+        .layout { display: flex; min-height: 100vh; }
+
+        /* ===== SIDEBAR ===== */
+        .sidebar {
+            width: var(--sidebar-width);
+            background: var(--md-surface);
+            border-left: 1px solid var(--md-outline-variant);
+            display: flex;
+            flex-direction: column;
+            position: sticky;
+            top: 0;
+            height: 100vh;
+            flex-shrink: 0;
+            z-index: 100;
+        }
+        .sidebar-header { background: var(--md-primary); color: var(--md-on-primary); padding: 16px; }
+        .sidebar-header h2 { margin: 0 0 12px 0; font-size: 1.1rem; font-weight: 800; display: flex; align-items: center; gap: 8px; }
+
+        .search-field { position: relative; display: flex; align-items: center; }
+        .search-field .material-icons-round { position: absolute; right: 10px; font-size: 20px; color: rgba(255,255,255,0.7); pointer-events: none; }
+        .admin-search-box {
+            width: 100%; padding: 10px 38px 10px 14px; border: none; border-radius: 24px;
+            font-family: inherit; font-size: 0.9rem; background: rgba(255,255,255,0.2); color: white; outline: none;
+        }
+        .admin-search-box::placeholder { color: rgba(255,255,255,0.65); }
+        .admin-search-box:focus { background: rgba(255,255,255,0.28); }
+
+        .btn-add-new {
+            margin: 12px; padding: 0 16px; height: 40px; background: var(--md-primary); color: white;
+            border: none; cursor: pointer; font-family: inherit; font-weight: 700; border-radius: 20px;
+            font-size: 0.9rem; display: flex; align-items: center; justify-content: center; gap: 6px;
+            box-shadow: var(--md-elevation-1); transition: box-shadow 0.2s, background 0.2s;
+        }
+        .btn-add-new:hover { background: #00796b; box-shadow: var(--md-elevation-2); }
+
+        .sidebar-list { flex: 1; overflow-y: auto; padding: 8px; list-style: none; margin: 0; }
+        .sidebar-list li {
+            padding: 10px 14px; cursor: pointer; border-radius: 28px; font-size: 0.9rem; line-height: 1.4;
+            color: var(--md-on-surface-variant); transition: background 0.15s, color 0.15s; margin-bottom: 2px;
+            display: flex; align-items: center; gap: 8px;
+        }
+        .sidebar-list li::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--md-outline-variant); flex-shrink: 0; }
+        .sidebar-list li:hover { background: var(--md-surface-variant); color: var(--md-on-surface); }
+        .sidebar-list li.active { background: var(--md-primary-container); color: var(--md-on-primary-container); font-weight: 700; }
+        .sidebar-list li.active::before { background: var(--md-primary); }
+
+        /* ===== MAIN CONTENT ===== */
+        .main-content { flex: 1; padding: 24px 20px; overflow-y: auto; min-width: 0; }
+
+        /* ===== SYNC CARD ===== */
+        .sync-card {
+            background: var(--md-surface); border-radius: 16px; padding: 20px; margin-bottom: 24px;
+            box-shadow: var(--md-elevation-1); border: 1px solid var(--md-outline-variant);
+        }
+        .sync-card-title { font-weight: 800; font-size: 1rem; color: var(--md-primary); display: flex; align-items: center; gap: 8px; margin-bottom: 16px; }
+
+        .github-row { display: flex; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
+        .github-token-input {
+            flex: 1; min-width: 200px; padding: 10px 14px; border: 1px solid var(--md-outline-variant);
+            border-radius: 8px; font-family: inherit; font-size: 0.9rem; direction: ltr; background: var(--md-background);
+            color: var(--md-on-surface); outline: none;
+        }
+        .github-token-input:focus { border-color: var(--md-primary); }
+
+        .action-buttons { display: flex; gap: 8px; flex-wrap: wrap; }
+
+        .md-btn {
+            height: 36px; padding: 0 16px; border: none; border-radius: 18px; font-family: inherit;
+            font-weight: 700; font-size: 0.85rem; cursor: pointer; display: inline-flex; align-items: center;
+            gap: 6px; transition: box-shadow 0.2s, opacity 0.2s; white-space: nowrap;
+        }
+        .md-btn:hover { opacity: 0.88; }
+        .md-btn-primary { background: var(--md-primary); color: white; box-shadow: var(--md-elevation-1); }
+        .md-btn-secondary { background: var(--md-surface-variant); color: var(--md-on-surface); }
+        .md-btn-purple { background: #7b1fa2; color: white; box-shadow: var(--md-elevation-1); }
+        .md-btn-error { background: var(--md-error); color: white; box-shadow: var(--md-elevation-1); }
+
+        /* ===== FORM CARD ===== */
+        .form-card {
+            background: var(--md-surface); border-radius: 16px; padding: 24px;
+            box-shadow: var(--md-elevation-1); border: 1px solid var(--md-outline-variant); display: none;
+        }
+        .form-card-title {
+            font-size: 1.2rem; font-weight: 800; color: var(--md-primary); margin: 0 0 20px 0;
+            padding-bottom: 14px; border-bottom: 2px solid var(--md-outline-variant); display: flex; align-items: center; gap: 8px;
+        }
+
+        .form-group { margin-bottom: 18px; }
+        .form-group label { display: block; margin-bottom: 6px; font-weight: 700; font-size: 0.9rem; color: var(--md-on-surface-variant); }
+        .md-input {
+            width: 100%; padding: 11px 14px; border: 1px solid var(--md-outline-variant); border-radius: 8px;
+            font-family: inherit; font-size: 0.95rem; background: var(--md-background); color: var(--md-on-surface);
+            outline: none; transition: all 0.2s;
+        }
+        .md-input:focus { border-color: var(--md-primary); box-shadow: 0 0 0 2px rgba(0,105,92,0.15); }
+        textarea.md-input { resize: vertical; min-height: 80px; }
+        select.md-input { cursor: pointer; }
+
+        .duplicate-warning {
+            display: none; background: var(--md-error-container); color: var(--md-error); padding: 10px 14px;
+            border-radius: 8px; margin-top: 8px; border: 1px solid #f5c6cb; align-items: center;
+            justify-content: space-between; gap: 10px; flex-wrap: wrap; font-size: 0.9rem; font-weight: 600;
+        }
+        .btn-edit-duplicate {
+            background: var(--md-error); color: white; border: none; padding: 5px 12px;
+            border-radius: 14px; cursor: pointer; font-family: inherit; font-weight: 700; font-size: 0.85rem;
+        }
+
+        .section-header {
+            display: flex; align-items: center; gap: 8px; font-weight: 800; font-size: 0.95rem;
+            color: var(--md-tertiary); margin: 24px 0 10px 0; padding-bottom: 8px; border-bottom: 1px dashed var(--md-outline-variant);
+        }
+
+        .btn-add-row {
+            height: 32px; padding: 0 14px; background: #e0f2f1; color: var(--md-primary);
+            border: 1px dashed var(--md-primary); border-radius: 16px; font-family: inherit;
+            font-weight: 700; font-size: 0.82rem; cursor: pointer; margin-bottom: 16px;
+            display: inline-flex; align-items: center; gap: 4px;
+        }
+        .btn-add-row:hover { background: var(--md-primary-container); }
+
+        /* ===== DYNAMIC ROWS ===== */
+        .dynamic-row {
+            display: flex; gap: 10px; margin-bottom: 10px; align-items: flex-start;
+            background: var(--md-background); padding: 14px; border-radius: 12px; border: 1px solid var(--md-outline-variant);
+        }
+        .dynamic-row.sortable-ghost { opacity: 0.4; background: var(--md-primary-container); border: 1px dashed var(--md-primary); }
+        .drag-handle { cursor: grab; color: var(--md-outline); font-size: 1.4rem; padding: 4px 2px; flex-shrink: 0; margin-top: 4px; }
+        
+        .row-inputs { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 8px; }
+        .row-inputs-horizontal { flex: 1; min-width: 0; display: flex; gap: 8px; flex-wrap: wrap; }
+        .row-inputs-horizontal .md-input { flex: 1; min-width: 120px; }
+
+        .sub-container { background: var(--md-surface); padding: 10px 12px; border: 1px solid var(--md-outline-variant); border-radius: 8px; }
+        .sub-container-title { font-size: 0.82rem; font-weight: 700; color: var(--md-on-surface-variant); margin-bottom: 8px; display: flex; align-items: center; gap: 4px; }
+        
+        /* -- Drag and Drop Styles -- */
+        .dynamic-input-group { display: flex; gap: 6px; margin-bottom: 6px; align-items: center; transition: all 0.2s ease;}
+        .dynamic-input-group .md-input { font-size: 0.85rem; padding: 7px 10px; flex: 1;}
+        
+        .dynamic-input-group.drag-over .md-input {
+            border-color: var(--md-primary);
+            background-color: rgba(0, 105, 92, 0.1);
+            border-style: dashed;
+            border-width: 2px;
+        }
+        .dynamic-input-group.drag-over .btn-upload-img {
+            background-color: var(--md-primary);
+            transform: scale(1.05);
+        }
+        
+        .btn-upload-img {
+            background: var(--md-secondary); color: white; border: none;
+            height: 32px; padding: 0 10px; border-radius: 8px; cursor: pointer; font-size: 0.8rem; font-weight: bold;
+            display: flex; align-items: center; justify-content: center; gap:4px; flex-shrink: 0; transition: all 0.2s;
+        }
+        .btn-upload-img:hover { background: #004d40; }
+        
+        .btn-remove-item {
+            background: var(--md-error-container); color: var(--md-error); border: none;
+            width: 32px; height: 32px; border-radius: 8px; cursor: pointer; font-size: 1.1rem; font-weight: bold;
+            display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+        }
+        .btn-add-item { background: transparent; color: var(--md-secondary); border: none; padding: 4px 8px; cursor: pointer; border-radius: 8px; font-family: inherit; font-size: 0.8rem; font-weight: 700; display: inline-flex; align-items: center; gap: 4px; }
+        .btn-add-item:hover { background: var(--md-surface-variant); }
+
+        .btn-remove { background: var(--md-error-container); color: var(--md-error); border: none; width: 36px; height: 36px; border-radius: 8px; cursor: pointer; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+        .btn-remove:hover { background: #f5c6cb; }
+
+        /* ===== FORM ACTIONS ===== */
+        .form-actions {
+            margin-top: 24px; display: flex; gap: 10px; justify-content: space-between;
+            border-top: 1px solid var(--md-outline-variant); padding-top: 20px; flex-wrap: wrap;
+        }
+        .btn-save {
+            height: 44px; padding: 0 24px; background: var(--md-primary); color: white;
+            border: none; border-radius: 22px; font-family: inherit; font-weight: 800;
+            font-size: 1rem; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; box-shadow: var(--md-elevation-1);
+        }
+        .btn-save:hover { background: #00796b; box-shadow: var(--md-elevation-2); }
+
+        /* ===== DELETE MODAL ===== */
+        .delete-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.6); backdrop-filter: blur(2px); z-index: 1000; align-items: center; justify-content: center; padding: 16px; }
+        .delete-overlay.visible { display: flex; }
+        .delete-modal { background: var(--md-surface); border-radius: 24px; padding: 24px; width: 100%; max-width: 400px; text-align: center; box-shadow: var(--md-elevation-2); animation: dialogFadeIn 0.2s ease-out; }
+        @keyframes dialogFadeIn { from { opacity: 0; transform: scale(0.92); } to { opacity: 1; transform: scale(1); } }
+        .delete-modal .material-icons-round { font-size: 56px; color: var(--md-error); margin-bottom: 10px; }
+        .delete-modal h3 { margin: 0 0 10px 0; color: var(--md-on-surface); font-size: 1.3rem; }
+        .delete-modal p { margin: 0 0 24px 0; color: var(--md-on-surface-variant); font-size: 0.95rem; line-height: 1.5; }
+        .delete-modal-actions { display: flex; gap: 12px; justify-content: center; }
+        .delete-modal-actions .md-btn { flex: 1; justify-content: center; height: 42px; font-size: 1rem; }
+
+        /* ===== TOAST & LOADER ===== */
+        #toast {
+            position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%); background: #212121;
+            color: white; padding: 12px 20px; border-radius: 8px; display: none; z-index: 9999;
+            font-weight: 600; font-size: 0.9rem; text-align: center; max-width: 90vw; box-shadow: var(--md-elevation-2);
+        }
+        .loader-overlay { display: none; position: fixed; inset: 0; background: rgba(255,255,255,0.7); z-index: 2000; align-items: center; justify-content: center; flex-direction: column; }
+        .loader-overlay.visible { display: flex; }
+        .spinner { border: 4px solid var(--md-surface-variant); border-top: 4px solid var(--md-primary); border-radius: 50%; width: 40px; height: 40px; animation: spin 1s linear infinite; margin-bottom: 10px;}
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+
+        /* ===== OVERLAY (mobile drawer) ===== */
+        .overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.4); z-index: 150; }
+        .overlay.visible { display: block; }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .top-app-bar { display: flex; }
+            .layout { flex-direction: column; min-height: unset; }
+            .sidebar { position: fixed; top: 0; right: -100%; height: 100%; width: min(var(--sidebar-width), 85vw); transition: right 0.28s; z-index: 160; box-shadow: var(--md-elevation-2); }
+            .sidebar.open { right: 0; }
+            .main-content { padding: 16px 12px; }
+            .github-row { flex-direction: column; }
+            .row-inputs-horizontal { flex-direction: column; }
+            .form-actions { justify-content: stretch; }
+            .form-actions .btn-save, .form-actions .md-btn-error { width: 100%; justify-content: center; margin-bottom: 8px;}
+        }
+
+        /* ===== RICH TEXT EDITOR ===== */
+        .rich-editor {
+            border: 1px solid var(--md-outline-variant);
+            border-radius: 8px;
+            background: var(--md-surface);
+            overflow: hidden;
+            margin-top: 8px;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+        .rich-toolbar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2px;
+            padding: 4px;
+            background: var(--md-surface-variant);
+            border-bottom: 1px solid var(--md-outline-variant);
+            direction: rtl;
+        }
+        .tb-btn {
+            background: none;
+            border: none;
+            color: var(--md-on-surface-variant);
+            cursor: pointer;
+            width: 28px;
+            height: 28px;
+            border-radius: 4px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s, color 0.2s;
+        }
+        .tb-btn:hover {
+            background: rgba(0, 105, 92, 0.1);
+            color: var(--md-primary);
+        }
+        .tb-btn span {
+            font-size: 18px;
+        }
+        .rich-editor-content {
+            padding: 10px 12px;
+            min-height: 80px;
+            max-height: 250px;
+            overflow-y: auto;
+            outline: none;
+            background: var(--md-surface);
+            color: var(--md-on-surface);
+            font-family: inherit;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            text-align: right;
+            direction: rtl;
+        }
+        .rich-editor-content:focus {
+            background: var(--md-surface);
+        }
+        .rich-editor-content[contenteditable=true]:empty:before {
+            content: attr(placeholder);
+            color: var(--md-outline);
+            pointer-events: none;
+            display: block;
+        }
+
+        /* ===== CORRECTIONS EDITING ===== */
+        .correction-card {
+            background: var(--md-surface);
+            border: 1px solid var(--md-outline-variant);
+            border-radius: 10px;
+            padding: 12px;
+            margin-top: 10px;
+            box-shadow: var(--md-elevation-1);
+        }
+        .correction-header {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            margin-bottom: 6px;
+        }
+        .correction-header .corr-title {
+            font-weight: bold;
+            font-size: 0.95rem;
+        }
+        .attachment-row {
+            margin-bottom: 6px;
+        }
+    </style>
+
+    <style>
+        /* ===== PULL-TO-REFRESH (Admin) ===== */
+        #ptr-indicator {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 0;
+            overflow: hidden;
+            background: var(--md-primary);
+            transition: height 0.2s ease;
+            pointer-events: none;
+        }
+        .ptr-spinner {
+            width: 28px;
+            height: 28px;
+            border: 3px solid rgba(255,255,255,0.3);
+            border-top-color: #fff;
+            border-radius: 50%;
+            animation: ptr-spin 0.8s linear infinite;
+        }
+        .ptr-arrow {
+            font-size: 28px;
+            color: white;
+            transition: transform 0.3s ease;
+            font-family: 'Material Icons Round';
+        }
+        .ptr-arrow.flipped { transform: rotate(180deg); }
+        @keyframes ptr-spin { to { transform: rotate(360deg); } }
+
+        /* ===== PWA INSTALL BANNER (Admin) ===== */
+        #pwa-banner {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 5000;
+            padding: 12px 16px;
+            background: #1a2a27;
+            color: #fff;
+            box-shadow: 0 -4px 24px rgba(0,0,0,0.3);
+            animation: slideUp 0.4s cubic-bezier(0.34,1.56,0.64,1);
+            padding-bottom: calc(12px + env(safe-area-inset-bottom));
+        }
+        #pwa-banner.visible { display: block; }
+        @keyframes slideUp {
+            from { transform: translateY(100%); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        .pwa-banner-inner {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .pwa-banner-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            flex-shrink: 0;
+            object-fit: cover;
+        }
+        .pwa-banner-text { flex: 1; }
+        .pwa-banner-text strong {
+            display: block;
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 2px;
+        }
+        .pwa-banner-text span {
+            font-size: 0.78rem;
+            color: rgba(255,255,255,0.75);
+            line-height: 1.4;
+        }
+        .pwa-banner-actions {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+            flex-shrink: 0;
+        }
+        #pwa-install-btn {
+            background: var(--md-primary);
+            color: #fff;
+            border: none;
+            border-radius: 20px;
+            padding: 8px 18px;
+            font-family: 'Cairo', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background 0.2s;
+            white-space: nowrap;
+        }
+        #pwa-install-btn:hover { background: #00897b; }
+        #pwa-dismiss-btn {
+            background: transparent;
+            border: none;
+            color: rgba(255,255,255,0.6);
+            cursor: pointer;
+            padding: 4px;
+            display: flex;
+            align-items: center;
+            font-size: 20px;
+            font-family: 'Material Icons Round';
+        }
+        .pwa-ios-steps { display: flex; flex-direction: column; gap: 4px; margin-top: 6px; }
+        .pwa-ios-step {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.78rem;
+            color: rgba(255,255,255,0.85);
+        }
+        .pwa-ios-step .step-icon {
+            font-size: 16px;
+            font-family: 'Material Icons Round';
+            color: var(--md-primary-container);
+        }
+    </style>
+</head>
+<body>
+
+<!-- Pull-to-Refresh Indicator -->
+<div id="ptr-indicator" role="status" aria-live="polite">
+    <span class="ptr-arrow" id="ptr-arrow">arrow_downward</span>
+</div>
+
+<!-- PWA Install Banner -->
+<div id="pwa-banner" role="complementary" aria-label="تثبيت التطبيق">
+    <div class="pwa-banner-inner">
+        <img src="../icons/apple-touch-icon-admin.png" class="pwa-banner-icon" alt="أيقونة التطبيق">
+        <div class="pwa-banner-text" id="pwa-banner-text">
+            <strong>تثبيت «إعدادات أفضل طبعة»</strong>
+            <span>أضف لوحة الإدارة إلى شاشتك الرئيسية</span>
+        </div>
+        <div class="pwa-banner-actions">
+            <button id="pwa-install-btn">تثبيت</button>
+            <button id="pwa-dismiss-btn" aria-label="إغلاق" class="material-icons-round">close</button>
+        </div>
+    </div>
+</div>
+
+<div class="top-app-bar">
+    <button class="md-icon-btn-top" onclick="toggleSidebar()" aria-label="القائمة">
+        <span class="material-icons-round">menu</span>
+    </button>
+    <h1>لوحة الإدارة</h1>
+    <button class="md-icon-btn-top" onclick="createNewBook()">
+        <span class="material-icons-round">add</span>
+    </button>
+</div>
+
+<div class="overlay" id="overlay" onclick="closeSidebar()"></div>
+
+<div class="loader-overlay" id="loaderOverlay">
+    <div class="spinner"></div>
+    <div style="font-weight: bold; color: var(--md-primary);">جاري الرفع لـ GitHub...</div>
+</div>
+
+<div class="layout">
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <h2><span class="material-icons-round">menu_book</span> الكتب المسجّلة</h2>
+            <div class="search-field">
+                <span class="material-icons-round">search</span>
+                <input type="text" id="adminSearchInput" class="admin-search-box" placeholder="بحث بالعنوان أو المؤلف..." autocomplete="off">
+            </div>
+        </div>
+        <button class="btn-add-new" onclick="createNewBook()">
+            <span class="material-icons-round">add</span> إضافة كتاب جديد
+        </button>
+        <ul class="sidebar-list" id="booksList"></ul>
+    </aside>
+
+    <main class="main-content">
+        <div class="sync-card">
+            <div class="sync-card-title">
+                <span class="material-icons-round">cloud_sync</span> مزامنة البيانات
+            </div>
+            <div class="github-row">
+                <input type="password" id="githubToken" class="github-token-input" placeholder="GitHub Personal Access Token...">
+                <button class="md-btn md-btn-purple" onclick="syncToGitHub()">
+                    <span class="material-icons-round">rocket_launch</span> تحديث الموقع
+                </button>
+            </div>
+            <p style="margin: 0 0 10px; font-size: 0.85rem; color: var(--md-on-surface-variant);">أو احفظ نسخة يدوية:</p>
+            <div class="action-buttons">
+                <button class="md-btn md-btn-secondary" onclick="copyJSON()">
+                    <span class="material-icons-round">content_copy</span> نسخ JSON
+                </button>
+                <button class="md-btn md-btn-primary" onclick="downloadJSON()">
+                    <span class="material-icons-round">download</span> تحميل books.json
+                </button>
+            </div>
+        </div>
+
+        <div class="form-card" id="formContainer">
+            <div class="form-card-title">
+                <span class="material-icons-round" id="formIcon">edit</span>
+                <span id="formTitle">تعديل كتاب</span>
+            </div>
+
+            <form id="bookForm" onsubmit="saveBook(event)">
+                <input type="hidden" id="bookId">
+
+                <div class="form-group">
+                    <label>عنوان الكتاب *</label>
+                    <input type="text" id="title" class="md-input" required autocomplete="off">
+                    <div id="duplicateWarning" class="duplicate-warning">
+                        <span>⚠️ هذا الكتاب مسجّل مسبقاً في قاعدة البيانات!</span>
+                        <button type="button" class="btn-edit-duplicate" id="btnEditDuplicate">فتحه للتعديل</button>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>المؤلف *</label>
+                    <input type="text" id="author" class="md-input" required>
+                </div>
+
+                <div class="form-group">
+                    <label>العلوم / التصنيفات *</label>
+                    <div class="sub-container">
+                        <div id="categoriesList"></div>
+                        <button type="button" class="btn-add-item" onclick="addCategoryInput('categoriesList')">
+                            <span class="material-icons-round" style="font-size:14px">add</span> إضافة علم آخر
+                        </button>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>ملاحظات عامة (اختياري)</label>
+                    <div class="rich-editor">
+                        <div class="rich-toolbar">
+                            <button type="button" class="tb-btn" onmousedown="event.preventDefault(); document.execCommand('bold', false, null);" title="خط عريض"><span class="material-icons-round">format_bold</span></button>
+                            <button type="button" class="tb-btn" onmousedown="event.preventDefault(); document.execCommand('italic', false, null);" title="خط مائل"><span class="material-icons-round">format_italic</span></button>
+                            <button type="button" class="tb-btn" onmousedown="event.preventDefault(); document.execCommand('underline', false, null);" title="تحته خط"><span class="material-icons-round">format_underlined</span></button>
+                            <button type="button" class="tb-btn" onmousedown="event.preventDefault(); document.execCommand('insertUnorderedList', false, null);" title="قائمة نقطية"><span class="material-icons-round">format_list_bulleted</span></button>
+                            <button type="button" class="tb-btn" onmousedown="event.preventDefault(); const url = prompt('أدخل رابط URL:'); if(url) document.execCommand('createLink', false, url);" title="إضافة رابط"><span class="material-icons-round">link</span></button>
+                            <button type="button" class="tb-btn" onmousedown="event.preventDefault(); document.execCommand('unlink', false, null);" title="إزالة الرابط"><span class="material-icons-round">link_off</span></button>
+                            <button type="button" class="tb-btn" onmousedown="event.preventDefault(); document.execCommand('removeFormat', false, null);" title="مسح التنسيق"><span class="material-icons-round">format_clear</span></button>
+                        </div>
+                        <div id="notes" class="rich-editor-content" contenteditable="true" placeholder="تظهر أسفل تفاصيل الكتاب للزوار..."></div>
+                    </div>
+                </div>
+
+                <div class="section-header">
+                    <span class="material-icons-round">verified</span> أفضل الطبعات المعتمدة
+                    <span style="font-size:0.78rem;color:var(--md-outline);font-weight:400;margin-right:4px;">(اسحب ☰ للترتيب)</span>
+                </div>
+                <div id="bestEditions"></div>
+                <button type="button" class="btn-add-row" onclick="addEditionRow('bestEditions')">
+                    <span class="material-icons-round" style="font-size:14px;">add</span> إضافة طبعة معتمدة
+                </button>
+
+                <div class="section-header">
+                    <span class="material-icons-round">rule</span> طبعات بديلة جيدة
+                </div>
+                <div id="altEditions"></div>
+                <button type="button" class="btn-add-row" onclick="addEditionRow('altEditions')">
+                    <span class="material-icons-round" style="font-size:14px;">add</span> إضافة طبعة بديلة
+                </button>
+
+                <div class="section-header">
+                    <span class="material-icons-round">link</span> روابط مفيدة
+                </div>
+                <div id="links"></div>
+                <button type="button" class="btn-add-row" onclick="addLinkRow('links')">
+                    <span class="material-icons-round" style="font-size:14px;">add</span> إضافة رابط
+                </button>
+
+                <div class="form-actions">
+                    <button type="button" id="btnDeleteBook" class="md-btn md-btn-error" style="height: 44px; display: none;" onclick="openDeleteModal()">
+                        <span class="material-icons-round">delete_forever</span> حذف الكتاب
+                    </button>
+                    <div style="flex: 1;"></div>
+                    <button type="submit" class="btn-save">
+                        <span class="material-icons-round">save</span> حفظ التعديلات
+                    </button>
+                </div>
+            </form>
+        </div>
+    </main>
+</div>
+
+<div id="deleteModal" class="delete-overlay">
+    <div class="delete-modal">
+        <span class="material-icons-round">warning</span>
+        <h3>تأكيد الحذف</h3>
+        <p>هل أنت متأكد أنك تريد حذف هذا الكتاب نهائياً من الموسوعة؟ لا يمكن التراجع عن هذه الخطوة.</p>
+        <div class="delete-modal-actions">
+            <button class="md-btn md-btn-secondary" onclick="closeDeleteModal()">إلغاء</button>
+            <button class="md-btn md-btn-error" onclick="executeDeleteBook()">نعم، احذف الكتاب</button>
+        </div>
+    </div>
+</div>
+
+<div id="toast"></div>
+
+<script>
+    let booksData = [];
+    let sciencesData = [];
+
+    // Configuration GitHub pour l'upload d'images
+    const GH_OWNER = 'arabic-app';
+    const GH_REPO = 'tabaat';
+
+    new Sortable(document.getElementById('bestEditions'), { handle: '.drag-handle', animation: 150, ghostClass: 'sortable-ghost' });
+    new Sortable(document.getElementById('altEditions'),  { handle: '.drag-handle', animation: 150, ghostClass: 'sortable-ghost' });
+    new Sortable(document.getElementById('links'),        { handle: '.drag-handle', animation: 150, ghostClass: 'sortable-ghost' });
+
+    Promise.all([
+        fetch('../books.json?v=' + Date.now()).then(r => { if (!r.ok) throw new Error('not found'); return r.json(); }).catch(() => { showToast('تنبيه: ملف books.json غير موجود.'); return []; }),
+        fetch('../sciences.json?v=' + Date.now()).then(r => { if (!r.ok) throw new Error('not found'); return r.json(); }).catch(() => { return []; })
+    ]).then(([books, sciences]) => {
+        booksData = books;
+        sciencesData = sciences;
+        renderSidebar();
+    });
+
+    /* ---- SIDEBAR ---- */
+    function renderSidebar(searchTerm = '') {
+        const list = document.getElementById('booksList');
+        list.innerHTML = '';
+        const term = String(searchTerm).trim().toLowerCase();
+        const currentId = document.getElementById('bookId').value;
+
+        const sortedBooks = [...booksData].sort((a, b) => (a.title || '').localeCompare(b.title || '', 'ar'));
+
+        sortedBooks
+            .filter(b => (b.title && b.title.toLowerCase().includes(term)) || (b.author && b.author.toLowerCase().includes(term)))
+            .forEach(book => {
+                const li = document.createElement('li');
+                li.textContent = book.title || 'بدون عنوان';
+                if (currentId && parseInt(currentId) === book.id) li.classList.add('active');
+                li.onclick = () => { loadBookIntoForm(book.id, li); closeSidebar(); };
+                list.appendChild(li);
+            });
+    }
+
+    document.getElementById('adminSearchInput').addEventListener('input', e => renderSidebar(e.target.value));
+
+    document.getElementById('title').addEventListener('blur', function () {
+        const val = this.value.trim();
+        const currentId = document.getElementById('bookId').value;
+        const warn = document.getElementById('duplicateWarning');
+        if (!currentId && val) {
+            const dup = booksData.find(b => b.title && b.title.trim().toLowerCase() === val.toLowerCase());
+            if (dup) {
+                warn.style.display = 'flex';
+                document.getElementById('btnEditDuplicate').onclick = () => {
+                    warn.style.display = 'none';
+                    const li = [...document.querySelectorAll('.sidebar-list li')].find(l => l.textContent === dup.title);
+                    loadBookIntoForm(dup.id, li);
+                };
+            } else { warn.style.display = 'none'; }
+        } else { warn.style.display = 'none'; }
+    });
+
+    /* ---- MOBILE DRAWER ---- */
+    function toggleSidebar() {
+        const s = document.getElementById('sidebar');
+        s.classList.contains('open') ? closeSidebar() : openSidebar();
+    }
+    function openSidebar() {
+        document.getElementById('sidebar').classList.add('open');
+        document.getElementById('overlay').classList.add('visible');
+    }
+    function closeSidebar() {
+        document.getElementById('sidebar').classList.remove('open');
+        document.getElementById('overlay').classList.remove('visible');
+    }
+
+    /* ---- DRAG AND DROP BINDING ---- */
+    function bindDragAndDrop(containerGroup, fileInput, dirPath = 'images', allowedExtensions = ['png', 'jpg', 'jpeg', 'webp']) {
+        // Empêche le comportement par défaut (qui ouvrirait l'image dans le navigateur)
+        ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+            containerGroup.addEventListener(eventName, preventDefaults, false);
+        });
+
+        function preventDefaults(e) { e.preventDefault(); e.stopPropagation(); }
+
+        ['dragenter', 'dragover'].forEach(eventName => {
+            containerGroup.addEventListener(eventName, () => containerGroup.classList.add('drag-over'), false);
+        });
+
+        ['dragleave', 'drop'].forEach(eventName => {
+            containerGroup.addEventListener(eventName, () => containerGroup.classList.remove('drag-over'), false);
+        });
+
+        containerGroup.addEventListener('drop', (e) => {
+            const dt = e.dataTransfer;
+            const files = dt.files;
+            
+            if (files && files.length > 0) {
+                const ext = files[0].name.split('.').pop().toLowerCase();
+                if (allowedExtensions.includes(ext)) {
+                    fileInput.files = files; // Transférer le fichier à l'input invisible
+                    uploadFileToGitHub(fileInput, dirPath, allowedExtensions); // Lancer l'upload
+                } else {
+                    alert("الملف غير مدعوم. الامتدادات المسموحة: " + allowedExtensions.join(', '));
+                }
+            }
+        }, false);
+    }
+
+    /* ---- ROWS ---- */
+    window.addCategoryInput = function (containerId, val = '') {
+        const list = document.getElementById(containerId);
+        const div = document.createElement('div');
+        div.className = 'dynamic-input-group';
+
+        let options = [...sciencesData];
+        if (val && !options.includes(val)) options.unshift(val);
+
+        const optionsHTML = options.map(s =>
+            `<option value="${s}"${s === val ? ' selected' : ''}>${s}</option>`
+        ).join('');
+
+        div.innerHTML = `
+            <select class="md-input cat-input" required>
+                <option value="" disabled${val ? '' : ' selected'}>اختر العلم من القائمة...</option>
+                ${optionsHTML}
+            </select>
+            <button type="button" class="btn-remove-item" onclick="if(this.parentElement.parentElement.children.length > 1) this.parentElement.remove()" title="حذف">−</button>`;
+        list.appendChild(div);
+    };
+
+    window.addImageInputToEdition = function (btn) {
+        const list = btn.previousElementSibling;
+        const div = document.createElement('div');
+        div.className = 'dynamic-input-group';
+        div.innerHTML = `
+            <input type="text" class="md-input ed-image-url" placeholder="اسحب الصورة هنا أو اضغط رفع... أو ضع رابطاً" style="direction:ltr">
+            <input type="file" accept="image/png, image/jpeg, image/webp" style="display:none;" onchange="uploadFileToGitHub(this, 'images', ['png', 'jpg', 'jpeg', 'webp'])">
+            <button type="button" class="btn-upload-img" onclick="this.previousElementSibling.click()" title="رفع صورة"><span class="material-icons-round">file_upload</span></button>
+            <button type="button" class="btn-remove-item" onclick="this.parentElement.remove()">−</button>`;
+        list.appendChild(div);
+        
+        // Attacher les événements Drag & Drop au nouveau groupe
+        bindDragAndDrop(div, div.querySelector('input[type="file"]'));
+    };
+
+    window.renderCorrectionCard = function(container, corrTitle = '', corrBody = '', attachments = []) {
+        const card = document.createElement('div');
+        card.className = 'correction-card';
+        
+        card.innerHTML = `
+            <div class="correction-header">
+                <input type="text" class="md-input corr-title" placeholder="عنوان التصويب (مثال: خطأ في صفحة 25)..." value="${corrTitle}" required>
+                <button type="button" class="btn-remove-item" onclick="this.closest('.correction-card').remove()" title="حذف التصويب">−</button>
+            </div>
+            <div class="rich-editor" style="margin-top: 6px;">
+                <div class="rich-toolbar">
+                    <button type="button" class="tb-btn" onmousedown="event.preventDefault(); document.execCommand('bold', false, null);" title="خط عريض"><span class="material-icons-round">format_bold</span></button>
+                    <button type="button" class="tb-btn" onmousedown="event.preventDefault(); document.execCommand('italic', false, null);" title="خط مائل"><span class="material-icons-round">format_italic</span></button>
+                    <button type="button" class="tb-btn" onmousedown="event.preventDefault(); document.execCommand('underline', false, null);" title="تحته خط"><span class="material-icons-round">format_underlined</span></button>
+                    <button type="button" class="tb-btn" onmousedown="event.preventDefault(); document.execCommand('insertUnorderedList', false, null);" title="قائمة نقطية"><span class="material-icons-round">format_list_bulleted</span></button>
+                    <button type="button" class="tb-btn" onmousedown="event.preventDefault(); const url = prompt('أدخل رابط URL:'); if(url) document.execCommand('createLink', false, url);" title="إضافة رابط"><span class="material-icons-round">link</span></button>
+                    <button type="button" class="tb-btn" onmousedown="event.preventDefault(); document.execCommand('unlink', false, null);" title="إزالة الرابط"><span class="material-icons-round">link_off</span></button>
+                    <button type="button" class="tb-btn" onmousedown="event.preventDefault(); document.execCommand('removeFormat', false, null);" title="مسح التنسيق"><span class="material-icons-round">format_clear</span></button>
+                </div>
+                <div class="rich-editor-content corr-body" contenteditable="true" placeholder="تفاصيل التصويب...">${corrBody}</div>
+            </div>
+            <div class="sub-container" style="margin-top: 8px; background: var(--md-background)">
+                <div class="sub-container-title">
+                    <span class="material-icons-round" style="font-size:14px;color:var(--md-primary)">attachment</span>
+                    الملحقات (صور أو ملفات PDF):
+                </div>
+                <div class="attachments-list"></div>
+                <button type="button" class="btn-add-item" onclick="window.addNewAttachmentRow(this)">
+                    <span class="material-icons-round" style="font-size:14px">attach_file</span> إضافة ملحق
+                </button>
+            </div>
+        `;
+        container.appendChild(card);
+        
+        const attachListContainer = card.querySelector('.attachments-list');
+        (attachments || []).forEach(attach => {
+            renderAttachmentRow(attachListContainer, attach.title, attach.url);
+        });
+    };
+
+    window.addNewCorrectionRow = function(btn) {
+        const container = btn.previousElementSibling;
+        renderCorrectionCard(container);
+    };
+
+    window.renderAttachmentRow = function(container, title = '', url = '') {
+        const div = document.createElement('div');
+        div.className = 'attachment-row dynamic-input-group';
+        
+        div.innerHTML = `
+            <input type="text" class="md-input attach-title" placeholder="عنوان الملحق (مثال: صورة الصفحة قبل التصحيح)..." value="${title}" style="flex: 1;" required>
+            <input type="text" class="md-input attach-url" placeholder="رابط الملف أو اسحب/ارفع..." value="${url}" style="flex: 1.5; direction:ltr;" required>
+            <input type="file" accept="image/*,application/pdf" style="display:none;" onchange="uploadFileToGitHub(this, 'corrections', ['png', 'jpg', 'jpeg', 'webp', 'pdf'])">
+            <button type="button" class="btn-upload-img" onclick="this.previousElementSibling.click()" title="رفع ملف (صورة أو PDF)"><span class="material-icons-round">file_upload</span></button>
+            <button type="button" class="btn-remove-item" onclick="this.parentElement.remove()" title="حذف الملحق">−</button>
+        `;
+        container.appendChild(div);
+        
+        const fileInput = div.querySelector('input[type="file"]');
+        bindDragAndDrop(div, fileInput, 'corrections', ['png', 'jpg', 'jpeg', 'webp', 'pdf']);
+    };
+
+    window.addNewAttachmentRow = function(btn) {
+        const container = btn.previousElementSibling;
+        renderAttachmentRow(container);
+    };
+
+    function addEditionRow(containerId, name = '', imagesArray = [], notes = '', corrections = []) {
+        const container = document.getElementById(containerId);
+        const row = document.createElement('div');
+        row.className = 'dynamic-row';
+
+        let imgs = Array.isArray(imagesArray) ? imagesArray : (imagesArray ? [imagesArray] : []);
+        if (imgs.length === 0) imgs = [''];
+
+        const imgsHTML = imgs.map(img => `
+            <div class="dynamic-input-group">
+                <input type="text" class="md-input ed-image-url" placeholder="اسحب الصورة هنا أو اضغط رفع... أو ضع رابطاً" value="${img}" style="direction:ltr">
+                <input type="file" accept="image/png, image/jpeg, image/webp" style="display:none;" onchange="uploadFileToGitHub(this, 'images', ['png', 'jpg', 'jpeg', 'webp'])">
+                <button type="button" class="btn-upload-img" onclick="this.previousElementSibling.click()" title="رفع صورة من الجهاز"><span class="material-icons-round">file_upload</span></button>
+                <button type="button" class="btn-remove-item" onclick="this.parentElement.remove()" title="حذف الرابط">−</button>
+            </div>`).join('');
+
+        row.innerHTML = `
+            <span class="drag-handle" title="اسحب للترتيب">☰</span>
+            <div class="row-inputs">
+                <input type="text" class="md-input ed-name" placeholder="اسم دار النشر أو المحقق *" value="${name}" required>
+                <div class="sub-container">
+                    <div class="sub-container-title">
+                        <span class="material-icons-round" style="font-size:14px;color:var(--md-primary)">image</span>
+                        صور الطبعة:
+                    </div>
+                    <div class="images-list">${imgsHTML}</div>
+                    <button type="button" class="btn-add-item" onclick="addImageInputToEdition(this)">
+                        <span class="material-icons-round" style="font-size:14px">add_photo_alternate</span> إضافة حقل صورة
+                    </button>
+                </div>
+                <div class="rich-editor">
+                    <div class="rich-toolbar">
+                        <button type="button" class="tb-btn" onmousedown="event.preventDefault(); document.execCommand('bold', false, null);" title="خط عريض"><span class="material-icons-round">format_bold</span></button>
+                        <button type="button" class="tb-btn" onmousedown="event.preventDefault(); document.execCommand('italic', false, null);" title="خط مائل"><span class="material-icons-round">format_italic</span></button>
+                        <button type="button" class="tb-btn" onmousedown="event.preventDefault(); document.execCommand('underline', false, null);" title="تحته خط"><span class="material-icons-round">format_underlined</span></button>
+                        <button type="button" class="tb-btn" onmousedown="event.preventDefault(); document.execCommand('insertUnorderedList', false, null);" title="قائمة نقطية"><span class="material-icons-round">format_list_bulleted</span></button>
+                        <button type="button" class="tb-btn" onmousedown="event.preventDefault(); const url = prompt('أدخل رابط URL:'); if(url) document.execCommand('createLink', false, url);" title="إضافة رابط"><span class="material-icons-round">link</span></button>
+                        <button type="button" class="tb-btn" onmousedown="event.preventDefault(); document.execCommand('unlink', false, null);" title="إزالة الرابط"><span class="material-icons-round">link_off</span></button>
+                        <button type="button" class="tb-btn" onmousedown="event.preventDefault(); document.execCommand('removeFormat', false, null);" title="مسح التنسيق"><span class="material-icons-round">format_clear</span></button>
+                    </div>
+                    <div class="rich-editor-content ed-notes" contenteditable="true" placeholder="ملاحظات خاصة بهذه الطبعة (تظهر كـ ℹ في الموقع)...">${notes}</div>
+                </div>
+                <div class="sub-container" style="margin-top: 10px;">
+                    <div class="sub-container-title" style="margin-bottom: 8px;">
+                        <span class="material-icons-round" style="font-size:14px;color:var(--md-primary)">report_problem</span>
+                        تصويبات الطبعة (أخطاء مطبعية أو علمية):
+                    </div>
+                    <div class="corrections-list"></div>
+                    <button type="button" class="btn-add-item" onclick="window.addNewCorrectionRow(this)" style="margin-top: 6px;">
+                        <span class="material-icons-round" style="font-size:14px">add_alert</span> إضافة تصويب
+                    </button>
+                </div>
+            </div>
+            <button type="button" class="btn-remove" onclick="this.parentElement.remove()" title="حذف">
+                <span class="material-icons-round">delete</span>
+            </button>`;
+        container.appendChild(row);
+
+        const corrListContainer = row.querySelector('.corrections-list');
+        (corrections || []).forEach(corr => {
+            renderCorrectionCard(corrListContainer, corr.title, corr.body, corr.attachments);
+        });
+
+        // Attacher le drag and drop à tous les champs d'images créés dans cette ligne
+        const imageGroups = row.querySelectorAll('.dynamic-input-group');
+        imageGroups.forEach(group => {
+            const fileInput = group.querySelector('input[type="file"]');
+            if(fileInput) bindDragAndDrop(group, fileInput);
+        });
+    }
+
+    function addLinkRow(containerId, title = '', url = '') {
+        const container = document.getElementById(containerId);
+        const row = document.createElement('div');
+        row.className = 'dynamic-row';
+        row.innerHTML = `
+            <span class="drag-handle" title="اسحب للترتيب">☰</span>
+            <div class="row-inputs-horizontal">
+                <input type="text" class="md-input link-title" placeholder="عنوان الرابط..." value="${title}" required>
+                <input type="text" class="md-input link-url"  placeholder="الرابط الكامل (URL)..." value="${url}" required style="direction:ltr">
+            </div>
+            <button type="button" class="btn-remove" onclick="this.parentElement.remove()" title="حذف">
+                <span class="material-icons-round">delete</span>
+            </button>`;
+        container.appendChild(row);
+    }
+
+    /* ---- GITHUB FILE UPLOAD ---- */
+    async function uploadFileToGitHub(fileInput, dirPath = 'images', allowedExtensions = ['png', 'jpg', 'jpeg', 'webp']) {
+        const file = fileInput.files[0];
+        if (!file) return;
+
+        // Check extension
+        const ext = file.name.split('.').pop().toLowerCase();
+        if (!allowedExtensions.includes(ext)) {
+            alert("الرجاء اختيار ملف ذو امتداد مسموح: " + allowedExtensions.join(', '));
+            fileInput.value = '';
+            return;
+        }
+
+        const token = document.getElementById('githubToken').value.trim();
+        if (!token) {
+            alert('⚠️ يرجى إدخال GitHub Token في الأعلى لتمكين الرفع!');
+            fileInput.value = ''; 
+            return;
+        }
+
+        const textInput = fileInput.previousElementSibling;
+        const reader = new FileReader();
+        
+        reader.onload = async function(event) {
+            const base64Content = event.target.result.split(',')[1];
+            const uniqueName = Date.now() + '-' + file.name.replace(/[^a-zA-Z0-9.]/g, '');
+            const filePath = dirPath + '/' + uniqueName;
+            const apiUrl = `https://api.github.com/repos/${GH_OWNER}/${GH_REPO}/contents/${filePath}`;
+
+            document.getElementById('loaderOverlay').classList.add('visible');
+
+            try {
+                const response = await fetch(apiUrl, {
+                    method: 'PUT',
+                    headers: {
+                        'Authorization': `token ${token}`,
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        message: `Upload file: ${uniqueName} to ${dirPath}`,
+                        content: base64Content
+                    })
+                });
+
+                if (response.ok) {
+                    const publicUrl = `https://${GH_OWNER}.github.io/${GH_REPO}/${filePath}`;
+                    textInput.value = publicUrl;
+                    showToast('✅ تم رفع الملف بنجاح!');
+                } else {
+                    const err = await response.json();
+                    alert('❌ فشل الرفع: ' + err.message);
+                }
+            } catch (error) {
+                alert('❌ حدث خطأ أثناء الاتصال بـ GitHub.');
+            } finally {
+                document.getElementById('loaderOverlay').classList.remove('visible');
+                fileInput.value = ''; 
+            }
+        };
+        reader.readAsDataURL(file);
+    }
+
+    /* ---- CREATE / LOAD ---- */
+    function createNewBook() {
+        document.getElementById('formContainer').style.display = 'block';
+        document.getElementById('formTitle').textContent = 'إضافة كتاب جديد';
+        document.getElementById('formIcon').textContent = 'add_circle';
+        document.getElementById('bookForm').reset();
+        document.getElementById('notes').innerHTML = '';
+        document.getElementById('bookId').value = '';
+        document.getElementById('duplicateWarning').style.display = 'none';
+        
+        document.getElementById('btnDeleteBook').style.display = 'none';
+
+        document.getElementById('categoriesList').innerHTML = '';
+        addCategoryInput('categoriesList'); 
+
+        document.querySelectorAll('.sidebar-list li').forEach(li => li.classList.remove('active'));
+        document.getElementById('bestEditions').innerHTML = '';
+        document.getElementById('altEditions').innerHTML = '';
+        document.getElementById('links').innerHTML = '';
+        addEditionRow('bestEditions');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        closeSidebar();
+    }
+
+    function loadBookIntoForm(id, liElement) {
+        document.querySelectorAll('.sidebar-list li').forEach(li => li.classList.remove('active'));
+        if (liElement) liElement.classList.add('active');
+
+        const book = booksData.find(b => b.id === id);
+        if (!book) return;
+
+        document.getElementById('formContainer').style.display = 'block';
+        document.getElementById('formTitle').textContent = 'تعديل: ' + book.title;
+        document.getElementById('formIcon').textContent = 'edit';
+        document.getElementById('duplicateWarning').style.display = 'none';
+        
+        document.getElementById('btnDeleteBook').style.display = 'inline-flex';
+
+        document.getElementById('bookId').value = book.id;
+        document.getElementById('title').value = book.title || '';
+        document.getElementById('author').value = book.author || '';
+        document.getElementById('notes').innerHTML = book.notes || '';
+
+        document.getElementById('categoriesList').innerHTML = '';
+        let cats = Array.isArray(book.category) ? book.category : (book.category ? [book.category] : []);
+        if (cats.length === 0) cats = [''];
+        cats.forEach(c => addCategoryInput('categoriesList', c));
+
+        const loadEditions = (cid, arr) => {
+            const c = document.getElementById(cid);
+            c.innerHTML = '';
+            (arr || []).forEach(ed => {
+                const imgs = ed.images ? ed.images : (ed.image ? [ed.image] : []);
+                addEditionRow(cid, ed.name, imgs, ed.notes || '', ed.corrections || []);
+            });
+        };
+        loadEditions('bestEditions', book.best_editions);
+        loadEditions('altEditions', book.alt_editions);
+
+        const lc = document.getElementById('links');
+        lc.innerHTML = '';
+        (book.links || []).forEach(l => addLinkRow('links', l.title, l.url));
+
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    /* ---- SAVE & DELETE ---- */
+    function saveBook(e) {
+        e.preventDefault();
+        let id = document.getElementById('bookId').value;
+        id = id ? parseInt(id) : (booksData.length > 0 ? Math.max(...booksData.map(b => b.id)) + 1 : 1);
+
+        const catInputs = [...document.querySelectorAll('#categoriesList .cat-input')];
+        const categoriesArray = catInputs.map(i => i.value.trim()).filter(Boolean);
+
+        const newBook = {
+            id,
+            title:    document.getElementById('title').value.trim(),
+            author:   document.getElementById('author').value.trim(),
+            category: categoriesArray,
+            notes:    (() => {
+                let n = document.getElementById('notes').innerHTML.trim();
+                return (n === '<br>' || n === '<div><br></div>' || n === '<p><br></p>') ? '' : n;
+            })(),
+            best_editions: [], alt_editions: [], links: []
+        };
+
+        const cleanHtml = h => (h === '<br>' || h === '<div><br></div>' || h === '<p><br></p>') ? '' : h;
+        const collectEditions = (cid, arr) => {
+            document.querySelectorAll(`#${cid} .dynamic-row`).forEach(row => {
+                const images = [...row.querySelectorAll('.ed-image-url')].map(i => i.value.trim()).filter(Boolean);
+                let notesHtml = cleanHtml(row.querySelector('.ed-notes').innerHTML.trim());
+                const corrections = [...row.querySelectorAll('.correction-card')].map(card => {
+                    const title = card.querySelector('.corr-title').value.trim();
+                    let body = cleanHtml(card.querySelector('.corr-body').innerHTML.trim());
+                    const attachments = [...card.querySelectorAll('.attachment-row')].map(att => ({
+                        title: att.querySelector('.attach-title').value.trim(),
+                        url:   att.querySelector('.attach-url').value.trim()
+                    })).filter(a => a.title || a.url);
+                    return { title, body, attachments };
+                }).filter(c => c.title || c.body || c.attachments.length);
+                arr.push({ name: row.querySelector('.ed-name').value.trim(), images, notes: notesHtml, corrections });
+            });
+        };
+        collectEditions('bestEditions', newBook.best_editions);
+        collectEditions('altEditions', newBook.alt_editions);
+        document.querySelectorAll('#links .dynamic-row').forEach(row => {
+            newBook.links.push({ title: row.querySelector('.link-title').value.trim(), url: row.querySelector('.link-url').value.trim() });
+        });
+
+        const idx = booksData.findIndex(b => b.id === id);
+        if (idx >= 0) booksData[idx] = newBook; else booksData.push(newBook);
+
+        document.getElementById('bookId').value = id;
+        document.getElementById('btnDeleteBook').style.display = 'inline-flex';
+        
+        renderSidebar(document.getElementById('adminSearchInput').value);
+        showToast('💾 تم الحفظ في الذاكرة. لا تنسَ تحديث الموقع ليتم الرفع!');
+    }
+
+    function openDeleteModal() { document.getElementById('deleteModal').classList.add('visible'); }
+    function closeDeleteModal() { document.getElementById('deleteModal').classList.remove('visible'); }
+
+    function executeDeleteBook() {
+        const id = parseInt(document.getElementById('bookId').value);
+        if (!id) return;
+
+        booksData = booksData.filter(b => b.id !== id);
+        closeDeleteModal();
+        renderSidebar(document.getElementById('adminSearchInput').value);
+        document.getElementById('formContainer').style.display = 'none';
+        
+        showToast('🗑️ تم حذف الكتاب بنجاح. لا تنسَ التحديث!');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    /* ---- EXPORT / SYNC ---- */
+    const getJSONString = () => JSON.stringify(booksData, null, 2);
+
+    function copyJSON() { navigator.clipboard.writeText(getJSONString()).then(() => showToast('📋 تم نسخ JSON إلى الحافظة.')); }
+    
+    function downloadJSON() {
+        const a = Object.assign(document.createElement('a'), {
+            href: URL.createObjectURL(new Blob([getJSONString()], { type: 'application/json' })),
+            download: '../books.json'
+        });
+        document.body.appendChild(a); a.click(); document.body.removeChild(a);
+        showToast('💾 تم التحميل.');
+    }
+
+    function utf8_to_b64(str) { return btoa(unescape(encodeURIComponent(str))); }
+
+    async function syncToGitHub() {
+        const token = document.getElementById('githubToken').value.trim();
+        if (!token) { showToast('⚠️ يرجى إدخال رمز GitHub Token أولاً!'); return; }
+        localStorage.setItem('github_token_secured', token);
+
+        const path = '../books.json';
+        const apiUrl = `https://api.github.com/repos/${GH_OWNER}/${GH_REPO}/contents/${path}`;
+        
+        document.getElementById('loaderOverlay').classList.add('visible');
+
+        try {
+            let sha = '';
+            const getRes = await fetch(apiUrl, { headers: { Authorization: `token ${token}` } });
+            if (getRes.ok) sha = (await getRes.json()).sha;
+
+            const putRes = await fetch(apiUrl, {
+                method: 'PUT',
+                headers: { Authorization: `token ${token}`, 'Content-Type': 'application/json' },
+                body: JSON.stringify({ message: 'تحديث قاعدة البيانات عبر لوحة الإدارة', content: utf8_to_b64(getJSONString()), sha })
+            });
+
+            if (putRes.ok) showToast('🚀 تم الرفع إلى GitHub بنجاح!');
+            else { const err = await putRes.json(); showToast('❌ فشل: ' + err.message); }
+        } catch (err) {
+            showToast('❌ خطأ في الاتصال.');
+        } finally {
+            document.getElementById('loaderOverlay').classList.remove('visible');
+        }
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+        const saved = localStorage.getItem('github_token_secured');
+        if (saved) document.getElementById('githubToken').value = saved;
+    });
+
+    /* ---- TOAST ---- */
+    let toastTimer;
+    function showToast(msg) {
+        const t = document.getElementById('toast');
+        t.textContent = msg;
+        t.style.display = 'block';
+        clearTimeout(toastTimer);
+        toastTimer = setTimeout(() => t.style.display = 'none', 4500);
+    }
+</script>
+
+<!-- ===== PWA + PULL-TO-REFRESH (Admin) ===== -->
+<script>
+(function() {
+    'use strict';
+
+    /* ── 1. SERVICE WORKER ── */
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+            navigator.serviceWorker.register('../sw.js', { scope: '../' })
+                .then(reg => {
+                    reg.addEventListener('updatefound', () => {
+                        const nw = reg.installing;
+                        nw.addEventListener('statechange', () => {
+                            if (nw.state === 'installed' && navigator.serviceWorker.controller) {
+                                nw.postMessage({ type: 'SKIP_WAITING' });
+                            }
+                        });
+                    });
+                })
+                .catch(err => console.warn('[PWA Admin] SW:', err));
+        });
+    }
+
+    /* ── 2. DÉTECTION OS ── */
+    const ua = navigator.userAgent || '';
+    const isIOS = /iP(hone|od|ad)/.test(ua);
+    const isAndroid = /Android/.test(ua);
+    const isInStandalone = window.matchMedia('(display-mode: standalone)').matches
+        || window.navigator.standalone === true;
+
+    /* ── 3. INSTALL BANNER ── */
+    const banner     = document.getElementById('pwa-banner');
+    const installBtn = document.getElementById('pwa-install-btn');
+    const dismissBtn = document.getElementById('pwa-dismiss-btn');
+    const bannerText = document.getElementById('pwa-banner-text');
+    let deferredPrompt = null;
+    const DISMISS_KEY = 'pwa_dismissed_admin';
+
+    function showBanner() {
+        if (localStorage.getItem(DISMISS_KEY)) return;
+        banner.classList.add('visible');
+    }
+    function hideBanner() { banner.classList.remove('visible'); }
+
+    dismissBtn.addEventListener('click', () => {
+        hideBanner();
+        localStorage.setItem(DISMISS_KEY, '1');
+    });
+
+    if (!isInStandalone) {
+        if (isIOS) {
+            bannerText.innerHTML = `
+                <strong>أضف لوحة الإدارة لشاشتك</strong>
+                <div class="pwa-ios-steps">
+                    <div class="pwa-ios-step">
+                        <span class="step-icon material-icons-round">ios_share</span>
+                        <span>اضغط على زر المشاركة ثم</span>
+                    </div>
+                    <div class="pwa-ios-step">
+                        <span class="step-icon material-icons-round">add_box</span>
+                        <span>اختر «إضافة إلى الشاشة الرئيسية»</span>
+                    </div>
+                </div>`;
+            installBtn.style.display = 'none';
+            setTimeout(showBanner, 2000);
+        } else {
+            window.addEventListener('beforeinstallprompt', (e) => {
+                e.preventDefault();
+                deferredPrompt = e;
+                setTimeout(showBanner, 1500);
+            });
+            installBtn.addEventListener('click', async () => {
+                if (!deferredPrompt) return;
+                deferredPrompt.prompt();
+                const { outcome } = await deferredPrompt.userChoice;
+                deferredPrompt = null;
+                hideBanner();
+                if (outcome === 'accepted') localStorage.setItem(DISMISS_KEY, '1');
+            });
+            window.addEventListener('appinstalled', () => {
+                hideBanner();
+                deferredPrompt = null;
+            });
+        }
+    }
+
+    /* ── 4. PULL-TO-REFRESH ── */
+    const ptrIndicator = document.getElementById('ptr-indicator');
+    const ptrArrow     = document.getElementById('ptr-arrow');
+    const PTR_THRESHOLD = 80;
+    const PTR_MAX = 110;
+    let touchStartY = 0, pulling = false, ptTriggered = false;
+
+    document.addEventListener('touchstart', (e) => {
+        if (window.scrollY === 0 && e.touches.length === 1) {
+            touchStartY = e.touches[0].clientY;
+            pulling = true; ptTriggered = false;
+        }
+    }, { passive: true });
+
+    document.addEventListener('touchmove', (e) => {
+        if (!pulling) return;
+        const dy = e.touches[0].clientY - touchStartY;
+        if (dy <= 0) { pulling = false; return; }
+        const progress = Math.min(dy, PTR_MAX);
+        ptrIndicator.style.height = Math.min(progress * 0.6, 60) + 'px';
+        if (!ptrIndicator.querySelector('.ptr-spinner')) {
+            ptrArrow.style.display = 'block';
+            ptrArrow.classList.toggle('flipped', dy >= PTR_THRESHOLD);
+        }
+        if (dy >= PTR_THRESHOLD && !ptTriggered) ptTriggered = true;
+    }, { passive: true });
+
+    document.addEventListener('touchend', () => {
+        if (!pulling) return;
+        pulling = false;
+        if (ptTriggered) {
+            ptrArrow.style.display = 'none';
+            const spinner = document.createElement('span');
+            spinner.className = 'ptr-spinner';
+            ptrIndicator.appendChild(spinner);
+            ptrIndicator.style.height = '60px';
+            setTimeout(() => location.reload(), 600);
+        } else {
+            ptrIndicator.style.height = '0';
+            ptrArrow.classList.remove('flipped');
+        }
+    }, { passive: true });
+
+})();
+</script>
+</body>
+</html>
