@@ -1264,25 +1264,28 @@
     "notes": "",
     "best_editions": [
       {
-        "name": "دار ابن الجوزي (ابن خزيمة)",
+        "name": "دار ابن الجوزي (ابن خزيمة) - ت عامر علي ياسين",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782559574540-FBb6rsNXEAo3u6m.jpg"
         ],
-        "notes": ""
+        "notes": "",
+        "corrections": []
       },
       {
-        "name": "دار البشائر",
+        "name": "دار البشائر - ت كوشك",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782559567676-.jpg"
         ],
-        "notes": ""
+        "notes": "",
+        "corrections": []
       },
       {
         "name": "دار المنهاج",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782559560843-images20260627T142552.522.jpeg"
         ],
-        "notes": "ينتبه للتعليقات"
+        "notes": "ينتبه للتعليقات",
+        "corrections": []
       }
     ],
     "alt_editions": [],
@@ -1336,25 +1339,28 @@
     "notes": "",
     "best_editions": [
       {
-        "name": "دار الصديق",
+        "name": "دار الصديق - ت عصام موسى هادي",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782559434617-LapdeBv9vQI0DAIyaUuFsroyE0dYKWvukr58621Q.jpg"
         ],
-        "notes": ""
+        "notes": "",
+        "corrections": []
       },
       {
         "name": "دار ابن الجوزي",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782559425326-images20260627T142241.383.jpeg"
         ],
-        "notes": ""
+        "notes": "",
+        "corrections": []
       },
       {
         "name": "دار أطلس الخضراء",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782559419503-images20260627T142247.583.jpeg"
         ],
-        "notes": ""
+        "notes": "",
+        "corrections": []
       }
     ],
     "alt_editions": [],
@@ -1803,25 +1809,28 @@
     "notes": "",
     "best_editions": [
       {
-        "name": "مركز سطور  (دار الإمام مسلم) - ت التركي",
+        "name": "مركز سطور  (دار الإمام مسلم) - طبعة التركي",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782304389870-.png"
         ],
-        "notes": ""
+        "notes": "",
+        "corrections": []
       },
       {
-        "name": "دار عالم الكتب - ت التركي",
+        "name": "دار عالم الكتب - طبعة التركي",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782568368530-images20260627T165207.768.jpeg"
         ],
-        "notes": ""
+        "notes": "",
+        "corrections": []
       },
       {
-        "name": "دار هجر - ت التركي",
+        "name": "دار هجر - طبعة التركي",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782568380797-images20260627T165234.458.jpeg"
         ],
-        "notes": ""
+        "notes": "",
+        "corrections": []
       }
     ],
     "alt_editions": [],
@@ -2353,7 +2362,7 @@
   },
   {
     "id": 71,
-    "title": "الآداب الشرعية والمنح المرعية",
+    "title": "الآداب الشرعية والمصالح المرعية",
     "author": "محمد بن مفلح المقدسي",
     "category": [
       "كتب متنوعة"
@@ -2365,14 +2374,16 @@
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782558812461-images20260627T141305.674.jpeg"
         ],
-        "notes": ""
+        "notes": "",
+        "corrections": []
       },
       {
         "name": "دار الفتح",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782558821386-images20260627T141302.022.jpeg"
         ],
-        "notes": ""
+        "notes": "<p dir=\"rtl\" style=\"margin: 0px 0px 0.2em; padding: 0px;\">الآداب الشرعية الكبرى</p>",
+        "corrections": []
       }
     ],
     "alt_editions": [
@@ -2381,14 +2392,16 @@
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782558827759-images20260627T141323.599.jpeg"
         ],
-        "notes": ""
+        "notes": "الآداب الشرعية والمنح المرعية",
+        "corrections": []
       },
       {
-        "name": "الرسالة (ت الأرناؤوط)",
+        "name": "الرسالة - ت الأرناؤوط",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782308171502-1852651895396399903585581976457254078744988n.jpeg"
         ],
-        "notes": ""
+        "notes": "الآداب الشرعية والمنح المرعية",
+        "corrections": []
       }
     ],
     "links": []
@@ -4097,11 +4110,12 @@
     "notes": "",
     "best_editions": [
       {
-        "name": "ابن حزم - ت عبد الحق التركماني",
+        "name": "دار ابن حزم - ت عبد الحق التركماني",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782559283063-images20260627T142037.204.jpeg"
         ],
-        "notes": ""
+        "notes": "",
+        "corrections": []
       }
     ],
     "alt_editions": [],
