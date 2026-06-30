@@ -3044,28 +3044,40 @@
     "notes": "",
     "best_editions": [
       {
-        "name": "دار اللباب ت محمد خلوف",
+        "name": "دار اللباب - ت محمد خلوف",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782622338973-images20260628T074534.049.jpeg",
           "https://arabic-app.github.io/tabaat/images/1782622351291-GiztG8WgAAVKtJ.jpg"
         ],
-        "notes": ""
+        "notes": "",
+        "corrections": []
       },
       {
-        "name": "دار الفتح ت حسام الدين عبد الله",
+        "name": "دار الفتح - ت حسام الدين عبد الله",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782622362806-images20260628T074614.177.jpeg"
         ],
-        "notes": ""
+        "notes": "",
+        "corrections": []
       }
     ],
     "alt_editions": [
+      {
+        "name": "ت كوشك (دار البشائر / دار الفيحاء / جائزة دبي)",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782818185034-chifakwchk.jpg",
+          "https://arabic-app.github.io/tabaat/images/1782818244464-chifakwchkb.jpg"
+        ],
+        "notes": "",
+        "corrections": []
+      },
       {
         "name": "دار ابن حزم بيروت ت عبد السلام البكاري",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782622371279-images20260628T074704.272.jpeg"
         ],
-        "notes": ""
+        "notes": "",
+        "corrections": []
       }
     ],
     "links": []
