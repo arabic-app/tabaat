@@ -1717,21 +1717,35 @@
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782310581768-bidayasoutour.jpg"
         ],
-        "notes": "فيها تصويبات كثيرة مقارنة بدار عالم الكتب ودار هجر"
+        "notes": "فيها تصويبات كثيرة مقارنة بدار عالم الكتب ودار هجر",
+        "corrections": [
+          {
+            "title": "الأخطاء التي لم تصوب في طبعة مركز سطور",
+            "body": "<p dir=\"rtl\" style=\"margin: 0px 0px 0.2em; padding: 0px; color: rgb(0, 0, 0); font-family: Tahoma; font-size: 14px;\">&nbsp;بعد مراجعة الاستدراكات التي كانت ملحقة في فهارس الطبعات السابقة للبداية والنهاية (هجر / عالم الكتب) في طبعة سطور الجديدة :</p><p dir=\"rtl\" style=\"margin: 0px 0px 0.2em; padding: 0px; color: rgb(0, 0, 0); font-family: Tahoma; font-size: 14px;\">- تم تصويب 535 خطأ من أصل 639 خطأ، وبقيت 104 لم تصوب لعلهم يستدركونها في الطبعة القادمة.&nbsp;</p><p dir=\"rtl\" style=\"margin: 0px 0px 0.2em; padding: 0px; color: rgb(0, 0, 0); font-family: Tahoma; font-size: 14px;\">- الظاهر أن من عمل على المجلدين الثامن والعاشر لم يراجع فهرس الاستدراكات.</p>",
+            "attachments": [
+              {
+                "title": "تصويبات البداية والنهاية - سطور",
+                "url": "https://arabic-app.github.io/tabaat/corrections/1782819225941-.pdf"
+              }
+            ]
+          }
+        ]
       },
       {
         "name": "دار عالم الكتب - طبعة التركي",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782310649238-nidayaalam.jpg"
         ],
-        "notes": ""
+        "notes": "",
+        "corrections": []
       },
       {
         "name": "دار هجر - طبعة التركي",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782310714079-48125660824244369679112166497156030803560300n.jpg"
         ],
-        "notes": ""
+        "notes": "",
+        "corrections": []
       }
     ],
     "alt_editions": [
@@ -1740,35 +1754,41 @@
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782572111755-images20260627T175402.774.jpeg"
         ],
-        "notes": ""
+        "notes": "",
+        "corrections": []
       },
       {
         "name": "دار ابن رجب",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782572674332-images20260627T180340.091.jpeg"
         ],
-        "notes": "لا تشتمل على جزء النهاية في الفتن والملاحم، يشترى مفردا"
+        "notes": "لا تشتمل على جزء النهاية في الفتن والملاحم، يشترى مفردا",
+        "corrections": []
       },
       {
         "name": "الدار العالمية",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782572681609-images20260627T180355.586.jpeg"
         ],
-        "notes": "لا تشتمل على جزء النهاية في الفتن والملاحم، يشترى مفردا"
+        "notes": "لا تشتمل على جزء النهاية في الفتن والملاحم، يشترى مفردا",
+        "corrections": []
       },
       {
         "name": "دار الإفهام",
         "images": [
+          "https://arabic-app.github.io/tabaat/images/1782819496371-bidayaifham.jpg",
           "https://arabic-app.github.io/tabaat/images/1782572121996-images20260627T175423.525.jpeg"
         ],
-        "notes": ""
+        "notes": "",
+        "corrections": []
       },
       {
         "name": "ابداع ابن الجوزي القاهرة",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782572688389-images20260627T180411.790.jpeg"
         ],
-        "notes": "لا تشتمل على جزء النهاية في الفتن والملاحم، يشترى مفردا"
+        "notes": "لا تشتمل على جزء النهاية في الفتن والملاحم، يشترى مفردا",
+        "corrections": []
       }
     ],
     "links": []
@@ -3526,12 +3546,13 @@
     "notes": "",
     "best_editions": [
       {
-        "name": "صادر - ت إحسان عباس",
+        "name": "دار  صادر - ت إحسان عباس",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782574373353-images20260627T182858.533.jpeg",
           "https://arabic-app.github.io/tabaat/images/1782574380069-images20260627T182851.260.jpeg"
         ],
-        "notes": ""
+        "notes": "",
+        "corrections": []
       }
     ],
     "alt_editions": [],
@@ -3569,12 +3590,13 @@
     "notes": "",
     "best_editions": [
       {
-        "name": "صادر - ت وداد القاضي",
+        "name": "دار  صادر - ت وداد القاضي",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782574319933-images20260627T182817.594.jpeg",
           "https://arabic-app.github.io/tabaat/images/1782574330398-images20260627T182812.914.jpeg"
         ],
-        "notes": ""
+        "notes": "",
+        "corrections": []
       }
     ],
     "alt_editions": [],
