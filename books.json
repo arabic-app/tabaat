@@ -7028,5 +7028,28 @@
     ],
     "alt_editions": [],
     "links": []
+  },
+  {
+    "id": 280,
+    "title": "إثبات الحد لله عز وجل",
+    "author": "محمود بن أبي القاسم الدشتي",
+    "category": [
+      "العقيدة",
+      "الأديان والفرق والمذاهب"
+    ],
+    "notes": "",
+    "date": "2026-07-01",
+    "best_editions": [
+      {
+        "name": "اللؤلؤة",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782857340170-images67.jpeg"
+        ],
+        "notes": "ينتبه للشدة في تعليقات المحقق",
+        "corrections": []
+      }
+    ],
+    "alt_editions": [],
+    "links": []
   }
 ]
