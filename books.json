@@ -634,7 +634,8 @@
       "الحديث",
       "شروح الحديث"
     ],
-    "notes": "له طبعة واحدة",
+    "notes": "",
+    "date": "2026-07-01",
     "best_editions": [
       {
         "name": "دار ابن الجوزي",
@@ -642,12 +643,12 @@
           "https://arabic-app.github.io/tabaat/images/1782728990263-2.png",
           "https://arabic-app.github.io/tabaat/images/1782728997158-1.png"
         ],
-        "notes": ""
+        "notes": "",
+        "corrections": []
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 15,
