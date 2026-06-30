@@ -6939,5 +6939,26 @@
     ],
     "alt_editions": [],
     "links": []
+  },
+  {
+    "id": 276,
+    "title": "روضة الأفكار و الأفهام (تاريخ ابن غنام)",
+    "author": "حسين بن أبي بكر بن غنام",
+    "category": [
+      "التاريخ الإسلامي"
+    ],
+    "notes": "",
+    "best_editions": [
+      {
+        "name": "مركز العوجا للبحوث والدراسات ت فهد ال سعود",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782847028189-IMG20260630210628729.jpg"
+        ],
+        "notes": "",
+        "corrections": []
+      }
+    ],
+    "alt_editions": [],
+    "links": []
   }
 ]
