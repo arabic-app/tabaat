@@ -1049,7 +1049,8 @@
           "https://arabic-app.github.io/tabaat/images/1782307600352-musnadtaasilcover.jpeg",
           "https://arabic-app.github.io/tabaat/images/1782307606434-musnadtaasil.jpeg"
         ],
-        "notes": ""
+        "notes": "",
+        "corrections": []
       },
       {
         "name": "المكنز (دار المنهاج)",
@@ -1057,7 +1058,8 @@
           "https://arabic-app.github.io/tabaat/images/1782723098345-eXg8vSXcaXj4KBANT39Cjvn5DmtzYtof2hysi3to.jpg",
           "https://arabic-app.github.io/tabaat/images/1782723104134-64aa97632833429289d5efa491bbd0691000x1000LdW06BAg4aeYY1vZ8uHAyLQNyC98SXF2PZiHjiWn.jpg"
         ],
-        "notes": ""
+        "notes": "",
+        "corrections": []
       },
       {
         "name": "الرسالة",
@@ -1065,16 +1067,18 @@
           "https://arabic-app.github.io/tabaat/images/1782307073639-.png",
           "https://arabic-app.github.io/tabaat/images/1782307363431-musnadalamia.png"
         ],
-        "notes": "مهمة للمعتنين بالتخريج"
+        "notes": "مهمة للمعتنين بالتخريج",
+        "corrections": []
       }
     ],
     "alt_editions": [
       {
-        "name": "دار ابن الجوزي القاهرة",
+        "name": "دار ابن الجوزي القاهرة (مؤسسة إبداع)",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782307106243-.png"
         ],
-        "notes": ""
+        "notes": "",
+        "corrections": []
       }
     ],
     "links": []
@@ -1614,21 +1618,23 @@
     "category": [
       "التراجم و الرجال"
     ],
-    "notes": "بيان مفصل :\nhttps://www.facebook.com/groups/1834197839969355/permalink/3545406558848466",
+    "notes": "",
     "best_editions": [
       {
         "name": "الرسالة العالمية",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782302806905-2.png"
         ],
-        "notes": ""
+        "notes": "",
+        "corrections": []
       },
       {
         "name": "الرسالة ناشرون (مع تتمة الرسالة العالمية)",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782302766274-.jpeg"
         ],
-        "notes": ""
+        "notes": "",
+        "corrections": []
       }
     ],
     "alt_editions": [
@@ -1637,24 +1643,32 @@
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782308406334-sl1600.jpeg"
         ],
-        "notes": ""
+        "notes": "",
+        "corrections": []
       },
       {
         "name": "التوفيقية",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782667525506-images66.jpeg"
         ],
-        "notes": ""
+        "notes": "",
+        "corrections": []
       },
       {
         "name": "الدار العالمية",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782667508433-images67.jpeg"
         ],
-        "notes": ""
+        "notes": "",
+        "corrections": []
       }
     ],
-    "links": []
+    "links": [
+      {
+        "title": "بيان مفصل",
+        "url": "https://www.facebook.com/groups/1834197839969355/permalink/3545406558848466"
+      }
+    ]
   },
   {
     "id": 50,
@@ -2727,18 +2741,19 @@
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782683205046-images741796238921091009.jpeg"
         ],
-        "notes": ""
-      }
-    ],
-    "alt_editions": [
+        "notes": "",
+        "corrections": []
+      },
       {
         "name": "مؤسسة الرسالة ناشرون",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782683240928-1270x1444.jpg"
         ],
-        "notes": ""
+        "notes": "",
+        "corrections": []
       }
     ],
+    "alt_editions": [],
     "links": []
   },
   {
@@ -3779,14 +3794,16 @@
           "https://arabic-app.github.io/tabaat/images/1782719460617-DeyJqA8WkAQBUTa.jpg",
           "https://arabic-app.github.io/tabaat/images/1782719467134-images20260629T105016.859.jpeg"
         ],
-        "notes": ""
+        "notes": "",
+        "corrections": []
       },
       {
-        "name": "المعارف ت  عبد الوهاب عزام",
+        "name": "المعارف-  ت عبد الوهاب عزام",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782719493647-68d1b32f4bfa49da8626a9aba096e0bc722.65625x1000AXzjh2Lys87rz77pes6PyTH8rTGcrL2sC5ILDtmG.jpg"
         ],
-        "notes": ""
+        "notes": "",
+        "corrections": []
       }
     ],
     "alt_editions": [],
@@ -4744,11 +4761,12 @@
     "notes": "",
     "best_editions": [
       {
-        "name": "ابن الجوزي السعودية - ت صبحي حلاق",
+        "name": "ابن الجوزي السعودية - ت محمد صبحي حلاق",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782723207285-images20260629T115313.214.jpeg"
         ],
-        "notes": ""
+        "notes": "",
+        "corrections": []
       }
     ],
     "alt_editions": [],
@@ -5622,11 +5640,12 @@
     "notes": "",
     "best_editions": [
       {
-        "name": "دار المحدث - ت الحسين إغويلة",
+        "name": "دار المحدث - ت الحسين بن محمد بن إغويلة",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782717329359-b5976559bfd7430f954ae5c45330d58a803.34907685702x1000i7Yl6CheggDWVxUXBYxpSumU25Ahmvn0mV8fpO0L.jpg"
         ],
-        "notes": ""
+        "notes": "",
+        "corrections": []
       }
     ],
     "alt_editions": [],
