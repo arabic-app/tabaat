@@ -217,12 +217,25 @@
             background: var(--md-surface);
             border-radius: 16px;
             padding: 20px;
+            padding-bottom: 42px; /* space for the absolute date */
             margin-bottom: 20px;
             box-shadow: var(--md-elevation-1);
             border: 1px solid var(--md-outline-variant);
             overflow: hidden; 
+            position: relative;
         }
         .md-card:hover { box-shadow: var(--md-elevation-2); }
+
+        .book-date {
+            position: absolute;
+            bottom: 12px;
+            right: 20px;
+            font-size: 0.72rem;
+            font-weight: 300;
+            opacity: 0.55;
+            color: var(--md-on-surface-variant);
+            direction: rtl;
+        }
 
         .book-title {
             font-size: clamp(1.1rem, 4vw, 1.5rem);
@@ -485,7 +498,8 @@
             
             .category-chips { padding-bottom: 4px; }
             
-            .md-card { padding: 14px; border-radius: 14px; }
+            .md-card { padding: 14px; padding-bottom: 34px; border-radius: 14px; }
+            .book-date { bottom: 8px; right: 14px; font-size: 0.55rem; }
             .book-title { font-size: 1.05rem; }
             .book-meta { gap: 6px; font-size: 0.82rem; }
             .meta-chip { padding: 3px 8px; }
@@ -709,7 +723,6 @@
     <header>
         <h1>دليل أفضل طبعات الكتب الإسلامية</h1>
         <p>ابحث عن الكتاب، المؤلف، أو العلم لتعرف أفضل الطبعات المعتمدة</p>
-        <div id="lastUpdateDate" class="last-update"></div>
         <button id="header-install-btn" class="header-install-btn">
             <span class="material-icons-round">download</span>
             تثبيت التطبيق
@@ -758,16 +771,6 @@
         fetch('books.json')
             .then(r => {
                 if (!r.ok) throw new Error('Network error');
-                
-                const lastMod = r.headers.get('Last-Modified');
-                if (lastMod) {
-                    const d = new Date(lastMod);
-                    const greg = new Intl.DateTimeFormat('ar-EG', { day: 'numeric', month: 'long', year: 'numeric' }).format(d);
-                    const hijri = new Intl.DateTimeFormat('ar-SA-u-ca-islamic-umalqura', { day: 'numeric', month: 'long', year: 'numeric' }).format(d);
-                    const dateEl = document.getElementById('lastUpdateDate');
-                    if(dateEl) dateEl.innerHTML = `<span class="material-icons-round" style="font-size:16px">update</span> آخر تحديث: ${hijri} / ${greg}`;
-                }
-
                 return r.json();
             })
             .then(data => { 
@@ -897,6 +900,20 @@
                         : `<li class="md-list-item"><a href="${ed.url}" target="_blank" class="link-item"><span class="material-icons-round">open_in_new</span><span class="edition-name">${ed.title}</span></a></li>`;
                 }).join('');
 
+                let dateHTML = '';
+                if (book.date) {
+                    try {
+                        const d = new Date(book.date);
+                        if (!isNaN(d.getTime())) {
+                            const greg = new Intl.DateTimeFormat('ar-EG', { day: 'numeric', month: 'long', year: 'numeric' }).format(d);
+                            const hijri = new Intl.DateTimeFormat('ar-SA-u-ca-islamic-umalqura', { day: 'numeric', month: 'long', year: 'numeric' }).format(d);
+                            dateHTML = `<div class="book-date">${hijri} / ${greg}</div>`;
+                        }
+                    } catch (e) {
+                        console.error('Error formatting book date:', e);
+                    }
+                }
+
                 card.innerHTML = `
                     <h2 class="book-title">${book.title}</h2>
                     <div class="book-meta">
@@ -907,6 +924,7 @@
                     ${book.alt_editions?.length ? `<div class="section-title"><span class="material-icons-round">rule</span> طبعات بديلة جيدة:</div><ul>${renderList(book.alt_editions, true, 'alt_editions')}</ul>` : ''}
                     ${book.links?.length ? `<div class="section-title"><span class="material-icons-round">link</span> روابط مفيدة:</div><ul>${renderList(book.links, false)}</ul>` : ''}
                     ${book.notes ? `<div class="book-notes"><span class="material-icons-round">lightbulb</span><div>${book.notes}</div></div>` : ''}
+                    ${dateHTML}
                 `;
                 container.appendChild(card);
             });
