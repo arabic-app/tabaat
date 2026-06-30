@@ -4992,11 +4992,12 @@
     "notes": "",
     "best_editions": [
       {
-        "name": "مؤسسة العلم والتأصيل توزيع دار ابن الجوزي السعودية",
+        "name": "دار ابن الجوزي السعودية (مؤسسة العلم والتأصيل)",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782558600171-1702475391Untitled1.jpg"
         ],
-        "notes": "الطبعة الثالثة"
+        "notes": "الطبعة الثالثة",
+        "corrections": []
       }
     ],
     "alt_editions": [],
