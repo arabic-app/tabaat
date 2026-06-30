@@ -763,14 +763,16 @@
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782661017318-.png"
         ],
-        "notes": ""
+        "notes": "",
+        "corrections": []
       },
       {
-        "name": "الرسالة ناشرون",
+        "name": "مؤسسة الرسالة ناشرون",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782661039211-.png"
         ],
-        "notes": ""
+        "notes": "",
+        "corrections": []
       }
     ],
     "alt_editions": [],
@@ -1888,15 +1890,17 @@
     "notes": "هناك عدة أعمال في الطريق إن شاء الله",
     "best_editions": [
       {
-        "name": "طبعة التركي (مركز سطور)",
+        "name": "مركز سطور - طبعة التركي",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782633395773-almughniofibnqudamaalmaqdissi.jpg"
         ],
-        "notes": "",
+        "notes": "<span style=\"color: rgb(0, 0, 0); font-family: Tahoma; font-size: 14px; background-color: rgb(253, 253, 253);\">أعيد تحقيق الكتاب وهناك تعديلات وتصويبات مقارنة بالتحقيق الأول (دار عالم الكتب / دار هجر / الدارة)</span>",
         "corrections": []
-      },
+      }
+    ],
+    "alt_editions": [
       {
-        "name": "دار عالم الكتب",
+        "name": "دار عالم الكتب - طبعة التركي",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782632974532-47759139924173723319510135013143413284544895n.jpg"
         ],
@@ -1904,7 +1908,7 @@
         "corrections": []
       },
       {
-        "name": "هجر",
+        "name": "دار هجر - طبعة التركي",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782633402606-images20260628T105412.986.jpeg"
         ],
@@ -1912,15 +1916,13 @@
         "corrections": []
       },
       {
-        "name": "الدارة",
+        "name": "دارة الملك عبد العزيز (الدارة) - طبعة التركي",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782633006559-48052864424237170679832067059185720790152408n.jpg"
         ],
         "notes": "",
         "corrections": []
-      }
-    ],
-    "alt_editions": [
+      },
       {
         "name": "طبعة دار الحديث مصر",
         "images": [
@@ -2224,7 +2226,8 @@
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782658586621-images29.jpeg"
         ],
-        "notes": ""
+        "notes": "",
+        "corrections": []
       }
     ],
     "alt_editions": [
@@ -2233,14 +2236,16 @@
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782658593988-images63.jpeg"
         ],
-        "notes": ""
+        "notes": "",
+        "corrections": []
       },
       {
-        "name": "دار الرسالة",
+        "name": "مؤسسة الرسالة ناشرون",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782658602582-images66.jpeg"
         ],
-        "notes": ""
+        "notes": "",
+        "corrections": []
       }
     ],
     "links": []
@@ -4281,18 +4286,20 @@
     "notes": "",
     "best_editions": [
       {
-        "name": "ط ابن الجوزي السعودية",
+        "name": "دار ابن الجوزي السعودية",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782658769654-images87.jpeg"
         ],
-        "notes": "الطبعة الثانية"
+        "notes": "الطبعة الثانية",
+        "corrections": []
       },
       {
         "name": "ت عبد الله عسيلان",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782658786877-576ca1b0a15ee236824ce7af9fc5eb5f102d3c87602536.jpg"
         ],
-        "notes": ""
+        "notes": "",
+        "corrections": []
       }
     ],
     "alt_editions": [],
