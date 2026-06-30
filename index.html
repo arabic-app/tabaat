@@ -548,45 +548,7 @@
         .md-icon-btn.warn-btn:hover { background: rgba(230,81,0,0.1); }
     </style>
 
-    <style>
-        /* ===== PULL-TO-REFRESH ===== */
-        #ptr-indicator {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 9999;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 0;
-            overflow: hidden;
-            background: var(--md-primary);
-            transition: height 0.2s ease;
-            pointer-events: none;
-        }
-        #ptr-indicator.ptr-pulling {
-            height: 60px;
-        }
-        #ptr-indicator.ptr-loading {
-            height: 60px;
-        }
-        .ptr-spinner {
-            width: 28px;
-            height: 28px;
-            border: 3px solid rgba(255,255,255,0.3);
-            border-top-color: #fff;
-            border-radius: 50%;
-            animation: ptr-spin 0.8s linear infinite;
-        }
-        .ptr-arrow {
-            font-size: 28px;
-            color: white;
-            transition: transform 0.3s ease;
-            font-family: 'Material Icons Round';
-        }
-        .ptr-arrow.flipped { transform: rotate(180deg); }
-        @keyframes ptr-spin { to { transform: rotate(360deg); } }
+
 
         /* ===== PWA INSTALL BANNER ===== */
         #pwa-banner {
@@ -717,10 +679,7 @@
 </head>
 <body>
 
-    <!-- Pull-to-Refresh Indicator -->
-    <div id="ptr-indicator" role="status" aria-live="polite">
-        <span class="ptr-arrow" id="ptr-arrow">arrow_downward</span>
-    </div>
+
 
     <!-- PWA Install Banner -->
     <div id="pwa-banner" role="complementary" aria-label="تثبيت التطبيق">
@@ -1128,72 +1087,7 @@
             }
         }
 
-        /* ── 4. PULL-TO-REFRESH ── */
-        const ptrIndicator = document.getElementById('ptr-indicator');
-        const ptrArrow     = document.getElementById('ptr-arrow');
-        const PTR_THRESHOLD = 80;   // pixels pour déclencher
-        const PTR_MAX       = 110;  // pixels max d'étirement
-        let touchStartY = 0;
-        let pulling     = false;
-        let ptTriggered = false;
 
-        document.addEventListener('touchstart', (e) => {
-            let target = e.target;
-            while (target && target !== document.body) {
-                if (target.scrollHeight > target.clientHeight && target.scrollTop > 0) {
-                    pulling = false;
-                    return;
-                }
-                target = target.parentElement;
-            }
-
-            if (window.scrollY === 0 && e.touches.length === 1) {
-                touchStartY = e.touches[0].clientY;
-                pulling     = true;
-                ptTriggered = false;
-            }
-        }, { passive: true });
-
-        document.addEventListener('touchmove', (e) => {
-            if (!pulling) return;
-            const dy = e.touches[0].clientY - touchStartY;
-            if (dy <= 0) { pulling = false; return; }
-
-            const progress = Math.min(dy, PTR_MAX);
-            const reached  = dy >= PTR_THRESHOLD;
-
-            ptrIndicator.classList.add('ptr-pulling');
-            ptrIndicator.style.height = Math.min(progress * 0.6, 60) + 'px';
-
-            if (ptrIndicator.querySelector('.ptr-spinner')) {
-                // déjà en loading, on ne fait rien
-            } else {
-                ptrArrow.style.display = 'block';
-                ptrArrow.classList.toggle('flipped', reached);
-            }
-
-            if (reached && !ptTriggered) ptTriggered = true;
-        }, { passive: true });
-
-        document.addEventListener('touchend', () => {
-            if (!pulling) return;
-            pulling = false;
-
-            if (ptTriggered) {
-                // Montrer le spinner et recharger
-                ptrArrow.style.display = 'none';
-                const spinner = document.createElement('span');
-                spinner.className = 'ptr-spinner';
-                ptrIndicator.appendChild(spinner);
-                ptrIndicator.style.height = '60px';
-                setTimeout(() => location.reload(), 600);
-            } else {
-                // Rétraction
-                ptrIndicator.style.height = '0';
-                ptrIndicator.classList.remove('ptr-pulling');
-                ptrArrow.classList.remove('flipped');
-            }
-        }, { passive: true });
 
     })();
     </script>
