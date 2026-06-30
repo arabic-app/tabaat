@@ -1089,6 +1089,15 @@
         let ptTriggered = false;
 
         document.addEventListener('touchstart', (e) => {
+            let target = e.target;
+            while (target && target !== document.body) {
+                if (target.scrollHeight > target.clientHeight && target.scrollTop > 0) {
+                    pulling = false;
+                    return;
+                }
+                target = target.parentElement;
+            }
+
             if (window.scrollY === 0 && e.touches.length === 1) {
                 touchStartY = e.touches[0].clientY;
                 pulling     = true;
