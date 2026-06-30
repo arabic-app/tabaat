@@ -605,6 +605,31 @@
             padding-bottom: calc(12px + env(safe-area-inset-bottom));
         }
         #pwa-banner.visible { display: block; }
+        
+        /* Permanent Header Install Button */
+        .header-install-btn {
+            display: none;
+            background: rgba(255, 255, 255, 0.15);
+            border: none;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-family: 'Cairo', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 700;
+            cursor: pointer;
+            align-items: center;
+            gap: 6px;
+            margin: 8px auto 0 auto;
+            width: fit-content;
+            transition: background 0.2s;
+        }
+        .header-install-btn:hover {
+            background: rgba(255, 255, 255, 0.25);
+        }
+        .header-install-btn span {
+            font-size: 16px;
+        }
         @keyframes slideUp {
             from { transform: translateY(100%); opacity: 0; }
             to { transform: translateY(0); opacity: 1; }
@@ -715,6 +740,10 @@
     <header>
         <h1>دليل أفضل طبعات الكتب الإسلامية</h1>
         <p>ابحث عن الكتاب، المؤلف، أو العلم لتعرف أفضل الطبعات المعتمدة</p>
+        <button id="header-install-btn" class="header-install-btn">
+            <span class="material-icons-round">download</span>
+            تثبيت التطبيق
+        </button>
     </header>
 
     <div class="container">
@@ -1015,6 +1044,7 @@
         /* ── 3. INSTALL BANNER ── */
         const banner   = document.getElementById('pwa-banner');
         const installBtn = document.getElementById('pwa-install-btn');
+        const headerInstallBtn = document.getElementById('header-install-btn');
         const dismissBtn = document.getElementById('pwa-dismiss-btn');
         const bannerText = document.getElementById('pwa-banner-text');
         let deferredPrompt = null;
@@ -1034,6 +1064,19 @@
             localStorage.setItem(DISMISS_KEY, '1');
         });
 
+        // Trigger PWA installation prompt
+        async function triggerInstallPrompt() {
+            if (!deferredPrompt) return;
+            deferredPrompt.prompt();
+            const { outcome } = await deferredPrompt.userChoice;
+            deferredPrompt = null;
+            hideBanner();
+            headerInstallBtn.style.display = 'none';
+            if (outcome === 'accepted') {
+                localStorage.setItem(DISMISS_KEY, '1');
+            }
+        }
+
         if (!isInStandalone) {
             if (isIOS) {
                 // iOS : instructions manuelles Partager → Ajouter
@@ -1050,6 +1093,11 @@
                         </div>
                     </div>`;
                 installBtn.style.display = 'none';
+                // Show header install button (but since iOS has no programmatic trigger, we show instructions on click)
+                headerInstallBtn.style.display = 'flex';
+                headerInstallBtn.addEventListener('click', () => {
+                    banner.classList.add('visible');
+                });
                 // Afficher après 2 secondes
                 setTimeout(showBanner, 2000);
 
@@ -1058,22 +1106,16 @@
                 window.addEventListener('beforeinstallprompt', (e) => {
                     e.preventDefault();
                     deferredPrompt = e;
+                    headerInstallBtn.style.display = 'flex';
                     setTimeout(showBanner, 1500);
                 });
 
-                installBtn.addEventListener('click', async () => {
-                    if (!deferredPrompt) return;
-                    deferredPrompt.prompt();
-                    const { outcome } = await deferredPrompt.userChoice;
-                    deferredPrompt = null;
-                    hideBanner();
-                    if (outcome === 'accepted') {
-                        localStorage.setItem(DISMISS_KEY, '1');
-                    }
-                });
+                installBtn.addEventListener('click', triggerInstallPrompt);
+                headerInstallBtn.addEventListener('click', triggerInstallPrompt);
 
                 window.addEventListener('appinstalled', () => {
                     hideBanner();
+                    headerInstallBtn.style.display = 'none';
                     deferredPrompt = null;
                 });
             }
