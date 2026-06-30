@@ -3187,12 +3187,20 @@
     "notes": "",
     "best_editions": [
       {
-        "name": "الرسالة - ت محمد الدالي",
+        "name": "مؤسسة الرسالة ناشرون - ت محمد الدالي",
         "images": [
-          "https://arabic-app.github.io/tabaat/images/1782627878530-images20260628T092342.351.jpeg",
           "https://arabic-app.github.io/tabaat/images/1782627893994-images20260628T092336.196.jpeg"
         ],
-        "notes": ""
+        "notes": "<span style=\"color: rgb(0, 0, 0); font-family: Tahoma; font-size: 14px; background-color: rgb(253, 253, 253);\">تشتمل على القرط على الكامل والتنبيهات على الكامل</span>",
+        "corrections": []
+      },
+      {
+        "name": "دار الرسالة العالمية - ت محمد الدالي",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782627878530-images20260628T092342.351.jpeg"
+        ],
+        "notes": "",
+        "corrections": []
       }
     ],
     "alt_editions": [
@@ -3201,7 +3209,8 @@
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782627866773-images20260628T092414.929.jpeg"
         ],
-        "notes": ""
+        "notes": "",
+        "corrections": []
       }
     ],
     "links": []
@@ -6437,12 +6446,13 @@
     "notes": "",
     "best_editions": [
       {
-        "name": "الرشد - ت مازن السرساوي",
+        "name": "مكتبة الرشد - ت مازن السرساوي",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782629147413-bb4bb4526264430d8a1038b403271b80.jpeg",
           "https://arabic-app.github.io/tabaat/images/1782629158302-default1.jpg"
         ],
-        "notes": ""
+        "notes": "",
+        "corrections": []
       }
     ],
     "alt_editions": [],
