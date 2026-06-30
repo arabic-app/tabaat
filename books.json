@@ -1187,22 +1187,25 @@
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782574407862-47758407424173722852843517038534749652883800n.jpg"
         ],
-        "notes": ""
+        "notes": "",
+        "corrections": []
       },
       {
         "name": "دار ابن كثير",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782574416864-targheeb.jpg"
         ],
-        "notes": "احرص على آخر طبعة لأن الطبعات الأولى انتقدها الألباني رحمة الله بشدة"
+        "notes": "احرص على آخر طبعة لأن الطبعات الأولى انتقدها الألباني رحمة الله بشدة",
+        "corrections": []
       },
       {
-        "name": "دار الفتح للإعلام ت على عبد المقصود رضوان",
+        "name": "دار الفتح للإعلام - ت على عبد المقصود رضوان",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782574469152-images20260627T183048.684.jpeg",
           "https://arabic-app.github.io/tabaat/images/1782574476531-images20260627T183041.147.jpeg"
         ],
-        "notes": "البعض يقدمها على الجميع"
+        "notes": "البعض يقدمها على الجميع",
+        "corrections": []
       }
     ],
     "alt_editions": [],
