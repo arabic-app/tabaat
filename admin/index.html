@@ -1332,11 +1332,17 @@
                 hideBanner();
                 headerInstallBtn.style.display = 'none';
                 deferredPrompt = null;
-            });
-        }
+        // Intercept clicks on links in standalone/app mode to force system browser
+        document.addEventListener('click', function(e) {
+            const a = e.target.closest('a');
+            if (a && a.href && a.target === '_blank') {
+                if (isInStandalone) {
+                    e.preventDefault();
+                    window.open(a.href, '_blank');
+                }
+            }
+        });
     }
-
-
 
 })();
 </script>
