@@ -7006,5 +7006,27 @@
     ],
     "alt_editions": [],
     "links": []
+  },
+  {
+    "id": 279,
+    "title": "المختار من جامع عقائد أهل السنة والأثر",
+    "author": "جمع عادل آل حمدان",
+    "category": [
+      "العقيدة"
+    ],
+    "notes": "",
+    "date": "2026-07-01",
+    "best_editions": [
+      {
+        "name": "دار اللؤلؤة",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782857134838-3125421deec04247b77ef483940bcfb4695.90222861251x1000HmNKxgB6PLU8OGBd08bSQrZSLX3OjE8lwWxqBaQY.jpg"
+        ],
+        "notes": "ينتبه للشدة في تعليقات المحقق",
+        "corrections": []
+      }
+    ],
+    "alt_editions": [],
+    "links": []
   }
 ]
