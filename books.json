@@ -1098,14 +1098,16 @@
           "https://arabic-app.github.io/tabaat/images/1782667432323-WlfJhRrEGyzXmRRwYBxOtV22mhfYKoSuCU1pkxmf.png",
           "https://arabic-app.github.io/tabaat/images/1782667438242-47690245224173708152844988494720905113000917n.jpg"
         ],
-        "notes": ""
+        "notes": "",
+        "corrections": []
       },
       {
-        "name": "الرسالة ناشرون",
+        "name": "مؤسسة الرسالة ناشرون",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782667423689-47992680724173710419511428850424238285337923n.jpg"
         ],
-        "notes": ""
+        "notes": "",
+        "corrections": []
       }
     ],
     "alt_editions": [],
@@ -1276,18 +1278,29 @@
     "notes": "",
     "best_editions": [
       {
+        "name": "دار أطلس الخضراء - ت نظر الفاريابي",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782815009199-atlas.jpg"
+        ],
+        "notes": "",
+        "corrections": []
+      },
+      {
         "name": "دار الحضارة - ت علي العمران",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782311028341-47972881324173709086178222877491447485082406n.jpg"
         ],
-        "notes": ""
+        "notes": "",
+        "corrections": []
       },
       {
-        "name": "ت الفحل",
+        "name": "مؤسسة دار الحديث - ت الفحل",
         "images": [
+          "https://arabic-app.github.io/tabaat/images/1782815033560-fahl.jpg",
           "https://arabic-app.github.io/tabaat/images/1782666178651-GqWV22JW8AAVm16.jpg"
         ],
-        "notes": ""
+        "notes": "",
+        "corrections": []
       }
     ],
     "alt_editions": [],
