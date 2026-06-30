@@ -6918,5 +6918,26 @@
     ],
     "alt_editions": [],
     "links": []
+  },
+  {
+    "id": 275,
+    "title": "مشكاة المصابيح",
+    "author": "محمد بن عبد الله الخطيب التبريزي",
+    "category": [
+      "الحديث"
+    ],
+    "notes": "",
+    "best_editions": [
+      {
+        "name": "دار الصديق ت عصام موسى  هادي",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782846683396-IMG20260630210635471.jpg"
+        ],
+        "notes": "",
+        "corrections": []
+      }
+    ],
+    "alt_editions": [],
+    "links": []
   }
 ]
