@@ -59,6 +59,7 @@ self.addEventListener('fetch', (event) => {
   if (url.hostname === 'api.github.com') return;
 
   // ── DATA : Network First (toujours données fraîches)
+  // Ignorer les paramètres de recherche (?v=...) pour la comparaison du cache hors ligne
   const isDataFile = url.pathname.endsWith('books.json') || url.pathname.endsWith('sciences.json');
   if (isDataFile) {
     event.respondWith(
@@ -71,10 +72,13 @@ self.addEventListener('fetch', (event) => {
           return response;
         })
         .catch(() => {
-          return caches.match(event.request).then((cached) => {
-            if (cached) return cached;
-            return new Response(JSON.stringify([]), {
-              headers: { 'Content-Type': 'application/json' }
+          // Hors ligne : chercher dans le cache en ignorant les paramètres de requête (?v=...)
+          return caches.open(CACHE_NAME).then((cache) => {
+            return cache.match(event.request, { ignoreSearch: true }).then((cached) => {
+              if (cached) return cached;
+              return new Response(JSON.stringify([]), {
+                headers: { 'Content-Type': 'application/json' }
+              });
             });
           });
         })

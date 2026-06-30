@@ -785,12 +785,19 @@
         let currentSearchTerm = '';
         let currentCategory = 'الكل';
 
-        fetch('books.json?v=' + Date.now())
-            .then(r => r.json())
+        fetch('books.json')
+            .then(r => {
+                if (!r.ok) throw new Error('Network error');
+                return r.json();
+            })
             .then(data => { 
                 booksData = data.sort((a, b) => (a.title || '').localeCompare(b.title || '', 'ar'));
                 initCategories();
                 filterAndDisplayBooks(); 
+            })
+            .catch(err => {
+                console.warn('Failed to fetch books.json from network, trying cache fallback...', err);
+                // The service worker will intercept this plain 'books.json' call and return cache if offline.
             });
 
         function getBookCategories(book) {
