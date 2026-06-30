@@ -3219,23 +3219,26 @@
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782558077257-images20260627T140011.590.jpeg"
         ],
-        "notes": ""
+        "notes": "",
+        "corrections": []
       },
       {
         "name": "مؤسسة الرسالة ناشرون - ت علي محمد زينو",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782558070662-311695.jpg"
         ],
-        "notes": ""
+        "notes": "",
+        "corrections": []
       }
     ],
     "alt_editions": [
       {
-        "name": "دار الطلاع ت محمد محي الدين عبد الحميد",
+        "name": "دار الطلائع - ت محمد محي الدين عبد الحميد",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782558059474-images20260627T140035.271.jpeg"
         ],
-        "notes": ""
+        "notes": "",
+        "corrections": []
       }
     ],
     "links": []
