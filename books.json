@@ -7014,18 +7014,20 @@
       "الفقه"
     ],
     "notes": "",
+    "date": "2026-07-01",
     "best_editions": [
       {
+        "publisher": "دار الفلاح",
         "images": [
-          "https://arabic-app.github.io/tabaat/images/1782305699923-.png"
+          "https://arabic-app.github.io/tabaat/images/1782921220695-2gYhy9XHU7EgkpIWmXQyoiyBk2QSvG10fX3rHsV0.jpg",
+          "https://arabic-app.github.io/tabaat/images/1782921227551-images27.jpeg"
         ],
         "notes": "",
-        "publisher": "دار الفلاح"
+        "corrections": []
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 261,
