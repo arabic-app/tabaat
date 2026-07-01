@@ -891,20 +891,58 @@
         let currentSearchTerm = '';
         let currentCategory = 'الكل';
 
-        fetch('books.json?_t=' + Date.now(), { cache: 'no-store' })
-            .then(r => {
-                if (!r.ok) throw new Error('Network error');
-                return r.json();
-            })
-            .then(data => { 
-                booksData = data.sort((a, b) => (a.title || '').localeCompare(b.title || '', 'ar'));
-                initCategories();
-                filterAndDisplayBooks(); 
-            })
-            .catch(err => {
-                console.warn('Failed to fetch books.json from network, trying cache fallback...', err);
-                // The service worker will intercept this plain 'books.json' call and return cache if offline.
-            });
+        function loadBooks() {
+            return fetch('books.json?_t=' + Date.now(), { cache: 'no-store' })
+                .then(r => {
+                    if (!r.ok) throw new Error('Network error');
+
+                    const lastMod = r.headers.get('Last-Modified');
+                    if (lastMod) {
+                        const d = new Date(lastMod);
+                        const greg = new Intl.DateTimeFormat('ar-EG', { day: 'numeric', month: 'long', year: 'numeric' }).format(d);
+                        const hijri = new Intl.DateTimeFormat('ar-SA-u-ca-islamic-umalqura', { day: 'numeric', month: 'long', year: 'numeric' }).format(d);
+                        const dateEl = document.getElementById('lastUpdateDate');
+                        if (dateEl) dateEl.innerHTML = `<span class="material-icons-round" style="font-size:16px">update</span> آخر تحديث: ${hijri} / ${greg}`;
+                    }
+
+                    return r.json();
+                })
+                .then(data => {
+                    booksData = data.sort((a, b) => (a.title || '').localeCompare(b.title || '', 'ar'));
+                    initCategories();
+                    filterAndDisplayBooks();
+                })
+                .catch(err => {
+                    console.warn('Failed to fetch books.json, trying cache fallback...', err);
+                });
+        }
+
+        loadBooks();
+
+        /* ── Pull-to-refresh on #booksContainer ── */
+        (function setupPTR() {
+            const el = document.getElementById('booksContainer');
+            let startY = 0;
+            let isPulling = false;
+
+            el.addEventListener('touchstart', e => {
+                if (el.scrollTop === 0) {
+                    startY = e.touches[0].clientY;
+                    isPulling = true;
+                } else {
+                    isPulling = false;
+                }
+            }, { passive: true });
+
+            el.addEventListener('touchend', e => {
+                if (!isPulling) return;
+                const dy = e.changedTouches[0].clientY - startY;
+                if (dy > 70) {
+                    loadBooks();
+                }
+                isPulling = false;
+            }, { passive: true });
+        })();
 
         function getBookCategories(book) {
             if (Array.isArray(book.category)) return book.category;
