@@ -208,6 +208,24 @@
         .science-filter-input::placeholder { color: var(--md-on-surface-variant); }
         .science-filter-input:focus { outline: none; }
         .science-filter-wrapper.expanded .science-filter-input { opacity: 1; pointer-events: auto; }
+        .clear-science-btn {
+            background: transparent;
+            border: none;
+            color: var(--md-on-surface-variant);
+            font-size: 18px;
+            cursor: pointer;
+            padding: 4px;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: background 0.2s;
+            margin-left: 4px;
+            flex-shrink: 0;
+        }
+        .clear-science-btn:hover {
+            background: rgba(0, 0, 0, 0.05);
+        }
 
         .category-chips {
             display: flex;
@@ -854,6 +872,7 @@
                         <span class="material-icons-round">search</span>
                     </button>
                     <input type="text" id="scienceSearchInput" class="science-filter-input" placeholder="ابحث في العلوم..." autocomplete="off">
+                    <button id="clearScienceBtn" class="clear-science-btn material-icons-round" aria-label="مسح البحث">close</button>
                 </div>
 
                 <div class="category-chips" id="categoryChips"></div>
@@ -965,23 +984,34 @@
         const sfWrapper = document.getElementById('scienceFilterWrapper');
         const sfBtn = document.getElementById('scienceFilterBtn');
         const sfInput = document.getElementById('scienceSearchInput');
-
+        const clearScienceBtn = document.getElementById('clearScienceBtn');
+ 
         sfBtn.onclick = () => {
             sfWrapper.classList.toggle('expanded');
             if (sfWrapper.classList.contains('expanded')) {
                 sfInput.focus();
             } else {
+                sfInput.value = '';
+                clearScienceBtn.style.display = 'none';
                 filterChips(''); // إعادة إظهار التصنيفات عند إغلاق العدسة
             }
         };
-
+ 
         sfInput.onkeydown = (e) => {
             if (e.key === 'Enter') { e.preventDefault(); sfInput.blur(); sfWrapper.classList.remove('expanded'); }
         };
-
+ 
         sfInput.oninput = (e) => {
             const term = e.target.value.toLowerCase();
+            clearScienceBtn.style.display = term ? 'flex' : 'none';
             filterChips(term);
+        };
+
+        clearScienceBtn.onclick = () => {
+            sfInput.value = '';
+            clearScienceBtn.style.display = 'none';
+            sfInput.focus();
+            filterChips('');
         };
 
         function filterChips(term) {

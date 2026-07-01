@@ -111,11 +111,29 @@
         .search-field { position: relative; display: flex; align-items: center; }
         .search-field .material-icons-round { position: absolute; right: 10px; font-size: 20px; color: rgba(255,255,255,0.7); pointer-events: none; }
         .admin-search-box {
-            width: 100%; padding: 10px 38px 10px 14px; border: none; border-radius: 24px;
+            width: 100%; padding: 10px 38px 10px 32px; border: none; border-radius: 24px;
             font-family: inherit; font-size: 0.9rem; background: rgba(255,255,255,0.2); color: white; outline: none;
         }
         .admin-search-box::placeholder { color: rgba(255,255,255,0.65); }
         .admin-search-box:focus { background: rgba(255,255,255,0.28); }
+        .clear-admin-search-btn {
+            position: absolute;
+            left: 8px;
+            background: transparent;
+            border: none;
+            color: rgba(255,255,255,0.7);
+            font-size: 18px;
+            cursor: pointer;
+            padding: 4px;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: background 0.2s;
+        }
+        .clear-admin-search-btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
 
         .btn-add-new {
             margin: 12px; padding: 0 16px; height: 40px; background: var(--md-primary); color: white;
@@ -543,6 +561,7 @@
             <div class="search-field">
                 <span class="material-icons-round">search</span>
                 <input type="text" id="adminSearchInput" class="admin-search-box" placeholder="بحث بالعنوان أو المؤلف..." autocomplete="off">
+                <button id="clearAdminSearchBtn" class="clear-admin-search-btn material-icons-round" aria-label="مسح البحث">close</button>
             </div>
         </div>
         <button class="btn-add-new" onclick="createNewBook()">
@@ -716,7 +735,19 @@
             });
     }
 
-    document.getElementById('adminSearchInput').addEventListener('input', e => renderSidebar(e.target.value));
+    const adminSearchInput = document.getElementById('adminSearchInput');
+    const clearAdminSearchBtn = document.getElementById('clearAdminSearchBtn');
+    adminSearchInput.addEventListener('input', e => {
+        const val = e.target.value;
+        clearAdminSearchBtn.style.display = val ? 'flex' : 'none';
+        renderSidebar(val);
+    });
+    clearAdminSearchBtn.addEventListener('click', () => {
+        adminSearchInput.value = '';
+        clearAdminSearchBtn.style.display = 'none';
+        adminSearchInput.focus();
+        renderSidebar('');
+    });
 
     document.getElementById('title').addEventListener('blur', function () {
         const val = this.value.trim();
