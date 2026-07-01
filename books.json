@@ -3301,7 +3301,8 @@
         ],
         "notes": "ينتبه للشدة في تعليقات المحقق&nbsp;",
         "corrections": [],
-        "publisher": "دار اللؤلؤة_ت عادل آل حمدان"
+        "publisher": "دار اللؤلؤة",
+        "verifier": "عادل آل حمدان"
       }
     ],
     "alt_editions": [
@@ -3633,7 +3634,7 @@
         "notes": "",
         "corrections": [],
         "verifier": "شعبان العودة",
-        "publisher": "اللؤلؤة"
+        "publisher": "دار اللؤلؤة"
       }
     ],
     "alt_editions": [],
@@ -7481,7 +7482,7 @@
     "date": "2026-07-01",
     "best_editions": [
       {
-        "publisher": "اللؤلؤة",
+        "publisher": "دار اللؤلؤة",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782857340170-images67.jpeg"
         ],
@@ -7510,7 +7511,8 @@
         ],
         "notes": "ينتبه للشدة في تعليقات المحقق",
         "corrections": [],
-        "publisher": "اللؤلؤة _ت عادل آل حمدان"
+        "publisher": "دار اللؤلؤة",
+        "verifier": "عادل آل حمدان"
       }
     ],
     "alt_editions": [],
@@ -7533,7 +7535,8 @@
         ],
         "notes": "ينتبه للشدة في تعليقات المحقق&nbsp;",
         "corrections": [],
-        "publisher": "دار اللؤلؤة_ ت عادل آل حمدان"
+        "publisher": "دار اللؤلؤة",
+        "verifier": "عادل آل حمدان"
       }
     ],
     "alt_editions": [],
@@ -7555,7 +7558,8 @@
         ],
         "notes": "ينتبه للشدة في تعليقات المحقق&nbsp;",
         "corrections": [],
-        "publisher": "دار اللؤلؤة _ت عادل آل حمدان"
+        "publisher": "دار اللؤلؤة",
+        "verifier": "عادل آل حمدان"
       }
     ],
     "alt_editions": [],
