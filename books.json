@@ -6988,23 +6988,23 @@
     "title": "ديوان عنترة",
     "author": "عنترة العبسي",
     "category": [
-      "اللغة والأدب",
-      "الدواوين"
+      "الشعر والدواوين"
     ],
     "notes": "",
+    "date": "2026-07-01",
     "best_editions": [
       {
+        "publisher": "المكتب الإسلامي",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782665940196-images20260628T194844.120.jpeg"
         ],
         "notes": "",
-        "verifier": "محمد سعيد مولوي",
-        "publisher": "المكتب الإسلامي"
+        "corrections": [],
+        "verifier": "محمد سعيد مولوي"
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 260,
