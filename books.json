@@ -3328,35 +3328,36 @@
       "العقيدة"
     ],
     "notes": "",
+    "date": "2026-07-01",
     "best_editions": [
       {
+        "publisher": "ابن الجوزي السعودية",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782622309653-f83e2146cfcf47ff947ab161bc63bac61000x922rPTXElfOvI6waUbCHshZjydtwLRZblvJuR5oU6dn.jpg"
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "نشأت كمال",
-        "publisher": "ابن الجوزي السعودية"
+        "verifier": "نشأت كمال"
       },
       {
+        "publisher": "دار اللؤلؤة",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782742255284-.png"
         ],
-        "notes": "",
+        "notes": "ينتبه للشدة في تعليقات المحقق&nbsp;",
         "corrections": [],
-        "publisher": "دار اللؤلؤة"
+        "verifier": "عادل آل حمدان"
       }
     ],
     "alt_editions": [
       {
+        "publisher": "مكتبة غرناطة مصر",
         "images": [],
         "notes": "",
-        "corrections": [],
-        "publisher": "مكتبة غرناطة مصر"
+        "corrections": []
       }
     ],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 100,
