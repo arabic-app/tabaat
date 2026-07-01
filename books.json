@@ -7074,5 +7074,28 @@
     ],
     "alt_editions": [],
     "links": []
+  },
+  {
+    "id": 282,
+    "title": "كتاب الرد على الجهمية",
+    "author": "عثمان بن سعيد الدارمي",
+    "category": [
+      "العقيدة",
+      "الأديان والفرق والمذاهب"
+    ],
+    "notes": "",
+    "date": "2026-07-01",
+    "best_editions": [
+      {
+        "name": "دار اللؤلؤة ت عادل آل حمدان",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782890814061-b4e085f7118d45b8bcbe1c895c8ccb2ethumbnail1000x100070.jpg"
+        ],
+        "notes": "ينتبه للشدة في تعليقات المحقق&nbsp;",
+        "corrections": []
+      }
+    ],
+    "alt_editions": [],
+    "links": []
   }
 ]
