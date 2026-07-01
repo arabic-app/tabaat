@@ -7679,5 +7679,29 @@
     ],
     "alt_editions": [],
     "links": []
+  },
+  {
+    "id": 289,
+    "title": "كتاب آداب المعلمين",
+    "author": "محمد بن سحنون",
+    "category": [
+      "الآداب الشرعية",
+      "الآداب الشرعية"
+    ],
+    "notes": "",
+    "date": "2026-07-01",
+    "best_editions": [
+      {
+        "publisher": "دار اللؤلؤة",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782911575857-images63.jpeg"
+        ],
+        "notes": "ينتبه للشدة في تعليقات المحقق&nbsp;",
+        "corrections": [],
+        "verifier": "عادل آل حمدان"
+      }
+    ],
+    "alt_editions": [],
+    "links": []
   }
 ]
