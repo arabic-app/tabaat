@@ -988,7 +988,7 @@
                     let actions = '';
                     // Build display label: publisher - ت verifier
                     const edLabel = (() => {
-                        const n = (ed.name || '').trim();
+                        const n = (ed.publisher || '').trim();
                         const v = (ed.verifier || '').trim();
                         if (n && v) return `${n} - ت ${v}`;
                         if (v) return `ت ${v}`;
@@ -1041,7 +1041,7 @@
 
         function openImageModal(bookId, edType, index) {
             const ed = booksData.find(b => b.id === bookId)[edType][index];
-            const n = (ed.name || '').trim();
+            const n = (ed.publisher || '').trim();
             const v = (ed.verifier || '').trim();
             const edLabel = (n && v) ? `${n} - ت ${v}` : (v ? `ت ${v}` : n);
             document.getElementById('modalTitle').innerText = edLabel;

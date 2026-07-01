@@ -905,7 +905,7 @@
         row.innerHTML = `
             <span class="drag-handle" title="اسحب للترتيب">☰</span>
             <div class="row-inputs">
-                <input type="text" class="md-input ed-name" placeholder="دار النشر" value="${name}">
+                <input type="text" class="md-input ed-publisher" placeholder="دار النشر" value="${name}">
                 <input type="text" class="md-input ed-verifier" placeholder="المحقق" value="${verifier}">
                 <div class="sub-container">
                     <div class="sub-container-title">
@@ -1089,7 +1089,7 @@
             c.innerHTML = '';
             (arr || []).forEach(ed => {
                 const imgs = ed.images ? ed.images : (ed.image ? [ed.image] : []);
-                addEditionRow(cid, ed.name, imgs, ed.notes || '', ed.corrections || [], ed.verifier || '');
+                addEditionRow(cid, ed.publisher, imgs, ed.notes || '', ed.corrections || [], ed.verifier || '');
             });
         };
         loadEditions('bestEditions', book.best_editions);
@@ -1143,9 +1143,9 @@
                     })).filter(a => a.title || a.url);
                     return { title, body, attachments };
                 }).filter(c => c.title || c.body || c.attachments.length);
-                const edName = row.querySelector('.ed-name').value.trim();
+                const edPublisher = row.querySelector('.ed-publisher').value.trim();
                 const edVerifier = row.querySelector('.ed-verifier').value.trim();
-                const edObj = { name: edName, images, notes: notesHtml, corrections };
+                const edObj = { publisher: edPublisher, images, notes: notesHtml, corrections };
                 if (edVerifier) edObj.verifier = edVerifier;
                 arr.push(edObj);
             });
