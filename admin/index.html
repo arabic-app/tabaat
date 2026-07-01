@@ -886,7 +886,7 @@
         renderAttachmentRow(container);
     };
 
-    function addEditionRow(containerId, name = '', imagesArray = [], notes = '', corrections = []) {
+    function addEditionRow(containerId, name = '', imagesArray = [], notes = '', corrections = [], verifier = '') {
         const container = document.getElementById(containerId);
         const row = document.createElement('div');
         row.className = 'dynamic-row';
@@ -905,7 +905,8 @@
         row.innerHTML = `
             <span class="drag-handle" title="اسحب للترتيب">☰</span>
             <div class="row-inputs">
-                <input type="text" class="md-input ed-name" placeholder="اسم دار النشر أو المحقق *" value="${name}" required>
+                <input type="text" class="md-input ed-name" placeholder="دار النشر" value="${name}">
+                <input type="text" class="md-input ed-verifier" placeholder="المحقق" value="${verifier}">
                 <div class="sub-container">
                     <div class="sub-container-title">
                         <span class="material-icons-round" style="font-size:14px;color:var(--md-primary)">image</span>
@@ -1088,7 +1089,7 @@
             c.innerHTML = '';
             (arr || []).forEach(ed => {
                 const imgs = ed.images ? ed.images : (ed.image ? [ed.image] : []);
-                addEditionRow(cid, ed.name, imgs, ed.notes || '', ed.corrections || []);
+                addEditionRow(cid, ed.name, imgs, ed.notes || '', ed.corrections || [], ed.verifier || '');
             });
         };
         loadEditions('bestEditions', book.best_editions);
@@ -1142,7 +1143,11 @@
                     })).filter(a => a.title || a.url);
                     return { title, body, attachments };
                 }).filter(c => c.title || c.body || c.attachments.length);
-                arr.push({ name: row.querySelector('.ed-name').value.trim(), images, notes: notesHtml, corrections });
+                const edName = row.querySelector('.ed-name').value.trim();
+                const edVerifier = row.querySelector('.ed-verifier').value.trim();
+                const edObj = { name: edName, images, notes: notesHtml, corrections };
+                if (edVerifier) edObj.verifier = edVerifier;
+                arr.push(edObj);
             });
         };
         collectEditions('bestEditions', newBook.best_editions);

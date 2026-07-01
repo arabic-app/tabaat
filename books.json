@@ -73,11 +73,12 @@
     ],
     "alt_editions": [
       {
-        "name": "دار الكتاب العربي  - ت عبد الرزاق المهدي",
+        "name": "دار الكتاب العربي",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782587965270-images20260627T220648.003.jpeg"
         ],
-        "notes": ""
+        "notes": "",
+        "verifier": "عبد الرزاق المهدي"
       },
       {
         "name": "دار الريان",
@@ -107,12 +108,13 @@
     "notes": "لا يوجد حاليا \"أفضل طبعة\" لكتاب تفسير ابن كثير، لكل واحدة مميزات وعيوب، ومن أراد الاكتفاء بواحدة يأخذ واحدة من المذكورة. ننتظر صدور طبعة الدكتور محمد الفالح من سنوات، يسر الله صدورها.",
     "best_editions": [
       {
-        "name": "دار ابن حزم - ت محمد ابراهيم البنا",
+        "name": "دار ابن حزم",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782765975752-images27.jpeg"
         ],
         "notes": "",
-        "corrections": []
+        "corrections": [],
+        "verifier": "محمد ابراهيم البنا"
       },
       {
         "name": "دار عالم الكتب (أولاد الشيخ)",
@@ -123,12 +125,13 @@
         "corrections": []
       },
       {
-        "name": "دار طيبة - ت سامي بن محمد السلامة",
+        "name": "دار طيبة",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782765993003-images29.jpeg"
         ],
         "notes": "الإصدار الثاني - 5 مجلدات قطع كبير",
-        "corrections": []
+        "corrections": [],
+        "verifier": "سامي بن محمد السلامة"
       },
       {
         "name": "دار ابن الجوزي",
@@ -141,20 +144,22 @@
     ],
     "alt_editions": [
       {
-        "name": "دار الكتاب العربي - ت عبد الرزاق المهدي",
+        "name": "دار الكتاب العربي",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782660848863-1774971.jpg"
         ],
         "notes": "",
-        "corrections": []
+        "corrections": [],
+        "verifier": "عبد الرزاق المهدي"
       },
       {
-        "name": "دار الشعب أو شروق البدر مصر - ت أنور الباز",
+        "name": "دار الشعب أو شروق البدر مصر",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782766256837-GyTG08yWoAAo09l.jpg"
         ],
         "notes": "يُنصح أن يُشترى معها كتاب فضائل القرآن طبعة دار التقوى تحقيق الحويني.",
-        "corrections": []
+        "corrections": [],
+        "verifier": "أنور الباز"
       }
     ],
     "links": [],
@@ -257,11 +262,12 @@
     "notes": "",
     "best_editions": [
       {
-        "name": "دار المعرفة - ت المرعشلي",
+        "name": "دار المعرفة",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782572501269-YKWLujPYaE9ht5uI5RXgwiEzPp1K1dFnx3Dw9WQT.jpg"
         ],
-        "notes": ""
+        "notes": "",
+        "verifier": "المرعشلي"
       }
     ],
     "alt_editions": [
@@ -361,12 +367,13 @@
         "corrections": []
       },
       {
-        "name": "دار ابن الجوزي - ت الفحل",
+        "name": "دار ابن الجوزي",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782579439815-47697390624173722919510176028677084410553888n.jpg"
         ],
         "notes": "",
-        "corrections": []
+        "corrections": [],
+        "verifier": "الفحل"
       },
       {
         "name": "السلطانية دار المنهاج",
@@ -550,20 +557,22 @@
     "notes": "",
     "best_editions": [
       {
-        "name": "مركز سطور - ت السرساوي",
+        "name": "مركز سطور",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782753648650-images20260629T174051.551.jpeg"
         ],
         "notes": "",
-        "corrections": []
+        "corrections": [],
+        "verifier": "السرساوي"
       },
       {
-        "name": "دار المنهاج القويم - ت السرساوي",
+        "name": "دار المنهاج القويم",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782303762491-.png"
         ],
         "notes": "",
-        "corrections": []
+        "corrections": [],
+        "verifier": "السرساوي"
       }
     ],
     "alt_editions": [
@@ -658,12 +667,13 @@
     "notes": "",
     "best_editions": [
       {
-        "name": "دار الصديق - ت عصام موسى هادي",
+        "name": "دار الصديق",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782667179317-47748940724173723286176805548874288404472875n.jpg"
         ],
         "notes": "",
-        "corrections": []
+        "corrections": [],
+        "verifier": "عصام موسى هادي"
       },
       {
         "name": "دار التأصيل",
@@ -754,11 +764,12 @@
     "notes": "",
     "best_editions": [
       {
-        "name": "دار الصديق - ت عصام موسى هادي",
+        "name": "دار الصديق",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782578983835-47972881324173722819510184255296148190746736n.jpg"
         ],
-        "notes": ""
+        "notes": "",
+        "verifier": "عصام موسى هادي"
       },
       {
         "name": "دار التأصيل",
@@ -843,11 +854,12 @@
     "notes": "",
     "best_editions": [
       {
-        "name": "دار الصديق - ت عصام موسى هادي",
+        "name": "دار الصديق",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782631286765-.webp"
         ],
-        "notes": ""
+        "notes": "",
+        "verifier": "عصام موسى هادي"
       },
       {
         "name": "دار التأصيل",
@@ -1193,11 +1205,12 @@
     ],
     "alt_editions": [
       {
-        "name": "دار الحديث - ت إسلام منصور عبد الحميد",
+        "name": "دار الحديث",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782731053483-sounanbayhaki2.jpeg"
         ],
-        "notes": ""
+        "notes": "",
+        "verifier": "إسلام منصور عبد الحميد"
       }
     ],
     "links": [],
@@ -1229,13 +1242,14 @@
         "corrections": []
       },
       {
-        "name": "دار الفتح للإعلام - ت على عبد المقصود رضوان",
+        "name": "دار الفتح للإعلام",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782574469152-images20260627T183048.684.jpeg",
           "https://arabic-app.github.io/tabaat/images/1782574476531-images20260627T183041.147.jpeg"
         ],
         "notes": "البعض يقدمها على الجميع",
-        "corrections": []
+        "corrections": [],
+        "verifier": "على عبد المقصود رضوان"
       }
     ],
     "alt_editions": [],
@@ -1297,20 +1311,22 @@
     "notes": "",
     "best_editions": [
       {
-        "name": "دار ابن الجوزي (ابن خزيمة) - ت عامر علي ياسين",
+        "name": "دار ابن الجوزي (ابن خزيمة)",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782559574540-FBb6rsNXEAo3u6m.jpg"
         ],
         "notes": "",
-        "corrections": []
+        "corrections": [],
+        "verifier": "عامر علي ياسين"
       },
       {
-        "name": "دار البشائر - ت كوشك",
+        "name": "دار البشائر",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782559567676-.jpg"
         ],
         "notes": "",
-        "corrections": []
+        "corrections": [],
+        "verifier": "كوشك"
       },
       {
         "name": "دار المنهاج",
@@ -1335,29 +1351,32 @@
     "notes": "",
     "best_editions": [
       {
-        "name": "دار أطلس الخضراء - ت نظر الفاريابي",
+        "name": "دار أطلس الخضراء",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782815009199-atlas.jpg"
         ],
         "notes": "",
-        "corrections": []
+        "corrections": [],
+        "verifier": "نظر الفاريابي"
       },
       {
-        "name": "دار الحضارة - ت علي العمران",
+        "name": "دار الحضارة",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782311028341-47972881324173709086178222877491447485082406n.jpg"
         ],
         "notes": "",
-        "corrections": []
+        "corrections": [],
+        "verifier": "علي العمران"
       },
       {
-        "name": "مؤسسة دار الحديث - ت الفحل",
+        "name": "مؤسسة دار الحديث",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782815033560-fahl.jpg",
           "https://arabic-app.github.io/tabaat/images/1782666178651-GqWV22JW8AAVm16.jpg"
         ],
         "notes": "",
-        "corrections": []
+        "corrections": [],
+        "verifier": "الفحل"
       }
     ],
     "alt_editions": [],
@@ -1374,12 +1393,13 @@
     "notes": "",
     "best_editions": [
       {
-        "name": "دار الصديق - ت عصام موسى هادي",
+        "name": "دار الصديق",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782559434617-LapdeBv9vQI0DAIyaUuFsroyE0dYKWvukr58621Q.jpg"
         ],
         "notes": "",
-        "corrections": []
+        "corrections": [],
+        "verifier": "عصام موسى هادي"
       },
       {
         "name": "دار ابن الجوزي",
@@ -1419,18 +1439,20 @@
         "notes": ""
       },
       {
-        "name": "دار ابن الجوزي - ت طارق عوض الله",
+        "name": "دار ابن الجوزي",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782658539924-48008553324173708852844915201437015327089534n.jpg"
         ],
-        "notes": ""
+        "notes": "",
+        "verifier": "طارق عوض الله"
       },
       {
-        "name": "دار ابن الجوزي - ت الفحل",
+        "name": "دار ابن الجوزي",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782658528589-E1kRIqWYAQn0E6.jpg"
         ],
-        "notes": "يعاد العمل عليه في مؤسسة دار الحديث"
+        "notes": "يعاد العمل عليه في مؤسسة دار الحديث",
+        "verifier": "الفحل"
       }
     ],
     "alt_editions": [
@@ -1483,12 +1505,13 @@
     "notes": "",
     "best_editions": [
       {
-        "name": "دار ابن الجوزي - ت ماهر الفحل",
+        "name": "دار ابن الجوزي",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782629534877-8kgOqmUfL6M1u2Al3ahoSnoJqNywY1sf2YKMHblG.jpg"
         ],
         "notes": "",
-        "corrections": []
+        "corrections": [],
+        "verifier": "ماهر الفحل"
       }
     ],
     "alt_editions": [],
@@ -1594,12 +1617,13 @@
     "notes": "",
     "best_editions": [
       {
-        "name": "دار الفاروق المنصورة - ت الطناحي",
+        "name": "دار الفاروق المنصورة",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782641810658-47745155724173709886178148033111866187318370n.jpg",
           "https://arabic-app.github.io/tabaat/images/1782641818483-images73.jpeg"
         ],
-        "notes": ""
+        "notes": "",
+        "verifier": "الطناحي"
       },
       {
         "name": "دار المنهاج جدة - تحقيق الخراط",
@@ -1632,12 +1656,13 @@
     "notes": "",
     "best_editions": [
       {
-        "name": "مؤسسة الرسالة ناشرون - ت بشار عواد",
+        "name": "مؤسسة الرسالة ناشرون",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782310870451-4776019242417371248617788140465933938052635n.jpg"
         ],
         "notes": "8 مجلدات قطع كبير",
-        "corrections": []
+        "corrections": [],
+        "verifier": "بشار عواد"
       }
     ],
     "alt_editions": [],
@@ -2309,12 +2334,13 @@
     "notes": "",
     "best_editions": [
       {
-        "name": "دار اللؤلؤة - ت عادل آل حمدان",
+        "name": "دار اللؤلؤة",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782587768508-63064529ef65400a9e7ceb2f460779da844.8275862069x1000lZeCjbOuMuKntP4ETez2rmIZVZlSoUXEJGNf7LA0.jpg",
           "https://arabic-app.github.io/tabaat/images/1782619269817-48008525124173730119509453796143315845464n.jpg"
         ],
-        "notes": ""
+        "notes": "",
+        "verifier": "عادل آل حمدان"
       }
     ],
     "alt_editions": [],
@@ -2412,13 +2438,14 @@
     "notes": "",
     "best_editions": [
       {
-        "name": "أروقة - ت محمد عايش",
+        "name": "أروقة",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782666142622-images20260628T195651.032.jpeg",
           "https://arabic-app.github.io/tabaat/images/1782666149112-cm21x2yx70e6o01kf73pd7czfScreenshot20241009160649.jpg"
         ],
         "notes": "",
-        "corrections": []
+        "corrections": [],
+        "verifier": "محمد عايش"
       }
     ],
     "alt_editions": [],
@@ -2461,12 +2488,13 @@
         "corrections": []
       },
       {
-        "name": "الرسالة - ت الأرناؤوط",
+        "name": "الرسالة",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782308171502-1852651895396399903585581976457254078744988n.jpeg"
         ],
         "notes": "الآداب الشرعية والمنح المرعية",
-        "corrections": []
+        "corrections": [],
+        "verifier": "الأرناؤوط"
       }
     ],
     "links": [],
@@ -2503,11 +2531,12 @@
     "notes": "",
     "best_editions": [
       {
-        "name": "منشورات البشير - ت آيت سعيد",
+        "name": "منشورات البشير",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782303631165-.png"
         ],
-        "notes": ""
+        "notes": "",
+        "verifier": "آيت سعيد"
       }
     ],
     "alt_editions": [],
@@ -2545,11 +2574,12 @@
     "notes": "",
     "best_editions": [
       {
-        "name": "دار ابن الجوزي (ابن خزيمة) - ت عامر علي ياسين",
+        "name": "دار ابن الجوزي (ابن خزيمة)",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782719669506-48206509724365180367031098258730087937348946n.jpg"
         ],
-        "notes": ""
+        "notes": "",
+        "verifier": "عامر علي ياسين"
       },
       {
         "name": "دار ابن كثير",
@@ -2559,11 +2589,12 @@
         "notes": ""
       },
       {
-        "name": "دار الصديق - ت عصام موسى هادي",
+        "name": "دار الصديق",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782719873148-lataaifmaarifbyibnrajabalhanbaliknowledgeislamicgoodsdirect.jpg"
         ],
-        "notes": ""
+        "notes": "",
+        "verifier": "عصام موسى هادي"
       }
     ],
     "alt_editions": [],
@@ -2580,18 +2611,20 @@
     "notes": "",
     "best_editions": [
       {
-        "name": "دار الإمام مسلم (مركز سطور) - ت مشهور حسن آل سلمان",
+        "name": "دار الإمام مسلم (مركز سطور)",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782640593379-images27.jpeg"
         ],
-        "notes": ""
+        "notes": "",
+        "verifier": "مشهور حسن آل سلمان"
       },
       {
-        "name": "مكتبة الفرقان - ت مشهور حسن آل سلمان",
+        "name": "مكتبة الفرقان",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782640623957-47697395524173733719509093014469515685460728n1.jpg"
         ],
-        "notes": ""
+        "notes": "",
+        "verifier": "مشهور حسن آل سلمان"
       }
     ],
     "alt_editions": [],
@@ -2639,13 +2672,14 @@
         "corrections": []
       },
       {
-        "name": "دار ابن الجوزي (ابن خزيمة) - ت عامر علي ياسين",
+        "name": "دار ابن الجوزي (ابن خزيمة)",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782680204658-images89.jpeg",
           "https://arabic-app.github.io/tabaat/images/1782680213187-images88.jpeg"
         ],
         "notes": "فيها تعليقات عقدية مفيدة",
-        "corrections": []
+        "corrections": [],
+        "verifier": "عامر علي ياسين"
       }
     ],
     "alt_editions": [
@@ -2679,12 +2713,13 @@
     "notes": "",
     "best_editions": [
       {
-        "name": "دار التوحيد للنشر - ت خالد القحطاني، اسماعيل العدوى، مبارك المطيري",
+        "name": "دار التوحيد للنشر",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782719944534-EqvljlW8AEDv9t.jpg"
         ],
         "notes": "",
-        "corrections": []
+        "corrections": [],
+        "verifier": "خالد القحطاني، اسماعيل العدوى، مبارك المطيري"
       }
     ],
     "alt_editions": [],
@@ -2819,11 +2854,12 @@
     "notes": "",
     "best_editions": [
       {
-        "name": "دار كنوز اشبيليا - ت الشثري",
+        "name": "دار كنوز اشبيليا",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782303976978-.png"
         ],
-        "notes": ""
+        "notes": "",
+        "verifier": "الشثري"
       }
     ],
     "alt_editions": [
@@ -3096,20 +3132,22 @@
     "notes": "",
     "best_editions": [
       {
-        "name": "دار المعارف مصر - ت أبي الفضل إبراهيم",
+        "name": "دار المعارف مصر",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782661169825-images20260628T183906.460.jpeg",
           "https://arabic-app.github.io/tabaat/images/1782661175321-mbc.jpg"
         ],
-        "notes": ""
+        "notes": "",
+        "verifier": "أبي الفضل إبراهيم"
       },
       {
-        "name": "دارة الملك عبد العزيز - ت بشار عواد",
+        "name": "دارة الملك عبد العزيز",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782661180069-G1It6kIWUAAxy53.jpg",
           "https://arabic-app.github.io/tabaat/images/1782661185518-images20260628T183834.954.jpeg"
         ],
-        "notes": ""
+        "notes": "",
+        "verifier": "بشار عواد"
       }
     ],
     "alt_editions": [
@@ -3153,22 +3191,24 @@
     "notes": "",
     "best_editions": [
       {
-        "name": "مركز سطور - ت أسامة عطايا العتيبي",
+        "name": "مركز سطور",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782716935655-2fca2f403c0a477ca7e1a4be6f65dd90.jpg",
           "https://arabic-app.github.io/tabaat/images/1782716945353-CV3hjmKdpwcgGWL9aB1SOudgNLK18tE8MeU53Y3n.jpg",
           "https://arabic-app.github.io/tabaat/images/1782716953452-1679130496202202136209191d1277f.png"
         ],
         "notes": "<span style=\"font-size: 15.2px;\">طبع في دور أخرى مثل أضواء السلف </span><span style=\"font-size: 15.2px;\">و</span><span style=\"font-size: 15.2px;\">دار الفرقان</span>",
-        "corrections": []
+        "corrections": [],
+        "verifier": "أسامة عطايا العتيبي"
       },
       {
-        "name": "عالم الفوائد - ت الوليد الفريان",
+        "name": "عالم الفوائد",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782716977399-vDHi62b1JNK4yIpOht0a4ByamIIyF7fwsyeH5mv4.jpg"
         ],
         "notes": "",
-        "corrections": []
+        "corrections": [],
+        "verifier": "الوليد الفريان"
       }
     ],
     "alt_editions": [],
@@ -3186,32 +3226,35 @@
     "notes": "",
     "best_editions": [
       {
-        "name": "دار اللباب - ت محمد خلوف",
+        "name": "دار اللباب",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782622338973-images20260628T074534.049.jpeg",
           "https://arabic-app.github.io/tabaat/images/1782622351291-GiztG8WgAAVKtJ.jpg"
         ],
         "notes": "",
-        "corrections": []
+        "corrections": [],
+        "verifier": "محمد خلوف"
       },
       {
-        "name": "دار الفتح - ت حسام الدين عبد الله",
+        "name": "دار الفتح",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782622362806-images20260628T074614.177.jpeg"
         ],
         "notes": "",
-        "corrections": []
+        "corrections": [],
+        "verifier": "حسام الدين عبد الله"
       }
     ],
     "alt_editions": [
       {
-        "name": "ت كوشك (دار البشائر / دار الفيحاء / جائزة دبي)",
+        "name": "",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782818185034-chifakwchk.jpg",
           "https://arabic-app.github.io/tabaat/images/1782818244464-chifakwchkb.jpg"
         ],
         "notes": "",
-        "corrections": []
+        "corrections": [],
+        "verifier": "كوشك (دار البشائر / دار الفيحاء / جائزة دبي)"
       },
       {
         "name": "دار ابن حزم بيروت ت عبد السلام البكاري",
@@ -3244,12 +3287,13 @@
         "corrections": []
       },
       {
-        "name": "الناشر المتميز - ت الرياشي",
+        "name": "الناشر المتميز",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782674874254-dKw8Fd9PbikPmfkDqI3uDS7KsC9eCtErTvb0uqaf.jpg"
         ],
         "notes": "تشتمل على كتاب كرامات الأولياء",
-        "corrections": []
+        "corrections": [],
+        "verifier": "الرياشي"
       },
       {
         "name": "دار اللؤلؤة_ت عادل آل حمدان",
@@ -3283,12 +3327,13 @@
     "notes": "",
     "best_editions": [
       {
-        "name": "ابن الجوزي السعودية - ت نشأت كمال",
+        "name": "ابن الجوزي السعودية",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782622309653-f83e2146cfcf47ff947ab161bc63bac61000x922rPTXElfOvI6waUbCHshZjydtwLRZblvJuR5oU6dn.jpg"
         ],
         "notes": "",
-        "corrections": []
+        "corrections": [],
+        "verifier": "نشأت كمال"
       },
       {
         "name": "دار اللؤلؤة",
@@ -3320,30 +3365,33 @@
     "notes": "",
     "best_editions": [
       {
-        "name": "دار الرسالة العالمية - ت محمد الدالي",
+        "name": "دار الرسالة العالمية",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782558077257-images20260627T140011.590.jpeg"
         ],
         "notes": "",
-        "corrections": []
+        "corrections": [],
+        "verifier": "محمد الدالي"
       },
       {
-        "name": "مؤسسة الرسالة ناشرون - ت علي محمد زينو",
+        "name": "مؤسسة الرسالة ناشرون",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782558070662-311695.jpg"
         ],
         "notes": "",
-        "corrections": []
+        "corrections": [],
+        "verifier": "علي محمد زينو"
       }
     ],
     "alt_editions": [
       {
-        "name": "دار الطلائع - ت محمد محي الدين عبد الحميد",
+        "name": "دار الطلائع",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782558059474-images20260627T140035.271.jpeg"
         ],
         "notes": "",
-        "corrections": []
+        "corrections": [],
+        "verifier": "محمد محي الدين عبد الحميد"
       }
     ],
     "links": [],
@@ -3359,20 +3407,22 @@
     "notes": "",
     "best_editions": [
       {
-        "name": "مؤسسة الرسالة ناشرون - ت محمد الدالي",
+        "name": "مؤسسة الرسالة ناشرون",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782627893994-images20260628T092336.196.jpeg"
         ],
         "notes": "<span style=\"color: rgb(0, 0, 0); font-family: Tahoma; font-size: 14px; background-color: rgb(253, 253, 253);\">تشتمل على القرط على الكامل والتنبيهات على الكامل</span>",
-        "corrections": []
+        "corrections": [],
+        "verifier": "محمد الدالي"
       },
       {
-        "name": "دار الرسالة العالمية - ت محمد الدالي",
+        "name": "دار الرسالة العالمية",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782627878530-images20260628T092342.351.jpeg"
         ],
         "notes": "",
-        "corrections": []
+        "corrections": [],
+        "verifier": "محمد الدالي"
       }
     ],
     "alt_editions": [
@@ -3398,11 +3448,12 @@
     "notes": "",
     "best_editions": [
       {
-        "name": "الخانجي و مصوراتها - ت عبد السلام هارون",
+        "name": "الخانجي و مصوراتها",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782574348726-images20260627T182837.824.jpeg"
         ],
-        "notes": ""
+        "notes": "",
+        "verifier": "عبد السلام هارون"
       }
     ],
     "alt_editions": [],
@@ -3455,13 +3506,14 @@
     "notes": "",
     "best_editions": [
       {
-        "name": "ت عبد السلام هارون",
+        "name": "",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782587639909-.jpg",
           "https://arabic-app.github.io/tabaat/images/1782587652692-images20260627T221252.104.jpeg"
         ],
         "notes": "",
-        "corrections": []
+        "corrections": [],
+        "verifier": "عبد السلام هارون"
       },
       {
         "name": "شذرات العلم للنشر",
@@ -3486,11 +3538,12 @@
     "notes": "",
     "best_editions": [
       {
-        "name": "المكتب الإسلامي - ت محمد منذر أبي شعر",
+        "name": "المكتب الإسلامي",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782680101499-.png"
         ],
-        "notes": ""
+        "notes": "",
+        "verifier": "محمد منذر أبي شعر"
       }
     ],
     "alt_editions": [],
@@ -3507,11 +3560,12 @@
     "notes": "",
     "best_editions": [
       {
-        "name": "طيبة الخضراء - ت علي الصالحي",
+        "name": "طيبة الخضراء",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782574893962-images20260627T184122.117.jpeg"
         ],
-        "notes": "إصدار الثلاث مجلدات"
+        "notes": "إصدار الثلاث مجلدات",
+        "verifier": "علي الصالحي"
       }
     ],
     "alt_editions": [],
@@ -3572,13 +3626,14 @@
     "notes": "",
     "best_editions": [
       {
-        "name": "اللؤلؤة - ت شعبان العودة",
+        "name": "اللؤلؤة",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782641881485-images69.jpeg",
           "https://arabic-app.github.io/tabaat/images/1782641889966-images71.jpeg"
         ],
         "notes": "",
-        "corrections": []
+        "corrections": [],
+        "verifier": "شعبان العودة"
       }
     ],
     "alt_editions": [],
@@ -3659,12 +3714,13 @@
     "notes": "",
     "best_editions": [
       {
-        "name": "القلم - ت صفوان داوودي",
+        "name": "القلم",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782743573877-images20260629T173247.155.jpeg"
         ],
         "notes": "",
-        "corrections": []
+        "corrections": [],
+        "verifier": "صفوان داوودي"
       }
     ],
     "alt_editions": [],
@@ -3681,13 +3737,14 @@
     "notes": "",
     "best_editions": [
       {
-        "name": "دار  صادر - ت إحسان عباس",
+        "name": "دار  صادر",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782574373353-images20260627T182858.533.jpeg",
           "https://arabic-app.github.io/tabaat/images/1782574380069-images20260627T182851.260.jpeg"
         ],
         "notes": "",
-        "corrections": []
+        "corrections": [],
+        "verifier": "إحسان عباس"
       }
     ],
     "alt_editions": [],
@@ -3704,13 +3761,14 @@
     "notes": "",
     "best_editions": [
       {
-        "name": "صادر - ت رياض مراد",
+        "name": "صادر",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782754724657-e966a734d3c040b8a23ebb49939715151000x838.18915284626we81Ylg9hG8SL34uGrBSG0fk7BuIQRQokDvzkER9.jpg",
           "https://arabic-app.github.io/tabaat/images/1782754771598-600x600h.jpeg"
         ],
         "notes": "",
-        "corrections": []
+        "corrections": [],
+        "verifier": "رياض مراد"
       }
     ],
     "alt_editions": [],
@@ -3727,13 +3785,14 @@
     "notes": "",
     "best_editions": [
       {
-        "name": "دار  صادر - ت وداد القاضي",
+        "name": "دار  صادر",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782574319933-images20260627T182817.594.jpeg",
           "https://arabic-app.github.io/tabaat/images/1782574330398-images20260627T182812.914.jpeg"
         ],
         "notes": "",
-        "corrections": []
+        "corrections": [],
+        "verifier": "وداد القاضي"
       }
     ],
     "alt_editions": [],
@@ -3750,12 +3809,13 @@
     "notes": "",
     "best_editions": [
       {
-        "name": "صادر - ت إبراهيم صالح",
+        "name": "صادر",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782632407218-fe8d9bf570c94244a8c66fa5c2d18053343.54688950789x10005y4JGLNMhbsxTtOjiuIDKUuw4maWCZbfXv6mzLAM.jpg",
           "https://arabic-app.github.io/tabaat/images/1782632413464-images20260628T103946.373.jpeg"
         ],
-        "notes": "في ثلاث مجلدات لا المجلد الواحد"
+        "notes": "في ثلاث مجلدات لا المجلد الواحد",
+        "verifier": "إبراهيم صالح"
       }
     ],
     "alt_editions": [],
@@ -3772,11 +3832,12 @@
     "notes": "",
     "best_editions": [
       {
-        "name": "لجنة التأليف والترجمة - ت أحمد أمين ورفاقه",
+        "name": "لجنة التأليف والترجمة",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782622556212-images20260628T075101.220.jpeg"
         ],
-        "notes": ""
+        "notes": "",
+        "verifier": "أحمد أمين ورفاقه"
       }
     ],
     "alt_editions": [],
@@ -3793,12 +3854,13 @@
     "notes": "",
     "best_editions": [
       {
-        "name": "الرسالة - ت إبراهيم الزيبق",
+        "name": "الرسالة",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782589937004-images20260627T224507.919.jpeg",
           "https://arabic-app.github.io/tabaat/images/1782589944041-images20260627T224520.032.jpeg"
         ],
-        "notes": ""
+        "notes": "",
+        "verifier": "إبراهيم الزيبق"
       }
     ],
     "alt_editions": [],
@@ -3815,11 +3877,12 @@
     "notes": "",
     "best_editions": [
       {
-        "name": "الرسالة - ت إبراهيم الزيبق",
+        "name": "الرسالة",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782631421816-images20260628T102009.152.jpeg"
         ],
-        "notes": ""
+        "notes": "",
+        "verifier": "إبراهيم الزيبق"
       }
     ],
     "alt_editions": [],
@@ -3858,12 +3921,13 @@
     "notes": "",
     "best_editions": [
       {
-        "name": "ت علي البجاوي",
+        "name": "",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782667107985-GfG3jptXQAAHP02.jpg",
           "https://arabic-app.github.io/tabaat/images/1782667114170-ZhrolAadab.jpeg"
         ],
-        "notes": ""
+        "notes": "",
+        "verifier": "علي البجاوي"
       }
     ],
     "alt_editions": [],
@@ -3880,12 +3944,13 @@
     "notes": "",
     "best_editions": [
       {
-        "name": "ت علي البجاوي",
+        "name": "",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782658634286-images71.jpeg",
           "https://arabic-app.github.io/tabaat/images/1782658641760-images72.jpeg"
         ],
-        "notes": ""
+        "notes": "",
+        "verifier": "علي البجاوي"
       }
     ],
     "alt_editions": [],
@@ -3945,11 +4010,12 @@
     "notes": "",
     "best_editions": [
       {
-        "name": "المعارف - ت أحمد شاكر و عبد السلام هارون",
+        "name": "المعارف",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782558123586-images20260627T125727.344.jpeg"
         ],
-        "notes": ""
+        "notes": "",
+        "verifier": "أحمد شاكر و عبد السلام هارون"
       }
     ],
     "alt_editions": [],
@@ -3966,11 +4032,12 @@
     "notes": "",
     "best_editions": [
       {
-        "name": "طيبة الخضراء - ت علي الصالحي",
+        "name": "طيبة الخضراء",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782718783887-DXXn9vhqHr6RvdKSHe0p75q9Js4HQNHVVITjM8OV.jpg"
         ],
-        "notes": ""
+        "notes": "",
+        "verifier": "علي الصالحي"
       }
     ],
     "alt_editions": [],
@@ -3987,12 +4054,13 @@
     "notes": "",
     "best_editions": [
       {
-        "name": "مؤسسة الرسالة ناشرون - ت موفق صالح",
+        "name": "مؤسسة الرسالة ناشرون",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782573653207-images20260627T174458.427.jpeg"
         ],
         "notes": "",
-        "corrections": []
+        "corrections": [],
+        "verifier": "موفق صالح"
       }
     ],
     "alt_editions": [],
@@ -4009,11 +4077,12 @@
     "notes": "",
     "best_editions": [
       {
-        "name": "أوقاف مصر - ت محمد بدوي",
+        "name": "أوقاف مصر",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782660890821-correctionoftheeloquentanditsexplanation.jpg"
         ],
-        "notes": ""
+        "notes": "",
+        "verifier": "محمد بدوي"
       }
     ],
     "alt_editions": [],
@@ -4030,13 +4099,14 @@
     "notes": "",
     "best_editions": [
       {
-        "name": "الشروق  - ت عبد الوهاب عزام",
+        "name": "الشروق",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782719460617-DeyJqA8WkAQBUTa.jpg",
           "https://arabic-app.github.io/tabaat/images/1782719467134-images20260629T105016.859.jpeg"
         ],
         "notes": "",
-        "corrections": []
+        "corrections": [],
+        "verifier": "عبد الوهاب عزام"
       },
       {
         "name": "المعارف-  ت عبد الوهاب عزام",
@@ -4061,11 +4131,12 @@
     "notes": "",
     "best_editions": [
       {
-        "name": "القلم - ت عماد الدين دولة",
+        "name": "القلم",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782589816083-images20260627T224100.596.jpeg"
         ],
-        "notes": ""
+        "notes": "",
+        "verifier": "عماد الدين دولة"
       }
     ],
     "alt_editions": [],
@@ -4082,11 +4153,12 @@
     "notes": "",
     "best_editions": [
       {
-        "name": "القلم - ت عماد الدين دولة",
+        "name": "القلم",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782559302794-4.jpeg"
         ],
-        "notes": ""
+        "notes": "",
+        "verifier": "عماد الدين دولة"
       }
     ],
     "alt_editions": [],
@@ -4152,11 +4224,12 @@
     "notes": "",
     "best_editions": [
       {
-        "name": "الخانجي - ت عادل جمال",
+        "name": "الخانجي",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782658696962-images73.jpeg"
         ],
-        "notes": ""
+        "notes": "",
+        "verifier": "عادل جمال"
       }
     ],
     "alt_editions": [],
@@ -4173,11 +4246,12 @@
     "notes": "",
     "best_editions": [
       {
-        "name": "المعارف - ت أحمد شاكر وعبد السلام هارون",
+        "name": "المعارف",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782573881844-images20260627T173934.678.jpeg"
         ],
-        "notes": ""
+        "notes": "",
+        "verifier": "أحمد شاكر وعبد السلام هارون"
       }
     ],
     "alt_editions": [],
@@ -4194,11 +4268,12 @@
     "notes": "",
     "best_editions": [
       {
-        "name": "المعارف - ت أحمد شاكر و عبد السلام هارون",
+        "name": "المعارف",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782642827325-images63.jpeg"
         ],
-        "notes": ""
+        "notes": "",
+        "verifier": "أحمد شاكر و عبد السلام هارون"
       }
     ],
     "alt_editions": [],
@@ -4215,12 +4290,13 @@
     "notes": "",
     "best_editions": [
       {
-        "name": "لجنة التأليف والترجمة والنشر - ت أحمد أمين و أحمد الزين",
+        "name": "لجنة التأليف والترجمة والنشر",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782573559037-images20260627T175149.451.jpeg",
           "https://arabic-app.github.io/tabaat/images/1782573569326-3592ced277ce884ec271b0ea8190609c.png.webp"
         ],
-        "notes": ""
+        "notes": "",
+        "verifier": "أحمد أمين و أحمد الزين"
       }
     ],
     "alt_editions": [],
@@ -4237,11 +4313,12 @@
     "notes": "",
     "best_editions": [
       {
-        "name": "العاصمة - ت رضاء الله المباركفوري",
+        "name": "العاصمة",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782718718725-images89.jpeg"
         ],
-        "notes": ""
+        "notes": "",
+        "verifier": "رضاء الله المباركفوري"
       }
     ],
     "alt_editions": [],
@@ -4258,12 +4335,13 @@
     "notes": "",
     "best_editions": [
       {
-        "name": "دار ابن حزم - ت عبد الحق التركماني",
+        "name": "دار ابن حزم",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782559283063-images20260627T142037.204.jpeg"
         ],
         "notes": "",
-        "corrections": []
+        "corrections": [],
+        "verifier": "عبد الحق التركماني"
       }
     ],
     "alt_editions": [],
@@ -4327,11 +4405,12 @@
     "notes": "عبد الرحمن قائد يعمل على الكتاب",
     "best_editions": [
       {
-        "name": "ت مرسي الخولي",
+        "name": "",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782662044672-images20260628T185336.131.jpeg"
         ],
-        "notes": ""
+        "notes": "",
+        "verifier": "مرسي الخولي"
       }
     ],
     "alt_editions": [
@@ -4377,11 +4456,12 @@
     "notes": "",
     "best_editions": [
       {
-        "name": "عالم الأدب - ت محمد بركات",
+        "name": "عالم الأدب",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782642671625-IMG.jpg"
         ],
-        "notes": ""
+        "notes": "",
+        "verifier": "محمد بركات"
       }
     ],
     "alt_editions": [],
@@ -4398,11 +4478,12 @@
     "notes": "",
     "best_editions": [
       {
-        "name": "دار الكتب المصرية - ت الميمني",
+        "name": "دار الكتب المصرية",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782624357636-400f2710f41446e4a2373cbcaf286088338.37890625x500h9pMN0pfY3175f2Mn46puhpYqXXBkyi4EQrp7AlH.jpg"
         ],
-        "notes": ""
+        "notes": "",
+        "verifier": "الميمني"
       }
     ],
     "alt_editions": [],
@@ -4419,19 +4500,21 @@
     "notes": "",
     "best_editions": [
       {
-        "name": "أوقاف العراق - ت سليم النعيمي",
+        "name": "أوقاف العراق",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782666044014-7aeacb2b795c4b07b258f65c4971ef14987.76908023483x1000NXlrnX9NF9SY6zEcbttrpdstS72aJ386rmoEP4VF.jpg",
           "https://arabic-app.github.io/tabaat/images/1782666052211-images20260628T195257.472.jpeg"
         ],
-        "notes": ""
+        "notes": "",
+        "verifier": "سليم النعيمي"
       },
       {
-        "name": "دار الكتب المصرية - ت عبد المجيد دياب",
+        "name": "دار الكتب المصرية",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782666058025-images20260628T195141.131.jpeg"
         ],
-        "notes": ""
+        "notes": "",
+        "verifier": "عبد المجيد دياب"
       }
     ],
     "alt_editions": [],
@@ -4491,11 +4574,12 @@
     "notes": "",
     "best_editions": [
       {
-        "name": "دار الغرب الإسلامي - ت محمد حجي و أحمد الشرقاوي",
+        "name": "دار الغرب الإسلامي",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782631243504-04OcdE6UWL7mwC3f4zj3k5jWueZzupW6nP0dI14B.jpg"
         ],
-        "notes": ""
+        "notes": "",
+        "verifier": "محمد حجي و أحمد الشرقاوي"
       }
     ],
     "alt_editions": [],
@@ -4541,12 +4625,13 @@
         "corrections": []
       },
       {
-        "name": "ت عبد الله عسيلان",
+        "name": "",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782658786877-576ca1b0a15ee236824ce7af9fc5eb5f102d3c87602536.jpg"
         ],
         "notes": "",
-        "corrections": []
+        "corrections": [],
+        "verifier": "عبد الله عسيلان"
       }
     ],
     "alt_editions": [],
@@ -4563,11 +4648,12 @@
     "notes": "",
     "best_editions": [
       {
-        "name": "ت عبد السلام هارون أفضل مصوراتها مكتبة المتنبي",
+        "name": "",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782674379659-images72.jpeg"
         ],
-        "notes": ""
+        "notes": "",
+        "verifier": "عبد السلام هارون أفضل مصوراتها مكتبة المتنبي"
       }
     ],
     "alt_editions": [],
@@ -4655,12 +4741,13 @@
     "notes": "",
     "best_editions": [
       {
-        "name": "جائزة دبي - ت محمد إبراهيم البنا",
+        "name": "جائزة دبي",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782589906904-images20260627T224348.669.jpeg",
           "https://arabic-app.github.io/tabaat/images/1782589913749-images20260627T224406.904.jpeg"
         ],
-        "notes": ""
+        "notes": "",
+        "verifier": "محمد إبراهيم البنا"
       }
     ],
     "alt_editions": [],
@@ -4722,11 +4809,12 @@
     "notes": "",
     "best_editions": [
       {
-        "name": "ابن الجوزي السعودية - ت خالد السبت",
+        "name": "ابن الجوزي السعودية",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782624855143-44abde5a592941088886cc753bd485eb1000x1000Z5MGcIlmdQLoG9JwAnDRmVL1xniovtPctzFcwd9x.jpg"
         ],
-        "notes": ""
+        "notes": "",
+        "verifier": "خالد السبت"
       }
     ],
     "alt_editions": [],
@@ -5051,12 +5139,13 @@
     "notes": "",
     "best_editions": [
       {
-        "name": "ابن الجوزي السعودية - ت محمد صبحي حلاق",
+        "name": "ابن الجوزي السعودية",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782723207285-images20260629T115313.214.jpeg"
         ],
         "notes": "",
-        "corrections": []
+        "corrections": [],
+        "verifier": "محمد صبحي حلاق"
       }
     ],
     "alt_editions": [],
@@ -5095,12 +5184,13 @@
     "notes": "",
     "best_editions": [
       {
-        "name": "عطاءات العلم - ت عثمان ضميرية",
+        "name": "عطاءات العلم",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782748930333-images20260629T180451.590.jpeg"
         ],
         "notes": "",
-        "corrections": []
+        "corrections": [],
+        "verifier": "عثمان ضميرية"
       }
     ],
     "alt_editions": [],
@@ -5117,11 +5207,12 @@
     "notes": "",
     "best_editions": [
       {
-        "name": "الرئاسة العامة للبحوث الإفتاء بالسعودية - ت محمد احمد زملكاوي",
+        "name": "الرئاسة العامة للبحوث الإفتاء بالسعودية",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782558481888-images20260627T140549.761.jpeg"
         ],
-        "notes": ""
+        "notes": "",
+        "verifier": "محمد احمد زملكاوي"
       }
     ],
     "alt_editions": [],
@@ -5225,11 +5316,12 @@
     "notes": "",
     "best_editions": [
       {
-        "name": "دار عطاءات العلم - ت محمد عزير و محمد أجمل",
+        "name": "دار عطاءات العلم",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782304349823-.png"
         ],
-        "notes": ""
+        "notes": "",
+        "verifier": "محمد عزير و محمد أجمل"
       }
     ],
     "alt_editions": [],
@@ -5246,12 +5338,13 @@
     "notes": "",
     "best_editions": [
       {
-        "name": "دار عطاءات العلم - ت علي العمران",
+        "name": "دار عطاءات العلم",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782653774104-images63.jpeg",
           "https://arabic-app.github.io/tabaat/images/1782653782332-images29.jpeg"
         ],
-        "notes": ""
+        "notes": "",
+        "verifier": "علي العمران"
       }
     ],
     "alt_editions": [],
@@ -5268,11 +5361,12 @@
     "notes": "",
     "best_editions": [
       {
-        "name": "دار عطاءات العلم - ت العمران، عزير، إصلاحي، نبيل السندي",
+        "name": "دار عطاءات العلم",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782304130872-.png"
         ],
-        "notes": ""
+        "notes": "",
+        "verifier": "العمران، عزير، إصلاحي، نبيل السندي"
       }
     ],
     "alt_editions": [],
@@ -5313,11 +5407,12 @@
     "notes": "",
     "best_editions": [
       {
-        "name": "دار عطاءات العلم - ت نبيل السندي و على العمران",
+        "name": "دار عطاءات العلم",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782304193236-.png"
         ],
-        "notes": ""
+        "notes": "",
+        "verifier": "نبيل السندي و على العمران"
       }
     ],
     "alt_editions": [],
@@ -5334,13 +5429,14 @@
     "notes": "",
     "best_editions": [
       {
-        "name": "دار عطاءات العلم - ت عبد الرحمن قائد",
+        "name": "دار عطاءات العلم",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782743533222-images20260629T173040.904.jpeg",
           "https://arabic-app.github.io/tabaat/images/1782743538311-images20260629T173146.130.jpeg"
         ],
         "notes": "",
-        "corrections": []
+        "corrections": [],
+        "verifier": "عبد الرحمن قائد"
       }
     ],
     "alt_editions": [],
@@ -5357,11 +5453,12 @@
     "notes": "",
     "best_editions": [
       {
-        "name": "دار عطاءات العلم - ت محمد إصلاحي",
+        "name": "دار عطاءات العلم",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782717617475-images81.jpeg"
         ],
-        "notes": ""
+        "notes": "",
+        "verifier": "محمد إصلاحي"
       }
     ],
     "alt_editions": [],
@@ -5378,11 +5475,12 @@
     "notes": "",
     "best_editions": [
       {
-        "name": "دار عطاءات العلم - ت سالم بلفقيه",
+        "name": "دار عطاءات العلم",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782304160586-.png"
         ],
-        "notes": ""
+        "notes": "",
+        "verifier": "سالم بلفقيه"
       }
     ],
     "alt_editions": [],
@@ -5400,11 +5498,12 @@
     "notes": "",
     "best_editions": [
       {
-        "name": "دار عطاءات العلم - ت حسين عكاشة",
+        "name": "دار عطاءات العلم",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782304219697-.png"
         ],
-        "notes": ""
+        "notes": "",
+        "verifier": "حسين عكاشة"
       }
     ],
     "alt_editions": [],
@@ -5421,11 +5520,12 @@
     "notes": "",
     "best_editions": [
       {
-        "name": "دار عطاءات العلم - ت محمد إصلاحي",
+        "name": "دار عطاءات العلم",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782680170585-images20260628T230026.472.jpeg"
         ],
-        "notes": ""
+        "notes": "",
+        "verifier": "محمد إصلاحي"
       }
     ],
     "alt_editions": [],
@@ -5442,11 +5542,12 @@
     "notes": "",
     "best_editions": [
       {
-        "name": "دار عطاءات العلم - ت زائد النشيري",
+        "name": "دار عطاءات العلم",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782658723181-images77.jpeg"
         ],
-        "notes": ""
+        "notes": "",
+        "verifier": "زائد النشيري"
       }
     ],
     "alt_editions": [],
@@ -5463,11 +5564,12 @@
     "notes": "",
     "best_editions": [
       {
-        "name": "عطاءات العلم - ت نايف الحمد",
+        "name": "عطاءات العلم",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782622535748-whatsappimage20241101at23239pm6724e6ca785c9.jpeg"
         ],
-        "notes": ""
+        "notes": "",
+        "verifier": "نايف الحمد"
       }
     ],
     "alt_editions": [],
@@ -5484,11 +5586,12 @@
     "notes": "",
     "best_editions": [
       {
-        "name": "دار عطاءات العلم - ت محمد عزير شمس",
+        "name": "دار عطاءات العلم",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782304077688-.png"
         ],
-        "notes": ""
+        "notes": "",
+        "verifier": "محمد عزير شمس"
       }
     ],
     "alt_editions": [],
@@ -5505,11 +5608,12 @@
     "notes": "",
     "best_editions": [
       {
-        "name": "دار عطاءات العلم - ت محمد عزير شمس",
+        "name": "دار عطاءات العلم",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782558651631-images20260627T140933.494.jpeg"
         ],
-        "notes": ""
+        "notes": "",
+        "verifier": "محمد عزير شمس"
       }
     ],
     "alt_editions": [],
@@ -5547,11 +5651,12 @@
     "notes": "",
     "best_editions": [
       {
-        "name": "دار عطاءات العلم - ت يحيى الثمالي",
+        "name": "دار عطاءات العلم",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782642331231-images67.jpeg"
         ],
-        "notes": ""
+        "notes": "",
+        "verifier": "يحيى الثمالي"
       }
     ],
     "alt_editions": [],
@@ -5568,11 +5673,12 @@
     "notes": "",
     "best_editions": [
       {
-        "name": "دار عطاءات العلم - ت عبد الله البطاطي",
+        "name": "دار عطاءات العلم",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782575275661-FrontCoverWithSideView1116c83aa9ba4852890cd924bfbdbbe2.jpg"
         ],
-        "notes": ""
+        "notes": "",
+        "verifier": "عبد الله البطاطي"
       }
     ],
     "alt_editions": [],
@@ -5590,11 +5696,12 @@
     "notes": "",
     "best_editions": [
       {
-        "name": "دار عطاءات العلم - ت زائد النشيري",
+        "name": "دار عطاءات العلم",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782557585666-images20260627T135246.049.jpeg"
         ],
-        "notes": ""
+        "notes": "",
+        "verifier": "زائد النشيري"
       }
     ],
     "alt_editions": [],
@@ -5611,11 +5718,12 @@
     "notes": "",
     "best_editions": [
       {
-        "name": "دار عطاءات العلم - ت إسماعيل غازي مرحبا",
+        "name": "دار عطاءات العلم",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782680154549-images20260628T230050.260.jpeg"
         ],
-        "notes": ""
+        "notes": "",
+        "verifier": "إسماعيل غازي مرحبا"
       }
     ],
     "alt_editions": [],
@@ -5632,11 +5740,12 @@
     "notes": "",
     "best_editions": [
       {
-        "name": "دار عطاءات العلم - ت محمد أجمل إصلاحي",
+        "name": "دار عطاءات العلم",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782596177737-DNOWQMPaKKGexns58EYLEvSOaayqqpTgHx72S6Fc.jpg"
         ],
-        "notes": ""
+        "notes": "",
+        "verifier": "محمد أجمل إصلاحي"
       }
     ],
     "alt_editions": [],
@@ -5653,11 +5762,12 @@
     "notes": "",
     "best_editions": [
       {
-        "name": "دار عطاءات العلم - ت محمد عزير شمس",
+        "name": "دار عطاءات العلم",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782624413537-869sM8xBBfOkKQnv6cZjbrZa5U2Sj9Llpbcb6vKr.jpg"
         ],
-        "notes": ""
+        "notes": "",
+        "verifier": "محمد عزير شمس"
       }
     ],
     "alt_editions": [],
@@ -5674,11 +5784,12 @@
     "notes": "",
     "best_editions": [
       {
-        "name": "دار عطاءات العلم - ت زائد النشيري",
+        "name": "دار عطاءات العلم",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782658619462-images67.jpeg"
         ],
-        "notes": ""
+        "notes": "",
+        "verifier": "زائد النشيري"
       }
     ],
     "alt_editions": [],
@@ -5696,11 +5807,12 @@
     "notes": "",
     "best_editions": [
       {
-        "name": "دار عطاءات العلم - ت محمد عزير شمس",
+        "name": "دار عطاءات العلم",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782629588432-images20260628T095252.518.jpeg"
         ],
-        "notes": ""
+        "notes": "",
+        "verifier": "محمد عزير شمس"
       }
     ],
     "alt_editions": [],
@@ -5717,11 +5829,12 @@
     "notes": "",
     "best_editions": [
       {
-        "name": "دار عطاءات العلم - ت علي العمران",
+        "name": "دار عطاءات العلم",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782666114972-images20260628T195636.689.jpeg"
         ],
-        "notes": ""
+        "notes": "",
+        "verifier": "علي العمران"
       }
     ],
     "alt_editions": [],
@@ -5739,11 +5852,12 @@
     "notes": "",
     "best_editions": [
       {
-        "name": "دار عطاءات العلم - ت عدنان البخاري",
+        "name": "دار عطاءات العلم",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782718686047-images88.jpeg"
         ],
-        "notes": ""
+        "notes": "",
+        "verifier": "عدنان البخاري"
       }
     ],
     "alt_editions": [],
@@ -5760,11 +5874,12 @@
     "notes": "",
     "best_editions": [
       {
-        "name": "دار عطاءات العلم - ت عثمان ضميرية",
+        "name": "دار عطاءات العلم",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782660951434-images20260628T183546.235.jpeg"
         ],
-        "notes": ""
+        "notes": "",
+        "verifier": "عثمان ضميرية"
       }
     ],
     "alt_editions": [],
@@ -5781,11 +5896,12 @@
     "notes": "",
     "best_editions": [
       {
-        "name": "دار عطاءات العلم - ت عبد الرحمن قائد",
+        "name": "دار عطاءات العلم",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782641158027-b84130d2bdc84af69cb9cbd587d06512335.61058923997x500cn4A7jOcXaOceQr49uSrEVoaCNqayrZcv3XXv8Xa.png"
         ],
-        "notes": ""
+        "notes": "",
+        "verifier": "عبد الرحمن قائد"
       }
     ],
     "alt_editions": [],
@@ -5802,11 +5918,12 @@
     "notes": "",
     "best_editions": [
       {
-        "name": "دار عطاءات العلم - ت محمد عزير شمس",
+        "name": "دار عطاءات العلم",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782666162853-images20260628T195724.166.jpeg"
         ],
-        "notes": ""
+        "notes": "",
+        "verifier": "محمد عزير شمس"
       }
     ],
     "alt_editions": [],
@@ -5824,11 +5941,12 @@
     "notes": "",
     "best_editions": [
       {
-        "name": "دار عطاءات العلم - ت زائد النشيري",
+        "name": "دار عطاءات العلم",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782624397048-ca71bf74157b48a3b7d99f9951993958335.61058923997x500QsePml1LfPUs1G3k9gPa0QAdIm7TSG23xJs6eqIR.png"
         ],
-        "notes": ""
+        "notes": "",
+        "verifier": "زائد النشيري"
       }
     ],
     "alt_editions": [],
@@ -5845,11 +5963,12 @@
     "notes": "",
     "best_editions": [
       {
-        "name": "دار عطاءات العلم - ت محمد عزير شمس",
+        "name": "دار عطاءات العلم",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782589884034-images20260627T224253.659.jpeg"
         ],
-        "notes": ""
+        "notes": "",
+        "verifier": "محمد عزير شمس"
       }
     ],
     "alt_editions": [],
@@ -5866,12 +5985,13 @@
     "notes": "",
     "best_editions": [
       {
-        "name": "دار عطاءات العلم - ت عبد الله المديفر",
+        "name": "دار عطاءات العلم",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782666093654-bf1f8130c3c6459e85374c1185273892thumbnail1000x100070.jpg",
           "https://arabic-app.github.io/tabaat/images/1782666099509-images20260628T195526.697.jpeg"
         ],
-        "notes": ""
+        "notes": "",
+        "verifier": "عبد الله المديفر"
       }
     ],
     "alt_editions": [],
@@ -5888,11 +6008,12 @@
     "notes": "",
     "best_editions": [
       {
-        "name": "دار عطاءات العلم - ت عبد الرحمن قائد",
+        "name": "دار عطاءات العلم",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782558631595-images20260627T140946.967.jpeg"
         ],
-        "notes": ""
+        "notes": "",
+        "verifier": "عبد الرحمن قائد"
       }
     ],
     "alt_editions": [],
@@ -5910,12 +6031,13 @@
     "notes": "",
     "best_editions": [
       {
-        "name": "دار عطاءات العلم - ت عبد الله البطاطي",
+        "name": "دار عطاءات العلم",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782717361646-images75.jpeg",
           "https://arabic-app.github.io/tabaat/images/1782717366744-images74.jpeg"
         ],
-        "notes": ""
+        "notes": "",
+        "verifier": "عبد الله البطاطي"
       }
     ],
     "alt_editions": [],
@@ -5955,11 +6077,12 @@
     "notes": "",
     "best_editions": [
       {
-        "name": "دار الخزانة و دار العمرية - ت محمد عزير و عبد الله آل غيهب",
+        "name": "دار الخزانة و دار العمرية",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782721431162-images20260629T112345.583.jpeg"
         ],
-        "notes": ""
+        "notes": "",
+        "verifier": "محمد عزير و عبد الله آل غيهب"
       }
     ],
     "alt_editions": [],
@@ -5977,12 +6100,13 @@
     "notes": "",
     "best_editions": [
       {
-        "name": "دار المحدث - ت الحسين بن محمد بن إغويلة",
+        "name": "دار المحدث",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782717329359-b5976559bfd7430f954ae5c45330d58a803.34907685702x1000i7Yl6CheggDWVxUXBYxpSumU25Ahmvn0mV8fpO0L.jpg"
         ],
         "notes": "",
-        "corrections": []
+        "corrections": [],
+        "verifier": "الحسين بن محمد بن إغويلة"
       }
     ],
     "alt_editions": [],
@@ -6000,12 +6124,13 @@
     "notes": "",
     "best_editions": [
       {
-        "name": "تكوين - ت عبد الرحمن قائد",
+        "name": "تكوين",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782752413066-images20260629T180032.859.jpeg"
         ],
         "notes": "",
-        "corrections": []
+        "corrections": [],
+        "verifier": "عبد الرحمن قائد"
       }
     ],
     "alt_editions": [],
@@ -6022,19 +6147,21 @@
     "notes": "",
     "best_editions": [
       {
-        "name": "أسفار - ت عمرو شريف الحويني",
+        "name": "أسفار",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782722807552-images20260629T114619.947.jpeg",
           "https://arabic-app.github.io/tabaat/images/1782722815924-97c4f3cdf25e478481a0c9f0d9ad16a9thumbnail1000x100070.jpg"
         ],
-        "notes": "استعجال الصواعق المرسلة"
+        "notes": "استعجال الصواعق المرسلة",
+        "verifier": "عمرو شريف الحويني"
       },
       {
-        "name": "أضواء السلف و دار ابن حزم - ت الحسن العلوي",
+        "name": "أضواء السلف و دار ابن حزم",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782304317719-.png"
         ],
-        "notes": ""
+        "notes": "",
+        "verifier": "الحسن العلوي"
       }
     ],
     "alt_editions": [],
@@ -6073,12 +6200,13 @@
     "notes": "",
     "best_editions": [
       {
-        "name": "دار القبس للنشر و التوزيع - ت صبري شاهين",
+        "name": "دار القبس للنشر و التوزيع",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782622511749-images20260628T074750.205.jpeg",
           "https://arabic-app.github.io/tabaat/images/1782622519150-8e86ce665c7644a8b2acc394e4167d6b666x1000o1X48Ssdclo1M3zzIaU9QsvVh8EonNgFG7U6jYNJ.jpg"
         ],
-        "notes": ""
+        "notes": "",
+        "verifier": "صبري شاهين"
       }
     ],
     "alt_editions": [],
@@ -6095,12 +6223,13 @@
     "notes": "",
     "best_editions": [
       {
-        "name": "دار الفتح - ت عمر شوقي و عمرو الحويني",
+        "name": "دار الفتح",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782720261366-images20260629T110411.707.jpeg",
           "https://arabic-app.github.io/tabaat/images/1782720295036-images20260629T110445.126.jpeg"
         ],
-        "notes": ""
+        "notes": "",
+        "verifier": "عمر شوقي و عمرو الحويني"
       }
     ],
     "alt_editions": [],
@@ -6117,11 +6246,12 @@
     "notes": "",
     "best_editions": [
       {
-        "name": "دار الفتح - ت عمر شوقي",
+        "name": "دار الفتح",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782558856894-images20260627T135049.831.jpeg"
         ],
-        "notes": ""
+        "notes": "",
+        "verifier": "عمر شوقي"
       }
     ],
     "alt_editions": [],
@@ -6138,12 +6268,13 @@
     "notes": "",
     "best_editions": [
       {
-        "name": "دار الأمين - ت أبي جنة الحنبلي",
+        "name": "دار الأمين",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782752144046-HCl7S5NawAAPGpx.jpg"
         ],
         "notes": "",
-        "corrections": []
+        "corrections": [],
+        "verifier": "أبي جنة الحنبلي"
       }
     ],
     "alt_editions": [],
@@ -6160,11 +6291,12 @@
     "notes": "",
     "best_editions": [
       {
-        "name": "مركز الملك فيصل - ت أبي جنة الحنبلي",
+        "name": "مركز الملك فيصل",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782719006624-images90.jpeg"
         ],
-        "notes": ""
+        "notes": "",
+        "verifier": "أبي جنة الحنبلي"
       }
     ],
     "alt_editions": [],
@@ -6181,11 +6313,12 @@
     "notes": "",
     "best_editions": [
       {
-        "name": "أروقة - ت أبي جنة الحنبلي",
+        "name": "أروقة",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782719022994-1b2a734b1beb4368a7d6199525fecf5e790x1000H6LRGYdr155dRZkGvvMTJFSLHX0xLENd0iiXKvxV.jpg"
         ],
-        "notes": ""
+        "notes": "",
+        "verifier": "أبي جنة الحنبلي"
       }
     ],
     "alt_editions": [],
@@ -6202,11 +6335,12 @@
     "notes": "",
     "best_editions": [
       {
-        "name": "مسك - ت أبي جنة الحنبلي",
+        "name": "مسك",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782718983118-0437589af0264c84bfe08cb294765d52thumbnail1000x100070.jpg"
         ],
-        "notes": ""
+        "notes": "",
+        "verifier": "أبي جنة الحنبلي"
       }
     ],
     "alt_editions": [],
@@ -6224,11 +6358,12 @@
     "notes": "",
     "best_editions": [
       {
-        "name": "المجلس الأعلى للشئون الإسلامية بمصر - ت محمد حسن الزفيتي",
+        "name": "المجلس الأعلى للشئون الإسلامية بمصر",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782641137662-CLpy5AmXAAEdgZy.jpg"
         ],
-        "notes": ""
+        "notes": "",
+        "verifier": "محمد حسن الزفيتي"
       }
     ],
     "alt_editions": [],
@@ -6292,28 +6427,31 @@
     "notes": "",
     "best_editions": [
       {
-        "name": "دار البشائر الإسلامية - ت عامر صبري",
+        "name": "دار البشائر الإسلامية",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782718257634-images87.jpeg"
         ],
         "notes": "كتاب الرقائق (رواية نعيم بن حماد المروزي)",
-        "corrections": []
+        "corrections": [],
+        "verifier": "عامر صبري"
       },
       {
-        "name": "دار الفاروق - ت عادل مرشد",
+        "name": "دار الفاروق",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782718264695-FT9Hpj0XEAA3E6y.jpg"
         ],
         "notes": "الزهد والرقائق (رواية الحسين بن الحسن المروزي)",
-        "corrections": []
+        "corrections": [],
+        "verifier": "عادل مرشد"
       },
       {
-        "name": "دار الصحابة - ت عبد الفتاح سرور",
+        "name": "دار الصحابة",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782718284193-IMG20260629093017185.jpg"
         ],
         "notes": "رواية المروزي مع زيادات نعيم بن حماد",
-        "corrections": []
+        "corrections": [],
+        "verifier": "عبد الفتاح سرور"
       }
     ],
     "alt_editions": [],
@@ -6334,11 +6472,12 @@
     "notes": "",
     "best_editions": [
       {
-        "name": "مركز الملك فيصل - ت أبي جنة الحنبلي",
+        "name": "مركز الملك فيصل",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782719064653-images20260629T104412.728.jpeg"
         ],
-        "notes": ""
+        "notes": "",
+        "verifier": "أبي جنة الحنبلي"
       }
     ],
     "alt_editions": [],
@@ -6355,11 +6494,12 @@
     "notes": "",
     "best_editions": [
       {
-        "name": "دار عطاءات العلم - ت العمران و عزير و زصلاحي",
+        "name": "دار عطاءات العلم",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782305934225-.png"
         ],
-        "notes": ""
+        "notes": "",
+        "verifier": "العمران و عزير و زصلاحي"
       }
     ],
     "alt_editions": [],
@@ -6377,11 +6517,12 @@
     "notes": "",
     "best_editions": [
       {
-        "name": "دار عطاءات العلم - ت عبد الرحمن قائد",
+        "name": "دار عطاءات العلم",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782572089247-images20260627T175313.213.jpeg"
         ],
-        "notes": ""
+        "notes": "",
+        "verifier": "عبد الرحمن قائد"
       }
     ],
     "alt_editions": [],
@@ -6398,11 +6539,12 @@
     "notes": "",
     "best_editions": [
       {
-        "name": "دار عطاءات العلم - ت عبد الله المزروع",
+        "name": "دار عطاءات العلم",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782589841004-images20260627T224150.997.jpeg"
         ],
-        "notes": ""
+        "notes": "",
+        "verifier": "عبد الله المزروع"
       }
     ],
     "alt_editions": [],
@@ -6420,11 +6562,12 @@
     "notes": "",
     "best_editions": [
       {
-        "name": "دار عطاءات العلم - ت علي العمران و عزير شمس",
+        "name": "دار عطاءات العلم",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782659579527-images20260628T181252.245.jpeg"
         ],
-        "notes": ""
+        "notes": "",
+        "verifier": "علي العمران و عزير شمس"
       }
     ],
     "alt_editions": [],
@@ -6441,11 +6584,12 @@
     "notes": "",
     "best_editions": [
       {
-        "name": "دار عطاءات العلم - ت محمد عزير شمس",
+        "name": "دار عطاءات العلم",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782658709978-images76.jpeg"
         ],
-        "notes": ""
+        "notes": "",
+        "verifier": "محمد عزير شمس"
       }
     ],
     "alt_editions": [],
@@ -6462,11 +6606,12 @@
     "notes": "",
     "best_editions": [
       {
-        "name": "دار عطاءات العلم - ت علي العمران",
+        "name": "دار عطاءات العلم",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782598574681-b1ec9e94c7e44712a0ddb4479564513c500x500YbY2Oi1vxqEfKaMfjnh0DUn7eovHIEV78c50tWPu.jpg"
         ],
-        "notes": ""
+        "notes": "",
+        "verifier": "علي العمران"
       }
     ],
     "alt_editions": [],
@@ -6484,11 +6629,12 @@
     "notes": "",
     "best_editions": [
       {
-        "name": "دار عطاءات العلم - ت علي العمران",
+        "name": "دار عطاءات العلم",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782589862328-images20260627T224127.391.jpeg"
         ],
-        "notes": "الطبعة الثانية  اما الطبعة الأولى للكتاب اعتمد فيها المحقق على نسخة وحيدة كان بها نقص ١٠ ورقات (بعد الطبع حوالي ٤٠صحيفة) من مقدمة الكتاب وهي من الأهمية بمكان كبيرثم ارسل له بعض الأخوة نسخة أخرى فحقق بكتاب عليه ثانية وسد النقص.. وأضاف الكثير للكتاب.  لذا فمن الطبعة الثانية الكتاب اكمل بكثير"
+        "notes": "الطبعة الثانية  اما الطبعة الأولى للكتاب اعتمد فيها المحقق على نسخة وحيدة كان بها نقص ١٠ ورقات (بعد الطبع حوالي ٤٠صحيفة) من مقدمة الكتاب وهي من الأهمية بمكان كبيرثم ارسل له بعض الأخوة نسخة أخرى فحقق بكتاب عليه ثانية وسد النقص.. وأضاف الكثير للكتاب.  لذا فمن الطبعة الثانية الكتاب اكمل بكثير",
+        "verifier": "علي العمران"
       }
     ],
     "alt_editions": [],
@@ -6506,11 +6652,12 @@
     "notes": "",
     "best_editions": [
       {
-        "name": "دار عطاءات العلم - ت محمد عزير شمس ورفاقه",
+        "name": "دار عطاءات العلم",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782658568075-images69.jpeg"
         ],
-        "notes": ""
+        "notes": "",
+        "verifier": "محمد عزير شمس ورفاقه"
       }
     ],
     "alt_editions": [],
@@ -6549,11 +6696,12 @@
     "notes": "",
     "best_editions": [
       {
-        "name": "دار عطاءات العلم - ت علي العمران",
+        "name": "دار عطاءات العلم",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782641787888-scaled.webp643547cf28678.webp"
         ],
-        "notes": ""
+        "notes": "",
+        "verifier": "علي العمران"
       }
     ],
     "alt_editions": [],
@@ -6570,11 +6718,12 @@
     "notes": "",
     "best_editions": [
       {
-        "name": "دار عطاءات العلم - ت علي العمران",
+        "name": "دار عطاءات العلم",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782722696858-images20260629T114447.117.jpeg"
         ],
-        "notes": ""
+        "notes": "",
+        "verifier": "علي العمران"
       }
     ],
     "alt_editions": [],
@@ -6591,11 +6740,12 @@
     "notes": "",
     "best_editions": [
       {
-        "name": "دار عطاءات العلم - ت سامي جاد الله",
+        "name": "دار عطاءات العلم",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782557732815-08097070aa65b97c9895be6c350dce0b.jpg.webp"
         ],
-        "notes": ""
+        "notes": "",
+        "verifier": "سامي جاد الله"
       }
     ],
     "alt_editions": [],
@@ -6612,11 +6762,12 @@
     "notes": "",
     "best_editions": [
       {
-        "name": "دار عطاءات العلم - ت علي العمران",
+        "name": "دار عطاءات العلم",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782685068604-images801796239199485280.jpeg"
         ],
-        "notes": ""
+        "notes": "",
+        "verifier": "علي العمران"
       }
     ],
     "alt_editions": [],
@@ -6654,11 +6805,12 @@
     "notes": "",
     "best_editions": [
       {
-        "name": "دار عطاءات العلم - ت علي العمران",
+        "name": "دار عطاءات العلم",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782624380682-images20260628T081034.626.jpeg"
         ],
-        "notes": ""
+        "notes": "",
+        "verifier": "علي العمران"
       }
     ],
     "alt_editions": [],
@@ -6675,11 +6827,12 @@
     "notes": "",
     "best_editions": [
       {
-        "name": "دار عطاءات العلم - ت علي العمران",
+        "name": "دار عطاءات العلم",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782573900435-images20260627T174226.286.jpeg"
         ],
-        "notes": ""
+        "notes": "",
+        "verifier": "علي العمران"
       }
     ],
     "alt_editions": [],
@@ -6739,11 +6892,12 @@
     "notes": "",
     "best_editions": [
       {
-        "name": "دار الفاروق - ت عادل مرشد",
+        "name": "دار الفاروق",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782717700556-HGhhUSBWQAEDJyU.jpg"
         ],
-        "notes": ""
+        "notes": "",
+        "verifier": "عادل مرشد"
       }
     ],
     "alt_editions": [],
@@ -6760,18 +6914,20 @@
     "notes": "",
     "best_editions": [
       {
-        "name": "دار المغني الثانية - ت سمير الزهيري",
+        "name": "دار المغني الثانية",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782717563923-images80.jpeg"
         ],
-        "notes": ""
+        "notes": "",
+        "verifier": "سمير الزهيري"
       },
       {
-        "name": "الناشر المتميز - ت الرياشي",
+        "name": "الناشر المتميز",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782717556889-images78.jpeg"
         ],
-        "notes": "الطبعة الأخيرة"
+        "notes": "الطبعة الأخيرة",
+        "verifier": "الرياشي"
       }
     ],
     "alt_editions": [],
@@ -6788,13 +6944,14 @@
     "notes": "",
     "best_editions": [
       {
-        "name": "مكتبة الرشد - ت مازن السرساوي",
+        "name": "مكتبة الرشد",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782629147413-bb4bb4526264430d8a1038b403271b80.jpeg",
           "https://arabic-app.github.io/tabaat/images/1782629158302-default1.jpg"
         ],
         "notes": "",
-        "corrections": []
+        "corrections": [],
+        "verifier": "مازن السرساوي"
       }
     ],
     "alt_editions": [],
@@ -6811,12 +6968,13 @@
     "notes": "",
     "best_editions": [
       {
-        "name": "دار المنهاج بجدة - ت محمود ميرة",
+        "name": "دار المنهاج بجدة",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782632145328-1992d5b0b3ff4418a700be9263123826685.18518518519x1000sZnhKJ2rgDEwlSjGubSofF9bbUkBoKmMBJ0ThyYM.jpg",
           "https://arabic-app.github.io/tabaat/images/1782632154182-01a2a3d9f9c94e43be47a37e51e327331000x379.79797979798hNKdfsj3wivyc0nGYI9CDjzMOOvuutlhva6ENzek.jpg"
         ],
-        "notes": ""
+        "notes": "",
+        "verifier": "محمود ميرة"
       },
       {
         "name": "دار المنهاج القويم",
@@ -6848,11 +7006,12 @@
     "notes": "",
     "best_editions": [
       {
-        "name": "المكتب الإسلامي - ت محمد سعيد مولوي",
+        "name": "المكتب الإسلامي",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782665940196-images20260628T194844.120.jpeg"
         ],
-        "notes": ""
+        "notes": "",
+        "verifier": "محمد سعيد مولوي"
       }
     ],
     "alt_editions": [],
@@ -7139,12 +7298,13 @@
     "notes": "",
     "best_editions": [
       {
-        "name": "دار التوحيد ودار باب العلم - ت حسني الجهني",
+        "name": "دار التوحيد ودار باب العلم",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782764464389-IMG20260629214219172.jpg"
         ],
         "notes": "",
-        "corrections": []
+        "corrections": [],
+        "verifier": "حسني الجهني"
       }
     ],
     "alt_editions": [],
@@ -7161,12 +7321,13 @@
     "notes": "",
     "best_editions": [
       {
-        "name": "دار العمرية - ت عبد الله آل غيهب",
+        "name": "دار العمرية",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782764669392-IMG20260629214218631.jpg"
         ],
         "notes": "",
-        "corrections": []
+        "corrections": [],
+        "verifier": "عبد الله آل غيهب"
       }
     ],
     "alt_editions": [],
@@ -7228,12 +7389,13 @@
     "date": "2026-07-01",
     "best_editions": [
       {
-        "name": "مركز العوجا للبحوث والدراسات - ت فهد ال سعود",
+        "name": "مركز العوجا للبحوث والدراسات",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782847028189-IMG20260630210628729.jpg"
         ],
         "notes": "",
-        "corrections": []
+        "corrections": [],
+        "verifier": "فهد ال سعود"
       }
     ],
     "alt_editions": [],

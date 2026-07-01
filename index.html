@@ -986,12 +986,20 @@
 
                 const renderList = (editions, isEdition, type) => (editions || []).map((ed, idx) => {
                     let actions = '';
+                    // Build display label: publisher - ت verifier
+                    const edLabel = (() => {
+                        const n = (ed.name || '').trim();
+                        const v = (ed.verifier || '').trim();
+                        if (n && v) return `${n} - ت ${v}`;
+                        if (v) return `ت ${v}`;
+                        return n;
+                    })();
                     if (isEdition && ed.corrections && ed.corrections.length) actions += `<button class="md-icon-btn" onclick="openCorrectionsModal(${book.id}, '${type}', ${idx})" title="تصويبات الطبعة"><span class="material-icons-round">report_problem</span></button>`;
-                    if (isEdition && ed.notes) actions += `<button class="md-icon-btn" onclick="openNoteModal('${encodeURIComponent(ed.name)}', '${encodeURIComponent(ed.notes)}')" title="ملاحظات حول الطبعة"><span class="material-icons-round">info</span></button>`;
+                    if (isEdition && ed.notes) actions += `<button class="md-icon-btn" onclick="openNoteModal('${encodeURIComponent(edLabel)}', '${encodeURIComponent(ed.notes)}')" title="ملاحظات حول الطبعة"><span class="material-icons-round">info</span></button>`;
                     if (isEdition && ((ed.images && ed.images.length) || ed.image)) actions += `<button class="md-icon-btn" onclick="openImageModal(${book.id}, '${type}', ${idx})" title="عرض صور الطبعة"><span class="material-icons-round">photo_library</span></button>`;
                     
                     return isEdition 
-                        ? `<li class="md-list-item"><span class="edition-name">${ed.name}</span><div class="edition-actions">${actions}</div></li>`
+                        ? `<li class="md-list-item"><span class="edition-name">${edLabel}</span><div class="edition-actions">${actions}</div></li>`
                         : `<li class="md-list-item"><a href="${ed.url}" target="_blank" class="link-item"><span class="material-icons-round">open_in_new</span><span class="edition-name">${ed.title}</span></a></li>`;
                 }).join('');
 
@@ -1033,7 +1041,10 @@
 
         function openImageModal(bookId, edType, index) {
             const ed = booksData.find(b => b.id === bookId)[edType][index];
-            document.getElementById('modalTitle').innerText = ed.name;
+            const n = (ed.name || '').trim();
+            const v = (ed.verifier || '').trim();
+            const edLabel = (n && v) ? `${n} - ت ${v}` : (v ? `ت ${v}` : n);
+            document.getElementById('modalTitle').innerText = edLabel;
             currentCarouselImages = ed.images?.length ? ed.images : (ed.image ? [ed.image] : []);
             currentSlideIndex = 0;
             renderCarousel();
