@@ -7,7 +7,7 @@
      - HTML/CSS/fonts               → Network First avec fallback cache
    ===================================================== */
 
-const CACHE_NAME = 'tabaat-v5';
+const CACHE_NAME = 'tabaat-v6';
 const STATIC_ASSETS = [
   './',
   './index.html',
@@ -57,6 +57,20 @@ self.addEventListener('fetch', (event) => {
 
   if (event.request.method !== 'GET') return;
   if (url.hostname === 'api.github.com') return;
+
+  // ── ADMIN APP : Network Only (pas de fonctionnement offline)
+  if (url.pathname.includes('/admin/')) {
+    event.respondWith(
+      fetch(event.request, { cache: 'no-store' }).catch(() => {
+        return new Response('Admin mode requires an active internet connection.', {
+          status: 503,
+          statusText: 'Service Unavailable',
+          headers: new Headers({ 'Content-Type': 'text/plain' })
+        });
+      })
+    );
+    return;
+  }
 
   // ── DATA : Network First (toujours données fraîches)
   // Ignorer les paramètres de recherche (?v=...) pour la comparaison du cache hors ligne
