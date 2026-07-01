@@ -6988,23 +6988,23 @@
     "title": "ديوان عنترة",
     "author": "عنترة العبسي",
     "category": [
-      "اللغة والأدب",
-      "الدواوين"
+      "الشعر والدواوين"
     ],
     "notes": "",
+    "date": "2026-07-01",
     "best_editions": [
       {
+        "publisher": "المكتب الإسلامي",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782665940196-images20260628T194844.120.jpeg"
         ],
         "notes": "",
-        "verifier": "محمد سعيد مولوي",
-        "publisher": "المكتب الإسلامي"
+        "corrections": [],
+        "verifier": "محمد سعيد مولوي"
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 260,
@@ -7554,7 +7554,7 @@
   },
   {
     "id": 284,
-    "title": "الشرح والإبانة على أصول الديانة\"الإبانة الصغرى\"",
+    "title": "الشرح والإبانة على أصول الديانة(الإبانة الصغرى)",
     "author": "عبيد الله بن بطة العكبري",
     "category": [
       "العقيدة"
@@ -7715,22 +7715,23 @@
   },
   {
     "id": 291,
-    "title": "السنة\"لعبد الله\"",
-    "author": "عبد الله بن أحمد بن حنبل",
+    "title": "ديوان ابن زيدون ورسائله",
+    "author": "أحمد بن عبد الله بن زيدون",
     "category": [
-      "العقيدة"
+      "الشعر والدواوين",
+      "اللغة والأدب"
     ],
     "notes": "",
     "date": "2026-07-01",
     "best_editions": [
       {
-        "publisher": "دار اللؤلؤة",
+        "publisher": "نهضة مصر",
         "images": [
-          "https://arabic-app.github.io/tabaat/images/1782916438115-4b1635bc23914364a62a37f6eacfc59c.jpg"
+          "https://arabic-app.github.io/tabaat/images/1782916774548-images681948684512758372.jpeg"
         ],
-        "notes": "ينتبه للشدة في تعليقات المحقق&nbsp;",
+        "notes": "",
         "corrections": [],
-        "verifier": "عادل آل حمدان"
+        "verifier": "على عبد العظيم"
       }
     ],
     "alt_editions": [],
@@ -7738,22 +7739,22 @@
   },
   {
     "id": 292,
-    "title": "الإبانة عن شريعة الفرقة الناحية \"الإبانة الكبرى\"",
-    "author": "عبيد الله بن بطة العكبري",
+    "title": "التاريخ الأندلسي",
+    "author": "عبد الرحمن الحجي",
     "category": [
-      "العقيدة"
+      "التاريخ الإسلامي"
     ],
     "notes": "",
     "date": "2026-07-01",
     "best_editions": [
       {
-        "publisher": "دار اللؤلؤة",
+        "publisher": "دار القلم",
         "images": [
-          "https://arabic-app.github.io/tabaat/images/1782916531840-IMG20260630221538483.jpg"
+          "https://arabic-app.github.io/tabaat/images/1782916943197-images5.jpeg",
+          "https://arabic-app.github.io/tabaat/images/1782916952869-images27.jpeg"
         ],
-        "notes": "ينتبه للشدة في تعليقات المحقق&nbsp;",
-        "corrections": [],
-        "verifier": "عادل آل حمدان"
+        "notes": "",
+        "corrections": []
       }
     ],
     "alt_editions": [],
