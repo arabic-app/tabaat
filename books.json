@@ -7703,5 +7703,28 @@
     ],
     "alt_editions": [],
     "links": []
+  },
+  {
+    "id": 290,
+    "title": "السنة",
+    "author": "أحمد بن محمد الخلال",
+    "category": [
+      "العقيدة"
+    ],
+    "notes": "",
+    "date": "2026-07-01",
+    "best_editions": [
+      {
+        "publisher": "دار اللؤلؤة",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782911719143-623ea0e49a2a4666a2464d9270bf896b.jpg"
+        ],
+        "notes": "ينتبه للشدة في تعليقات المحقق&nbsp;",
+        "corrections": [],
+        "verifier": "عادل آل حمدان"
+      }
+    ],
+    "alt_editions": [],
+    "links": []
   }
 ]
