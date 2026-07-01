@@ -3279,41 +3279,42 @@
     "date": "2026-07-01",
     "best_editions": [
       {
+        "publisher": "دار اللؤلؤة",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782674868695-images69.jpeg"
         ],
         "notes": "لا تشتمل على كتاب كرامات الأولياء",
         "corrections": [],
-        "publisher": "دار اللؤلؤة"
+        "verifier": "عادل آل حمدان"
       },
       {
+        "publisher": "الناشر المتميز",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782674874254-dKw8Fd9PbikPmfkDqI3uDS7KsC9eCtErTvb0uqaf.jpg"
         ],
         "notes": "تشتمل على كتاب كرامات الأولياء",
         "corrections": [],
-        "verifier": "الرياشي",
-        "publisher": "الناشر المتميز"
+        "verifier": "الرياشي"
       },
       {
+        "publisher": "دار اللؤلؤة",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782898490248-OIP.webp"
         ],
         "notes": "ينتبه للشدة في تعليقات المحقق&nbsp;",
         "corrections": [],
-        "publisher": "دار اللؤلؤة",
         "verifier": "عادل آل حمدان"
       }
     ],
     "alt_editions": [
       {
+        "publisher": "مكتبة غرناطة مصر",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782674883483-iathumb.jpg",
           "https://arabic-app.github.io/tabaat/images/1782674890880-images71.jpeg"
         ],
         "notes": "",
-        "corrections": [],
-        "publisher": "مكتبة غرناطة مصر"
+        "corrections": []
       }
     ],
     "links": []
