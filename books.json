@@ -7736,5 +7736,28 @@
     ],
     "alt_editions": [],
     "links": []
+  },
+  {
+    "id": 292,
+    "title": "التاريخ الأندلسي",
+    "author": "عبد الرحمن الحجي",
+    "category": [
+      "التاريخ الإسلامي"
+    ],
+    "notes": "",
+    "date": "2026-07-01",
+    "best_editions": [
+      {
+        "publisher": "دار القلم",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782916943197-images5.jpeg",
+          "https://arabic-app.github.io/tabaat/images/1782916952869-images27.jpeg"
+        ],
+        "notes": "",
+        "corrections": []
+      }
+    ],
+    "alt_editions": [],
+    "links": []
   }
 ]
