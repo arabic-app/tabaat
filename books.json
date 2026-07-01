@@ -3284,7 +3284,7 @@
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782674868695-images69.jpeg"
         ],
-        "notes": "لا تشتمل على كتاب كرامات الأولياء",
+        "notes": "لا تشتمل على كتاب كرامات الأولياء<div>وينتبه للشدة في تعليقات المحقق&nbsp;</div>",
         "corrections": [],
         "verifier": "عادل آل حمدان"
       },
@@ -3296,15 +3296,6 @@
         "notes": "تشتمل على كتاب كرامات الأولياء",
         "corrections": [],
         "verifier": "الرياشي"
-      },
-      {
-        "publisher": "دار اللؤلؤة",
-        "images": [
-          "https://arabic-app.github.io/tabaat/images/1782898490248-OIP.webp"
-        ],
-        "notes": "ينتبه للشدة في تعليقات المحقق&nbsp;",
-        "corrections": [],
-        "verifier": "عادل آل حمدان"
       }
     ],
     "alt_editions": [
