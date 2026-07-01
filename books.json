@@ -7656,5 +7656,28 @@
     ],
     "alt_editions": [],
     "links": []
+  },
+  {
+    "id": 288,
+    "title": "الرد على المبتدعة",
+    "author": "الحسن بن أحمد المعروف (ابن البناء الحنبلي)",
+    "category": [
+      "الأديان والفرق والمذاهب"
+    ],
+    "notes": "",
+    "date": "2026-07-01",
+    "best_editions": [
+      {
+        "publisher": "دار اللؤلؤة",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782910976425-300x400h.jpg"
+        ],
+        "notes": "ينتبه للشدة في تعليقات المحقق&nbsp;",
+        "corrections": [],
+        "verifier": "عادل آل حمدان"
+      }
+    ],
+    "alt_editions": [],
+    "links": []
   }
 ]
