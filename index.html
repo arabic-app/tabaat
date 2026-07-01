@@ -46,6 +46,10 @@
             padding: 0;
             color: var(--md-on-surface);
             -webkit-font-smoothing: antialiased;
+            height: 100dvh;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
         }
 
         /* ===== HEADER ===== */
@@ -85,20 +89,26 @@
         /* ===== CONTAINER ===== */
         .container {
             max-width: 900px;
-            margin: 24px auto;
-            padding: 0 12px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 16px 12px 0;
+            flex: 1;
+            min-height: 0;
+            display: flex;
+            flex-direction: column;
         }
 
         /* ===== MAIN SEARCH ===== */
         .search-wrapper {
             position: relative;
-            margin-bottom: 24px;
+            margin-bottom: 16px;
             display: flex;
             align-items: center;
             background: var(--md-surface);
             border-radius: 28px;
             box-shadow: var(--md-elevation-1);
             transition: box-shadow 0.2s;
+            flex-shrink: 0;
         }
         .search-wrapper:focus-within {
             box-shadow: var(--md-elevation-2);
@@ -130,7 +140,8 @@
             display: flex;
             align-items: center;
             gap: 12px;
-            margin-bottom: 20px;
+            margin-bottom: 12px;
+            flex-shrink: 0;
         }
 
         .science-filter-wrapper {
@@ -212,7 +223,24 @@
             box-shadow: none;
         }
 
+        /* ===== BOOKS CONTAINER ===== */
+        #booksContainer {
+            flex: 1;
+            overflow-y: auto;
+            padding-bottom: 20px;
+            /* nice scrollbar on desktop */
+            scrollbar-width: thin;
+            scrollbar-color: var(--md-outline-variant) transparent;
+        }
+        #booksContainer::-webkit-scrollbar { width: 6px; }
+        #booksContainer::-webkit-scrollbar-thumb {
+            background: var(--md-outline-variant);
+            border-radius: 3px;
+        }
+        #booksContainer::-webkit-scrollbar-track { background: transparent; }
+
         /* ===== CARDS ===== */
+
         .md-card {
             background: var(--md-surface);
             border-radius: 16px;
