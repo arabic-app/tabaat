@@ -7761,5 +7761,38 @@
     ],
     "alt_editions": [],
     "links": []
+  },
+  {
+    "id": 293,
+    "title": "وحي القلم",
+    "author": "مصطفي صادق الرافعي",
+    "category": [
+      "اللغة والأدب"
+    ],
+    "notes": "",
+    "date": "2026-07-01",
+    "best_editions": [
+      {
+        "publisher": "دار القلم",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782922517608-images63.jpeg",
+          "https://arabic-app.github.io/tabaat/images/1782922524731-images29.jpeg"
+        ],
+        "notes": "",
+        "corrections": [],
+        "verifier": "محمد علي كاتبي"
+      },
+      {
+        "publisher": "دار الجابي ودار ابن حزم",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782922555891-.jpg"
+        ],
+        "notes": "",
+        "corrections": [],
+        "verifier": "بسام الجابي"
+      }
+    ],
+    "alt_editions": [],
+    "links": []
   }
 ]
