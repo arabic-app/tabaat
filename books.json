@@ -7633,5 +7633,28 @@
     ],
     "alt_editions": [],
     "links": []
+  },
+  {
+    "id": 287,
+    "title": "أربع قصائد في السنة والإعتقاد",
+    "author": "الزنجاني، ابن طاهر المقدسي، إمام خراسان الهروب، الكرجي",
+    "category": [
+      "العقيدة"
+    ],
+    "notes": "",
+    "date": "2026-07-01",
+    "best_editions": [
+      {
+        "publisher": "دار اللؤلؤة",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782910727428-18fb0d7c4c314db1830e108ea7267d59321.32132132132x500jbzdmhJzl7J1gFjN2FARAdQfccdsWNBwAlHYCmas.jpg"
+        ],
+        "notes": "",
+        "corrections": [],
+        "verifier": "عادل آل حمدان"
+      }
+    ],
+    "alt_editions": [],
+    "links": []
   }
 ]
