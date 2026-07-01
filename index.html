@@ -52,7 +52,7 @@
         header {
             background-color: var(--md-primary);
             color: var(--md-on-primary);
-            padding: 20px 16px;
+            padding: 20px 16px 12px;
             box-shadow: var(--md-elevation-2);
             text-align: center;
             position: sticky;
@@ -89,21 +89,9 @@
             padding: 0 12px 24px;
         }
 
-        /* ===== STICKY FILTER BAR ===== */
+        /* ===== FILTER BAR (inside header) ===== */
         .filter-bar {
-            position: sticky;
-            top: 0;
-            z-index: 90;
-            background: var(--md-background);
-            padding: 16px 12px 10px;
-            max-width: 900px;
-            margin: 0 auto;
-            width: 100%;
-        }
-        
-        .search-wrapper:focus-within {
-            box-shadow: var(--md-elevation-2);
-            outline: 2px solid var(--md-primary);
+            margin-top: 14px;
         }
 
         /* ===== MAIN SEARCH ===== */
@@ -112,15 +100,18 @@
             margin-bottom: 12px;
             display: flex;
             align-items: center;
-            background: var(--md-surface);
+            background: rgba(255,255,255,0.15);
             border-radius: 28px;
-            box-shadow: var(--md-elevation-1);
             transition: box-shadow 0.2s;
+        }
+        .search-wrapper:focus-within {
+            background: rgba(255,255,255,0.25);
+            outline: 2px solid rgba(255,255,255,0.5);
         }
         .search-icon {
             position: absolute;
             right: 14px;
-            color: var(--md-on-surface-variant);
+            color: rgba(255,255,255,0.8);
             font-size: 24px;
             pointer-events: none;
             flex-shrink: 0;
@@ -133,9 +124,10 @@
             border-radius: 28px;
             font-family: inherit;
             background: transparent;
-            color: var(--md-on-surface);
+            color: #fff;
             min-width: 0;
         }
+        .search-box::placeholder { color: rgba(255,255,255,0.65); }
         .search-box:focus { outline: none; }
 
         /* ===== CHIPS ROW ===== */
@@ -149,9 +141,9 @@
         .science-filter-wrapper {
             display: flex;
             align-items: center;
-            background: var(--md-surface);
+            background: rgba(255,255,255,0.15);
             border-radius: 24px;
-            border: 1px solid var(--md-outline-variant);
+            border: 1px solid rgba(255,255,255,0.3);
             height: 42px;
             width: 42px;
             overflow: hidden;
@@ -164,7 +156,7 @@
         .science-filter-btn {
             background: transparent;
             border: none;
-            color: var(--md-primary);
+            color: rgba(255,255,255,0.9);
             width: 42px;
             height: 42px;
             display: flex;
@@ -179,13 +171,14 @@
             background: transparent;
             font-family: inherit;
             font-size: 0.95rem;
-            color: var(--md-on-surface);
+            color: #fff;
             width: 100%;
             padding: 0;
             opacity: 0;
             pointer-events: none;
             transition: opacity 0.3s ease;
         }
+        .science-filter-input::placeholder { color: rgba(255,255,255,0.6); }
         .science-filter-input:focus { outline: none; }
         .science-filter-wrapper.expanded .science-filter-input { opacity: 1; pointer-events: auto; }
 
@@ -201,28 +194,27 @@
         .category-chips::-webkit-scrollbar { display: none; } 
 
         .chip {
-            background: var(--md-surface);
-            border: 1px solid var(--md-outline-variant);
+            background: rgba(255,255,255,0.15);
+            border: 1px solid rgba(255,255,255,0.3);
             padding: 8px 16px;
             border-radius: 20px;
             cursor: pointer;
             white-space: nowrap;
             font-weight: 600;
-            font-size: 0.95rem;
-            color: var(--md-on-surface-variant);
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.9);
             font-family: inherit;
             transition: all 0.2s ease;
             user-select: none;
             -webkit-tap-highlight-color: transparent;
             display: inline-flex;
-            box-shadow: var(--md-elevation-1);
         }
-        .chip:hover { background: var(--md-surface-variant); }
+        .chip:hover { background: rgba(255,255,255,0.25); }
         .chip.active {
-            background: var(--md-primary-container);
-            color: var(--md-on-primary-container);
-            border-color: var(--md-primary-container);
-            box-shadow: none;
+            background: rgba(255,255,255,0.9);
+            color: var(--md-primary);
+            border-color: transparent;
+            font-weight: 800;
         }
 
 
@@ -819,25 +811,25 @@
             <span class="material-icons-round">download</span>
             تثبيت التطبيق
         </button>
-    </header>
 
-    <div class="filter-bar">
-        <div class="search-wrapper">
-            <span class="material-icons-round search-icon">search</span>
-            <input type="text" id="searchInput" class="search-box" placeholder="ابحث عن كتاب أو مؤلف..." autocomplete="off">
-        </div>
-        
-        <div class="chips-row">
-            <div class="science-filter-wrapper" id="scienceFilterWrapper">
-                <button class="science-filter-btn" id="scienceFilterBtn" aria-label="ابحث في العلوم">
-                    <span class="material-icons-round">search</span>
-                </button>
-                <input type="text" id="scienceSearchInput" class="science-filter-input" placeholder="ابحث في العلوم..." autocomplete="off">
+        <div class="filter-bar">
+            <div class="search-wrapper">
+                <span class="material-icons-round search-icon">search</span>
+                <input type="text" id="searchInput" class="search-box" placeholder="ابحث عن كتاب أو مؤلف..." autocomplete="off">
             </div>
+            
+            <div class="chips-row">
+                <div class="science-filter-wrapper" id="scienceFilterWrapper">
+                    <button class="science-filter-btn" id="scienceFilterBtn" aria-label="ابحث في العلوم">
+                        <span class="material-icons-round">search</span>
+                    </button>
+                    <input type="text" id="scienceSearchInput" class="science-filter-input" placeholder="ابحث في العلوم..." autocomplete="off">
+                </div>
 
-            <div class="category-chips" id="categoryChips"></div>
+                <div class="category-chips" id="categoryChips"></div>
+            </div>
         </div>
-    </div>
+    </header>
 
     <div class="container">
         <div id="booksContainer"></div>
