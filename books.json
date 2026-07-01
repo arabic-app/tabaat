@@ -7564,5 +7564,28 @@
     ],
     "alt_editions": [],
     "links": []
+  },
+  {
+    "id": 284,
+    "title": "الشرح والإبانة على أصول الديانة(الإبانة الصغرى)",
+    "author": "عبيد الله بن بطة العكبري",
+    "category": [
+      "العقيدة"
+    ],
+    "notes": "",
+    "date": "2026-07-01",
+    "best_editions": [
+      {
+        "publisher": "دار اللؤلؤة",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782908268156-f246a5e624a848dbb00f49f1383fa189thumbnail500x50070.jpeg"
+        ],
+        "notes": "",
+        "corrections": [],
+        "verifier": "عادل آل حمدان"
+      }
+    ],
+    "alt_editions": [],
+    "links": []
   }
 ]
