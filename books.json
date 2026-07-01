@@ -7332,19 +7332,28 @@
       "كتب متنوعة"
     ],
     "notes": "",
+    "date": "2026-07-01",
     "best_editions": [
       {
+        "publisher": "مكتبة الكوثر",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782846503503-IMG20260630210632389.jpg"
         ],
         "notes": "",
         "corrections": [],
-        "publisher": "مكتبة الكوثر اعتنى به فتحي الجندي"
+        "verifier": "فتحي الجندي"
+      },
+      {
+        "publisher": "دار القلم",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782926658060-44046.jpg"
+        ],
+        "notes": "",
+        "corrections": []
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 275,
