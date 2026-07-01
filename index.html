@@ -46,10 +46,6 @@
             padding: 0;
             color: var(--md-on-surface);
             -webkit-font-smoothing: antialiased;
-            height: 100dvh;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
         }
 
         /* ===== HEADER ===== */
@@ -89,30 +85,37 @@
         /* ===== CONTAINER ===== */
         .container {
             max-width: 900px;
-            width: 100%;
             margin: 0 auto;
-            padding: 16px 12px 0;
-            flex: 1;
-            min-height: 0;
-            display: flex;
-            flex-direction: column;
+            padding: 0 12px 24px;
+        }
+
+        /* ===== STICKY FILTER BAR ===== */
+        .filter-bar {
+            position: sticky;
+            top: 0;
+            z-index: 90;
+            background: var(--md-background);
+            padding: 16px 12px 10px;
+            max-width: 900px;
+            margin: 0 auto;
+            width: 100%;
+        }
+        
+        .search-wrapper:focus-within {
+            box-shadow: var(--md-elevation-2);
+            outline: 2px solid var(--md-primary);
         }
 
         /* ===== MAIN SEARCH ===== */
         .search-wrapper {
             position: relative;
-            margin-bottom: 16px;
+            margin-bottom: 12px;
             display: flex;
             align-items: center;
             background: var(--md-surface);
             border-radius: 28px;
             box-shadow: var(--md-elevation-1);
             transition: box-shadow 0.2s;
-            flex-shrink: 0;
-        }
-        .search-wrapper:focus-within {
-            box-shadow: var(--md-elevation-2);
-            outline: 2px solid var(--md-primary);
         }
         .search-icon {
             position: absolute;
@@ -135,13 +138,12 @@
         }
         .search-box:focus { outline: none; }
 
-        /* ===== CHIPS ROW & SCIENCE FILTER ===== */
+        /* ===== CHIPS ROW ===== */
         .chips-row {
             display: flex;
             align-items: center;
             gap: 12px;
-            margin-bottom: 12px;
-            flex-shrink: 0;
+            margin-bottom: 0;
         }
 
         .science-filter-wrapper {
@@ -223,21 +225,6 @@
             box-shadow: none;
         }
 
-        /* ===== BOOKS CONTAINER ===== */
-        #booksContainer {
-            flex: 1;
-            overflow-y: auto;
-            padding-bottom: 20px;
-            /* nice scrollbar on desktop */
-            scrollbar-width: thin;
-            scrollbar-color: var(--md-outline-variant) transparent;
-        }
-        #booksContainer::-webkit-scrollbar { width: 6px; }
-        #booksContainer::-webkit-scrollbar-thumb {
-            background: var(--md-outline-variant);
-            border-radius: 3px;
-        }
-        #booksContainer::-webkit-scrollbar-track { background: transparent; }
 
         /* ===== CARDS ===== */
 
@@ -834,8 +821,7 @@
         </button>
     </header>
 
-    <div class="container">
-        
+    <div class="filter-bar">
         <div class="search-wrapper">
             <span class="material-icons-round search-icon">search</span>
             <input type="text" id="searchInput" class="search-box" placeholder="ابحث عن كتاب أو مؤلف..." autocomplete="off">
@@ -851,7 +837,9 @@
 
             <div class="category-chips" id="categoryChips"></div>
         </div>
+    </div>
 
+    <div class="container">
         <div id="booksContainer"></div>
     </div>
 
@@ -919,30 +907,6 @@
 
         loadBooks();
 
-        /* ── Pull-to-refresh on #booksContainer ── */
-        (function setupPTR() {
-            const el = document.getElementById('booksContainer');
-            let startY = 0;
-            let isPulling = false;
-
-            el.addEventListener('touchstart', e => {
-                if (el.scrollTop === 0) {
-                    startY = e.touches[0].clientY;
-                    isPulling = true;
-                } else {
-                    isPulling = false;
-                }
-            }, { passive: true });
-
-            el.addEventListener('touchend', e => {
-                if (!isPulling) return;
-                const dy = e.changedTouches[0].clientY - startY;
-                if (dy > 70) {
-                    loadBooks();
-                }
-                isPulling = false;
-            }, { passive: true });
-        })();
 
         function getBookCategories(book) {
             if (Array.isArray(book.category)) return book.category;
