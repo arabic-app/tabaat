@@ -52,12 +52,8 @@
         header {
             background-color: var(--md-primary);
             color: var(--md-on-primary);
-            padding: 20px 16px 12px;
-            box-shadow: var(--md-elevation-2);
+            padding: 24px 16px;
             text-align: center;
-            position: sticky;
-            top: 0;
-            z-index: 100;
         }
         header h1 {
             margin: 0 0 6px 0;
@@ -86,12 +82,22 @@
         .container {
             max-width: 900px;
             margin: 0 auto;
-            padding: 16px 12px 24px;
+            padding: 0 12px 24px;
         }
 
-        /* ===== FILTER BAR (inside header) ===== */
+        /* ===== FILTER STICKY WRAPPER ===== */
+        .filter-sticky-wrapper {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: var(--md-background);
+            padding: 12px 0 6px;
+            width: 100%;
+        }
         .filter-bar {
-            margin-top: 14px;
+            max-width: 876px;
+            width: calc(100% - 24px);
+            margin: 0 auto;
             background: var(--md-surface);
             border-radius: 16px;
             padding: 12px;
@@ -814,7 +820,9 @@
             <span class="material-icons-round">download</span>
             تثبيت التطبيق
         </button>
+    </header>
 
+    <div class="filter-sticky-wrapper">
         <div class="filter-bar">
             <div class="search-wrapper">
                 <span class="material-icons-round search-icon">search</span>
@@ -832,7 +840,7 @@
                 <div class="category-chips" id="categoryChips"></div>
             </div>
         </div>
-    </header>
+    </div>
 
     <div class="container">
         <div id="booksContainer"></div>
