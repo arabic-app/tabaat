@@ -3225,49 +3225,49 @@
       "الشمائل النبوية"
     ],
     "notes": "",
+    "date": "2026-07-01",
     "best_editions": [
       {
+        "publisher": "دار اللباب",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782622338973-images20260628T074534.049.jpeg",
           "https://arabic-app.github.io/tabaat/images/1782622351291-GiztG8WgAAVKtJ.jpg"
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "محمد خلوف",
-        "publisher": "دار اللباب"
+        "verifier": "محمد خلوف"
       },
       {
+        "publisher": "دار الفتح",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782622362806-images20260628T074614.177.jpeg"
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "حسام الدين عبد الله",
-        "publisher": "دار الفتح"
+        "verifier": "حسام الدين عبد الله"
       }
     ],
     "alt_editions": [
       {
+        "publisher": "دار البشائر / دار الفيحاء / جائزة دبي",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782818185034-chifakwchk.jpg",
           "https://arabic-app.github.io/tabaat/images/1782818244464-chifakwchkb.jpg"
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "كوشك (دار البشائر / دار الفيحاء / جائزة دبي)",
-        "publisher": ""
+        "verifier": "عبده كوشك"
       },
       {
+        "publisher": "دار ابن حزم بيروت ت عبد السلام البكاري",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782622371279-images20260628T074704.272.jpeg"
         ],
         "notes": "",
-        "corrections": [],
-        "publisher": "دار ابن حزم بيروت ت عبد السلام البكاري"
+        "corrections": []
       }
     ],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 98,
