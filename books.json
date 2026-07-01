@@ -7712,5 +7712,28 @@
     ],
     "alt_editions": [],
     "links": []
+  },
+  {
+    "id": 291,
+    "title": "السنة\"لعبد الله\"",
+    "author": "عبد الله بن أحمد بن حنبل",
+    "category": [
+      "العقيدة"
+    ],
+    "notes": "",
+    "date": "2026-07-01",
+    "best_editions": [
+      {
+        "publisher": "دار اللؤلؤة",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782916438115-4b1635bc23914364a62a37f6eacfc59c.jpg"
+        ],
+        "notes": "ينتبه للشدة في تعليقات المحقق&nbsp;",
+        "corrections": [],
+        "verifier": "عادل آل حمدان"
+      }
+    ],
+    "alt_editions": [],
+    "links": []
   }
 ]
