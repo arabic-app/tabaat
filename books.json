@@ -7587,5 +7587,28 @@
     ],
     "alt_editions": [],
     "links": []
+  },
+  {
+    "id": 285,
+    "title": "كتاب الغرباء",
+    "author": "محمد بن الحسين الآجري",
+    "category": [
+      "كتب متنوعة"
+    ],
+    "notes": "",
+    "date": "2026-07-01",
+    "best_editions": [
+      {
+        "publisher": "دار اللؤلؤة",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782910432861-300x400w.jpg"
+        ],
+        "notes": "",
+        "corrections": [],
+        "verifier": "عادل آل حمدان"
+      }
+    ],
+    "alt_editions": [],
+    "links": []
   }
 ]
