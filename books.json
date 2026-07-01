@@ -7610,5 +7610,28 @@
     ],
     "alt_editions": [],
     "links": []
+  },
+  {
+    "id": 286,
+    "title": "كشف الكربة في وصف أهل الغربة",
+    "author": "عبد الرحمن بن أحمد الشهير بابن رجب الحنبلي",
+    "category": [
+      "كتب متنوعة"
+    ],
+    "notes": "",
+    "date": "2026-07-01",
+    "best_editions": [
+      {
+        "publisher": "دار اللؤلؤة",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782910514106-300x400w.jpg"
+        ],
+        "notes": "",
+        "corrections": [],
+        "verifier": "عادل آل حمدان"
+      }
+    ],
+    "alt_editions": [],
+    "links": []
   }
 ]
