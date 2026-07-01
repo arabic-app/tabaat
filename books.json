@@ -7735,5 +7735,28 @@
     ],
     "alt_editions": [],
     "links": []
+  },
+  {
+    "id": 292,
+    "title": "الإبانة عن شريعة الفرقة الناحية \"الإبانة الكبرى\"",
+    "author": "عبيد الله بن بطة العكبري",
+    "category": [
+      "العقيدة"
+    ],
+    "notes": "",
+    "date": "2026-07-01",
+    "best_editions": [
+      {
+        "publisher": "دار اللؤلؤة",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782916531840-IMG20260630221538483.jpg"
+        ],
+        "notes": "ينتبه للشدة في تعليقات المحقق&nbsp;",
+        "corrections": [],
+        "verifier": "عادل آل حمدان"
+      }
+    ],
+    "alt_editions": [],
+    "links": []
   }
 ]
