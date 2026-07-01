@@ -7794,5 +7794,28 @@
     ],
     "alt_editions": [],
     "links": []
+  },
+  {
+    "id": 294,
+    "title": "عودة الحجاب",
+    "author": "محمد إسماعيل المقدم",
+    "category": [
+      "فقه المرأة",
+      "كتب متنوعة"
+    ],
+    "notes": "",
+    "date": "2026-07-01",
+    "best_editions": [
+      {
+        "publisher": "دار طيبة",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782922758320-images66.jpeg"
+        ],
+        "notes": "",
+        "corrections": []
+      }
+    ],
+    "alt_editions": [],
+    "links": []
   }
 ]
