@@ -7692,7 +7692,7 @@
   },
   {
     "id": 290,
-    "title": "السنة",
+    "title": "السنة \"للخلال\"",
     "author": "أحمد بن محمد الخلال",
     "category": [
       "العقيدة"
@@ -7704,6 +7704,52 @@
         "publisher": "دار اللؤلؤة",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782911719143-623ea0e49a2a4666a2464d9270bf896b.jpg"
+        ],
+        "notes": "ينتبه للشدة في تعليقات المحقق&nbsp;",
+        "corrections": [],
+        "verifier": "عادل آل حمدان"
+      }
+    ],
+    "alt_editions": [],
+    "links": []
+  },
+  {
+    "id": 291,
+    "title": "السنة\"لعبد الله\"",
+    "author": "عبد الله بن أحمد بن حنبل",
+    "category": [
+      "العقيدة"
+    ],
+    "notes": "",
+    "date": "2026-07-01",
+    "best_editions": [
+      {
+        "publisher": "دار اللؤلؤة",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782916438115-4b1635bc23914364a62a37f6eacfc59c.jpg"
+        ],
+        "notes": "ينتبه للشدة في تعليقات المحقق&nbsp;",
+        "corrections": [],
+        "verifier": "عادل آل حمدان"
+      }
+    ],
+    "alt_editions": [],
+    "links": []
+  },
+  {
+    "id": 292,
+    "title": "الإبانة عن شريعة الفرقة الناحية \"الإبانة الكبرى\"",
+    "author": "عبيد الله بن بطة العكبري",
+    "category": [
+      "العقيدة"
+    ],
+    "notes": "",
+    "date": "2026-07-01",
+    "best_editions": [
+      {
+        "publisher": "دار اللؤلؤة",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782916531840-IMG20260630221538483.jpg"
         ],
         "notes": "ينتبه للشدة في تعليقات المحقق&nbsp;",
         "corrections": [],
