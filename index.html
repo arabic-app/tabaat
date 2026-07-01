@@ -920,6 +920,16 @@
         let currentSearchTerm = '';
         let currentCategory = 'الكل';
 
+        function normalizeArabic(str) {
+            if (!str) return '';
+            return String(str)
+                .toLowerCase()
+                .replace(/[أإآ]/g, 'ا')
+                .replace(/ة/g, 'ه')
+                .replace(/[\u064B-\u0652]/g, '') // remove Arabic diacritics (harakat)
+                .trim();
+        }
+
         function loadBooks() {
             return fetch('books.json?_t=' + Date.now(), { cache: 'no-store' })
                 .then(r => {
@@ -1015,8 +1025,10 @@
         };
 
         function filterChips(term) {
+            const normalizedTerm = normalizeArabic(term);
             document.querySelectorAll('.chip').forEach(chip => {
-                if (chip.dataset.value === 'الكل' || chip.dataset.value.toLowerCase().includes(term)) {
+                const normalizedValue = normalizeArabic(chip.dataset.value);
+                if (chip.dataset.value === 'الكل' || normalizedValue.includes(normalizedTerm)) {
                     chip.style.display = 'inline-flex';
                 } else {
                     chip.style.display = 'none';
@@ -1032,7 +1044,7 @@
         const clearSearchBtn = document.getElementById('clearSearchBtn');
         
         mainSearch.oninput = (e) => { 
-            currentSearchTerm = e.target.value.toLowerCase(); 
+            currentSearchTerm = e.target.value; 
             clearSearchBtn.style.display = currentSearchTerm ? 'flex' : 'none';
             filterAndDisplayBooks(); 
         };
@@ -1047,9 +1059,12 @@
         };
 
         function filterAndDisplayBooks() {
+            const normalizedSearchTerm = normalizeArabic(currentSearchTerm);
             const filtered = booksData.filter(book => {
-                const matchesSearch = (book.title && book.title.toLowerCase().includes(currentSearchTerm)) ||
-                                      (book.author && book.author.toLowerCase().includes(currentSearchTerm));
+                const normalizedTitle = normalizeArabic(book.title);
+                const normalizedAuthor = normalizeArabic(book.author);
+                const matchesSearch = normalizedTitle.includes(normalizedSearchTerm) ||
+                                      normalizedAuthor.includes(normalizedSearchTerm);
                 
                 const cats = getBookCategories(book);
                 const matchesCategory = currentCategory === 'الكل' || cats.includes(currentCategory);

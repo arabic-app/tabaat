@@ -698,6 +698,16 @@
     let booksData = [];
     let sciencesData = [];
 
+    function normalizeArabic(str) {
+        if (!str) return '';
+        return String(str)
+            .toLowerCase()
+            .replace(/[أإآ]/g, 'ا')
+            .replace(/ة/g, 'ه')
+            .replace(/[\u064B-\u0652]/g, '') // remove Arabic diacritics (harakat)
+            .trim();
+    }
+
     // Configuration GitHub pour l'upload d'images
     const GH_OWNER = 'arabic-app';
     const GH_REPO = 'tabaat';
@@ -719,13 +729,13 @@
     function renderSidebar(searchTerm = '') {
         const list = document.getElementById('booksList');
         list.innerHTML = '';
-        const term = String(searchTerm).trim().toLowerCase();
+        const term = normalizeArabic(searchTerm);
         const currentId = document.getElementById('bookId').value;
 
         const sortedBooks = [...booksData].sort((a, b) => (a.title || '').localeCompare(b.title || '', 'ar'));
 
         sortedBooks
-            .filter(b => (b.title && b.title.toLowerCase().includes(term)) || (b.author && b.author.toLowerCase().includes(term)))
+            .filter(b => normalizeArabic(b.title).includes(term) || normalizeArabic(b.author).includes(term))
             .forEach(book => {
                 const li = document.createElement('li');
                 li.textContent = book.title || 'بدون عنوان';
@@ -754,7 +764,7 @@
         const currentId = document.getElementById('bookId').value;
         const warn = document.getElementById('duplicateWarning');
         if (!currentId && val) {
-            const dup = booksData.find(b => b.title && b.title.trim().toLowerCase() === val.toLowerCase());
+            const dup = booksData.find(b => b.title && normalizeArabic(b.title) === normalizeArabic(val));
             if (dup) {
                 warn.style.display = 'flex';
                 document.getElementById('btnEditDuplicate').onclick = () => {
