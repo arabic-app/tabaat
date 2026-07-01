@@ -127,7 +127,7 @@
         }
         .search-box {
             width: 100%;
-            padding: 12px 48px 12px 20px;
+            padding: 12px 48px 12px 44px;
             font-size: 1rem;
             border: none;
             border-radius: 28px;
@@ -138,6 +138,24 @@
         }
         .search-box::placeholder { color: var(--md-on-surface-variant); }
         .search-box:focus { outline: none; }
+        .clear-search-btn {
+            position: absolute;
+            left: 14px;
+            background: transparent;
+            border: none;
+            color: var(--md-on-surface-variant);
+            font-size: 20px;
+            cursor: pointer;
+            padding: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: background 0.2s;
+        }
+        .clear-search-btn:hover {
+            background: rgba(0, 0, 0, 0.05);
+        }
 
         /* ===== CHIPS ROW ===== */
         .chips-row {
@@ -827,6 +845,7 @@
             <div class="search-wrapper">
                 <span class="material-icons-round search-icon">search</span>
                 <input type="text" id="searchInput" class="search-box" placeholder="ابحث عن كتاب أو مؤلف..." autocomplete="off">
+                <button id="clearSearchBtn" class="clear-search-btn material-icons-round" style="display: none;" aria-label="مسح البحث">close</button>
             </div>
             
             <div class="chips-row">
@@ -980,8 +999,22 @@
         }
 
         const mainSearch = document.getElementById('searchInput');
-        mainSearch.oninput = (e) => { currentSearchTerm = e.target.value.toLowerCase(); filterAndDisplayBooks(); };
+        const clearSearchBtn = document.getElementById('clearSearchBtn');
+        
+        mainSearch.oninput = (e) => { 
+            currentSearchTerm = e.target.value.toLowerCase(); 
+            clearSearchBtn.style.display = currentSearchTerm ? 'flex' : 'none';
+            filterAndDisplayBooks(); 
+        };
         mainSearch.onkeydown = (e) => { if(e.key === 'Enter') { e.preventDefault(); mainSearch.blur(); } };
+        
+        clearSearchBtn.onclick = () => {
+            mainSearch.value = '';
+            currentSearchTerm = '';
+            clearSearchBtn.style.display = 'none';
+            mainSearch.focus();
+            filterAndDisplayBooks();
+        };
 
         function filterAndDisplayBooks() {
             const filtered = booksData.filter(book => {
