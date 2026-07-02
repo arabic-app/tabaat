@@ -9548,17 +9548,20 @@
       "العقيدة"
     ],
     "notes": "",
+    "date": "2026-07-03",
     "best_editions": [
       {
-        "images": [],
+        "publisher": "دار الصميعي",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1783028046774-a655830ddb2c433c86afeeb49f6b56491000x975.84541062802GzJiM0b7z7aTN2BdhHtugnXLqJlyUpGJtGogQAZg.jpg"
+        ],
         "notes": "",
-        "verifier": "أسامة بن عطايا العتيبي",
-        "publisher": "دار الصميعي"
+        "corrections": [],
+        "verifier": "أسامة بن عطايا العتيبي"
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-07-02"
+    "links": []
   },
   {
     "id": 368,
