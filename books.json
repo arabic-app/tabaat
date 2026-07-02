@@ -9523,23 +9523,29 @@
       "اللغة والأدب"
     ],
     "notes": "",
+    "date": "2026-07-02",
     "best_editions": [
       {
-        "images": [],
+        "publisher": "الدار الشامية",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1783006134060-12f1147bc2af426aa89c05825147550e1000x809eAB13723DLjbQtbkN75vyDbfQ8ZelcicuXdVQFf0.jpg"
+        ],
         "notes": "",
-        "verifier": "",
-        "publisher": "الدار الشامية"
+        "corrections": [],
+        "verifier": "المكتب العلمي بالدار الشامية"
       },
       {
-        "images": [],
+        "publisher": "دار صادر",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1783006119229-images20260702T182831.688.jpeg"
+        ],
         "notes": "",
-        "verifier": "",
-        "publisher": "دار صادر"
+        "corrections": [],
+        "verifier": "عبود الشالجي"
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-07-02"
+    "links": []
   },
   {
     "id": 370,
