@@ -8378,17 +8378,20 @@
       "العقيدة"
     ],
     "notes": "",
+    "date": "2026-07-02",
     "best_editions": [
       {
-        "images": [],
+        "publisher": "مكتبة المنهاج الرياض",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1783007380813-images8.jpeg"
+        ],
         "notes": "",
-        "verifier": "",
-        "publisher": "مكتبة المنهاج الرياض"
+        "corrections": [],
+        "verifier": "عبد الرحمن اليحيى"
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-07-02"
+    "links": []
   },
   {
     "id": 319,
