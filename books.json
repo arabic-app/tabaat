@@ -8207,5 +8207,28 @@
     ],
     "alt_editions": [],
     "links": []
+  },
+  {
+    "id": 310,
+    "title": "ديوان جرير \"شرح محمد بن حبيب\"",
+    "author": "جرير بن عطية الخطفي",
+    "category": [
+      "الشعر والدواوين"
+    ],
+    "notes": "",
+    "date": "2026-07-02",
+    "best_editions": [
+      {
+        "publisher": "دار المعارف",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782982592139-images76.jpeg"
+        ],
+        "notes": "",
+        "corrections": [],
+        "verifier": "نعمان محمد طه"
+      }
+    ],
+    "alt_editions": [],
+    "links": []
   }
 ]
