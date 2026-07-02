@@ -8557,23 +8557,31 @@
       "الفقه الحنبلي"
     ],
     "notes": "",
+    "date": "2026-07-03",
     "best_editions": [
       {
-        "images": [],
+        "publisher": "دار طيبة الخضراء",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1783029241203-images8.jpeg",
+          "https://arabic-app.github.io/tabaat/images/1783029250965-41281.jpg"
+        ],
         "notes": "",
-        "verifier": "",
-        "publisher": "دار طيبة الخضراء"
+        "corrections": [],
+        "verifier": "محمد الربعي"
       },
       {
-        "images": [],
+        "publisher": "دار الأوراق الثقافية",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1783029265159-OIjmGBBCroMGHiv5OwkyLPpLOnec2dHFArCxf4cX.jpg",
+          "https://arabic-app.github.io/tabaat/images/1783029276174-images6.jpeg"
+        ],
         "notes": "",
-        "verifier": "أبي جنة الحنبلي",
-        "publisher": "دار الأوراق الثقافية"
+        "corrections": [],
+        "verifier": "أبي جنة الحنبلي"
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-07-02"
+    "links": []
   },
   {
     "id": 327,
