@@ -9133,17 +9133,19 @@
       "الجرح والتعديل"
     ],
     "notes": "",
+    "date": "2026-07-03",
     "best_editions": [
       {
-        "images": [],
+        "publisher": "دار الرسالة العالمية",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1783034888246-26c7dc02a4ba4a9d85c8fa8611d413fc1000x750CFbiUOux8OR9Ilv5wmLcXU7JVSzcaUn0UAMW95Bj.jpg"
+        ],
         "notes": "",
-        "verifier": "",
-        "publisher": "دار الرسالة العالمية"
+        "corrections": []
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-07-02"
+    "links": []
   },
   {
     "id": 349,
