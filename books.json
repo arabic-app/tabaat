@@ -9888,23 +9888,27 @@
   },
   {
     "id": 387,
-    "title": "التذكرة في أحوال الموتى",
+    "title": "التذكرة في أحوال الموتى وأمور الآخرة",
     "author": "محمد بن أحمد بن أبي بكر القرطبي",
     "category": [
       "العقيدة"
     ],
     "notes": "",
+    "date": "2026-07-02",
     "best_editions": [
       {
-        "images": [],
+        "publisher": "مكتبة دار المنهاج الرياض",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1783002286912-images84.jpeg",
+          "https://arabic-app.github.io/tabaat/images/1783002300155-IMG201806200023.jpg"
+        ],
         "notes": "",
-        "verifier": "",
-        "publisher": "مكتبة دار المنهاج الرياض"
+        "corrections": [],
+        "verifier": "الصادق محمد إبراهيم"
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-07-02"
+    "links": []
   },
   {
     "id": 388,
