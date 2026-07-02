@@ -9437,17 +9437,20 @@
       "الفقه الحنبلي"
     ],
     "notes": "",
+    "date": "2026-07-03",
     "best_editions": [
       {
-        "images": [],
+        "publisher": "أطلس الخضراء",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1783028580262-01892300x424.jpg.webp",
+          "https://arabic-app.github.io/tabaat/images/1783028596202-b18bfa47be3c443b925b42b059974e00thumbnail770x77070.jpg"
+        ],
         "notes": "",
-        "verifier": "",
-        "publisher": "أطلس الخضراء"
+        "corrections": []
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-07-02"
+    "links": []
   },
   {
     "id": 364,
