@@ -8608,7 +8608,10 @@
     "best_editions": [
       {
         "publisher": "دار الغرب الإسلامي",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1783021533177-0020509117.jpeg",
+          "https://arabic-app.github.io/tabaat/images/1783021569017-images33.jpeg"
+        ],
         "notes": "",
         "corrections": [],
         "verifier": "بشار عواد"
