@@ -8533,17 +8533,19 @@
       "الفقه المقارن"
     ],
     "notes": "",
+    "date": "2026-07-02",
     "best_editions": [
       {
-        "images": [],
+        "publisher": "مؤسسة الرسالة",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782989371523-images27.jpeg"
+        ],
         "notes": "",
-        "verifier": "",
-        "publisher": "مؤسسة الرسالة"
+        "corrections": []
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-07-02"
+    "links": []
   },
   {
     "id": 325,
