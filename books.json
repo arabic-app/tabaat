@@ -7896,5 +7896,28 @@
     ],
     "alt_editions": [],
     "links": []
+  },
+  {
+    "id": 298,
+    "title": "الحماسة البصرية",
+    "author": "على بن أبى الفرج البصري",
+    "category": [
+      "الشعر والدواوين"
+    ],
+    "notes": "",
+    "date": "2026-07-02",
+    "best_editions": [
+      {
+        "publisher": "مكتبة  الخانجي",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782978484548-images67.jpeg"
+        ],
+        "notes": "",
+        "corrections": [],
+        "verifier": "عادل جمال"
+      }
+    ],
+    "alt_editions": [],
+    "links": []
   }
 ]
