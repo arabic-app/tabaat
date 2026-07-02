@@ -8284,23 +8284,28 @@
       "الحديث"
     ],
     "notes": "",
+    "date": "2026-07-03",
     "best_editions": [
       {
-        "images": [],
+        "publisher": "دار التأصيل",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1783033464747-images692029172401853383.jpeg"
+        ],
         "notes": "",
-        "verifier": "",
-        "publisher": "دار التأصيل"
+        "corrections": []
       },
       {
-        "images": [],
+        "publisher": "دار الرسالة العالمية",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1783033472975-images672029172338035154.jpeg"
+        ],
         "notes": "",
-        "verifier": "",
-        "publisher": "دار الرسالة العالمية"
+        "corrections": [],
+        "verifier": "حسن شلبي"
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-07-02"
+    "links": []
   },
   {
     "id": 315,
