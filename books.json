@@ -9987,23 +9987,29 @@
       "الحديث"
     ],
     "notes": "",
+    "date": "2026-07-03",
     "best_editions": [
       {
-        "images": [],
+        "publisher": "دار التأصيل",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1783032042663-images53.jpeg",
+          "https://arabic-app.github.io/tabaat/images/1783032067112-182cfe142a124407964627ba823e5e521000x902.50965250965MtW6A0yjCBVa8wnBm4M2kaD2MKoPtYeeMiQVjlFz.jpg"
+        ],
         "notes": "",
-        "verifier": "",
-        "publisher": "دار التأصيل"
+        "corrections": []
       },
       {
-        "images": [],
+        "publisher": "دار الرسالة العالمية",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1783032104138-803ebb0a11f9477ebd6bac67a9910cd41000x712.962962962966dQxZ4O4JYqJz74lDhMQ8n5ij5N3AvSyM4Nn6Dhs.jpg"
+        ],
         "notes": "",
-        "verifier": "",
-        "publisher": "دار الرسالة العالمية"
+        "corrections": [],
+        "verifier": "شعيب الأرنؤوط"
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-07-02"
+    "links": []
   },
   {
     "id": 385,
