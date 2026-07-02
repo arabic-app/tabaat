@@ -8726,29 +8726,37 @@
   },
   {
     "id": 335,
-    "title": "التلخيص الحبير",
+    "title": "التلخيص الحبير\"التمييز في تخريج أحاديث الشرح الوجيز\"",
     "author": "أحمد بن علي بن حجر العسقلاني",
     "category": [
       "الحديث"
     ],
     "notes": "",
+    "date": "2026-07-02",
     "best_editions": [
       {
-        "images": [],
+        "publisher": "دار ابن كثير",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1783002780317-images20260702T173246.040.jpeg",
+          "https://arabic-app.github.io/tabaat/images/1783002787781-images92.jpeg"
+        ],
         "notes": "",
-        "verifier": "",
-        "publisher": "دار ابن كثير"
+        "corrections": [],
+        "verifier": "محمد زياد شعبان"
       },
       {
-        "images": [],
+        "publisher": "أضواء السلف",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1783002639188-images90.jpeg",
+          "https://arabic-app.github.io/tabaat/images/1783002646901-images89.jpeg"
+        ],
         "notes": "",
-        "verifier": "",
-        "publisher": "أضواء السلف"
+        "corrections": [],
+        "verifier": "محمد الثاني بن عمر"
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-07-02"
+    "links": []
   },
   {
     "id": 336,
