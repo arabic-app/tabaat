@@ -8472,17 +8472,21 @@
       "الفقه الشافعي"
     ],
     "notes": "",
+    "date": "2026-07-03",
     "best_editions": [
       {
-        "images": [],
+        "publisher": "دار الوفاء",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1783033347616-197c6097d4f749bf88b5972f0a7d6032.jpg",
+          "https://arabic-app.github.io/tabaat/images/1783033385852-328431.jpg"
+        ],
         "notes": "",
-        "verifier": "",
-        "publisher": "دار الوفاء"
+        "corrections": [],
+        "verifier": "رفعت فوزي عبد المطلب"
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-07-02"
+    "links": []
   },
   {
     "id": 323,
