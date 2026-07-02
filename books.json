@@ -9521,23 +9521,29 @@
       "العقيدة"
     ],
     "notes": "",
+    "date": "2026-07-03",
     "best_editions": [
       {
-        "images": [],
+        "publisher": "الرسالة",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1783029887498-images27.jpeg",
+          "https://arabic-app.github.io/tabaat/images/1783029900314-57..jpg"
+        ],
         "notes": "",
-        "verifier": "",
-        "publisher": "الرسالة"
+        "corrections": [],
+        "verifier": "عبد الله التركي، شعيب الأرنؤوط"
       },
       {
-        "images": [],
-        "notes": "حاشية آل عبد اللطيف",
-        "verifier": "",
-        "publisher": "مجلة البيان"
+        "publisher": "مجلة البيان",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1783029918453-RiUE8YnWT8J93Y4EE5o9cbZAJFEVFfTeNLRCZ72h.jpg"
+        ],
+        "notes": "حاشية عبد العزيز آل عبد اللطيف&nbsp;",
+        "corrections": []
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-07-02"
+    "links": []
   },
   {
     "id": 366,
