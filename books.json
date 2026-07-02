@@ -3565,22 +3565,23 @@
     "title": "إعراب القرآن وبيانه",
     "author": "محمود درويش",
     "category": [
-      "إعراب القرآن",
+      "علوم القرآن",
       "التفسير"
     ],
     "notes": "",
+    "date": "2026-07-02",
     "best_editions": [
       {
+        "publisher": "ابن كثير",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782558500119-images20260627T140629.295.jpeg"
         ],
         "notes": "منها ط بيروتية أفضل فنيا",
-        "publisher": "ابن كثير"
+        "corrections": []
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 108,
