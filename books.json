@@ -9767,5 +9767,190 @@
     "alt_editions": [],
     "links": [],
     "date": "2026-07-02"
+  },
+  {
+    "id": 382,
+    "title": "تهذيب الأسماء واللغات",
+    "author": "يحيى بن شرف النووي",
+    "category": [
+      "اللغة والأدب",
+      "التراجم والرجال"
+    ],
+    "notes": "",
+    "best_editions": [
+      {
+        "images": [],
+        "notes": "الإصدار الجديد بمراجعة يوسفان",
+        "verifier": "كوشك",
+        "publisher": "دار الفيحاء"
+      }
+    ],
+    "alt_editions": [],
+    "links": [],
+    "date": "2026-07-02"
+  },
+  {
+    "id": 383,
+    "title": "البحر المحيط",
+    "author": "محمد بن يوسف الشهير بأبي حيان الأندلسي",
+    "category": [
+      "التفسير"
+    ],
+    "notes": "",
+    "best_editions": [
+      {
+        "images": [],
+        "notes": "",
+        "verifier": "",
+        "publisher": "دار هجر"
+      },
+      {
+        "images": [],
+        "notes": "",
+        "verifier": "",
+        "publisher": "دار الرسالة العالمية"
+      }
+    ],
+    "alt_editions": [],
+    "links": [],
+    "date": "2026-07-02"
+  },
+  {
+    "id": 384,
+    "title": "صحيح ابن حبان بترتيب ابن بلبان",
+    "author": "محمد بن حبان البستي",
+    "category": [
+      "الحديث"
+    ],
+    "notes": "",
+    "best_editions": [
+      {
+        "images": [],
+        "notes": "",
+        "verifier": "",
+        "publisher": "دار التأصيل"
+      },
+      {
+        "images": [],
+        "notes": "",
+        "verifier": "",
+        "publisher": "دار الرسالة العالمية"
+      }
+    ],
+    "alt_editions": [],
+    "links": [],
+    "date": "2026-07-02"
+  },
+  {
+    "id": 385,
+    "title": "صحيح ابن حبان التقاسيم والأنواع",
+    "author": "محمد بن حبان البستي",
+    "category": [
+      "الحديث"
+    ],
+    "notes": "",
+    "best_editions": [
+      {
+        "images": [],
+        "notes": "",
+        "verifier": "",
+        "publisher": "دار ابن حزم"
+      }
+    ],
+    "alt_editions": [],
+    "links": [],
+    "date": "2026-07-02"
+  },
+  {
+    "id": 386,
+    "title": "البحور الزاخرة في علوم الآخرة",
+    "author": "محمد بن أحمد بن سالم السفاريني الحنبلي",
+    "category": [
+      "العقيدة"
+    ],
+    "notes": "",
+    "best_editions": [
+      {
+        "images": [],
+        "notes": "",
+        "verifier": "",
+        "publisher": "دار العاصمة"
+      }
+    ],
+    "alt_editions": [],
+    "links": [],
+    "date": "2026-07-02"
+  },
+  {
+    "id": 387,
+    "title": "التذكرة في أحوال الموتى",
+    "author": "محمد بن أحمد بن أبي بكر القرطبي",
+    "category": [
+      "العقيدة"
+    ],
+    "notes": "",
+    "best_editions": [
+      {
+        "images": [],
+        "notes": "",
+        "verifier": "",
+        "publisher": "مكتبة دار المنهاج الرياض"
+      }
+    ],
+    "alt_editions": [],
+    "links": [],
+    "date": "2026-07-02"
+  },
+  {
+    "id": 388,
+    "title": "شرح السنة",
+    "author": "الحسين بن مسعود البغوي",
+    "category": [
+      "شروح الحديث"
+    ],
+    "notes": "",
+    "best_editions": [
+      {
+        "images": [],
+        "notes": "",
+        "verifier": "",
+        "publisher": "المكتب الإسلامي"
+      },
+      {
+        "images": [],
+        "notes": "",
+        "verifier": "",
+        "publisher": "دار ابن حزم"
+      }
+    ],
+    "alt_editions": [],
+    "links": [],
+    "date": "2026-07-02"
+  },
+  {
+    "id": 389,
+    "title": "شرح العمدة في الأحكام",
+    "author": "محمد بن علي بن وهب بن مطيع ابن دقيق العيد",
+    "category": [
+      "شروح الحديث"
+    ],
+    "notes": "",
+    "best_editions": [
+      {
+        "images": [],
+        "notes": "",
+        "verifier": "",
+        "publisher": "دار اللباب"
+      },
+      {
+        "images": [],
+        "notes": "",
+        "verifier": "",
+        "publisher": "أسفار"
+      }
+    ],
+    "alt_editions": [],
+    "links": [],
+    "date": "2026-07-02"
   }
 ]
