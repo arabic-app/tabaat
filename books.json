@@ -9136,17 +9136,20 @@
       "علل الحديث"
     ],
     "notes": "",
+    "date": "2026-07-02",
     "best_editions": [
       {
-        "images": [],
+        "publisher": "دار عالم الكتب",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1783007131203-96428.jpg"
+        ],
         "notes": "",
-        "verifier": "",
-        "publisher": "دار عالم الكتب"
+        "corrections": [],
+        "verifier": "السيد صبحي السامرائي، السيد ابو المعاطي النوري"
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-07-02"
+    "links": []
   },
   {
     "id": 354,
