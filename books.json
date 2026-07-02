@@ -9683,23 +9683,26 @@
   },
   {
     "id": 377,
-    "title": "الكيمياء القديمة",
-    "author": "",
+    "title": "الكيمياء القديمة ومعها نصيحة الأغبياء ببطلان الكيمياء",
+    "author": "محمد بن أبي بكر بن قيم الجوزية",
     "category": [
       "كتب متنوعة"
     ],
     "notes": "",
+    "date": "2026-07-02",
     "best_editions": [
       {
-        "images": [],
+        "publisher": "تكوين",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782990468822-images72.jpeg"
+        ],
         "notes": "",
-        "verifier": "",
-        "publisher": "تكوين"
+        "corrections": [],
+        "verifier": "عبد الرحمن قائد"
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-07-02"
+    "links": []
   },
   {
     "id": 378,
