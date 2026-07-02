@@ -7942,5 +7942,37 @@
     ],
     "alt_editions": [],
     "links": []
+  },
+  {
+    "id": 300,
+    "title": "حماسة الظرفاء من أشعار المحدثين والقدماء",
+    "author": "عبد الله بن محمد الزوزني",
+    "category": [
+      "الشعر والدواوين"
+    ],
+    "notes": "",
+    "date": "2026-07-02",
+    "best_editions": [
+      {
+        "publisher": "دار الكتاب المصري _اللبناني",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782978817006-images78.jpeg"
+        ],
+        "notes": "",
+        "corrections": [],
+        "verifier": "محمد بهي الدين سالم"
+      },
+      {
+        "publisher": "وزارة الإعلام العراقية",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782978881901-images68.jpeg"
+        ],
+        "notes": "",
+        "corrections": [],
+        "verifier": "محمد جبار المعيبد"
+      }
+    ],
+    "alt_editions": [],
+    "links": []
   }
 ]
