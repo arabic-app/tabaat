@@ -9384,7 +9384,9 @@
       },
       {
         "publisher": "دار عالم الكتب",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782999965769-image1.jpeg"
+        ],
         "notes": "",
         "corrections": [],
         "verifier": "عبد الله التركي و مركز هجر"
