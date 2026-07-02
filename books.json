@@ -8813,23 +8813,29 @@
       "شروح الحديث"
     ],
     "notes": "",
+    "date": "2026-07-03",
     "best_editions": [
       {
-        "images": [],
+        "publisher": "دار ركائز",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1783029541865-6172719583266f2eab88ce9b855650767.jpg"
+        ],
         "notes": "",
-        "verifier": "",
-        "publisher": "دار ركائز"
+        "corrections": [],
+        "verifier": "أسامة الشطي، محمد سليمان، سائد صبحي"
       },
       {
-        "images": [],
+        "publisher": "مؤسسة الرسالة ناشرون",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1783029527881-1260af304ede4b36a1e1b7bd58022f0d1000x714.17353749509inZXlzMd3kc6xqtxSdUn88sD4dG5JuFNkEBFyLJW.jpg"
+        ],
         "notes": "",
-        "verifier": "",
-        "publisher": "مؤسسة الرسالة ناشرون"
+        "corrections": [],
+        "verifier": "محمد الزرقاني"
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-07-02"
+    "links": []
   },
   {
     "id": 337,
