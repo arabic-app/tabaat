@@ -9442,17 +9442,20 @@
       "الفقه المقارن"
     ],
     "notes": "",
+    "date": "2026-07-03",
     "best_editions": [
       {
-        "images": [],
+        "publisher": "دار الفتح",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1783034523524-images752030336571747997.jpeg"
+        ],
         "notes": "",
-        "verifier": "",
-        "publisher": "دار الفتح"
+        "corrections": [],
+        "verifier": "محمد صلاح"
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-07-02"
+    "links": []
   },
   {
     "id": 361,
