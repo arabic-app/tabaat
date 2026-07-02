@@ -9067,17 +9067,20 @@
       "شروح الحديث"
     ],
     "notes": "",
+    "date": "2026-07-03",
     "best_editions": [
       {
-        "images": [],
+        "publisher": "دار النوادر",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1783031481338-oDHDD2c2NdrOaVQ5msG87H1Y0Kp4BUgCKKo18dvY.jpg"
+        ],
         "notes": "",
-        "verifier": "",
-        "publisher": "دار النوادر"
+        "corrections": [],
+        "verifier": "نور الدين طالب"
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-07-02"
+    "links": []
   },
   {
     "id": 348,
