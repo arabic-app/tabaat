@@ -8680,23 +8680,23 @@
   },
   {
     "id": 332,
-    "title": "تيسير العلام شرح عمدة الأحكام",
+    "title": "تيسير العلام",
     "author": "عبد الله بن عبد الرحمن البسام",
     "category": [
       "شروح الحديث"
     ],
     "notes": "",
-    "date": "2026-07-02",
     "best_editions": [
       {
-        "publisher": "دار الميمان",
         "images": [],
         "notes": "",
-        "corrections": []
+        "verifier": "",
+        "publisher": "دار الميمان"
       }
     ],
     "alt_editions": [],
-    "links": []
+    "links": [],
+    "date": "2026-07-02"
   },
   {
     "id": 333,
@@ -8726,21 +8726,17 @@
       "شروح الحديث"
     ],
     "notes": "",
-    "date": "2026-07-02",
     "best_editions": [
       {
-        "publisher": "دار الغرب الإسلامي",
-        "images": [
-          "https://arabic-app.github.io/tabaat/images/1783011964626-cover1.jpg",
-          "https://arabic-app.github.io/tabaat/images/1783011970684-images33.jpeg"
-        ],
+        "images": [],
         "notes": "",
-        "corrections": [],
-        "verifier": "محمد السليماني، عائشة السليماني"
+        "verifier": "",
+        "publisher": "دار الغرب الإسلامي"
       }
     ],
     "alt_editions": [],
-    "links": []
+    "links": [],
+    "date": "2026-07-02"
   },
   {
     "id": 335,
@@ -8810,21 +8806,17 @@
       "الناسخ والمنسوخ"
     ],
     "notes": "",
-    "date": "2026-07-02",
     "best_editions": [
       {
-        "publisher": "دار ابن الجوزي",
-        "images": [
-          "https://arabic-app.github.io/tabaat/images/1783012019728-lgxgzuOm3p5sstBY8GL8PMfjgdITiCGzVGjJvD9T.jpg",
-          "https://arabic-app.github.io/tabaat/images/1783012026615-bab730edef2eebd503de7d5b7fd96e6894dc4a92597825.jpg"
-        ],
+        "images": [],
         "notes": "",
-        "corrections": [],
-        "verifier": "سليمان اللاحم"
+        "verifier": "",
+        "publisher": "دار ابن الجوزي"
       }
     ],
     "alt_editions": [],
-    "links": []
+    "links": [],
+    "date": "2026-07-02"
   },
   {
     "id": 338,
