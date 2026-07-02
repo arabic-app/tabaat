@@ -8409,17 +8409,21 @@
       "الحديث"
     ],
     "notes": "",
+    "date": "2026-07-03",
     "best_editions": [
       {
-        "images": [],
+        "publisher": "دار هجر",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1783034596638-images762030336662976122.jpeg",
+          "https://arabic-app.github.io/tabaat/images/1783034603695-429da4b9e504415e98be7598689d594e1000x750pScC2oki1Uo865Rc6XXo6hS2eRcNEexGro98eG7j.jpg"
+        ],
         "notes": "",
-        "verifier": "",
-        "publisher": "دار هجر"
+        "corrections": [],
+        "verifier": "محمد عبد المحسن التركي"
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-07-02"
+    "links": []
   },
   {
     "id": 320,
