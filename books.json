@@ -8159,5 +8159,29 @@
     ],
     "alt_editions": [],
     "links": []
+  },
+  {
+    "id": 308,
+    "title": "ديوان أبي تمام بشرح الخطيب التبريزي",
+    "author": "حبيب بن أوس الطائي، التبريزي",
+    "category": [
+      "الشعر والدواوين"
+    ],
+    "notes": "",
+    "date": "2026-07-02",
+    "best_editions": [
+      {
+        "publisher": "دار المعارف",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782982310557-images71.jpeg",
+          "https://arabic-app.github.io/tabaat/images/1782982320070-images72.jpeg"
+        ],
+        "notes": "",
+        "corrections": [],
+        "verifier": "محمد عبده عزام"
+      }
+    ],
+    "alt_editions": [],
+    "links": []
   }
 ]
