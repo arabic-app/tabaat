@@ -9051,17 +9051,21 @@
       "علوم القرآن"
     ],
     "notes": "",
+    "date": "2026-07-03",
     "best_editions": [
       {
-        "images": [],
+        "publisher": "دار الخزانة الأندلسية",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1783033990845-FJ3CwqXsAAp3fH.jpg",
+          "https://arabic-app.github.io/tabaat/images/1783034369008-mZWhGTzBLBFJA1f2FDfmpAGRz46ZiUi5cpAWEOJ6.jpg"
+        ],
         "notes": "",
-        "verifier": "",
-        "publisher": "دار الخزانة الأندلسية"
+        "corrections": [],
+        "verifier": "مروان العطية"
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-07-02"
+    "links": []
   },
   {
     "id": 346,
