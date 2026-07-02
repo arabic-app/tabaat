@@ -8810,17 +8810,21 @@
       "الناسخ والمنسوخ"
     ],
     "notes": "",
+    "date": "2026-07-02",
     "best_editions": [
       {
-        "images": [],
+        "publisher": "دار ابن الجوزي",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1783010900494-bab730edef2eebd503de7d5b7fd96e6894dc4a92597825.jpg",
+          "https://arabic-app.github.io/tabaat/images/1783010907962-lgxgzuOm3p5sstBY8GL8PMfjgdITiCGzVGjJvD9T.jpg"
+        ],
         "notes": "",
-        "verifier": "",
-        "publisher": "دار ابن الجوزي"
+        "corrections": [],
+        "verifier": "سليمان اللاحم"
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-07-02"
+    "links": []
   },
   {
     "id": 338,
