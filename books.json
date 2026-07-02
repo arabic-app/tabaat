@@ -8701,11 +8701,14 @@
       "شروح الحديث"
     ],
     "notes": "",
-    "date": "2026-07-02",
+    "date": "2026-07-03",
     "best_editions": [
       {
         "publisher": "دار الميمان",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1783028414204-bf5e5b992117481d9dc0070818e61b1cthumbnail770x770.png",
+          "https://arabic-app.github.io/tabaat/images/1783028426090-images5.jpeg"
+        ],
         "notes": "",
         "corrections": []
       }
