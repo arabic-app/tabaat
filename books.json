@@ -8946,17 +8946,21 @@
       "التراجم والرجال"
     ],
     "notes": "",
+    "date": "2026-07-02",
     "best_editions": [
       {
-        "images": [],
+        "publisher": "مؤسسة الرسالة ناشرون",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1783007037407-33.jpg",
+          "https://arabic-app.github.io/tabaat/images/1783007045073-DPaH1EzXcAELPop.jpg"
+        ],
         "notes": "",
-        "verifier": "العثيمين",
-        "publisher": "مؤسسة الرسالة ناشرون"
+        "corrections": [],
+        "verifier": "بكر أبو زيد، عبد الرحمن العثيمين"
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-07-02"
+    "links": []
   },
   {
     "id": 345,
