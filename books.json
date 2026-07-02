@@ -9619,17 +9619,20 @@
       "اللغة والأدب"
     ],
     "notes": "",
+    "date": "2026-07-02",
     "best_editions": [
       {
-        "images": [],
+        "publisher": "الرسالة ناشرون",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1783007615601-1679129592R5UdJ.jpg"
+        ],
         "notes": "",
-        "verifier": "",
-        "publisher": "الرسالة ناشرون"
+        "corrections": [],
+        "verifier": "مركز الرسالة للدراسات"
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-07-02"
+    "links": []
   },
   {
     "id": 373,
