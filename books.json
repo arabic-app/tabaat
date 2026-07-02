@@ -9822,17 +9822,21 @@
       "العقيدة"
     ],
     "notes": "",
+    "date": "2026-07-03",
     "best_editions": [
       {
-        "images": [],
+        "publisher": "أضواء السلف",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1783030400790-983dd44200d441708bcf24d0b7ad3a33407.94066317627x500FELclF4viWki8XSPKOJNevjzH0nH4gK706q1KjVS.jpg",
+          "https://arabic-app.github.io/tabaat/images/1783030419470-ErDFKR3XYAEu3LH.jpg"
+        ],
         "notes": "",
-        "verifier": "",
-        "publisher": "أضواء السلف"
+        "corrections": [],
+        "verifier": "سيد الجليمي، أيمن الدمشقي"
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-07-02"
+    "links": []
   },
   {
     "id": 379,
@@ -10101,11 +10105,12 @@
         "publisher": "دار اللباب",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1783030008405-fc7dc66a2a53401a83814a3cc695625b898.93617021277x1000NxZgHotIvJC3JCuK47SGYs4tzsyBMQH7YQ3OgVDs.png",
-          "https://arabic-app.github.io/tabaat/images/1783030066382-399730.jpg",
-          "https://arabic-app.github.io/tabaat/images/1783030078696-images29.jpeg"
+          "https://arabic-app.github.io/tabaat/images/1783030078696-images29.jpeg",
+          "https://arabic-app.github.io/tabaat/images/1783030234423-www.muhibalkutub.com.jpg"
         ],
-        "notes": "",
-        "corrections": []
+        "notes": "معه العدة على شرح العمدة للصنعاني",
+        "corrections": [],
+        "verifier": "محمد خلوف العبد الله"
       },
       {
         "publisher": "أسفار",
