@@ -8350,23 +8350,27 @@
   },
   {
     "id": 316,
-    "title": "الأسماء والصفات",
+    "title": "كتاب أسماء الله وصفاته",
     "author": "أحمد بن الحسين البيهقي",
     "category": [
       "العقيدة"
     ],
     "notes": "",
+    "date": "2026-07-02",
     "best_editions": [
       {
-        "images": [],
+        "publisher": "مكتبة التوعية الإسلامية",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782991485138-DrnaO3WXgAAT3Ug.jpg",
+          "https://arabic-app.github.io/tabaat/images/1782991491957-DrnaO3VX0AAv9dI.jpg"
+        ],
         "notes": "",
-        "verifier": "",
-        "publisher": "مكتبة التوعية الإسلامية"
+        "corrections": [],
+        "verifier": "محمد أبو زيد"
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-07-02"
+    "links": []
   },
   {
     "id": 317,
