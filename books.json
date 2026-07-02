@@ -9340,17 +9340,21 @@
       "القواعد الفقهية"
     ],
     "notes": "",
+    "date": "2026-07-02",
     "best_editions": [
       {
-        "images": [],
+        "publisher": "دار ركائز",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1783025600694-db57214980ef4ecaa300b965abaa0671thumbnail370x37070.jpg",
+          "https://arabic-app.github.io/tabaat/images/1783025634637-m3KpVMew1k9finoD5YMzqQTJivPwPLusmUyfzIrT.jpg"
+        ],
         "notes": "",
-        "verifier": "",
-        "publisher": "دار ركائز"
+        "corrections": [],
+        "verifier": "خالد المشيقح، عبد العزيز العبيدان، أنس الشامي"
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-07-02"
+    "links": []
   },
   {
     "id": 360,
