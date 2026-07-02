@@ -706,27 +706,31 @@
       "شروح الحديث"
     ],
     "notes": "",
-    "date": "2026-07-02",
     "best_editions": [
       {
-        "publisher": "الفيحاء",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782302506832-.png"
         ],
         "notes": "",
-        "corrections": []
+        "publisher": "الفيحاء"
       },
       {
-        "publisher": "مؤسسة الرسالة ناشرون",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782302558397-.png"
         ],
         "notes": "",
-        "corrections": []
+        "publisher": "مؤسسة الرسالة ناشرون"
       }
     ],
-    "alt_editions": [],
-    "links": []
+    "alt_editions": [
+      {
+        "images": [],
+        "notes": "",
+        "publisher": "دار العقيدة مصر"
+      }
+    ],
+    "links": [],
+    "date": "2026-06-30"
   },
   {
     "id": 17,
@@ -8676,23 +8680,23 @@
   },
   {
     "id": 332,
-    "title": "تيسير العلام",
+    "title": "تيسير العلام شرح عمدة الأحكام",
     "author": "عبد الله بن عبد الرحمن البسام",
     "category": [
       "شروح الحديث"
     ],
     "notes": "",
+    "date": "2026-07-02",
     "best_editions": [
       {
+        "publisher": "دار الميمان",
         "images": [],
         "notes": "",
-        "verifier": "",
-        "publisher": "دار الميمان"
+        "corrections": []
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-07-02"
+    "links": []
   },
   {
     "id": 333,
@@ -8722,17 +8726,21 @@
       "شروح الحديث"
     ],
     "notes": "",
+    "date": "2026-07-02",
     "best_editions": [
       {
-        "images": [],
+        "publisher": "دار الغرب الإسلامي",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1783011964626-cover1.jpg",
+          "https://arabic-app.github.io/tabaat/images/1783018284981-s9geSsXzCq3u1NTvYpxCGwur6Nbyk3w4zsyP9yg0.jpg"
+        ],
         "notes": "",
-        "verifier": "",
-        "publisher": "دار الغرب الإسلامي"
+        "corrections": [],
+        "verifier": "محمد السليماني، عائشة السليماني"
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-07-02"
+    "links": []
   },
   {
     "id": 335,
@@ -8802,17 +8810,21 @@
       "الناسخ والمنسوخ"
     ],
     "notes": "",
+    "date": "2026-07-02",
     "best_editions": [
       {
-        "images": [],
+        "publisher": "دار ابن الجوزي",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1783012019728-lgxgzuOm3p5sstBY8GL8PMfjgdITiCGzVGjJvD9T.jpg",
+          "https://arabic-app.github.io/tabaat/images/1783012026615-bab730edef2eebd503de7d5b7fd96e6894dc4a92597825.jpg"
+        ],
         "notes": "",
-        "verifier": "",
-        "publisher": "دار ابن الجوزي"
+        "corrections": [],
+        "verifier": "سليمان اللاحم"
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-07-02"
+    "links": []
   },
   {
     "id": 338,
