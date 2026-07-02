@@ -9630,17 +9630,21 @@
       "التراجم والرجال"
     ],
     "notes": "",
+    "date": "2026-07-03",
     "best_editions": [
       {
-        "images": [],
+        "publisher": "دار الغرب الإسلامي",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1783028843064-34389riyadannufus1.jpg",
+          "https://arabic-app.github.io/tabaat/images/1783028854253-34389riyadannufus4.jpg"
+        ],
         "notes": "",
-        "verifier": "",
-        "publisher": "دار الغرب الإسلامي"
+        "corrections": [],
+        "verifier": "بشير البكوس"
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-07-02"
+    "links": []
   },
   {
     "id": 371,
