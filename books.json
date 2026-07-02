@@ -8259,5 +8259,30 @@
     ],
     "alt_editions": [],
     "links": []
+  },
+  {
+    "id": 312,
+    "title": "اللامع العزيزي \"شرح ديوان المتنبي\"",
+    "author": "أحمد بن عبد الله المعري",
+    "category": [
+      "اللغة والأدب",
+      "الشعر والدواوين"
+    ],
+    "notes": "",
+    "date": "2026-07-02",
+    "best_editions": [
+      {
+        "publisher": "مركز الملك فيصل",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782983302399-sharhdiwanalmutanabbiallamalazizibyabualaaalmaari1.jpg",
+          "https://arabic-app.github.io/tabaat/images/1782983312265-sharhdiwanalmutanabbiallamalazizibyabualaaalmaari.jpg"
+        ],
+        "notes": "",
+        "corrections": [],
+        "verifier": "محمد سعيد المولوي"
+      }
+    ],
+    "alt_editions": [],
+    "links": []
   }
 ]
