@@ -8308,23 +8308,26 @@
   },
   {
     "id": 315,
-    "title": "تفسير الجلالين",
+    "title": "تفسير الجلالين\"معه معاني كلمات القرآن وأسباب النزول\"",
     "author": "جلال الدين المحلى وجلال الدين السيوطي",
     "category": [
       "التفسير"
     ],
     "notes": "",
+    "date": "2026-07-02",
     "best_editions": [
       {
-        "images": [],
+        "publisher": "دار اللباب",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1783011365762-600x600h.jpg"
+        ],
         "notes": "",
-        "verifier": "قباوة",
-        "publisher": "دار اللباب"
+        "corrections": [],
+        "verifier": "فخر الدين قباوة، ماهر حبوش"
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-07-02"
+    "links": []
   },
   {
     "id": 316,
