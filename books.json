@@ -9614,17 +9614,20 @@
       "الفقه المقارن"
     ],
     "notes": "",
+    "date": "2026-07-02",
     "best_editions": [
       {
-        "images": [],
+        "publisher": "عطاءات العلم",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782991074901-images74.jpeg"
+        ],
         "notes": "",
-        "verifier": "",
-        "publisher": "عطاءات العلم"
+        "corrections": [],
+        "verifier": "محمود النحال"
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-07-02"
+    "links": []
   },
   {
     "id": 375,
