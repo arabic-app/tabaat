@@ -9754,17 +9754,20 @@
       "العقيدة"
     ],
     "notes": "",
+    "date": "2026-07-02",
     "best_editions": [
       {
-        "images": [],
+        "publisher": "دار المنهاج الرياض",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782991378104-images77.jpeg"
+        ],
         "notes": "",
-        "verifier": "",
-        "publisher": "دار المنهاج الرياض"
+        "corrections": [],
+        "verifier": "عبد الله السهيلي"
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-07-02"
+    "links": []
   },
   {
     "id": 382,
