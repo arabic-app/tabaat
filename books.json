@@ -9644,17 +9644,22 @@
       "العقيدة"
     ],
     "notes": "",
+    "date": "2026-07-03",
     "best_editions": [
       {
-        "images": [],
+        "publisher": "دار الخزانة",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1783033697634-E0Z172xWUAgCsYn.jpg",
+          "https://arabic-app.github.io/tabaat/images/1783033709612-Screenshot20221123001946Gallery.jpg",
+          "https://arabic-app.github.io/tabaat/images/1783033750351-IMG1566.jpeg"
+        ],
         "notes": "",
-        "verifier": "",
-        "publisher": "دار الخزانة"
+        "corrections": [],
+        "verifier": "عمار تمالت"
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-07-02"
+    "links": []
   },
   {
     "id": 369,
