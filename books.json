@@ -8496,17 +8496,21 @@
       "شروح الحديث"
     ],
     "notes": "",
+    "date": "2026-07-03",
     "best_editions": [
       {
-        "images": [],
+        "publisher": "دار ابن الجوزي",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1783032950868-images58.jpeg",
+          "https://arabic-app.github.io/tabaat/images/1783032985958-images56.jpeg"
+        ],
         "notes": "الثانية وما بعدها",
-        "verifier": "",
-        "publisher": "دار ابن الجوزي"
+        "corrections": [],
+        "verifier": "محمد سيد درويش"
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-07-02"
+    "links": []
   },
   {
     "id": 324,
