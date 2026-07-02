@@ -10084,5 +10084,28 @@
     ],
     "alt_editions": [],
     "links": []
+  },
+  {
+    "id": 391,
+    "title": "تفسير الجلالين\"معه الجمالين على الجلالين للملا على القاري\"",
+    "author": "جلال الدين المحلي وجلال الدين السيوطي",
+    "category": [
+      "التفسير"
+    ],
+    "notes": "",
+    "date": "2026-07-02",
+    "best_editions": [
+      {
+        "publisher": "دار اللباب",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1783011477053-www.muhibalkutub.com.jpg"
+        ],
+        "notes": "",
+        "corrections": [],
+        "verifier": "فخر الدين قباوة، توفيق التكلة"
+      }
+    ],
+    "alt_editions": [],
+    "links": []
   }
 ]
