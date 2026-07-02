@@ -9171,23 +9171,31 @@
       "علل الحديث"
     ],
     "notes": "",
+    "date": "2026-07-03",
     "best_editions": [
       {
-        "images": [],
+        "publisher": "دار المنهاج القويم",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1783031121798-bb1eb374ca404652bfcdef970ecd889a680x1000lD9Tjs1Act1dOTOS3ZeKJCmYlr0LTrZijoyiiCpJ.jpg",
+          "https://arabic-app.github.io/tabaat/images/1783031100238-images33.jpeg"
+        ],
         "notes": "",
-        "verifier": "عتر",
-        "publisher": "دار المنهاج القويم"
+        "corrections": [],
+        "verifier": "نور الدين عتر"
       },
       {
-        "images": [],
+        "publisher": "دار الفاروق الأردن",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1783030993705-bb1eb374ca404652bfcdef970ecd889a680x1000lD9Tjs1Act1dOTOS3ZeKJCmYlr0LTrZijoyiiCpJ.jpg",
+          "https://arabic-app.github.io/tabaat/images/1783031009812-images33.jpeg"
+        ],
         "notes": "",
-        "verifier": "همام سعيد",
-        "publisher": "دار الفاروق الأردن"
+        "corrections": [],
+        "verifier": "همام سعيد"
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-07-02"
+    "links": []
   },
   {
     "id": 353,
