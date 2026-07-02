@@ -9584,23 +9584,29 @@
       "العقيدة"
     ],
     "notes": "",
+    "date": "2026-07-03",
     "best_editions": [
       {
-        "images": [],
+        "publisher": "دار اللؤلؤة",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1783033418910-images662029172319227341.jpeg"
+        ],
         "notes": "",
-        "verifier": "الجوابرة",
-        "publisher": "دار اللؤلؤة"
+        "corrections": [],
+        "verifier": "باسم الجوابرة"
       },
       {
-        "images": [],
+        "publisher": "دار الصميعي",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1783033441498-EqPL6ilXEAApLSl.jpg"
+        ],
         "notes": "",
-        "verifier": "الجوابرة",
-        "publisher": "دار الصميعي"
+        "corrections": [],
+        "verifier": "باسم الجوابرة"
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-07-02"
+    "links": []
   },
   {
     "id": 367,
