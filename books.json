@@ -9217,23 +9217,30 @@
       "الفقه الحنبلي"
     ],
     "notes": "",
+    "date": "2026-07-02",
     "best_editions": [
       {
-        "images": [],
+        "publisher": "دار ركائز",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782991173545-images75.jpeg",
+          "https://arabic-app.github.io/tabaat/images/1782991179492-EapRfOJWAAIBFre.jpg"
+        ],
         "notes": "",
-        "verifier": "",
-        "publisher": "دار ركائز"
+        "corrections": [],
+        "verifier": "عبد العزيز العيدان، انس اليتامي"
       },
       {
-        "images": [],
+        "publisher": "البشائر الإسلامية",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782991220476-1731568321WhatsAppImage20241114at10.10.28AM.jpeg"
+        ],
         "notes": "",
-        "verifier": "",
-        "publisher": "البشائر الإسلامية"
+        "corrections": [],
+        "verifier": "محمد ناصر العجمي"
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-07-02"
+    "links": []
   },
   {
     "id": 358,
