@@ -513,6 +513,24 @@
             font-family: 'Material Icons Round';
             color: var(--md-primary-container);
         }
+        .filter-field {
+            margin-top: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .filter-field input[type="checkbox"] {
+            cursor: pointer;
+            width: 16px;
+            height: 16px;
+            accent-color: var(--md-tertiary);
+        }
+        .filter-field label {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 0.85rem;
+            cursor: pointer;
+            user-select: none;
+        }
     </style>
 </head>
 <body>
@@ -562,6 +580,10 @@
                 <span class="material-icons-round">search</span>
                 <input type="text" id="adminSearchInput" class="admin-search-box" placeholder="بحث بالعنوان أو المؤلف..." autocomplete="off">
                 <button id="clearAdminSearchBtn" class="clear-admin-search-btn material-icons-round" aria-label="مسح البحث">close</button>
+            </div>
+            <div class="filter-field">
+                <input type="checkbox" id="missingPhotoFilter">
+                <label for="missingPhotoFilter">عرض الكتب التي تنقصها صور طبعات</label>
             </div>
         </div>
         <button class="btn-add-new" onclick="createNewBook()">
@@ -734,8 +756,21 @@
 
         const sortedBooks = [...booksData].sort((a, b) => (a.title || '').localeCompare(b.title || '', 'ar'));
 
+        const missingPhotoOnly = document.getElementById('missingPhotoFilter').checked;
+
         sortedBooks
-            .filter(b => normalizeArabic(b.title).includes(term) || normalizeArabic(b.author).includes(term))
+            .filter(b => {
+                const matchesSearch = normalizeArabic(b.title).includes(term) || normalizeArabic(b.author).includes(term);
+                if (!matchesSearch) return false;
+
+                if (missingPhotoOnly) {
+                    const getImages = (ed) => ed.images ? ed.images : (ed.image ? [ed.image] : []);
+                    const hasMissingPhotoBest = (b.best_editions || []).some(ed => getImages(ed).filter(Boolean).length === 0);
+                    const hasMissingPhotoAlt = (b.alt_editions || []).some(ed => getImages(ed).filter(Boolean).length === 0);
+                    return hasMissingPhotoBest || hasMissingPhotoAlt;
+                }
+                return true;
+            })
             .forEach(book => {
                 const li = document.createElement('li');
                 li.textContent = book.title || 'بدون عنوان';
@@ -747,6 +782,8 @@
 
     const adminSearchInput = document.getElementById('adminSearchInput');
     const clearAdminSearchBtn = document.getElementById('clearAdminSearchBtn');
+    const missingPhotoFilter = document.getElementById('missingPhotoFilter');
+
     adminSearchInput.addEventListener('input', e => {
         const val = e.target.value;
         clearAdminSearchBtn.style.display = val ? 'flex' : 'none';
@@ -757,6 +794,9 @@
         clearAdminSearchBtn.style.display = 'none';
         adminSearchInput.focus();
         renderSidebar('');
+    });
+    missingPhotoFilter.addEventListener('change', () => {
+        renderSidebar(adminSearchInput.value);
     });
 
     document.getElementById('title').addEventListener('blur', function () {

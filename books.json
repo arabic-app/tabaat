@@ -8006,5 +8006,1673 @@
     ],
     "alt_editions": [],
     "links": []
+  },
+  {
+    "id": 302,
+    "title": "تهذيب الأسماء واللغات",
+    "author": "يحيى بن شرف النووي",
+    "category": [
+      "اللغة والأدب",
+      "التراجم والرجال"
+    ],
+    "notes": "",
+    "best_editions": [
+      {
+        "images": [],
+        "notes": "الإصدار الجديد بمراجعة يوسفان",
+        "verifier": "كوشك",
+        "publisher": "دار الفيحاء"
+      }
+    ],
+    "alt_editions": [],
+    "links": [],
+    "date": "2026-07-02"
+  },
+  {
+    "id": 303,
+    "title": "البحر المحيط",
+    "author": "محمد بن يوسف الشهير بأبي حيان الأندلسي",
+    "category": [
+      "التفسير"
+    ],
+    "notes": "",
+    "best_editions": [
+      {
+        "images": [],
+        "notes": "",
+        "verifier": "",
+        "publisher": "دار هجر"
+      },
+      {
+        "images": [],
+        "notes": "",
+        "verifier": "",
+        "publisher": "دار الرسالة العالمية"
+      }
+    ],
+    "alt_editions": [],
+    "links": [],
+    "date": "2026-07-02"
+  },
+  {
+    "id": 304,
+    "title": "صحيح ابن حبان بترتيب ابن بلبان",
+    "author": "محمد بن حبان البستي",
+    "category": [
+      "الحديث"
+    ],
+    "notes": "",
+    "best_editions": [
+      {
+        "images": [],
+        "notes": "",
+        "verifier": "",
+        "publisher": "دار التأصيل"
+      },
+      {
+        "images": [],
+        "notes": "",
+        "verifier": "",
+        "publisher": "دار الرسالة العالمية"
+      }
+    ],
+    "alt_editions": [],
+    "links": [],
+    "date": "2026-07-02"
+  },
+  {
+    "id": 305,
+    "title": "صحيح ابن حبان التقاسيم والأنواع",
+    "author": "محمد بن حبان البستي",
+    "category": [
+      "الحديث"
+    ],
+    "notes": "",
+    "best_editions": [
+      {
+        "images": [],
+        "notes": "",
+        "verifier": "",
+        "publisher": "دار ابن حزم"
+      }
+    ],
+    "alt_editions": [],
+    "links": [],
+    "date": "2026-07-02"
+  },
+  {
+    "id": 306,
+    "title": "البحور الزاخرة في علوم الآخرة",
+    "author": "محمد بن أحمد بن سالم السفاريني الحنبلي",
+    "category": [
+      "العقيدة"
+    ],
+    "notes": "",
+    "best_editions": [
+      {
+        "images": [],
+        "notes": "",
+        "verifier": "",
+        "publisher": "دار العاصمة"
+      }
+    ],
+    "alt_editions": [],
+    "links": [],
+    "date": "2026-07-02"
+  },
+  {
+    "id": 307,
+    "title": "التذكرة في أحوال الموتى",
+    "author": "محمد بن أحمد بن أبي بكر القرطبي",
+    "category": [
+      "العقيدة"
+    ],
+    "notes": "",
+    "best_editions": [
+      {
+        "images": [],
+        "notes": "",
+        "verifier": "",
+        "publisher": "مكتبة دار المنهاج الرياض"
+      }
+    ],
+    "alt_editions": [],
+    "links": [],
+    "date": "2026-07-02"
+  },
+  {
+    "id": 308,
+    "title": "شرح السنة",
+    "author": "الحسين بن مسعود البغوي",
+    "category": [
+      "شروح الحديث"
+    ],
+    "notes": "",
+    "best_editions": [
+      {
+        "images": [],
+        "notes": "",
+        "verifier": "",
+        "publisher": "المكتب الإسلامي"
+      },
+      {
+        "images": [],
+        "notes": "",
+        "verifier": "",
+        "publisher": "دار ابن حزم"
+      }
+    ],
+    "alt_editions": [],
+    "links": [],
+    "date": "2026-07-02"
+  },
+  {
+    "id": 309,
+    "title": "شرح العمدة في الأحكام",
+    "author": "محمد بن علي بن وهب بن مطيع ابن دقيق العيد",
+    "category": [
+      "شروح الحديث"
+    ],
+    "notes": "",
+    "best_editions": [
+      {
+        "images": [],
+        "notes": "",
+        "verifier": "",
+        "publisher": "دار اللباب"
+      },
+      {
+        "images": [],
+        "notes": "",
+        "verifier": "",
+        "publisher": "أسفار"
+      }
+    ],
+    "alt_editions": [],
+    "links": [],
+    "date": "2026-07-02"
+  },
+  {
+    "id": 310,
+    "title": "عارضة الأحوذي",
+    "author": "محمد بن عبد الله أبو بكر بن العربي المعافري",
+    "category": [
+      "شروح الحديث"
+    ],
+    "notes": "",
+    "best_editions": [
+      {
+        "images": [],
+        "notes": "",
+        "verifier": "",
+        "publisher": "دار الزاوي"
+      },
+      {
+        "images": [],
+        "notes": "",
+        "verifier": "",
+        "publisher": "أسفار"
+      }
+    ],
+    "alt_editions": [],
+    "links": [],
+    "date": "2026-07-02"
+  },
+  {
+    "id": 311,
+    "title": "كتاب السنن الكبرى",
+    "author": "أحمد بن شعيب النسائي",
+    "category": [
+      "الحديث"
+    ],
+    "notes": "",
+    "best_editions": [
+      {
+        "images": [],
+        "notes": "",
+        "verifier": "",
+        "publisher": "دار التأصيل"
+      },
+      {
+        "images": [],
+        "notes": "",
+        "verifier": "",
+        "publisher": "دار الرسالة العالمية"
+      }
+    ],
+    "alt_editions": [],
+    "links": [],
+    "date": "2026-07-02"
+  },
+  {
+    "id": 312,
+    "title": "تفسير الجلالين",
+    "author": "جلال الدين المحلى وجلال الدين السيوطي",
+    "category": [
+      "التفسير"
+    ],
+    "notes": "",
+    "best_editions": [
+      {
+        "images": [],
+        "notes": "",
+        "verifier": "قباوة",
+        "publisher": "دار اللباب"
+      }
+    ],
+    "alt_editions": [],
+    "links": [],
+    "date": "2026-07-02"
+  },
+  {
+    "id": 313,
+    "title": "الأسماء والصفات",
+    "author": "أحمد بن الحسين البيهقي",
+    "category": [
+      "العقيدة"
+    ],
+    "notes": "",
+    "best_editions": [
+      {
+        "images": [],
+        "notes": "",
+        "verifier": "",
+        "publisher": "مكتبة التوعية الإسلامية"
+      }
+    ],
+    "alt_editions": [],
+    "links": [],
+    "date": "2026-07-02"
+  },
+  {
+    "id": 314,
+    "title": "الفصل في الملل والنحل",
+    "author": "علي بن أحمد بن سعيد بن حزم الأندلسي",
+    "category": [
+      "الأديان والفرق والمذاهب"
+    ],
+    "notes": "",
+    "best_editions": [
+      {
+        "images": [],
+        "notes": "",
+        "verifier": "",
+        "publisher": "دار المالكية"
+      }
+    ],
+    "alt_editions": [],
+    "links": [],
+    "date": "2026-07-02"
+  },
+  {
+    "id": 315,
+    "title": "الفرقان بين أولياء الرحمن وأولياء الشيطان",
+    "author": "أحمد بن عبد الحليم بن تيمية",
+    "category": [
+      "العقيدة"
+    ],
+    "notes": "",
+    "best_editions": [
+      {
+        "images": [],
+        "notes": "",
+        "verifier": "",
+        "publisher": "مكتبة المنهاج الرياض"
+      }
+    ],
+    "alt_editions": [],
+    "links": [],
+    "date": "2026-07-02"
+  },
+  {
+    "id": 316,
+    "title": "مسند أبي داود الطيالسي",
+    "author": "سليمان بن داود بن الجارود الطيالسي",
+    "category": [
+      "الحديث"
+    ],
+    "notes": "",
+    "best_editions": [
+      {
+        "images": [],
+        "notes": "",
+        "verifier": "",
+        "publisher": "دار هجر"
+      }
+    ],
+    "alt_editions": [],
+    "links": [],
+    "date": "2026-07-02"
+  },
+  {
+    "id": 317,
+    "title": "شرح منتهى الإرادات",
+    "author": "منصور بن يونس البهوتي",
+    "category": [
+      "الفقه الحنبلي"
+    ],
+    "notes": "",
+    "best_editions": [
+      {
+        "images": [],
+        "notes": "",
+        "verifier": "",
+        "publisher": "دار أطلس الخضراء"
+      }
+    ],
+    "alt_editions": [],
+    "links": [],
+    "date": "2026-07-02"
+  },
+  {
+    "id": 318,
+    "title": "كتاب الفروع",
+    "author": "محمد بن مفلح المقدسي",
+    "category": [
+      "الفقه الحنبلي"
+    ],
+    "notes": "",
+    "best_editions": [
+      {
+        "images": [],
+        "notes": "",
+        "verifier": "",
+        "publisher": "الرسالة"
+      }
+    ],
+    "alt_editions": [],
+    "links": [],
+    "date": "2026-07-02"
+  },
+  {
+    "id": 319,
+    "title": "كتاب الأم",
+    "author": "محمد بن إدريس الشافعي",
+    "category": [
+      "الفقه الشافعي"
+    ],
+    "notes": "",
+    "best_editions": [
+      {
+        "images": [],
+        "notes": "",
+        "verifier": "",
+        "publisher": "دار الوفاء"
+      }
+    ],
+    "alt_editions": [],
+    "links": [],
+    "date": "2026-07-02"
+  },
+  {
+    "id": 320,
+    "title": "طرح التثريب في شرح التقريب",
+    "author": "عبد الرحيم بن الحسين العراقي",
+    "category": [
+      "شروح الحديث"
+    ],
+    "notes": "",
+    "best_editions": [
+      {
+        "images": [],
+        "notes": "الثانية وما بعدها",
+        "verifier": "",
+        "publisher": "دار ابن الجوزي"
+      }
+    ],
+    "alt_editions": [],
+    "links": [],
+    "date": "2026-07-02"
+  },
+  {
+    "id": 321,
+    "title": "فقه السنة",
+    "author": "سيد سابق",
+    "category": [
+      "الفقه المقارن"
+    ],
+    "notes": "",
+    "best_editions": [
+      {
+        "images": [],
+        "notes": "",
+        "verifier": "",
+        "publisher": "مؤسسة الرسالة"
+      }
+    ],
+    "alt_editions": [],
+    "links": [],
+    "date": "2026-07-02"
+  },
+  {
+    "id": 322,
+    "title": "كتاب النساء وما يتعلق بهن",
+    "author": "عبد الرحمن بن علي بن محمد بن الجوزي",
+    "category": [
+      "فقه المرأة"
+    ],
+    "notes": "",
+    "best_editions": [
+      {
+        "images": [],
+        "notes": "",
+        "verifier": "",
+        "publisher": "دار المنهاج القويم"
+      }
+    ],
+    "alt_editions": [],
+    "links": [],
+    "date": "2026-07-02"
+  },
+  {
+    "id": 323,
+    "title": "زاد المسافر",
+    "author": "أبو بكر عبد العزيز بن جعفر غلام الخلال",
+    "category": [
+      "الفقه الحنبلي"
+    ],
+    "notes": "",
+    "best_editions": [
+      {
+        "images": [],
+        "notes": "",
+        "verifier": "",
+        "publisher": "دار طيبة الخضراء"
+      },
+      {
+        "images": [],
+        "notes": "",
+        "verifier": "أبي جنة الحنبلي",
+        "publisher": "دار الأوراق الثقافية"
+      }
+    ],
+    "alt_editions": [],
+    "links": [],
+    "date": "2026-07-02"
+  },
+  {
+    "id": 324,
+    "title": "تاريخ الإسلام ووفيات المشاهير والأعلام",
+    "author": "محمد بن أحمد بن عثمان بن قايماز الذهبي",
+    "category": [
+      "التاريخ الإسلامي"
+    ],
+    "notes": "",
+    "best_editions": [
+      {
+        "images": [],
+        "notes": "",
+        "verifier": "بشار عواد",
+        "publisher": "دار الغرب الإسلامي"
+      }
+    ],
+    "alt_editions": [],
+    "links": [],
+    "date": "2026-07-02"
+  },
+  {
+    "id": 325,
+    "title": "تاريخ مدينة السلام",
+    "author": "أحمد بن علي بن ثابت الخطيب البغدادي",
+    "category": [
+      "التاريخ الإسلامي"
+    ],
+    "notes": "",
+    "best_editions": [
+      {
+        "images": [],
+        "notes": "",
+        "verifier": "بشار عواد",
+        "publisher": "دار الغرب الإسلامي"
+      }
+    ],
+    "alt_editions": [],
+    "links": [],
+    "date": "2026-07-02"
+  },
+  {
+    "id": 326,
+    "title": "مختصر المختصر من المسند الصحيح عن النبي ﷺ (صحيح ابن خزيمة)",
+    "author": "محمد بن إسحاق بن خزيمة",
+    "category": [
+      "الحديث"
+    ],
+    "notes": "",
+    "best_editions": [
+      {
+        "images": [],
+        "notes": "",
+        "verifier": "الفحل",
+        "publisher": "دار الميمان"
+      },
+      {
+        "images": [],
+        "notes": "",
+        "verifier": "",
+        "publisher": "دار التأصيل"
+      }
+    ],
+    "alt_editions": [],
+    "links": [],
+    "date": "2026-07-02"
+  },
+  {
+    "id": 327,
+    "title": "تغليق التعليق",
+    "author": "أحمد بن علي بن حجر العسقلاني",
+    "category": [
+      "شروح الحديث"
+    ],
+    "notes": "",
+    "best_editions": [
+      {
+        "images": [],
+        "notes": "",
+        "verifier": "",
+        "publisher": "المكتب الإسلامي"
+      }
+    ],
+    "alt_editions": [],
+    "links": [],
+    "date": "2026-07-02"
+  },
+  {
+    "id": 328,
+    "title": "كتاب عمل اليوم والليلة",
+    "author": "أحمد بن محمد بن إسحاق ابن السني",
+    "category": [
+      "الحديث"
+    ],
+    "notes": "",
+    "best_editions": [
+      {
+        "images": [],
+        "notes": "",
+        "verifier": "",
+        "publisher": "دار البشائر الإسلامية"
+      }
+    ],
+    "alt_editions": [],
+    "links": [],
+    "date": "2026-07-02"
+  },
+  {
+    "id": 329,
+    "title": "تيسير العلام",
+    "author": "عبد الله بن عبد الرحمن البسام",
+    "category": [
+      "شروح الحديث"
+    ],
+    "notes": "",
+    "best_editions": [
+      {
+        "images": [],
+        "notes": "",
+        "verifier": "",
+        "publisher": "دار الميمان"
+      }
+    ],
+    "alt_editions": [],
+    "links": [],
+    "date": "2026-07-02"
+  },
+  {
+    "id": 330,
+    "title": "سبل السلام",
+    "author": "محمد بن إسماعيل الأمير الصنعاني",
+    "category": [
+      "شروح الحديث"
+    ],
+    "notes": "",
+    "best_editions": [
+      {
+        "images": [],
+        "notes": "",
+        "verifier": "محمد صبحي حلاق",
+        "publisher": "دار ابن الجوزي"
+      }
+    ],
+    "alt_editions": [],
+    "links": [],
+    "date": "2026-07-02"
+  },
+  {
+    "id": 331,
+    "title": "المسالك في شرح موطأ مالك",
+    "author": "محمد بن عبد الله أبو بكر بن العربي المعافري",
+    "category": [
+      "شروح الحديث"
+    ],
+    "notes": "",
+    "best_editions": [
+      {
+        "images": [],
+        "notes": "",
+        "verifier": "",
+        "publisher": "دار الغرب الإسلامي"
+      }
+    ],
+    "alt_editions": [],
+    "links": [],
+    "date": "2026-07-02"
+  },
+  {
+    "id": 332,
+    "title": "التلخيص الحبير",
+    "author": "أحمد بن علي بن حجر العسقلاني",
+    "category": [
+      "الحديث"
+    ],
+    "notes": "",
+    "best_editions": [
+      {
+        "images": [],
+        "notes": "",
+        "verifier": "",
+        "publisher": "دار ابن كثير"
+      },
+      {
+        "images": [],
+        "notes": "",
+        "verifier": "",
+        "publisher": "أضواء السلف"
+      }
+    ],
+    "alt_editions": [],
+    "links": [],
+    "date": "2026-07-02"
+  },
+  {
+    "id": 333,
+    "title": "شرح الزرقاني على موطأ مالك",
+    "author": "محمد بن عبد الباقي الزرقاني",
+    "category": [
+      "شروح الحديث"
+    ],
+    "notes": "",
+    "best_editions": [
+      {
+        "images": [],
+        "notes": "",
+        "verifier": "",
+        "publisher": "دار ركائز"
+      },
+      {
+        "images": [],
+        "notes": "",
+        "verifier": "",
+        "publisher": "مؤسسة الرسالة ناشرون"
+      }
+    ],
+    "alt_editions": [],
+    "links": [],
+    "date": "2026-07-02"
+  },
+  {
+    "id": 334,
+    "title": "الناسخ والمنسوخ في القرآن الكريم",
+    "author": "أبو جعفر محمد بن أحمد النحاس",
+    "category": [
+      "الناسخ والمنسوخ"
+    ],
+    "notes": "",
+    "best_editions": [
+      {
+        "images": [],
+        "notes": "",
+        "verifier": "",
+        "publisher": "دار ابن الجوزي"
+      }
+    ],
+    "alt_editions": [],
+    "links": [],
+    "date": "2026-07-02"
+  },
+  {
+    "id": 335,
+    "title": "كتاب الموضوعات",
+    "author": "عبد الرحمن بن علي بن محمد بن الجوزي",
+    "category": [
+      "علل الحديث"
+    ],
+    "notes": "",
+    "best_editions": [
+      {
+        "images": [],
+        "notes": "",
+        "verifier": "",
+        "publisher": "أضواء السلف"
+      }
+    ],
+    "alt_editions": [],
+    "links": [],
+    "date": "2026-07-02"
+  },
+  {
+    "id": 336,
+    "title": "كتاب فضائل الصحابة",
+    "author": "أحمد بن محمد بن حنبل",
+    "category": [
+      "الحديث"
+    ],
+    "notes": "",
+    "best_editions": [
+      {
+        "images": [],
+        "notes": "",
+        "verifier": "",
+        "publisher": "دار ابن الجوزي"
+      }
+    ],
+    "alt_editions": [],
+    "links": [],
+    "date": "2026-07-02"
+  },
+  {
+    "id": 337,
+    "title": "العواصم والقواصم",
+    "author": "محمد بن إبراهيم بن الوزير",
+    "category": [
+      "العقيدة",
+      "حجية السنة"
+    ],
+    "notes": "",
+    "best_editions": [
+      {
+        "images": [],
+        "notes": "",
+        "verifier": "",
+        "publisher": "مؤسسة الرسالة ناشرون"
+      }
+    ],
+    "alt_editions": [],
+    "links": [],
+    "date": "2026-07-02"
+  },
+  {
+    "id": 338,
+    "title": "المراسيل",
+    "author": "عبد الرحمن بن محمد بن إدريس ابن أبي حاتم",
+    "category": [
+      "مصطلح الحديث"
+    ],
+    "notes": "",
+    "best_editions": [
+      {
+        "images": [],
+        "notes": "",
+        "verifier": "",
+        "publisher": "دار اللباب"
+      }
+    ],
+    "alt_editions": [],
+    "links": [],
+    "date": "2026-07-02"
+  },
+  {
+    "id": 339,
+    "title": "طبقات الحنابلة",
+    "author": "محمد بن محمد بن الحسين ابن أبي يعلى",
+    "category": [
+      "التراجم والرجال"
+    ],
+    "notes": "",
+    "best_editions": [
+      {
+        "images": [],
+        "notes": "",
+        "verifier": "العثيمين",
+        "publisher": "العبيكان"
+      }
+    ],
+    "alt_editions": [],
+    "links": [],
+    "date": "2026-07-02"
+  },
+  {
+    "id": 340,
+    "title": "الذيل على طبقات الحنابلة",
+    "author": "عبد الرحمن بن أحمد بن رجب الحنبلي",
+    "category": [
+      "التراجم والرجال"
+    ],
+    "notes": "",
+    "best_editions": [
+      {
+        "images": [],
+        "notes": "",
+        "verifier": "العثيمين",
+        "publisher": "العبيكان"
+      }
+    ],
+    "alt_editions": [],
+    "links": [],
+    "date": "2026-07-02"
+  },
+  {
+    "id": 341,
+    "title": "السحب الوابلة على ضرائح الحنابلة",
+    "author": "محمد بن عبد الله بن حميد النجدي",
+    "category": [
+      "التراجم والرجال"
+    ],
+    "notes": "",
+    "best_editions": [
+      {
+        "images": [],
+        "notes": "",
+        "verifier": "العثيمين",
+        "publisher": "مؤسسة الرسالة ناشرون"
+      }
+    ],
+    "alt_editions": [],
+    "links": [],
+    "date": "2026-07-02"
+  },
+  {
+    "id": 342,
+    "title": "كتاب فضائل القرآن",
+    "author": "القاسم بن سلام أبو عبيد",
+    "category": [
+      "علوم القرآن"
+    ],
+    "notes": "",
+    "best_editions": [
+      {
+        "images": [],
+        "notes": "",
+        "verifier": "",
+        "publisher": "دار الخزانة الأندلسية"
+      }
+    ],
+    "alt_editions": [],
+    "links": [],
+    "date": "2026-07-02"
+  },
+  {
+    "id": 343,
+    "title": "مسند الإمام الشافعي",
+    "author": "محمد بن إدريس الشافعي",
+    "category": [
+      "الحديث"
+    ],
+    "notes": "",
+    "best_editions": [
+      {
+        "images": [],
+        "notes": "",
+        "verifier": "الفحل",
+        "publisher": "مؤسسة دار الحديث"
+      }
+    ],
+    "alt_editions": [],
+    "links": [],
+    "date": "2026-07-02"
+  },
+  {
+    "id": 344,
+    "title": "شرح كتاب الشهاب",
+    "author": "محمد بن سلامة القضاعي",
+    "category": [
+      "شروح الحديث"
+    ],
+    "notes": "",
+    "best_editions": [
+      {
+        "images": [],
+        "notes": "",
+        "verifier": "",
+        "publisher": "دار النوادر"
+      }
+    ],
+    "alt_editions": [],
+    "links": [],
+    "date": "2026-07-02"
+  },
+  {
+    "id": 345,
+    "title": "ميزان الاعتدال في نقد الرجال",
+    "author": "محمد بن أحمد بن عثمان بن قايماز الذهبي",
+    "category": [
+      "الجرح والتعديل"
+    ],
+    "notes": "",
+    "best_editions": [
+      {
+        "images": [],
+        "notes": "",
+        "verifier": "",
+        "publisher": "دار الرسالة العالمية"
+      }
+    ],
+    "alt_editions": [],
+    "links": [],
+    "date": "2026-07-02"
+  },
+  {
+    "id": 346,
+    "title": "طبقات علماء الحديث",
+    "author": "محمد بن أحمد بن عبد الهادي المقدسي",
+    "category": [
+      "التراجم والرجال"
+    ],
+    "notes": "",
+    "best_editions": [
+      {
+        "images": [],
+        "notes": "",
+        "verifier": "",
+        "publisher": "مؤسسة الرسالة"
+      }
+    ],
+    "alt_editions": [],
+    "links": [],
+    "date": "2026-07-02"
+  },
+  {
+    "id": 347,
+    "title": "تذكرة الحفاظ",
+    "author": "محمد بن أحمد بن عثمان بن قايماز الذهبي",
+    "category": [
+      "التراجم والرجال"
+    ],
+    "notes": "",
+    "best_editions": [
+      {
+        "images": [],
+        "notes": "",
+        "verifier": "",
+        "publisher": "دار المعراج"
+      }
+    ],
+    "alt_editions": [],
+    "links": [],
+    "date": "2026-07-02"
+  },
+  {
+    "id": 348,
+    "title": "فتح المغيث",
+    "author": "محمد بن عبد الرحمن السخاوي",
+    "category": [
+      "مصطلح الحديث"
+    ],
+    "notes": "",
+    "best_editions": [
+      {
+        "images": [],
+        "notes": "",
+        "verifier": "عبد الكريم الخضير",
+        "publisher": "مكتبة دار المنهاج"
+      }
+    ],
+    "alt_editions": [],
+    "links": [],
+    "date": "2026-07-02"
+  },
+  {
+    "id": 349,
+    "title": "شرح علل الترمذي",
+    "author": "عبد الرحمن بن أحمد بن رجب الحنبلي",
+    "category": [
+      "علل الحديث"
+    ],
+    "notes": "",
+    "best_editions": [
+      {
+        "images": [],
+        "notes": "",
+        "verifier": "عتر",
+        "publisher": "دار المنهاج القويم"
+      },
+      {
+        "images": [],
+        "notes": "",
+        "verifier": "همام سعيد",
+        "publisher": "دار الفاروق الأردن"
+      }
+    ],
+    "alt_editions": [],
+    "links": [],
+    "date": "2026-07-02"
+  },
+  {
+    "id": 350,
+    "title": "العلل الكبير للترمذي",
+    "author": "محمد بن عيسى بن سورة الترمذي",
+    "category": [
+      "علل الحديث"
+    ],
+    "notes": "",
+    "best_editions": [
+      {
+        "images": [],
+        "notes": "",
+        "verifier": "",
+        "publisher": "دار عالم الكتب"
+      }
+    ],
+    "alt_editions": [],
+    "links": [],
+    "date": "2026-07-02"
+  },
+  {
+    "id": 351,
+    "title": "الجامع لأخلاق الراوي وآداب السامع",
+    "author": "أحمد بن علي بن ثابت الخطيب البغدادي",
+    "category": [
+      "مصطلح الحديث"
+    ],
+    "notes": "",
+    "best_editions": [
+      {
+        "images": [],
+        "notes": "",
+        "verifier": "",
+        "publisher": "الناشر المتميز"
+      }
+    ],
+    "alt_editions": [],
+    "links": [],
+    "date": "2026-07-02"
+  },
+  {
+    "id": 352,
+    "title": "كتاب الضعفاء",
+    "author": "محمد بن عمرو بن موسى العقيلي",
+    "category": [
+      "الجرح والتعديل"
+    ],
+    "notes": "",
+    "best_editions": [
+      {
+        "images": [],
+        "notes": "",
+        "verifier": "السرساوي",
+        "publisher": "مكتبة الرشد"
+      }
+    ],
+    "alt_editions": [],
+    "links": [],
+    "date": "2026-07-02"
+  },
+  {
+    "id": 353,
+    "title": "الكافي",
+    "author": "عبد الله بن أحمد بن محمد بن قدامة",
+    "category": [
+      "الفقه الحنبلي"
+    ],
+    "notes": "",
+    "best_editions": [
+      {
+        "images": [],
+        "notes": "",
+        "verifier": "",
+        "publisher": "مركز سطور"
+      },
+      {
+        "images": [],
+        "notes": "",
+        "verifier": "",
+        "publisher": "دار هجر"
+      }
+    ],
+    "alt_editions": [],
+    "links": [],
+    "date": "2026-07-02"
+  },
+  {
+    "id": 354,
+    "title": "أخصر المختصرات",
+    "author": "محمد بن بدر الدين البلباني",
+    "category": [
+      "الفقه الحنبلي"
+    ],
+    "notes": "",
+    "best_editions": [
+      {
+        "images": [],
+        "notes": "",
+        "verifier": "",
+        "publisher": "دار ركائز"
+      },
+      {
+        "images": [],
+        "notes": "",
+        "verifier": "",
+        "publisher": "البشائر الإسلامية"
+      }
+    ],
+    "alt_editions": [],
+    "links": [],
+    "date": "2026-07-02"
+  },
+  {
+    "id": 355,
+    "title": "الرسالة",
+    "author": "محمد بن إدريس الشافعي",
+    "category": [
+      "أصول الفقه"
+    ],
+    "notes": "",
+    "best_editions": [
+      {
+        "images": [],
+        "notes": "",
+        "verifier": "",
+        "publisher": "دار ابن الجوزي"
+      },
+      {
+        "images": [],
+        "notes": "",
+        "verifier": "أحمد شاكر",
+        "publisher": "مصورات تحقيق"
+      }
+    ],
+    "alt_editions": [],
+    "links": [],
+    "date": "2026-07-02"
+  },
+  {
+    "id": 356,
+    "title": "تقرير القواعد وتحرير الفوائد",
+    "author": "عبد الرحمن بن أحمد بن رجب الحنبلي",
+    "category": [
+      "القواعد الفقهية"
+    ],
+    "notes": "",
+    "best_editions": [
+      {
+        "images": [],
+        "notes": "",
+        "verifier": "",
+        "publisher": "دار ركائز"
+      }
+    ],
+    "alt_editions": [],
+    "links": [],
+    "date": "2026-07-02"
+  },
+  {
+    "id": 357,
+    "title": "مراتب الإجماع",
+    "author": "علي بن أحمد بن سعيد بن حزم الأندلسي",
+    "category": [
+      "الفقه المقارن"
+    ],
+    "notes": "",
+    "best_editions": [
+      {
+        "images": [],
+        "notes": "",
+        "verifier": "",
+        "publisher": "دار الفتح"
+      }
+    ],
+    "alt_editions": [],
+    "links": [],
+    "date": "2026-07-02"
+  },
+  {
+    "id": 358,
+    "title": "أحكام النساء",
+    "author": "علي بن إبراهيم بن داود ابن العطار",
+    "category": [
+      "فقه المرأة"
+    ],
+    "notes": "",
+    "best_editions": [
+      {
+        "images": [],
+        "notes": "",
+        "verifier": "",
+        "publisher": "دار البشائر"
+      }
+    ],
+    "alt_editions": [],
+    "links": [],
+    "date": "2026-07-02"
+  },
+  {
+    "id": 359,
+    "title": "القواعد الكبرى الموسوم بـ قواعد الأحكام في إصلاح الأنام",
+    "author": "عبد العزيز بن عبد السلام السلمي",
+    "category": [
+      "القواعد الفقهية"
+    ],
+    "notes": "",
+    "best_editions": [
+      {
+        "images": [],
+        "notes": "",
+        "verifier": "",
+        "publisher": "دار القلم"
+      }
+    ],
+    "alt_editions": [],
+    "links": [],
+    "date": "2026-07-02"
+  },
+  {
+    "id": 360,
+    "title": "حاشية العنقري على الروض المربع",
+    "author": "عبد الله بن عبد العزيز العنقري",
+    "category": [
+      "الفقه الحنبلي"
+    ],
+    "notes": "",
+    "best_editions": [
+      {
+        "images": [],
+        "notes": "",
+        "verifier": "",
+        "publisher": "أطلس الخضراء"
+      }
+    ],
+    "alt_editions": [],
+    "links": [],
+    "date": "2026-07-02"
+  },
+  {
+    "id": 361,
+    "title": "الإقناع لطالب الانتفاع",
+    "author": "موسى بن أحمد بن موسى الحجاوي",
+    "category": [
+      "الفقه الحنبلي"
+    ],
+    "notes": "",
+    "best_editions": [
+      {
+        "images": [],
+        "notes": "",
+        "verifier": "",
+        "publisher": "دار ركائز"
+      },
+      {
+        "images": [],
+        "notes": "",
+        "verifier": "",
+        "publisher": "مركز سطور"
+      },
+      {
+        "images": [],
+        "notes": "",
+        "verifier": "",
+        "publisher": "دار هجر"
+      }
+    ],
+    "alt_editions": [],
+    "links": [],
+    "date": "2026-07-02"
+  },
+  {
+    "id": 362,
+    "title": "شرح العقيدة الطحاوية",
+    "author": "علي بن علي بن محمد بن أبي العز الحنفي",
+    "category": [
+      "العقيدة"
+    ],
+    "notes": "",
+    "best_editions": [
+      {
+        "images": [],
+        "notes": "",
+        "verifier": "",
+        "publisher": "الرسالة"
+      },
+      {
+        "images": [],
+        "notes": "حاشية آل عبد اللطيف",
+        "verifier": "",
+        "publisher": "مجلة البيان"
+      }
+    ],
+    "alt_editions": [],
+    "links": [],
+    "date": "2026-07-02"
+  },
+  {
+    "id": 363,
+    "title": "كتاب السنة",
+    "author": "أحمد بن عمرو بن أبي عاصم الضحاك الشيباني",
+    "category": [
+      "العقيدة"
+    ],
+    "notes": "",
+    "best_editions": [
+      {
+        "images": [],
+        "notes": "",
+        "verifier": "الجوابرة",
+        "publisher": "دار اللؤلؤة"
+      },
+      {
+        "images": [],
+        "notes": "",
+        "verifier": "الجوابرة",
+        "publisher": "دار الصميعي"
+      }
+    ],
+    "alt_editions": [],
+    "links": [],
+    "date": "2026-07-02"
+  },
+  {
+    "id": 364,
+    "title": "تيسير العزيز الحميد في شرح كتاب التوحيد",
+    "author": "سليمان بن عبد الله بن محمد بن عبد الوهاب",
+    "category": [
+      "العقيدة"
+    ],
+    "notes": "",
+    "best_editions": [
+      {
+        "images": [],
+        "notes": "",
+        "verifier": "أسامة بن عطايا العتيبي",
+        "publisher": "دار الصميعي"
+      }
+    ],
+    "alt_editions": [],
+    "links": [],
+    "date": "2026-07-02"
+  },
+  {
+    "id": 365,
+    "title": "كتاب صفات رب العالمين",
+    "author": "محمد بن عبد الله الملقب بابن المحب الصامت",
+    "category": [
+      "العقيدة"
+    ],
+    "notes": "",
+    "best_editions": [
+      {
+        "images": [],
+        "notes": "",
+        "verifier": "",
+        "publisher": "دار الخزانة"
+      }
+    ],
+    "alt_editions": [],
+    "links": [],
+    "date": "2026-07-02"
+  },
+  {
+    "id": 366,
+    "title": "كتاب الفرج بعد الشدة",
+    "author": "المحسن بن علي بن محمد بن أبي الفهم القاضي التنوخي",
+    "category": [
+      "اللغة والأدب"
+    ],
+    "notes": "",
+    "best_editions": [
+      {
+        "images": [],
+        "notes": "",
+        "verifier": "",
+        "publisher": "الدار الشامية"
+      },
+      {
+        "images": [],
+        "notes": "",
+        "verifier": "",
+        "publisher": "دار صادر"
+      }
+    ],
+    "alt_editions": [],
+    "links": [],
+    "date": "2026-07-02"
+  },
+  {
+    "id": 367,
+    "title": "رياض النفوس في طبقات علماء القيروان وإفريقية",
+    "author": "عبد الله بن محمد بن عبد الله الطالبي المالكي",
+    "category": [
+      "التراجم والرجال"
+    ],
+    "notes": "",
+    "best_editions": [
+      {
+        "images": [],
+        "notes": "",
+        "verifier": "",
+        "publisher": "دار الغرب الإسلامي"
+      }
+    ],
+    "alt_editions": [],
+    "links": [],
+    "date": "2026-07-02"
+  },
+  {
+    "id": 368,
+    "title": "الآداب الشرعية",
+    "author": "يحيى بن محمد بن أحمد بن عبد الله ابن شيخ السلامية",
+    "category": [
+      "الآداب الشرعية"
+    ],
+    "notes": "",
+    "best_editions": [
+      {
+        "images": [],
+        "notes": "",
+        "verifier": "",
+        "publisher": "دار العمرية"
+      }
+    ],
+    "alt_editions": [],
+    "links": [],
+    "date": "2026-07-02"
+  },
+  {
+    "id": 369,
+    "title": "القاموس المحيط",
+    "author": "محمد بن يعقوب الفيروزآبادي",
+    "category": [
+      "اللغة والأدب"
+    ],
+    "notes": "",
+    "best_editions": [
+      {
+        "images": [],
+        "notes": "",
+        "verifier": "",
+        "publisher": "الرسالة ناشرون"
+      }
+    ],
+    "alt_editions": [],
+    "links": [],
+    "date": "2026-07-02"
+  },
+  {
+    "id": 370,
+    "title": "مقدمة ابن خلدون",
+    "author": "عبد الرحمن بن محمد بن خلدون",
+    "category": [
+      "التاريخ الإسلامي"
+    ],
+    "notes": "",
+    "best_editions": [
+      {
+        "images": [],
+        "notes": "",
+        "verifier": "الشدادي",
+        "publisher": ""
+      },
+      {
+        "images": [],
+        "notes": "",
+        "verifier": "وافي",
+        "publisher": ""
+      },
+      {
+        "images": [],
+        "notes": "",
+        "verifier": "شبوح",
+        "publisher": ""
+      }
+    ],
+    "alt_editions": [],
+    "links": [],
+    "date": "2026-07-02"
+  },
+  {
+    "id": 371,
+    "title": "اختلاف علماء الامصار فى أحكام شرائع الاسلام",
+    "author": "محمد بن جرير الطبري",
+    "category": [
+      "الفقه المقارن"
+    ],
+    "notes": "",
+    "best_editions": [
+      {
+        "images": [],
+        "notes": "",
+        "verifier": "",
+        "publisher": "عطاءات العلم"
+      }
+    ],
+    "alt_editions": [],
+    "links": [],
+    "date": "2026-07-02"
+  },
+  {
+    "id": 372,
+    "title": "قيام الليل",
+    "author": "عبد الرحمن بن علي بن محمد بن الجوزي",
+    "category": [
+      "الآداب الشرعية"
+    ],
+    "notes": "",
+    "best_editions": [
+      {
+        "images": [],
+        "notes": "",
+        "verifier": "",
+        "publisher": "دار المحدث"
+      }
+    ],
+    "alt_editions": [],
+    "links": [],
+    "date": "2026-07-02"
+  },
+  {
+    "id": 373,
+    "title": "فصول في التفسير من كلام الإمام ابن قيم الجوزية",
+    "author": "محمد بن أبي بكر بن أيوب ابن قيم الجوزية",
+    "category": [
+      "التفسير"
+    ],
+    "notes": "",
+    "best_editions": [
+      {
+        "images": [],
+        "notes": "",
+        "verifier": "",
+        "publisher": "دار المحدث"
+      }
+    ],
+    "alt_editions": [],
+    "links": [],
+    "date": "2026-07-02"
+  },
+  {
+    "id": 374,
+    "title": "الكيمياء القديمة",
+    "author": "",
+    "category": [
+      "كتب متنوعة"
+    ],
+    "notes": "",
+    "best_editions": [
+      {
+        "images": [],
+        "notes": "",
+        "verifier": "",
+        "publisher": "تكوين"
+      }
+    ],
+    "alt_editions": [],
+    "links": [],
+    "date": "2026-07-02"
+  },
+  {
+    "id": 375,
+    "title": "كتاب الصفدية",
+    "author": "أحمد بن عبد الحليم بن تيمية",
+    "category": [
+      "العقيدة"
+    ],
+    "notes": "",
+    "best_editions": [
+      {
+        "images": [],
+        "notes": "",
+        "verifier": "",
+        "publisher": "أضواء السلف"
+      }
+    ],
+    "alt_editions": [],
+    "links": [],
+    "date": "2026-07-02"
+  },
+  {
+    "id": 376,
+    "title": "قاعدة في تفضيل مذهب الإمام أحمد وذكر محاسنه والذب عنه",
+    "author": "أحمد بن عبد الحليم بن تيمية",
+    "category": [
+      "الفقه الحنبلي"
+    ],
+    "notes": "",
+    "best_editions": [
+      {
+        "images": [],
+        "notes": "",
+        "verifier": "",
+        "publisher": "دار العمرية"
+      }
+    ],
+    "alt_editions": [],
+    "links": [],
+    "date": "2026-07-02"
+  },
+  {
+    "id": 377,
+    "title": "رفع الملام عن الأئمة الأعلام",
+    "author": "أحمد بن عبد الحليم بن تيمية",
+    "category": [
+      "أصول الفقه"
+    ],
+    "notes": "",
+    "best_editions": [
+      {
+        "images": [],
+        "notes": "",
+        "verifier": "",
+        "publisher": "دار العاصمة"
+      }
+    ],
+    "alt_editions": [],
+    "links": [],
+    "date": "2026-07-02"
+  },
+  {
+    "id": 378,
+    "title": "الإستغاثة الرد على البكري",
+    "author": "أحمد بن عبد الحليم بن تيمية",
+    "category": [
+      "العقيدة"
+    ],
+    "notes": "",
+    "best_editions": [
+      {
+        "images": [],
+        "notes": "",
+        "verifier": "",
+        "publisher": "دار المنهاج الرياض"
+      }
+    ],
+    "alt_editions": [],
+    "links": [],
+    "date": "2026-07-02"
   }
 ]
