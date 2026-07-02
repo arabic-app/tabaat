@@ -8438,17 +8438,21 @@
       "الفقه الحنبلي"
     ],
     "notes": "",
+    "date": "2026-07-02",
     "best_editions": [
       {
-        "images": [],
+        "publisher": "الرسالة",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1783006040753-images20260702T182708.700.jpeg",
+          "https://arabic-app.github.io/tabaat/images/1783006047775-PHLQrd782u1yJWSUo2gd9O0PVNPjHOiw4Oga108N.jpg"
+        ],
         "notes": "",
-        "verifier": "",
-        "publisher": "الرسالة"
+        "corrections": [],
+        "verifier": "عبد الله التركي"
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-07-02"
+    "links": []
   },
   {
     "id": 322,
