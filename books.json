@@ -9800,29 +9800,39 @@
       "التاريخ الإسلامي"
     ],
     "notes": "",
+    "date": "2026-07-03",
     "best_editions": [
       {
-        "images": [],
+        "publisher": "دار الفنون والعلوم والآداب",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1783034718236-C9snQZ1XsAAMq14.jpg",
+          "https://arabic-app.github.io/tabaat/images/1783034743693-images802030549630995360.jpeg"
+        ],
         "notes": "",
-        "verifier": "الشدادي",
-        "publisher": ""
+        "corrections": [],
+        "verifier": "عبد السلام الشدادي"
       },
       {
-        "images": [],
+        "publisher": "دار نهضة مصر",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1783034787511-images782030549474451089.jpeg"
+        ],
         "notes": "",
-        "verifier": "وافي",
-        "publisher": ""
+        "corrections": [],
+        "verifier": "على عبد الواحد وافي"
       },
       {
-        "images": [],
+        "publisher": "تونس",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1783034847747-GAH3zeWwAAKa0P.jpg"
+        ],
         "notes": "",
-        "verifier": "شبوح",
-        "publisher": ""
+        "corrections": [],
+        "verifier": "إبراهيم شبوح"
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-07-02"
+    "links": []
   },
   {
     "id": 374,
