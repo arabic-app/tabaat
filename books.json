@@ -7919,5 +7919,28 @@
     ],
     "alt_editions": [],
     "links": []
+  },
+  {
+    "id": 299,
+    "title": "الحماسة الشجرية",
+    "author": "هبة الله بن علي \"ابن الشجري\"",
+    "category": [
+      "الشعر والدواوين"
+    ],
+    "notes": "",
+    "date": "2026-07-02",
+    "best_editions": [
+      {
+        "publisher": "وزارة الثقافة",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782978599662-FW1AjBRXkAEr6VZ.jpg"
+        ],
+        "notes": "",
+        "corrections": [],
+        "verifier": "عبد المعين الملوحي، أسماء الحمصي"
+      }
+    ],
+    "alt_editions": [],
+    "links": []
   }
 ]
