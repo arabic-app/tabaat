@@ -9775,21 +9775,23 @@
     "title": "تهذيب الأسماء واللغات",
     "author": "يحيى بن شرف النووي",
     "category": [
-      "اللغة والأدب",
-      "التراجم والرجال"
+      "كتب متنوعة"
     ],
     "notes": "",
+    "date": "2026-07-02",
     "best_editions": [
       {
-        "images": [],
+        "publisher": "دار الفيحاء",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782984027629-GehxRgWsAQ9Wzj.jpeg"
+        ],
         "notes": "الإصدار الجديد بمراجعة يوسفان",
-        "verifier": "كوشك",
-        "publisher": "دار الفيحاء"
+        "corrections": [],
+        "verifier": "كوشك"
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-07-02"
+    "links": []
   },
   {
     "id": 383,
