@@ -8520,17 +8520,20 @@
       "فقه المرأة"
     ],
     "notes": "",
+    "date": "2026-07-02",
     "best_editions": [
       {
-        "images": [],
+        "publisher": "دار المنهاج القويم",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1783004197630-Qv3DSuPdjI7muC4evjbujkK0uSEvjQmt0la5bEwU.jpg"
+        ],
         "notes": "",
-        "verifier": "",
-        "publisher": "دار المنهاج القويم"
+        "corrections": [],
+        "verifier": "أبي جنة الحنبلي"
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-07-02"
+    "links": []
   },
   {
     "id": 326,
