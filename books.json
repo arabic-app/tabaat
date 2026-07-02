@@ -9553,9 +9553,12 @@
     "best_editions": [
       {
         "publisher": "دار العمرية",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782991317078-images76.jpeg"
+        ],
         "notes": "",
-        "corrections": []
+        "corrections": [],
+        "verifier": "عبد الله السليمان، عبدالله المزروع"
       }
     ],
     "alt_editions": [],
