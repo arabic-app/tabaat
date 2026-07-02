@@ -9215,23 +9215,30 @@
       "الفقه الحنبلي"
     ],
     "notes": "",
+    "date": "2026-07-02",
     "best_editions": [
       {
-        "images": [],
+        "publisher": "مركز سطور",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1783007889277-images10.jpeg",
+          "https://arabic-app.github.io/tabaat/images/1783007934739-IMG.jpg"
+        ],
         "notes": "",
-        "verifier": "",
-        "publisher": "مركز سطور"
+        "corrections": [],
+        "verifier": "عبد الله التركي، مركز هجر"
       },
       {
-        "images": [],
+        "publisher": "دار هجر",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1783007881862-images11.jpeg"
+        ],
         "notes": "",
-        "verifier": "",
-        "publisher": "دار هجر"
+        "corrections": [],
+        "verifier": "عبد الله التركي، مركز هجر"
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-07-02"
+    "links": []
   },
   {
     "id": 357,
