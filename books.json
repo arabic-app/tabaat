@@ -8183,5 +8183,29 @@
     ],
     "alt_editions": [],
     "links": []
+  },
+  {
+    "id": 309,
+    "title": "ديوان البحتري",
+    "author": "الوليد بن عبيد البحتري",
+    "category": [
+      "الشعر والدواوين"
+    ],
+    "notes": "",
+    "date": "2026-07-02",
+    "best_editions": [
+      {
+        "publisher": "دار المعارف",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782982452755-images74.jpeg",
+          "https://arabic-app.github.io/tabaat/images/1782982462561-images73.jpeg"
+        ],
+        "notes": "",
+        "corrections": [],
+        "verifier": "حسن الصيرفي"
+      }
+    ],
+    "alt_editions": [],
+    "links": []
   }
 ]
