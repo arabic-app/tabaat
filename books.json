@@ -8308,26 +8308,23 @@
   },
   {
     "id": 315,
-    "title": "تفسير الجلالين\"معه معاني كلمات القرآن وأسباب النزول\"",
+    "title": "تفسير الجلالين",
     "author": "جلال الدين المحلى وجلال الدين السيوطي",
     "category": [
       "التفسير"
     ],
     "notes": "",
-    "date": "2026-07-02",
     "best_editions": [
       {
-        "publisher": "دار اللباب",
-        "images": [
-          "https://arabic-app.github.io/tabaat/images/1783011365762-600x600h.jpg"
-        ],
+        "images": [],
         "notes": "",
-        "corrections": [],
-        "verifier": "فخر الدين قباوة، ماهر حبوش"
+        "verifier": "قباوة",
+        "publisher": "دار اللباب"
       }
     ],
     "alt_editions": [],
-    "links": []
+    "links": [],
+    "date": "2026-07-02"
   },
   {
     "id": 316,
@@ -8583,22 +8580,17 @@
       "التاريخ الإسلامي"
     ],
     "notes": "",
-    "date": "2026-07-02",
     "best_editions": [
       {
-        "publisher": "دار الغرب الإسلامي",
-        "images": [
-          "https://arabic-app.github.io/tabaat/images/1783010990286-images29.jpeg",
-          "https://arabic-app.github.io/tabaat/images/1783010996137-GFgDsoQX0AAHf6l.jpg",
-          "https://arabic-app.github.io/tabaat/images/1783011002276-images27.jpeg"
-        ],
+        "images": [],
         "notes": "",
-        "corrections": [],
-        "verifier": "بشار عواد"
+        "verifier": "بشار عواد",
+        "publisher": "دار الغرب الإسلامي"
       }
     ],
     "alt_editions": [],
-    "links": []
+    "links": [],
+    "date": "2026-07-02"
   },
   {
     "id": 328,
@@ -8608,21 +8600,17 @@
       "التاريخ الإسلامي"
     ],
     "notes": "",
-    "date": "2026-07-02",
     "best_editions": [
       {
-        "publisher": "دار الغرب الإسلامي",
-        "images": [
-          "https://arabic-app.github.io/tabaat/images/1783011055922-0020509117.jpeg",
-          "https://arabic-app.github.io/tabaat/images/1783011062398-images33.jpeg"
-        ],
+        "images": [],
         "notes": "",
-        "corrections": [],
-        "verifier": "بشار عواد"
+        "verifier": "بشار عواد",
+        "publisher": "دار الغرب الإسلامي"
       }
     ],
     "alt_editions": [],
-    "links": []
+    "links": [],
+    "date": "2026-07-02"
   },
   {
     "id": 329,
@@ -8658,21 +8646,17 @@
       "شروح الحديث"
     ],
     "notes": "",
-    "date": "2026-07-02",
     "best_editions": [
       {
-        "publisher": "المكتب الإسلامي",
-        "images": [
-          "https://arabic-app.github.io/tabaat/images/1783011199535-images51.jpeg",
-          "https://arabic-app.github.io/tabaat/images/1783011205724-82762.jpg"
-        ],
+        "images": [],
         "notes": "",
-        "corrections": [],
-        "verifier": "سعيد القزقي"
+        "verifier": "",
+        "publisher": "المكتب الإسلامي"
       }
     ],
     "alt_editions": [],
-    "links": []
+    "links": [],
+    "date": "2026-07-02"
   },
   {
     "id": 331,
@@ -8747,8 +8731,8 @@
       {
         "publisher": "دار الغرب الإسلامي",
         "images": [
-          "https://arabic-app.github.io/tabaat/images/1783010836207-s9geSsXzCq3u1NTvYpxCGwur6Nbyk3w4zsyP9yg0.jpg",
-          "https://arabic-app.github.io/tabaat/images/1783010842919-cover1.jpg"
+          "https://arabic-app.github.io/tabaat/images/1783011964626-cover1.jpg",
+          "https://arabic-app.github.io/tabaat/images/1783011970684-images33.jpeg"
         ],
         "notes": "",
         "corrections": [],
@@ -8826,21 +8810,17 @@
       "الناسخ والمنسوخ"
     ],
     "notes": "",
-    "date": "2026-07-02",
     "best_editions": [
       {
-        "publisher": "دار ابن الجوزي",
-        "images": [
-          "https://arabic-app.github.io/tabaat/images/1783010900494-bab730edef2eebd503de7d5b7fd96e6894dc4a92597825.jpg",
-          "https://arabic-app.github.io/tabaat/images/1783010907962-lgxgzuOm3p5sstBY8GL8PMfjgdITiCGzVGjJvD9T.jpg"
-        ],
+        "images": [],
         "notes": "",
-        "corrections": [],
-        "verifier": "سليمان اللاحم"
+        "verifier": "",
+        "publisher": "دار ابن الجوزي"
       }
     ],
     "alt_editions": [],
-    "links": []
+    "links": [],
+    "date": "2026-07-02"
   },
   {
     "id": 338,
@@ -9108,21 +9088,17 @@
       "التراجم والرجال"
     ],
     "notes": "",
-    "date": "2026-07-02",
     "best_editions": [
       {
-        "publisher": "دار المعراج",
-        "images": [
-          "https://arabic-app.github.io/tabaat/images/1783011125277-Gv110NkW0AATMZz.jpg",
-          "https://arabic-app.github.io/tabaat/images/1783011131698-images49.jpeg"
-        ],
+        "images": [],
         "notes": "",
-        "corrections": [],
-        "verifier": "محمد بن إبراهيم الحسين"
+        "verifier": "",
+        "publisher": "دار المعراج"
       }
     ],
     "alt_editions": [],
-    "links": []
+    "links": [],
+    "date": "2026-07-02"
   },
   {
     "id": 351,
@@ -9345,21 +9321,17 @@
       "القواعد الفقهية"
     ],
     "notes": "",
-    "date": "2026-07-02",
     "best_editions": [
       {
-        "publisher": "دار ركائز",
-        "images": [
-          "https://arabic-app.github.io/tabaat/images/1783011600704-m3KpVMew1k9finoD5YMzqQTJivPwPLusmUyfzIrT.jpg",
-          "https://arabic-app.github.io/tabaat/images/1783011608280-db57214980ef4ecaa300b965abaa0671thumbnail370x37070.jpg"
-        ],
+        "images": [],
         "notes": "",
-        "corrections": [],
-        "verifier": "خالد المشيقح، عبد العزيز العبدان، أنس الشامي"
+        "verifier": "",
+        "publisher": "دار ركائز"
       }
     ],
     "alt_editions": [],
-    "links": []
+    "links": [],
+    "date": "2026-07-02"
   },
   {
     "id": 360,
@@ -10084,29 +10056,6 @@
         ],
         "notes": "",
         "corrections": []
-      }
-    ],
-    "alt_editions": [],
-    "links": []
-  },
-  {
-    "id": 391,
-    "title": "تفسير الجلالين\"معه الجمالين على الجلالين للملا على القاري\"",
-    "author": "جلال الدين المحلي وجلال الدين السيوطي",
-    "category": [
-      "التفسير"
-    ],
-    "notes": "",
-    "date": "2026-07-02",
-    "best_editions": [
-      {
-        "publisher": "دار اللباب",
-        "images": [
-          "https://arabic-app.github.io/tabaat/images/1783011477053-www.muhibalkutub.com.jpg"
-        ],
-        "notes": "",
-        "corrections": [],
-        "verifier": "فخر الدين قباوة، توفيق التكلة"
       }
     ],
     "alt_editions": [],
