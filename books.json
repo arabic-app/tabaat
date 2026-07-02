@@ -8680,23 +8680,23 @@
   },
   {
     "id": 332,
-    "title": "تيسير العلام",
+    "title": "تيسير العلام شرح عمدة الأحكام",
     "author": "عبد الله بن عبد الرحمن البسام",
     "category": [
       "شروح الحديث"
     ],
     "notes": "",
+    "date": "2026-07-02",
     "best_editions": [
       {
+        "publisher": "دار الميمان",
         "images": [],
         "notes": "",
-        "verifier": "",
-        "publisher": "دار الميمان"
+        "corrections": []
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-07-02"
+    "links": []
   },
   {
     "id": 333,
