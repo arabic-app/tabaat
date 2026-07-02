@@ -8053,5 +8053,38 @@
     ],
     "alt_editions": [],
     "links": []
+  },
+  {
+    "id": 304,
+    "title": "ديوان المتنبي",
+    "author": "أحمد بن الحسين الجعفي",
+    "category": [
+      "الشعر والدواوين"
+    ],
+    "notes": "",
+    "date": "2026-07-02",
+    "best_editions": [
+      {
+        "publisher": "لجنة التأليف والترجمة او مصوراتها",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782981103534-ff3c09ea0f114abfb5ed606a983b69bd671x1000IorhWmsyesdfIe4BB20Dl9pCFji5awlJoXjcLxjB.jpg",
+          "https://arabic-app.github.io/tabaat/images/1782981116394-4Hn4GKuGjyRRGKDaGAXIqD9hom9giWTeUtCEulK8.jpg"
+        ],
+        "notes": "",
+        "corrections": [],
+        "verifier": "عبد الوهاب عزام"
+      },
+      {
+        "publisher": "مجمع الملك سلمان",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782981173128-F7fwRlYWYAElUJ.jpg"
+        ],
+        "notes": "",
+        "corrections": [],
+        "verifier": "إبراهيم البطشان"
+      }
+    ],
+    "alt_editions": [],
+    "links": []
   }
 ]
