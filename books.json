@@ -9101,17 +9101,21 @@
       "التراجم والرجال"
     ],
     "notes": "",
+    "date": "2026-07-02",
     "best_editions": [
       {
-        "images": [],
+        "publisher": "دار المعراج",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1783011125277-Gv110NkW0AATMZz.jpg",
+          "https://arabic-app.github.io/tabaat/images/1783011131698-images49.jpeg"
+        ],
         "notes": "",
-        "verifier": "",
-        "publisher": "دار المعراج"
+        "corrections": [],
+        "verifier": "محمد بن إبراهيم الحسين"
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-07-02"
+    "links": []
   },
   {
     "id": 351,
