@@ -4632,22 +4632,24 @@
     "title": "شرح ديوان الحماسة",
     "author": "أحمد بن محمد المرزوقي",
     "category": [
-      "اللغة والأدب"
+      "اللغة والأدب",
+      "الشعر والدواوين"
     ],
     "notes": "",
+    "date": "2026-07-02",
     "best_editions": [
       {
+        "publisher": "",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782674379659-images72.jpeg"
         ],
         "notes": "",
-        "verifier": "عبد السلام هارون أفضل مصوراتها مكتبة المتنبي",
-        "publisher": ""
+        "corrections": [],
+        "verifier": "عبد السلام هارون أفضل مصوراتها مكتبة المتنبي"
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 154,
