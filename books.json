@@ -7850,5 +7850,28 @@
     ],
     "alt_editions": [],
     "links": []
+  },
+  {
+    "id": 296,
+    "title": "الجدول في إعراب القرآن وصرفه وبيانه",
+    "author": "محمود صافي",
+    "category": [
+      "علوم القرآن"
+    ],
+    "notes": "",
+    "date": "2026-07-02",
+    "best_editions": [
+      {
+        "publisher": "دار الرشيد",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782972635431-images63.jpeg",
+          "https://arabic-app.github.io/tabaat/images/1782972641884-83WyQMiumU3jyOqUMV87Ziggpm31bsA4LcW62JMy.png"
+        ],
+        "notes": "",
+        "corrections": []
+      }
+    ],
+    "alt_editions": [],
+    "links": []
   }
 ]
