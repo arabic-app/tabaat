@@ -10013,17 +10013,21 @@
       "الحديث"
     ],
     "notes": "",
+    "date": "2026-07-03",
     "best_editions": [
       {
-        "images": [],
+        "publisher": "دار ابن حزم",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1783031874562-images49.jpeg",
+          "https://arabic-app.github.io/tabaat/images/1783031952242-617SCq5OsYL.ACUF10001000QL80.jpg"
+        ],
         "notes": "",
-        "verifier": "",
-        "publisher": "دار ابن حزم"
+        "corrections": [],
+        "verifier": "محمد علي، خالص آي"
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-07-02"
+    "links": []
   },
   {
     "id": 386,
