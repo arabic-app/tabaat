@@ -9118,17 +9118,21 @@
       "التراجم والرجال"
     ],
     "notes": "",
+    "date": "2026-07-03",
     "best_editions": [
       {
-        "images": [],
+        "publisher": "مؤسسة الرسالة",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1783032844662-1dafb077b1bd4a26ad6cbb51209092c3thumbnail1000x100070.jpg",
+          "https://arabic-app.github.io/tabaat/images/1783032867566-1dafb077b1bd4a26ad6cbb51209092c3thumbnail1000x100070.jpg"
+        ],
         "notes": "",
-        "verifier": "",
-        "publisher": "مؤسسة الرسالة"
+        "corrections": [],
+        "verifier": "أكرم البوشي، إبراهيم الزيبق"
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-07-02"
+    "links": []
   },
   {
     "id": 350,
