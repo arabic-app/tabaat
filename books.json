@@ -8301,23 +8301,30 @@
       "شروح الحديث"
     ],
     "notes": "",
+    "date": "2026-07-02",
     "best_editions": [
       {
-        "images": [],
+        "publisher": "دار الزاوي",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782989554578-bfa0317de19b4eff9eb391a896a87ffb1000x496.2962962963D9BaSpHhBZYsktHbuZ61jjRGNajJaOTGk6jVq8GZ.jpg",
+          "https://arabic-app.github.io/tabaat/images/1782989560743-4238e4251c244a5cb5686c450e6db442700x1000vaGIaOp0mwTotCrBgQKfGXImYo4AZV1ub8gxgvDJ.jpg"
+        ],
         "notes": "",
-        "verifier": "",
-        "publisher": "دار الزاوي"
+        "corrections": [],
+        "verifier": "طارق ساسي، محمد ابو عجلة، فرحات بشير، التفاني موسى، محمد المزوغي"
       },
       {
-        "images": [],
+        "publisher": "أسفار",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782989660398-3ba9e1fa10d0498d9e0f8d9f6b07cd1a1000x1000tGDqcVJKCcUoJudeatSxO3XoI2ejvtCpw3cV3zeq.jpg"
+        ],
         "notes": "",
-        "verifier": "",
-        "publisher": "أسفار"
+        "corrections": [],
+        "verifier": "رضوان علواش، محمد قاسم، عبد المعطي البكور"
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-07-02"
+    "links": []
   },
   {
     "id": 314,
