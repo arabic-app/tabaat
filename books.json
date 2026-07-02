@@ -8702,17 +8702,21 @@
       "الحديث"
     ],
     "notes": "",
+    "date": "2026-07-03",
     "best_editions": [
       {
-        "images": [],
+        "publisher": "دار البشائر الإسلامية",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1783033841193-d4b322fcec574cc89fdd3af8ed88135c429x1000E4TBOaZ8vbtdq8yNrKh0weGjiaRhLmIuihVGR0KO.jpg",
+          "https://arabic-app.github.io/tabaat/images/1783033864388-images712029172518932028.jpeg"
+        ],
         "notes": "",
-        "verifier": "",
-        "publisher": "دار البشائر الإسلامية"
+        "corrections": [],
+        "verifier": "نبيل هاشم الغمري"
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-07-02"
+    "links": []
   },
   {
     "id": 332,
