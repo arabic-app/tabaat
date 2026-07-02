@@ -9946,5 +9946,28 @@
     "alt_editions": [],
     "links": [],
     "date": "2026-07-02"
+  },
+  {
+    "id": 390,
+    "title": "تمام المنة في التعليق على فقه السنة",
+    "author": "محمد ناصر الدين الالباني",
+    "category": [
+      "الفقه المقارن",
+      "الحديث"
+    ],
+    "notes": "",
+    "date": "2026-07-02",
+    "best_editions": [
+      {
+        "publisher": "دار الراية",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782989434976-images29.jpeg"
+        ],
+        "notes": "",
+        "corrections": []
+      }
+    ],
+    "alt_editions": [],
+    "links": []
   }
 ]
