@@ -9870,17 +9870,21 @@
       "العقيدة"
     ],
     "notes": "",
+    "date": "2026-07-02",
     "best_editions": [
       {
-        "images": [],
+        "publisher": "دار العاصمة",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1783000314258-a079836e9a3d423b98f5b84961ff8e2c500x439.4495412844BbmWab25cLATrlisoXnhdtexpVAFObC89wGKP3Uu.jpg",
+          "https://arabic-app.github.io/tabaat/images/1783000320312-bohourzakhera3loumakhera451x4002x.jpg"
+        ],
         "notes": "",
-        "verifier": "",
-        "publisher": "دار العاصمة"
+        "corrections": [],
+        "verifier": "عبد العزيز المشيقح"
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-07-02"
+    "links": []
   },
   {
     "id": 387,
