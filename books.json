@@ -8428,17 +8428,21 @@
       "الفقه الحنبلي"
     ],
     "notes": "",
+    "date": "2026-07-03",
     "best_editions": [
       {
-        "images": [],
+        "publisher": "دار أطلس الخضراء",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1783031774982-66.jpg",
+          "https://arabic-app.github.io/tabaat/images/1783031793993-D1xbS74X4AIDYI4.jpg"
+        ],
         "notes": "",
-        "verifier": "",
-        "publisher": "دار أطلس الخضراء"
+        "corrections": [],
+        "verifier": "أحمد عبد العزيز الجماز"
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-07-02"
+    "links": []
   },
   {
     "id": 321,
