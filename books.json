@@ -8894,17 +8894,20 @@
       "مصطلح الحديث"
     ],
     "notes": "",
+    "date": "2026-07-02",
     "best_editions": [
       {
-        "images": [],
+        "publisher": "دار اللباب",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1783008063059-af26f0238dcd431485999c312ef6de3e678.65519937451x1000Cv7Ghmdx5fEuygQfAgZuimzMPf2uacdZbiDFD3Yt.jpg"
+        ],
         "notes": "",
-        "verifier": "",
-        "publisher": "دار اللباب"
+        "corrections": [],
+        "verifier": "نافذ حسين حماد"
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-07-02"
+    "links": []
   },
   {
     "id": 342,
