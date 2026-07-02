@@ -9166,17 +9166,21 @@
       "مصطلح الحديث"
     ],
     "notes": "",
+    "date": "2026-07-03",
     "best_editions": [
       {
-        "images": [],
+        "publisher": "مكتبة دار المنهاج",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1783033076733-almghythjpg64259463b7b8067926ad46fa08.jpg",
+          "https://arabic-app.github.io/tabaat/images/1783033092260-images59.jpeg"
+        ],
         "notes": "",
-        "verifier": "عبد الكريم الخضير",
-        "publisher": "مكتبة دار المنهاج"
+        "corrections": [],
+        "verifier": "عبد الكريم الخضير"
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-07-02"
+    "links": []
   },
   {
     "id": 352,
