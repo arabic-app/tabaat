@@ -706,37 +706,31 @@
       "شروح الحديث"
     ],
     "notes": "",
-    "date": "2026-07-02",
     "best_editions": [
       {
-        "publisher": "دار الفيحاء",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782302506832-.png"
         ],
         "notes": "",
-        "corrections": [],
-        "verifier": "يوسف الحاج أحمد"
+        "publisher": "الفيحاء"
       },
       {
-        "publisher": "مؤسسة الرسالة ناشرون",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782302558397-.png"
         ],
         "notes": "",
-        "corrections": []
+        "publisher": "مؤسسة الرسالة ناشرون"
       }
     ],
     "alt_editions": [
       {
-        "publisher": "دار العقيدة مصر",
-        "images": [
-          "https://arabic-app.github.io/tabaat/images/1782990088788-images66.jpeg"
-        ],
+        "images": [],
         "notes": "",
-        "corrections": []
+        "publisher": "دار العقيدة مصر"
       }
     ],
-    "links": []
+    "links": [],
+    "date": "2026-06-30"
   },
   {
     "id": 17,
@@ -6119,30 +6113,6 @@
     "date": "2026-06-30"
   },
   {
-    "id": 220,
-    "title": "نصيحة الأغبياء ببطلان الكيمياء",
-    "author": "محمد بن أبي بكر بن قيم الجوزية (ابن القيم)",
-    "category": [
-      "الفقه",
-      "كتب متنوعة"
-    ],
-    "notes": "",
-    "best_editions": [
-      {
-        "images": [
-          "https://arabic-app.github.io/tabaat/images/1782752413066-images20260629T180032.859.jpeg"
-        ],
-        "notes": "",
-        "corrections": [],
-        "verifier": "عبد الرحمن قائد",
-        "publisher": "تكوين"
-      }
-    ],
-    "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
-  },
-  {
     "id": 221,
     "title": "مختصر الصواعق المرسلة على الجهمية و المعطلة",
     "author": "محمد الموصلي",
@@ -9113,21 +9083,17 @@
       "مصطلح الحديث"
     ],
     "notes": "",
-    "date": "2026-07-02",
     "best_editions": [
       {
-        "publisher": "مكتبة دار المنهاج",
-        "images": [
-          "https://arabic-app.github.io/tabaat/images/1782990147868-images67.jpeg",
-          "https://arabic-app.github.io/tabaat/images/1782990157360-almghythjpg64259463b7b8067926ad46fa08.jpg"
-        ],
+        "images": [],
         "notes": "",
-        "corrections": [],
-        "verifier": "عبد الكريم الخضير"
+        "verifier": "عبد الكريم الخضير",
+        "publisher": "مكتبة دار المنهاج"
       }
     ],
     "alt_editions": [],
-    "links": []
+    "links": [],
+    "date": "2026-07-02"
   },
   {
     "id": 352,
@@ -9665,44 +9631,37 @@
       "الآداب الشرعية"
     ],
     "notes": "",
-    "date": "2026-07-02",
     "best_editions": [
       {
-        "publisher": "دار المحدث",
-        "images": [
-          "https://arabic-app.github.io/tabaat/images/1782990319795-images69.jpeg",
-          "https://arabic-app.github.io/tabaat/images/1782990324977-images68.jpeg"
-        ],
+        "images": [],
         "notes": "",
-        "corrections": [],
-        "verifier": "محمد الخولي، حسن الصباغ، خالد الشوربجي"
+        "verifier": "",
+        "publisher": "دار المحدث"
       }
     ],
     "alt_editions": [],
-    "links": []
+    "links": [],
+    "date": "2026-07-02"
   },
   {
     "id": 377,
-    "title": "الكيمياء القديمة ومعها نصيحة الأغبياء ببطلان الكيمياء",
-    "author": "محمد بن أبي بكر بن قيم الجوزية",
+    "title": "الكيمياء القديمة",
+    "author": "",
     "category": [
       "كتب متنوعة"
     ],
     "notes": "",
-    "date": "2026-07-02",
     "best_editions": [
       {
-        "publisher": "تكوين",
-        "images": [
-          "https://arabic-app.github.io/tabaat/images/1782990468822-images72.jpeg"
-        ],
+        "images": [],
         "notes": "",
-        "corrections": [],
-        "verifier": "عبد الرحمن قائد"
+        "verifier": "",
+        "publisher": "تكوين"
       }
     ],
     "alt_editions": [],
-    "links": []
+    "links": [],
+    "date": "2026-07-02"
   },
   {
     "id": 378,
@@ -9732,21 +9691,17 @@
       "الفقه الحنبلي"
     ],
     "notes": "",
-    "date": "2026-07-02",
     "best_editions": [
       {
-        "publisher": "دار العمرية",
-        "images": [
-          "https://arabic-app.github.io/tabaat/images/1782990231522-G3VVdX1XoAA7qlI.jpg",
-          "https://arabic-app.github.io/tabaat/images/1782990237991-G5pZfHRacAEvji.jpg"
-        ],
+        "images": [],
         "notes": "",
-        "corrections": [],
-        "verifier": "عبد الله آل غيهب"
+        "verifier": "",
+        "publisher": "دار العمرية"
       }
     ],
     "alt_editions": [],
-    "links": []
+    "links": [],
+    "date": "2026-07-02"
   },
   {
     "id": 380,
