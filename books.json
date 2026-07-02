@@ -9725,17 +9725,21 @@
       "الفقه الحنبلي"
     ],
     "notes": "",
+    "date": "2026-07-02",
     "best_editions": [
       {
-        "images": [],
+        "publisher": "دار العمرية",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782990231522-G3VVdX1XoAA7qlI.jpg",
+          "https://arabic-app.github.io/tabaat/images/1782990237991-G5pZfHRacAEvji.jpg"
+        ],
         "notes": "",
-        "verifier": "",
-        "publisher": "دار العمرية"
+        "corrections": [],
+        "verifier": "عبد الله آل غيهب"
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-07-02"
+    "links": []
   },
   {
     "id": 380,
