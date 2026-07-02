@@ -8230,5 +8230,29 @@
     ],
     "alt_editions": [],
     "links": []
+  },
+  {
+    "id": 311,
+    "title": "شرح ديوان أبي الطيب المتنبي \"معجز أحمد\"",
+    "author": "ابو العلاء المعري",
+    "category": [
+      "اللغة والأدب",
+      "الشعر والدواوين"
+    ],
+    "notes": "",
+    "date": "2026-07-02",
+    "best_editions": [
+      {
+        "publisher": "دار المعارف",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782982720415-images77.jpeg"
+        ],
+        "notes": "",
+        "corrections": [],
+        "verifier": "عبد المجيد دياب"
+      }
+    ],
+    "alt_editions": [],
+    "links": []
   }
 ]
