@@ -7873,5 +7873,28 @@
     ],
     "alt_editions": [],
     "links": []
+  },
+  {
+    "id": 297,
+    "title": "تكوين الملكة اللغوية",
+    "author": "البشير عصام المراكشي",
+    "category": [
+      "اللغة والأدب"
+    ],
+    "notes": "",
+    "date": "2026-07-02",
+    "best_editions": [
+      {
+        "publisher": "نماء للبحوث والدراسات",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782972811682-Rawaa22101scaled1.jpg",
+          "https://arabic-app.github.io/tabaat/images/1782972817403-images66.jpeg"
+        ],
+        "notes": "",
+        "corrections": []
+      }
+    ],
+    "alt_editions": [],
+    "links": []
   }
 ]
