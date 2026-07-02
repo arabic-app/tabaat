@@ -9792,23 +9792,29 @@
       "التفسير"
     ],
     "notes": "",
+    "date": "2026-07-02",
     "best_editions": [
       {
-        "images": [],
+        "publisher": "دار هجر",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1783000129630-CcPnoCwXEAAk2vT.jpg",
+          "https://arabic-app.github.io/tabaat/images/1783000138398-images80.jpeg"
+        ],
         "notes": "",
-        "verifier": "",
-        "publisher": "دار هجر"
+        "corrections": [],
+        "verifier": "عبد الله التركي"
       },
       {
-        "images": [],
+        "publisher": "دار الرسالة العالمية",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1783000146427-images81.jpeg"
+        ],
         "notes": "",
-        "verifier": "",
-        "publisher": "دار الرسالة العالمية"
+        "corrections": []
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-07-02"
+    "links": []
   },
   {
     "id": 384,
