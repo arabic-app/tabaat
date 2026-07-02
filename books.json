@@ -8652,23 +8652,30 @@
       "الحديث"
     ],
     "notes": "",
+    "date": "2026-07-03",
     "best_editions": [
       {
-        "images": [],
+        "publisher": "دار الميمان",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1783034423902-Dqkk7XjWoAEPiML.jpg",
+          "https://arabic-app.github.io/tabaat/images/1783034437022-images742029761720478293.jpeg"
+        ],
         "notes": "",
-        "verifier": "الفحل",
-        "publisher": "دار الميمان"
+        "corrections": [],
+        "verifier": "ماهر الفحل"
       },
       {
-        "images": [],
+        "publisher": "دار التأصيل",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1783034448120-images722029761634974126.jpeg",
+          "https://arabic-app.github.io/tabaat/images/1783034455249-images732029761658851730.jpeg"
+        ],
         "notes": "",
-        "verifier": "",
-        "publisher": "دار التأصيل"
+        "corrections": []
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-07-02"
+    "links": []
   },
   {
     "id": 330,
