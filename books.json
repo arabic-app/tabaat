@@ -10095,23 +10095,30 @@
       "شروح الحديث"
     ],
     "notes": "",
+    "date": "2026-07-03",
     "best_editions": [
       {
-        "images": [],
+        "publisher": "دار اللباب",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1783030008405-fc7dc66a2a53401a83814a3cc695625b898.93617021277x1000NxZgHotIvJC3JCuK47SGYs4tzsyBMQH7YQ3OgVDs.png",
+          "https://arabic-app.github.io/tabaat/images/1783030066382-399730.jpg",
+          "https://arabic-app.github.io/tabaat/images/1783030078696-images29.jpeg"
+        ],
         "notes": "",
-        "verifier": "",
-        "publisher": "دار اللباب"
+        "corrections": []
       },
       {
-        "images": [],
+        "publisher": "أسفار",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1783030090866-GLmlSeKXYAAXGa0.jpg",
+          "https://arabic-app.github.io/tabaat/images/1783030101921-scaled.jpg"
+        ],
         "notes": "",
-        "verifier": "",
-        "publisher": "أسفار"
+        "corrections": []
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-07-02"
+    "links": []
   },
   {
     "id": 390,
