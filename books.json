@@ -9086,17 +9086,21 @@
       "الحديث"
     ],
     "notes": "",
+    "date": "2026-07-03",
     "best_editions": [
       {
-        "images": [],
+        "publisher": "مؤسسة دار الحديث",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1783034639342-.webp",
+          "https://arabic-app.github.io/tabaat/images/1783034654273-images772030336762543830.jpeg"
+        ],
         "notes": "",
-        "verifier": "الفحل",
-        "publisher": "مؤسسة دار الحديث"
+        "corrections": [],
+        "verifier": "ماهر الفحل"
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-07-02"
+    "links": []
   },
   {
     "id": 347,
