@@ -9174,17 +9174,20 @@
       "الجرح والتعديل"
     ],
     "notes": "",
+    "date": "2026-07-02",
     "best_editions": [
       {
-        "images": [],
+        "publisher": "مكتبة الرشد",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1783006202317-GHkCQGqXUAApZcj.jpg"
+        ],
         "notes": "",
-        "verifier": "السرساوي",
-        "publisher": "مكتبة الرشد"
+        "corrections": [],
+        "verifier": "مازن السرساوي"
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-07-02"
+    "links": []
   },
   {
     "id": 356,
