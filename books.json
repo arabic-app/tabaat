@@ -8732,17 +8732,21 @@
       "شروح الحديث"
     ],
     "notes": "",
+    "date": "2026-07-03",
     "best_editions": [
       {
-        "images": [],
+        "publisher": "دار ابن الجوزي",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1783029369954-images10.jpeg",
+          "https://arabic-app.github.io/tabaat/images/1783029380024-images9.jpeg"
+        ],
         "notes": "",
-        "verifier": "محمد صبحي حلاق",
-        "publisher": "دار ابن الجوزي"
+        "corrections": [],
+        "verifier": "محمد صبحي حلاق"
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-07-02"
+    "links": []
   },
   {
     "id": 334,
