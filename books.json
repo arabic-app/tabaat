@@ -8352,23 +8352,27 @@
   },
   {
     "id": 317,
-    "title": "الفصل في الملل والنحل",
+    "title": "الفصل في الملل والآراء والنحل",
     "author": "علي بن أحمد بن سعيد بن حزم الأندلسي",
     "category": [
       "الأديان والفرق والمذاهب"
     ],
     "notes": "",
+    "date": "2026-07-02",
     "best_editions": [
       {
-        "images": [],
+        "publisher": "دار المالكية",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1783007467688-8e7699e40b99466e96e5f5d52ccadbdb528.90625x10001PKGRomBtp19k0PLPjoim6X9IF3KAxD9u8Efrq4t.jpg",
+          "https://arabic-app.github.io/tabaat/images/1783007474832-46fbf2fca0bd422997b3551bcb1a18c71000x1000i4Fl4LMHXZV2wajR9YI9eHtffTqsvIJLXfhWjFvz.jpg"
+        ],
         "notes": "",
-        "verifier": "",
-        "publisher": "دار المالكية"
+        "corrections": [],
+        "verifier": "سمير قدوري"
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-07-02"
+    "links": []
   },
   {
     "id": 318,
