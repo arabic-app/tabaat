@@ -8913,17 +8913,20 @@
       "التراجم والرجال"
     ],
     "notes": "",
+    "date": "2026-07-02",
     "best_editions": [
       {
-        "images": [],
+        "publisher": "العبيكان",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1783003557056-4VgCCDPLVmjiQfL9rRQKzCiPueGRVo8RPvoJsDj5.png"
+        ],
         "notes": "",
-        "verifier": "العثيمين",
-        "publisher": "العبيكان"
+        "corrections": [],
+        "verifier": "العثيمين"
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-07-02"
+    "links": []
   },
   {
     "id": 344,
