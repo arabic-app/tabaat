@@ -8110,5 +8110,29 @@
     ],
     "alt_editions": [],
     "links": []
+  },
+  {
+    "id": 306,
+    "title": "شرح ديوان المتنبي",
+    "author": "عبد الرحمن البرقوقي",
+    "category": [
+      "الشعر والدواوين"
+    ],
+    "notes": "",
+    "date": "2026-07-02",
+    "best_editions": [
+      {
+        "publisher": "المكتبة التجارية او مصوراتها",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782981634277-d3af6bce870c4c95bf9838c8cddb8ec5359.54198473282x500FQFuaOxzQJI4iuzZvkq02Izwy6L6rm5VXxPbKrFH.jpg",
+          "https://arabic-app.github.io/tabaat/images/1782981643198-9599836998964e92bcfabfdbd1287bb6705x1000O1xt2B085l0INiNQQXY3bWJL93Y8VvdSG6cnm5pW.jpg",
+          "https://arabic-app.github.io/tabaat/images/1782981653875-images69.jpeg"
+        ],
+        "notes": "",
+        "corrections": []
+      }
+    ],
+    "alt_editions": [],
+    "links": []
   }
 ]
