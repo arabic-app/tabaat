@@ -2241,46 +2241,54 @@
       "الفتاوى"
     ],
     "notes": "",
+    "date": "2026-07-02",
     "best_editions": [
       {
+        "publisher": "دار الكلمة الطيبة",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782660407987-43043.jpg"
         ],
         "notes": "",
-        "publisher": "دار الكلمة الطيبة"
+        "corrections": []
       },
       {
+        "publisher": "طبعة المجمع",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782721496106-ESvEskXQAAHv2.jpg",
           "https://arabic-app.github.io/tabaat/images/1782721503225-DWO6jPpXkAAQLDy.jpg"
         ],
         "notes": "",
-        "publisher": "طبعة المجمع"
+        "corrections": []
       },
       {
+        "publisher": "دار القاسم الجديدة",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782377495562-fatawakacem.jpg"
         ],
         "notes": "مصورة على طبعة المجمع",
-        "publisher": "دار القاسم الجديدة"
+        "corrections": []
       },
       {
+        "publisher": "الصفوة",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782377539126-fatawasafwa.jpg"
         ],
         "notes": "خطها صغير، الصفحة عمودان",
-        "publisher": "الصفوة"
+        "corrections": []
       }
     ],
     "alt_editions": [
       {
-        "images": [],
+        "publisher": "العبيكان",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782989105864-0a69f5c6c3ab4b6db3419df85a5882eb.jpg",
+          "https://arabic-app.github.io/tabaat/images/1782989112548-images5.jpeg"
+        ],
         "notes": "",
-        "publisher": "العبيكان"
+        "corrections": []
       }
     ],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 65,
