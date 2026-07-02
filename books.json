@@ -9837,17 +9837,21 @@
       "أصول الفقه"
     ],
     "notes": "",
+    "date": "2026-07-03",
     "best_editions": [
       {
-        "images": [],
+        "publisher": "دار العاصمة",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1783028688560-b4359324d207438da143f38d1589be301000x1000nB71n6pjoPluDpVDAguF4RDXqklT03rBN4k1SyoL.jpg",
+          "https://arabic-app.github.io/tabaat/images/1783028706720-1679130763202202196210c56da4f7b.png"
+        ],
         "notes": "",
-        "verifier": "",
-        "publisher": "دار العاصمة"
+        "corrections": [],
+        "verifier": "عبد الرحمن الجميزي"
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-07-02"
+    "links": []
   },
   {
     "id": 381,
