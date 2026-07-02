@@ -8815,17 +8815,20 @@
       "علل الحديث"
     ],
     "notes": "",
+    "date": "2026-07-02",
     "best_editions": [
       {
-        "images": [],
+        "publisher": "أضواء السلف",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1783004494796-14.jpg"
+        ],
         "notes": "",
-        "verifier": "",
-        "publisher": "أضواء السلف"
+        "corrections": [],
+        "verifier": "نور الدين بن شكري"
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-07-02"
+    "links": []
   },
   {
     "id": 339,
