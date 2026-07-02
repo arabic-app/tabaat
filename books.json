@@ -7826,5 +7826,28 @@
     ],
     "alt_editions": [],
     "links": []
+  },
+  {
+    "id": 295,
+    "title": "التفصيل في إعراب آيات التنزيل",
+    "author": "عبداللطيف الخطيب، سعد مصلوح، رجب العلوش",
+    "category": [
+      "علوم القرآن"
+    ],
+    "notes": "",
+    "date": "2026-07-02",
+    "best_editions": [
+      {
+        "publisher": "مكتبة الخطيب بالكويت",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782972450746-images29.jpeg",
+          "https://arabic-app.github.io/tabaat/images/1782972458857-images27.jpeg"
+        ],
+        "notes": "",
+        "corrections": []
+      }
+    ],
+    "alt_editions": [],
+    "links": []
   }
 ]
