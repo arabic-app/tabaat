@@ -8006,5 +8006,29 @@
     ],
     "alt_editions": [],
     "links": []
+  },
+  {
+    "id": 302,
+    "title": "الحماسة المغربية",
+    "author": "أحمد الجراوي التادلي",
+    "category": [
+      "الشعر والدواوين"
+    ],
+    "notes": "",
+    "date": "2026-07-02",
+    "best_editions": [
+      {
+        "publisher": "آفاق معرفة",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782980862836-83150.jpg",
+          "https://arabic-app.github.io/tabaat/images/1782980873454-vHX2yEIVRolIzPqG1Hkol7MKPh9LPa7Gk44BjsvA.jpg"
+        ],
+        "notes": "",
+        "corrections": [],
+        "verifier": "محمد رضوان الداية"
+      }
+    ],
+    "alt_editions": [],
+    "links": []
   }
 ]
