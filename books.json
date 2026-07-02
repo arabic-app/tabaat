@@ -9361,29 +9361,37 @@
       "الفقه الحنبلي"
     ],
     "notes": "",
+    "date": "2026-07-02",
     "best_editions": [
       {
-        "images": [],
+        "publisher": "دار ركائز",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782999880958-e29809aaa08a4f54966f48856b36bf84500x47037nBRfaqADEYqEGInHghVaVewxk3cz3wEZo5XmYV.jpg"
+        ],
         "notes": "",
-        "verifier": "",
-        "publisher": "دار ركائز"
+        "corrections": [],
+        "verifier": "عبد الله أحمد كامل"
       },
       {
-        "images": [],
+        "publisher": "مركز سطور",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782999908246-06d7fbdd9c6e43aca25e1fafb27604b5745x10002J4TXF0JBqh7IaHTxEiMosoKa9jr7yuIsWS79RQ7.jpg",
+          "https://arabic-app.github.io/tabaat/images/1782999912885-images78.jpeg"
+        ],
         "notes": "",
-        "verifier": "",
-        "publisher": "مركز سطور"
+        "corrections": [],
+        "verifier": "عبد الله التركي و مركز هجر"
       },
       {
+        "publisher": "دار عالم الكتب",
         "images": [],
         "notes": "",
-        "verifier": "",
-        "publisher": "دار هجر"
+        "corrections": [],
+        "verifier": "عبد الله التركي و مركز هجر"
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-07-02"
+    "links": []
   },
   {
     "id": 365,
