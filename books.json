@@ -9370,17 +9370,21 @@
       "القواعد الفقهية"
     ],
     "notes": "",
+    "date": "2026-07-02",
     "best_editions": [
       {
-        "images": [],
+        "publisher": "دار القلم",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1783007723393-images9.jpeg",
+          "https://arabic-app.github.io/tabaat/images/1783007745815-xwr3cB2t8YdpSwUwaFS6QRGgILSoVnKNZVQrEk0x.jpg"
+        ],
         "notes": "",
-        "verifier": "",
-        "publisher": "دار القلم"
+        "corrections": [],
+        "verifier": "نزيه حماد، عثمان ضميرية"
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-07-02"
+    "links": []
   },
   {
     "id": 363,
