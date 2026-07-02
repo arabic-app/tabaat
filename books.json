@@ -9665,17 +9665,21 @@
       "الآداب الشرعية"
     ],
     "notes": "",
+    "date": "2026-07-02",
     "best_editions": [
       {
-        "images": [],
+        "publisher": "دار المحدث",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782990319795-images69.jpeg",
+          "https://arabic-app.github.io/tabaat/images/1782990324977-images68.jpeg"
+        ],
         "notes": "",
-        "verifier": "",
-        "publisher": "دار المحدث"
+        "corrections": [],
+        "verifier": "محمد الخولي، حسن الصباغ، خالد الشوربجي"
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-07-02"
+    "links": []
   },
   {
     "id": 377,
