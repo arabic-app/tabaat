@@ -8909,17 +8909,20 @@
       "الحديث"
     ],
     "notes": "",
+    "date": "2026-07-03",
     "best_editions": [
       {
-        "images": [],
+        "publisher": "دار ابن الجوزي",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1783033953384-EcpKASGWAAA9PEh.jpg"
+        ],
         "notes": "",
-        "verifier": "",
-        "publisher": "دار ابن الجوزي"
+        "corrections": [],
+        "verifier": "وصي الله عباس"
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-07-02"
+    "links": []
   },
   {
     "id": 340,
