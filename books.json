@@ -10056,23 +10056,30 @@
       "شروح الحديث"
     ],
     "notes": "",
+    "date": "2026-07-03",
     "best_editions": [
       {
-        "images": [],
+        "publisher": "المكتب الإسلامي",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1783029755350-shrhalsntllbghwy.jpg"
+        ],
         "notes": "",
-        "verifier": "",
-        "publisher": "المكتب الإسلامي"
+        "corrections": [],
+        "verifier": "زهير الشاويش، شعيب الأرنووط"
       },
       {
-        "images": [],
+        "publisher": "دار ابن حزم",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1783029772888-images11.jpeg",
+          "https://arabic-app.github.io/tabaat/images/1783029787274-.png"
+        ],
         "notes": "",
-        "verifier": "",
-        "publisher": "دار ابن حزم"
+        "corrections": [],
+        "verifier": "زهير الشاويش، شعيب الأرنؤوط"
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-07-02"
+    "links": []
   },
   {
     "id": 389,
