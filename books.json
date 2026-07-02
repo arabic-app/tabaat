@@ -9309,17 +9309,20 @@
       "فقه المرأة"
     ],
     "notes": "",
+    "date": "2026-07-02",
     "best_editions": [
       {
-        "images": [],
+        "publisher": "دار البشائر",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782991006493-images73.jpeg"
+        ],
         "notes": "",
-        "verifier": "",
-        "publisher": "دار البشائر"
+        "corrections": [],
+        "verifier": "إيمان عزام"
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-07-02"
+    "links": []
   },
   {
     "id": 362,
