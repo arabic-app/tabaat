@@ -8863,17 +8863,21 @@
       "حجية السنة"
     ],
     "notes": "",
+    "date": "2026-07-02",
     "best_editions": [
       {
-        "images": [],
+        "publisher": "مؤسسة الرسالة ناشرون",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1783007232685-311711.jpg",
+          "https://arabic-app.github.io/tabaat/images/1783007238390-images6.jpeg"
+        ],
         "notes": "",
-        "verifier": "",
-        "publisher": "مؤسسة الرسالة ناشرون"
+        "corrections": [],
+        "verifier": "شعيب الأرنؤوط"
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-07-02"
+    "links": []
   },
   {
     "id": 341,
