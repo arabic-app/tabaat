@@ -8605,17 +8605,21 @@
       "التاريخ الإسلامي"
     ],
     "notes": "",
+    "date": "2026-07-02",
     "best_editions": [
       {
-        "images": [],
+        "publisher": "دار الغرب الإسلامي",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1783011055922-0020509117.jpeg",
+          "https://arabic-app.github.io/tabaat/images/1783011062398-images33.jpeg"
+        ],
         "notes": "",
-        "verifier": "بشار عواد",
-        "publisher": "دار الغرب الإسلامي"
+        "corrections": [],
+        "verifier": "بشار عواد"
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-07-02"
+    "links": []
   },
   {
     "id": 329,
