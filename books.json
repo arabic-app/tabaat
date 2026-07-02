@@ -1430,40 +1430,37 @@
       "الحديث"
     ],
     "notes": "",
+    "date": "2026-07-02",
     "best_editions": [
       {
+        "publisher": "دار البشائر",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782658275671-47756683924173712152844584989850114068466780n.jpg"
         ],
         "notes": "",
-        "publisher": "دار البشائر"
+        "corrections": []
       },
       {
+        "publisher": "دار ابن الجوزي",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782658539924-48008553324173708852844915201437015327089534n.jpg"
         ],
         "notes": "",
-        "verifier": "طارق عوض الله",
-        "publisher": "دار ابن الجوزي"
+        "corrections": [],
+        "verifier": "طارق عوض الله"
       },
       {
+        "publisher": "دار ابن الجوزي",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782658528589-E1kRIqWYAQn0E6.jpg"
         ],
         "notes": "يعاد العمل عليه في مؤسسة دار الحديث",
-        "verifier": "الفحل",
-        "publisher": "دار ابن الجوزي"
+        "corrections": [],
+        "verifier": "الفحل"
       }
     ],
-    "alt_editions": [
-      {
-        "images": [],
-        "notes": "",
-        "publisher": "مكتبة التوعية الإسلامية مصر"
-      }
-    ],
-    "links": [],
-    "date": "2026-06-30"
+    "alt_editions": [],
+    "links": []
   },
   {
     "id": 40,
