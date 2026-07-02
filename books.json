@@ -8030,5 +8030,28 @@
     ],
     "alt_editions": [],
     "links": []
+  },
+  {
+    "id": 303,
+    "title": "ديوان كثير عزة",
+    "author": "كثير بن عبد الرحمن الخزاعي",
+    "category": [
+      "الشعر والدواوين"
+    ],
+    "notes": "",
+    "date": "2026-07-02",
+    "best_editions": [
+      {
+        "publisher": "دار الثقافة بيروت",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782980995667-26133724.jpg"
+        ],
+        "notes": "",
+        "corrections": [],
+        "verifier": "إحسان عباس"
+      }
+    ],
+    "alt_editions": [],
+    "links": []
   }
 ]
