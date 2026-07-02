@@ -706,31 +706,27 @@
       "شروح الحديث"
     ],
     "notes": "",
+    "date": "2026-07-03",
     "best_editions": [
       {
+        "publisher": "الفيحاء",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782302506832-.png"
         ],
         "notes": "",
-        "publisher": "الفيحاء"
+        "corrections": []
       },
       {
+        "publisher": "مؤسسة الرسالة ناشرون",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782302558397-.png"
         ],
         "notes": "",
-        "publisher": "مؤسسة الرسالة ناشرون"
+        "corrections": []
       }
     ],
-    "alt_editions": [
-      {
-        "images": [],
-        "notes": "",
-        "publisher": "دار العقيدة مصر"
-      }
-    ],
-    "links": [],
-    "date": "2026-06-30"
+    "alt_editions": [],
+    "links": []
   },
   {
     "id": 17,
