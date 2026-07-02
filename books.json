@@ -7974,5 +7974,37 @@
     ],
     "alt_editions": [],
     "links": []
+  },
+  {
+    "id": 301,
+    "title": "الحماسة \"البحتري\"",
+    "author": "الوليد البحتري",
+    "category": [
+      "الشعر والدواوين"
+    ],
+    "notes": "",
+    "date": "2026-07-02",
+    "best_editions": [
+      {
+        "publisher": "المجمع الثقافي",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782979103389-UvT5E5.jpg"
+        ],
+        "notes": "",
+        "corrections": [],
+        "verifier": "محمد حور، أحمد عبيد"
+      },
+      {
+        "publisher": "مؤسسة البابطين",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782979116859-GBVtzAcXUAA1YLR.jpg"
+        ],
+        "notes": "",
+        "corrections": [],
+        "verifier": "محمد نعناع"
+      }
+    ],
+    "alt_editions": [],
+    "links": []
   }
 ]
