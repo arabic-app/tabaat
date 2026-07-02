@@ -9240,23 +9240,30 @@
       "أصول الفقه"
     ],
     "notes": "",
+    "date": "2026-07-02",
     "best_editions": [
       {
-        "images": [],
+        "publisher": "دار ابن الجوزي",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1783003530771-images20260702T174452.497.jpeg"
+        ],
         "notes": "",
-        "verifier": "",
-        "publisher": "دار ابن الجوزي"
+        "corrections": [],
+        "verifier": "على ونيس"
       },
       {
-        "images": [],
+        "publisher": "مصورات تحقيق",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1783003505051-alrisalatlilshaafieiialiimamalshaafieiuscaled.jpg",
+          "https://arabic-app.github.io/tabaat/images/1783003520367-arrisalahofimamashshafiitahqiqbyahmadshakir.jpg"
+        ],
         "notes": "",
-        "verifier": "أحمد شاكر",
-        "publisher": "مصورات تحقيق"
+        "corrections": [],
+        "verifier": "أحمد شاكر"
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-07-02"
+    "links": []
   },
   {
     "id": 359,
