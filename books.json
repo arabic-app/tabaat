@@ -1242,37 +1242,39 @@
       "الحديث"
     ],
     "notes": "",
+    "date": "2026-07-03",
     "best_editions": [
       {
+        "publisher": "المعارف",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782574407862-47758407424173722852843517038534749652883800n.jpg"
         ],
         "notes": "",
         "corrections": [],
-        "publisher": "المعارف"
+        "verifier": "تخريج وأحكام  الألباني، عناية مشهور سلمان"
       },
       {
+        "publisher": "دار ابن كثير",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782574416864-targheeb.jpg"
         ],
         "notes": "احرص على آخر طبعة لأن الطبعات الأولى انتقدها الألباني رحمة الله بشدة",
         "corrections": [],
-        "publisher": "دار ابن كثير"
+        "verifier": "محي الدين مستو، يوسف بديوي، سمير العطار"
       },
       {
+        "publisher": "دار الفتح للإعلام",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782574469152-images20260627T183048.684.jpeg",
           "https://arabic-app.github.io/tabaat/images/1782574476531-images20260627T183041.147.jpeg"
         ],
         "notes": "البعض يقدمها على الجميع",
         "corrections": [],
-        "verifier": "على عبد المقصود رضوان",
-        "publisher": "دار الفتح للإعلام"
+        "verifier": "على عبد المقصود رضوان"
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 34,
