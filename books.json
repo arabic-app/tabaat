@@ -1387,36 +1387,38 @@
       "الحديث"
     ],
     "notes": "",
+    "date": "2026-07-03",
     "best_editions": [
       {
+        "publisher": "دار الصديق",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782559434617-LapdeBv9vQI0DAIyaUuFsroyE0dYKWvukr58621Q.jpg"
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "عصام موسى هادي",
-        "publisher": "دار الصديق"
+        "verifier": "عصام موسى هادي"
       },
       {
+        "publisher": "دار ابن الجوزي",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782559425326-images20260627T142241.383.jpeg"
         ],
         "notes": "",
         "corrections": [],
-        "publisher": "دار ابن الجوزي"
+        "verifier": "على عبد المقصود رضوان"
       },
       {
+        "publisher": "دار أطلس الخضراء",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782559419503-images20260627T142247.583.jpeg"
         ],
         "notes": "",
         "corrections": [],
-        "publisher": "دار أطلس الخضراء"
+        "verifier": "أحمد العنقري"
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 39,
