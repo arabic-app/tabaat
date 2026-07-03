@@ -1565,7 +1565,8 @@
                 .then(text => {
                     let data;
                     try {
-                        data = JSON.parse(text);
+                        const cleanedText = text.replace(/^\uFEFF/, '').trim();
+                        data = JSON.parse(cleanedText);
                     } catch (e) {
                         throw new Error('Invalid JSON in reviews.json');
                     }
