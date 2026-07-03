@@ -74,7 +74,10 @@ self.addEventListener('fetch', (event) => {
 
   // ── DATA : Network First (toujours données fraîches)
   // Ignorer les paramètres de recherche (?v=...) pour la comparaison du cache hors ligne
-  const isDataFile = url.pathname.endsWith('books.json') || url.pathname.endsWith('sciences.json');
+  const isDataFile =
+    url.pathname.endsWith('books.json') ||
+    url.pathname.endsWith('sciences.json') ||
+    url.pathname.endsWith('reviews.json');
   if (isDataFile) {
     event.respondWith(
       fetch(event.request)
