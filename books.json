@@ -3454,38 +3454,39 @@
       "اللغة والأدب"
     ],
     "notes": "",
+    "date": "2026-07-03",
     "best_editions": [
       {
+        "publisher": "مؤسسة الرسالة ناشرون",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782627893994-images20260628T092336.196.jpeg"
         ],
         "notes": "<span style=\"color: rgb(0, 0, 0); font-family: Tahoma; font-size: 14px; background-color: rgb(253, 253, 253);\">تشتمل على القرط على الكامل والتنبيهات على الكامل</span>",
         "corrections": [],
-        "verifier": "محمد الدالي",
-        "publisher": "مؤسسة الرسالة ناشرون"
+        "verifier": "محمد الدالي"
       },
       {
+        "publisher": "دار الرسالة العالمية",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782627878530-images20260628T092342.351.jpeg"
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "محمد الدالي",
-        "publisher": "دار الرسالة العالمية"
+        "verifier": "محمد الدالي"
       }
     ],
     "alt_editions": [
       {
+        "publisher": "المكتبة العصرية بيروت",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782627866773-images20260628T092414.929.jpeg"
         ],
         "notes": "",
         "corrections": [],
-        "publisher": "المكتبة العصرية بيروت"
+        "verifier": "محمد أبي الفضل إبراهيم"
       }
     ],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 102,
