@@ -2462,36 +2462,39 @@
       "كتب متنوعة"
     ],
     "notes": "",
+    "date": "2026-07-03",
     "best_editions": [
       {
+        "publisher": "روائع الكتب",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782658586621-images29.jpeg"
         ],
         "notes": "",
         "corrections": [],
-        "publisher": "روائع الكتب"
+        "verifier": "نشأت المصري"
       }
     ],
     "alt_editions": [
       {
+        "publisher": "دار ابن الجوزي السعودية",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782658593988-images63.jpeg"
         ],
         "notes": "",
         "corrections": [],
-        "publisher": "دار ابن الجوزي السعودية"
+        "verifier": "أبو الأشبال الزهيري"
       },
       {
+        "publisher": "مؤسسة الرسالة ناشرون",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782658602582-images66.jpeg"
         ],
         "notes": "",
         "corrections": [],
-        "publisher": "مؤسسة الرسالة ناشرون"
+        "verifier": "ماهر ثملاوي، حسن شلبي"
       }
     ],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 69,
