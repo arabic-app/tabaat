@@ -5444,20 +5444,21 @@
       "كتب متنوعة"
     ],
     "notes": "",
+    "date": "2026-07-03",
     "best_editions": [
       {
+        "publisher": "دار عطاءات العلم",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782624880058-5db93ad83f674ac596ed7cda9968f780thumbnail1000x100070.jpg",
           "https://arabic-app.github.io/tabaat/images/1782624886362-24f007a42a5d4680aef5af26fc71fefa785.71428571429x1000VBMfdtsYtEyXPWCCQZwpf0QPnpmMyS643zzeM5lT.jpg"
         ],
         "notes": "",
         "corrections": [],
-        "publisher": "دار عطاءات العلم"
+        "verifier": "محمد العريفي، ناصر يحيى، عبد الله الذيل، فهد المساعد"
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 188,
