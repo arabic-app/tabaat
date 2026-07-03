@@ -1305,37 +1305,37 @@
       "الحديث"
     ],
     "notes": "",
+    "date": "2026-07-03",
     "best_editions": [
       {
+        "publisher": "دار ابن الجوزي (ابن خزيمة)",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782559574540-FBb6rsNXEAo3u6m.jpg"
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "عامر علي ياسين",
-        "publisher": "دار ابن الجوزي (ابن خزيمة)"
+        "verifier": "عامر علي ياسين"
       },
       {
+        "publisher": "دار البشائر الإسلامية",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782559567676-.jpg"
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "كوشك",
-        "publisher": "دار البشائر"
+        "verifier": "عبده كوشك"
       },
       {
+        "publisher": "دار المنهاج",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782559560843-images20260627T142552.522.jpeg"
         ],
         "notes": "ينتبه للتعليقات",
-        "corrections": [],
-        "publisher": "دار المنهاج"
+        "corrections": []
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 37,
