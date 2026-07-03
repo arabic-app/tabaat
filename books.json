@@ -5211,19 +5211,20 @@
       "الأديان و الفرق"
     ],
     "notes": "",
+    "date": "2026-07-03",
     "best_editions": [
       {
+        "publisher": "مركز تأصيل",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782305911573-.png"
         ],
         "notes": "",
         "corrections": [],
-        "publisher": "مركز تأصيل"
+        "verifier": "عبد الرحمن قائد، عبد الله غالب، إبراهيم شلبي، أحمد السلوم"
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 177,
