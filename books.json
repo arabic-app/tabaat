@@ -1544,26 +1544,26 @@
   },
   {
     "id": 41,
-    "title": "الكفاية في علم الرواية",
+    "title": "الكفاية في معرفة أصول علم الرواية",
     "author": "أحمد بن علي الخطيب البغدادي",
     "category": [
       "مصطلح الحديث"
     ],
     "notes": "",
+    "date": "2026-07-03",
     "best_editions": [
       {
+        "publisher": "دار ابن الجوزي",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782629534877-8kgOqmUfL6M1u2Al3ahoSnoJqNywY1sf2YKMHblG.jpg"
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "ماهر الفحل",
-        "publisher": "دار ابن الجوزي"
+        "verifier": "ماهر الفحل"
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 42,
