@@ -1772,20 +1772,18 @@
       "التراجم و الرجال"
     ],
     "notes": "",
-    "date": "2026-07-03",
     "best_editions": [
       {
-        "publisher": "مؤسسة الرسالة",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782660488181-4798997312417370851951161917521951672161142n.jpg"
         ],
         "notes": "",
-        "corrections": [],
-        "verifier": "بشار عواد، شعيب الأرناؤط"
+        "publisher": "مؤسسة الرسالة"
       }
     ],
     "alt_editions": [],
-    "links": []
+    "links": [],
+    "date": "2026-06-30"
   },
   {
     "id": 49,
@@ -2662,20 +2660,18 @@
       "كتب متنوعة"
     ],
     "notes": "",
-    "date": "2026-07-03",
     "best_editions": [
       {
-        "publisher": "مدار الوطن",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782659617498-47757880624173734352842361276487431564931181n.jpg"
         ],
         "notes": "",
-        "corrections": [],
-        "verifier": "أحمد عثمان المزيد، على السحيباني"
+        "publisher": "مدار الوطن"
       }
     ],
     "alt_editions": [],
-    "links": []
+    "links": [],
+    "date": "2026-06-30"
   },
   {
     "id": 75,
@@ -10179,7 +10175,7 @@
       "كتب متنوعة"
     ],
     "notes": "",
-    "date": "2026-07-02",
+    "date": "2026-07-03",
     "best_editions": [
       {
         "publisher": "دار الفيحاء",
@@ -10188,7 +10184,7 @@
         ],
         "notes": "الإصدار الجديد بمراجعة يوسفان",
         "corrections": [],
-        "verifier": "كوشك"
+        "verifier": "عبده كوشك"
       }
     ],
     "alt_editions": [],
