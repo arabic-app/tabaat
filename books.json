@@ -4643,18 +4643,19 @@
       "اللغة والأدب"
     ],
     "notes": "",
+    "date": "2026-07-03",
     "best_editions": [
       {
+        "publisher": "دار العاصمة عناية سليمان الخراشي",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782587714739-cover.jpg"
         ],
         "notes": "",
-        "publisher": "دار العاصمة"
+        "corrections": []
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 152,
