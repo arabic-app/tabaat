@@ -2854,28 +2854,29 @@
       "التفسير"
     ],
     "notes": "",
+    "date": "2026-07-03",
     "best_editions": [
       {
+        "publisher": "أوقاف قطر",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782631735237-images20260628T102821.917.jpeg"
         ],
         "notes": "",
         "corrections": [],
-        "publisher": "أوقاف قطر"
+        "verifier": "مجموعة من الباحثين"
       }
     ],
     "alt_editions": [
       {
+        "publisher": "دار الأمة مصر أو العالمية (مصورة على طبعة أوقاف قطر)",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782303369969-.png"
         ],
         "notes": "<span style=\"color: rgb(0, 0, 0); font-family: Tahoma; font-size: 14px; background-color: rgb(253, 253, 253);\">أو غيرها من المصورات</span>",
-        "corrections": [],
-        "publisher": "دار الأمة مصر (مصورة على طبعة أوقاف قطر)"
+        "corrections": []
       }
     ],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 82,
