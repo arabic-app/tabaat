@@ -1741,28 +1741,29 @@
       "التراجم و الرجال"
     ],
     "notes": "",
+    "date": "2026-07-03",
     "best_editions": [
       {
+        "publisher": "جمعية دار البر",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782310833821-47762023624173711186178016039187345317028932n.jpg"
         ],
         "notes": "",
-        "corrections": [],
-        "publisher": "جمعية دار البر"
+        "corrections": []
       }
     ],
     "alt_editions": [
       {
+        "publisher": "مؤسسة الرسالة",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782310852775-47758278724173710252844778528326861031562815n.jpg"
         ],
         "notes": "",
         "corrections": [],
-        "publisher": "مؤسسة الرسالة"
+        "verifier": "إبراهيم الزيبق، عادل مرشد"
       }
     ],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 48,
