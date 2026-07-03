@@ -2413,39 +2413,46 @@
       "كتب متنوعة"
     ],
     "notes": "",
+    "date": "2026-07-03",
     "best_editions": [
       {
+        "publisher": "الدار الشامية",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782554139073-48634319824521971084685356771879302379975264n.jpg"
         ],
         "notes": "",
-        "publisher": "الدار الشامية"
+        "corrections": [],
+        "verifier": "المكتب العلمي بالدار الشامية"
       },
       {
+        "publisher": "دار ابن الجوزي",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782557950129-images20260627T135854.200.jpeg"
         ],
         "notes": "",
-        "publisher": "دار ابن الجوزي"
+        "corrections": [],
+        "verifier": "على عبد المقصود رضوان"
       },
       {
+        "publisher": "دار ابن كثير",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782557868782-images20260627T135739.254.jpeg"
         ],
         "notes": "",
-        "publisher": "دار ابن كثير"
+        "corrections": [],
+        "verifier": "ياسين السواس"
       },
       {
+        "publisher": "دار المنهاج",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782557834626-47990437124173733419509127006597511774585341n.jpg"
         ],
         "notes": "",
-        "publisher": "دار المنهاج"
+        "corrections": []
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 70,
