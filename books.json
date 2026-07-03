@@ -353,77 +353,80 @@
       "الحديث"
     ],
     "notes": "",
+    "date": "2026-07-03",
     "best_editions": [
       {
+        "publisher": "بحاشية السهارنفوري (دار البشائر / دار القلم)",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782579823190-ea9d3ec1f28a4be6acf4d65543e37c331000x10002wHhqGSw1zuZUO4WYuJafuNdy9xil88xrtlfnLMt.jpg"
         ],
         "notes": "",
         "corrections": [],
-        "publisher": "بحاشية السهارنفوري (دار البشائر / دار القلم)"
+        "verifier": "تقي الدين الندوي"
       },
       {
+        "publisher": "بيت السنة",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782579386789-48014315924173709052844896363330708385614310n.jpg"
         ],
         "notes": "",
-        "corrections": [],
-        "publisher": "بيت السنة"
+        "corrections": []
       },
       {
+        "publisher": "التأصيل",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782579407411-47757527024173713119511156367729419178237330n.jpg"
         ],
         "notes": "الطبعة الثانية وما بعدها",
-        "corrections": [],
-        "publisher": "التأصيل"
+        "corrections": []
       },
       {
+        "publisher": "دار ابن الجوزي",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782579439815-47697390624173722919510176028677084410553888n.jpg"
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "الفحل",
-        "publisher": "دار ابن الجوزي"
+        "verifier": "ماهر الفحل"
       },
       {
+        "publisher": "السلطانية دار المنهاج",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782579472469-47701442524173710852844717625350440410297329n.jpg"
         ],
         "notes": "",
         "corrections": [],
-        "publisher": "السلطانية دار المنهاج"
+        "verifier": "عناية محمد زهير الناصر"
       }
     ],
     "alt_editions": [
       {
+        "publisher": "بيت السنة - الطبعة المجردة",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782818948399-baytsunnamoujarada.jpeg"
         ],
         "notes": "",
-        "corrections": [],
-        "publisher": "بيت السنة - الطبعة المجردة"
+        "corrections": []
       },
       {
+        "publisher": "مؤسسة الرسالة ناشرون",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782579897379-9916df083dc6433989cca8ac9ad51eb6944.88188976378x1000AZ5R7ThhTS8DTJSiPgfKKn4CAe5gjQjr693D0Gy5.jpg"
         ],
         "notes": "",
         "corrections": [],
-        "publisher": "مؤسسة الرسالة ناشرون"
+        "verifier": "مركز الرسالة للدراسات وتحقيق التراث"
       },
       {
+        "publisher": "دار التأصيل مجلد واحد",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782579890821-images20260627T200443.775.jpeg"
         ],
         "notes": "",
-        "corrections": [],
-        "publisher": "دار التأصيل مجلد واحد"
+        "corrections": []
       }
     ],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 9,
