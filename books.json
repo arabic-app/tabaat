@@ -7343,19 +7343,20 @@
       "الحديث"
     ],
     "notes": "",
+    "date": "2026-07-03",
     "best_editions": [
       {
+        "publisher": "دار ابن كثير",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782732350402-.png"
         ],
         "notes": "",
         "corrections": [],
-        "publisher": "دار ابن كثير"
+        "verifier": "عبد القادر الارناؤوط و رفاقه"
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 270,
