@@ -3082,26 +3082,32 @@
       "الفقه الحنفي"
     ],
     "notes": "",
+    "date": "2026-07-03",
     "best_editions": [],
     "alt_editions": [
       {
+        "publisher": "دار إحياء التراث العربي",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782653603995-images27.jpeg",
-          "https://arabic-app.github.io/tabaat/images/1782653691980-ABL7860000303BadaeaaalSinaafitrtibalSharaea6vols2scaled.jpg"
+          "https://arabic-app.github.io/tabaat/images/1782653691980-ABL7860000303BadaeaaalSinaafitrtibalSharaea6vols2scaled.jpg",
+          "https://arabic-app.github.io/tabaat/images/1783096584891-116877.jpg"
         ],
         "notes": "",
-        "publisher": "دار إحياء التراث"
+        "corrections": [],
+        "verifier": "محمد عدنان"
       },
       {
+        "publisher": "دار الحديث",
         "images": [
-          "https://arabic-app.github.io/tabaat/images/1782653749213-images5.jpeg"
+          "https://arabic-app.github.io/tabaat/images/1782653749213-images5.jpeg",
+          "https://arabic-app.github.io/tabaat/images/1783096576614-1.jpg"
         ],
         "notes": "",
-        "publisher": "دار الحديث"
+        "corrections": [],
+        "verifier": "محمد تامر، محمد السعيد، وجيه محمد"
       }
     ],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 89,
