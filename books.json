@@ -959,25 +959,29 @@
       "شروح الحديث"
     ],
     "notes": "شرح غير كامل على سنن ابن ماجه",
+    "date": "2026-07-03",
     "best_editions": [
       {
+        "publisher": "مكتبة ابن عباس",
         "images": [
           "https://www.zakariyyabooks.com/wp-content/uploads/%D8%A7%D9%84%D8%A5%D8%B9%D9%84%D8%A7%D9%85-%D8%A8%D8%B3%D9%86%D8%AA%D9%87-%D8%B9%D9%84%D9%8A%D9%87-%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85-scaled.jpg"
         ],
         "notes": "",
-        "publisher": "مكتبة ابن عباس"
+        "corrections": [],
+        "verifier": "أحمد أبي العينين"
       },
       {
+        "publisher": "دار كنوز اشبيليا",
         "images": [
           "https://media.zid.store/eff9677f-02f2-4fdd-acd0-68b53135df0b/5040e079-3286-4ac3-b00c-b28bcd1767e7.jpg"
         ],
         "notes": "طبعة ناقصة (مجلدان فقط)",
-        "publisher": "دار كنوز اشبيليا"
+        "corrections": [],
+        "verifier": "عبد العزيز الماجد"
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 26,
