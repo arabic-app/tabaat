@@ -798,13 +798,12 @@
     ],
     "alt_editions": [
       {
-        "publisher": "مكتبة المعارف",
+        "publisher": "مكتبة المعارف أحكام الألباني، عناية مشهور سلمان",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782579052813-90f4eceb7f418ac71fe5ca82c63d419b.png.webp"
         ],
         "notes": "إن كانت رخيصة",
-        "corrections": [],
-        "verifier": "أحكام الألباني، عناية مشهور سلمان"
+        "corrections": []
       }
     ],
     "links": []
