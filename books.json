@@ -6300,19 +6300,20 @@
       "الفقه"
     ],
     "notes": "",
+    "date": "2026-07-03",
     "best_editions": [
       {
+        "publisher": "دار الفتح",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782558856894-images20260627T135049.831.jpeg"
         ],
         "notes": "",
-        "verifier": "عمر شوقي",
-        "publisher": "دار الفتح"
+        "corrections": [],
+        "verifier": "عمرو شوقي عبد العظيم"
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 226,
