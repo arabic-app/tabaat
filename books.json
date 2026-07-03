@@ -2070,52 +2070,57 @@
       "الفقه"
     ],
     "notes": "هناك عدة أعمال في الطريق إن شاء الله",
+    "date": "2026-07-03",
     "best_editions": [
       {
+        "publisher": "مركز سطور",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782633395773-almughniofibnqudamaalmaqdissi.jpg"
         ],
         "notes": "<span style=\"color: rgb(0, 0, 0); font-family: Tahoma; font-size: 14px; background-color: rgb(253, 253, 253);\">أعيد تحقيق الكتاب وهناك تعديلات وتصويبات مقارنة بالتحقيق الأول (دار عالم الكتب / دار هجر / الدارة)</span>",
         "corrections": [],
-        "publisher": "مركز سطور - طبعة التركي"
+        "verifier": "عبد الله التركي، مركز هجر"
       }
     ],
     "alt_editions": [
       {
+        "publisher": "دار عالم الكتب",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782632974532-47759139924173723319510135013143413284544895n.jpg"
         ],
         "notes": "",
         "corrections": [],
-        "publisher": "دار عالم الكتب - طبعة التركي"
+        "verifier": "عبد الله التركي، عبد الفتاح الحلو"
       },
       {
+        "publisher": "دار هجر",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782633402606-images20260628T105412.986.jpeg"
         ],
         "notes": "",
         "corrections": [],
-        "publisher": "دار هجر - طبعة التركي"
+        "verifier": "عبد الله التركي، عبد الفتاح الحلو"
       },
       {
+        "publisher": "دارة الملك عبد العزيز (الدارة)",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782633006559-48052864424237170679832067059185720790152408n.jpg"
         ],
         "notes": "",
         "corrections": [],
-        "publisher": "دارة الملك عبد العزيز (الدارة) - طبعة التركي"
+        "verifier": "عبد الله التركي، عبد الفتاح الحلو"
       },
       {
+        "publisher": "طبعة دار الحديث مصر",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782633413815-.jpg"
         ],
         "notes": "",
         "corrections": [],
-        "publisher": "طبعة دار الحديث مصر"
+        "verifier": "محمد شرف الدين، سيد إبراهيم ، السيد محمد"
       }
     ],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 56,
@@ -2729,19 +2734,21 @@
       "الأديان و الفرق"
     ],
     "notes": "",
+    "date": "2026-07-03",
     "best_editions": [
       {
+        "publisher": "دار الفضيلة",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782642416980-images66.jpeg",
           "https://arabic-app.github.io/tabaat/images/1782642474338-47745181824173731686175965374997372709778402n.jpg"
         ],
         "notes": "",
-        "publisher": "دار الفضيلة"
+        "corrections": [],
+        "verifier": "محمد معصوم"
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 78,
