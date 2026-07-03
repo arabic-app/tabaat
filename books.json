@@ -305,33 +305,39 @@
       "علوم القرآن"
     ],
     "notes": "",
+    "date": "2026-07-03",
     "best_editions": [
       {
+        "publisher": "طبعة المجمع",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782308124017-11855885n.jpg"
         ],
         "notes": "",
-        "publisher": "طبعة المجمع"
+        "corrections": [],
+        "verifier": "مركز الدراسات القرآنية"
       }
     ],
     "alt_editions": [
       {
+        "publisher": "دار الحديث",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782559010375-images20260627T141608.547.jpeg"
         ],
         "notes": "",
-        "publisher": "دار الحديث"
+        "corrections": [],
+        "verifier": "أحمد علي"
       },
       {
+        "publisher": "دار السلام مصر",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782559016889-images20260627T141617.183.jpeg"
         ],
         "notes": "",
-        "publisher": "دار السلام مصر"
+        "corrections": [],
+        "verifier": "محمود مرسي، محمد عوض"
       }
     ],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 8,
