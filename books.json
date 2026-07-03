@@ -3159,19 +3159,21 @@
       "الفقه الشافعي"
     ],
     "notes": "",
+    "date": "2026-07-03",
     "best_editions": [
       {
+        "publisher": "تحقيق المطيعي (دار الإرشاد بجدة / دار عالم الكتب / المكتبة التوفيقية)",
         "images": [
-          "https://arabic-app.github.io/tabaat/images/1782631264465-images20260628T101731.045.jpeg"
+          "https://arabic-app.github.io/tabaat/images/1782631264465-images20260628T101731.045.jpeg",
+          "https://arabic-app.github.io/tabaat/images/1783090654364-images11.jpeg",
+          "https://arabic-app.github.io/tabaat/images/1783090664568-images10.jpeg"
         ],
         "notes": "",
-        "corrections": [],
-        "publisher": "تحقيق المطيعي (دار الإرشاد بجدة / دار عالم الكتب / المكتبة التوفيقية)"
+        "corrections": []
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 93,
