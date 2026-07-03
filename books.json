@@ -4504,33 +4504,36 @@
   },
   {
     "id": 143,
-    "title": "بهجة المجالس و أنس المُجالس",
+    "title": "بهجة المجالس و أنس المجالس وشحذ الذاهن و الهاجس",
     "author": "عمر بن عبد البر القرطبي",
     "category": [
       "اللغة والأدب"
     ],
     "notes": "عبد الرحمن قائد يعمل على الكتاب",
+    "date": "2026-07-03",
     "best_editions": [
       {
+        "publisher": "",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782662044672-images20260628T185336.131.jpeg"
         ],
         "notes": "",
-        "verifier": "مرسي الخولي",
-        "publisher": ""
+        "corrections": [],
+        "verifier": "مرسي الخولي"
       }
     ],
     "alt_editions": [
       {
+        "publisher": "مؤسسة إبداع",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782662050143-images20260628T185354.630.jpeg"
         ],
         "notes": "",
-        "publisher": "مؤسسة إبداع"
+        "corrections": [],
+        "verifier": "محمد نصر أبي جبل"
       }
     ],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 144,
