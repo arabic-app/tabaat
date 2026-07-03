@@ -2476,45 +2476,51 @@
       "كتب متنوعة"
     ],
     "notes": "",
+    "date": "2026-07-03",
     "best_editions": [
       {
+        "publisher": "دار ركائز",
         "images": [
-          "https://arabic-app.github.io/tabaat/images/1782558812461-images20260627T141305.674.jpeg"
+          "https://arabic-app.github.io/tabaat/images/1782558812461-images20260627T141305.674.jpeg",
+          "https://arabic-app.github.io/tabaat/images/1783070154054-1741555475GlMP0OQWUAAA6WW.jpg"
         ],
         "notes": "",
         "corrections": [],
-        "publisher": "دار ركائز"
+        "verifier": "أسامة الشطي، سائد قطوم"
       },
       {
+        "publisher": "دار الفتح",
         "images": [
-          "https://arabic-app.github.io/tabaat/images/1782558821386-images20260627T141302.022.jpeg"
+          "https://arabic-app.github.io/tabaat/images/1782558821386-images20260627T141302.022.jpeg",
+          "https://arabic-app.github.io/tabaat/images/1783070140046-images6.jpeg",
+          "https://arabic-app.github.io/tabaat/images/1783070147073-images5.jpeg"
         ],
         "notes": "<p dir=\"rtl\" style=\"margin: 0px 0px 0.2em; padding: 0px;\">الآداب الشرعية الكبرى</p>",
         "corrections": [],
-        "publisher": "دار الفتح"
+        "verifier": "وائل الشنشوري، حاتم الدسوقي"
       }
     ],
     "alt_editions": [
       {
+        "publisher": "دار الوفاء",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782558827759-images20260627T141323.599.jpeg"
         ],
         "notes": "الآداب الشرعية والمنح المرعية",
         "corrections": [],
-        "publisher": "دار الوفاء"
+        "verifier": "عامر الجزار، أنور الباز"
       },
       {
+        "publisher": "الرسالة",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782308171502-1852651895396399903585581976457254078744988n.jpeg"
         ],
         "notes": "الآداب الشرعية والمنح المرعية",
         "corrections": [],
-        "verifier": "الأرناؤوط",
-        "publisher": "الرسالة"
+        "verifier": "شعيب الأرنووط، عمر القيام"
       }
     ],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 72,
