@@ -1799,8 +1799,10 @@
       "التاريخ"
     ],
     "notes": "",
+    "date": "2026-07-03",
     "best_editions": [
       {
+        "publisher": "مركز سطور",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782310581768-bidayasoutour.jpg"
         ],
@@ -1817,70 +1819,74 @@
             ]
           }
         ],
-        "publisher": "مركز سطور - طبعة التركي"
+        "verifier": "عبد الله التركي، مركز هجر"
       },
       {
+        "publisher": "دار عالم الكتب",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782310649238-nidayaalam.jpg"
         ],
         "notes": "",
         "corrections": [],
-        "publisher": "دار عالم الكتب - طبعة التركي"
+        "verifier": "عبد الله التركي، مركز هجر"
       },
       {
+        "publisher": "دار هجر",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782310714079-48125660824244369679112166497156030803560300n.jpg"
         ],
         "notes": "",
         "corrections": [],
-        "publisher": "دار هجر - طبعة التركي"
+        "verifier": "عبد الله التركي، مركز هجر"
       }
     ],
     "alt_editions": [
       {
+        "publisher": "دار ابن كثير",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782572111755-images20260627T175402.774.jpeg"
         ],
         "notes": "",
         "corrections": [],
-        "publisher": "دار ابن كثير"
+        "verifier": "مجموعة محققين بإشراف بشار عواد و عبد القادر الأرنووط"
       },
       {
+        "publisher": "دار ابن رجب",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782572674332-images20260627T180340.091.jpeg"
         ],
         "notes": "لا تشتمل على جزء النهاية في الفتن والملاحم، يشترى مفردا",
         "corrections": [],
-        "publisher": "دار ابن رجب"
+        "verifier": "مجموعة محققين بإشراف مصطفى العدوي"
       },
       {
+        "publisher": "الدار العالمية",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782572681609-images20260627T180355.586.jpeg"
         ],
         "notes": "لا تشتمل على جزء النهاية في الفتن والملاحم، يشترى مفردا",
         "corrections": [],
-        "publisher": "الدار العالمية"
+        "verifier": "محمد نصر أبي جبل"
       },
       {
+        "publisher": "دار الافهام",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782819496371-bidayaifham.jpg",
           "https://arabic-app.github.io/tabaat/images/1782572121996-images20260627T175423.525.jpeg"
         ],
         "notes": "",
-        "corrections": [],
-        "publisher": "دار الإفهام"
+        "corrections": []
       },
       {
+        "publisher": "ابداع ابن الجوزي القاهرة",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782572688389-images20260627T180411.790.jpeg"
         ],
         "notes": "لا تشتمل على جزء النهاية في الفتن والملاحم، يشترى مفردا",
-        "corrections": [],
-        "publisher": "ابداع ابن الجوزي القاهرة"
+        "corrections": []
       }
     ],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 51,
