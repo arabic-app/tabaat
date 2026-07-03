@@ -54,7 +54,16 @@
             color: var(--md-on-primary);
             padding: 24px 16px;
             text-align: center;
+            position: relative;
         }
+        .header-inner {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 36px;
+        }
+        .header-text { flex: 1; text-align: center; }
         header h1 {
             margin: 0 0 6px 0;
             font-size: clamp(1.1rem, 4vw, 1.75rem);
@@ -76,6 +85,175 @@
             justify-content: center;
             gap: 6px;
             direction: rtl;
+        }
+
+        /* ===== MENU BUTTON ===== */
+        .sidebar-toggle-btn {
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255,255,255,0.15);
+            border: none;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s;
+            flex-shrink: 0;
+        }
+        .sidebar-toggle-btn:hover { background: rgba(255,255,255,0.28); }
+        .sidebar-toggle-btn .material-icons-round { font-size: 24px; }
+
+        /* ===== SIDEBAR OVERLAY ===== */
+        .sidebar-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.45);
+            z-index: 3000;
+            backdrop-filter: blur(2px);
+            -webkit-backdrop-filter: blur(2px);
+        }
+        .sidebar-overlay.open { display: block; }
+
+        /* ===== SIDEBAR PANEL ===== */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            right: 0;
+            height: 100%;
+            width: 270px;
+            max-width: 82vw;
+            background: var(--md-surface);
+            z-index: 3100;
+            box-shadow: -4px 0 24px rgba(0,0,0,0.22);
+            display: flex;
+            flex-direction: column;
+            transform: translateX(100%);
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            direction: rtl;
+        }
+        .sidebar.open { transform: translateX(0); }
+
+        .sidebar-header {
+            background: var(--md-primary);
+            color: white;
+            padding: 28px 20px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-shrink: 0;
+        }
+        .sidebar-header-title {
+            font-size: 1.15rem;
+            font-weight: 800;
+            letter-spacing: 0.01em;
+        }
+        .sidebar-close-btn {
+            background: rgba(255,255,255,0.15);
+            border: none;
+            color: white;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s;
+        }
+        .sidebar-close-btn:hover { background: rgba(255,255,255,0.28); }
+
+        .sidebar-nav {
+            list-style: none;
+            padding: 10px 0;
+            margin: 0;
+            flex: 1;
+            overflow-y: auto;
+        }
+        .sidebar-nav-item {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 14px 22px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--md-on-surface);
+            border-radius: 0;
+            transition: background 0.18s, color 0.18s;
+            position: relative;
+        }
+        .sidebar-nav-item:hover { background: var(--md-background); }
+        .sidebar-nav-item.active {
+            background: rgba(0,105,92,0.1);
+            color: var(--md-primary);
+        }
+        .sidebar-nav-item.active::before {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 6px;
+            bottom: 6px;
+            width: 4px;
+            background: var(--md-primary);
+            border-radius: 4px 0 0 4px;
+        }
+        .sidebar-nav-item .material-icons-round {
+            font-size: 22px;
+            color: var(--md-primary);
+            flex-shrink: 0;
+        }
+
+        /* ===== VIEWS ===== */
+        .view { display: none; }
+        .view.active { display: block; }
+        #view-reviews,
+        #view-about {
+            padding-top: 12px;
+        }
+
+        /* ===== REVIEWS VIEW ===== */
+        .review-card {
+            background: var(--md-surface);
+            border-radius: 16px;
+            padding: 22px;
+            margin-bottom: 18px;
+            box-shadow: var(--md-elevation-1);
+            border: 1px solid var(--md-outline-variant);
+        }
+        .review-name {
+            font-size: 1rem;
+            font-weight: 800;
+            color: var(--md-primary);
+            margin: 0 0 10px 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .review-name .material-icons-round { font-size: 1.1rem; }
+        .review-message {
+            font-size: 0.95rem;
+            line-height: 1.8;
+            color: var(--md-on-surface-variant);
+            white-space: pre-line;
+        }
+
+        /* ===== ABOUT VIEW ===== */
+        .about-card {
+            background: var(--md-surface);
+            border-radius: 16px;
+            padding: 24px;
+            box-shadow: var(--md-elevation-1);
+            border: 1px solid var(--md-outline-variant);
+            font-size: 0.97rem;
+            line-height: 1.8;
+            color: var(--md-on-surface-variant);
         }
 
         /* ===== CONTAINER ===== */
@@ -850,14 +1028,46 @@
     </div>
 
     <header>
-        <h1>أفضل طبعة</h1>
-        <p>دليل أفضل طبعات الكتب الإسلامية</p>
+        <div class="header-inner">
+            <div class="header-text">
+                <h1>أفضل طبعة</h1>
+                <p>دليل أفضل طبعات الكتب الإسلامية</p>
+            </div>
+            <button class="sidebar-toggle-btn" id="sidebarToggleBtn" aria-label="القائمة">
+                <span class="material-icons-round">menu</span>
+            </button>
+        </div>
         <!--<p>ابحث عن الكتاب، المؤلف، أو العلم لتعرف أفضل الطبعات المعتمدة</p>-->
         <button id="header-install-btn" class="header-install-btn">
             <span class="material-icons-round">download</span>
             تثبيت التطبيق
         </button>
     </header>
+
+    <!-- ===== SIDEBAR ===== -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+    <nav class="sidebar" id="sidebar" aria-label="القائمة الرئيسية">
+        <div class="sidebar-header">
+            <span class="sidebar-header-title">القائمة</span>
+            <button class="sidebar-close-btn" id="sidebarCloseBtn" aria-label="إغلاق القائمة">
+                <span class="material-icons-round">close</span>
+            </button>
+        </div>
+        <ul class="sidebar-nav">
+            <li class="sidebar-nav-item active" id="nav-home" onclick="showView('home')">
+                <span class="material-icons-round">home</span>
+                الرئيسية
+            </li>
+            <li class="sidebar-nav-item" id="nav-reviews" onclick="showView('reviews')">
+                <span class="material-icons-round">format_quote</span>
+                تقريظ
+            </li>
+            <li class="sidebar-nav-item" id="nav-about" onclick="showView('about')">
+                <span class="material-icons-round">info</span>
+                عن التطبيق
+            </li>
+        </ul>
+    </nav>
 
     <div class="filter-sticky-wrapper">
         <div class="filter-bar">
@@ -881,8 +1091,19 @@
         </div>
     </div>
 
-    <div class="container">
+    <!-- HOME VIEW -->
+    <div class="container view active" id="view-home">
         <div id="booksContainer"></div>
+    </div>
+
+    <!-- REVIEWS VIEW -->
+    <div class="container view" id="view-reviews">
+        <div id="reviewsContainer"></div>
+    </div>
+
+    <!-- ABOUT VIEW -->
+    <div class="container view" id="view-about">
+        <div id="aboutContainer"></div>
     </div>
 
     <div id="infoModal" class="modal">
@@ -1285,6 +1506,109 @@
                 }
             }
         });
+
+        /* ===== SIDEBAR LOGIC ===== */
+        const sidebar        = document.getElementById('sidebar');
+        const sidebarOverlay = document.getElementById('sidebarOverlay');
+        const sidebarToggle  = document.getElementById('sidebarToggleBtn');
+        const sidebarClose   = document.getElementById('sidebarCloseBtn');
+
+        function openSidebar() {
+            sidebar.classList.add('open');
+            sidebarOverlay.classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+        function closeSidebar() {
+            sidebar.classList.remove('open');
+            sidebarOverlay.classList.remove('open');
+            document.body.style.overflow = '';
+        }
+        sidebarToggle.addEventListener('click', openSidebar);
+        sidebarClose.addEventListener('click', closeSidebar);
+        sidebarOverlay.addEventListener('click', closeSidebar);
+
+        /* ===== VIEW SWITCHING ===== */
+        let currentView = 'home';
+
+        function showView(view) {
+            closeSidebar();
+
+            // Show/hide filter bar
+            const filterBar = document.querySelector('.filter-sticky-wrapper');
+            filterBar.style.display = (view === 'home') ? '' : 'none';
+
+            // Toggle active views
+            document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
+            document.getElementById('view-' + view).classList.add('active');
+
+            // Toggle active nav items
+            document.querySelectorAll('.sidebar-nav-item').forEach(i => i.classList.remove('active'));
+            document.getElementById('nav-' + view).classList.add('active');
+
+            currentView = view;
+
+            if (view === 'reviews') loadReviews();
+            if (view === 'about')   loadAbout();
+        }
+
+        /* ===== REVIEWS ===== */
+        let reviewsLoaded = false;
+        function loadReviews() {
+            if (reviewsLoaded) return;
+            const container = document.getElementById('reviewsContainer');
+            container.innerHTML = `<div class="empty-state"><span class="material-icons-round" style="animation:spin 1s linear infinite">sync</span></div>`;
+            fetch('reviews.json?_t=' + Date.now(), { cache: 'no-store' })
+                .then(r => {
+                    if (!r.ok) throw new Error('HTTP ' + r.status);
+                    return r.text();
+                })
+                .then(text => {
+                    let data;
+                    try {
+                        data = JSON.parse(text);
+                    } catch (e) {
+                        throw new Error('Invalid JSON in reviews.json');
+                    }
+
+                    const reviews = Array.isArray(data)
+                        ? data
+                        : (data && typeof data === 'object' ? [data] : []);
+
+                    if (!reviews.length) {
+                        container.innerHTML = `<div class="empty-state"><span class="material-icons-round">format_quote</span><p>لا توجد تقاريظ بعد.</p></div>`;
+                        reviewsLoaded = true;
+                        return;
+                    }
+                    container.innerHTML = reviews.map(review => `
+                        <div class="review-card">
+                            <div class="review-name"><span class="material-icons-round">person</span>${review.name || ''}</div>
+                            <div class="review-message">${review.message || ''}</div>
+                        </div>
+                    `).join('');
+                    reviewsLoaded = true;
+                })
+                .catch(err => {
+                    console.error('Failed to load reviews.json:', err);
+                    reviewsLoaded = false;
+                    container.innerHTML = `<div class="empty-state"><span class="material-icons-round">error_outline</span><p>تعذّر تحميل التقاريظ.</p></div>`;
+                });
+        }
+
+        /* ===== ABOUT ===== */
+        let aboutLoaded = false;
+        function loadAbout() {
+            if (aboutLoaded) return;
+            aboutLoaded = true;
+            const container = document.getElementById('aboutContainer');
+            fetch('infos.html?_t=' + Date.now(), { cache: 'no-store' })
+                .then(r => r.text())
+                .then(html => {
+                    container.innerHTML = `<div class="about-card">${html}</div>`;
+                })
+                .catch(() => {
+                    container.innerHTML = `<div class="empty-state"><span class="material-icons-round">error_outline</span><p>تعذّر تحميل المعلومات.</p></div>`;
+                });
+        }
     </script>
 
     <!-- ===== PWA + PULL-TO-REFRESH SCRIPT ===== -->
