@@ -773,34 +773,38 @@
       "الحديث"
     ],
     "notes": "",
+    "date": "2026-07-03",
     "best_editions": [
       {
+        "publisher": "دار الصديق",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782578983835-47972881324173722819510184255296148190746736n.jpg"
         ],
         "notes": "",
-        "verifier": "عصام موسى هادي",
-        "publisher": "دار الصديق"
+        "corrections": [],
+        "verifier": "عصام موسى هادي"
       },
       {
+        "publisher": "دار التأصيل",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782578991897-images20260627T194833.753.jpeg"
         ],
         "notes": "عدة مجلدات، الطبعة الثانية وما بعدها",
-        "publisher": "دار التأصيل"
+        "corrections": []
       }
     ],
     "alt_editions": [
       {
+        "publisher": "مكتبة المعارف",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782579052813-90f4eceb7f418ac71fe5ca82c63d419b.png.webp"
         ],
         "notes": "إن كانت رخيصة",
-        "publisher": "مكتبة المعارف"
+        "corrections": [],
+        "verifier": "أحكام الألباني، عناية مشهور سلمان"
       }
     ],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 20,
