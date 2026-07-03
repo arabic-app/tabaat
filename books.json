@@ -1073,18 +1073,21 @@
       "شروح الحديث"
     ],
     "notes": "",
+    "date": "2026-07-03",
     "best_editions": [
       {
+        "publisher": "دار الفاروق الحديثة",
         "images": [
-          "https://arabic-app.github.io/tabaat/images/1782568101699-47697000224173710719511393276495993117755882n1.jpg"
+          "https://arabic-app.github.io/tabaat/images/1782568101699-47697000224173710719511393276495993117755882n1.jpg",
+          "https://arabic-app.github.io/tabaat/images/1783069383894-971.jpeg"
         ],
         "notes": "",
-        "publisher": "دار الفاروق الحديثة"
+        "corrections": [],
+        "verifier": "أسامة إبراهيم محمد"
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 30,
