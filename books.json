@@ -7188,18 +7188,19 @@
       "الحديث"
     ],
     "notes": "",
+    "date": "2026-07-03",
     "best_editions": [
       {
+        "publisher": "دار التأصيل",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782377994001-.png"
         ],
-        "notes": "",
-        "publisher": "دار التأصيل"
+        "notes": "الطبعة الثانية&nbsp;",
+        "corrections": []
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 265,
@@ -9138,7 +9139,7 @@
       "التراجم والرجال"
     ],
     "notes": "",
-    "date": "2026-07-03",
+    "date": "2026-07-02",
     "best_editions": [
       {
         "publisher": "العبيكان",
@@ -9147,7 +9148,7 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "عبد الرحمن العثيمين"
+        "verifier": "العثيمين"
       }
     ],
     "alt_editions": [],
