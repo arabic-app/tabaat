@@ -1670,36 +1670,41 @@
       "غريب الحديث"
     ],
     "notes": "",
+    "date": "2026-07-03",
     "best_editions": [
       {
+        "publisher": "دار الفاروق المنصورة",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782641810658-47745155724173709886178148033111866187318370n.jpg",
           "https://arabic-app.github.io/tabaat/images/1782641818483-images73.jpeg"
         ],
         "notes": "",
-        "verifier": "الطناحي",
-        "publisher": "دار الفاروق المنصورة"
+        "corrections": [],
+        "verifier": "محمود الطناحي، الطاهر الزاوي"
       },
       {
+        "publisher": "دار المنهاج جدة",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782641825774-48060969024244358879113246384694298765722636n.jpg",
           "https://arabic-app.github.io/tabaat/images/1782641840999-images72.jpeg"
         ],
         "notes": "",
-        "publisher": "دار المنهاج جدة - تحقيق الخراط"
+        "corrections": [],
+        "verifier": "أحمد الخراط"
       }
     ],
     "alt_editions": [
       {
+        "publisher": "مؤسسة الرسالة ناشرون",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782641850354-48008386324173708719511596546026167245744460n.jpg"
         ],
         "notes": "",
-        "publisher": "مؤسسة الرسالة ناشرون"
+        "corrections": [],
+        "verifier": "رضوان مامو"
       }
     ],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 46,
