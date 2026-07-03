@@ -260,42 +260,48 @@
       "علوم القرآن"
     ],
     "notes": "",
+    "date": "2026-07-03",
     "best_editions": [
       {
+        "publisher": "دار المعرفة",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782572501269-YKWLujPYaE9ht5uI5RXgwiEzPp1K1dFnx3Dw9WQT.jpg"
         ],
         "notes": "",
-        "verifier": "المرعشلي",
-        "publisher": "دار المعرفة"
+        "corrections": [],
+        "verifier": "يوسف المرعشلي، جمال الذهبي، إبراهيم الكردي"
       }
     ],
     "alt_editions": [
       {
+        "publisher": "تحقيق أبي الفضل ابراهيم",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782572514961-images20260627T180040.021.jpeg",
           "https://arabic-app.github.io/tabaat/images/1782572522497-552223375335959825.webp"
         ],
         "notes": "طبع في عدة دور",
-        "publisher": "تحقيق أبي الفضل ابراهيم"
+        "corrections": []
       },
       {
+        "publisher": "دار الحديث",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782572410938-images20260627T175831.137.jpeg"
         ],
         "notes": "",
-        "publisher": "دار الحديث"
+        "corrections": [],
+        "verifier": "أبي الفضل الدمياطي"
       },
       {
+        "publisher": "دار الحضارة السعودية",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782572404718-18270664.jpg"
         ],
         "notes": "",
-        "publisher": "دار الحضارة السعودية"
+        "corrections": [],
+        "verifier": "زكي ابو سريع"
       }
     ],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 7,
