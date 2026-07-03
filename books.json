@@ -2861,33 +2861,37 @@
       "التفسير"
     ],
     "notes": "",
+    "date": "2026-07-03",
     "best_editions": [
       {
+        "publisher": "الدار الشامية",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782667025626-aIhOvEqcar6x8Z9FMEfjOxuippqShuQqHILo1fMf.webp"
         ],
         "notes": "",
-        "publisher": "الدار الشامية"
+        "corrections": []
       }
     ],
     "alt_editions": [
       {
+        "publisher": "ابن حزم (مجلد واحد)",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782667032718-705a3bc520a244b59cfec1a7867a6f99.jpeg"
         ],
         "notes": "",
-        "publisher": "ابن حزم (مجلد واحد)"
+        "corrections": []
       },
       {
+        "publisher": "دار الفكر",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782667039429-images5.jpeg"
         ],
         "notes": "",
-        "publisher": "دار الفكر"
+        "corrections": [],
+        "verifier": "محمد عبد الرحمن عبد الله"
       }
     ],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 81,
@@ -3257,7 +3261,7 @@
         ],
         "notes": "الطبعة الثانية",
         "corrections": [],
-        "verifier": "علي ونيس"
+        "verifier": "عبد الله بن إبراهيم الزاحم"
       }
     ],
     "alt_editions": [
@@ -5430,19 +5434,20 @@
       "السيرة"
     ],
     "notes": "",
+    "date": "2026-07-04",
     "best_editions": [
       {
+        "publisher": "دار عطاءات العلم",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782304104503-.png"
         ],
         "notes": "",
         "corrections": [],
-        "publisher": "دار عطاءات العلم"
+        "verifier": "محمد أجمل، محمد عزير، نبيل سندي، علي العمران"
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 184,
