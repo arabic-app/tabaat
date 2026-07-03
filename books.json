@@ -47,56 +47,66 @@
       "التفسير"
     ],
     "notes": "",
+    "date": "2026-07-03",
     "best_editions": [
       {
+        "publisher": "مؤسسة الرسالة ناشرون - طبعة التركي",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782729226229-68457110414916589760409617283073222551480932n.jpg",
           "https://arabic-app.github.io/tabaat/images/1782587885085-images20260627T220656.445.jpeg"
         ],
         "notes": "أجودها مؤسسة الرسالة ناشرون",
-        "publisher": "مؤسسة الرسالة ناشرون - طبعة التركي"
+        "corrections": [],
+        "verifier": "عبد الله التركي وآخرون"
       },
       {
+        "publisher": "دار الرسالة العالمية - طبعة التركي",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782302992332-.png"
         ],
         "notes": "",
-        "publisher": "دار الرسالة العالمية - طبعة التركي"
+        "corrections": [],
+        "verifier": "عبد الله التركي و آخرون"
       },
       {
+        "publisher": "دار عالم الكتب - طبعة التركي",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782587952362-images20260627T221902.339.jpeg"
         ],
         "notes": "",
-        "publisher": "دار عالم الكتب - طبعة التركي"
+        "corrections": [],
+        "verifier": "عبد الله التركي و آخرون"
       }
     ],
     "alt_editions": [
       {
+        "publisher": "دار الكتاب العربي",
         "images": [
-          "https://arabic-app.github.io/tabaat/images/1782587965270-images20260627T220648.003.jpeg"
+          "https://arabic-app.github.io/tabaat/images/1782587965270-images20260627T220648.003.jpeg",
+          "https://arabic-app.github.io/tabaat/images/1783082688823-71Te98DGTnL.jpg"
         ],
         "notes": "",
-        "verifier": "عبد الرزاق المهدي",
-        "publisher": "دار الكتاب العربي"
+        "corrections": [],
+        "verifier": "عبد الرزاق المهدي"
       },
       {
+        "publisher": "دار الريان",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782587973497-images20260627T220849.959.jpeg"
         ],
         "notes": "",
-        "publisher": "دار الريان"
+        "corrections": []
       },
       {
+        "publisher": "دار ابن الجوزي مصر",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782587981172-cl8ujcz6n0em201dwc4fv6sdlcl70ky84c09zi01kshkhhb4irD8A7D984D8ACD8A7D985D8B9D984D8A3D8ADD983D8A7D985D8A7D984D982D8B1D8A2D986.webp"
         ],
         "notes": "",
-        "publisher": "دار ابن الجوزي مصر"
+        "corrections": []
       }
     ],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 3,
