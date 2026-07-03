@@ -1877,35 +1877,38 @@
       "التراجم و الرجال"
     ],
     "notes": "",
+    "date": "2026-07-03",
     "best_editions": [
       {
+        "publisher": "مركز سطور  (دار الإمام مسلم)",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782304389870-.png"
         ],
         "notes": "",
         "corrections": [],
-        "publisher": "مركز سطور  (دار الإمام مسلم) - طبعة التركي"
+        "verifier": "عبد الله التركي، مركز هجر"
       },
       {
+        "publisher": "دار عالم الكتب",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782568368530-images20260627T165207.768.jpeg"
         ],
         "notes": "",
         "corrections": [],
-        "publisher": "دار عالم الكتب - طبعة التركي"
+        "verifier": "عبد الله التركي، مركز هجر"
       },
       {
+        "publisher": "دار هجر",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782568380797-images20260627T165234.458.jpeg"
         ],
         "notes": "",
         "corrections": [],
-        "publisher": "دار هجر - طبعة التركي"
+        "verifier": "عبد الله التركي، مركز هجر"
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 52,
