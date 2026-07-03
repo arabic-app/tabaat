@@ -1038,33 +1038,38 @@
       "الحديث"
     ],
     "notes": "",
+    "date": "2026-07-03",
     "best_editions": [
       {
+        "publisher": "الطبعة المغربية الثانية",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782641739934-images75.jpeg",
           "https://arabic-app.github.io/tabaat/images/1782641746688-4799492172417370828617830824058624194841538n.jpg"
         ],
         "notes": "",
-        "publisher": "الطبعة المغربية الثانية"
+        "corrections": []
       },
       {
+        "publisher": "مؤسسة الرسالة ناشرون",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782641763365-47811487724173709952844804815478883368362008n.jpg"
         ],
         "notes": "",
-        "publisher": "مؤسسة الرسالة ناشرون"
+        "corrections": [],
+        "verifier": "مركز الرسالة للدراسات وتحقيق التراث"
       },
       {
+        "publisher": "دار الغرب الإسلامي",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782641769323-a3b5006872504fe1800c7ad823f3528f974.02597402597x1000bC5Ronu4A9Y0nn3q96WjzS6MW6Gcfeg1gxyobdkb.jpg"
         ],
         "notes": "",
-        "publisher": "دار الغرب"
+        "corrections": [],
+        "verifier": "بشار عواد"
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 28,
@@ -7171,7 +7176,7 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "خالد المشيقح، عبد العزيز العيدان، أنس اليتامىف"
+        "verifier": "خالد المشيقح، عبد العزيز العيدان، أنس اليتامى"
       },
       {
         "publisher": "أجيال التوحيد",
