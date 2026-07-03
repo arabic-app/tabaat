@@ -3895,26 +3895,27 @@
   },
   {
     "id": 119,
-    "title": "الروضتين في أخبار الدولتين",
+    "title": "كتاب الروضتين في أخبار الدولتين",
     "author": "عبد الرحمن المقدسي أبو شامة",
     "category": [
       "التاريخ"
     ],
     "notes": "",
+    "date": "2026-07-03",
     "best_editions": [
       {
+        "publisher": "الرسالة",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782589937004-images20260627T224507.919.jpeg",
           "https://arabic-app.github.io/tabaat/images/1782589944041-images20260627T224520.032.jpeg"
         ],
         "notes": "",
-        "verifier": "إبراهيم الزيبق",
-        "publisher": "الرسالة"
+        "corrections": [],
+        "verifier": "إبراهيم الزيبق"
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 120,
