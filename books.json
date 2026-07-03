@@ -7131,18 +7131,20 @@
       "الحديث"
     ],
     "notes": "",
+    "date": "2026-07-03",
     "best_editions": [
       {
+        "publisher": "الناشر المتميز",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782306065076-.png"
         ],
         "notes": "",
-        "publisher": "الناشر المتميز"
+        "corrections": [],
+        "verifier": "محمد الدباسي، إشراف محمود النحال"
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 263,
