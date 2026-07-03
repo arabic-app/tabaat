@@ -3213,33 +3213,39 @@
       "الفقه"
     ],
     "notes": "",
+    "date": "2026-07-03",
     "best_editions": [
       {
+        "publisher": "دار السمان",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782663208993-G8mnCtqXkAAc9un.jpg"
         ],
         "notes": "",
-        "publisher": "دار السمان"
+        "corrections": [],
+        "verifier": "مهند يحيى"
       },
       {
+        "publisher": "دار ابن الجوزي",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782663203729-images20260628T191208.559.jpeg"
         ],
         "notes": "الطبعة الثانية",
-        "publisher": "دار ابن الجوزي"
+        "corrections": [],
+        "verifier": "عبد الله بن إبراهيم الزاحم"
       }
     ],
     "alt_editions": [
       {
+        "publisher": "دار السلام مصر",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782663196627-82cfa777cc81476f99783c949cc3a5de342.97648514851x500jNTQpgwOHm71wpp3ST5P1VdCFAWUavLGEd7x0Dmk.jpg"
         ],
         "notes": "",
-        "publisher": "دار السلام مصر"
+        "corrections": [],
+        "verifier": "عبد الحليم إبراهيم"
       }
     ],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 94,
