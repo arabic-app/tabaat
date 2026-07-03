@@ -1218,42 +1218,49 @@
       "الحديث"
     ],
     "notes": "",
+    "date": "2026-07-03",
     "best_editions": [
       {
+        "publisher": "مركز سطور (دار الإمام مسلم)",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782596491372-images20260628T003947.701.jpeg",
           "https://arabic-app.github.io/tabaat/images/1782596497138-images20260628T004001.535.jpeg"
         ],
         "notes": "",
-        "publisher": "مركز سطور (دار الإمام مسلم) - طبعة التركي"
+        "corrections": [],
+        "verifier": "عبد الله التركي، مركز هجر"
       },
       {
+        "publisher": "دار عالم الكتب",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782596263170-47757854324173712752844523388026014782410360n.jpg"
         ],
         "notes": "",
-        "publisher": "دار عالم الكتب - طبعة التركي"
+        "corrections": [],
+        "verifier": "عبد الله التركي، مركز هجر"
       },
       {
+        "publisher": "دار هجر",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782596481881-images20260628T004105.850.jpeg"
         ],
         "notes": "",
-        "publisher": "دار هجر - طبعة التركي"
+        "corrections": [],
+        "verifier": "عبد الله التركي، مركز هجر"
       }
     ],
     "alt_editions": [
       {
+        "publisher": "دار الحديث",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782731053483-sounanbayhaki2.jpeg"
         ],
         "notes": "",
-        "verifier": "إسلام منصور عبد الحميد",
-        "publisher": "دار الحديث"
+        "corrections": [],
+        "verifier": "إسلام منصور عبد الحميد"
       }
     ],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 33,
