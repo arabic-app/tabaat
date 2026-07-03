@@ -7169,21 +7169,23 @@
     "title": "الجامع لشعب الإيمان",
     "author": "أحمد بن الحسين البيهقي",
     "category": [
-      "الحديث"
+      "العقيدة"
     ],
     "notes": "",
+    "date": "2026-07-03",
     "best_editions": [
       {
+        "publisher": "مكتبة الرشد",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782731166349-.png"
         ],
         "notes": "",
-        "publisher": "مكتبة الرشد"
+        "corrections": [],
+        "verifier": "عبد العلي عبد الحميد، مختار أحمد الندوي"
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 266,
