@@ -4177,18 +4177,19 @@
       "اللغة والأدب"
     ],
     "notes": "",
+    "date": "2026-07-03",
     "best_editions": [
       {
+        "publisher": "مكتبة الخانجي",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782557190614-images20260627T133823.690.jpeg"
         ],
         "notes": "",
-        "publisher": "الخانجي"
+        "corrections": []
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 134,
