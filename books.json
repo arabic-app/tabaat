@@ -827,27 +827,28 @@
       "شروح الحديث"
     ],
     "notes": "",
+    "date": "2026-07-03",
     "best_editions": [
       {
+        "publisher": "دار الفيحاء، دار المنهل عناية يوسف الحاج أحمد",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782661017318-.png"
         ],
         "notes": "",
-        "corrections": [],
-        "publisher": "الفيحاء"
+        "corrections": []
       },
       {
+        "publisher": "مؤسسة الرسالة ناشرون",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782661039211-.png"
         ],
         "notes": "",
         "corrections": [],
-        "publisher": "مؤسسة الرسالة ناشرون"
+        "verifier": "مركز الرسالة للدراسات وتحقيق التراث"
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 21,
