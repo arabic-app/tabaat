@@ -3117,26 +3117,30 @@
       "الفقه المالكي"
     ],
     "notes": "",
+    "date": "2026-07-03",
     "best_editions": [],
     "alt_editions": [
       {
+        "publisher": "دار الفضيلة مصر",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782663029860-175740.jpg",
           "https://arabic-app.github.io/tabaat/images/1782663035027-images20260628T190841.938.jpeg"
         ],
         "notes": "",
-        "publisher": "دار الفضيلة مصر"
+        "corrections": [],
+        "verifier": "سماحة السيد علي"
       },
       {
+        "publisher": "دار المعارف مصر",
         "images": [
-          "https://arabic-app.github.io/tabaat/images/1782663023484-images20260628T191001.105.jpeg"
+          "https://arabic-app.github.io/tabaat/images/1783096967490-.png"
         ],
         "notes": "",
-        "publisher": "دار المعارف مصر"
+        "corrections": [],
+        "verifier": "مصطفي كمال"
       }
     ],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 90,
