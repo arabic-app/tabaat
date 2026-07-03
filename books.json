@@ -116,64 +116,65 @@
       "التفسير"
     ],
     "notes": "لا يوجد حاليا \"أفضل طبعة\" لكتاب تفسير ابن كثير، لكل واحدة مميزات وعيوب، ومن أراد الاكتفاء بواحدة يأخذ واحدة من المذكورة. ننتظر صدور طبعة الدكتور محمد الفالح من سنوات، يسر الله صدورها.",
+    "date": "2026-07-03",
     "best_editions": [
       {
+        "publisher": "دار ابن حزم",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782765975752-images27.jpeg"
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "محمد ابراهيم البنا",
-        "publisher": "دار ابن حزم"
+        "verifier": "محمد ابراهيم البنا"
       },
       {
+        "publisher": "دار عالم الكتب (أولاد الشيخ)",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782765983441-images5.jpeg"
         ],
         "notes": "",
-        "corrections": [],
-        "publisher": "دار عالم الكتب (أولاد الشيخ)"
+        "corrections": []
       },
       {
+        "publisher": "دار طيبة",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782765993003-images29.jpeg"
         ],
         "notes": "الإصدار الثاني - 5 مجلدات قطع كبير",
         "corrections": [],
-        "verifier": "سامي بن محمد السلامة",
-        "publisher": "دار طيبة"
+        "verifier": "سامي بن محمد السلامة"
       },
       {
+        "publisher": "دار ابن الجوزي",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782303334712-.png"
         ],
         "notes": "الطبعة الثانية وما بعدها",
         "corrections": [],
-        "publisher": "دار ابن الجوزي"
+        "verifier": "أبو إسحاق الحويني، حكمت بشير ياسين"
       }
     ],
     "alt_editions": [
       {
+        "publisher": "دار الكتاب العربي",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782660848863-1774971.jpg"
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "عبد الرزاق المهدي",
-        "publisher": "دار الكتاب العربي"
+        "verifier": "عبد الرزاق المهدي"
       },
       {
+        "publisher": "دار الشعب أو شروق البدر مصر",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782766256837-GyTG08yWoAAo09l.jpg"
         ],
         "notes": "يُنصح أن يُشترى معها كتاب فضائل القرآن طبعة دار التقوى تحقيق الحويني.",
         "corrections": [],
-        "verifier": "أنور الباز",
-        "publisher": "دار الشعب أو شروق البدر مصر"
+        "verifier": "أنور الباز"
       }
     ],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 4,
