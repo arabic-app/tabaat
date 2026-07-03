@@ -9362,10 +9362,11 @@
     "title": "الجامع لأخلاق الراوي وآداب السامع",
     "author": "أحمد بن علي بن ثابت الخطيب البغدادي",
     "category": [
-      "كتب متنوعة"
+      "كتب متنوعة",
+      "الآداب الشرعية"
     ],
     "notes": "",
-    "date": "2026-07-02",
+    "date": "2026-07-03",
     "best_editions": [
       {
         "publisher": "الناشر المتميز",
@@ -9373,7 +9374,8 @@
           "https://arabic-app.github.io/tabaat/images/1782983949176-.jpeg"
         ],
         "notes": "",
-        "corrections": []
+        "corrections": [],
+        "verifier": "محمد علي البيضاني"
       }
     ],
     "alt_editions": [],
