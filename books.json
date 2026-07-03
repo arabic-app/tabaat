@@ -8,36 +8,43 @@
       "علوم القرآن"
     ],
     "notes": "",
+    "date": "2026-07-03",
     "best_editions": [
       {
+        "publisher": "دار ابن الجوزي السعودية",
         "images": [
-          "https://arabic-app.github.io/tabaat/images/1782741900242-tabarijawzi.png"
+          "https://arabic-app.github.io/tabaat/images/1782741900242-tabarijawzi.png",
+          "https://arabic-app.github.io/tabaat/images/1783106112370-fda6fac34f744480ba6bb7b71d73e0fc778.50589777195x1000XBfbJV0wiAkFISECINTsPSUeMWlUQpUSN6uWBmbT.png"
         ],
         "notes": "",
         "corrections": [],
-        "publisher": "دار ابن الجوزي السعودية"
+        "verifier": "أحمد الوكيل"
       },
       {
+        "publisher": "سطور / دار عالم الكتب / دار هجر",
         "images": [
-          "https://arabic-app.github.io/tabaat/images/1782741919387-tabariturki.jpeg"
+          "https://arabic-app.github.io/tabaat/images/1782741919387-tabariturki.jpeg",
+          "https://arabic-app.github.io/tabaat/images/1783106081435-1748863138281583467.webp",
+          "https://arabic-app.github.io/tabaat/images/1783106088395-images27.jpeg",
+          "https://arabic-app.github.io/tabaat/images/1783106097416-images29.jpeg"
         ],
         "notes": "",
         "corrections": [],
-        "publisher": "طبعة التركي (سطور / دار عالم الكتب / دار هجر )"
+        "verifier": "عبد الله التركي، مركز هجر"
       }
     ],
     "alt_editions": [
       {
+        "publisher": "دار الحديث",
         "images": [
-          "https://arabic-app.github.io/tabaat/images/1782741943663-tabarihadith.png"
+          "https://arabic-app.github.io/tabaat/images/1783106195432-images33.jpeg"
         ],
         "notes": "",
         "corrections": [],
-        "publisher": "دار الحديث"
+        "verifier": "إسلام منصور"
       }
     ],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 2,
