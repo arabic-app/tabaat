@@ -2303,23 +2303,24 @@
   {
     "id": 65,
     "title": "آثار البشير الإبراهيمي",
-    "author": "محمد البشير الإبراهيمي",
+    "author": "محمد البشير الإبراهيمي، جمع نجله أحمد طالب الإبراهيمي",
     "category": [
       "المجاميع"
     ],
     "notes": "",
+    "date": "2026-07-03",
     "best_editions": [
       {
+        "publisher": "دار الغرب الإسلامي",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782306772574-06bce09010ff4dba9a8d0724ef20341c.jpg"
         ],
         "notes": "",
-        "publisher": "دار الغرب الإسلامي"
+        "corrections": []
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 66,
