@@ -1056,32 +1056,37 @@
       "شروح الحديث"
     ],
     "notes": "*صدر مؤخرا ط سطور ت مركز هجر فلتنظر. \n*طبعة بشار عواد فيها خلل كبير لذلك لم تذكر",
+    "date": "2026-07-03",
     "best_editions": [
       {
+        "publisher": "موسوعة شروح الموطأ (دار عالم الكتب / دار هجر)",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782575920511-images20260627T185657.533.jpeg"
         ],
         "notes": "",
-        "publisher": "موسوعة شروح الموطأ (دار عالم الكتب / دار هجر)"
+        "corrections": [],
+        "verifier": "عبد الله التركي، مركز هجر"
       },
       {
+        "publisher": "دار الفاروق الحديثة",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782575933738-images20260627T185405.421.jpeg"
         ],
         "notes": "",
-        "publisher": "دار الفاروق الحديثة"
+        "corrections": [],
+        "verifier": "أسامة بن إبراهيم"
       },
       {
+        "publisher": "وزارة الأوقاف بالمغرب",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782575940291-images20260627T185824.569.jpeg"
         ],
         "notes": "",
-        "publisher": "الطبعة المغربية"
+        "corrections": []
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 29,
