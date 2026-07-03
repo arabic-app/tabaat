@@ -7140,25 +7140,30 @@
       "الفقه الحنبلي"
     ],
     "notes": "",
+    "date": "2026-07-03",
     "best_editions": [
       {
+        "publisher": "ركائز",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782306889719-.png"
         ],
         "notes": "",
-        "publisher": "ركائز"
+        "corrections": [],
+        "verifier": "خالد المشيقح، عبد العزيز العيدان، أنس اليتامىف"
       },
       {
+        "publisher": "أجيال التوحيد",
         "images": [
-          "https://arabic-app.github.io/tabaat/images/1782306907912-.png"
+          "https://arabic-app.github.io/tabaat/images/1782306907912-.png",
+          "https://arabic-app.github.io/tabaat/images/1783090433217-images9.jpeg"
         ],
         "notes": "",
-        "publisher": "أجيال التوحيد"
+        "corrections": [],
+        "verifier": "ذياب الغامدي"
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 264,
