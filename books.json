@@ -3475,33 +3475,38 @@
       "اللغة والأدب"
     ],
     "notes": "",
+    "date": "2026-07-03",
     "best_editions": [
       {
+        "publisher": "دار الكتب المصرية",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782573614173-48583.jpg"
         ],
         "notes": "",
-        "publisher": "دار الكتب المصرية"
+        "corrections": []
       },
       {
+        "publisher": "مؤسسة الرسالة ناشرون",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782573624159-images20260627T174540.160.jpeg"
         ],
         "notes": "",
-        "publisher": "مؤسسة الرسالة ناشرون"
+        "corrections": [],
+        "verifier": "على زينو"
       }
     ],
     "alt_editions": [
       {
+        "publisher": "المكتبة العصرية بيروت",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782573632098-.jpg"
         ],
         "notes": "",
-        "publisher": "المكتبة العصرية بيروت"
+        "corrections": [],
+        "verifier": "صلاح فتحي، سيد الجليمي"
       }
     ],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 104,
