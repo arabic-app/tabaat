@@ -7033,18 +7033,20 @@
       "شروح الحديث"
     ],
     "notes": "",
+    "date": "2026-07-03",
     "best_editions": [
       {
+        "publisher": "دار عطاءات العلم",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782305864805-.png"
         ],
         "notes": "",
-        "publisher": "دار عطاءات العلم"
+        "corrections": [],
+        "verifier": "المكتب العلمي بدار الكمال المتحدة"
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 262,
