@@ -3081,18 +3081,20 @@
       "الفقه الحنفي"
     ],
     "notes": "",
+    "date": "2026-07-03",
     "best_editions": [],
     "alt_editions": [
       {
+        "publisher": "دار الكتب العلمية",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782666077719-81ibC6YICUL.ACUF10001000QL80.jpg"
         ],
         "notes": "",
-        "publisher": "دار الكتب العلمية"
+        "corrections": [],
+        "verifier": "عادل عبد الموجود، علي معوض"
       }
     ],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 88,
