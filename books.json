@@ -627,18 +627,21 @@
       "شروح الحديث"
     ],
     "notes": "",
+    "date": "2026-07-03",
     "best_editions": [
       {
+        "publisher": "دار الوفاء",
         "images": [
-          "https://arabic-app.github.io/tabaat/images/1782308232404-ikmal.jpg"
+          "https://arabic-app.github.io/tabaat/images/1782308232404-ikmal.jpg",
+          "https://arabic-app.github.io/tabaat/images/1783070299300-images8.jpeg"
         ],
         "notes": "",
-        "publisher": "دار الوفاء"
+        "corrections": [],
+        "verifier": "يحيى إسماعيل"
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 14,
