@@ -2677,18 +2677,20 @@
       "كتب متنوعة"
     ],
     "notes": "",
+    "date": "2026-07-04",
     "best_editions": [
       {
+        "publisher": "مدار الوطن",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782659617498-47757880624173734352842361276487431564931181n.jpg"
         ],
         "notes": "",
-        "publisher": "مدار الوطن"
+        "corrections": [],
+        "verifier": "أحمد المزيد، على السحيباني"
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 75,
