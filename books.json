@@ -4064,25 +4064,25 @@
   },
   {
     "id": 121,
-    "title": "مختصر كتاب الروتين في أخبار الدولتين",
+    "title": "مختصر كتاب الروضتين في أخبار الدولتين",
     "author": "محمد بن حسن الشريف",
     "category": [
       "التاريخ"
     ],
     "notes": "",
+    "date": "2026-07-04",
     "best_editions": [
       {
+        "publisher": "دار ابن كثير",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782723011633-images20260629T114955.217.jpeg"
         ],
         "notes": "",
-        "corrections": [],
-        "publisher": "دار ابن كثير"
+        "corrections": []
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 122,
