@@ -7349,19 +7349,20 @@
       "شروح الحديث"
     ],
     "notes": "",
+    "date": "2026-07-04",
     "best_editions": [
       {
+        "publisher": "مكتبة الرشد",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782732062274-.jpeg"
         ],
         "notes": "",
         "corrections": [],
-        "publisher": "مكتبة الرشد"
+        "verifier": "ياسر بن إبراهيم"
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 269,
