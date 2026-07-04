@@ -2295,34 +2295,40 @@
       "المجاميع"
     ],
     "notes": "هناك طبعة منتظرة عن دار المحدث",
+    "date": "2026-07-04",
     "best_editions": [
       {
+        "publisher": "دار اللباب",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782722230412-images20260629T112639.383.jpeg",
-          "https://arabic-app.github.io/tabaat/images/1782722239169-images20260629T112633.293.jpeg"
+          "https://arabic-app.github.io/tabaat/images/1782722239169-images20260629T112633.293.jpeg",
+          "https://arabic-app.github.io/tabaat/images/1783156407735-16b2bfd9c3c64a86a46c86f33934ed1c708.47012475378x1000mPOcogv14m3O0ab7oSr3D5t0WLcDhizFTeJ2V65x.jpg"
         ],
         "notes": "",
-        "publisher": "دار اللباب"
+        "corrections": [],
+        "verifier": "محمد مجير الخطيب"
       }
     ],
     "alt_editions": [
       {
+        "publisher": "دار الفاروق",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782722249534-cfee7c2bf30a44b086cd119f6ee15d3d624.13594470046x1000QWOmQU9OxMXykpGvO7AT2pOwgKfP174x2pev2Jc4.jpg"
         ],
         "notes": "",
-        "publisher": "دار الفاروق"
+        "corrections": [],
+        "verifier": "طلعت الحلواني"
       },
       {
+        "publisher": "دار أولاد الشيخ",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782722257464-majmurasailalhafidhibnrajabalhanbali5vol.jpg"
         ],
         "notes": "",
-        "publisher": "دار أولاد الشيخ"
+        "corrections": []
       }
     ],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 61,
