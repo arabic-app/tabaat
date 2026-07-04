@@ -2793,47 +2793,50 @@
       "كتب متنوعة"
     ],
     "notes": "",
+    "date": "2026-07-04",
     "best_editions": [
       {
+        "publisher": "دار الفتح",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782680190639-images81.jpeg",
           "https://arabic-app.github.io/tabaat/images/1782680197663-images87.jpeg"
         ],
         "notes": "خالية من التعليقات العقدية",
         "corrections": [],
-        "publisher": "دار الفتح"
+        "verifier": "محمد عاطف التراس"
       },
       {
+        "publisher": "دار ابن الجوزي (ابن خزيمة)",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782680204658-images89.jpeg",
           "https://arabic-app.github.io/tabaat/images/1782680213187-images88.jpeg"
         ],
         "notes": "فيها تعليقات عقدية مفيدة",
         "corrections": [],
-        "verifier": "عامر علي ياسين",
-        "publisher": "دار ابن الجوزي (ابن خزيمة)"
+        "verifier": "عامر علي ياسين"
       }
     ],
     "alt_editions": [
       {
+        "publisher": "مدار الوطن",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782680220179-images90.jpeg"
         ],
         "notes": "",
         "corrections": [],
-        "publisher": "مدار الوطن"
+        "verifier": "طارق عوض الله"
       },
       {
+        "publisher": "دار القلم",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782680227364-images20260628T225932.389.jpeg"
         ],
         "notes": "",
         "corrections": [],
-        "publisher": "دار القلم"
+        "verifier": "حسن السماحي سويدان"
       }
     ],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 79,
