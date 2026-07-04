@@ -3799,18 +3799,20 @@
       "التفسير"
     ],
     "notes": "",
+    "date": "2026-07-04",
     "best_editions": [
       {
+        "publisher": "ابن الجوزي السعودية",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782717009647-16810765675.jpg"
         ],
         "notes": "",
-        "publisher": "ابن الجوزي السعودية"
+        "corrections": [],
+        "verifier": "عناية عبد الرزاق البدر"
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 111,
