@@ -1644,43 +1644,47 @@
       "مصطلح الحديث"
     ],
     "notes": "",
+    "date": "2026-07-04",
     "best_editions": [
       {
+        "publisher": "دار المنهاج القويم",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782743137789-images20260629T172518.575.jpeg"
         ],
         "notes": "",
         "corrections": [],
-        "publisher": "دار المنهاج القويم"
+        "verifier": "نور الدين عتر"
       },
       {
+        "publisher": "دار الفكر",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782743209312-images20260629T120208.759.jpeg"
         ],
         "notes": "",
         "corrections": [],
-        "publisher": "دار الفكر"
+        "verifier": "نور الدين عتر"
       },
       {
+        "publisher": "دار الكتب العلمية",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782743215982-images20260629T172455.366.jpeg"
         ],
         "notes": "",
         "corrections": [],
-        "publisher": "تحقيق الفحل"
+        "verifier": "ماهر الفحل"
       },
       {
+        "publisher": "المعارف",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782743223920-images20260629T120305.812.jpeg"
         ],
         "notes": "",
         "corrections": [],
-        "publisher": "تحقيق بنت الشاطئ"
+        "verifier": "عائشة عبد الرحمن \"بنت الشاطئ\""
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 44,
