@@ -786,25 +786,27 @@
   },
   {
     "id": 17,
-    "title": "معالم السنن",
+    "title": "معالم السنن شرح سنن أبي داوود",
     "author": "حمد بن محمد الخطابي",
     "category": [
       "الحديث",
       "شروح الحديث"
     ],
     "notes": "",
+    "date": "2026-07-04",
     "best_editions": [
       {
+        "publisher": "مؤسسة الرسالة ناشرون",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782723616592-images20260629T120004.364.jpeg"
         ],
         "notes": "",
-        "publisher": "مؤسسة الرسالة ناشرون"
+        "corrections": [],
+        "verifier": "سعد نجدت، شعبان العودة"
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 19,
