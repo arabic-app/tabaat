@@ -456,44 +456,52 @@
       "شروح الحديث"
     ],
     "notes": "انتظر طبعة عطاءات العلم",
+    "date": "2026-07-04",
     "best_editions": [
       {
+        "publisher": "مؤسات الرسالة ناشرون",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782681025814-images29.jpeg"
         ],
         "notes": "",
-        "publisher": "مؤسات الرسالة ناشرون"
+        "corrections": [],
+        "verifier": "مركز الرسالة للدراسات وتحقيق التراث بإشراف عز الدين ضلي"
       },
       {
+        "publisher": "دار الرسالة العالمية بإشراف شعيب الأرناؤوط و عادل مرشد",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782681033672-images63.jpeg"
         ],
         "notes": "",
-        "publisher": "دار الرسالة العالمية"
+        "corrections": []
       },
       {
+        "publisher": "دار طيبة",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782681040280-images66.jpeg"
         ],
         "notes": "",
-        "publisher": "دار طيبة"
+        "corrections": [],
+        "verifier": "نظر الفريابي"
       }
     ],
     "alt_editions": [
       {
+        "publisher": "دار السلام (الفيحاء)",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782681048388-scaled1.jpg",
           "https://arabic-app.github.io/tabaat/images/1782685428948-images5.jpeg"
         ],
         "notes": "",
-        "publisher": "دار السلام (الفيحاء)"
+        "corrections": []
       },
       {
+        "publisher": "ابداع (ابن الجوزي القاهرة)",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782681065149-images27.jpeg"
         ],
         "notes": "",
-        "publisher": "ابداع (ابن الجوزي القاهرة)"
+        "corrections": []
       }
     ],
     "links": [
