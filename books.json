@@ -520,26 +520,30 @@
       "شروح الحديث"
     ],
     "notes": "",
+    "date": "2026-07-04",
     "best_editions": [
       {
+        "publisher": "اللؤلؤة ( دار الكلمة الطيبة - مكتبة الغرباء)",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782681150652-images68.jpeg",
           "https://arabic-app.github.io/tabaat/images/1782681157132-G5AYeDTXIAAaUbv.jpg"
         ],
         "notes": "",
-        "publisher": "اللؤلؤة ( دار الكلمة الطيبة - مكتبة الغرباء)"
+        "corrections": [],
+        "verifier": "مجموعة محققين"
       },
       {
+        "publisher": "دار ابن الجوزي",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782302605929-.png"
         ],
         "notes": "",
-        "publisher": "دار ابن الجوزي"
+        "corrections": [],
+        "verifier": "طارق عوض الله"
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 11,
