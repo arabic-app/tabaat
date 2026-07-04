@@ -192,34 +192,40 @@
       "التفسير"
     ],
     "notes": "",
+    "date": "2026-07-04",
     "best_editions": [
       {
+        "publisher": "دار إحياء التراث",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782723482210-images20260629T115718.479.jpeg",
           "https://arabic-app.github.io/tabaat/images/1782723487877-images20260629T115634.988.jpeg"
         ],
         "notes": "",
-        "publisher": "دار إحياء التراث"
+        "corrections": [],
+        "verifier": "عبد الرزاق المهدي"
       },
       {
+        "publisher": "دار طيبة",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782723464019-AzLfIxPhn88vD0J9dBa0zR1SyGGly2uHQtYC0LT3.png"
         ],
         "notes": "",
-        "publisher": "دار طيبة"
+        "corrections": [],
+        "verifier": "محمد النمر، عثمان ضميرية، سليمان الحرش"
       }
     ],
     "alt_editions": [
       {
+        "publisher": "دار المعرفة بيروت",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782723474066-images20260629T115733.574.jpeg"
         ],
         "notes": "",
-        "publisher": "دار المعرفة بيروت"
+        "corrections": [],
+        "verifier": "خالد عبد الرحمن، مروان سوار"
       }
     ],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 5,
