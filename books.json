@@ -4714,18 +4714,20 @@
       "اللغة والأدب"
     ],
     "notes": "",
+    "date": "2026-07-04",
     "best_editions": [
       {
+        "publisher": "المجمع الثقافي بأبي ظبي",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782719576209-6aea4bec2c4c9c5cb.jpg"
         ],
         "notes": "",
-        "publisher": "المجمع الثقافي بأبي ظبي"
+        "corrections": [],
+        "verifier": "حياة قارة"
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 150,
