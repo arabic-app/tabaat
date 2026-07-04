@@ -2070,40 +2070,47 @@
       "السيرة"
     ],
     "notes": "",
+    "date": "2026-07-04",
     "best_editions": [
       {
+        "publisher": "دار الفاروق",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782667666360-cmqpo9gsz0h9b01jn3ou346fu444.webp"
         ],
         "notes": "",
-        "publisher": "دار الفاروق"
+        "corrections": [],
+        "verifier": "همام سعيد، عادل مرشد"
       },
       {
+        "publisher": "إقليد المعرفة",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782667659730-images68.jpeg"
         ],
         "notes": "",
-        "publisher": "إقليد المعرفة"
+        "corrections": [],
+        "verifier": "حسين عكاشة"
       }
     ],
     "alt_editions": [
       {
+        "publisher": "إقليد المعرفة مجلد واحد",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782667653465-d4c127cd9f8d49ea91dcb37ea51512a51000x750cD3NImpGnDnJC42sJhRq9wbySL31jcPdt5fad4Ns.jpg"
         ],
         "notes": "",
-        "publisher": "إقليد المعرفة مجلد واحد"
+        "corrections": []
       },
       {
+        "publisher": "دار ابن كثير",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782376166892-ibnhichamibnkathir.jpg"
         ],
         "notes": "",
-        "publisher": "دار ابن كثير"
+        "corrections": [],
+        "verifier": "مصطفي السقا،إبراهيم الإبياري، عبد الحفيظ شلبي"
       }
     ],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 55,
