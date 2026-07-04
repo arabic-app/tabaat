@@ -3258,19 +3258,20 @@
       "الفقه الشافعي"
     ],
     "notes": "",
+    "date": "2026-07-04",
     "best_editions": [],
     "alt_editions": [
       {
+        "publisher": "دار الحديث مصر",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782743317552-mughanaaalmuhtajalkhatibalshirbiniu.jpg"
         ],
         "notes": "",
         "corrections": [],
-        "publisher": "دار الحديث مصر"
+        "verifier": "محمد محمد تامر، شريف عبد الله"
       }
     ],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 92,
