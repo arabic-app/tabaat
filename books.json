@@ -1572,27 +1572,29 @@
       "مصطلح الحديث"
     ],
     "notes": "",
+    "date": "2026-07-04",
     "best_editions": [
       {
+        "publisher": "دار المنهاج القويم",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782752429065-images20260629T175846.103.jpeg"
         ],
         "notes": "",
         "corrections": [],
-        "publisher": "دار المنهاج القويم"
+        "verifier": "نور الدين عتر"
       },
       {
+        "publisher": "دار ابن كثير",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782752436135-images20260629T175912.638.jpeg"
         ],
         "notes": "",
         "corrections": [],
-        "publisher": "دار ابن كثير"
+        "verifier": "محمد مرابي"
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 41,
