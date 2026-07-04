@@ -3000,19 +3000,21 @@
       "التفسير"
     ],
     "notes": "",
+    "date": "2026-07-04",
     "best_editions": [],
     "alt_editions": [
       {
+        "publisher": "دار الحديث مصر",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782722487945-images20260629T114117.026.jpeg",
           "https://arabic-app.github.io/tabaat/images/1782722493236-images20260629T114105.645.jpeg"
         ],
         "notes": "",
-        "publisher": "دار الحديث مصر"
+        "corrections": [],
+        "verifier": "أحمد علي، حمدي صبح"
       }
     ],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 84,
