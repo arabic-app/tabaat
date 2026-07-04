@@ -2298,19 +2298,20 @@
       "المجاميع"
     ],
     "notes": "",
+    "date": "2026-07-04",
     "best_editions": [
       {
+        "publisher": "دار أطلس الخضراء",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782752483268-images20260629T174611.558.jpeg"
         ],
         "notes": "تبين أن فيها خللا من ناحية التحقيق، بعضها غير محقق",
         "corrections": [],
-        "publisher": "دار أطلس الخضراء"
+        "verifier": "فاضل الرقي"
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 60,
