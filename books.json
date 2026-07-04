@@ -5188,25 +5188,26 @@
   },
   {
     "id": 171,
-    "title": "شرح مقدمة في أصول التفسير لابن تيمية - محمد بن صالح العثيمين",
+    "title": "شرح مقدمة التفسير لابن تيمية - محمد بن صالح العثيمين",
     "author": "محمد بن صالح العثيمين",
     "category": [
       "أصول التفسير",
       "علوم القرآن"
     ],
     "notes": "",
+    "date": "2026-07-04",
     "best_editions": [
       {
+        "publisher": "مؤسسة العثيمين",
         "images": [
-          "https://arabic-app.github.io/tabaat/images/1782684970569-5.jpeg"
+          "https://arabic-app.github.io/tabaat/images/1783152933909-53ce17ffa1544fc085261d7823d242d9thumbnail1000x100070.jpg"
         ],
         "notes": "",
-        "publisher": "مؤسسة العثيمين"
+        "corrections": []
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 172,
