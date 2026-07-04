@@ -2356,10 +2356,10 @@
       "الفتاوى"
     ],
     "notes": "",
-    "date": "2026-07-02",
+    "date": "2026-07-04",
     "best_editions": [
       {
-        "publisher": "دار الكلمة الطيبة",
+        "publisher": "دار الكلمة الطيبة عناية مروان كجك",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782660407987-43043.jpg"
         ],
@@ -2394,10 +2394,11 @@
     ],
     "alt_editions": [
       {
-        "publisher": "العبيكان",
+        "publisher": "العبيكان عناية عامر الجزار، أنور الباز",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782989105864-0a69f5c6c3ab4b6db3419df85a5882eb.jpg",
-          "https://arabic-app.github.io/tabaat/images/1782989112548-images5.jpeg"
+          "https://arabic-app.github.io/tabaat/images/1782989112548-images5.jpeg",
+          "https://arabic-app.github.io/tabaat/images/1783156174577-images8.jpeg"
         ],
         "notes": "",
         "corrections": []
