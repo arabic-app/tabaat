@@ -10554,5 +10554,27 @@
     ],
     "alt_editions": [],
     "links": []
+  },
+  {
+    "id": 392,
+    "title": "شرح أصول في التفسير",
+    "author": "محمد بن صالح العثيمين",
+    "category": [
+      "أصول التفسير"
+    ],
+    "notes": "",
+    "date": "2026-07-04",
+    "best_editions": [
+      {
+        "publisher": "مؤسسة العثيمين",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1783194663796-1.jpeg"
+        ],
+        "notes": "",
+        "corrections": []
+      }
+    ],
+    "alt_editions": [],
+    "links": []
   }
 ]
