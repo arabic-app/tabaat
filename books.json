@@ -2948,32 +2948,36 @@
   },
   {
     "id": 82,
-    "title": "فتح القدير",
+    "title": "فتح القدير الجامع بين فني الرواية والدراسة من علم للتفسير",
     "author": "محمد بن علي الشوكاني",
     "category": [
       "التفسير"
     ],
     "notes": "",
+    "date": "2026-07-04",
     "best_editions": [
       {
+        "publisher": "دار ابن الجوزي السعودية",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782302658518-.png"
         ],
         "notes": "",
-        "publisher": "دار ابن الجوزي السعودية"
+        "corrections": [],
+        "verifier": "محمد صبحي حلاق"
       }
     ],
     "alt_editions": [
       {
+        "publisher": "دار الوفاء",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782716994379-images69.jpeg"
         ],
         "notes": "",
-        "publisher": "دار الوفاء"
+        "corrections": [],
+        "verifier": "عبد الرحمن عميرة"
       }
     ],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 83,
