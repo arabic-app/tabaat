@@ -6309,28 +6309,30 @@
       "الأديان و الفرق"
     ],
     "notes": "",
+    "date": "2026-07-04",
     "best_editions": [
       {
+        "publisher": "أضواء السلف و دار ابن حزم",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782304317719-.png"
+        ],
+        "notes": "",
+        "corrections": [],
+        "verifier": "الحسن العلوي"
+      },
+      {
+        "publisher": "أسفار",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782722807552-images20260629T114619.947.jpeg",
           "https://arabic-app.github.io/tabaat/images/1782722815924-97c4f3cdf25e478481a0c9f0d9ad16a9thumbnail1000x100070.jpg"
         ],
         "notes": "استعجال الصواعق المرسلة",
-        "verifier": "عمرو شريف الحويني",
-        "publisher": "أسفار"
-      },
-      {
-        "images": [
-          "https://arabic-app.github.io/tabaat/images/1782304317719-.png"
-        ],
-        "notes": "",
-        "verifier": "الحسن العلوي",
-        "publisher": "أضواء السلف و دار ابن حزم"
+        "corrections": [],
+        "verifier": "عمرو شريف الحويني"
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 222,
