@@ -2062,27 +2062,31 @@
       "التاريخ"
     ],
     "notes": "صدرت مؤخرا ط دار ابن كثير",
+    "date": "2026-07-04",
     "best_editions": [
       {
+        "publisher": "دار صادر",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782627920171-images20260628T092317.399.jpeg",
           "https://arabic-app.github.io/tabaat/images/1782627930618-images20260628T092241.207.jpeg",
           "https://arabic-app.github.io/tabaat/images/1782627937749-images20260628T092230.375.jpeg"
         ],
         "notes": "",
-        "publisher": "دار صادر"
+        "corrections": [],
+        "verifier": "زهير شمس"
       },
       {
+        "publisher": "دار الكتاب العربي",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782627950518-HWgLRtDsG3nH7FwCIzVk6qjrnQFlsdlbZ9vmObKv.jpg"
         ],
         "notes": "",
-        "publisher": "دار الكتاب العربي"
+        "corrections": [],
+        "verifier": "عمر تدمري"
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 54,
