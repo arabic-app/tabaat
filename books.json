@@ -743,10 +743,10 @@
       "شروح الحديث"
     ],
     "notes": "",
-    "date": "2026-07-03",
+    "date": "2026-07-04",
     "best_editions": [
       {
-        "publisher": "الفيحاء",
+        "publisher": "الفيحاء عناية يوسف الحاج أحمد",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782302506832-.png"
         ],
@@ -759,7 +759,8 @@
           "https://arabic-app.github.io/tabaat/images/1782302558397-.png"
         ],
         "notes": "",
-        "corrections": []
+        "corrections": [],
+        "verifier": "مركز الرسالة للدراسات وتحقيق التراث"
       }
     ],
     "alt_editions": [],
