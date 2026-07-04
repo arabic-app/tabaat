@@ -2715,34 +2715,38 @@
       "كتب متنوعة"
     ],
     "notes": "",
+    "date": "2026-07-04",
     "best_editions": [
       {
+        "publisher": "دار ابن الجوزي (ابن خزيمة)",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782719669506-48206509724365180367031098258730087937348946n.jpg"
         ],
         "notes": "",
-        "verifier": "عامر علي ياسين",
-        "publisher": "دار ابن الجوزي (ابن خزيمة)"
+        "corrections": [],
+        "verifier": "عامر علي ياسين"
       },
       {
+        "publisher": "دار ابن كثير",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782719879674-images20260629T105533.263.jpeg"
         ],
         "notes": "",
-        "publisher": "دار ابن كثير"
+        "corrections": [],
+        "verifier": "ياسين السواس"
       },
       {
+        "publisher": "دار الصديق",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782719873148-lataaifmaarifbyibnrajabalhanbaliknowledgeislamicgoodsdirect.jpg"
         ],
         "notes": "",
-        "verifier": "عصام موسى هادي",
-        "publisher": "دار الصديق"
+        "corrections": [],
+        "verifier": "عصام موسى هادي"
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 76,
