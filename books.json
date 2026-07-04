@@ -607,62 +607,66 @@
       "شروح الحديث"
     ],
     "notes": "",
+    "date": "2026-07-04",
     "best_editions": [
       {
+        "publisher": "مركز سطور",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782753648650-images20260629T174051.551.jpeg"
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "السرساوي",
-        "publisher": "مركز سطور"
+        "verifier": "مازن السرساوي"
       },
       {
+        "publisher": "دار المنهاج القويم",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782303762491-.png"
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "السرساوي",
-        "publisher": "دار المنهاج القويم"
+        "verifier": "مازن السرساوي"
       }
     ],
     "alt_editions": [
       {
+        "publisher": "المعرفة",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782753656959-images20260629T173927.467.jpeg"
         ],
         "notes": "",
         "corrections": [],
-        "publisher": "المعرفة"
+        "verifier": "خليل شيحا"
       },
       {
+        "publisher": "ابن رجب",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782753663814-images20260629T173953.183.jpeg"
         ],
-        "notes": "",
+        "notes": "علق على مسائله العقدية عبد العظيم بدوي",
         "corrections": [],
-        "publisher": "ابن رجب"
+        "verifier": "يحيى محمد سوس"
       },
       {
+        "publisher": "الصديق",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782753670225-images20260629T173911.519.jpeg"
         ],
-        "notes": "",
+        "notes": "مستفاد من الردود والتعقبات المشهور سلمان&nbsp;",
         "corrections": [],
-        "publisher": "الصديق"
+        "verifier": "مازن البيروتي"
       },
       {
+        "publisher": "مؤسسة قرطبة مصر",
         "images": [
-          "https://arabic-app.github.io/tabaat/images/1782753676031-images20260629T174015.498.jpeg"
+          "https://arabic-app.github.io/tabaat/images/1782753676031-images20260629T174015.498.jpeg",
+          "https://arabic-app.github.io/tabaat/images/1783158469261-images9.jpeg"
         ],
         "notes": "",
-        "corrections": [],
-        "publisher": "مؤسسة قرطبة مصر"
+        "corrections": []
       }
     ],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 13,
