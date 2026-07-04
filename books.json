@@ -6567,39 +6567,40 @@
   },
   {
     "id": 233,
-    "title": "كتاب الزهد والرقائق - عبد الله بن المبارك",
+    "title": "الزهد والرقائق - عبد الله بن المبارك",
     "author": "عبد الله بن المبارك",
     "category": [
       "كتب متنوعة"
     ],
     "notes": "",
+    "date": "2026-07-04",
     "best_editions": [
       {
+        "publisher": "دار البشائر الإسلامية",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782718257634-images87.jpeg"
         ],
         "notes": "كتاب الرقائق (رواية نعيم بن حماد المروزي)",
         "corrections": [],
-        "verifier": "عامر صبري",
-        "publisher": "دار البشائر الإسلامية"
+        "verifier": "عامر صبري"
       },
       {
+        "publisher": "دار الفاروق",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782718264695-FT9Hpj0XEAA3E6y.jpg"
         ],
         "notes": "الزهد والرقائق (رواية الحسين بن الحسن المروزي)",
         "corrections": [],
-        "verifier": "عادل مرشد",
-        "publisher": "دار الفاروق"
+        "verifier": "عادل مرشد"
       },
       {
+        "publisher": "دار الصحابة",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782718284193-IMG20260629093017185.jpg"
         ],
         "notes": "رواية المروزي مع زيادات نعيم بن حماد",
         "corrections": [],
-        "verifier": "عبد الفتاح سرور",
-        "publisher": "دار الصحابة"
+        "verifier": "عبد الفتاح سرور"
       }
     ],
     "alt_editions": [],
