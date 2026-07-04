@@ -1172,47 +1172,49 @@
       "الحديث"
     ],
     "notes": "",
+    "date": "2026-07-04",
     "best_editions": [
       {
+        "publisher": "دار التأصيل",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782307600352-musnadtaasilcover.jpeg",
           "https://arabic-app.github.io/tabaat/images/1782307606434-musnadtaasil.jpeg"
         ],
         "notes": "",
-        "corrections": [],
-        "publisher": "دار التأصيل"
+        "corrections": []
       },
       {
+        "publisher": "المكنز (دار المنهاج) بإشراف أحمد معبد عبد الكريم",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782723098345-eXg8vSXcaXj4KBANT39Cjvn5DmtzYtof2hysi3to.jpg",
           "https://arabic-app.github.io/tabaat/images/1782723104134-64aa97632833429289d5efa491bbd0691000x1000LdW06BAg4aeYY1vZ8uHAyLQNyC98SXF2PZiHjiWn.jpg"
         ],
         "notes": "",
-        "corrections": [],
-        "publisher": "المكنز (دار المنهاج)"
+        "corrections": []
       },
       {
+        "publisher": "الرسالة",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782307073639-.png",
           "https://arabic-app.github.io/tabaat/images/1782307363431-musnadalamia.png"
         ],
         "notes": "مهمة للمعتنين بالتخريج",
         "corrections": [],
-        "publisher": "الرسالة"
+        "verifier": "مركز الرسالة للدراسات وتحقيق التراث بإشراف شعيب الأرناؤوط"
       }
     ],
     "alt_editions": [
       {
+        "publisher": "دار ابن الجوزي القاهرة (مؤسسة إبداع)",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782307106243-.png"
         ],
         "notes": "",
         "corrections": [],
-        "publisher": "دار ابن الجوزي القاهرة (مؤسسة إبداع)"
+        "verifier": "محمود خليل الصعيدي"
       }
     ],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 31,
