@@ -5129,25 +5129,26 @@
   },
   {
     "id": 165,
-    "title": "شرح مقدمة التسهيل لعلوم التنزيل - مساعد الطيار",
+    "title": "شرح مقدمة التسهيل لعلوم التنزيل",
     "author": "مساعد الطيار",
     "category": [
       "علوم القرآن",
       "أصول التفسير"
     ],
     "notes": "",
+    "date": "2026-07-04",
     "best_editions": [
       {
+        "publisher": "دار ابن الجوزي السعودية",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782685097981-images751796238984359759.jpeg"
         ],
         "notes": "",
-        "publisher": "دار ابن الجوزي السعودية"
+        "corrections": []
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 166,
