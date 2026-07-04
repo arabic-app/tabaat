@@ -7330,18 +7330,20 @@
       "شروح الحديث"
     ],
     "notes": "",
+    "date": "2026-07-04",
     "best_editions": [
       {
+        "publisher": "دار ابن حزم",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782731340081-.png"
         ],
         "notes": "",
-        "publisher": "دار ابن حزم"
+        "corrections": [],
+        "verifier": "لطيف الرحمن البهرائجي"
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 268,
