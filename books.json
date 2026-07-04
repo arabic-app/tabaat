@@ -2332,18 +2332,20 @@
       "المجاميع"
     ],
     "notes": "",
+    "date": "2026-07-04",
     "best_editions": [
       {
+        "publisher": "دار عطاءات العلم",
         "images": [
-          "https://arabic-app.github.io/tabaat/images/1782721394785-def9868d233d4d258230bb9611c4d763500x483.60655737705Wo5nE0xAV8xqmt4TsGshL7CGrKbEzmJfeKp26P4r.jpg"
+          "https://arabic-app.github.io/tabaat/images/1782721394785-def9868d233d4d258230bb9611c4d763500x483.60655737705Wo5nE0xAV8xqmt4TsGshL7CGrKbEzmJfeKp26P4r.jpg",
+          "https://arabic-app.github.io/tabaat/images/1783156020252-Dte2LLBXcAAOQmN.jpg"
         ],
         "notes": "",
-        "publisher": "دار عطاءات العلم"
+        "corrections": []
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 64,
