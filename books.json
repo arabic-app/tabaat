@@ -7305,18 +7305,20 @@
       "شروح الحديث"
     ],
     "notes": "",
+    "date": "2026-07-04",
     "best_editions": [
       {
+        "publisher": "الرسالة",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782731289214-.png"
         ],
         "notes": "",
-        "publisher": "الرسالة"
+        "corrections": [],
+        "verifier": "شعيب الأرناؤوط"
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 267,
