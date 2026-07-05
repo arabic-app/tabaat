@@ -4300,34 +4300,34 @@
   {
     "id": 130,
     "title": "كليلة ودمنة",
-    "author": "ابن المقفع",
+    "author": "عبد الله بن المقفع",
     "category": [
       "اللغة والأدب"
     ],
     "notes": "",
+    "date": "2026-07-06",
     "best_editions": [
       {
+        "publisher": "الشروق",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782719460617-DeyJqA8WkAQBUTa.jpg",
           "https://arabic-app.github.io/tabaat/images/1782719467134-images20260629T105016.859.jpeg"
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "عبد الوهاب عزام",
-        "publisher": "الشروق"
+        "verifier": "عبد الوهاب عزام"
       },
       {
+        "publisher": "المعارف-  ت عبد الوهاب عزام",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782719493647-68d1b32f4bfa49da8626a9aba096e0bc722.65625x1000AXzjh2Lys87rz77pes6PyTH8rTGcrL2sC5ILDtmG.jpg"
         ],
         "notes": "",
-        "corrections": [],
-        "publisher": "المعارف-  ت عبد الوهاب عزام"
+        "corrections": []
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 131,
@@ -9456,13 +9456,13 @@
   },
   {
     "id": 351,
-    "title": "فتح المغيث",
+    "title": "فتح المغيث بشرح ألفية الحديث",
     "author": "محمد بن عبد الرحمن السخاوي",
     "category": [
       "مصطلح الحديث"
     ],
     "notes": "",
-    "date": "2026-07-03",
+    "date": "2026-07-06",
     "best_editions": [
       {
         "publisher": "مكتبة دار المنهاج",
@@ -9472,7 +9472,7 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "عبد الكريم الخضير"
+        "verifier": "عبد الكريم الخضير، محمد آل فهيد"
       }
     ],
     "alt_editions": [],
