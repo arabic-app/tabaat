@@ -10649,5 +10649,29 @@
     ],
     "alt_editions": [],
     "links": []
+  },
+  {
+    "id": 397,
+    "title": "الاقتضاب في شرح أدب الكتاب",
+    "author": "عبد الله البطليوسي",
+    "category": [
+      "اللغة والأدب"
+    ],
+    "notes": "",
+    "date": "2026-07-06",
+    "best_editions": [
+      {
+        "publisher": "دار الكتب المصرية",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1783285724124-67a1eb58af934a608cdce6a5d2bfa5a5774.21875x1000UGlmWUt50THag2th564MniTDnsbVbcqgTAkjjUW5.jpg",
+          "https://arabic-app.github.io/tabaat/images/1783285731688-cb4bb556d69d4255b0c5c202646799c5326.08695652174x500X2J854E1jwHPua5soc20LLYiZfm1gRpbihIu1phN.jpg"
+        ],
+        "notes": "",
+        "corrections": [],
+        "verifier": "مصطفى السقا، حامد عبد المجيد"
+      }
+    ],
+    "alt_editions": [],
+    "links": []
   }
 ]
