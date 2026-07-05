@@ -10558,22 +10558,23 @@
   },
   {
     "id": 393,
-    "title": "صفة الصفوة",
-    "author": "عبد الرحمن بن علي بن الجوزي",
+    "title": "ارتشاف الضرب من لسان العرب",
+    "author": "أبو حيان الأندلسي",
     "category": [
-      "كتب متنوعة"
+      "النحو"
     ],
     "notes": "",
     "date": "2026-07-05",
     "best_editions": [
       {
-        "publisher": "دار مكة العالمية",
+        "publisher": "مكتبة الخانجي",
         "images": [
-          "https://arabic-app.github.io/tabaat/images/1783276370321-45670.jpg"
+          "https://arabic-app.github.io/tabaat/images/1783284778527-images8.jpeg",
+          "https://arabic-app.github.io/tabaat/images/1783284787154-images6.jpeg"
         ],
-        "notes": "الطبعة مسندة لذلك عدد مجلداتها كبير.",
+        "notes": "",
         "corrections": [],
-        "verifier": "محمد خيري أبو شمة"
+        "verifier": "رجب عثمان محمد"
       }
     ],
     "alt_editions": [],
