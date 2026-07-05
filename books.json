@@ -10799,5 +10799,28 @@
     ],
     "alt_editions": [],
     "links": []
+  },
+  {
+    "id": 403,
+    "title": "تثقيف اللسان وتلقيح الجنان",
+    "author": "ابن مكي الصقلي",
+    "category": [
+      "اللغة والأدب"
+    ],
+    "notes": "",
+    "date": "2026-07-06",
+    "best_editions": [
+      {
+        "publisher": "لجنة إحياء التراث الإسلامي",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1783287628643-3618358735db4eb5a6429714bb4d96cdthumbnail1000x100070.jpg"
+        ],
+        "notes": "",
+        "corrections": [],
+        "verifier": "عبد العزيز مطر"
+      }
+    ],
+    "alt_editions": [],
+    "links": []
   }
 ]
