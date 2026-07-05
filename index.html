@@ -1170,6 +1170,9 @@
                 })
                 .then(data => {
                     booksData = data.sort((a, b) => (a.title || '').localeCompare(b.title || '', 'ar'));
+                    // Update books count in about section
+                    const booksCountEl = document.getElementById('about-total-books');
+                    if (booksCountEl) booksCountEl.textContent = booksData.length;
                     initCategories();
                     filterAndDisplayBooks();
                 })
@@ -1605,6 +1608,11 @@
                 .then(r => r.text())
                 .then(html => {
                     container.innerHTML = `<div class="about-card">${html}</div>`;
+                    // Update books count after HTML is injected
+                    const booksCountEl = document.getElementById('about-total-books');
+                    if (booksCountEl && booksData.length > 0) {
+                        booksCountEl.textContent = booksData.length;
+                    }
                 })
                 .catch(() => {
                     container.innerHTML = `<div class="empty-state"><span class="material-icons-round">error_outline</span><p>تعذّر تحميل المعلومات.</p></div>`;
