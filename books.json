@@ -10695,5 +10695,28 @@
     ],
     "alt_editions": [],
     "links": []
+  },
+  {
+    "id": 399,
+    "title": "الانتخاب في شرح أدب الكتاب",
+    "author": "أحمد بن داود الجذامي",
+    "category": [
+      "اللغة والأدب"
+    ],
+    "notes": "",
+    "date": "2026-07-06",
+    "best_editions": [
+      {
+        "publisher": "دار ابن حزم",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1783286336750-images27.jpeg"
+        ],
+        "notes": "",
+        "corrections": [],
+        "verifier": "السعدية بوخريط، للا أمينة بالعربي"
+      }
+    ],
+    "alt_editions": [],
+    "links": []
   }
 ]
