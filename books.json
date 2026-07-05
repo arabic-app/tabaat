@@ -10750,5 +10750,29 @@
     ],
     "alt_editions": [],
     "links": []
+  },
+  {
+    "id": 401,
+    "title": "البديع في نقد الشعر",
+    "author": "أسامة بن منقذ",
+    "category": [
+      "اللغة والأدب"
+    ],
+    "notes": "",
+    "date": "2026-07-06",
+    "best_editions": [
+      {
+        "publisher": "وزارة الثقافة، الجمهورية العربية المتحدة",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1783287289980-1gM1DxQRtdbG0Pu4qdC4nZ8HTLwlHjqr.jpg",
+          "https://arabic-app.github.io/tabaat/images/1783287296607-albadipoetrycriticismosamabinmunqidh.jpg"
+        ],
+        "notes": "",
+        "corrections": [],
+        "verifier": "أحمد بدوي، حامد عبد المجيد"
+      }
+    ],
+    "alt_editions": [],
+    "links": []
   }
 ]
