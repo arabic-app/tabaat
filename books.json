@@ -10845,5 +10845,27 @@
     ],
     "alt_editions": [],
     "links": []
+  },
+  {
+    "id": 405,
+    "title": "تحقيق النصوص ونشرها",
+    "author": "عبد السلام محمد هارون",
+    "category": [
+      "كتب متنوعة"
+    ],
+    "notes": "",
+    "date": "2026-07-06",
+    "best_editions": [
+      {
+        "publisher": "مكتبة الخانجي",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1783288961551-images53.jpeg"
+        ],
+        "notes": "",
+        "corrections": []
+      }
+    ],
+    "alt_editions": [],
+    "links": []
   }
 ]
