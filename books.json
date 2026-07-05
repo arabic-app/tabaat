@@ -10822,5 +10822,28 @@
     ],
     "alt_editions": [],
     "links": []
+  },
+  {
+    "id": 404,
+    "title": "تحفة الأحباب وطرفة الأصحاب في شرح ملحة الإعراب",
+    "author": "محمد بحرق الحضرمي",
+    "category": [
+      "النحو"
+    ],
+    "notes": "",
+    "date": "2026-07-06",
+    "best_editions": [
+      {
+        "publisher": "دار ابن حزم، مكتبة الإرشاد",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1783288800598-images52.jpeg"
+        ],
+        "notes": "",
+        "corrections": [],
+        "verifier": "بشير المساري"
+      }
+    ],
+    "alt_editions": [],
+    "links": []
   }
 ]
