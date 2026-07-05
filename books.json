@@ -10626,5 +10626,28 @@
     ],
     "alt_editions": [],
     "links": []
+  },
+  {
+    "id": 396,
+    "title": "اشتقاق الأسماء",
+    "author": "عبد الملك بن قريب الأصمعي",
+    "category": [
+      "اللغة والأدب"
+    ],
+    "notes": "",
+    "date": "2026-07-06",
+    "best_editions": [
+      {
+        "publisher": "مكتبة الخانجي",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1783285562358-10258.jpg"
+        ],
+        "notes": "",
+        "corrections": [],
+        "verifier": "رمضان عبد التواب، صلاح الدين إلهاري"
+      }
+    ],
+    "alt_editions": [],
+    "links": []
   }
 ]
