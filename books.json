@@ -10579,5 +10579,29 @@
     ],
     "alt_editions": [],
     "links": []
+  },
+  {
+    "id": 394,
+    "title": "كتاب أسرار البلاغة",
+    "author": "عبد القاهر الجرجاني",
+    "category": [
+      "البلاغة",
+      "اللغة والأدب"
+    ],
+    "notes": "",
+    "date": "2026-07-05",
+    "best_editions": [
+      {
+        "publisher": "دار المدني",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1783284931729-images9.jpeg"
+        ],
+        "notes": "",
+        "corrections": [],
+        "verifier": "محمود شاكر"
+      }
+    ],
+    "alt_editions": [],
+    "links": []
   }
 ]
