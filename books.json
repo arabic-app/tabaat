@@ -10555,5 +10555,28 @@
     ],
     "alt_editions": [],
     "links": []
+  },
+  {
+    "id": 393,
+    "title": "صفة الصفوة",
+    "author": "عبد الرحمن بن علي بن الجوزي",
+    "category": [
+      "كتب متنوعة"
+    ],
+    "notes": "",
+    "date": "2026-07-05",
+    "best_editions": [
+      {
+        "publisher": "دار مكة العالمية",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1783276370321-45670.jpg"
+        ],
+        "notes": "الطبعة مسندة لذلك عدد مجلداتها كبير.",
+        "corrections": [],
+        "verifier": "محمد خيري أبو شمة"
+      }
+    ],
+    "alt_editions": [],
+    "links": []
   }
 ]
