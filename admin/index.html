@@ -109,7 +109,7 @@
         .sidebar-header h2 { margin: 0 0 12px 0; font-size: 1.1rem; font-weight: 800; display: flex; align-items: center; gap: 8px; }
 
         .search-field { position: relative; display: flex; align-items: center; }
-        .search-field .material-icons-round { position: absolute; right: 10px; font-size: 20px; color: rgba(255,255,255,0.7); pointer-events: none; }
+        .search-field .search-icon { position: absolute; right: 10px; font-size: 20px; color: rgba(255,255,255,0.7); pointer-events: none; }
         .admin-search-box {
             width: 100%; padding: 10px 38px 10px 32px; border: none; border-radius: 24px;
             font-family: inherit; font-size: 0.9rem; background: rgba(255,255,255,0.2); color: white; outline: none;
@@ -117,19 +117,22 @@
         .admin-search-box::placeholder { color: rgba(255,255,255,0.65); }
         .admin-search-box:focus { background: rgba(255,255,255,0.28); }
         .clear-admin-search-btn {
-            position: absolute;
-            left: 8px;
+            position: absolute !important;
+            left: 8px !important;
+            right: auto !important;
             background: transparent;
             border: none;
             color: rgba(255,255,255,0.7);
-            font-size: 18px;
-            cursor: pointer;
+            font-size: 18px !important;
+            cursor: pointer !important;
+            pointer-events: auto !important;
             padding: 4px;
             display: none;
             align-items: center;
             justify-content: center;
             border-radius: 50%;
             transition: background 0.2s;
+            z-index: 2;
         }
         .clear-admin-search-btn:hover {
             background: rgba(255, 255, 255, 0.1);
@@ -523,7 +526,7 @@
             cursor: pointer;
             width: 16px;
             height: 16px;
-            accent-color: var(--md-tertiary);
+            accent-color: var(--md-primary-container);
         }
         .filter-field label {
             color: rgba(255, 255, 255, 0.9);
@@ -577,7 +580,7 @@
         <div class="sidebar-header">
             <h2><span class="material-icons-round">menu_book</span> الكتب المسجّلة</h2>
             <div class="search-field">
-                <span class="material-icons-round">search</span>
+                <span class="material-icons-round search-icon">search</span>
                 <input type="text" id="adminSearchInput" class="admin-search-box" placeholder="بحث بالعنوان أو المؤلف..." autocomplete="off">
                 <button id="clearAdminSearchBtn" class="clear-admin-search-btn material-icons-round" aria-label="مسح البحث">close</button>
             </div>
