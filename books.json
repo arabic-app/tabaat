@@ -10774,5 +10774,30 @@
     ],
     "alt_editions": [],
     "links": []
+  },
+  {
+    "id": 402,
+    "title": "تاج العروس من جواهر القاموس",
+    "author": "السيد محمد مرتضى الزبيدي",
+    "category": [
+      "اللغة والأدب"
+    ],
+    "notes": "",
+    "date": "2026-07-06",
+    "best_editions": [
+      {
+        "publisher": "الطبعة الكويتية",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1783287480636-images33.jpeg",
+          "https://arabic-app.github.io/tabaat/images/1783287487231-images49.jpeg",
+          "https://arabic-app.github.io/tabaat/images/1783287493200-images51.jpeg"
+        ],
+        "notes": "",
+        "corrections": [],
+        "verifier": "مجموعة محققين"
+      }
+    ],
+    "alt_editions": [],
+    "links": []
   }
 ]
