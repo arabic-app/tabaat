@@ -10603,5 +10603,28 @@
     ],
     "alt_editions": [],
     "links": []
+  },
+  {
+    "id": 395,
+    "title": "الاشتقاق",
+    "author": "محمد بن الحسن بن دريد",
+    "category": [
+      "اللغة والأدب"
+    ],
+    "notes": "",
+    "date": "2026-07-05",
+    "best_editions": [
+      {
+        "publisher": "مكتبة الخانجي",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1783285096221-images10.jpeg"
+        ],
+        "notes": "",
+        "corrections": [],
+        "verifier": "عبد السلام هارون"
+      }
+    ],
+    "alt_editions": [],
+    "links": []
   }
 ]
