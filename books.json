@@ -10673,5 +10673,27 @@
     ],
     "alt_editions": [],
     "links": []
+  },
+  {
+    "id": 398,
+    "title": "أمثال العرب",
+    "author": "المفضل الضبي",
+    "category": [
+      "اللغة والأدب"
+    ],
+    "notes": "",
+    "date": "2026-07-06",
+    "best_editions": [
+      {
+        "publisher": "دار الرائد العربي قدم له وعلق عليه إحسان عباس",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1783285880535-images11.jpeg"
+        ],
+        "notes": "",
+        "corrections": []
+      }
+    ],
+    "alt_editions": [],
+    "links": []
   }
 ]
