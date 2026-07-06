@@ -10938,5 +10938,29 @@
     ],
     "alt_editions": [],
     "links": []
+  },
+  {
+    "id": 409,
+    "title": "خزانة الأدب ولب لباب لسان العرب",
+    "author": "عبد القادر البغدادي",
+    "category": [
+      "الآداب الشرعية"
+    ],
+    "notes": "",
+    "date": "2026-07-06",
+    "best_editions": [
+      {
+        "publisher": "مكتبة الخانجي",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1783321069839-images10.jpeg",
+          "https://arabic-app.github.io/tabaat/images/1783321094965-images9.jpeg"
+        ],
+        "notes": "",
+        "corrections": [],
+        "verifier": "عبد السلام هارون"
+      }
+    ],
+    "alt_editions": [],
+    "links": []
   }
 ]
