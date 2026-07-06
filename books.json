@@ -10867,5 +10867,28 @@
     ],
     "alt_editions": [],
     "links": []
+  },
+  {
+    "id": 406,
+    "title": "تهذيب اللغة",
+    "author": "محمد الأزهري",
+    "category": [
+      "اللغة والأدب"
+    ],
+    "notes": "",
+    "date": "2026-07-06",
+    "best_editions": [
+      {
+        "publisher": "المؤسسة المصرية العامة",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1783319887191-images6.jpeg"
+        ],
+        "notes": "",
+        "corrections": [],
+        "verifier": "عبد السلام هارون"
+      }
+    ],
+    "alt_editions": [],
+    "links": []
   }
 ]
