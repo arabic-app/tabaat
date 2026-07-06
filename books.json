@@ -10962,5 +10962,29 @@
     ],
     "alt_editions": [],
     "links": []
+  },
+  {
+    "id": 410,
+    "title": "دراسات لأسلوب القرآن الكريم",
+    "author": "محمد عبد الخالق عضيمة",
+    "category": [
+      "علوم القرآن",
+      "اللغة والأدب"
+    ],
+    "notes": "",
+    "date": "2026-07-06",
+    "best_editions": [
+      {
+        "publisher": "دار الحديث",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1783321273616-images6.jpeg",
+          "https://arabic-app.github.io/tabaat/images/1783321280201-images5.jpeg"
+        ],
+        "notes": "",
+        "corrections": []
+      }
+    ],
+    "alt_editions": [],
+    "links": []
   }
 ]
