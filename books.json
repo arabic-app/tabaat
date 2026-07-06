@@ -10890,5 +10890,30 @@
     ],
     "alt_editions": [],
     "links": []
+  },
+  {
+    "id": 407,
+    "title": "ثلاث رسائل في إعجاز القرآن",
+    "author": "الرماني، الخطابي، الجرجاني",
+    "category": [
+      "علوم القرآن",
+      "اللغة والأدب"
+    ],
+    "notes": "",
+    "date": "2026-07-06",
+    "best_editions": [
+      {
+        "publisher": "دار المعارف",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1783320582414-.jpg",
+          "https://arabic-app.github.io/tabaat/images/1783320588372-images8.jpeg"
+        ],
+        "notes": "",
+        "corrections": [],
+        "verifier": "محمد خلف الله، محمد زغلول"
+      }
+    ],
+    "alt_editions": [],
+    "links": []
   }
 ]
