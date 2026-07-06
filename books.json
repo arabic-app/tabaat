@@ -10915,5 +10915,28 @@
     ],
     "alt_editions": [],
     "links": []
+  },
+  {
+    "id": 408,
+    "title": "ثمرات الأوراق",
+    "author": "أبو بكر بن علي بن حجة الحموي",
+    "category": [
+      "اللغة والأدب"
+    ],
+    "notes": "",
+    "date": "2026-07-06",
+    "best_editions": [
+      {
+        "publisher": "دار المعارف",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1783320758386-9fb64d4bf40e4c5ebbba97c10729a871701.83930300097x10002GGRgJfBB4BTcWKy4KaVvOKVl2i4LuocgLIOw1Z9.jpg"
+        ],
+        "notes": "",
+        "corrections": [],
+        "verifier": "محمد أبي الفضل إبراهيم"
+      }
+    ],
+    "alt_editions": [],
+    "links": []
   }
 ]
