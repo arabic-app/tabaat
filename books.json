@@ -1129,8 +1129,8 @@
       "الحديث",
       "شروح الحديث"
     ],
-    "notes": "*صدر مؤخرا ط سطور ت مركز هجر فلتنظر. \n*طبعة بشار عواد فيها خلل كبير لذلك لم تذكر",
-    "date": "2026-07-03",
+    "notes": "<ul><li>صدر مؤخرا ط سطور ت مركز هجر فلتنظر.&nbsp;</li><li>طبعة بشار عواد فيها خلل كبير لذلك لم تذكر (راجع الروابط المرفقة) .</li></ul>",
+    "date": "2026-07-07",
     "best_editions": [
       {
         "publisher": "موسوعة شروح الموطأ (دار عالم الكتب / دار هجر)",
@@ -1160,7 +1160,20 @@
       }
     ],
     "alt_editions": [],
-    "links": []
+    "links": [
+      {
+        "title": "من مزالق المحققين",
+        "url": "https://drive.google.com/file/d/1XKO0yZNe6OmdGHRrd2hfmhMvLpOKrvGt/view?usp=sharing"
+      },
+      {
+        "title": "وقع الحافر",
+        "url": "https://drive.google.com/file/d/1xVlPZ2BI7iQ91BR8eGL6dDZQXX4Vde0h/view?usp=drive_link"
+      },
+      {
+        "title": "نقد الطبعات السابقة - المغراوي",
+        "url": "https://drive.google.com/file/d/1akIInX4zNMeSImVCXAnbhLq-9bXVB1wd/view?usp=sharing"
+      }
+    ]
   },
   {
     "id": 29,
