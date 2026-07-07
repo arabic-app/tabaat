@@ -8794,7 +8794,7 @@
       "الفقه الحنبلي"
     ],
     "notes": "",
-    "date": "2026-07-02",
+    "date": "2026-07-07",
     "best_editions": [
       {
         "publisher": "الرسالة",
@@ -8803,7 +8803,18 @@
           "https://arabic-app.github.io/tabaat/images/1783006047775-PHLQrd782u1yJWSUo2gd9O0PVNPjHOiw4Oga108N.jpg"
         ],
         "notes": "",
-        "corrections": [],
+        "corrections": [
+          {
+            "title": "تصويبات الدكتور تركي الذيابي",
+            "body": "<span style=\"color: rgb(0, 0, 0); font-family: Tahoma; font-size: 14px; background-color: rgb(253, 253, 253);\">جمع لتصويبات الدكتور تركي الذيابي التي نشرها على تويتر</span>",
+            "attachments": [
+              {
+                "title": "تصويبات الدكتور تركي الذيابي",
+                "url": "https://arabic-app.github.io/tabaat/corrections/1783419920118-.pdf"
+              }
+            ]
+          }
+        ],
         "verifier": "عبد الله التركي"
       }
     ],
