@@ -7291,7 +7291,7 @@
       "الحديث"
     ],
     "notes": "",
-    "date": "2026-07-03",
+    "date": "2026-07-07",
     "best_editions": [
       {
         "publisher": "الناشر المتميز",
@@ -7299,7 +7299,18 @@
           "https://arabic-app.github.io/tabaat/images/1782306065076-.png"
         ],
         "notes": "",
-        "corrections": [],
+        "corrections": [
+          {
+            "title": "‎⁨بيان بالكلمات التي سقطت في الطبعة الأولى",
+            "body": "‎⁨بيان بالكلمات التي سقطت في الطبعة الأولى ( ط.الناشر المتميز) من التاريخ الكبير⁩",
+            "attachments": [
+              {
+                "title": "بيان بالكلمات التي سقطت في الطبعة الأولى",
+                "url": "https://arabic-app.github.io/tabaat/corrections/1783419327108-..pdf"
+              }
+            ]
+          }
+        ],
         "verifier": "محمد الدباسي، إشراف محمود النحال"
       }
     ],
