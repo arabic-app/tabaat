@@ -7695,16 +7695,37 @@
       "العقيدة"
     ],
     "notes": "حوى ٦٢ عقيدة من عقائد أهل السنة&nbsp;",
-    "date": "2026-06-30",
+    "date": "2026-07-07",
     "best_editions": [
       {
+        "publisher": "دار اللؤلؤة",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782855983522-600x600.jpg",
           "https://arabic-app.github.io/tabaat/images/1782855995250-0367efeeffae42878949b681360de924750x1000038ZJaCgZqc3WpydhAKFtHgHhlvMFkgwYefR61xK.jpg"
         ],
         "notes": "ينتبه للشدة في تعليقات المحقق",
-        "corrections": [],
-        "publisher": "دار اللؤلؤة"
+        "corrections": [
+          {
+            "title": "الرسالة 61 : الفرقة الناجية أهل الحديث",
+            "body": "",
+            "attachments": [
+              {
+                "title": "الرسالة_61_الفرقة_الناجية_أهل_الحديث",
+                "url": "https://arabic-app.github.io/tabaat/corrections/1783419451108-61.pdf"
+              }
+            ]
+          },
+          {
+            "title": "قصيدة رقم 62 لابن أبي الأسود",
+            "body": "",
+            "attachments": [
+              {
+                "title": "قصيدة رقم 62 لابن أبي الأسود",
+                "url": "https://arabic-app.github.io/tabaat/corrections/1783419475572-62.pdf"
+              }
+            ]
+          }
+        ]
       }
     ],
     "alt_editions": [],
