@@ -881,25 +881,7 @@
 
 
 
-        /* ===== PWA INSTALL BANNER ===== */
-        #pwa-banner {
-            display: none;
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            z-index: 5000;
-            padding: 12px 16px;
-            background: #1a2a27;
-            color: #fff;
-            box-shadow: 0 -4px 24px rgba(0,0,0,0.3);
-            animation: slideUp 0.4s cubic-bezier(0.34,1.56,0.64,1);
-            safe-area-inset-bottom: env(safe-area-inset-bottom);
-            padding-bottom: calc(12px + env(safe-area-inset-bottom));
-        }
-        #pwa-banner.visible { display: block; }
-        
-        /* Permanent Header Install Button */
+        /* ===== INSTALL BUTTON ===== */
         .header-install-btn {
             display: none;
             background: rgba(255, 255, 255, 0.15);
@@ -923,110 +905,72 @@
         .header-install-btn span {
             font-size: 16px;
         }
-        @keyframes slideUp {
-            from { transform: translateY(100%); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
+
+        /* ===== HELP VIEW ===== */
+        .help-card {
+            padding-top: 0;
+            background: transparent;
+            box-shadow: none;
+            border: none;
+            padding-left: 0;
+            padding-right: 0;
         }
-        .pwa-banner-inner {
+        .help-intro {
+            margin: 0 0 18px 0;
+            color: var(--md-on-surface-variant);
+            line-height: 1.8;
+            font-size: 0.95rem;
+        }
+        .help-steps { display: block; }
+        .help-step {
+            background: var(--md-surface);
+            border-radius: 16px;
+            padding: 18px 18px 14px;
+            margin-bottom: 18px;
+            box-shadow: var(--md-elevation-1);
+            border: 1px solid var(--md-outline-variant);
+            transition: box-shadow 0.2s;
+        }
+        .help-step:hover { box-shadow: var(--md-elevation-2); }
+        .help-step-head {
             display: flex;
-            align-items: center;
-            gap: 12px;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-        .pwa-banner-icon {
-            width: 48px;
-            height: 48px;
-            border-radius: 12px;
-            flex-shrink: 0;
-            object-fit: cover;
-        }
-        .pwa-banner-text {
-            flex: 1;
-        }
-        .pwa-banner-text strong {
-            display: block;
-            font-size: 0.9rem;
+            align-items: flex-start;
+            gap: 10px;
+            margin-bottom: 14px;
+            font-size: 0.95rem;
             font-weight: 700;
-            color: #fff;
-            margin-bottom: 2px;
+            color: var(--md-on-surface);
+            line-height: 1.5;
         }
-        .pwa-banner-text span {
-            font-size: 0.78rem;
-            color: rgba(255,255,255,0.75);
-            line-height: 1.4;
-        }
-        .pwa-banner-actions {
-            display: flex;
-            gap: 8px;
-            align-items: center;
-            flex-shrink: 0;
-        }
-        #pwa-install-btn {
+        .help-step-num {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
             background: var(--md-primary);
             color: #fff;
-            border: none;
-            border-radius: 20px;
-            padding: 8px 18px;
-            font-family: 'Cairo', sans-serif;
-            font-size: 0.85rem;
-            font-weight: 700;
-            cursor: pointer;
-            transition: background 0.2s;
-            white-space: nowrap;
-        }
-        #pwa-install-btn:hover { background: #00897b; }
-        #pwa-dismiss-btn {
-            background: transparent;
-            border: none;
-            color: rgba(255,255,255,0.6);
-            cursor: pointer;
-            padding: 4px;
-            display: flex;
+            display: inline-flex;
             align-items: center;
-            font-size: 20px;
-            font-family: 'Material Icons Round';
+            justify-content: center;
+            font-size: 0.84rem;
+            flex-shrink: 0;
+            margin-top: 1px;
         }
-        /* iOS specific instructions */
-        .pwa-ios-steps {
-            display: flex;
-            flex-direction: column;
-            gap: 4px;
-            margin-top: 6px;
+        .help-step-img-wrap {
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid var(--md-outline-variant);
+            background: var(--md-background);
+            text-align: center;
         }
-        .pwa-ios-step {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            font-size: 0.78rem;
-            color: rgba(255,255,255,0.85);
-        }
-        .pwa-ios-step .step-icon {
-            font-size: 16px;
-            font-family: 'Material Icons Round';
-            color: var(--md-primary-container);
+        .help-step-img-wrap img {
+            display: block;
+            width: 100%;
+            max-height: 52vh;
+            object-fit: contain;
         }
     </style>
 </head>
 <body>
-
-
-
-    <!-- PWA Install Banner -->
-    <div id="pwa-banner" role="complementary" aria-label="تثبيت التطبيق">
-        <div class="pwa-banner-inner">
-            <img src="icons/apple-touch-icon.png" class="pwa-banner-icon" alt="أيقونة التطبيق">
-            <div class="pwa-banner-text" id="pwa-banner-text">
-                <strong>تثبيت تطبيق «أفضل طبعة»</strong>
-                <span>أضف التطبيق إلى شاشتك الرئيسية للوصول السريع</span>
-            </div>
-            <div class="pwa-banner-actions">
-                <button id="pwa-install-btn">تثبيت</button>
-                <button id="pwa-dismiss-btn" aria-label="إغلاق" class="material-icons-round">close</button>
-            </div>
-        </div>
-    </div>
-
     <header>
         <div class="header-inner">
             <div class="header-text">
@@ -1065,6 +1009,10 @@
             <li class="sidebar-nav-item" id="nav-about" onclick="showView('about')">
                 <span class="material-icons-round">info</span>
                 عن التطبيق
+            </li>
+            <li class="sidebar-nav-item" id="nav-help" onclick="showView('help')" style="display: none;">
+                <span class="material-icons-round">help</span>
+                مساعدة
             </li>
         </ul>
     </nav>
@@ -1106,6 +1054,11 @@
         <div id="aboutContainer"></div>
     </div>
 
+    <!-- HELP VIEW -->
+    <div class="container view" id="view-help">
+        <div id="helpContainer"></div>
+    </div>
+
     <div id="infoModal" class="modal">
         <div class="modal-content">
             <button class="close-modal" onclick="closeModal()" aria-label="إغلاق">
@@ -1141,6 +1094,7 @@
         
         let currentSearchTerm = '';
         let currentCategory = 'الكل';
+        const isIOSUser = /iP(hone|od|ad)/.test(navigator.userAgent || '');
 
         function normalizeArabic(str) {
             if (!str) return '';
@@ -1546,12 +1500,14 @@
 
             // Toggle active nav items
             document.querySelectorAll('.sidebar-nav-item').forEach(i => i.classList.remove('active'));
-            document.getElementById('nav-' + view).classList.add('active');
+            const activeNavItem = document.getElementById('nav-' + view);
+            if (activeNavItem) activeNavItem.classList.add('active');
 
             currentView = view;
 
             if (view === 'reviews') loadReviews();
             if (view === 'about')   loadAbout();
+            if (view === 'help')    loadHelp();
         }
 
         /* ===== REVIEWS ===== */
@@ -1618,6 +1574,41 @@
                     container.innerHTML = `<div class="empty-state"><span class="material-icons-round">error_outline</span><p>تعذّر تحميل المعلومات.</p></div>`;
                 });
         }
+
+        /* ===== HELP ===== */
+        let helpLoaded = false;
+        function loadHelp() {
+            const container = document.getElementById('helpContainer');
+            if (!container) return;
+
+            if (!isIOSUser) {
+                container.innerHTML = `
+                    <div class="help-card">
+                        <div class="empty-state">
+                            <span class="material-icons-round">phone_iphone</span>
+                            <p>هذا الدليل مخصص لأجهزة iPhone.</p>
+                        </div>
+                    </div>`;
+                return;
+            }
+
+            if (helpLoaded) return;
+            helpLoaded = true;
+            container.innerHTML = `<div class="empty-state"><span class="material-icons-round" style="animation:spin 1s linear infinite">sync</span></div>`;
+
+            fetch('help.html?_t=' + Date.now(), { cache: 'no-store' })
+                .then(r => {
+                    if (!r.ok) throw new Error('HTTP ' + r.status);
+                    return r.text();
+                })
+                .then(html => {
+                    container.innerHTML = `<div class="help-card">${html}</div>`;
+                })
+                .catch(() => {
+                    helpLoaded = false;
+                    container.innerHTML = `<div class="empty-state"><span class="material-icons-round">error_outline</span><p>تعذّر تحميل دليل التثبيت.</p></div>`;
+                });
+        }
     </script>
 
     <!-- ===== PWA + PULL-TO-REFRESH SCRIPT ===== -->
@@ -1652,28 +1643,16 @@
         const isInStandalone = window.matchMedia('(display-mode: standalone)').matches
             || window.navigator.standalone === true;
 
-        /* ── 3. INSTALL BANNER ── */
-        const banner   = document.getElementById('pwa-banner');
-        const installBtn = document.getElementById('pwa-install-btn');
+        /* ── 3. INSTALL ACTIONS ── */
         const headerInstallBtn = document.getElementById('header-install-btn');
-        const dismissBtn = document.getElementById('pwa-dismiss-btn');
-        const bannerText = document.getElementById('pwa-banner-text');
+        const navHelp = document.getElementById('nav-help');
         let deferredPrompt = null;
-        const DISMISS_KEY = 'pwa_dismissed_tabaat';
 
-        function showBanner() {
-            if (localStorage.getItem(DISMISS_KEY)) return;
-            banner.classList.add('visible');
+        function openIOSGuide() {
+            if (typeof showView === 'function') {
+                showView('help');
+            }
         }
-
-        function hideBanner() {
-            banner.classList.remove('visible');
-        }
-
-        dismissBtn.addEventListener('click', () => {
-            hideBanner();
-            localStorage.setItem(DISMISS_KEY, '1');
-        });
 
         // Trigger PWA installation prompt
         async function triggerInstallPrompt() {
@@ -1681,55 +1660,29 @@
             deferredPrompt.prompt();
             const { outcome } = await deferredPrompt.userChoice;
             deferredPrompt = null;
-            hideBanner();
             headerInstallBtn.style.display = 'none';
-            if (outcome === 'accepted') {
-                localStorage.setItem(DISMISS_KEY, '1');
-            }
+            if (outcome === 'accepted') deferredPrompt = null;
         }
 
-        if (!isInStandalone) {
-            if (isIOS) {
-                // iOS : instructions manuelles Partager → Ajouter
-                bannerText.innerHTML = `
-                    <strong>أضف «أفضل طبعة» لشاشتك الرئيسية</strong>
-                    <div class="pwa-ios-steps">
-                        <div class="pwa-ios-step">
-                            <span class="step-icon material-icons-round">ios_share</span>
-                            <span>اضغط على زر المشاركة ثم</span>
-                        </div>
-                        <div class="pwa-ios-step">
-                            <span class="step-icon material-icons-round">add_box</span>
-                            <span>اختر «إضافة إلى الشاشة الرئيسية»</span>
-                        </div>
-                    </div>`;
-                installBtn.style.display = 'none';
-                // Show header install button (but since iOS has no programmatic trigger, we show instructions on click)
+        if (isIOS) {
+            if (navHelp) navHelp.style.display = 'flex';
+            if (!isInStandalone) {
                 headerInstallBtn.style.display = 'flex';
-                headerInstallBtn.addEventListener('click', () => {
-                    banner.classList.add('visible');
-                });
-                // Afficher après 2 secondes
-                setTimeout(showBanner, 2000);
-
-            } else if (isAndroid || (!isIOS && !isAndroid)) {
-                // Android/Chrome/Desktop : beforeinstallprompt
-                window.addEventListener('beforeinstallprompt', (e) => {
-                    e.preventDefault();
-                    deferredPrompt = e;
-                    headerInstallBtn.style.display = 'flex';
-                    setTimeout(showBanner, 1500);
-                });
-
-                installBtn.addEventListener('click', triggerInstallPrompt);
-                headerInstallBtn.addEventListener('click', triggerInstallPrompt);
-
-                window.addEventListener('appinstalled', () => {
-                    hideBanner();
-                    headerInstallBtn.style.display = 'none';
-                    deferredPrompt = null;
-                });
             }
+            headerInstallBtn.addEventListener('click', openIOSGuide);
+        } else if (!isInStandalone && (isAndroid || !isIOS)) {
+            window.addEventListener('beforeinstallprompt', (e) => {
+                e.preventDefault();
+                deferredPrompt = e;
+                headerInstallBtn.style.display = 'flex';
+            });
+
+            headerInstallBtn.addEventListener('click', triggerInstallPrompt);
+
+            window.addEventListener('appinstalled', () => {
+                headerInstallBtn.style.display = 'none';
+                deferredPrompt = null;
+            });
         }
 
 
