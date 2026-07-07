@@ -7445,7 +7445,7 @@
       "شروح الحديث"
     ],
     "notes": "",
-    "date": "2026-07-04",
+    "date": "2026-07-07",
     "best_editions": [
       {
         "publisher": "دار ابن حزم",
@@ -7453,7 +7453,18 @@
           "https://arabic-app.github.io/tabaat/images/1782731340081-.png"
         ],
         "notes": "",
-        "corrections": [],
+        "corrections": [
+          {
+            "title": "ج 4 ص 172",
+            "body": "<span style=\"color: rgb(0, 0, 0); font-family: Tahoma; font-size: 14px; background-color: rgb(253, 253, 253);\">سقطت الصفحة 172 من الجزء الرابع وحلت محلها صفحة أخرى</span>",
+            "attachments": [
+              {
+                "title": "4 / 172",
+                "url": "https://arabic-app.github.io/tabaat/corrections/1783420302925-4172.pdf"
+              }
+            ]
+          }
+        ],
         "verifier": "لطيف الرحمن البهرائجي"
       }
     ],
