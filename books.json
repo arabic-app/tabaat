@@ -607,7 +607,7 @@
       "شروح الحديث"
     ],
     "notes": "",
-    "date": "2026-07-04",
+    "date": "2026-07-07",
     "best_editions": [
       {
         "publisher": "مركز سطور",
@@ -624,7 +624,18 @@
           "https://arabic-app.github.io/tabaat/images/1782303762491-.png"
         ],
         "notes": "",
-        "corrections": [],
+        "corrections": [
+          {
+            "title": "جدول أهم تعديلات الطبعة الثانية",
+            "body": "",
+            "attachments": [
+              {
+                "title": "جدول أهم تعديلات الطبعة الثانية",
+                "url": "https://arabic-app.github.io/tabaat/corrections/1783418826520-.pdf"
+              }
+            ]
+          }
+        ],
         "verifier": "مازن السرساوي"
       }
     ],
@@ -2000,7 +2011,7 @@
       "التراجم و الرجال"
     ],
     "notes": "",
-    "date": "2026-07-03",
+    "date": "2026-07-07",
     "best_editions": [
       {
         "publisher": "مركز سطور  (دار الإمام مسلم)",
@@ -2017,7 +2028,18 @@
           "https://arabic-app.github.io/tabaat/images/1782568368530-images20260627T165207.768.jpeg"
         ],
         "notes": "",
-        "corrections": [],
+        "corrections": [
+          {
+            "title": "ج10 ص 416 417 418",
+            "body": "<span style=\"color: rgb(0, 0, 0); font-family: Tahoma; font-size: 14px; background-color: rgb(253, 253, 253);\">صفحات ساقطة من طبعتي عالم الكتب وهجر وتم تصويبها في طبعة سطور</span>",
+            "attachments": [
+              {
+                "title": "الإصابة_ ج10_ص416_417_418",
+                "url": "https://arabic-app.github.io/tabaat/corrections/1783419021210-10416417418.pdf"
+              }
+            ]
+          }
+        ],
         "verifier": "عبد الله التركي، مركز هجر"
       },
       {
@@ -2026,7 +2048,18 @@
           "https://arabic-app.github.io/tabaat/images/1782568380797-images20260627T165234.458.jpeg"
         ],
         "notes": "",
-        "corrections": [],
+        "corrections": [
+          {
+            "title": "ج10 ص 416 417 418",
+            "body": "<span style=\"color: rgb(0, 0, 0); font-family: Tahoma; font-size: 14px; background-color: rgb(253, 253, 253);\">صفحات ساقطة من طبعتي عالم الكتب وهجر وتم تصويبها في طبعة سطور</span>",
+            "attachments": [
+              {
+                "title": "الإصابة_ ج10_ص416_417_418",
+                "url": "https://arabic-app.github.io/tabaat/corrections/1783419021210-10416417418.pdf"
+              }
+            ]
+          }
+        ],
         "verifier": "عبد الله التركي، مركز هجر"
       }
     ],
