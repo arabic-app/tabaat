@@ -537,7 +537,7 @@
       "شروح الحديث"
     ],
     "notes": "",
-    "date": "2026-07-04",
+    "date": "2026-07-08",
     "best_editions": [
       {
         "publisher": "اللؤلؤة ( دار الكلمة الطيبة - مكتبة الغرباء)",
@@ -546,7 +546,18 @@
           "https://arabic-app.github.io/tabaat/images/1782681157132-G5AYeDTXIAAaUbv.jpg"
         ],
         "notes": "",
-        "corrections": [],
+        "corrections": [
+          {
+            "title": "تصحيحات وتتمات من قطعة لفتح الباري لابن رجب",
+            "body": "محمد بن صالح بن محمد الدباسي",
+            "attachments": [
+              {
+                "title": "تاحيحصت",
+                "url": "https://arabic-app.github.io/tabaat/corrections/1783543975090-.pdf"
+              }
+            ]
+          }
+        ],
         "verifier": "مجموعة محققين"
       },
       {
