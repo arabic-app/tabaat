@@ -857,11 +857,64 @@
             flex-grow: 1;
             background: #525659;
             position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         .pdf-viewer-body iframe {
             width: 100%;
             height: 100%;
             border: none;
+            position: absolute;
+            top: 0; left: 0;
+        }
+        .pdf-viewer-img-wrap {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        .pdf-viewer-img-wrap img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            display: block;
+        }
+        .viewer-nav-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255,255,255,0.85);
+            color: var(--md-primary);
+            border: none;
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--md-elevation-2);
+            transition: background 0.2s;
+            z-index: 10;
+        }
+        .viewer-nav-btn:hover { background: white; }
+        .viewer-nav-btn.right { right: 12px; }
+        .viewer-nav-btn.left  { left: 12px; }
+        .viewer-img-counter {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0,0,0,0.55);
+            color: white;
+            font-size: 0.82rem;
+            font-weight: 600;
+            padding: 3px 12px;
+            border-radius: 20px;
+            pointer-events: none;
         }
         .corr-back-btn {
             display: inline-flex; align-items: center; gap: 6px;
@@ -1083,6 +1136,12 @@
             </div>
             <div class="pdf-viewer-body">
                 <iframe id="pdfViewerIframe" src="" frameborder="0"></iframe>
+                <div id="pdfViewerImgWrap" class="pdf-viewer-img-wrap" style="display:none;">
+                    <button class="viewer-nav-btn right" id="viewerNavRight" onclick="changeViewerImage(-1)" dir="ltr" style="display:none;"><span class="material-icons-round">chevron_right</span></button>
+                    <img id="pdfViewerImg" src="" alt="">
+                    <button class="viewer-nav-btn left" id="viewerNavLeft" onclick="changeViewerImage(1)" dir="ltr" style="display:none;"><span class="material-icons-round">chevron_left</span></button>
+                    <div id="viewerImgCounter" class="viewer-img-counter" style="display:none;"></div>
+                </div>
             </div>
         </div>
     </div>
@@ -1091,6 +1150,8 @@
         let booksData = [];
         let currentCarouselImages = [];
         let currentSlideIndex = 0;
+        let corrViewerImages = [];
+        let corrViewerIndex = 0;
         
         let currentSearchTerm = '';
         let currentCategory = 'الكل';
@@ -1377,7 +1438,9 @@
         function showCorrectionDetail(bookId, edType, edIdx, corrIdx) {
             const ed = booksData.find(b => b.id === bookId)[edType][edIdx];
             const corr = ed.corrections[corrIdx];
-            const attachmentsHTML = (corr.attachments || []).map(att => {
+            const attachments = corr.attachments || [];
+            const imageAttachments = attachments.filter(att => att.url && !att.url.toLowerCase().endsWith('.pdf'));
+            const attachmentsHTML = attachments.map(att => {
                 const isPdf = att.url && att.url.toLowerCase().endsWith('.pdf');
                 if (isPdf) {
                     const cleanTitle = (att.title || 'ملف PDF').replace(/'/g, "\\'");
@@ -1386,7 +1449,9 @@
                         <span>${att.title || 'ملف PDF'}</span>
                     </button>`;
                 } else {
-                    return `<div class="attach-thumb">
+                    const imgIdx = imageAttachments.indexOf(att);
+                    const imagesJson = JSON.stringify(imageAttachments.map(a => ({ url: a.url, title: a.title || '' }))).replace(/"/g, '&quot;');
+                    return `<div class="attach-thumb" style="cursor:pointer;" onclick="openImageViewer(JSON.parse(this.dataset.images), ${imgIdx})" data-images="${imagesJson}">
                         <img src="${att.url}" alt="${att.title || 'مرفق'}" loading="lazy" onerror="this.parentElement.style.display='none'">
                         <span>${att.title || 'مرفق'}</span>
                     </div>`;
@@ -1412,16 +1477,57 @@
         function openPdfViewer(url, title) {
             document.getElementById('pdfViewerTitle').innerText = title;
             document.getElementById('pdfViewerIframe').src = url;
+            document.getElementById('pdfViewerIframe').style.display = 'block';
+            document.getElementById('pdfViewerImgWrap').style.display = 'none';
             
             const downloadBtn = document.getElementById('pdfBtnDownload');
+            downloadBtn.style.display = '';
             downloadBtn.onclick = () => downloadPdf(url, title + '.pdf');
             
             document.getElementById('pdfViewerModal').style.display = 'flex';
         }
 
+        function openImageViewer(images, startIndex, title) {
+            corrViewerImages = images;
+            corrViewerIndex = startIndex;
+            document.getElementById('pdfViewerIframe').style.display = 'none';
+            document.getElementById('pdfViewerIframe').src = '';
+            document.getElementById('pdfViewerImgWrap').style.display = 'flex';
+
+            const hasMultiple = images.length > 1;
+            document.getElementById('viewerNavRight').style.display = hasMultiple ? 'flex' : 'none';
+            document.getElementById('viewerNavLeft').style.display  = hasMultiple ? 'flex' : 'none';
+            document.getElementById('viewerImgCounter').style.display = hasMultiple ? 'block' : 'none';
+
+            const downloadBtn = document.getElementById('pdfBtnDownload');
+            downloadBtn.style.display = '';
+
+            renderViewerImage();
+            document.getElementById('pdfViewerModal').style.display = 'flex';
+        }
+
+        function renderViewerImage() {
+            const img = corrViewerImages[corrViewerIndex];
+            document.getElementById('pdfViewerImg').src = img.url;
+            document.getElementById('pdfViewerImg').alt = img.title || '';
+            document.getElementById('pdfViewerTitle').innerText = img.title || '';
+            document.getElementById('viewerImgCounter').innerText =
+                'صورة ' + (corrViewerIndex + 1) + ' من ' + corrViewerImages.length;
+            const downloadBtn = document.getElementById('pdfBtnDownload');
+            const ext = img.url.split('.').pop() || 'jpg';
+            downloadBtn.onclick = () => downloadPdf(img.url, (img.title || 'صورة') + '.' + ext);
+        }
+
+        function changeViewerImage(dir) {
+            corrViewerIndex = (corrViewerIndex + dir + corrViewerImages.length) % corrViewerImages.length;
+            renderViewerImage();
+        }
+
         function closePdfViewer() {
             document.getElementById('pdfViewerModal').style.display = 'none';
             document.getElementById('pdfViewerIframe').src = '';
+            document.getElementById('pdfViewerImg').src = '';
+            corrViewerImages = [];
         }
 
         function downloadPdf(url, filename) {
