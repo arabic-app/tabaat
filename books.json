@@ -123,7 +123,7 @@
       "التفسير"
     ],
     "notes": "لا يوجد حاليا \"أفضل طبعة\" لكتاب تفسير ابن كثير، لكل واحدة مميزات وعيوب، ومن أراد الاكتفاء بواحدة يأخذ واحدة من المذكورة. ننتظر صدور طبعة الدكتور محمد الفالح من سنوات، يسر الله صدورها.",
-    "date": "2026-07-04",
+    "date": "2026-07-08",
     "best_editions": [
       {
         "publisher": "دار ابن حزم",
@@ -158,7 +158,18 @@
           "https://arabic-app.github.io/tabaat/images/1782303334712-.png"
         ],
         "notes": "الطبعة الثانية وما بعدها",
-        "corrections": [],
+        "corrections": [
+          {
+            "title": "أخطاء لم تصوب حتى في الطبعة الرابعة",
+            "body": "<p dir=\"rtl\" style=\"margin: 0px 0px 0.2em; padding: 0px;\">نماذج من أخطاء جمعها الأخ أبو أحمد السميري على سبيل الذكر لا الحصر.</p>",
+            "attachments": [
+              {
+                "title": "أخطاء طبعة ابن الجوزي",
+                "url": "https://arabic-app.github.io/tabaat/corrections/1783516052239-.pdf"
+              }
+            ]
+          }
+        ],
         "verifier": "أبي إسحاق الحويني، حكمت بشير ياسين"
       }
     ],
@@ -559,44 +570,56 @@
       "الحديث"
     ],
     "notes": "",
+    "date": "2026-07-08",
     "best_editions": [
       {
+        "publisher": "التأصيل",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782632476136-47757959624173712986177835519393077196940699n.jpg"
         ],
         "notes": "",
-        "corrections": [],
-        "publisher": "التأصيل"
+        "corrections": []
       },
       {
-        "images": [
-          "https://arabic-app.github.io/tabaat/images/1782632797085-89a17d7a60214c4bad09d59b472986aa.jpg"
-        ],
-        "notes": "",
-        "corrections": [],
-        "publisher": "دار قرطبة تحقيق نظر الفاريابي"
-      },
-      {
+        "publisher": "مصورة العامرة دار المنهاج",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782632603062-47697390624173711419511326317269452434028510n.jpg"
         ],
         "notes": "",
-        "corrections": [],
-        "publisher": "مصورة العامرة دار المنهاج"
+        "corrections": []
+      },
+      {
+        "publisher": "دار قرطبة",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782632797085-89a17d7a60214c4bad09d59b472986aa.jpg"
+        ],
+        "notes": "",
+        "corrections": [
+          {
+            "title": "تنبيهات على تحقيق الشيخ نظر الفاريابي لصحيح الإمام مسلم",
+            "body": "<p dir=\"rtl\" class=\"p1\" style=\"margin: 0px; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-variant-position: normal; font-variant-emoji: normal; font-size-adjust: none; font-language-override: normal; font-kerning: auto; font-optical-sizing: auto; font-feature-settings: normal; font-variation-settings: normal; font-stretch: normal; line-height: normal;\"><font color=\"#000000\" face=\"Geeza Pro\"><span style=\"font-size: 13px;\">أبو عبد العزيز الدعجاني - منتدى الألوكة</span></font></p>",
+            "attachments": [
+              {
+                "title": "تنبيهات",
+                "url": "https://arabic-app.github.io/tabaat/corrections/1783516227493-.pdf"
+              }
+            ]
+          }
+        ],
+        "verifier": "نظر الفاريابي"
       }
     ],
     "alt_editions": [
       {
+        "publisher": "مؤسسة الرسالة ناشرون",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782633084363-47689151824173709286178208705605142039291752n.jpg"
         ],
         "notes": "",
-        "corrections": [],
-        "publisher": "مؤسسة الرسالة ناشرون"
+        "corrections": []
       }
     ],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 12,
