@@ -552,7 +552,7 @@
             "body": "محمد بن صالح بن محمد الدباسي",
             "attachments": [
               {
-                "title": "تاحيحصت",
+                "title": "تصحيحات وتتمات",
                 "url": "https://arabic-app.github.io/tabaat/corrections/1783543975090-.pdf"
               }
             ]
@@ -566,7 +566,18 @@
           "https://arabic-app.github.io/tabaat/images/1782302605929-.png"
         ],
         "notes": "",
-        "corrections": [],
+        "corrections": [
+          {
+            "title": "تصحيحات وتتمات من قطعة لفتح الباري لابن رجب",
+            "body": "محمد بن صالح بن محمد الدباسي",
+            "attachments": [
+              {
+                "title": "تصحيحات وتتمات",
+                "url": "https://arabic-app.github.io/tabaat/corrections/1783543975090-.pdf"
+              }
+            ]
+          }
+        ],
         "verifier": "طارق عوض الله"
       }
     ],
