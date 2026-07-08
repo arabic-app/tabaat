@@ -1891,48 +1891,95 @@
       "التراجم و الرجال"
     ],
     "notes": "",
+    "date": "2026-07-08",
     "best_editions": [
       {
+        "publisher": "الرسالة العالمية",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782302806905-2.png"
         ],
         "notes": "",
-        "corrections": [],
-        "publisher": "الرسالة العالمية"
+        "corrections": [
+          {
+            "title": "المجلد العاشر، الصفحة 504",
+            "body": "<div style=\"font-size: 15.2px;\">سير أعلام النبلاء مؤسسة الرسالة، الطبعة الثانية ، المجلد العاشر، الصفحة 504،</div><div style=\"font-size: 15.2px;\">في قول أبي عبيد الذي رواه عنه عباس الدوري كما ذكره ابن معين في تاريخه،</div><div style=\"font-size: 15.2px;\">سقط لفظان تم استبدالهما بنقاط</div><div style=\"font-size: 15.2px;\">بعد مراجعة :</div><div style=\"font-size: 15.2px;\">- تاريخ الإسلام بتحقيق تدمري ج 16 ص 327</div><div style=\"font-size: 15.2px;\">- وتاريخ الإسلام بتحقيق بشار عواد ج 5 ص 659</div><div style=\"font-size: 15.2px;\">يكون الصواب :</div><div style=\"font-size: 15.2px;\">ولا أضعف حجة من <b>الرافضة</b>. ولقد وليت قضاء الثغور فنفيت منهم ثلاثة رجال جهميين <b>ورافضيًا</b>، <b>أو رافضيين</b> وجهميًا</div>",
+            "attachments": [
+              {
+                "title": "التصويب 10_504",
+                "url": "https://arabic-app.github.io/tabaat/corrections/1783516980614-10504.jpeg"
+              },
+              {
+                "title": "10_504",
+                "url": "https://arabic-app.github.io/tabaat/corrections/1783516991158-10504.jpeg"
+              },
+              {
+                "title": "تاريخ الإسلام - بشار عواد - 5_659",
+                "url": "https://arabic-app.github.io/tabaat/corrections/1783517002977-5659.png"
+              },
+              {
+                "title": "تاريخ الإسلام - تدمري - 16_327",
+                "url": "https://arabic-app.github.io/tabaat/corrections/1783517019287-16327.png"
+              }
+            ]
+          }
+        ]
       },
       {
+        "publisher": "الرسالة ناشرون (مع تتمة الرسالة العالمية)",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782302766274-.jpeg"
         ],
         "notes": "",
-        "corrections": [],
-        "publisher": "الرسالة ناشرون (مع تتمة الرسالة العالمية)"
+        "corrections": [
+          {
+            "title": "المجلد العاشر، الصفحة 504",
+            "body": "<div>سير أعلام النبلاء مؤسسة الرسالة، الطبعة الثانية ، المجلد العاشر، الصفحة 504،</div><div>في قول أبي عبيد الذي رواه عنه عباس الدوري كما ذكره ابن معين في تاريخه،</div><div>سقط لفظان تم استبدالهما بنقاط</div><div>بعد مراجعة :</div><div>- تاريخ الإسلام بتحقيق تدمري ج 16 ص 327</div><div>- وتاريخ الإسلام بتحقيق بشار عواد ج 5 ص 659</div><div>يكون الصواب :</div><div>ولا أضعف حجة من <b>الرافضة</b>. ولقد وليت قضاء الثغور فنفيت منهم ثلاثة رجال جهميين <b>ورافضيًا</b>، <b>أو رافضيين</b> وجهميًا</div>",
+            "attachments": [
+              {
+                "title": "التصويب 10_504",
+                "url": "https://arabic-app.github.io/tabaat/corrections/1783516980614-10504.jpeg"
+              },
+              {
+                "title": "10_504",
+                "url": "https://arabic-app.github.io/tabaat/corrections/1783516991158-10504.jpeg"
+              },
+              {
+                "title": "تاريخ الإسلام - بشار عواد - 5_659",
+                "url": "https://arabic-app.github.io/tabaat/corrections/1783517002977-5659.png"
+              },
+              {
+                "title": "تاريخ الإسلام - تدمري - 16_327",
+                "url": "https://arabic-app.github.io/tabaat/corrections/1783517019287-16327.png"
+              }
+            ]
+          }
+        ]
       }
     ],
     "alt_editions": [
       {
+        "publisher": "دار الفكر",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782308406334-sl1600.jpeg"
         ],
         "notes": "",
-        "corrections": [],
-        "publisher": "دار الفكر"
+        "corrections": []
       },
       {
+        "publisher": "التوفيقية",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782667525506-images66.jpeg"
         ],
         "notes": "",
-        "corrections": [],
-        "publisher": "التوفيقية"
+        "corrections": []
       },
       {
+        "publisher": "الدار العالمية",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782667508433-images67.jpeg"
         ],
         "notes": "",
-        "corrections": [],
-        "publisher": "الدار العالمية"
+        "corrections": []
       }
     ],
     "links": [
