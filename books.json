@@ -2262,7 +2262,7 @@
       "الفقه"
     ],
     "notes": "هناك عدة أعمال في الطريق إن شاء الله",
-    "date": "2026-07-03",
+    "date": "2026-07-08",
     "best_editions": [
       {
         "publisher": "مركز سطور",
@@ -2281,7 +2281,30 @@
           "https://arabic-app.github.io/tabaat/images/1782632974532-47759139924173723319510135013143413284544895n.jpg"
         ],
         "notes": "",
-        "corrections": [],
+        "corrections": [
+          {
+            "title": "تعقبات على تحقیق كتاب المغني لابن قدامة",
+            "body": "الدكتور محمد حاج عيسى الجزائري",
+            "attachments": [
+              {
+                "title": "الحلقة الأولى",
+                "url": "https://arabic-app.github.io/tabaat/corrections/1783517738606-.pdf"
+              },
+              {
+                "title": "الحلقة الثانية",
+                "url": "https://arabic-app.github.io/tabaat/corrections/1783517743200-.pdf"
+              },
+              {
+                "title": "الحلقة الثالثة",
+                "url": "https://arabic-app.github.io/tabaat/corrections/1783517747789-.pdf"
+              },
+              {
+                "title": "الحلقة الرابعة",
+                "url": "https://arabic-app.github.io/tabaat/corrections/1783517752565-.pdf"
+              }
+            ]
+          }
+        ],
         "verifier": "عبد الله التركي، عبد الفتاح الحلو"
       },
       {
@@ -2290,7 +2313,30 @@
           "https://arabic-app.github.io/tabaat/images/1782633402606-images20260628T105412.986.jpeg"
         ],
         "notes": "",
-        "corrections": [],
+        "corrections": [
+          {
+            "title": "تعقبات على تحقیق كتاب المغني لابن قدامة",
+            "body": "",
+            "attachments": [
+              {
+                "title": "الحلقة الأولى",
+                "url": "https://arabic-app.github.io/tabaat/corrections/1783517738606-.pdf"
+              },
+              {
+                "title": "الحلقة الثانية",
+                "url": "https://arabic-app.github.io/tabaat/corrections/1783517743200-.pdf"
+              },
+              {
+                "title": "الحلقة الثالثة",
+                "url": "https://arabic-app.github.io/tabaat/corrections/1783517747789-.pdf"
+              },
+              {
+                "title": "الحلقة الرابعة",
+                "url": "https://arabic-app.github.io/tabaat/corrections/1783517752565-.pdf"
+              }
+            ]
+          }
+        ],
         "verifier": "عبد الله التركي، عبد الفتاح الحلو"
       },
       {
@@ -2299,7 +2345,30 @@
           "https://arabic-app.github.io/tabaat/images/1782633006559-48052864424237170679832067059185720790152408n.jpg"
         ],
         "notes": "",
-        "corrections": [],
+        "corrections": [
+          {
+            "title": "تعقبات على تحقیق كتاب المغني لابن قدامة",
+            "body": "<span style=\"font-size: 15.2px;\">الدكتور محمد حاج عيسى الجزائري</span>",
+            "attachments": [
+              {
+                "title": "الحلقة الأولى",
+                "url": "https://arabic-app.github.io/tabaat/corrections/1783517738606-.pdf"
+              },
+              {
+                "title": "الحلقة الثانية",
+                "url": "https://arabic-app.github.io/tabaat/corrections/1783517743200-.pdf"
+              },
+              {
+                "title": "الحلقة الثالثة",
+                "url": "https://arabic-app.github.io/tabaat/corrections/1783517747789-.pdf"
+              },
+              {
+                "title": "الحلقة الرابعة",
+                "url": "https://arabic-app.github.io/tabaat/corrections/1783517752565-.pdf"
+              }
+            ]
+          }
+        ],
         "verifier": "عبد الله التركي، عبد الفتاح الحلو"
       },
       {
