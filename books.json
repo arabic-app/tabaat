@@ -8024,21 +8024,21 @@
   },
   {
     "id": 283,
-    "title": "كتاب السنة",
+    "title": "كتاب السنة (للكرماني)",
     "author": "حرب بن إسماعيل الكرماني",
     "category": [
       "العقيدة"
     ],
     "notes": "",
-    "date": "2026-07-01",
+    "date": "2026-07-09",
     "best_editions": [
       {
+        "publisher": "دار اللؤلؤة",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782890921895-images66.jpeg"
         ],
         "notes": "ينتبه للشدة في تعليقات المحقق&nbsp;",
         "corrections": [],
-        "publisher": "دار اللؤلؤة",
         "verifier": "عادل آل حمدان"
       }
     ],
