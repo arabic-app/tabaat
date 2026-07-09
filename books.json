@@ -11293,5 +11293,29 @@
     ],
     "alt_editions": [],
     "links": []
+  },
+  {
+    "id": 412,
+    "title": "كتاب السنة (لعبد الله بن أحمد)",
+    "author": "عبد الله بن أحمد بن حنبل",
+    "category": [
+      "العقيدة"
+    ],
+    "notes": "",
+    "date": "2026-07-09",
+    "best_editions": [
+      {
+        "publisher": "دار اللؤلؤة",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1783591378240-.jpg",
+          "https://arabic-app.github.io/tabaat/images/1783591384876-379208scaled.jpg"
+        ],
+        "notes": "ينتبه للشدة في تعليقات المحقق",
+        "corrections": [],
+        "verifier": "عادل آل حمدان"
+      }
+    ],
+    "alt_editions": [],
+    "links": []
   }
 ]
