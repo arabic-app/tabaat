@@ -11341,5 +11341,29 @@
     ],
     "alt_editions": [],
     "links": []
+  },
+  {
+    "id": 414,
+    "title": "أحكام القرآن (للجصاص)",
+    "author": "أحمد علي الرازي الجصاص",
+    "category": [
+      "التفسير"
+    ],
+    "notes": "",
+    "date": "2026-07-09",
+    "best_editions": [
+      {
+        "publisher": "مركز تفسير للدراسات القرآنية",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1783613987083-images6.jpeg",
+          "https://arabic-app.github.io/tabaat/images/1783613917861-b69975f653e443598c379600ab24782a1000x552.27361057132VUuCmDThBElZzzzPjHsNlKLoxfjugSsoUJ9pfpbo.jpg"
+        ],
+        "notes": "",
+        "corrections": [],
+        "verifier": "محمد الأزهري، شحات البوشي، أحمد الأزهري زشراف عبد الرحمن الشهري، عبد الرحمن قائد"
+      }
+    ],
+    "alt_editions": [],
+    "links": []
   }
 ]
