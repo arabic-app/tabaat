@@ -11365,5 +11365,29 @@
     ],
     "alt_editions": [],
     "links": []
+  },
+  {
+    "id": 415,
+    "title": "الكشاف عن حقائق التنزيل",
+    "author": "محمود بن عمر الزمخشري",
+    "category": [
+      "التفسير"
+    ],
+    "notes": "",
+    "date": "2026-07-09",
+    "best_editions": [
+      {
+        "publisher": "دار اللباب",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1783614083678-3II7U8qDlZxZhIq8eI1bzi3idMKhuAoccg2adepk.jpg",
+          "https://arabic-app.github.io/tabaat/images/1783614090613-images5.jpeg"
+        ],
+        "notes": "تعليقات المحقق على الاعتزاليات توافق المذهب الأشعري",
+        "corrections": [],
+        "verifier": "ماهر اديب حبوش"
+      }
+    ],
+    "alt_editions": [],
+    "links": []
   }
 ]
