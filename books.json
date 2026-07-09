@@ -11317,5 +11317,29 @@
     ],
     "alt_editions": [],
     "links": []
+  },
+  {
+    "id": 413,
+    "title": "أحكام القرآن (لابن العربي)",
+    "author": "محمد بن عبد الله المعافري المالكي ابن العربي",
+    "category": [
+      "التفسير"
+    ],
+    "notes": "",
+    "date": "2026-07-09",
+    "best_editions": [
+      {
+        "publisher": "أسفار",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1783613815470-images8.jpeg",
+          "https://arabic-app.github.io/tabaat/images/1783613821427-GvgW2tXYAAjSE1.jpg"
+        ],
+        "notes": "",
+        "corrections": [],
+        "verifier": "خالد اللوزي"
+      }
+    ],
+    "alt_editions": [],
+    "links": []
   }
 ]
