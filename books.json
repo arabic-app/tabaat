@@ -11389,5 +11389,29 @@
     ],
     "alt_editions": [],
     "links": []
+  },
+  {
+    "id": 416,
+    "title": "النبأ العظيم",
+    "author": "محمد عبد الله دراز",
+    "category": [
+      "كتب متنوعة",
+      "علوم القرآن"
+    ],
+    "notes": "",
+    "date": "2026-07-11",
+    "best_editions": [
+      {
+        "publisher": "المكتبة العصرية",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1783763086142-images5.jpeg"
+        ],
+        "notes": "",
+        "corrections": [],
+        "verifier": "عمرو الشزقاوي"
+      }
+    ],
+    "alt_editions": [],
+    "links": []
   }
 ]
