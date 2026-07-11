@@ -534,6 +534,209 @@
             cursor: pointer;
             user-select: none;
         }
+
+        /* ===== SUGGESTIONS CARD ===== */
+        /* ===== SUGGESTIONS MODAL ===== */
+        .suggestions-modal-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.55);
+            backdrop-filter: blur(3px);
+            z-index: 2000;
+            align-items: flex-start;
+            justify-content: center;
+            padding: 24px 16px;
+            overflow-y: auto;
+        }
+        .suggestions-modal-overlay.visible { display: flex; }
+        .suggestions-modal {
+            background: var(--md-surface);
+            border-radius: 20px;
+            width: 100%;
+            max-width: 620px;
+            box-shadow: var(--md-elevation-2);
+            animation: dialogFadeIn 0.22s ease-out;
+            overflow: hidden;
+            margin: auto;
+        }
+        .suggestions-modal-header {
+            background: #1565c0;
+            color: white;
+            padding: 16px 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .suggestions-modal-header h3 {
+            margin: 0;
+            font-size: 1rem;
+            font-weight: 800;
+            flex: 1;
+        }
+        .suggestions-modal-body {
+            padding: 16px;
+            max-height: 70vh;
+            overflow-y: auto;
+        }
+        .suggestions-card-title {
+            /* kept for badge inside modal header */
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .btn-open-suggestions {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            height: 36px;
+            padding: 0 14px;
+            background: #1565c0;
+            color: white;
+            border: none;
+            border-radius: 18px;
+            font-family: inherit;
+            font-size: 0.85rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background 0.2s, box-shadow 0.2s;
+            box-shadow: var(--md-elevation-1);
+            position: relative;
+        }
+        .btn-open-suggestions:hover { background: #0d47a1; }
+        .btn-open-suggestions .notif-dot {
+            position: absolute;
+            top: -4px;
+            left: -4px;
+            width: 18px;
+            height: 18px;
+            background: #f44336;
+            border-radius: 50%;
+            font-size: 0.68rem;
+            font-weight: 800;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid var(--md-surface);
+            display: none;
+        }
+        .btn-modal-close-suggestions {
+            background: rgba(255,255,255,0.15);
+            border: none;
+            color: white;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s;
+        }
+        .btn-modal-close-suggestions:hover { background: rgba(255,255,255,0.28); }
+        .suggestions-count-badge {
+            background: #1565c0;
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 800;
+            padding: 1px 8px;
+            border-radius: 10px;
+            min-width: 22px;
+            text-align: center;
+        }
+        .suggestions-empty {
+            text-align: center;
+            padding: 20px;
+            color: var(--md-on-surface-variant);
+            font-size: 0.9rem;
+        }
+        .suggestions-empty .material-icons-round { font-size: 36px; display: block; margin-bottom: 8px; opacity: 0.4; }
+        .suggestion-item {
+            background: var(--md-background);
+            border: 1px solid var(--md-outline-variant);
+            border-radius: 12px;
+            padding: 14px 16px;
+            margin-bottom: 10px;
+            display: flex;
+            gap: 14px;
+            align-items: flex-start;
+            transition: box-shadow 0.2s;
+        }
+        .suggestion-item:hover { box-shadow: var(--md-elevation-1); }
+        .suggestion-body { flex: 1; min-width: 0; }
+        .suggestion-book {
+            font-weight: 800;
+            font-size: 1rem;
+            color: var(--md-on-surface);
+            margin-bottom: 4px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .suggestion-book .material-icons-round { font-size: 16px; color: #1565c0; }
+        .suggestion-detail {
+            font-size: 0.82rem;
+            color: var(--md-on-surface-variant);
+            line-height: 1.6;
+        }
+        .suggestion-detail strong { color: var(--md-on-surface); }
+        .suggestion-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            flex-shrink: 0;
+        }
+        .btn-accept-suggestion {
+            height: 34px;
+            padding: 0 12px;
+            background: #e8f5e9;
+            color: #1b5e20;
+            border: 1px solid #a5d6a7;
+            border-radius: 17px;
+            font-family: inherit;
+            font-size: 0.82rem;
+            font-weight: 700;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            white-space: nowrap;
+            transition: background 0.2s;
+        }
+        .btn-accept-suggestion:hover { background: #c8e6c9; }
+        .btn-reject-suggestion {
+            height: 34px;
+            padding: 0 12px;
+            background: var(--md-error-container);
+            color: var(--md-error);
+            border: 1px solid #ffcdd2;
+            border-radius: 17px;
+            font-family: inherit;
+            font-size: 0.82rem;
+            font-weight: 700;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            white-space: nowrap;
+            transition: background 0.2s;
+        }
+        .btn-reject-suggestion:hover { background: #ffcdd2; }
+        .suggestions-refresh-btn {
+            background: transparent;
+            border: none;
+            color: #1565c0;
+            cursor: pointer;
+            padding: 4px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            transition: background 0.2s;
+            margin-right: auto;
+        }
+        .suggestions-refresh-btn:hover { background: rgba(21,101,192,0.1); }
+        .suggestions-refresh-btn .material-icons-round { font-size: 18px; }
     </style>
 </head>
 <body>
@@ -604,6 +807,11 @@
                 <input type="password" id="githubToken" class="github-token-input" placeholder="GitHub Personal Access Token...">
                 <button class="md-btn md-btn-purple" onclick="syncToGitHub()">
                     <span class="material-icons-round">rocket_launch</span> تحديث الموقع
+                </button>
+                <button class="btn-open-suggestions" onclick="openSuggestionsModal()" title="الاقتراحات الواردة">
+                    <span class="material-icons-round" style="font-size:18px">lightbulb</span>
+                    الاقتراحات
+                    <span class="notif-dot" id="suggestionsNotifDot"></span>
                 </button>
             </div>
             <!--<p style="margin: 0 0 10px; font-size: 0.85rem; color: var(--md-on-surface-variant);">أو احفظ نسخة يدوية:</p>
@@ -705,6 +913,29 @@
     </main>
 </div>
 
+<!-- SUGGESTIONS MODAL -->
+<div id="suggestionsModalOverlay" class="suggestions-modal-overlay" onclick="handleSuggestionsOverlayClick(event)">
+    <div class="suggestions-modal">
+        <div class="suggestions-modal-header">
+            <span class="material-icons-round">lightbulb</span>
+            <h3>الاقتراحات الواردة</h3>
+            <span class="suggestions-count-badge" id="suggestionsModalBadge" style="background:rgba(255,255,255,0.25);">0</span>
+            <button class="btn-modal-close-suggestions" onclick="loadSuggestions(true)" title="تحديث" aria-label="تحديث">
+                <span class="material-icons-round">refresh</span>
+            </button>
+            <button class="btn-modal-close-suggestions" onclick="closeSuggestionsModal()" aria-label="إغلاق">
+                <span class="material-icons-round">close</span>
+            </button>
+        </div>
+        <div class="suggestions-modal-body" id="suggestionsContainer">
+            <div class="suggestions-empty">
+                <span class="material-icons-round" style="animation:spin 1s linear infinite">sync</span>
+                جاري تحميل الاقتراحات...
+            </div>
+        </div>
+    </div>
+</div>
+
 <div id="deleteModal" class="delete-overlay">
     <div class="delete-modal">
         <span class="material-icons-round">warning</span>
@@ -717,11 +948,32 @@
     </div>
 </div>
 
+<div id="rejectSuggestionModal" class="delete-overlay" style="z-index: 3000;">
+    <div class="delete-modal">
+        <span class="material-icons-round">block</span>
+        <h3>رفض الاقتراح</h3>
+        <p>هل تريد رفض وحذف هذا الاقتراح نهائياً؟ لا يمكن التراجع عن هذه الخطوة.</p>
+        <div class="delete-modal-actions">
+            <button class="md-btn md-btn-secondary" onclick="closeRejectModal()">إلغاء</button>
+            <button class="md-btn md-btn-error" onclick="executeRejectSuggestion()">نعم، ارفض الاقتراح</button>
+        </div>
+    </div>
+</div>
+
 <div id="toast"></div>
+
+<!-- Hidden iframe for suggestion deletion via Apps Script -->
+<iframe id="suggestionDeleteFrame" name="suggestionDeleteFrame" style="display:none" aria-hidden="true"></iframe>
 
 <script>
     let booksData = [];
     let sciencesData = [];
+    let suggestionsData = []; // rows from Google Sheet
+    let currentSuggestionRow = null; // row index in sheet if editing from suggestion
+
+    // Google Sheet for suggestions
+    const SHEET_ID       = '198s1pSV_I_wF6DDTHLD2lnWoPBCqrCNAzzh1YugeIfA';
+    const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxUiOlpoWzUCPSjKsRITmmgKBDsEvyllq5iNTOS3ihFj6CS0lFwQ59BXQ9ZGZTBILkSBw/exec';
 
     function normalizeArabic(str) {
         if (!str) return '';
@@ -748,6 +1000,7 @@
         booksData = books;
         sciencesData = sciences;
         renderSidebar();
+        loadSuggestions();
     });
 
     /* ---- SIDEBAR ---- */
@@ -831,6 +1084,192 @@
     function closeSidebar() {
         document.getElementById('sidebar').classList.remove('open');
         document.getElementById('overlay').classList.remove('visible');
+    }
+
+    /* ---- SUGGESTIONS MODAL ---- */
+    function openSuggestionsModal() {
+        document.getElementById('suggestionsModalOverlay').classList.add('visible');
+        document.body.style.overflow = 'hidden';
+    }
+    function closeSuggestionsModal() {
+        document.getElementById('suggestionsModalOverlay').classList.remove('visible');
+        document.body.style.overflow = '';
+    }
+    function handleSuggestionsOverlayClick(e) {
+        if (e.target === document.getElementById('suggestionsModalOverlay')) closeSuggestionsModal();
+    }
+
+    /* ---- SUGGESTIONS ---- */
+    function parseCSV(text) {
+        const lines = text.trim().split('\n');
+        if (lines.length < 1) return [];
+        const headers = lines[0].split(',').map(h => h.trim().replace(/^"|"$/g, ''));
+        const rows = [];
+        for (let i = 1; i < lines.length; i++) {
+            if (!lines[i].trim()) continue;
+            const cols = lines[i].split(',').map(c => c.trim().replace(/^"|"$/g, ''));
+            const obj = { _rowIndex: i + 1 }; // 1-based sheet row (row 1 = header)
+            headers.forEach((h, j) => { obj[h] = cols[j] || ''; });
+            rows.push(obj);
+        }
+        return rows;
+    }
+
+    function loadSuggestions(forceRefresh = false) {
+        const container = document.getElementById('suggestionsContainer');
+        container.innerHTML = '<div class="suggestions-empty"><span class="material-icons-round" style="animation:spin 1s linear infinite;display:block;margin:0 auto 8px;font-size:28px;opacity:0.5">sync</span>جاري التحميل...</div>';
+        fetch('https://docs.google.com/spreadsheets/d/' + SHEET_ID + '/export?format=csv&t=' + Date.now(), { cache: 'no-store' })
+            .then(r => r.ok ? r.text() : '')
+            .then(csvText => {
+                suggestionsData = csvText ? parseCSV(csvText) : [];
+                renderSuggestions();
+            })
+            .catch(() => {
+                suggestionsData = [];
+                container.innerHTML = '<div class="suggestions-empty"><span class="material-icons-round" style="font-size:28px;display:block;margin:0 auto 8px;opacity:0.4">error_outline</span>تعذّر تحميل الاقتراحات</div>';
+                document.getElementById('suggestionsModalBadge').textContent = '!';
+            });
+    }
+
+    function renderSuggestions() {
+        const container = document.getElementById('suggestionsContainer');
+        const count = suggestionsData.length;
+        document.getElementById('suggestionsModalBadge').textContent = count;
+        const dot = document.getElementById('suggestionsNotifDot');
+        if (dot) { dot.textContent = count > 9 ? '9+' : count; dot.style.display = count > 0 ? 'flex' : 'none'; }
+        if (suggestionsData.length === 0) {
+            container.innerHTML = '<div class="suggestions-empty"><span class="material-icons-round">check_circle</span>لا توجد اقتراحات جديدة</div>';
+            return;
+        }
+
+        container.innerHTML = '';
+        suggestionsData.forEach(row => {
+            const book     = row['الكتاب']        || row['book']     || '';
+            const edition  = row['أفضل طبعة']     || row['edition']  || '';
+            const verifier = row['المحقق']         || row['verifier'] || '';
+            const source   = row['مصدر التفضيل']  || row['source']   || '';
+            const rowIdx   = row._rowIndex;
+
+            const item = document.createElement('div');
+            item.className = 'suggestion-item';
+            item.dataset.rowIndex = rowIdx;
+            item.innerHTML = `
+                <div class="suggestion-body">
+                    <div class="suggestion-book">
+                        <span class="material-icons-round">menu_book</span>
+                        ${escapeHtml(book)}
+                    </div>
+                    <div class="suggestion-detail">
+                        ${edition  ? `<span><strong>الطبعة:</strong> ${escapeHtml(edition)}</span><br>` : ''}
+                        ${verifier ? `<span><strong>المحقق:</strong> ${escapeHtml(verifier)}</span><br>` : ''}
+                        ${source   ? `<span><strong>المصدر:</strong> ${escapeHtml(source)}</span>` : ''}
+                    </div>
+                </div>
+                <div class="suggestion-actions">
+                    <button class="btn-accept-suggestion" onclick="acceptSuggestion(${rowIdx}, '${escapeAttr(book)}', '${escapeAttr(edition)}', '${escapeAttr(verifier)}', '${escapeAttr(source)}')">
+                        <span class="material-icons-round" style="font-size:14px">check</span> قبول
+                    </button>
+                    <button class="btn-reject-suggestion" onclick="rejectSuggestion(${rowIdx}, this)">
+                        <span class="material-icons-round" style="font-size:14px">close</span> رفض
+                    </button>
+                </div>`;
+            container.appendChild(item);
+        });
+    }
+
+    function escapeHtml(str) {
+        return String(str || '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+    }
+    function escapeAttr(str) {
+        return String(str || '').replace(/'/g, "\\'").replace(/\n/g, ' ');
+    }
+
+    function acceptSuggestion(rowIndex, book, edition, verifier, source) {
+        // Open new book form
+        createNewBook();
+        // Pre-fill fields
+        document.getElementById('title').value    = book;
+        document.getElementById('author').value   = '';
+        // Pre-fill first best edition
+        const bestEditionsContainer = document.getElementById('bestEditions');
+        if (bestEditionsContainer.children.length > 0) {
+            const firstRow = bestEditionsContainer.querySelector('.dynamic-row');
+            if (firstRow) {
+                const pubInput = firstRow.querySelector('.ed-publisher');
+                const verInput = firstRow.querySelector('.ed-verifier');
+                if (pubInput) pubInput.value = edition;
+                if (verInput) verInput.value = verifier;
+                if (source) {
+                    const notesEl = firstRow.querySelector('.ed-notes');
+                    if (notesEl) notesEl.innerHTML = escapeHtml(source);
+                }
+            }
+        }
+        // Store suggestion origin
+        currentSuggestionRow = rowIndex;
+        // Close modal and scroll to form
+        closeSuggestionsModal();
+        // Mark the pending suggestion item
+        document.querySelectorAll('.suggestion-item').forEach(el => {
+            el.style.opacity = el.dataset.rowIndex == rowIndex ? '0.5' : '';
+        });
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        showToast('✅ تم تحميل الاقتراح في النموذج — راجع البيانات قبل الحفظ');
+    }
+
+    let pendingRejectRowIndex = null;
+    let pendingRejectBtn      = null;
+
+    function rejectSuggestion(rowIndex, btn) {
+        pendingRejectRowIndex = rowIndex;
+        pendingRejectBtn      = btn;
+        document.getElementById('rejectSuggestionModal').classList.add('visible');
+    }
+    function closeRejectModal() {
+        document.getElementById('rejectSuggestionModal').classList.remove('visible');
+        pendingRejectRowIndex = null;
+        pendingRejectBtn      = null;
+    }
+    function executeRejectSuggestion() {
+        if (pendingRejectRowIndex === null) return;
+        const rowIndex = pendingRejectRowIndex;
+        const btn      = pendingRejectBtn;
+        closeRejectModal();
+        if (btn) { btn.disabled = true; }
+        deleteSuggestionFromSheet(rowIndex, () => {
+            const item = document.querySelector('.suggestion-item[data-row-index="' + rowIndex + '"]');
+            if (item) item.remove();
+            suggestionsData = suggestionsData.filter(r => r._rowIndex !== rowIndex);
+            const newCount = suggestionsData.length;
+            document.getElementById('suggestionsModalBadge').textContent = newCount;
+            const dot = document.getElementById('suggestionsNotifDot');
+            if (dot) { dot.textContent = newCount > 9 ? '9+' : newCount; dot.style.display = newCount > 0 ? 'flex' : 'none'; }
+            if (suggestionsData.length === 0) {
+                document.getElementById('suggestionsContainer').innerHTML =
+                    '<div class="suggestions-empty"><span class="material-icons-round">check_circle</span>لا توجد اقتراحات جديدة</div>';
+            }
+            showToast('🗑️ تم رفض الاقتراح وحذفه');
+        });
+    }
+
+    function deleteSuggestionFromSheet(rowIndex, onDone) {
+        const hiddenForm = document.createElement('form');
+        hiddenForm.method = 'POST';
+        hiddenForm.action = APPS_SCRIPT_URL;
+        hiddenForm.target = 'suggestionDeleteFrame';
+        hiddenForm.style.display = 'none';
+        const addInput = (name, value) => {
+            const inp = document.createElement('input');
+            inp.type = 'hidden'; inp.name = name; inp.value = value;
+            hiddenForm.appendChild(inp);
+        };
+        addInput('action', 'delete');
+        addInput('rowIndex', rowIndex);
+        document.body.appendChild(hiddenForm);
+        hiddenForm.submit();
+        document.body.removeChild(hiddenForm);
+        // Call onDone after short delay (response is opaque)
+        setTimeout(onDone, 1200);
     }
 
     /* ---- DRAG AND DROP BINDING ---- */
@@ -1245,7 +1684,26 @@
 
         document.getElementById('bookId').value = id;
         document.getElementById('btnDeleteBook').style.display = 'inline-flex';
-        
+
+        // If saved from a suggestion → delete that suggestion from sheet
+        if (currentSuggestionRow !== null) {
+            const savedRow = currentSuggestionRow;
+            currentSuggestionRow = null;
+            deleteSuggestionFromSheet(savedRow, () => {
+                suggestionsData = suggestionsData.filter(r => r._rowIndex !== savedRow);
+                const newCount = suggestionsData.length;
+                document.getElementById('suggestionsModalBadge').textContent = newCount;
+                const dot = document.getElementById('suggestionsNotifDot');
+                if (dot) { dot.textContent = newCount > 9 ? '9+' : newCount; dot.style.display = newCount > 0 ? 'flex' : 'none'; }
+                const item = document.querySelector('.suggestion-item[data-row-index="' + savedRow + '"]');
+                if (item) item.remove();
+                if (suggestionsData.length === 0) {
+                    document.getElementById('suggestionsContainer').innerHTML =
+                        '<div class="suggestions-empty"><span class="material-icons-round">check_circle</span>لا توجد اقتراحات جديدة</div>';
+                }
+            });
+        }
+
         renderSidebar(document.getElementById('adminSearchInput').value);
         showToast('💾 تم الحفظ في الذاكرة. لا تنسَ تحديث الموقع ليتم الرفع!');
     }
@@ -1421,6 +1879,8 @@
                 hideBanner();
                 headerInstallBtn.style.display = 'none';
                 deferredPrompt = null;
+            });
+        } // end else
         // Intercept clicks on links in standalone/app mode to force system browser
         document.addEventListener('click', function(e) {
             const a = e.target.closest('a');

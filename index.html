@@ -1063,6 +1063,10 @@
                 <span class="material-icons-round">info</span>
                 عن التطبيق
             </li>
+            <li class="sidebar-nav-item" id="nav-suggest" onclick="showView('suggest')">
+                <span class="material-icons-round">add_circle_outline</span>
+                اقترح طبعة
+            </li>
             <li class="sidebar-nav-item" id="nav-help" onclick="showView('help')" style="display: none;">
                 <span class="material-icons-round">help</span>
                 مساعدة
@@ -1110,6 +1114,11 @@
     <!-- HELP VIEW -->
     <div class="container view" id="view-help">
         <div id="helpContainer"></div>
+    </div>
+
+    <!-- SUGGEST VIEW -->
+    <div class="view" id="view-suggest" style="padding:0;">
+        <iframe id="suggestFrame" src="" style="width:100%;border:none;min-height:calc(100vh - 56px);display:block;" title="اقتراح أفضل طبعة"></iframe>
     </div>
 
     <div id="infoModal" class="modal">
@@ -1614,6 +1623,7 @@
             if (view === 'reviews') loadReviews();
             if (view === 'about')   loadAbout();
             if (view === 'help')    loadHelp();
+            if (view === 'suggest') loadSuggestFrame();
         }
 
         /* ===== REVIEWS ===== */
@@ -1715,6 +1725,15 @@
                     container.innerHTML = `<div class="empty-state"><span class="material-icons-round">error_outline</span><p>تعذّر تحميل دليل التثبيت.</p></div>`;
                 });
         }
+
+        /* ===== SUGGEST FRAME ===== */
+        let suggestFrameLoaded = false;
+        function loadSuggestFrame() {
+            if (suggestFrameLoaded) return;
+            suggestFrameLoaded = true;
+            document.getElementById('suggestFrame').src = 'add.html';
+        }
+
     </script>
 
     <!-- ===== PWA + PULL-TO-REFRESH SCRIPT ===== -->
