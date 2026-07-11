@@ -7,7 +7,7 @@
      - HTML/CSS/fonts               → Network First avec fallback cache
    ===================================================== */
 
-const CACHE_NAME = 'tabaat-v6';
+const CACHE_NAME = 'tabaat-v7';
 const STATIC_ASSETS = [
   './',
   './index.html',

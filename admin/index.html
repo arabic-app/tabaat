@@ -1143,36 +1143,42 @@
         }
 
         container.innerHTML = '';
-        suggestionsData.forEach(row => {
+        suggestionsData.forEach((row, arrIdx) => {
             const book     = row['الكتاب']        || row['book']     || '';
             const edition  = row['أفضل طبعة']     || row['edition']  || '';
             const verifier = row['المحقق']         || row['verifier'] || '';
             const source   = row['مصدر التفضيل']  || row['source']   || '';
             const rowIdx   = row._rowIndex;
 
+            // Parse multiple editions (separator ##)
+            const editions  = edition.split('##').map(s => s.trim()).filter(Boolean);
+            const verifiers = verifier.split('##').map(s => s.trim()).filter(Boolean);
+
+            const editionsHTML = editions.length
+                ? editions.map((ed, i) =>
+                    '<div style="margin-bottom:3px">' +
+                    (editions.length > 1 ? '<strong style="color:var(--md-primary)">طبعة ' + (i+1) + ':</strong> ' : '<strong>الطبعة:</strong> ') +
+                    escapeHtml(ed) +
+                    (verifiers[i] ? ' — <span style="color:var(--md-outline)">المحقق: ' + escapeHtml(verifiers[i]) + '</span>' : '') +
+                    '</div>'
+                  ).join('')
+                : '';
+
             const item = document.createElement('div');
             item.className = 'suggestion-item';
             item.dataset.rowIndex = rowIdx;
-            item.innerHTML = `
-                <div class="suggestion-body">
-                    <div class="suggestion-book">
-                        <span class="material-icons-round">menu_book</span>
-                        ${escapeHtml(book)}
-                    </div>
-                    <div class="suggestion-detail">
-                        ${edition  ? `<span><strong>الطبعة:</strong> ${escapeHtml(edition)}</span><br>` : ''}
-                        ${verifier ? `<span><strong>المحقق:</strong> ${escapeHtml(verifier)}</span><br>` : ''}
-                        ${source   ? `<span><strong>المصدر:</strong> ${escapeHtml(source)}</span>` : ''}
-                    </div>
-                </div>
-                <div class="suggestion-actions">
-                    <button class="btn-accept-suggestion" onclick="acceptSuggestion(${rowIdx}, '${escapeAttr(book)}', '${escapeAttr(edition)}', '${escapeAttr(verifier)}', '${escapeAttr(source)}')">
-                        <span class="material-icons-round" style="font-size:14px">check</span> قبول
-                    </button>
-                    <button class="btn-reject-suggestion" onclick="rejectSuggestion(${rowIdx}, this)">
-                        <span class="material-icons-round" style="font-size:14px">close</span> رفض
-                    </button>
-                </div>`;
+            item.innerHTML =
+                '<div class="suggestion-body">' +
+                '<div class="suggestion-book"><span class="material-icons-round">menu_book</span>' + escapeHtml(book) + '</div>' +
+                '<div class="suggestion-detail">' + editionsHTML +
+                (source ? '<div style="margin-top:4px"><strong>المصدر:</strong> ' + escapeHtml(source) + '</div>' : '') +
+                '</div></div>' +
+                '<div class="suggestion-actions">' +
+                '<button class="btn-accept-suggestion" onclick="acceptSuggestion(' + arrIdx + ')">' +
+                '<span class="material-icons-round" style="font-size:14px">check</span> قبول</button>' +
+                '<button class="btn-reject-suggestion" onclick="rejectSuggestion(' + rowIdx + ', this)">' +
+                '<span class="material-icons-round" style="font-size:14px">close</span> رفض</button>' +
+                '</div>';
             container.appendChild(item);
         });
     }
@@ -1184,32 +1190,38 @@
         return String(str || '').replace(/'/g, "\\'").replace(/\n/g, ' ');
     }
 
-    function acceptSuggestion(rowIndex, book, edition, verifier, source) {
+    function acceptSuggestion(arrIdx) {
+        const row = suggestionsData[arrIdx];
+        if (!row) return;
+        const book      = row['الكتاب']        || row['book']     || '';
+        const edition   = row['أفضل طبعة']     || row['edition']  || '';
+        const verifier  = row['المحقق']         || row['verifier'] || '';
+        const source    = row['مصدر التفضيل']  || row['source']   || '';
+        const rowIndex  = row._rowIndex;
+
+        const editions  = edition.split('##').map(s => s.trim()).filter(Boolean);
+        const verifiers = verifier.split('##').map(s => s.trim()).filter(Boolean);
+
         // Open new book form
         createNewBook();
-        // Pre-fill fields
-        document.getElementById('title').value    = book;
-        document.getElementById('author').value   = '';
-        // Pre-fill first best edition
+        document.getElementById('title').value  = book;
+        document.getElementById('author').value = '';
+
+        // Clear auto-added edition row and fill from suggestion
         const bestEditionsContainer = document.getElementById('bestEditions');
-        if (bestEditionsContainer.children.length > 0) {
-            const firstRow = bestEditionsContainer.querySelector('.dynamic-row');
-            if (firstRow) {
-                const pubInput = firstRow.querySelector('.ed-publisher');
-                const verInput = firstRow.querySelector('.ed-verifier');
-                if (pubInput) pubInput.value = edition;
-                if (verInput) verInput.value = verifier;
-                if (source) {
-                    const notesEl = firstRow.querySelector('.ed-notes');
-                    if (notesEl) notesEl.innerHTML = escapeHtml(source);
-                }
-            }
+        bestEditionsContainer.innerHTML = '';
+
+        if (editions.length > 0) {
+            editions.forEach((ed, i) => {
+                const notes = (i === 0 && source) ? source : '';
+                addEditionRow('bestEditions', ed, [], notes, [], verifiers[i] || '');
+            });
+        } else {
+            addEditionRow('bestEditions');
         }
-        // Store suggestion origin
+
         currentSuggestionRow = rowIndex;
-        // Close modal and scroll to form
         closeSuggestionsModal();
-        // Mark the pending suggestion item
         document.querySelectorAll('.suggestion-item').forEach(el => {
             el.style.opacity = el.dataset.rowIndex == rowIndex ? '0.5' : '';
         });

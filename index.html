@@ -1677,16 +1677,19 @@
             aboutLoaded = true;
             const container = document.getElementById('aboutContainer');
             fetch('infos.html?_t=' + Date.now(), { cache: 'no-store' })
-                .then(r => r.text())
+                .then(r => {
+                    if (!r.ok) throw new Error('HTTP ' + r.status);
+                    return r.text();
+                })
                 .then(html => {
                     container.innerHTML = `<div class="about-card">${html}</div>`;
-                    // Update books count after HTML is injected
                     const booksCountEl = document.getElementById('about-total-books');
                     if (booksCountEl && booksData.length > 0) {
                         booksCountEl.textContent = booksData.length;
                     }
                 })
                 .catch(() => {
+                    aboutLoaded = false;
                     container.innerHTML = `<div class="empty-state"><span class="material-icons-round">error_outline</span><p>تعذّر تحميل المعلومات.</p></div>`;
                 });
         }
