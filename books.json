@@ -1913,10 +1913,10 @@
       "التراجم و الرجال"
     ],
     "notes": "",
-    "date": "2026-07-08",
+    "date": "2026-07-11",
     "best_editions": [
       {
-        "publisher": "الرسالة العالمية",
+        "publisher": "دار الرسالة العالمية",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782302806905-2.png"
         ],
@@ -1947,11 +1947,11 @@
         ]
       },
       {
-        "publisher": "الرسالة ناشرون (مع تتمة الرسالة العالمية)",
+        "publisher": "مؤسسة الرسالة ناشرون",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782302766274-.jpeg"
         ],
-        "notes": "",
+        "notes": "مع تكملة دار الرسالة العالمية",
         "corrections": [
           {
             "title": "المجلد العاشر، الصفحة 504",
