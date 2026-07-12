@@ -6721,22 +6721,23 @@
     "title": "كتاب المحنة - عبد الغني بن عبد الواحد المقدسي",
     "author": "عبد الغني بن عبد الواحد المقدسي",
     "category": [
-      "التراجم و الرجال"
+      "التراجم والرجال"
     ],
     "notes": "",
+    "date": "2026-07-12",
     "best_editions": [
       {
+        "publisher": "مسك",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782718983118-0437589af0264c84bfe08cb294765d52thumbnail1000x100070.jpg"
         ],
         "notes": "",
-        "verifier": "أبي جنة الحنبلي",
-        "publisher": "مسك"
+        "corrections": [],
+        "verifier": "أبي جنة الحنبلي"
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 230,
