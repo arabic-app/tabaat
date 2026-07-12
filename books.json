@@ -6677,22 +6677,23 @@
     "title": "كتاب المحنة (رواية حنبل بن إسحاق بن حنبل)",
     "author": "رواية حنبل بن إسحاق بن حنبل",
     "category": [
-      "التراجم و الرجال"
+      "التراجم والرجال"
     ],
     "notes": "",
+    "date": "2026-07-12",
     "best_editions": [
       {
+        "publisher": "مركز الملك فيصل",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782719006624-images90.jpeg"
         ],
         "notes": "",
-        "verifier": "أبي جنة الحنبلي",
-        "publisher": "مركز الملك فيصل"
+        "corrections": [],
+        "verifier": "أبي جنة الحنبلي"
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 228,
