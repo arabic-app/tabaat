@@ -7225,22 +7225,23 @@
     "title": "الأعلام العلية في مناقب شيخ الإسلام ابن تيمية",
     "author": "البزار",
     "category": [
-      "التراجم و الرجال"
+      "التراجم والرجال"
     ],
     "notes": "",
+    "date": "2026-07-12",
     "best_editions": [
       {
+        "publisher": "دار عطاءات العلم",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782573900435-images20260627T174226.286.jpeg"
         ],
         "notes": "",
-        "verifier": "علي العمران",
-        "publisher": "دار عطاءات العلم"
+        "corrections": [],
+        "verifier": "علي العمران"
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 252,
