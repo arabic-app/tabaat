@@ -5633,21 +5633,22 @@
     "title": "الأشاعرة و الماتريدية في ميزان أهل السنة و الجماعة",
     "author": "القسم العلمي بمؤسسة الدرر السنية بإشراف علوي السقاف",
     "category": [
-      "الأديان و الفرق"
+      "الأديان والفرق والمذاهب"
     ],
     "notes": "",
+    "date": "2026-07-12",
     "best_editions": [
       {
+        "publisher": "الدرر السنية",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782568163506-images20260627T164910.020.jpeg"
         ],
         "notes": "",
-        "publisher": "الدرر السنية"
+        "corrections": []
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 181,
