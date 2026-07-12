@@ -7183,21 +7183,22 @@
     "title": "الجامع لسيرة شيخ الإسلام ابن تيمية خلال سبعة قرون",
     "author": "جمع عزير شمس و على العمران",
     "category": [
-      "التراجم و الرجال"
+      "التراجم والرجال"
     ],
     "notes": "",
+    "date": "2026-07-12",
     "best_editions": [
       {
+        "publisher": "دار عطاءات العلم",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782587804420-92eaf52bd5b1412395a8f500d9716d7c335.61058923997x500HdUqJqMXKq6VA7J3hfInZWhko89bYtkrisXss4xJ.png"
         ],
         "notes": "",
-        "publisher": "دار عطاءات العلم"
+        "corrections": []
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 250,
