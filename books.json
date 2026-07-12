@@ -970,7 +970,7 @@
       "الحديث"
     ],
     "notes": "",
-    "date": "2026-07-03",
+    "date": "2026-07-12",
     "best_editions": [
       {
         "publisher": "دار الصديق",
@@ -984,9 +984,10 @@
       {
         "publisher": "دار التأصيل",
         "images": [
-          "https://arabic-app.github.io/tabaat/images/1782631293826-47790127224173708886178242660615155591011095n1.jpg"
+          "https://arabic-app.github.io/tabaat/images/1782631293826-47790127224173708886178242660615155591011095n1.jpg",
+          "https://arabic-app.github.io/tabaat/images/1783885278539-images6.jpeg"
         ],
-        "notes": "عدة مجلدات، الطبعة الثانية وما بعدها",
+        "notes": "عدة مجلدات",
         "corrections": []
       }
     ],
@@ -6837,8 +6838,8 @@
     "category": [
       "كتب متنوعة"
     ],
-    "notes": "",
-    "date": "2026-07-04",
+    "notes": "ينتظر ط الصحابة ت عبد الفتاح سرور جمعت بين الروايتين",
+    "date": "2026-07-12",
     "best_editions": [
       {
         "publisher": "دار البشائر الإسلامية",
@@ -6857,15 +6858,6 @@
         "notes": "الزهد والرقائق (رواية الحسين بن الحسن المروزي)",
         "corrections": [],
         "verifier": "عادل مرشد"
-      },
-      {
-        "publisher": "دار الصحابة",
-        "images": [
-          "https://arabic-app.github.io/tabaat/images/1782718284193-IMG20260629093017185.jpg"
-        ],
-        "notes": "رواية المروزي مع زيادات نعيم بن حماد",
-        "corrections": [],
-        "verifier": "عبد الفتاح سرور"
       }
     ],
     "alt_editions": [],
