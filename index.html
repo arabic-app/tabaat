@@ -210,6 +210,80 @@
             flex-shrink: 0;
         }
 
+        /* ===== DARK MODE ===== */
+        body.dark-mode {
+            --md-primary: #4db6ac;
+            --md-on-primary: #00201a;
+            --md-primary-container: #004d40;
+            --md-on-primary-container: #b2dfdb;
+            --md-background: #121212;
+            --md-surface: #1e1e1e;
+            --md-surface-variant: #2c2c2c;
+            --md-on-surface: #e0e0e0;
+            --md-on-surface-variant: #a0a0a0;
+            --md-outline: #686868;
+            --md-outline-variant: #3a3a3a;
+            --md-secondary: #4db6ac;
+            --md-elevation-1: 0px 1px 3px 1px rgba(0,0,0,0.4), 0px 1px 2px 0px rgba(0,0,0,0.5);
+            --md-elevation-2: 0px 2px 6px 2px rgba(0,0,0,0.4), 0px 1px 2px 0px rgba(0,0,0,0.5);
+        }
+
+        /* ===== DARK MODE SWITCH ===== */
+        .sidebar-footer {
+            border-top: 1px solid var(--md-outline-variant);
+            padding: 14px 22px;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: var(--md-on-surface-variant);
+            font-size: 0.92rem;
+            font-weight: 600;
+        }
+        .sidebar-footer .material-icons-round {
+            font-size: 20px;
+            color: var(--md-primary);
+        }
+        .sidebar-footer-label { flex: 1; }
+        .dark-toggle {
+            position: relative;
+            width: 44px;
+            height: 24px;
+            flex-shrink: 0;
+        }
+        .dark-toggle input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+            position: absolute;
+        }
+        .dark-toggle-track {
+            position: absolute;
+            inset: 0;
+            background: var(--md-outline-variant);
+            border-radius: 12px;
+            cursor: pointer;
+            transition: background 0.25s;
+        }
+        .dark-toggle input:checked + .dark-toggle-track {
+            background: var(--md-primary);
+        }
+        .dark-toggle-thumb {
+            position: absolute;
+            top: 3px;
+            right: 3px;
+            width: 18px;
+            height: 18px;
+            background: white;
+            border-radius: 50%;
+            transition: transform 0.25s;
+            pointer-events: none;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+        }
+        .dark-toggle input:checked ~ .dark-toggle-thumb {
+            transform: translateX(-20px);
+        }
+
         /* ===== VIEWS ===== */
         .view { display: none; }
         .view.active { display: block; }
@@ -1059,6 +1133,10 @@
                 <span class="material-icons-round">format_quote</span>
                 تقريظ
             </li>
+            <li class="sidebar-nav-item" id="nav-infos" onclick="showView('infos')">
+                <span class="material-icons-round">quiz</span>
+                معلومات
+            </li>
             <li class="sidebar-nav-item" id="nav-about" onclick="showView('about')">
                 <span class="material-icons-round">info</span>
                 عن التطبيق
@@ -1072,6 +1150,15 @@
                 مساعدة
             </li>
         </ul>
+        <div class="sidebar-footer">
+            <span class="material-icons-round" id="darkModeIcon">dark_mode</span>
+            <span class="sidebar-footer-label">الوضع الداكن</span>
+            <label class="dark-toggle" aria-label="تفعيل الوضع الداكن">
+                <input type="checkbox" id="darkModeToggle" onchange="toggleDarkMode(this.checked)">
+                <div class="dark-toggle-track"></div>
+                <div class="dark-toggle-thumb"></div>
+            </label>
+        </div>
     </nav>
 
     <div class="filter-sticky-wrapper">
@@ -1102,8 +1189,8 @@
     </div>
 
     <!-- REVIEWS VIEW -->
-    <div class="container view" id="view-reviews">
-        <div id="reviewsContainer"></div>
+    <div class="view" id="view-reviews" style="padding:0;">
+        <iframe id="reviewsFrame" src="" style="width:100%;border:none;min-height:calc(100vh - 56px);display:block;" title="تقريظ"></iframe>
     </div>
 
     <!-- ABOUT VIEW -->
@@ -1119,6 +1206,11 @@
     <!-- SUGGEST VIEW -->
     <div class="view" id="view-suggest" style="padding:0;">
         <iframe id="suggestFrame" src="" style="width:100%;border:none;min-height:calc(100vh - 56px);display:block;" title="اقتراح أفضل طبعة"></iframe>
+    </div>
+
+    <!-- INFOS VIEW -->
+    <div class="view" id="view-infos" style="padding:0;">
+        <iframe id="infosFrame" src="" style="width:100%;border:none;min-height:calc(100vh - 56px);display:block;" title="معلومات"></iframe>
     </div>
 
     <div id="infoModal" class="modal">
@@ -1579,6 +1671,24 @@
             }
         });
 
+        /* ===== DARK MODE ===== */
+        function toggleDarkMode(enabled) {
+            document.body.classList.toggle('dark-mode', enabled);
+            localStorage.setItem('darkMode', enabled ? '1' : '0');
+            document.getElementById('darkModeIcon').textContent = enabled ? 'light_mode' : 'dark_mode';
+        }
+        // Apply saved preference immediately
+        (function() {
+            const saved = localStorage.getItem('darkMode');
+            if (saved === '1') {
+                document.body.classList.add('dark-mode');
+                const toggle = document.getElementById('darkModeToggle');
+                if (toggle) toggle.checked = true;
+                const icon = document.getElementById('darkModeIcon');
+                if (icon) icon.textContent = 'light_mode';
+            }
+        })();
+
         /* ===== SIDEBAR LOGIC ===== */
         const sidebar        = document.getElementById('sidebar');
         const sidebarOverlay = document.getElementById('sidebarOverlay');
@@ -1620,54 +1730,19 @@
 
             currentView = view;
 
-            if (view === 'reviews') loadReviews();
+            if (view === 'reviews') loadReviewsFrame();
             if (view === 'about')   loadAbout();
             if (view === 'help')    loadHelp();
             if (view === 'suggest') loadSuggestFrame();
+            if (view === 'infos')   loadInfosFrame();
         }
 
         /* ===== REVIEWS ===== */
-        let reviewsLoaded = false;
-        function loadReviews() {
-            if (reviewsLoaded) return;
-            const container = document.getElementById('reviewsContainer');
-            container.innerHTML = `<div class="empty-state"><span class="material-icons-round" style="animation:spin 1s linear infinite">sync</span></div>`;
-            fetch('reviews.json?_t=' + Date.now(), { cache: 'no-store' })
-                .then(r => {
-                    if (!r.ok) throw new Error('HTTP ' + r.status);
-                    return r.text();
-                })
-                .then(text => {
-                    let data;
-                    try {
-                        const cleanedText = text.replace(/^\uFEFF/, '').trim();
-                        data = JSON.parse(cleanedText);
-                    } catch (e) {
-                        throw new Error('Invalid JSON in reviews.json');
-                    }
-
-                    const reviews = Array.isArray(data)
-                        ? data
-                        : (data && typeof data === 'object' ? [data] : []);
-
-                    if (!reviews.length) {
-                        container.innerHTML = `<div class="empty-state"><span class="material-icons-round">format_quote</span><p>لا توجد تقاريظ بعد.</p></div>`;
-                        reviewsLoaded = true;
-                        return;
-                    }
-                    container.innerHTML = reviews.map(review => `
-                        <div class="review-card">
-                            <div class="review-name"><span class="material-icons-round">person</span>${review.name || ''}</div>
-                            <div class="review-message">${review.message || ''}</div>
-                        </div>
-                    `).join('');
-                    reviewsLoaded = true;
-                })
-                .catch(err => {
-                    console.error('Failed to load reviews.json:', err);
-                    reviewsLoaded = false;
-                    container.innerHTML = `<div class="empty-state"><span class="material-icons-round">error_outline</span><p>تعذّر تحميل التقاريظ.</p></div>`;
-                });
+        let reviewsFrameLoaded = false;
+        function loadReviewsFrame() {
+            if (reviewsFrameLoaded) return;
+            reviewsFrameLoaded = true;
+            document.getElementById('reviewsFrame').src = 'reviews.html';
         }
 
         /* ===== ABOUT ===== */
@@ -1676,7 +1751,7 @@
             if (aboutLoaded) return;
             aboutLoaded = true;
             const container = document.getElementById('aboutContainer');
-            fetch('infos.html?_t=' + Date.now(), { cache: 'no-store' })
+            fetch('about.html?_t=' + Date.now(), { cache: 'no-store' })
                 .then(r => {
                     if (!r.ok) throw new Error('HTTP ' + r.status);
                     return r.text();
@@ -1735,6 +1810,14 @@
             if (suggestFrameLoaded) return;
             suggestFrameLoaded = true;
             document.getElementById('suggestFrame').src = 'add.html';
+        }
+
+        /* ===== INFOS FRAME ===== */
+        let infosFrameLoaded = false;
+        function loadInfosFrame() {
+            if (infosFrameLoaded) return;
+            infosFrameLoaded = true;
+            document.getElementById('infosFrame').src = 'infos.html';
         }
 
     </script>

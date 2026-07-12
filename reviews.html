@@ -3,14 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>معلومات</title>
+    <title>تقريظ</title>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
     <style>
         :root {
             --md-primary: #00695c;
-            --md-primary-container: #80cbc4;
-            --md-on-primary-container: #00201a;
             --md-background: #f4f6f8;
             --md-surface: #ffffff;
             --md-surface-variant: #e1e2e4;
@@ -21,8 +19,6 @@
         }
         body.dark-mode {
             --md-primary: #4db6ac;
-            --md-primary-container: #004d40;
-            --md-on-primary-container: #b2dfdb;
             --md-background: #121212;
             --md-surface: #1e1e1e;
             --md-surface-variant: #2c2c2c;
@@ -40,31 +36,29 @@
             padding: 16px 12px 32px;
             -webkit-font-smoothing: antialiased;
         }
-        .info-card {
+        .review-card {
             background: var(--md-surface);
             border-radius: 16px;
-            padding: 20px 22px;
+            padding: 22px;
             margin-bottom: 16px;
             box-shadow: var(--md-elevation-1);
             border: 1px solid var(--md-outline-variant);
         }
-        .info-title {
-            font-size: 1.1rem;
+        .review-name {
+            font-size: 1rem;
             font-weight: 800;
             color: var(--md-primary);
-            margin: 0 0 12px 0;
+            margin: 0 0 10px 0;
             display: flex;
             align-items: center;
             gap: 8px;
         }
-        .info-title .material-icons-round { font-size: 20px; flex-shrink: 0; }
-        .info-desc {
+        .review-message {
             font-size: 0.95rem;
-            line-height: 1.9;
+            line-height: 1.8;
             color: var(--md-on-surface-variant);
+            white-space: pre-line;
         }
-        .info-desc p { margin: 0 0 10px 0; }
-        .info-desc p:last-child { margin-bottom: 0; }
         .empty-state {
             text-align: center;
             padding: 40px 20px;
@@ -86,51 +80,43 @@
     </div>
 </div>
 <script>
+    // Sync dark mode with parent app
     if (localStorage.getItem('darkMode') === '1') {
         document.body.classList.add('dark-mode');
     }
+
+    // Listen for dark mode changes from parent
     window.addEventListener('storage', e => {
         if (e.key === 'darkMode') {
             document.body.classList.toggle('dark-mode', e.newValue === '1');
         }
     });
 
-    function escapeHTML(str) {
-        return String(str || '').replace(/[&<>"']/g, c =>
-            ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;' }[c]));
-    }
-
-    // Convert newlines to paragraph tags
-    function toParagraphs(text) {
-        return text.trim().split(/\n\n+/).map(p =>
-            '<p>' + escapeHTML(p.trim()).replace(/\n/g, '<br>') + '</p>'
-        ).join('');
-    }
-
-    fetch('infos.json?_t=' + Date.now(), { cache: 'no-store' })
+    fetch('reviews.json?_t=' + Date.now(), { cache: 'no-store' })
         .then(r => {
             if (!r.ok) throw new Error('HTTP ' + r.status);
-            return r.json();
+            return r.text();
         })
-        .then(data => {
-            const items = Array.isArray(data) ? data : (data ? [data] : []);
+        .then(text => {
+            const data = JSON.parse(text.replace(/^\uFEFF/, '').trim());
+            const reviews = Array.isArray(data) ? data : (data ? [data] : []);
             const container = document.getElementById('container');
-            if (!items.length) {
-                container.innerHTML = '<div class="empty-state"><span class="material-icons-round">info</span><p>لا توجد معلومات.</p></div>';
+            if (!reviews.length) {
+                container.innerHTML = '<div class="empty-state"><span class="material-icons-round">format_quote</span><p>لا توجد تقاريظ بعد.</p></div>';
                 return;
             }
-            container.innerHTML = items.map(item => `
-                <div class="info-card">
-                    <div class="info-title">
-                        <span class="material-icons-round">menu_book</span>
-                        ${escapeHTML(item.title || '')}
+            container.innerHTML = reviews.map(r => `
+                <div class="review-card">
+                    <div class="review-name">
+                        <span class="material-icons-round">person</span>
+                        ${r.name || ''}
                     </div>
-                    <div class="info-desc">${toParagraphs(item.description || '')}</div>
+                    <div class="review-message">${r.message || ''}</div>
                 </div>`).join('');
         })
         .catch(() => {
             document.getElementById('container').innerHTML =
-                '<div class="empty-state"><span class="material-icons-round">error_outline</span><p>تعذّر تحميل المعلومات.</p></div>';
+                '<div class="empty-state"><span class="material-icons-round">error_outline</span><p>تعذّر تحميل التقاريظ.</p></div>';
         });
 </script>
 </body>
