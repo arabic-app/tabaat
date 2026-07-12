@@ -11413,5 +11413,28 @@
     ],
     "alt_editions": [],
     "links": []
+  },
+  {
+    "id": 417,
+    "title": "المستدرك على مجموع الفتاوى",
+    "author": "أحمد بن عبد الحليم بن تيمية",
+    "category": [
+      "المجاميع"
+    ],
+    "notes": "",
+    "date": "2026-07-12",
+    "best_editions": [
+      {
+        "publisher": "ابن قاسم",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1783828858866-IMG20260712055828157.jpg"
+        ],
+        "notes": "الطبعة الوحيدة",
+        "corrections": [],
+        "verifier": "محمد بن عبد الرحمن بن قاسم"
+      }
+    ],
+    "alt_editions": [],
+    "links": []
   }
 ]
