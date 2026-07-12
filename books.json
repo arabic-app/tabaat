@@ -1889,21 +1889,22 @@
     "title": "تقريب التهذيب",
     "author": "أحمد بن علي بن حجر العسقلاني",
     "category": [
-      "التراجم و الرجال"
+      "التراجم والرجال"
     ],
     "notes": "",
+    "date": "2026-07-12",
     "best_editions": [
       {
+        "publisher": "مؤسسة الرسالة",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782660488181-4798997312417370851951161917521951672161142n.jpg"
         ],
         "notes": "",
-        "publisher": "مؤسسة الرسالة"
+        "corrections": []
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 49,
