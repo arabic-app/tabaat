@@ -5610,22 +5610,23 @@
     "title": "إظهار الحق",
     "author": "رحمة الله الهندي",
     "category": [
-      "الأديان و الفرق"
+      "الأديان والفرق والمذاهب"
     ],
     "notes": "",
+    "date": "2026-07-12",
     "best_editions": [
       {
+        "publisher": "الرئاسة العامة للبحوث الإفتاء بالسعودية",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782558481888-images20260627T140549.761.jpeg"
         ],
         "notes": "",
-        "verifier": "محمد احمد زملكاوي",
-        "publisher": "الرئاسة العامة للبحوث الإفتاء بالسعودية"
+        "corrections": [],
+        "verifier": "محمد احمد زملكاوي"
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 180,
