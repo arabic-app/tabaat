@@ -2177,21 +2177,22 @@
     "title": "تاريخ ابن خلدون (كتاب العبر وديوان المبتدأ والخبر)",
     "author": "عبد الرحمن بن محمد ابن خلدون",
     "category": [
-      "التاريخ"
+      "التاريخ الإسلامي"
     ],
     "notes": "",
+    "date": "2026-07-12",
     "best_editions": [
       {
+        "publisher": "الطبعة التونسية",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782661240884-47749034124173711819511281414428992132843586n.jpg"
         ],
         "notes": "",
-        "publisher": "الطبعة التونسية"
+        "corrections": []
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 53,
@@ -3564,40 +3565,43 @@
     "title": "تاريخ الأمم والملوك (تاريخ الطبري)",
     "author": "محمد بن جرير الطبري",
     "category": [
-      "التاريخ"
+      "التاريخ الإسلامي"
     ],
     "notes": "",
+    "date": "2026-07-12",
     "best_editions": [
       {
+        "publisher": "دار المعارف مصر",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782661169825-images20260628T183906.460.jpeg",
           "https://arabic-app.github.io/tabaat/images/1782661175321-mbc.jpg"
         ],
         "notes": "",
-        "verifier": "أبي الفضل إبراهيم",
-        "publisher": "دار المعارف مصر"
+        "corrections": [],
+        "verifier": "أبي الفضل إبراهيم"
       },
       {
+        "publisher": "دارة الملك عبد العزيز",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782661180069-G1It6kIWUAAxy53.jpg",
           "https://arabic-app.github.io/tabaat/images/1782661185518-images20260628T183834.954.jpeg"
         ],
         "notes": "",
-        "verifier": "بشار عواد",
-        "publisher": "دارة الملك عبد العزيز"
+        "corrections": [],
+        "verifier": "بشار عواد"
       }
     ],
     "alt_editions": [
       {
+        "publisher": "ابن الجوزي القاهرة (ابداع)",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782661191869-images20260628T183815.085.jpeg"
         ],
         "notes": "",
-        "publisher": "ابن الجوزي القاهرة (ابداع)"
+        "corrections": []
       }
     ],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 96,
@@ -4264,10 +4268,10 @@
     "title": "كتاب الروضتين في أخبار الدولتين",
     "author": "عبد الرحمن المقدسي أبو شامة",
     "category": [
-      "التاريخ"
+      "التاريخ الإسلامي"
     ],
     "notes": "",
-    "date": "2026-07-03",
+    "date": "2026-07-12",
     "best_editions": [
       {
         "publisher": "الرسالة",
