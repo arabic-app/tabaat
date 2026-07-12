@@ -7105,22 +7105,23 @@
     "author": "اختصار محمد البعلي الحنبلي",
     "category": [
       "كتب متنوعة",
-      "الأديان و الفرق"
+      "الأديان والفرق والمذاهب"
     ],
     "notes": "",
+    "date": "2026-07-12",
     "best_editions": [
       {
+        "publisher": "دار عطاءات العلم",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782641787888-scaled.webp643547cf28678.webp"
         ],
         "notes": "",
-        "verifier": "علي العمران",
-        "publisher": "دار عطاءات العلم"
+        "corrections": [],
+        "verifier": "علي العمران"
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 246,
