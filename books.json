@@ -6654,23 +6654,23 @@
     "title": "مناقب الإمام أبي عبد الله أحمد بن محمد بن حنبل الشيباني",
     "author": "عبد الرحمن بن علي بن الجوزي",
     "category": [
-      "التراجم و الرجال"
+      "التراجم والرجال"
     ],
     "notes": "",
+    "date": "2026-07-12",
     "best_editions": [
       {
+        "publisher": "دار الأمين",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782752144046-HCl7S5NawAAPGpx.jpg"
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "أبي جنة الحنبلي",
-        "publisher": "دار الأمين"
+        "verifier": "أبي جنة الحنبلي"
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 227,
