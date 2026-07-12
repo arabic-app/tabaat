@@ -5904,23 +5904,24 @@
     "title": "الصواعق المرسلة على الجهمية و المعطلة",
     "author": "محمد بن أبي بكر بن قيم الجوزية (ابن القيم)",
     "category": [
-      "الأديان و الفرق",
+      "الأديان والفرق والمذاهب",
       "العقيدة"
     ],
     "notes": "",
+    "date": "2026-07-12",
     "best_editions": [
       {
+        "publisher": "دار عطاءات العلم",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782304219697-.png"
         ],
         "notes": "",
-        "verifier": "حسين عكاشة",
-        "publisher": "دار عطاءات العلم"
+        "corrections": [],
+        "verifier": "حسين عكاشة"
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 193,
