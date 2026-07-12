@@ -5587,23 +5587,23 @@
     "title": "هداية الحيارى في أجوبة اليهود و النصارى",
     "author": "محمد بن أبي بكر بن قيم الجوزية (ابن القيم)",
     "category": [
-      "الأديان و الفرق"
+      "الأديان والفرق والمذاهب"
     ],
     "notes": "",
+    "date": "2026-07-12",
     "best_editions": [
       {
+        "publisher": "عطاءات العلم",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782748930333-images20260629T180451.590.jpeg"
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "عثمان ضميرية",
-        "publisher": "عطاءات العلم"
+        "verifier": "عثمان ضميرية"
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 178,
@@ -5655,22 +5655,22 @@
     "title": "موقف ابن تيمية من الأشاعرة",
     "author": "عبد الرحمن صالح المحمود",
     "category": [
-      "الأديان و الفرق"
+      "الأديان والفرق والمذاهب"
     ],
     "notes": "",
+    "date": "2026-07-12",
     "best_editions": [
       {
+        "publisher": "دار ابن الجوزي السعودية",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782752466513-646x1000.jpg"
         ],
         "notes": "",
-        "corrections": [],
-        "publisher": "دار ابن الجوزي السعودية"
+        "corrections": []
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 182,
