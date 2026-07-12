@@ -1834,23 +1834,23 @@
     "title": "تهذيب الكمال في أسماء الرجال",
     "author": "يوسف بن عبد الرحمن المزي",
     "category": [
-      "التراجم و الرجال"
+      "التراجم والرجال"
     ],
     "notes": "",
+    "date": "2026-07-12",
     "best_editions": [
       {
+        "publisher": "مؤسسة الرسالة ناشرون",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782310870451-4776019242417371248617788140465933938052635n.jpg"
         ],
         "notes": "8 مجلدات قطع كبير",
         "corrections": [],
-        "verifier": "بشار عواد",
-        "publisher": "مؤسسة الرسالة ناشرون"
+        "verifier": "بشار عواد"
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 47,
