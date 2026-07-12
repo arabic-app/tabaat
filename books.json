@@ -6458,22 +6458,23 @@
     "title": "الجامع لسيرة الإمام ابن قيم الجوزية و يليه مؤلفات الإمام ابن قيم الجوزية",
     "author": "على العمران و محمد عزير شمس",
     "category": [
-      "التراجم و الرجال",
+      "التراجم والرجال",
       "كتب متنوعة"
     ],
     "notes": "",
+    "date": "2026-07-12",
     "best_editions": [
       {
+        "publisher": "دار عطاءات العلم",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782588435424-v6vwQcqS9DUSjR5JUnPZYBMAG0dY29vLuI9D1ffI.jpg"
         ],
         "notes": "",
-        "publisher": "دار عطاءات العلم"
+        "corrections": []
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 218,
