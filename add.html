@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="ar">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
     <style>
+        html { direction: ltr; } /* scrollbar on right */
         *, *::before, *::after { box-sizing: border-box; }
 
         :root {
@@ -40,6 +41,9 @@
             display: flex;
             flex-direction: column;
         }
+
+        /* RTL on layout containers, not body (prevents direction propagating to viewport scrollbar) */
+        header, main, footer { direction: rtl; }
 
         /* ===== HEADER ===== */
         header {

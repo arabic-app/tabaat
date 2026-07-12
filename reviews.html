@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="ar">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
     <style>
+        html { direction: ltr; } /* scrollbar on right */
         :root {
             --md-primary: #00695c;
             --md-background: #f4f6f8;
@@ -33,8 +34,13 @@
             background: var(--md-background);
             color: var(--md-on-surface);
             margin: 0;
-            padding: 16px 12px 32px;
+            padding: 12px 12px 32px;
             -webkit-font-smoothing: antialiased;
+        }
+        #container {
+            direction: rtl;
+            max-width: 876px;
+            margin: 0 auto;
         }
         .review-card {
             background: var(--md-surface);

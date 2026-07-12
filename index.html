@@ -287,8 +287,7 @@
         /* ===== VIEWS ===== */
         .view { display: none; }
         .view.active { display: block; }
-        #view-reviews,
-        #view-about {
+        #view-reviews {
             padding-top: 12px;
         }
 
@@ -1194,8 +1193,8 @@
     </div>
 
     <!-- ABOUT VIEW -->
-    <div class="container view" id="view-about">
-        <div id="aboutContainer"></div>
+    <div class="view" id="view-about" style="padding:0;">
+        <iframe id="aboutFrame" src="" style="width:100%;border:none;min-height:calc(100vh - 56px);display:block;" title="عن التطبيق"></iframe>
     </div>
 
     <!-- HELP VIEW -->
@@ -1731,7 +1730,7 @@
             currentView = view;
 
             if (view === 'reviews') loadReviewsFrame();
-            if (view === 'about')   loadAbout();
+            if (view === 'about')   loadAboutFrame();
             if (view === 'help')    loadHelp();
             if (view === 'suggest') loadSuggestFrame();
             if (view === 'infos')   loadInfosFrame();
@@ -1746,27 +1745,11 @@
         }
 
         /* ===== ABOUT ===== */
-        let aboutLoaded = false;
-        function loadAbout() {
-            if (aboutLoaded) return;
-            aboutLoaded = true;
-            const container = document.getElementById('aboutContainer');
-            fetch('about.html?_t=' + Date.now(), { cache: 'no-store' })
-                .then(r => {
-                    if (!r.ok) throw new Error('HTTP ' + r.status);
-                    return r.text();
-                })
-                .then(html => {
-                    container.innerHTML = `<div class="about-card">${html}</div>`;
-                    const booksCountEl = document.getElementById('about-total-books');
-                    if (booksCountEl && booksData.length > 0) {
-                        booksCountEl.textContent = booksData.length;
-                    }
-                })
-                .catch(() => {
-                    aboutLoaded = false;
-                    container.innerHTML = `<div class="empty-state"><span class="material-icons-round">error_outline</span><p>تعذّر تحميل المعلومات.</p></div>`;
-                });
+        let aboutFrameLoaded = false;
+        function loadAboutFrame() {
+            if (aboutFrameLoaded) return;
+            aboutFrameLoaded = true;
+            document.getElementById('aboutFrame').src = 'about.html';
         }
 
         /* ===== HELP ===== */
