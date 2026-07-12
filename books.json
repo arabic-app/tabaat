@@ -7346,24 +7346,24 @@
     "title": "الكامل في ضعفاء الرجال",
     "author": "أحمد الجرجاني",
     "category": [
-      "التراجم و الرجال"
+      "التراجم والرجال"
     ],
     "notes": "",
+    "date": "2026-07-12",
     "best_editions": [
       {
+        "publisher": "مكتبة الرشد",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782629147413-bb4bb4526264430d8a1038b403271b80.jpeg",
           "https://arabic-app.github.io/tabaat/images/1782629158302-default1.jpg"
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "مازن السرساوي",
-        "publisher": "مكتبة الرشد"
+        "verifier": "مازن السرساوي"
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 258,
