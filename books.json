@@ -6700,22 +6700,23 @@
     "title": "كتاب المحنة (رواية صالح بن أحمد بن حنبل)",
     "author": "رواية صالح بن أحمد بن حنبل",
     "category": [
-      "التراجم و الرجال"
+      "التراجم والرجال"
     ],
     "notes": "",
+    "date": "2026-07-12",
     "best_editions": [
       {
+        "publisher": "أروقة",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782719022994-1b2a734b1beb4368a7d6199525fecf5e790x1000H6LRGYdr155dRZkGvvMTJFSLHX0xLENd0iiXKvxV.jpg"
         ],
         "notes": "",
-        "verifier": "أبي جنة الحنبلي",
-        "publisher": "أروقة"
+        "corrections": [],
+        "verifier": "أبي جنة الحنبلي"
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 229,
