@@ -1008,8 +1008,15 @@
 
 
         /* ===== INSTALL BUTTON ===== */
-        .header-install-btn {
+        .install-header-wrapper {
             display: none;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            margin: 8px auto 0;
+            width: fit-content;
+        }
+        .header-install-btn {
             background: rgba(255, 255, 255, 0.15);
             border: none;
             color: white;
@@ -1019,18 +1026,58 @@
             font-size: 0.8rem;
             font-weight: 700;
             cursor: pointer;
+            display: flex;
             align-items: center;
             gap: 6px;
-            margin: 8px auto 0 auto;
-            width: fit-content;
             transition: background 0.2s;
         }
-        .header-install-btn:hover {
-            background: rgba(255, 255, 255, 0.25);
+        .header-install-btn:hover { background: rgba(255,255,255,0.25); }
+        .header-install-btn .material-icons-round { font-size: 16px; }
+        .dismiss-install-btn {
+            background: rgba(255,255,255,0.12);
+            border: none;
+            color: rgba(255,255,255,0.8);
+            width: 22px; height: 22px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex; align-items: center; justify-content: center;
+            transition: background 0.2s;
+            flex-shrink: 0;
+            padding: 0;
         }
-        .header-install-btn span {
-            font-size: 16px;
+        .dismiss-install-btn:hover { background: rgba(255,255,255,0.25); color: white; }
+        .dismiss-install-btn .material-icons-round { font-size: 14px; }
+        /* Sidebar install item */
+        .sidebar-install-item {
+            border-top: 1px solid var(--md-outline-variant);
+            padding: 14px 22px;
+            flex-shrink: 0;
+            display: none;
+            align-items: center;
+            gap: 12px;
+            color: var(--md-on-surface-variant);
+            font-size: 0.92rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.18s;
         }
+        .sidebar-install-item:hover { background: var(--md-background); }
+        .sidebar-install-item .material-icons-round { font-size: 20px; color: var(--md-primary); }
+        .sidebar-install-item-label { flex: 1; }
+        .sidebar-install-trigger {
+            background: var(--md-primary);
+            color: white;
+            border: none;
+            border-radius: 14px;
+            padding: 4px 12px;
+            font-family: inherit;
+            font-size: 0.8rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background 0.2s;
+            flex-shrink: 0;
+        }
+        .sidebar-install-trigger:hover { background: #00796b; }
 
         /* ===== HELP VIEW ===== */
         .help-card {
@@ -1108,10 +1155,15 @@
             </button>
         </div>
         <!--<p>ابحث عن الكتاب، المؤلف، أو العلم لتعرف أفضل الطبعات المعتمدة</p>-->
-        <button id="header-install-btn" class="header-install-btn">
-            <span class="material-icons-round">download</span>
-            تثبيت التطبيق
-        </button>
+        <div id="install-header-wrapper" class="install-header-wrapper">
+            <button id="header-install-btn" class="header-install-btn">
+                <span class="material-icons-round">download</span>
+                تثبيت التطبيق
+            </button>
+            <button class="dismiss-install-btn" id="dismiss-install-btn" onclick="dismissInstallHeader()" aria-label="إخفاء زر التثبيت">
+                <span class="material-icons-round">close</span>
+            </button>
+        </div>
     </header>
 
     <!-- ===== SIDEBAR ===== -->
@@ -1149,6 +1201,11 @@
                 مساعدة
             </li>
         </ul>
+        <div id="sidebar-install-item" class="sidebar-install-item" onclick="triggerInstallFromSidebar()">
+            <span class="material-icons-round">download</span>
+            <span class="sidebar-install-item-label">تثبيت التطبيق</span>
+            <span class="sidebar-install-trigger">تثبيت</span>
+        </div>
         <div class="sidebar-footer">
             <span class="material-icons-round" id="darkModeIcon">dark_mode</span>
             <span class="sidebar-footer-label">الوضع الداكن</span>
@@ -1838,44 +1895,70 @@
             || window.navigator.standalone === true;
 
         /* ── 3. INSTALL ACTIONS ── */
-        const headerInstallBtn = document.getElementById('header-install-btn');
+        const headerInstallWrapper = document.getElementById('install-header-wrapper');
+        const headerInstallBtn     = document.getElementById('header-install-btn');
+        const sidebarInstallItem   = document.getElementById('sidebar-install-item');
         const navHelp = document.getElementById('nav-help');
         let deferredPrompt = null;
 
-        function openIOSGuide() {
-            if (typeof showView === 'function') {
-                showView('help');
+        const INSTALL_DISMISSED = 'pwa_install_dismissed';
+        const installDismissed  = () => localStorage.getItem(INSTALL_DISMISSED) === '1';
+
+        function showInstallHeader() {
+            if (installDismissed()) {
+                sidebarInstallItem.style.display = 'flex';
+            } else {
+                headerInstallWrapper.style.display = 'flex';
             }
         }
+        function hideInstall() {
+            headerInstallWrapper.style.display = 'none';
+            sidebarInstallItem.style.display   = 'none';
+        }
 
-        // Trigger PWA installation prompt
+        window.dismissInstallHeader = function() {
+            localStorage.setItem(INSTALL_DISMISSED, '1');
+            headerInstallWrapper.style.display = 'none';
+            sidebarInstallItem.style.display   = 'flex';
+        };
+
+        function openIOSGuide() {
+            if (typeof showView === 'function') showView('help');
+        }
+
         async function triggerInstallPrompt() {
             if (!deferredPrompt) return;
             deferredPrompt.prompt();
             const { outcome } = await deferredPrompt.userChoice;
             deferredPrompt = null;
-            headerInstallBtn.style.display = 'none';
-            if (outcome === 'accepted') deferredPrompt = null;
+            hideInstall();
+            if (outcome === 'accepted') localStorage.removeItem(INSTALL_DISMISSED);
         }
+
+        window.triggerInstallFromSidebar = function() {
+            if (isIOS) openIOSGuide();
+            else triggerInstallPrompt();
+        };
 
         if (isIOS) {
             if (navHelp) navHelp.style.display = 'flex';
             if (!isInStandalone) {
-                headerInstallBtn.style.display = 'flex';
+                headerInstallBtn.addEventListener('click', openIOSGuide);
+                showInstallHeader();
             }
-            headerInstallBtn.addEventListener('click', openIOSGuide);
         } else if (!isInStandalone && (isAndroid || !isIOS)) {
             window.addEventListener('beforeinstallprompt', (e) => {
                 e.preventDefault();
                 deferredPrompt = e;
-                headerInstallBtn.style.display = 'flex';
+                showInstallHeader();
             });
 
             headerInstallBtn.addEventListener('click', triggerInstallPrompt);
 
             window.addEventListener('appinstalled', () => {
-                headerInstallBtn.style.display = 'none';
+                hideInstall();
                 deferredPrompt = null;
+                localStorage.removeItem(INSTALL_DISMISSED);
             });
         }
 
