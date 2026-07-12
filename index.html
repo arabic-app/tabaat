@@ -1220,8 +1220,8 @@
                 عن التطبيق
             </li>
             <li class="sidebar-nav-item" id="nav-suggest" onclick="showView('suggest')">
-                <span class="material-icons-round">add_circle_outline</span>
-                اقترح طبعة
+                <span class="material-icons-round">feedback</span>
+                اقتراح / ملاحظة
             </li>
             <li class="sidebar-nav-item" id="nav-help" onclick="showView('help')" style="display: none;">
                 <span class="material-icons-round">help</span>
@@ -1891,7 +1891,7 @@
         function loadSuggestFrame() {
             if (suggestFrameLoaded) return;
             suggestFrameLoaded = true;
-            document.getElementById('suggestFrame').src = 'add.html';
+            document.getElementById('suggestFrame').src = 'feedback.html';
         }
 
         /* ===== INFOS FRAME ===== */

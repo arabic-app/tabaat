@@ -539,6 +539,40 @@
         }
         body.dark-mode .badge-db  { background: #1b3d1e; color: #81c784; border-color: #2e7d32; }
         body.dark-mode .badge-sheet { background: #0d2a45; color: #90caf9; border-color: #1565c0; }
+
+        /* ===== TYPE SWITCHER ===== */
+        .type-switcher {
+            display: flex;
+            background: var(--md-surface-variant);
+            border-radius: 12px;
+            padding: 4px;
+            gap: 4px;
+            margin-bottom: 24px;
+        }
+        .type-btn {
+            flex: 1;
+            padding: 10px 8px;
+            border: none;
+            border-radius: 9px;
+            font-family: inherit;
+            font-size: 0.88rem;
+            font-weight: 700;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            color: var(--md-on-surface-variant);
+            background: transparent;
+            transition: all 0.2s;
+        }
+        .type-btn .material-icons-round { font-size: 18px; }
+        .type-btn.active {
+            background: var(--md-surface);
+            color: var(--md-primary);
+            box-shadow: 0 1px 4px rgba(0,0,0,0.15);
+        }
+        body.dark-mode .type-btn.active { box-shadow: 0 1px 4px rgba(0,0,0,0.4); }
     </style>
 </head>
 <body>
@@ -548,6 +582,21 @@
 
         <!-- FORM STATE -->
         <form id="suggestionForm" novalidate>
+
+            <!-- Type switcher -->
+            <div class="type-switcher">
+                <button type="button" class="type-btn active" id="type-btn-book" onclick="switchType('book')">
+                    <span class="material-icons-round">menu_book</span>
+                    اقتراح طبعة كتاب
+                </button>
+                <button type="button" class="type-btn" id="type-btn-general" onclick="switchType('general')">
+                    <span class="material-icons-round">rate_review</span>
+                    ملاحظة عامة
+                </button>
+            </div>
+
+            <!-- ===== BOOK FIELDS ===== -->
+            <div id="bookFields">
 
             <!-- Book field -->
             <div class="form-group">
@@ -610,6 +659,26 @@
                 <div class="char-counter" id="charCounter">0 / 500</div>
             </div>
 
+            </div><!-- end #bookFields -->
+
+            <!-- ===== GENERAL FIELDS ===== -->
+            <div id="generalFields" style="display:none;">
+                <div class="form-group">
+                    <label for="subjectInput">
+                        <span class="material-icons-round">topic</span>
+                        الموضوع
+                    </label>
+                    <input type="text" id="subjectInput" class="md-input" placeholder="موضوع الملاحظة...">
+                </div>
+                <div class="form-group">
+                    <label for="contentInput">
+                        <span class="material-icons-round">description</span>
+                        المحتوى
+                    </label>
+                    <textarea id="contentInput" class="md-input" style="min-height:120px;" placeholder="تفاصيل الملاحظة..."></textarea>
+                </div>
+            </div>
+
             <button type="submit" class="btn-submit" id="submitBtn">
                 <div class="spinner" id="spinner"></div>
                 <span class="material-icons-round" id="submitIcon">send</span>
@@ -645,7 +714,7 @@
     // Replace with your Google Apps Script Web App URL.
     // See README below for how to create the Apps Script.
     // ============================================================
-    const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxUiOlpoWzUCPSjKsRITmmgKBDsEvyllq5iNTOS3ihFj6CS0lFwQ59BXQ9ZGZTBILkSBw/exec';
+    const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwRr68S3g30zBvb09ZIdbOT3UdtyQKq_TP_C_kQ8teHeiv82DozIlnkzpxESCjEMoVWqA/exec';
 
     // Spreadsheet ID (used as fallback / reference)
     const SHEET_ID = '198s1pSV_I_wF6DDTHLD2lnWoPBCqrCNAzzh1YugeIfA';
@@ -910,6 +979,18 @@
     // Initialize with one edition row
     addEditionRow();
 
+    // ===== TYPE SWITCHER =====
+    let currentType = 'book';
+    function switchType(type) {
+        currentType = type;
+        document.getElementById('bookFields').style.display    = type === 'book'    ? '' : 'none';
+        document.getElementById('generalFields').style.display = type === 'general' ? '' : 'none';
+        document.getElementById('type-btn-book').classList.toggle('active',    type === 'book');
+        document.getElementById('type-btn-general').classList.toggle('active', type === 'general');
+        hideExistsCard();
+        hideError();
+    }
+
     // ===== CHAR COUNTER =====
     const sourceInput  = document.getElementById('sourceInput');
     const charCounter  = document.getElementById('charCounter');
@@ -929,23 +1010,37 @@
     document.getElementById('suggestionForm').addEventListener('submit', async function(e) {
         e.preventDefault();
 
-        const bookVal    = bookInput.value.trim();
-        const sourceVal  = sourceInput.value.trim();
-        const edInputs   = [...document.querySelectorAll('#editionsList .edition-input')];
-        const verInputs  = [...document.querySelectorAll('#editionsList .verifier-input')];
-        const editions   = edInputs.map(i => i.value.trim());
-        const verifiers  = verInputs.map(i => i.value.trim());
-
-        // Validate required fields
+        let payload = {};
         let valid = true;
-        if (!bookVal)     { validateInput(bookInput); valid = false; }
-        if (!editions[0]) { validateInput(edInputs[0]); valid = false; }
-        if (!verifiers[0]){ validateInput(verInputs[0]); valid = false; }
-        if (!sourceVal)   { validateInput(document.getElementById('sourceInput')); valid = false; }
-        if (!valid) return;
 
-        // Block if book already exists
-        if (checkBookExists(bookVal)) return;
+        if (currentType === 'general') {
+            const subjectVal = document.getElementById('subjectInput').value.trim();
+            const contentVal = document.getElementById('contentInput').value.trim();
+            if (!subjectVal) { validateInput(document.getElementById('subjectInput')); valid = false; }
+            if (!contentVal) { validateInput(document.getElementById('contentInput')); valid = false; }
+            if (!valid) return;
+            payload = { type: 'general', book: subjectVal, edition: contentVal, verifier: '', source: '' };
+        } else {
+            const bookVal    = bookInput.value.trim();
+            const sourceVal  = sourceInput.value.trim();
+            const edInputs   = [...document.querySelectorAll('#editionsList .edition-input')];
+            const verInputs  = [...document.querySelectorAll('#editionsList .verifier-input')];
+            const editions   = edInputs.map(i => i.value.trim());
+            const verifiers  = verInputs.map(i => i.value.trim());
+            if (!bookVal)     { validateInput(bookInput); valid = false; }
+            if (!editions[0]) { validateInput(edInputs[0]); valid = false; }
+            if (!verifiers[0]){ validateInput(verInputs[0]); valid = false; }
+            if (!sourceVal)   { validateInput(document.getElementById('sourceInput')); valid = false; }
+            if (!valid) return;
+            if (checkBookExists(bookVal)) return;
+            payload = {
+                type:     'book',
+                book:     bookVal,
+                edition:  editions.filter(Boolean).join('##'),
+                verifier: verifiers.filter(Boolean).join('##'),
+                source:   sourceVal
+            };
+        }
 
         // Check configuration
         if (APPS_SCRIPT_URL === 'YOUR_APPS_SCRIPT_URL_HERE') {
@@ -955,13 +1050,6 @@
 
         setLoading(true);
         hideError();
-
-        const payload = {
-            book:     bookVal,
-            edition:  editions.filter(Boolean).join('##'),
-            verifier: verifiers.filter(Boolean).join('##'),
-            source:   sourceVal
-        };
 
         try {
             // Submit via hidden form POST → hidden iframe (most reliable with Apps Script)
@@ -1036,10 +1124,10 @@
         document.getElementById('suggestionForm').reset();
         document.getElementById('suggestionForm').style.display = 'block';
         document.getElementById('successState').classList.remove('visible');
-        ['bookInput', 'sourceInput'].forEach(id => {
+        switchType('book');
+        ['bookInput', 'sourceInput', 'subjectInput', 'contentInput'].forEach(id => {
             const el = document.getElementById(id);
-            el.classList.remove('valid', 'invalid');
-            el.disabled = false;
+            if (el) { el.classList.remove('valid', 'invalid'); el.disabled = false; }
         });
         // Reset edition rows
         document.getElementById('editionsList').innerHTML = '';

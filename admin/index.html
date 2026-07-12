@@ -813,6 +813,11 @@
                     الاقتراحات
                     <span class="notif-dot" id="suggestionsNotifDot"></span>
                 </button>
+                <button class="btn-open-suggestions" onclick="openNotesModal()" title="الملاحظات العامة" style="background:#7b1fa2;">
+                    <span class="material-icons-round" style="font-size:18px">rate_review</span>
+                    ملاحظات
+                    <span class="notif-dot" id="notesNotifDot" style="background:#f44336;"></span>
+                </button>
             </div>
             <!--<p style="margin: 0 0 10px; font-size: 0.85rem; color: var(--md-on-surface-variant);">أو احفظ نسخة يدوية:</p>
             <div class="action-buttons">
@@ -936,6 +941,29 @@
     </div>
 </div>
 
+<!-- NOTES MODAL -->
+<div id="notesModalOverlay" class="suggestions-modal-overlay" onclick="handleNotesOverlayClick(event)">
+    <div class="suggestions-modal">
+        <div class="suggestions-modal-header" style="background:#7b1fa2;">
+            <span class="material-icons-round">rate_review</span>
+            <h3>الملاحظات العامة</h3>
+            <span class="suggestions-count-badge" id="notesModalBadge" style="background:rgba(255,255,255,0.25);">0</span>
+            <button class="btn-modal-close-suggestions" onclick="loadNotes(true)" title="تحديث" aria-label="تحديث">
+                <span class="material-icons-round">refresh</span>
+            </button>
+            <button class="btn-modal-close-suggestions" onclick="closeNotesModal()" aria-label="إغلاق">
+                <span class="material-icons-round">close</span>
+            </button>
+        </div>
+        <div class="suggestions-modal-body" id="notesContainer">
+            <div class="suggestions-empty">
+                <span class="material-icons-round" style="animation:spin 1s linear infinite">sync</span>
+                جاري التحميل...
+            </div>
+        </div>
+    </div>
+</div>
+
 <div id="deleteModal" class="delete-overlay">
     <div class="delete-modal">
         <span class="material-icons-round">warning</span>
@@ -951,11 +979,11 @@
 <div id="rejectSuggestionModal" class="delete-overlay" style="z-index: 3000;">
     <div class="delete-modal">
         <span class="material-icons-round">block</span>
-        <h3>رفض الاقتراح</h3>
-        <p>هل تريد رفض وحذف هذا الاقتراح نهائياً؟ لا يمكن التراجع عن هذه الخطوة.</p>
+        <h3>حذف الاقتراح</h3>
+        <p>هل تريد حذف هذا الاقتراح نهائياً؟ لا يمكن التراجع عن هذه الخطوة.</p>
         <div class="delete-modal-actions">
             <button class="md-btn md-btn-secondary" onclick="closeRejectModal()">إلغاء</button>
-            <button class="md-btn md-btn-error" onclick="executeRejectSuggestion()">نعم، ارفض الاقتراح</button>
+            <button class="md-btn md-btn-error" onclick="executeRejectSuggestion()">نعم، احذف الاقتراح</button>
         </div>
     </div>
 </div>
@@ -973,7 +1001,7 @@
 
     // Google Sheet for suggestions
     const SHEET_ID       = '198s1pSV_I_wF6DDTHLD2lnWoPBCqrCNAzzh1YugeIfA';
-    const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxUiOlpoWzUCPSjKsRITmmgKBDsEvyllq5iNTOS3ihFj6CS0lFwQ59BXQ9ZGZTBILkSBw/exec';
+    const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwRr68S3g30zBvb09ZIdbOT3UdtyQKq_TP_C_kQ8teHeiv82DozIlnkzpxESCjEMoVWqA/exec';
 
     function normalizeArabic(str) {
         if (!str) return '';
@@ -1099,6 +1127,21 @@
         if (e.target === document.getElementById('suggestionsModalOverlay')) closeSuggestionsModal();
     }
 
+    /* ---- NOTES MODAL ---- */
+    function openNotesModal() {
+        document.getElementById('notesModalOverlay').classList.add('visible');
+        document.body.style.overflow = 'hidden';
+        if (!notesRendered) loadNotes();
+    }
+    function closeNotesModal() {
+        document.getElementById('notesModalOverlay').classList.remove('visible');
+        document.body.style.overflow = '';
+    }
+    function handleNotesOverlayClick(e) {
+        if (e.target === document.getElementById('notesModalOverlay')) closeNotesModal();
+    }
+    let notesRendered = false;
+
     /* ---- SUGGESTIONS ---- */
     function parseCSV(text) {
         const lines = text.trim().split('\n');
@@ -1123,37 +1166,49 @@
             .then(csvText => {
                 suggestionsData = csvText ? parseCSV(csvText) : [];
                 renderSuggestions();
+                renderNotes();
             })
             .catch(() => {
                 suggestionsData = [];
+                const container = document.getElementById('suggestionsContainer');
                 container.innerHTML = '<div class="suggestions-empty"><span class="material-icons-round" style="font-size:28px;display:block;margin:0 auto 8px;opacity:0.4">error_outline</span>تعذّر تحميل الاقتراحات</div>';
                 document.getElementById('suggestionsModalBadge').textContent = '!';
             });
     }
 
+    function isBookRow(row) {
+        const t = (row['النوع'] || row['type'] || '').trim().toLowerCase();
+        return t === '' || t === 'book';
+    }
+    function isGeneralRow(row) {
+        const t = (row['النوع'] || row['type'] || '').trim().toLowerCase();
+        return t === 'general';
+    }
+
     function renderSuggestions() {
         const container = document.getElementById('suggestionsContainer');
-        const count = suggestionsData.length;
+        // Filter: only book suggestions
+        const bookRows = suggestionsData.filter(isBookRow);
+        const count = bookRows.length;
         document.getElementById('suggestionsModalBadge').textContent = count;
         const dot = document.getElementById('suggestionsNotifDot');
         if (dot) { dot.textContent = count > 9 ? '9+' : count; dot.style.display = count > 0 ? 'flex' : 'none'; }
-        if (suggestionsData.length === 0) {
+        if (bookRows.length === 0) {
             container.innerHTML = '<div class="suggestions-empty"><span class="material-icons-round">check_circle</span>لا توجد اقتراحات جديدة</div>';
             return;
         }
 
         container.innerHTML = '';
-        suggestionsData.forEach((row, arrIdx) => {
+        bookRows.forEach((row) => {
+            const arrIdx   = suggestionsData.indexOf(row);
             const book     = row['الكتاب']        || row['book']     || '';
             const edition  = row['أفضل طبعة']     || row['edition']  || '';
             const verifier = row['المحقق']         || row['verifier'] || '';
             const source   = row['مصدر التفضيل']  || row['source']   || '';
             const rowIdx   = row._rowIndex;
 
-            // Parse multiple editions (separator ##)
             const editions  = edition.split('##').map(s => s.trim()).filter(Boolean);
             const verifiers = verifier.split('##').map(s => s.trim()).filter(Boolean);
-
             const editionsHTML = editions.length
                 ? editions.map((ed, i) =>
                     '<div style="margin-bottom:3px">' +
@@ -1182,6 +1237,80 @@
             container.appendChild(item);
         });
     }
+
+    /* ---- NOTES (general suggestions) ---- */
+    function loadNotes(forceRefresh = false) {
+        notesRendered = false;
+        loadSuggestions(true); // reuse same data source
+    }
+
+    function renderNotes() {
+        notesRendered = true;
+        const container = document.getElementById('notesContainer');
+        if (!container) return;
+        const generalRows = suggestionsData.filter(isGeneralRow);
+        const count = generalRows.length;
+        const badge = document.getElementById('notesModalBadge');
+        if (badge) badge.textContent = count;
+        const dot = document.getElementById('notesNotifDot');
+        if (dot) { dot.textContent = count > 9 ? '9+' : count; dot.style.display = count > 0 ? 'flex' : 'none'; }
+
+        if (generalRows.length === 0) {
+            container.innerHTML = '<div class="suggestions-empty"><span class="material-icons-round">check_circle</span>لا توجد ملاحظات جديدة</div>';
+            return;
+        }
+        container.innerHTML = '';
+        generalRows.forEach(row => {
+            const subject = row['الكتاب']    || '';
+            const content = row['أفضل طبعة'] || '';
+            const rowIdx  = row._rowIndex;
+            const item = document.createElement('div');
+            item.className = 'suggestion-item';
+            item.dataset.rowIndex = rowIdx;
+            item.innerHTML =
+                '<div class="suggestion-body">' +
+                '<div class="suggestion-book"><span class="material-icons-round">rate_review</span>' + escapeHtml(subject) + '</div>' +
+                (content ? '<div class="suggestion-detail">' + escapeHtml(content) + '</div>' : '') +
+                '</div>' +
+                '<div class="suggestion-actions">' +
+                '<button class="btn-reject-suggestion" onclick="rejectNote(' + rowIdx + ', this)">' +
+                '<span class="material-icons-round" style="font-size:14px">delete</span> حذف</button>' +
+                '</div>';
+            container.appendChild(item);
+        });
+    }
+
+    function rejectNote(rowIndex, btn) {
+        pendingRejectRowIndex = rowIndex;
+        pendingRejectBtn      = btn;
+        document.getElementById('rejectSuggestionModal').classList.add('visible');
+    }
+    // After note is deleted, update notes UI
+    const _origExecuteReject = window.executeRejectSuggestion;
+    window.executeRejectSuggestion = function() {
+        if (pendingRejectRowIndex === null) return;
+        const rowIndex = pendingRejectRowIndex;
+        const btn      = pendingRejectBtn;
+        document.getElementById('rejectSuggestionModal').classList.remove('visible');
+        pendingRejectRowIndex = null; pendingRejectBtn = null;
+        if (btn) btn.disabled = true;
+        deleteSuggestionFromSheet(rowIndex, () => {
+            suggestionsData = suggestionsData.filter(r => r._rowIndex !== rowIndex);
+            // Update both UI panels
+            renderSuggestions();
+            renderNotes();
+            // Sync book badge
+            const newBookCount = suggestionsData.filter(isBookRow).length;
+            const newNoteCount = suggestionsData.filter(isGeneralRow).length;
+            document.getElementById('suggestionsModalBadge').textContent = newBookCount;
+            if (document.getElementById('notesModalBadge')) document.getElementById('notesModalBadge').textContent = newNoteCount;
+            const dotS = document.getElementById('suggestionsNotifDot');
+            if (dotS) { dotS.textContent = newBookCount > 9 ? '9+' : newBookCount; dotS.style.display = newBookCount > 0 ? 'flex' : 'none'; }
+            const dotN = document.getElementById('notesNotifDot');
+            if (dotN) { dotN.textContent = newNoteCount > 9 ? '9+' : newNoteCount; dotN.style.display = newNoteCount > 0 ? 'flex' : 'none'; }
+            showToast('🗑️ تم حذف الملاحظة');
+        });
+    };
 
     function escapeHtml(str) {
         return String(str || '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
