@@ -6179,19 +6179,29 @@
       "كتب متنوعة"
     ],
     "notes": "",
+    "date": "2026-07-12",
     "best_editions": [
       {
+        "publisher": "دار عطاءات العلم",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782624413537-869sM8xBBfOkKQnv6cZjbrZa5U2Sj9Llpbcb6vKr.jpg"
         ],
         "notes": "",
-        "verifier": "محمد عزير شمس",
-        "publisher": "دار عطاءات العلم"
+        "corrections": [],
+        "verifier": "محمد عزير شمس"
+      },
+      {
+        "publisher": "دار سطور العلم",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1783840839751-10c1153662664346bfbc293f2e7a3fe1thumbnail1000x100070.jpg"
+        ],
+        "notes": "",
+        "corrections": [],
+        "verifier": "نضال البرازي إشراف على العمران"
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 205,
