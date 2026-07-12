@@ -11466,5 +11466,27 @@
     ],
     "alt_editions": [],
     "links": []
+  },
+  {
+    "id": 418,
+    "title": "المنتقى من السنن المسندة عن رسول الله صلى الله عليه وسلم",
+    "author": "عبد الله بن علي بن الجارود النيسابوري",
+    "category": [
+      "الحديث"
+    ],
+    "notes": "",
+    "date": "2026-07-12",
+    "best_editions": [
+      {
+        "publisher": "دار التأصيل",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1783843696039-cover2.jpg"
+        ],
+        "notes": "",
+        "corrections": []
+      }
+    ],
+    "alt_editions": [],
+    "links": []
   }
 ]
