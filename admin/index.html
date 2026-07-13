@@ -1144,14 +1144,49 @@
 
     /* ---- SUGGESTIONS ---- */
     function parseCSV(text) {
-        const lines = text.trim().split('\n');
-        if (lines.length < 1) return [];
-        const headers = lines[0].split(',').map(h => h.trim().replace(/^"|"$/g, ''));
+        // Parseur RFC 4180 complet : gère virgules ET sauts de ligne dans les champs entre guillemets
         const rows = [];
-        for (let i = 1; i < lines.length; i++) {
-            if (!lines[i].trim()) continue;
-            const cols = lines[i].split(',').map(c => c.trim().replace(/^"|"$/g, ''));
-            const obj = { _rowIndex: i + 1 }; // 1-based sheet row (row 1 = header)
+        let pos = 0;
+        const len = text.length;
+
+        function parseField() {
+            if (pos >= len || text[pos] === '\n' || text[pos] === '\r') return '';
+            if (text[pos] === '"') {
+                let field = '';
+                pos++; // skip opening quote
+                while (pos < len) {
+                    if (text[pos] === '"') {
+                        if (pos + 1 < len && text[pos + 1] === '"') { field += '"'; pos += 2; } // "" → "
+                        else { pos++; break; } // closing quote
+                    } else { field += text[pos++]; }
+                }
+                return field.trim();
+            } else {
+                let field = '';
+                while (pos < len && text[pos] !== ',' && text[pos] !== '\n' && text[pos] !== '\r') {
+                    field += text[pos++];
+                }
+                return field.trim();
+            }
+        }
+
+        function parseLine() {
+            const fields = [];
+            while (pos < len && text[pos] !== '\n' && text[pos] !== '\r') {
+                fields.push(parseField());
+                if (pos < len && text[pos] === ',') pos++; else break;
+            }
+            if (pos < len && text[pos] === '\r') pos++; // skip \r
+            if (pos < len && text[pos] === '\n') pos++; // skip \n
+            return fields;
+        }
+
+        const headers = parseLine();
+        let rowIndex = 2; // ligne 1 = headers, 1-based
+        while (pos < len) {
+            const cols = parseLine();
+            if (cols.length === 0 || (cols.length === 1 && cols[0] === '')) { rowIndex++; continue; }
+            const obj = { _rowIndex: rowIndex++ };
             headers.forEach((h, j) => { obj[h] = cols[j] || ''; });
             rows.push(obj);
         }
@@ -1178,11 +1213,21 @@
 
     function isBookRow(row) {
         const t = (row['النوع'] || row['type'] || '').trim().toLowerCase();
-        return t === '' || t === 'book';
+        if (t === 'general') return false;
+        if (t === 'book')    return true;
+        // Fallback : les suggestions de livres ont toujours source ou verifier renseigné
+        const source   = (row['مصدر التفضيل'] || row['source']   || '').trim();
+        const verifier = (row['المحقق']        || row['verifier'] || '').trim();
+        return source !== '' || verifier !== '';
     }
     function isGeneralRow(row) {
         const t = (row['النوع'] || row['type'] || '').trim().toLowerCase();
-        return t === 'general';
+        if (t === 'general') return true;
+        if (t === 'book')    return false;
+        // Fallback : les suggestions générales ont source et verifier vides
+        const source   = (row['مصدر التفضيل'] || row['source']   || '').trim();
+        const verifier = (row['المحقق']        || row['verifier'] || '').trim();
+        return source === '' && verifier === '';
     }
 
     function renderSuggestions() {
