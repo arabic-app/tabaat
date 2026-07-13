@@ -780,37 +780,37 @@
       "الحديث"
     ],
     "notes": "",
+    "date": "2026-07-13",
     "best_editions": [
       {
+        "publisher": "دار الصديق",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782667179317-47748940724173723286176805548874288404472875n.jpg"
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "عصام موسى هادي",
-        "publisher": "دار الصديق"
+        "verifier": "عصام موسى هادي"
       },
       {
+        "publisher": "دار التأصيل",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782667187722-47697390624173708452844952209115303197773551n.jpg"
         ],
-        "notes": "عدة مجلدات، الطبعة الثانية وما بعدها",
-        "corrections": [],
-        "publisher": "دار التأصيل"
+        "notes": "عدة مجلدات",
+        "corrections": []
       }
     ],
     "alt_editions": [
       {
+        "publisher": "مكتبة المعارف",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782667194280-643e176c03d44cb6bd59a55732632f8a683.76068376068x10000EYF3Yb6pPHonRC0z30V4mju177YQfmnQOfiTUuZ.jpg"
         ],
         "notes": "إن كانت رخيصة",
-        "corrections": [],
-        "publisher": "مكتبة المعارف"
+        "corrections": []
       }
     ],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 16,
