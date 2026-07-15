@@ -6180,7 +6180,7 @@
       "كتب متنوعة"
     ],
     "notes": "",
-    "date": "2026-07-12",
+    "date": "2026-07-15",
     "best_editions": [
       {
         "publisher": "دار عطاءات العلم",
@@ -6188,7 +6188,18 @@
           "https://arabic-app.github.io/tabaat/images/1782624413537-869sM8xBBfOkKQnv6cZjbrZa5U2Sj9Llpbcb6vKr.jpg"
         ],
         "notes": "",
-        "corrections": [],
+        "corrections": [
+          {
+            "title": "ص 46",
+            "body": "هذا السطر سقط من كتاب الفوائد بتحقيق أستاذنا محمد عزير شمس -رحمه الله- وهو ثابت في المخطوط الذي اعتمده الشيخ رحمه الله رحمة واسعة.",
+            "attachments": [
+              {
+                "title": "ص 77 ط سطور",
+                "url": "https://arabic-app.github.io/tabaat/corrections/1784112524455-46.jpeg"
+              }
+            ]
+          }
+        ],
         "verifier": "محمد عزير شمس"
       },
       {
