@@ -11480,5 +11480,28 @@
     ],
     "alt_editions": [],
     "links": []
+  },
+  {
+    "id": 419,
+    "title": "منتهى الإرادات في جمع المقنع مع التنقيح وزيادات",
+    "author": "ابن النجار الفتوحي",
+    "category": [
+      "الفقه الحنبلي"
+    ],
+    "notes": "",
+    "date": "2026-07-15",
+    "best_editions": [
+      {
+        "publisher": "دار العمرية للنشر والتوزيع",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1784100119000-montaha.jpg"
+        ],
+        "notes": "",
+        "corrections": [],
+        "verifier": "محمد بن خالد باحبيل الكُربي"
+      }
+    ],
+    "alt_editions": [],
+    "links": []
   }
 ]
