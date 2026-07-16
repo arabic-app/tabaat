@@ -11584,5 +11584,29 @@
     ],
     "alt_editions": [],
     "links": []
+  },
+  {
+    "id": 423,
+    "title": "المستجاد من فعلان الأجواد",
+    "author": "المحسن بن علي التنوخي",
+    "category": [
+      "اللغة والأدب",
+      "كتب متنوعة"
+    ],
+    "notes": "",
+    "date": "2026-07-17",
+    "best_editions": [
+      {
+        "publisher": "دار صادر",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1784239122801-21339.jpg"
+        ],
+        "notes": "",
+        "corrections": [],
+        "verifier": "محمد كرد علي"
+      }
+    ],
+    "alt_editions": [],
+    "links": []
   }
 ]
