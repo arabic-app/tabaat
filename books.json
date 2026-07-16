@@ -11561,5 +11561,28 @@
     ],
     "alt_editions": [],
     "links": []
+  },
+  {
+    "id": 422,
+    "title": "نشوار المحاضرة وأخبار المذاكرة",
+    "author": "المحسن بن علي التنوخي",
+    "category": [
+      "اللغة والأدب"
+    ],
+    "notes": "",
+    "date": "2026-07-17",
+    "best_editions": [
+      {
+        "publisher": "دار صادر",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1784239026705-images27.jpeg"
+        ],
+        "notes": "",
+        "corrections": [],
+        "verifier": "عبود الشالجي"
+      }
+    ],
+    "alt_editions": [],
+    "links": []
   }
 ]
