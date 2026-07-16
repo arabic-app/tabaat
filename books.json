@@ -11538,5 +11538,28 @@
     ],
     "alt_editions": [],
     "links": []
+  },
+  {
+    "id": 421,
+    "title": "كتاب الذيل على المحاضرات والمحاورات",
+    "author": "عبد الرحمن بن أبي بكر السيوطي",
+    "category": [
+      "اللغة والأدب"
+    ],
+    "notes": "",
+    "date": "2026-07-17",
+    "best_editions": [
+      {
+        "publisher": "دار الفكر",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1784238067291-210896.jpg"
+        ],
+        "notes": "",
+        "corrections": [],
+        "verifier": "يحيى الجبوري"
+      }
+    ],
+    "alt_editions": [],
+    "links": []
   }
 ]
