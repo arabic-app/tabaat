@@ -11632,5 +11632,27 @@
     ],
     "alt_editions": [],
     "links": []
+  },
+  {
+    "id": 425,
+    "title": "المختارات السائرة من روائع الأدب العربي",
+    "author": "أنيس المقدسي",
+    "category": [
+      "اللغة والأدب"
+    ],
+    "notes": "",
+    "date": "2026-07-17",
+    "best_editions": [
+      {
+        "publisher": "دار العلم للملايين",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1784239908302-5719d686a8cdc8ba0bdf91683d985386.jpg.webp"
+        ],
+        "notes": "",
+        "corrections": []
+      }
+    ],
+    "alt_editions": [],
+    "links": []
   }
 ]
