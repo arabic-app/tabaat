@@ -4756,29 +4756,20 @@
       "كتب متنوعة"
     ],
     "notes": "",
-    "date": "2026-07-19",
     "best_editions": [
       {
-        "publisher": "دار ابن حزم",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782559283063-images20260627T142037.204.jpeg"
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "عبد الحق التركماني"
-      },
-      {
-        "publisher": "دار القلم",
-        "images": [
-          "https://arabic-app.github.io/tabaat/images/1784484139445-47445.jpg"
-        ],
-        "notes": "",
-        "corrections": [],
-        "verifier": "محمد مطر سالم بن عابد الكعبي"
+        "verifier": "عبد الحق التركماني",
+        "publisher": "دار ابن حزم"
       }
     ],
     "alt_editions": [],
-    "links": []
+    "links": [],
+    "date": "2026-06-30"
   },
   {
     "id": 141,
