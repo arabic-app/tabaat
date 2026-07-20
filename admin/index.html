@@ -1294,7 +1294,7 @@
 
     // Google Sheet for suggestions
     const SHEET_ID       = '1x-vK9_yeaDh53NgILxexbroCbkmHC3oSFZeAAdnB4GA';
-    const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzLOnxu-92P32TlELldSSpA5RbvbWlkvbSO0B5xibIf29SYw1WUhVooijrq9xHVxfRW/exec';
+    const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyY54zDiK8ugrE-Gjm1sTdg3kx3qhMsW6gauGwkCy0i6cVHJ7YoZv-TnkVwZhLlu2fR/exec';
 
     function normalizeArabic(str) {
         if (!str) return '';
@@ -2291,12 +2291,32 @@
         sendBtn.disabled = true;
         sendBtn.innerHTML = '<span class="material-icons-round" style="font-size:16px;color:white;line-height:1;margin-bottom:0;animation:spin 0.8s linear infinite">sync</span>جاري الإرسال...';
 
-        const quotedBody = body
-            + (replyEmailOrigSubject || replyEmailOrigContent
-                ? '\n\n──────────────\nملاحظتك الأصلية:\n'
+        const hasQuote = replyEmailOrigSubject || replyEmailOrigContent;
+
+        // Plain text : ASCII only, no Unicode box-drawing chars (spam trigger)
+        const plainBody = body
+            + (hasQuote
+                ? '\n\n---\nملاحظتك الأصلية:\n'
                   + (replyEmailOrigSubject ? replyEmailOrigSubject + '\n' : '')
                   + (replyEmailOrigContent || '')
                 : '');
+
+        // HTML version
+        const esc = s => s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/\n/g,'<br>');
+        const htmlBody = `<div dir="rtl" style="font-family:Arial,sans-serif;font-size:15px;color:#222;max-width:600px;">`
+            + `<p style="margin:0 0 16px;">${esc(body)}</p>`
+            + (hasQuote
+                ? `<hr style="border:none;border-top:1px solid #ccc;margin:20px 0;">`
+                  + `<p style="font-size:12px;color:#777;margin:0 0 8px;">ملاحظتك الأصلية:</p>`
+                  + `<blockquote style="margin:0;padding:10px 16px;background:#f4f6f8;border-right:3px solid #bec9c6;color:#555;font-size:13px;">`
+                  + (replyEmailOrigSubject ? `<strong>${esc(replyEmailOrigSubject)}</strong><br>` : '')
+                  + esc(replyEmailOrigContent || '')
+                  + `</blockquote>`
+                : '')
+            + `<hr style="border:none;border-top:1px solid #eee;margin:24px 0;">`
+            + `<p style="font-size:11px;color:#aaa;margin:0;">تطبيق افضل طبعة</p>`
+            + `</div>`;
+
         const hiddenForm = document.createElement('form');
         hiddenForm.method = 'POST';
         hiddenForm.action = APPS_SCRIPT_URL;
@@ -2307,10 +2327,11 @@
             inp.type = 'hidden'; inp.name = name; inp.value = value;
             hiddenForm.appendChild(inp);
         };
-        addInput('action',  'replyEmail');
-        addInput('to',      replyEmailTarget);
-        addInput('subject', 'ردّ على ملاحظتك – تطبيق أفضل طبعة');
-        addInput('body',    quotedBody);
+        addInput('action',   'replyEmail');
+        addInput('to',       replyEmailTarget);
+        addInput('subject',  'رد على ملاحظتك - تطبيق افضل طبعة');
+        addInput('body',     plainBody);
+        addInput('htmlBody', htmlBody);
         document.body.appendChild(hiddenForm);
         hiddenForm.submit();
         document.body.removeChild(hiddenForm);
