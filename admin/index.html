@@ -1265,14 +1265,15 @@
 <!-- REPLY EMAIL MODAL -->
 <div id="replyEmailModal" class="delete-overlay" style="z-index: 4000;">
     <div class="delete-modal" style="max-width:480px;text-align:right;">
-        <span class="material-icons-round" style="color:#1565c0;font-size:40px;">reply</span>
+        <span class="material-icons-round" style="color:#1565c0;font-size:28px;margin-bottom:6px;">reply</span>
         <h3>الرد على الملاحظة</h3>
-        <p id="replyEmailTarget" style="font-size:0.82rem;color:#1565c0;direction:ltr;background:#e3f2fd;padding:8px 12px;border-radius:8px;margin-bottom:16px;word-break:break-all;"></p>
-        <textarea id="replyEmailBody" class="md-input" style="min-height:130px;margin-bottom:16px;width:100%;" placeholder="اكتب ردّك هنا..."></textarea>
+        <p id="replyEmailTarget" style="font-size:0.82rem;color:#1565c0;direction:ltr;background:#e3f2fd;padding:8px 12px;border-radius:8px;margin-bottom:12px;word-break:break-all;"></p>
+        <div id="replyEmailContext" style="display:none;background:#f4f6f8;border-right:3px solid #bec9c6;padding:10px 12px;border-radius:4px;font-size:0.83rem;color:#3f4947;margin-bottom:14px;text-align:right;line-height:1.5;"></div>
+        <textarea id="replyEmailBody" class="md-input" style="min-height:110px;margin-bottom:16px;width:100%;" placeholder="اكتب ردّك هنا..."></textarea>
         <div class="delete-modal-actions">
             <button class="md-btn md-btn-secondary" onclick="closeReplyEmailModal()">إلغاء</button>
-            <button class="md-btn" id="replyEmailSendBtn" style="background:#1565c0;color:white;box-shadow:var(--md-elevation-1);" onclick="sendReplyEmail()">
-                <span class="material-icons-round">send</span> إرسال
+            <button class="md-btn" id="replyEmailSendBtn" style="background:#1565c0;color:white;box-shadow:var(--md-elevation-1);display:inline-flex;align-items:center;gap:6px;" onclick="sendReplyEmail()">
+                <span class="material-icons-round" style="font-size:16px;color:white;line-height:1;margin-bottom:0;">send</span>إرسال
             </button>
         </div>
     </div>
@@ -1293,7 +1294,7 @@
 
     // Google Sheet for suggestions
     const SHEET_ID       = '1x-vK9_yeaDh53NgILxexbroCbkmHC3oSFZeAAdnB4GA';
-    const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzEL7zY2tMgvXT6Flq1qnoVgbaOmgLe0xjCP9ZDwp46n24d67sJqhCze2GGJb3IApdC/exec';
+    const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzLOnxu-92P32TlELldSSpA5RbvbWlkvbSO0B5xibIf29SYw1WUhVooijrq9xHVxfRW/exec';
 
     function normalizeArabic(str) {
         if (!str) return '';
@@ -1613,7 +1614,7 @@
                     '<span class="material-icons-round" style="font-size:14px;vertical-align:middle;">email</span> ' + escapeHtml(email) + '</div>' : '') +
                 '</div>' +
                 '<div class="suggestion-actions">' +
-                (email ? '<button class="btn-accept-suggestion" style="background:#e3f2fd;color:#1565c0;border-color:#90caf9;" onclick="openReplyEmailModal(\'' + escapeAttr(email) + '\')">' +
+                (email ? '<button class="btn-accept-suggestion" style="background:#e3f2fd;color:#1565c0;border-color:#90caf9;" onclick="openReplyEmailModal(\'' + escapeAttr(email) + '\',\'' + escapeAttr(subject) + '\',\'' + escapeAttr(content) + '\')">' +
                     '<span class="material-icons-round" style="font-size:14px">reply</span> رد</button>' : '') +
                 '<button class="btn-reject-suggestion" onclick="rejectNote(' + rowIdx + ', this)">' +
                 '<span class="material-icons-round" style="font-size:14px">delete</span> حذف</button>' +
@@ -2260,10 +2261,19 @@
 
     /* ---- REPLY EMAIL MODAL ---- */
     let replyEmailTarget = '';
+    let replyEmailOrigSubject = '';
+    let replyEmailOrigContent = '';
 
-    function openReplyEmailModal(email) {
-        replyEmailTarget = email;
+    function openReplyEmailModal(email, subject, content) {
+        replyEmailTarget      = email;
+        replyEmailOrigSubject = subject || '';
+        replyEmailOrigContent = content || '';
         document.getElementById('replyEmailTarget').textContent = email;
+        const ctx = document.getElementById('replyEmailContext');
+        ctx.innerHTML = (subject ? '<strong>' + escapeHtml(subject) + '</strong>' : '')
+                      + (subject && content ? '<br>' : '')
+                      + (content ? escapeHtml(content) : '');
+        ctx.style.display = (subject || content) ? 'block' : 'none';
         document.getElementById('replyEmailBody').value = '';
         document.getElementById('replyEmailModal').classList.add('visible');
     }
@@ -2279,8 +2289,14 @@
         if (!replyEmailTarget) return;
 
         sendBtn.disabled = true;
-        sendBtn.innerHTML = '<span class="material-icons-round" style="font-size:16px;animation:spin 0.8s linear infinite">sync</span> جاري الإرسال...';
+        sendBtn.innerHTML = '<span class="material-icons-round" style="font-size:16px;color:white;line-height:1;margin-bottom:0;animation:spin 0.8s linear infinite">sync</span>جاري الإرسال...';
 
+        const quotedBody = body
+            + (replyEmailOrigSubject || replyEmailOrigContent
+                ? '\n\n──────────────\nملاحظتك الأصلية:\n'
+                  + (replyEmailOrigSubject ? replyEmailOrigSubject + '\n' : '')
+                  + (replyEmailOrigContent || '')
+                : '');
         const hiddenForm = document.createElement('form');
         hiddenForm.method = 'POST';
         hiddenForm.action = APPS_SCRIPT_URL;
@@ -2293,15 +2309,15 @@
         };
         addInput('action',  'replyEmail');
         addInput('to',      replyEmailTarget);
-        addInput('subject', 'ردّ على ملاحظتك – دليل طبعات الكتب الإسلامية');
-        addInput('body',    body);
+        addInput('subject', 'ردّ على ملاحظتك – تطبيق أفضل طبعة');
+        addInput('body',    quotedBody);
         document.body.appendChild(hiddenForm);
         hiddenForm.submit();
         document.body.removeChild(hiddenForm);
 
         setTimeout(() => {
             sendBtn.disabled = false;
-            sendBtn.innerHTML = '<span class="material-icons-round">send</span> إرسال';
+            sendBtn.innerHTML = '<span class="material-icons-round" style="font-size:16px;color:white;line-height:1;margin-bottom:0;">send</span>إرسال';
             closeReplyEmailModal();
             showToast('✅ تم إرسال الرد على ' + replyEmailTarget);
         }, 1800);
