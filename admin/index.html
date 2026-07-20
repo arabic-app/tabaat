@@ -813,6 +813,8 @@
         .auth-btn:hover:not(:disabled) { background: #00796b; box-shadow: 0 4px 16px rgba(0,105,92,0.3); }
         .auth-btn:disabled { background: #b2dfdb; cursor: not-allowed; box-shadow: none; }
         .auth-attempts { text-align: center; font-size: 0.78rem; color: #ba1a1a; margin-top: 10px; min-height: 18px; }
+        .auth-remember { display: flex; align-items: center; gap: 8px; margin: 12px 0 16px; justify-content: flex-start; font-size: 0.88rem; color: #546e7a; cursor: pointer; user-select: none; }
+        .auth-remember input[type="checkbox"] { width: 16px; height: 16px; accent-color: #00695c; cursor: pointer; flex-shrink: 0; }
     </style>
 </head>
 <body>
@@ -829,14 +831,19 @@
     // Mot de passe : Tabaa@1448
 
     const SESSION_KEY  = '__adm_auth__';
+    const REMEMBER_KEY = '__adm_rem__';
     const ATTEMPTS_KEY = '__adm_att__';
     const LOCKOUT_KEY  = '__adm_lock__';
     const MAX_ATTEMPTS = 5;
     const LOCKOUT_MS   = 10 * 60 * 1000; // 10 minutes
 
     // ── VÉRIFICATION DE SESSION ────────────────────────────────────────────────
-    if (sessionStorage.getItem(SESSION_KEY) === PASSWORD_HASH.slice(0, 16)) {
-        // Déjà authentifié dans cet onglet — afficher directement
+    const _tok = PASSWORD_HASH.slice(0, 16);
+    const _already = sessionStorage.getItem(SESSION_KEY) === _tok
+                  || localStorage.getItem(REMEMBER_KEY)  === _tok;
+    if (_already) {
+        // Synchroniser sessionStorage si reconnexion via localStorage
+        sessionStorage.setItem(SESSION_KEY, _tok);
         document.addEventListener('DOMContentLoaded', () => {
             const overlay = document.getElementById('auth-overlay');
             if (overlay) overlay.classList.add('hidden');
@@ -910,6 +917,13 @@
                 localStorage.removeItem(ATTEMPTS_KEY);
                 localStorage.removeItem(LOCKOUT_KEY);
                 sessionStorage.setItem(SESSION_KEY, PASSWORD_HASH.slice(0, 16));
+                // Mémoriser si la case est cochée
+                const rememberCb = document.getElementById('authRememberMe');
+                if (rememberCb && rememberCb.checked) {
+                    localStorage.setItem(REMEMBER_KEY, PASSWORD_HASH.slice(0, 16));
+                } else {
+                    localStorage.removeItem(REMEMBER_KEY);
+                }
                 const content = document.getElementById('admin-content');
                 if (content) { content.style.display = ''; content.removeAttribute('aria-hidden'); }
                 const overlay = document.getElementById('auth-overlay');
@@ -1007,6 +1021,10 @@
                     <span class="material-icons-round" id="authToggleIcon">visibility</span>
                 </button>
             </div>
+            <label class="auth-remember">
+                <input type="checkbox" id="authRememberMe">
+                تذكّرني في هذا الجهاز
+            </label>
             <button type="submit" class="auth-btn" id="authSubmitBtn" onclick="checkAdminPassword()">
                 <span class="material-icons-round">lock_open</span> دخول
             </button>
