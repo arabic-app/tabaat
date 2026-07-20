@@ -677,6 +677,20 @@
                     </label>
                     <textarea id="contentInput" class="md-input" style="min-height:120px;" placeholder="تفاصيل الملاحظة..."></textarea>
                 </div>
+                <div class="form-group">
+                    <label for="emailInput">
+                        <span class="material-icons-round">email</span>
+                        البريد الإلكتروني
+                        <span class="optional-badge">اختياري</span>
+                    </label>
+                    <input type="email" id="emailInput" class="md-input"
+                           placeholder="email@example.com" autocomplete="email"
+                           style="direction:ltr;">
+                    <div class="hint">
+                        <span class="material-icons-round">info</span>
+                        أدخله إذا أردت تلقّي ردّ من الفريق على ملاحظتك
+                    </div>
+                </div>
             </div>
 
             <button type="submit" class="btn-submit" id="submitBtn">
@@ -714,10 +728,10 @@
     // Replace with your Google Apps Script Web App URL.
     // See README below for how to create the Apps Script.
     // ============================================================
-    const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwRr68S3g30zBvb09ZIdbOT3UdtyQKq_TP_C_kQ8teHeiv82DozIlnkzpxESCjEMoVWqA/exec';
+    const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzEL7zY2tMgvXT6Flq1qnoVgbaOmgLe0xjCP9ZDwp46n24d67sJqhCze2GGJb3IApdC/exec';
 
     // Spreadsheet ID (used as fallback / reference)
-    const SHEET_ID = '198s1pSV_I_wF6DDTHLD2lnWoPBCqrCNAzzh1YugeIfA';
+    const SHEET_ID = '1x-vK9_yeaDh53NgILxexbroCbkmHC3oSFZeAAdnB4GA';
 
     // ============================================================
 
@@ -1019,7 +1033,13 @@
             if (!subjectVal) { validateInput(document.getElementById('subjectInput')); valid = false; }
             if (!contentVal) { validateInput(document.getElementById('contentInput')); valid = false; }
             if (!valid) return;
-            payload = { type: 'general', book: subjectVal, edition: contentVal, verifier: '', source: '' };
+            payload = {
+                type:     'general',
+                book:     subjectVal,
+                edition:  contentVal,
+                verifier: '',
+                source:   document.getElementById('emailInput').value.trim()
+            };
         } else {
             const bookVal    = bookInput.value.trim();
             const sourceVal  = sourceInput.value.trim();
@@ -1125,7 +1145,7 @@
         document.getElementById('suggestionForm').style.display = 'block';
         document.getElementById('successState').classList.remove('visible');
         switchType('book');
-        ['bookInput', 'sourceInput', 'subjectInput', 'contentInput'].forEach(id => {
+        ['bookInput', 'sourceInput', 'subjectInput', 'contentInput', 'emailInput'].forEach(id => {
             const el = document.getElementById(id);
             if (el) { el.classList.remove('valid', 'invalid'); el.disabled = false; }
         });
@@ -1152,43 +1172,5 @@
     })();
 </script>
 
-<!--
-================================================================================
-  INSTRUCTIONS : Configurer Google Apps Script
-================================================================================
-
-1. Ouvrez le Google Spreadsheet :
-   https://docs.google.com/spreadsheets/d/198s1pSV_I_wF6DDTHLD2lnWoPBCqrCNAzzh1YugeIfA
-
-2. Menu : Extensions → Apps Script
-
-3. Remplacez le code par ceci :
-
-   function doPost(e) {
-     const sheet = SpreadsheetApp.openById('198s1pSV_I_wF6DDTHLD2lnWoPBCqrCNAzzh1YugeIfA')
-                                  .getActiveSheet();
-     const data  = JSON.parse(e.postData.contents);
-     sheet.appendRow([
-       data.book     || '',
-       data.edition  || '',
-       data.verifier || '',
-       data.source   || '',
-       new Date().toLocaleDateString('ar-SA')
-     ]);
-     return ContentService
-       .createTextOutput(JSON.stringify({ status: 'ok' }))
-       .setMimeType(ContentService.MimeType.JSON);
-   }
-
-4. Déployez : Déployer → Nouveau déploiement
-   - Type : Application Web
-   - Exécuter en tant que : Moi
-   - Accès : Tout le monde
-
-5. Copiez l'URL de déploiement et remplacez dans ce fichier :
-   const APPS_SCRIPT_URL = 'COLLER_ICI_L_URL';
-
-================================================================================
--->
 </body>
 </html>

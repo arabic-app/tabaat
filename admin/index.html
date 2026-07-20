@@ -1256,8 +1256,24 @@
         <h3>حذف الاقتراح</h3>
         <p>هل تريد حذف هذا الاقتراح نهائياً؟ لا يمكن التراجع عن هذه الخطوة.</p>
         <div class="delete-modal-actions">
-            <button class="md-btn md-btn-secondary" onclick="closeRejectModal()">إلغاء</button>
+            <button class="md-btn md-btn-secondary" onclick="closeRejectModal()">&#x625;لغاء</button>
             <button class="md-btn md-btn-error" onclick="executeRejectSuggestion()">نعم، احذف الاقتراح</button>
+        </div>
+    </div>
+</div>
+
+<!-- REPLY EMAIL MODAL -->
+<div id="replyEmailModal" class="delete-overlay" style="z-index: 4000;">
+    <div class="delete-modal" style="max-width:480px;text-align:right;">
+        <span class="material-icons-round" style="color:#1565c0;font-size:40px;">reply</span>
+        <h3>الرد على الملاحظة</h3>
+        <p id="replyEmailTarget" style="font-size:0.82rem;color:#1565c0;direction:ltr;background:#e3f2fd;padding:8px 12px;border-radius:8px;margin-bottom:16px;word-break:break-all;"></p>
+        <textarea id="replyEmailBody" class="md-input" style="min-height:130px;margin-bottom:16px;width:100%;" placeholder="اكتب ردّك هنا..."></textarea>
+        <div class="delete-modal-actions">
+            <button class="md-btn md-btn-secondary" onclick="closeReplyEmailModal()">إلغاء</button>
+            <button class="md-btn" id="replyEmailSendBtn" style="background:#1565c0;color:white;box-shadow:var(--md-elevation-1);" onclick="sendReplyEmail()">
+                <span class="material-icons-round">send</span> إرسال
+            </button>
         </div>
     </div>
 </div>
@@ -1276,8 +1292,8 @@
     let currentSuggestionRow = null; // row index in sheet if editing from suggestion
 
     // Google Sheet for suggestions
-    const SHEET_ID       = '198s1pSV_I_wF6DDTHLD2lnWoPBCqrCNAzzh1YugeIfA';
-    const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwRr68S3g30zBvb09ZIdbOT3UdtyQKq_TP_C_kQ8teHeiv82DozIlnkzpxESCjEMoVWqA/exec';
+    const SHEET_ID       = '1x-vK9_yeaDh53NgILxexbroCbkmHC3oSFZeAAdnB4GA';
+    const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzEL7zY2tMgvXT6Flq1qnoVgbaOmgLe0xjCP9ZDwp46n24d67sJqhCze2GGJb3IApdC/exec';
 
     function normalizeArabic(str) {
         if (!str) return '';
@@ -1491,19 +1507,19 @@
         const t = (row['النوع'] || row['type'] || '').trim().toLowerCase();
         if (t === 'general') return false;
         if (t === 'book')    return true;
-        // Fallback : les suggestions de livres ont toujours source ou verifier renseigné
+        // Fallback : les suggestions de livres ont verifier OU source non-email
         const source   = (row['مصدر التفضيل'] || row['source']   || '').trim();
         const verifier = (row['المحقق']        || row['verifier'] || '').trim();
-        return source !== '' || verifier !== '';
+        return verifier !== '' || (source !== '' && !source.includes('@'));
     }
     function isGeneralRow(row) {
         const t = (row['النوع'] || row['type'] || '').trim().toLowerCase();
         if (t === 'general') return true;
         if (t === 'book')    return false;
-        // Fallback : les suggestions générales ont source et verifier vides
+        // Fallback : les notes générales ont verifier vide et source vide ou email
         const source   = (row['مصدر التفضيل'] || row['source']   || '').trim();
         const verifier = (row['المحقق']        || row['verifier'] || '').trim();
-        return source === '' && verifier === '';
+        return verifier === '' && (source === '' || source.includes('@'));
     }
 
     function renderSuggestions() {
@@ -1584,6 +1600,7 @@
         generalRows.forEach(row => {
             const subject = row['الكتاب']    || '';
             const content = row['أفضل طبعة'] || '';
+            const email   = row['مصدر التفضيل'] || row['source'] || '';
             const rowIdx  = row._rowIndex;
             const item = document.createElement('div');
             item.className = 'suggestion-item';
@@ -1592,8 +1609,12 @@
                 '<div class="suggestion-body">' +
                 '<div class="suggestion-book"><span class="material-icons-round">rate_review</span>' + escapeHtml(subject) + '</div>' +
                 (content ? '<div class="suggestion-detail">' + escapeHtml(content) + '</div>' : '') +
+                (email ? '<div style="margin-top:6px;font-size:0.8rem;color:#1565c0;direction:ltr;text-align:right;">' +
+                    '<span class="material-icons-round" style="font-size:14px;vertical-align:middle;">email</span> ' + escapeHtml(email) + '</div>' : '') +
                 '</div>' +
                 '<div class="suggestion-actions">' +
+                (email ? '<button class="btn-accept-suggestion" style="background:#e3f2fd;color:#1565c0;border-color:#90caf9;" onclick="openReplyEmailModal(\'' + escapeAttr(email) + '\')">' +
+                    '<span class="material-icons-round" style="font-size:14px">reply</span> رد</button>' : '') +
                 '<button class="btn-reject-suggestion" onclick="rejectNote(' + rowIdx + ', this)">' +
                 '<span class="material-icons-round" style="font-size:14px">delete</span> حذف</button>' +
                 '</div>';
@@ -2236,6 +2257,55 @@
         const saved = localStorage.getItem('github_token_secured');
         if (saved) document.getElementById('githubToken').value = saved;
     });
+
+    /* ---- REPLY EMAIL MODAL ---- */
+    let replyEmailTarget = '';
+
+    function openReplyEmailModal(email) {
+        replyEmailTarget = email;
+        document.getElementById('replyEmailTarget').textContent = email;
+        document.getElementById('replyEmailBody').value = '';
+        document.getElementById('replyEmailModal').classList.add('visible');
+    }
+    function closeReplyEmailModal() {
+        document.getElementById('replyEmailModal').classList.remove('visible');
+        replyEmailTarget = '';
+    }
+    function sendReplyEmail() {
+        const bodyEl  = document.getElementById('replyEmailBody');
+        const sendBtn = document.getElementById('replyEmailSendBtn');
+        const body    = bodyEl.value.trim();
+        if (!body) { bodyEl.focus(); return; }
+        if (!replyEmailTarget) return;
+
+        sendBtn.disabled = true;
+        sendBtn.innerHTML = '<span class="material-icons-round" style="font-size:16px;animation:spin 0.8s linear infinite">sync</span> جاري الإرسال...';
+
+        const hiddenForm = document.createElement('form');
+        hiddenForm.method = 'POST';
+        hiddenForm.action = APPS_SCRIPT_URL;
+        hiddenForm.target = 'suggestionDeleteFrame';
+        hiddenForm.style.display = 'none';
+        const addInput = (name, value) => {
+            const inp = document.createElement('input');
+            inp.type = 'hidden'; inp.name = name; inp.value = value;
+            hiddenForm.appendChild(inp);
+        };
+        addInput('action',  'replyEmail');
+        addInput('to',      replyEmailTarget);
+        addInput('subject', 'ردّ على ملاحظتك – دليل طبعات الكتب الإسلامية');
+        addInput('body',    body);
+        document.body.appendChild(hiddenForm);
+        hiddenForm.submit();
+        document.body.removeChild(hiddenForm);
+
+        setTimeout(() => {
+            sendBtn.disabled = false;
+            sendBtn.innerHTML = '<span class="material-icons-round">send</span> إرسال';
+            closeReplyEmailModal();
+            showToast('✅ تم إرسال الرد على ' + replyEmailTarget);
+        }, 1800);
+    }
 
     /* ---- TOAST ---- */
     let toastTimer;
