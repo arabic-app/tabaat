@@ -737,11 +737,266 @@
         }
         .suggestions-refresh-btn:hover { background: rgba(21,101,192,0.1); }
         .suggestions-refresh-btn .material-icons-round { font-size: 18px; }
+
+        /* ===== AUTH OVERLAY ===== */
+        #auth-overlay {
+            position: fixed; inset: 0; z-index: 99999;
+            background: linear-gradient(135deg, #00695c 0%, #004d40 100%);
+            display: flex; align-items: center; justify-content: center;
+            padding: 16px;
+            font-family: 'Cairo', sans-serif;
+        }
+        #auth-overlay.hidden { display: none; }
+        .auth-card {
+            background: #fff; border-radius: 24px; padding: 36px 32px;
+            width: 100%; max-width: 380px;
+            box-shadow: 0 8px 40px rgba(0,0,0,0.3);
+            animation: authFadeIn 0.3s ease-out;
+        }
+        @keyframes authFadeIn {
+            from { opacity: 0; transform: translateY(20px) scale(0.97); }
+            to   { opacity: 1; transform: translateY(0) scale(1); }
+        }
+        .auth-logo {
+            display: flex; align-items: center; justify-content: center;
+            gap: 10px; margin-bottom: 8px;
+        }
+        .auth-logo .material-icons-round { font-size: 40px; color: #00695c; }
+        .auth-title {
+            text-align: center; font-size: 1.3rem; font-weight: 800;
+            color: #00695c; margin: 0 0 4px 0;
+        }
+        .auth-subtitle {
+            text-align: center; font-size: 0.85rem; color: #6f7977; margin: 0 0 28px 0;
+        }
+        .auth-field-wrap {
+            position: relative; margin-bottom: 16px;
+        }
+        .auth-input {
+            width: 100%; padding: 13px 48px 13px 14px;
+            border: 1.5px solid #bec9c6; border-radius: 10px;
+            font-family: 'Cairo', sans-serif; font-size: 1rem;
+            color: #191c1b; background: #f4f6f8; outline: none;
+            box-sizing: border-box; direction: ltr; letter-spacing: 1px;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+        .auth-input:focus { border-color: #00695c; box-shadow: 0 0 0 3px rgba(0,105,92,0.15); background: #fff; }
+        .auth-input.error { border-color: #ba1a1a; box-shadow: 0 0 0 3px rgba(186,26,26,0.12); }
+        .auth-toggle-pwd {
+            position: absolute; right: 12px; top: 50%; transform: translateY(-50%);
+            background: none; border: none; cursor: pointer; color: #6f7977;
+            display: flex; align-items: center; padding: 4px;
+            border-radius: 50%;
+        }
+        .auth-toggle-pwd:hover { color: #00695c; background: rgba(0,105,92,0.08); }
+        .auth-toggle-pwd .material-icons-round { font-size: 20px; }
+        .auth-error-msg {
+            display: none; background: #ffdad6; color: #ba1a1a; border-radius: 8px;
+            padding: 10px 14px; margin-bottom: 14px; font-size: 0.88rem; font-weight: 700;
+            text-align: center;
+        }
+        .auth-error-msg.visible { display: block; }
+        .auth-lockout-msg {
+            display: none; background: #fff3e0; color: #e65100; border-radius: 8px;
+            padding: 10px 14px; margin-bottom: 14px; font-size: 0.88rem; font-weight: 700;
+            text-align: center;
+        }
+        .auth-lockout-msg.visible { display: block; }
+        .auth-btn {
+            width: 100%; height: 48px; background: #00695c; color: #fff;
+            border: none; border-radius: 24px; font-family: 'Cairo', sans-serif;
+            font-size: 1rem; font-weight: 800; cursor: pointer;
+            display: flex; align-items: center; justify-content: center; gap: 8px;
+            transition: background 0.2s, box-shadow 0.2s;
+            box-shadow: 0 2px 8px rgba(0,105,92,0.25);
+        }
+        .auth-btn:hover:not(:disabled) { background: #00796b; box-shadow: 0 4px 16px rgba(0,105,92,0.3); }
+        .auth-btn:disabled { background: #b2dfdb; cursor: not-allowed; box-shadow: none; }
+        .auth-attempts { text-align: center; font-size: 0.78rem; color: #ba1a1a; margin-top: 10px; min-height: 18px; }
     </style>
 </head>
 <body>
+<script>
+(function() {
+    'use strict';
+
+    // ── CONFIGURATION ──────────────────────────────────────────────────────────
+    // SHA-256 hash du mot de passe. Pour changer le mot de passe :
+    // 1. Ouvrez la console du navigateur sur n'importe quelle page
+    // 2. Exécutez : crypto.subtle.digest('SHA-256', new TextEncoder().encode('VOTRE_MOT_DE_PASSE')).then(b => console.log([...new Uint8Array(b)].map(x=>x.toString(16).padStart(2,'0')).join('')))
+    // 3. Remplacez la valeur ci-dessous par le hash obtenu
+    const PASSWORD_HASH = '776804fd62f4788b4bc05c5d5eadecadc346422d448288bffdeb4cbb44e265e3';
+    // Mot de passe : Tabaa@1448
+
+    const SESSION_KEY  = '__adm_auth__';
+    const ATTEMPTS_KEY = '__adm_att__';
+    const LOCKOUT_KEY  = '__adm_lock__';
+    const MAX_ATTEMPTS = 5;
+    const LOCKOUT_MS   = 10 * 60 * 1000; // 10 minutes
+
+    // ── VÉRIFICATION DE SESSION ────────────────────────────────────────────────
+    if (sessionStorage.getItem(SESSION_KEY) === PASSWORD_HASH.slice(0, 16)) {
+        // Déjà authentifié dans cet onglet — afficher directement
+        document.addEventListener('DOMContentLoaded', () => {
+            const overlay = document.getElementById('auth-overlay');
+            if (overlay) overlay.classList.add('hidden');
+        });
+        return;
+    }
+
+    // ── VERROUILLAGE ──────────────────────────────────────────────────────────
+    function getLockoutRemaining() {
+        const lockUntil = parseInt(localStorage.getItem(LOCKOUT_KEY) || '0', 10);
+        return Math.max(0, lockUntil - Date.now());
+    }
+
+    function getAttempts() {
+        return parseInt(localStorage.getItem(ATTEMPTS_KEY) || '0', 10);
+    }
+
+    function updateLockoutUI() {
+        const remaining = getLockoutRemaining();
+        const lockoutMsg = document.getElementById('authLockoutMsg');
+        const submitBtn  = document.getElementById('authSubmitBtn');
+        const input      = document.getElementById('authPasswordInput');
+        if (!lockoutMsg) return;
+        if (remaining > 0) {
+            const mins = Math.ceil(remaining / 60000);
+            lockoutMsg.textContent = `تم تجاوز عدد المحاولات. يرجى الانتظار ${mins} دقيقة.`;
+            lockoutMsg.classList.add('visible');
+            submitBtn.disabled = true;
+            input.disabled = true;
+            setTimeout(updateLockoutUI, 10000);
+        } else {
+            lockoutMsg.classList.remove('visible');
+            submitBtn.disabled = false;
+            input.disabled = false;
+        }
+    }
+
+    // ── HASH SHA-256 (Web Crypto API) ─────────────────────────────────────────
+    async function sha256(str) {
+        const data = new TextEncoder().encode(str);
+        const buf  = await crypto.subtle.digest('SHA-256', data);
+        return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2, '0')).join('');
+    }
+
+    // ── VÉRIFICATION DU MOT DE PASSE ──────────────────────────────────────────
+    window.checkAdminPassword = async function() {
+        if (getLockoutRemaining() > 0) return;
+
+        const input    = document.getElementById('authPasswordInput');
+        const errorMsg = document.getElementById('authErrorMsg');
+        const attMsg   = document.getElementById('authAttemptsMsg');
+        const submitBtn = document.getElementById('authSubmitBtn');
+        const password = input.value;
+
+        if (!password) {
+            input.classList.add('error');
+            input.focus();
+            return;
+        }
+
+        submitBtn.disabled = true;
+        input.classList.remove('error');
+        errorMsg.classList.remove('visible');
+
+        try {
+            const hash = await sha256(password);
+            if (hash === PASSWORD_HASH) {
+                // ✅ Succès
+                localStorage.removeItem(ATTEMPTS_KEY);
+                localStorage.removeItem(LOCKOUT_KEY);
+                sessionStorage.setItem(SESSION_KEY, PASSWORD_HASH.slice(0, 16));
+                const overlay = document.getElementById('auth-overlay');
+                overlay.style.transition = 'opacity 0.35s';
+                overlay.style.opacity = '0';
+                setTimeout(() => overlay.classList.add('hidden'), 350);
+            } else {
+                // ❌ Échec
+                let attempts = getAttempts() + 1;
+                localStorage.setItem(ATTEMPTS_KEY, attempts);
+                input.value = '';
+                input.classList.add('error');
+                errorMsg.classList.add('visible');
+
+                const remaining = MAX_ATTEMPTS - attempts;
+                if (remaining <= 0) {
+                    localStorage.setItem(LOCKOUT_KEY, Date.now() + LOCKOUT_MS);
+                    localStorage.removeItem(ATTEMPTS_KEY);
+                    attMsg.textContent = '';
+                    updateLockoutUI();
+                } else {
+                    attMsg.textContent = `محاولات متبقية: ${remaining} من ${MAX_ATTEMPTS}`;
+                    submitBtn.disabled = false;
+                }
+                input.focus();
+            }
+        } catch (e) {
+            console.error('[Auth] Error:', e);
+            submitBtn.disabled = false;
+        }
+    };
+
+    // ── TOGGLE VISIBILITÉ MOT DE PASSE ────────────────────────────────────────
+    document.addEventListener('DOMContentLoaded', () => {
+        updateLockoutUI();
+
+        const toggleBtn  = document.getElementById('authTogglePwd');
+        const toggleIcon = document.getElementById('authToggleIcon');
+        const input      = document.getElementById('authPasswordInput');
+
+        toggleBtn.addEventListener('click', () => {
+            const isHidden = input.type === 'password';
+            input.type = isHidden ? 'text' : 'password';
+            toggleIcon.textContent = isHidden ? 'visibility_off' : 'visibility';
+        });
+
+        // Soumettre avec Entrée
+        input.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') checkAdminPassword();
+        });
+
+        // Retirer le style d'erreur à la saisie
+        input.addEventListener('input', () => {
+            input.classList.remove('error');
+            document.getElementById('authErrorMsg').classList.remove('visible');
+        });
+    });
+})();
+</script>
 
 
+
+<!-- ===== AUTH OVERLAY ===== -->
+<div id="auth-overlay">
+    <div class="auth-card">
+        <div class="auth-logo">
+            <span class="material-icons-round">admin_panel_settings</span>
+        </div>
+        <h2 class="auth-title">لوحة الإدارة</h2>
+        <p class="auth-subtitle">أدخل كلمة المرور للمتابعة</p>
+
+        <div class="auth-lockout-msg" id="authLockoutMsg"></div>
+        <div class="auth-error-msg" id="authErrorMsg">كلمة المرور غير صحيحة</div>
+
+        <form id="authForm" onsubmit="return false;" autocomplete="off">
+            <div class="auth-field-wrap">
+                <input type="password" id="authPasswordInput" class="auth-input"
+                       placeholder="كلمة المرور" autocomplete="current-password"
+                       autofocus>
+                <button type="button" class="auth-toggle-pwd" id="authTogglePwd"
+                        aria-label="إظهار / إخفاء كلمة المرور">
+                    <span class="material-icons-round" id="authToggleIcon">visibility</span>
+                </button>
+            </div>
+            <button type="submit" class="auth-btn" id="authSubmitBtn" onclick="checkAdminPassword()">
+                <span class="material-icons-round">lock_open</span> دخول
+            </button>
+        </form>
+        <p class="auth-attempts" id="authAttemptsMsg"></p>
+    </div>
+</div>
 
 <!-- PWA Install Banner -->
 <div id="pwa-banner" role="complementary" aria-label="تثبيت التطبيق">
