@@ -840,6 +840,8 @@
         document.addEventListener('DOMContentLoaded', () => {
             const overlay = document.getElementById('auth-overlay');
             if (overlay) overlay.classList.add('hidden');
+            const content = document.getElementById('admin-content');
+            if (content) { content.style.display = ''; content.removeAttribute('aria-hidden'); }
         });
         return;
     }
@@ -908,6 +910,8 @@
                 localStorage.removeItem(ATTEMPTS_KEY);
                 localStorage.removeItem(LOCKOUT_KEY);
                 sessionStorage.setItem(SESSION_KEY, PASSWORD_HASH.slice(0, 16));
+                const content = document.getElementById('admin-content');
+                if (content) { content.style.display = ''; content.removeAttribute('aria-hidden'); }
                 const overlay = document.getElementById('auth-overlay');
                 overlay.style.transition = 'opacity 0.35s';
                 overlay.style.opacity = '0';
@@ -937,6 +941,19 @@
             submitBtn.disabled = false;
         }
     };
+
+    // ── WATCHDOG : recharge si l'overlay est supprimé sans auth ──────────────
+    document.addEventListener('DOMContentLoaded', () => {
+        if (sessionStorage.getItem(SESSION_KEY) !== PASSWORD_HASH.slice(0, 16)) {
+            const observer = new MutationObserver(() => {
+                if (!document.getElementById('auth-overlay') &&
+                    sessionStorage.getItem(SESSION_KEY) !== PASSWORD_HASH.slice(0, 16)) {
+                    location.reload();
+                }
+            });
+            observer.observe(document.body, { childList: true, subtree: true });
+        }
+    });
 
     // ── TOGGLE VISIBILITÉ MOT DE PASSE ────────────────────────────────────────
     document.addEventListener('DOMContentLoaded', () => {
@@ -997,6 +1014,8 @@
         <p class="auth-attempts" id="authAttemptsMsg"></p>
     </div>
 </div>
+
+<div id="admin-content" style="display:none" aria-hidden="true">
 
 <!-- PWA Install Banner -->
 <div id="pwa-banner" role="complementary" aria-label="تثبيت التطبيق">
@@ -1244,6 +1263,8 @@
 </div>
 
 <div id="toast"></div>
+
+</div><!-- /admin-content -->
 
 <!-- Hidden iframe for suggestion deletion via Apps Script -->
 <iframe id="suggestionDeleteFrame" name="suggestionDeleteFrame" style="display:none" aria-hidden="true"></iframe>
