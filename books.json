@@ -11663,5 +11663,27 @@
     ],
     "alt_editions": [],
     "links": []
+  },
+  {
+    "id": 426,
+    "title": "زاد المستقنع في اختصار المقنع",
+    "author": "أبو النّجا موسى بنِ أَحمد بنِ موسى الحجّاوِي",
+    "category": [
+      "الفقه الحنبلي"
+    ],
+    "notes": "",
+    "date": "2026-07-21",
+    "best_editions": [
+      {
+        "publisher": "شركة إثراء المتون",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1784628448287-zadm.jpeg"
+        ],
+        "notes": "",
+        "corrections": []
+      }
+    ],
+    "alt_editions": [],
+    "links": []
   }
 ]
