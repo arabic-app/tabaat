@@ -1857,6 +1857,15 @@
             const cloneBtn = cardClone.querySelector('.share-card-btn');
             if (cloneBtn) cloneBtn.remove();
 
+            // Remove links section from clone
+            cardClone.querySelectorAll('.section-title').forEach(st => {
+                if (st.textContent.includes('روابط مفيدة')) {
+                    const ul = st.nextElementSibling;
+                    if (ul && ul.tagName === 'UL') ul.remove();
+                    st.remove();
+                }
+            });
+
             // Fix meta-chips: ensure text is visible for html2canvas
             cardClone.querySelectorAll('.meta-chip').forEach(chip => {
                 chip.style.overflow = 'visible';
