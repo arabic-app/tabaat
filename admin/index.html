@@ -1166,8 +1166,10 @@
 <!-- CONFIG MODAL -->
 <div id="configModal" class="modal-overlay" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="config-modal-title" style="z-index:900;">
     <div class="modal-dialog" style="max-width:440px;text-align:right;">
-        <span class="material-icons-round" style="color:var(--primary);font-size:40px;margin-bottom:8px;">settings</span>
-        <h3 id="config-modal-title" style="color:var(--primary);">إعدادات الإدارة</h3>
+        <div style="display:flex;align-items:center;justify-content:flex-start;gap:8px;margin-bottom:16px;">
+            <span class="material-icons-round" style="color:var(--primary);font-size:32px;">settings</span>
+            <h3 id="config-modal-title" style="color:var(--primary);margin:0;font-size:1.3rem;">إعدادات الإدارة</h3>
+        </div>
         <div class="sync-modal-body">
           <form id="configForm" autocomplete="off" novalidate>
             <label for="configName">اسم المسؤول *</label>
