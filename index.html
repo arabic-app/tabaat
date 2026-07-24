@@ -17,6 +17,8 @@
     <!-- SEO -->
     <meta name="description" content="دليل شامل لأفضل طبعات الكتب الإسلامية - ابحث عن الكتاب، المؤلف، أو العلم">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
     <style>
@@ -46,7 +48,21 @@
             padding: 0;
             color: var(--md-on-surface);
             -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        :focus-visible {
+            outline: 2px solid var(--md-primary);
+            outline-offset: 2px;
+        }
+        :focus:not(:focus-visible) { outline: none; }
 
         /* ===== HEADER ===== */
         header {
@@ -245,6 +261,22 @@
             color: var(--md-primary);
         }
         .sidebar-footer-label { flex: 1; }
+
+        .sidebar-share-item {
+            border-top: 1px solid var(--md-outline-variant);
+            padding: 14px 22px;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: var(--md-on-surface-variant);
+            font-size: 0.92rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.18s;
+        }
+        .sidebar-share-item:hover { background: var(--md-background); }
+        .sidebar-share-item .material-icons-round { font-size: 20px; color: var(--md-primary); }
         .dark-toggle {
             position: relative;
             width: 44px;
@@ -1177,7 +1209,7 @@
                 <h1>أفضل طبعة</h1>
                 <p>دليل أفضل طبعات الكتب الإسلامية</p>
             </div>
-            <button class="sidebar-toggle-btn" id="sidebarToggleBtn" aria-label="القائمة">
+            <button class="sidebar-toggle-btn" id="sidebarToggleBtn" aria-label="القائمة" aria-expanded="false" aria-controls="sidebar">
                 <span class="material-icons-round">menu</span>
             </button>
         </div>
@@ -1232,6 +1264,10 @@
             <span class="material-icons-round">download</span>
             <span class="sidebar-install-item-label">تثبيت التطبيق</span>
             <span class="sidebar-install-trigger">تثبيت</span>
+        </div>
+        <div class="sidebar-share-item" id="sidebar-share-item" onclick="shareApp()">
+            <span class="material-icons-round">share</span>
+            <span>مشاركة التطبيق</span>
         </div>
         <div class="sidebar-footer">
             <span class="material-icons-round" id="darkModeIcon">dark_mode</span>
@@ -1311,7 +1347,7 @@
         </div>
     </div>
 
-    <div id="infoModal" class="modal">
+    <div id="infoModal" class="modal" role="dialog" aria-modal="true">
         <div class="modal-content">
             <button class="close-modal" onclick="closeModal()" aria-label="إغلاق">
                 <span class="material-icons-round">close</span>
@@ -1322,7 +1358,7 @@
     </div>
 
     <!-- ===== PDF VIEWER MODAL ===== -->
-    <div id="pdfViewerModal" class="pdf-viewer-modal">
+    <div id="pdfViewerModal" class="pdf-viewer-modal" role="dialog" aria-modal="true">
         <div class="pdf-viewer-content">
             <div class="pdf-viewer-header">
                 <button class="pdf-btn-close" onclick="closePdfViewer()">
@@ -1768,6 +1804,27 @@
                 }
             }
         });
+
+        /* ===== SHARE APP ===== */
+        function shareApp() {
+            const shareData = {
+                title: 'أفضل طبعة',
+                text: 'دليل أفضل طبعات الكتب الإسلامية — ابحث عن الكتاب لتعرف أفضل الطبعات المعتمدة',
+                url: 'https://arabic-app.github.io/tabaat/'
+            };
+            if (navigator.share) {
+                navigator.share(shareData).catch(() => {});
+                closeSidebar();
+            } else {
+                navigator.clipboard.writeText(shareData.url).then(() => {
+                    closeSidebar();
+                    alert('✅ تم نسخ رابط التطبيق!');
+                }).catch(() => {
+                    closeSidebar();
+                    prompt('انسخ رابط التطبيق:', shareData.url);
+                });
+            }
+        }
 
         /* ===== DARK MODE ===== */
         function toggleDarkMode(enabled) {
