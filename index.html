@@ -1823,14 +1823,48 @@
             // Hide the share button itself during capture
             btn.style.visibility = 'hidden';
 
+            // Create a wrapper with a header for the capture
+            const wrapper = document.createElement('div');
+            wrapper.style.cssText = 'position:fixed;top:-9999px;left:-9999px;direction:rtl;font-family:Cairo,sans-serif;';
+            wrapper.style.width = card.offsetWidth + 'px';
+
+            // Header
+            const header = document.createElement('div');
+            header.style.cssText = `
+                background: ${getComputedStyle(document.body).getPropertyValue('--md-surface').trim() || '#ffffff'};
+                border: 1px solid ${getComputedStyle(document.body).getPropertyValue('--md-outline-variant').trim()};
+                border-bottom: none;
+                border-radius: 16px 16px 0 0;
+                padding: 14px 20px;
+                text-align: center;
+                font-size: 1.05rem;
+                font-weight: 800;
+                color: ${getComputedStyle(document.body).getPropertyValue('--md-primary').trim()};
+                font-family: Cairo, sans-serif;
+            `;
+            header.textContent = 'تطبيق أفضل طبعة';
+
+            // Clone the card
+            const cardClone = card.cloneNode(true);
+            cardClone.style.marginBottom = '0';
+            cardClone.style.borderRadius = '0 0 16px 16px';
+            // Remove share button from clone
+            const cloneBtn = cardClone.querySelector('.share-card-btn');
+            if (cloneBtn) cloneBtn.remove();
+
+            wrapper.appendChild(header);
+            wrapper.appendChild(cardClone);
+            document.body.appendChild(wrapper);
+
             try {
-                const canvas = await html2canvas(card, {
-                    backgroundColor: getComputedStyle(document.body).getPropertyValue('--md-surface').trim() || '#ffffff',
+                const canvas = await html2canvas(wrapper, {
+                    backgroundColor: getComputedStyle(document.body).getPropertyValue('--md-background').trim() || '#f4f6f8',
                     scale: 2,
                     useCORS: true,
                     logging: false
                 });
 
+                document.body.removeChild(wrapper);
                 btn.style.visibility = '';
 
                 const blob = await new Promise(resolve => canvas.toBlob(resolve, 'image/png'));
@@ -1857,6 +1891,7 @@
                     URL.revokeObjectURL(url);
                 }
             } catch (err) {
+                if (wrapper.parentNode) document.body.removeChild(wrapper);
                 btn.style.visibility = '';
                 if (err.name !== 'AbortError') console.error('Share failed:', err);
             }
