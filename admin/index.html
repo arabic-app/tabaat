@@ -1594,7 +1594,7 @@
     function toggleSidebar() {
         const isOpen = DOM.sidebar.getAttribute('aria-expanded') === 'true';
         DOM.sidebar.setAttribute('aria-expanded', String(!isOpen));
-        DOM.overlay.setAttribute('aria-hidden', String(!isOpen));
+        DOM.overlay.setAttribute('aria-hidden', String(isOpen));
         const btn = $('#btn-toggle-sidebar');
         if (btn) btn.setAttribute('aria-expanded', String(!isOpen));
     }
