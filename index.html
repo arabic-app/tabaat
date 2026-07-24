@@ -1894,7 +1894,7 @@
                 if (navigator.canShare && navigator.canShare({ files: [file] })) {
                     await navigator.share({
                         title: title,
-                        text: 'أفضل طبعة — ' + title,
+                        text: 'أفضل طبعة — ' + title + '\nhttps://arabic-app.github.io/tabaat',
                         files: [file]
                     });
                 } else {
