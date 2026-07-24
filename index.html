@@ -21,6 +21,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js" defer></script>
     <style>
         :root {
             --md-primary: #00695c;
@@ -560,6 +561,27 @@
             position: relative;
         }
         .md-card:hover { box-shadow: var(--md-elevation-2); }
+
+        /* ===== SHARE CARD BUTTON ===== */
+        .share-card-btn {
+            position: absolute;
+            top: 14px;
+            left: 14px;
+            background: none;
+            color: var(--md-on-surface-variant);
+            border: none;
+            padding: 0;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2;
+            -webkit-tap-highlight-color: transparent;
+            opacity: 0.55;
+            transition: opacity 0.2s;
+        }
+        .share-card-btn:hover { opacity: 1; }
+        .share-card-btn .material-icons-round { font-size: 20px; }
 
         .book-date {
             position: absolute;
@@ -1604,6 +1626,7 @@
                 }
 
                 card.innerHTML = `
+                    <button class="share-card-btn" onclick="shareBookCard(this)" title="مشاركة الكتاب كصورة"><span class="material-icons-round">share</span></button>
                     <h2 class="book-title">${book.title}</h2>
                     <div class="book-meta">
                         <span class="meta-chip"><span class="material-icons-round">person</span><span class="text">${book.author}</span></span>
@@ -1791,6 +1814,53 @@
             if (e.target.id === 'infoModal') closeModal(); 
             if (e.target.id === 'pdfViewerModal') closePdfViewer();
         };
+
+        /* ===== SHARE BOOK CARD AS IMAGE ===== */
+        async function shareBookCard(btn) {
+            const card = btn.closest('.md-card');
+            if (!card) return;
+
+            // Hide the share button itself during capture
+            btn.style.visibility = 'hidden';
+
+            try {
+                const canvas = await html2canvas(card, {
+                    backgroundColor: getComputedStyle(document.body).getPropertyValue('--md-surface').trim() || '#ffffff',
+                    scale: 2,
+                    useCORS: true,
+                    logging: false
+                });
+
+                btn.style.visibility = '';
+
+                const blob = await new Promise(resolve => canvas.toBlob(resolve, 'image/png'));
+                if (!blob) return;
+
+                const title = card.querySelector('.book-title')?.textContent || 'كتاب';
+                const file = new File([blob], title + '.png', { type: 'image/png' });
+
+                if (navigator.canShare && navigator.canShare({ files: [file] })) {
+                    await navigator.share({
+                        title: title,
+                        text: 'أفضل طبعة — ' + title,
+                        files: [file]
+                    });
+                } else {
+                    // Fallback: download the image
+                    const url = URL.createObjectURL(blob);
+                    const a = document.createElement('a');
+                    a.href = url;
+                    a.download = title + '.png';
+                    document.body.appendChild(a);
+                    a.click();
+                    document.body.removeChild(a);
+                    URL.revokeObjectURL(url);
+                }
+            } catch (err) {
+                btn.style.visibility = '';
+                if (err.name !== 'AbortError') console.error('Share failed:', err);
+            }
+        }
 
         // Intercept clicks on links in standalone/app mode to force system browser
         document.addEventListener('click', function(e) {
