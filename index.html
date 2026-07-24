@@ -1831,8 +1831,8 @@
 
             // Create a wrapper with padding for the capture
             const wrapper = document.createElement('div');
-            wrapper.style.cssText = `position:fixed;top:-9999px;left:-9999px;direction:rtl;font-family:Cairo,sans-serif;padding:20px;background:${bgColor};`;
-            wrapper.style.width = (card.offsetWidth + 40) + 'px';
+            wrapper.style.cssText = `position:fixed;top:-9999px;left:-9999px;direction:rtl;font-family:Cairo,sans-serif;padding:10px;background:${bgColor};`;
+            wrapper.style.width = (card.offsetWidth + 20) + 'px';
 
             // Header as separate card
             const header = document.createElement('div');
@@ -1857,20 +1857,17 @@
             const cloneBtn = cardClone.querySelector('.share-card-btn');
             if (cloneBtn) cloneBtn.remove();
 
-            // Fix meta-chips: replace flex with inline-block for html2canvas RTL compatibility
-            cardClone.querySelectorAll('.book-meta').forEach(meta => {
-                meta.style.display = 'block';
-                meta.style.direction = 'rtl';
-            });
+            // Fix meta-chips: ensure text is visible for html2canvas
             cardClone.querySelectorAll('.meta-chip').forEach(chip => {
-                chip.style.display = 'inline-flex';
-                chip.style.direction = 'rtl';
+                chip.style.overflow = 'visible';
+                chip.style.maxWidth = 'none';
             });
             cardClone.querySelectorAll('.meta-chip .text').forEach(txt => {
                 txt.style.whiteSpace = 'normal';
                 txt.style.overflow = 'visible';
-                txt.style.direction = 'rtl';
-                txt.style.unicodeBidi = 'embed';
+                txt.style.textOverflow = 'unset';
+                txt.style.maxWidth = 'none';
+                txt.style.display = 'inline';
             });
 
             wrapper.appendChild(header);
