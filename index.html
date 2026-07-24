@@ -1823,34 +1823,55 @@
             // Hide the share button itself during capture
             btn.style.visibility = 'hidden';
 
-            // Create a wrapper with a header for the capture
-            const wrapper = document.createElement('div');
-            wrapper.style.cssText = 'position:fixed;top:-9999px;left:-9999px;direction:rtl;font-family:Cairo,sans-serif;';
-            wrapper.style.width = card.offsetWidth + 'px';
+            const styles = getComputedStyle(document.body);
+            const bgColor = styles.getPropertyValue('--md-background').trim() || '#f4f6f8';
+            const surfaceColor = styles.getPropertyValue('--md-surface').trim() || '#ffffff';
+            const primaryColor = styles.getPropertyValue('--md-primary').trim() || '#00695c';
+            const outlineColor = styles.getPropertyValue('--md-outline-variant').trim() || '#bfc9c6';
 
-            // Header
+            // Create a wrapper with padding for the capture
+            const wrapper = document.createElement('div');
+            wrapper.style.cssText = `position:fixed;top:-9999px;left:-9999px;direction:rtl;font-family:Cairo,sans-serif;padding:20px;background:${bgColor};`;
+            wrapper.style.width = (card.offsetWidth + 40) + 'px';
+
+            // Header as separate card
             const header = document.createElement('div');
             header.style.cssText = `
-                background: ${getComputedStyle(document.body).getPropertyValue('--md-surface').trim() || '#ffffff'};
-                border: 1px solid ${getComputedStyle(document.body).getPropertyValue('--md-outline-variant').trim()};
-                border-bottom: none;
-                border-radius: 16px 16px 0 0;
-                padding: 14px 20px;
+                background: ${primaryColor};
+                border-radius: 16px;
+                padding: 16px 20px;
                 text-align: center;
-                font-size: 1.05rem;
+                font-size: 1.1rem;
                 font-weight: 800;
-                color: ${getComputedStyle(document.body).getPropertyValue('--md-primary').trim()};
+                color: #ffffff;
                 font-family: Cairo, sans-serif;
+                margin-bottom: 12px;
             `;
             header.textContent = 'تطبيق أفضل طبعة';
 
             // Clone the card
             const cardClone = card.cloneNode(true);
             cardClone.style.marginBottom = '0';
-            cardClone.style.borderRadius = '0 0 16px 16px';
+            cardClone.style.borderRadius = '16px';
             // Remove share button from clone
             const cloneBtn = cardClone.querySelector('.share-card-btn');
             if (cloneBtn) cloneBtn.remove();
+
+            // Fix meta-chips: replace flex with inline-block for html2canvas RTL compatibility
+            cardClone.querySelectorAll('.book-meta').forEach(meta => {
+                meta.style.display = 'block';
+                meta.style.direction = 'rtl';
+            });
+            cardClone.querySelectorAll('.meta-chip').forEach(chip => {
+                chip.style.display = 'inline-flex';
+                chip.style.direction = 'rtl';
+            });
+            cardClone.querySelectorAll('.meta-chip .text').forEach(txt => {
+                txt.style.whiteSpace = 'normal';
+                txt.style.overflow = 'visible';
+                txt.style.direction = 'rtl';
+                txt.style.unicodeBidi = 'embed';
+            });
 
             wrapper.appendChild(header);
             wrapper.appendChild(cardClone);
@@ -1858,7 +1879,7 @@
 
             try {
                 const canvas = await html2canvas(wrapper, {
-                    backgroundColor: getComputedStyle(document.body).getPropertyValue('--md-background').trim() || '#f4f6f8',
+                    backgroundColor: bgColor,
                     scale: 2,
                     useCORS: true,
                     logging: false
