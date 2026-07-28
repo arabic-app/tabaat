@@ -1,0 +1,23 @@
+name = "telegram-bot-editions"
+main = "src/index.js"
+compatibility_date = "2025-07-01"
+
+# Logs / traces dans le dashboard Cloudflare
+[observability]
+enabled = true
+
+# --- Cache & rate-limit (KV) -------------------------------------------------
+# Le bot fonctionne SANS KV (cache/rate-limit simplement inactifs).
+# Pour les activer :
+#   1. npx wrangler kv namespace create CACHE
+#   2. Colle l'id renvoyé ci-dessous, puis décommente le bloc.
+#   3. npm run deploy
+[[kv_namespaces]]
+binding = "CACHE"
+id = "4a7cd1c22d074b589cd44639260451bb"
+
+# --- Secrets (à définir via `npx wrangler secret put <NOM>`) ------------------
+#   TELEGRAM_BOT_TOKEN   -> jeton du bot (BotFather)
+#   GEMINI_API_KEY       -> clé Gemini, fournisseur principal (aistudio.google.com/apikey)
+#   GROQ_API_KEY         -> clé Groq, secours automatique (console.groq.com/keys)
+#   WEBHOOK_SECRET       -> secret partagé anti-abus (voir README)

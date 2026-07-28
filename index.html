@@ -2204,5 +2204,69 @@
 
     })();
     </script>
+<!-- ============ Widget de chat "خبير الطبعات" ============ -->
+<style>
+  .tc-fab{position:fixed;bottom:20px;right:20px;width:58px;height:58px;border-radius:50%;background:var(--md-primary,#00695c);color:var(--md-on-primary,#fff);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 14px rgba(0,0,0,.28);z-index:2500;transition:transform .2s}
+  .tc-fab:hover{transform:scale(1.06)}
+  .tc-fab .material-icons-round{font-size:28px}
+  .tc-panel{position:fixed;bottom:88px;right:20px;width:370px;max-width:calc(100vw - 32px);height:520px;max-height:calc(100vh - 120px);background:var(--md-surface,#fff);border-radius:18px;box-shadow:0 10px 34px rgba(0,0,0,.30);display:flex;flex-direction:column;overflow:hidden;z-index:2500;opacity:0;transform:translateY(16px) scale(.98);pointer-events:none;transition:opacity .2s,transform .2s}
+  .tc-panel.open{opacity:1;transform:none;pointer-events:auto}
+  .tc-head{background:var(--md-primary,#00695c);color:var(--md-on-primary,#fff);padding:13px 16px;display:flex;align-items:center;gap:10px}
+  .tc-head .tc-title{font-weight:700;font-size:1rem;line-height:1.2}
+  .tc-head .tc-sub{font-size:.72rem;opacity:.85;font-weight:400}
+  .tc-close{background:none;border:none;color:inherit;cursor:pointer;display:flex;padding:2px;margin-inline-start:auto}
+  .tc-body{flex:1;overflow-y:auto;padding:14px;background:var(--md-background,#f4f6f8);display:flex;flex-direction:column;gap:10px}
+  .tc-msg{max-width:86%;padding:10px 13px;border-radius:14px;font-size:.9rem;line-height:1.65;white-space:pre-wrap;word-wrap:break-word}
+  .tc-user{align-self:flex-start;background:var(--md-primary-container,#80cbc4);color:var(--md-on-primary-container,#00201a)}
+  .tc-bot{align-self:flex-end;background:var(--md-surface,#fff);color:var(--md-on-surface,#191c1b);border:1px solid var(--md-outline-variant,#bfc9c6)}
+  .tc-tg{display:inline-flex;align-items:center;gap:6px;margin-top:12px;padding:7px 13px;background:#229ED9;color:#fff!important;border-radius:20px;text-decoration:none;font-size:.82rem;font-weight:700}
+  .tc-tg svg{flex-shrink:0}
+  .tc-typing{display:flex;gap:5px;align-items:center}
+  .tc-typing span{width:7px;height:7px;border-radius:50%;background:var(--md-outline,#707977);animation:tc-blink 1.2s infinite}
+  .tc-typing span:nth-child(2){animation-delay:.2s}
+  .tc-typing span:nth-child(3){animation-delay:.4s}
+  @keyframes tc-blink{0%,60%,100%{opacity:.25}30%{opacity:1}}
+  .tc-input{display:flex;gap:8px;padding:10px;border-top:1px solid var(--md-outline-variant,#bfc9c6);background:var(--md-surface,#fff)}
+  .tc-input input{flex:1;border:1px solid var(--md-outline-variant,#bfc9c6);border-radius:22px;padding:10px 14px;font-family:'Cairo',sans-serif;font-size:.9rem;outline:none;background:var(--md-background,#f4f6f8);color:var(--md-on-surface,#191c1b)}
+  .tc-input input:focus{border-color:var(--md-primary,#00695c)}
+  .tc-send{background:var(--md-primary,#00695c);color:#fff;border:none;width:42px;height:42px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+  .tc-send:disabled{opacity:.5;cursor:default}
+  @media(max-width:480px){.tc-panel{right:12px;left:12px;width:auto;bottom:84px;height:calc(100vh - 108px)}.tc-fab{bottom:16px;right:16px}}
+</style>
+<button class="tc-fab" id="tcFab" aria-label="افتح المحادثة"><span class="material-icons-round">forum</span></button>
+<div class="tc-panel" id="tcPanel" role="dialog" aria-label="محادثة خبير الطبعات">
+  <div class="tc-head">
+    <span class="material-icons-round">auto_stories</span>
+    <div><div class="tc-title">خبير الطبعات</div><div class="tc-sub">اسأل عن أفضل طبعة لأي كتاب</div></div>
+    <button class="tc-close" id="tcClose" aria-label="إغلاق"><span class="material-icons-round">close</span></button>
+  </div>
+  <div class="tc-body" id="tcBody"></div>
+  <div class="tc-input">
+    <input id="tcInput" type="text" placeholder="اكتب سؤالك..." autocomplete="off">
+    <button class="tc-send" id="tcSend" aria-label="إرسال"><span class="material-icons-round">send</span></button>
+  </div>
+</div>
+<script>
+(function(){
+  var API='https://telegram-bot-editions.tabaat.workers.dev/chat';
+  var fab=document.getElementById('tcFab'),panel=document.getElementById('tcPanel'),body=document.getElementById('tcBody'),input=document.getElementById('tcInput'),send=document.getElementById('tcSend'),closeBtn=document.getElementById('tcClose');
+  var open=false,busy=false,greeted=false;
+  function add(text,cls){var d=document.createElement('div');d.className='tc-msg '+cls;d.textContent=text;body.appendChild(d);body.scrollTop=body.scrollHeight;return d;}
+  function toggle(){open=!open;panel.classList.toggle('open',open);if(open){if(!greeted){var g=document.createElement('div');g.className='tc-msg tc-bot';g.innerHTML='السلام عليكم ورحمة الله وبركاته 👋<br>اسألني عن كتاب أو مؤلف أو علم لتعرف أفضل الطبعات.<br>مثال:<br>أفضل طبعة لصحيح البخاري<br>كتب ابن رجب<br>كتب العقيدة<br>كتب ابن القيم في الفقه<br><br>للتواصل مع الخبير عبر تيليجرام:<br><a class="tc-tg" href="https://t.me/AfdhalTabaaBot" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z"/></svg>تيليجرام</a>';body.appendChild(g);body.scrollTop=body.scrollHeight;greeted=true;}setTimeout(function(){input.focus();},200);}}
+  function ask(){var q=input.value.trim();if(!q||busy)return;input.value='';add(q,'tc-user');busy=true;send.disabled=true;
+    var t=document.createElement('div');t.className='tc-msg tc-bot tc-typing';t.innerHTML='<span></span><span></span><span></span>';body.appendChild(t);body.scrollTop=body.scrollHeight;
+    fetch(API,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({message:q})})
+      .then(function(r){return r.json();})
+      .then(function(d){t.remove();add((d&&d.answer)||'—','tc-bot');})
+      .catch(function(){t.remove();add('تعذّر الاتصال، حاول مرة أخرى بعد قليل.','tc-bot');})
+      .finally(function(){busy=false;send.disabled=false;setTimeout(function(){input.focus();},50);});
+  }
+  fab.addEventListener('click',toggle);
+  closeBtn.addEventListener('click',toggle);
+  send.addEventListener('click',ask);
+  input.addEventListener('keydown',function(e){if(e.key==='Enter'){e.preventDefault();ask();}});
+})();
+</script>
+<!-- ============ fin widget ============ -->
 </body>
 </html>

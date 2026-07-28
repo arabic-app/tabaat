@@ -1,0 +1,538 @@
+// =============================================================================
+// Configuration
+// =============================================================================
+const BOOKS_URL = 'https://arabic-app.github.io/tabaat/books.json';
+
+// Fournisseurs IA (16), essayés dans l'ordre : Gemini d'abord (gros quota gratuit),
+// puis Groq en secours. Chaque modèle Gemini a son propre budget de sortie.
+// - gemini-2.0-flash    : SANS réflexion => rapide, tout le budget va à la réponse.
+// - gemini-flash-latest : filet si 2.0 est retiré par Google. Modèle 3.x à
+//   réflexion obligatoire => on la met au minimum (thinkingLevel low) ET on gonfle
+//   maxOutputTokens (8000) pour que la réflexion ne tronque JAMAIS la réponse.
+const GEMINI_MODELS = [
+  { model: 'gemini-2.0-flash', thinking: false, maxOutputTokens: 4096 },
+  { model: 'gemini-flash-latest', thinking: true, maxOutputTokens: 8000 },
+];
+const GROQ_MODELS = ['llama-3.3-70b-versatile', 'llama-3.1-8b-instant'];
+const GROQ_MAX_TOKENS = 2048; // (2) borne la longueur (assez pour un rendu structuré)
+
+const TELEGRAM_MAX_CHARS = 4096; // (2) limite dure d'un message Telegram
+
+const BOOKS_CACHE_TTL = 300;      // (4) cache du books.json au bord Cloudflare (s)
+const RESPONSE_CACHE_TTL = 21600; // (5) cache des réponses IA en KV (6 h)
+
+const RATE_LIMIT_MAX = 10;    // (6) messages max par utilisateur...
+const RATE_LIMIT_WINDOW = 60; // (6) ...sur cette fenêtre glissante (s)
+
+// Pondération de la recherche locale (7) : un match dans le titre vaut plus
+// qu'un match dans le nom d'un éditeur.
+const SEARCH_WEIGHTS = { title: 5, author: 3, category: 2, editions: 1 };
+const MAX_RESULTS = 30; // plafond de livres envoyés à l'IA (entrée quasi gratuite sur Gemini)
+
+// Le message d'accueil interpole MAX_RESULTS : si on change la limite,
+// le texte se met à jour automatiquement.
+const WELCOME_MESSAGE = `السلام عليكم ورحمة الله وبركاته 👋
+
+أنا خبيرك في طبعات الكتب الإسلامية 📚
+اسألني عن أفضل طبعة لأي كتاب وسأبحث لك في قاعدة بياناتي.
+
+مثال:
+• ما هي أفضل طبعة لصحيح البخاري ؟
+• أفضل طبعة لكتاب فتح الباري
+• كتب ابن رجب
+• كتب العقيدة
+• كتب ابن القيم في الفقه
+
+ℹ️ ملاحظات مهمة:
+• كل رسالة تُعالَج على حدة، والبوت لا يتذكر الرسائل السابقة، وذلك بسبب حدود الاستخدام المجاني لأداة الذكاء الاصطناعي.
+• لنفس السبب، يقتصر كل بحث على أقرب ${MAX_RESULTS} كتابًا لسؤالك.`;
+
+// Messages génériques destinés à l'utilisateur (3) — jamais de détail technique.
+const ERROR_MESSAGE = 'عذراً، حدث خطأ مؤقت. حاول مرة أخرى بعد قليل ⏳';
+const RATE_LIMIT_MESSAGE = 'لقد أرسلت رسائل كثيرة بسرعة. انتظر دقيقة من فضلك ⏳';
+
+// En-têtes CORS : autorisent le widget de chat de l'app web à appeler POST /chat.
+const CORS_HEADERS = {
+  'Access-Control-Allow-Origin': '*',
+  'Access-Control-Allow-Methods': 'POST, OPTIONS',
+  'Access-Control-Allow-Headers': 'Content-Type',
+};
+
+// =============================================================================
+// Entrée du Worker
+// =============================================================================
+export default {
+  async fetch(request, env, ctx) {
+    const url = new URL(request.url);
+
+    // CORS preflight (widget de chat web)
+    if (request.method === 'OPTIONS') {
+      return new Response(null, { headers: CORS_HEADERS });
+    }
+
+    // Endpoint du widget de chat web (app arabic-app.github.io)
+    if (request.method === 'POST' && url.pathname === '/chat') {
+      return handleWebChat(request, env);
+    }
+
+    // Endpoint d'administration one-shot : enregistre le menu de commandes (15)
+    if (request.method === 'GET') {
+      if (url.pathname === '/setup') {
+        return handleSetup(url, env);
+      }
+      return new Response('Bot is running', { status: 200 });
+    }
+
+    if (request.method !== 'POST') {
+      return new Response('Method Not Allowed', { status: 405 });
+    }
+
+    // (1) Sécurité : on vérifie le secret partagé avec Telegram (setWebhook).
+    // Tant que WEBHOOK_SECRET n'est pas configuré, on n'impose rien (compat.).
+    if (env.WEBHOOK_SECRET) {
+      const provided = request.headers.get('X-Telegram-Bot-Api-Secret-Token');
+      if (provided !== env.WEBHOOK_SECRET) {
+        console.warn('Rejected webhook: bad or missing secret token');
+        return new Response('Forbidden', { status: 403 });
+      }
+    }
+
+    try {
+      const update = await request.json();
+
+      if (update.message && update.message.text) {
+        const chatId = update.message.chat.id;
+        const userText = update.message.text.trim();
+
+        // Commandes instantanées (aucun appel IA) => réponse immédiate
+        if (userText === '/start' || userText === '/help') {
+          ctx.waitUntil(sendTelegramMessage(chatId, WELCOME_MESSAGE, env.TELEGRAM_BOT_TOKEN));
+          return new Response('OK', { status: 200 });
+        }
+
+        ctx.waitUntil(handleMessage(chatId, userText, env));
+      }
+
+      // Toujours répondre 200 OK immédiatement pour éviter les retrys Telegram
+      return new Response('OK', { status: 200 });
+    } catch (err) {
+      console.error('Webhook error:', err);
+      return new Response('Error', { status: 500 });
+    }
+  },
+};
+
+// =============================================================================
+// Orchestration d'un message
+// =============================================================================
+async function handleMessage(chatId, userText, env) {
+  try {
+    // (6) Rate-limit par utilisateur (actif seulement si KV branché)
+    if (await isRateLimited(chatId, env)) {
+      await sendTelegramMessage(chatId, RATE_LIMIT_MESSAGE, env.TELEGRAM_BOT_TOKEN);
+      return;
+    }
+
+    // (8) Indicateur « en train d'écrire… » pendant que l'IA réfléchit
+    await sendChatAction(chatId, 'typing', env.TELEGRAM_BOT_TOKEN);
+
+    // (5) Cache des réponses : la clé est la SIGNATURE DE RECHERCHE (tokens triés),
+    // pas le texte brut. Ainsi deux formulations équivalentes (« بن رجب » et
+    // « ابن رجب ») partagent la même entrée => réponse identique + quota économisée.
+    // Repli sur le texte normalisé si aucun token distinctif.
+    const tokens = searchTokens(userText);
+    const cacheKey = 'resp:' + (tokens.length ? [...tokens].sort().join(' ') : normalizeArabic(userText));
+    let answer = env.CACHE ? await env.CACHE.get(cacheKey) : null;
+
+    if (!answer) {
+      answer = await askAI(userText, env);
+      if (env.CACHE && answer) {
+        await env.CACHE.put(cacheKey, answer, { expirationTtl: RESPONSE_CACHE_TTL });
+      }
+    }
+
+    await sendTelegramMessage(chatId, answer, env.TELEGRAM_BOT_TOKEN);
+  } catch (error) {
+    console.error('Error handling message:', error); // (3) détail dans les logs
+    await sendTelegramMessage(chatId, ERROR_MESSAGE, env.TELEGRAM_BOT_TOKEN);
+  }
+}
+
+// =============================================================================
+// Endpoint du widget de chat web (POST /chat) — réutilise le pipeline Telegram
+// =============================================================================
+async function handleWebChat(request, env) {
+  try {
+    const body = await request.json().catch(() => ({}));
+    const message = (body.message || '').trim();
+    if (!message) return jsonResponse({ answer: 'اكتب سؤالك من فضلك 🙏' }, 400);
+
+    const text = message.slice(0, 500); // borne la taille de la question
+
+    // Anti-abus : rate-limit par IP (réutilise le compteur KV)
+    const ip = request.headers.get('CF-Connecting-IP') || 'unknown';
+    if (await isRateLimited('web:' + ip, env)) {
+      return jsonResponse({ answer: RATE_LIMIT_MESSAGE }, 429);
+    }
+
+    // Cache par signature de recherche (partagé avec le flux Telegram)
+    const tokens = searchTokens(text);
+    const cacheKey = 'resp:' + (tokens.length ? [...tokens].sort().join(' ') : normalizeArabic(text));
+    let answer = env.CACHE ? await env.CACHE.get(cacheKey) : null;
+    if (!answer) {
+      answer = await askAI(text, env);
+      if (env.CACHE && answer) {
+        await env.CACHE.put(cacheKey, answer, { expirationTtl: RESPONSE_CACHE_TTL });
+      }
+    }
+    return jsonResponse({ answer });
+  } catch (err) {
+    console.error('Web chat error:', err);
+    return jsonResponse({ answer: ERROR_MESSAGE }, 500);
+  }
+}
+
+function jsonResponse(obj, status = 200) {
+  return new Response(JSON.stringify(obj), {
+    status,
+    headers: { 'Content-Type': 'application/json', ...CORS_HEADERS },
+  });
+}
+
+// =============================================================================
+// Rate-limit (6)
+// =============================================================================
+async function isRateLimited(chatId, env) {
+  if (!env.CACHE) return false; // pas de KV => pas de limite
+  const key = 'rl:' + chatId;
+  const current = parseInt((await env.CACHE.get(key)) || '0', 10);
+  if (current >= RATE_LIMIT_MAX) return true;
+  // La TTL sert de fenêtre glissante approximative.
+  await env.CACHE.put(key, String(current + 1), { expirationTtl: RATE_LIMIT_WINDOW });
+  return false;
+}
+
+// =============================================================================
+// Normalisation arabe — identique à la recherche de l'app web (index.html)
+// =============================================================================
+function normalizeArabic(str) {
+  if (!str) return '';
+  return String(str)
+    .toLowerCase()
+    .replace(/[أإآ]/g, 'ا')  // variantes de alef -> ا
+    .replace(/ى/g, 'ي')      // alef maqsura -> ya (المصطفى ~ المصطفي)
+    .replace(/ؤ/g, 'و')      // hamza sur waw -> waw (الأرناؤوط ~ الارناووط)
+    .replace(/ئ/g, 'ي')      // hamza sur ya -> ya
+    .replace(/ء/g, '')       // hamza isolée retirée
+    .replace(/ة/g, 'ه')      // ta marbuta -> ha
+    .replace(/[ً-ْ]/g, '')   // retire les diacritiques (harakat)
+    .trim();
+}
+
+// Retire l'article défini « ال » en tête de mot (البخاري -> بخاري) pour tolérer
+// sa présence/absence. Appliqué côté requête uniquement : « بخاري » reste une
+// sous-chaîne de « البخاري » dans les données, donc la correspondance marche dans
+// les deux sens. Garde-fou de longueur pour ne pas casser les mots courts.
+function stripDefiniteArticle(word) {
+  return word.startsWith('ال') && word.length >= 5 ? word.slice(2) : word;
+}
+
+// 'ابن' et 'بن' sont des connecteurs de noms (Ibn / bin), pas des mots
+// distinctifs : on les ignore pour que « ابن رجب » matche « ... بن رجب ... »
+// et pour éviter le bruit (sinon tout « ابن X » remonte).
+const STOP_WORDS = ['أفضل', 'طبعات', 'طبعة', 'كتب', 'كتاب', 'ما', 'هي', 'من', 'في', 'عن', 'دار', 'مكتبة', 'هل', 'اريد', 'أريد', 'أبحث', 'للكتاب', 'الفلاني', 'ماهي', 'ابن', 'بن'].map(normalizeArabic);
+
+// Transforme une requête en tokens de recherche (normalisation + retrait des mots
+// vides + retrait de « ال »). Utilisé à la fois pour la recherche ET pour la clé
+// de cache, afin que deux formulations équivalentes (« بن رجب » / « ابن رجب »)
+// donnent exactement le même résultat.
+function searchTokens(query) {
+  return normalizeArabic(query)
+    .split(/\s+/)
+    .filter(w => !STOP_WORDS.includes(w) && w.length > 2)
+    .map(stripDefiniteArticle);
+}
+
+// =============================================================================
+// Recherche locale (RAG) : récupération + filtrage + compression
+// =============================================================================
+async function fetchAndFilterBooks(query) {
+  // (4) Cache au bord Cloudflare : le books.json (150 Ko) n'est plus
+  // re-téléchargé à chaque message.
+  const response = await fetch(BOOKS_URL, {
+    cf: { cacheTtl: BOOKS_CACHE_TTL, cacheEverything: true },
+  });
+  if (!response.ok) throw new Error('Failed to fetch books.json from GitHub');
+  const allBooks = await response.json();
+
+  const words = searchTokens(query);
+
+  let relevantBooks;
+  if (words.length > 0) {
+    const scored = allBooks
+      .map(book => ({ book, ...analyzeBook(book, words) }))
+      .filter(s => s.coverage > 0);
+    // On ne garde que les livres couvrant le PLUS de mots de la requête, puis on
+    // départage par score. « صحيح البخاري » -> les livres matchant les 2 mots (le
+    // vrai البخاري), pas « صحيح مسلم » qui n'en matche qu'un. « رجب » (1 mot) ->
+    // tous les livres de l'auteur sont conservés. Gros gain de tokens.
+    const maxCoverage = scored.length ? Math.max(...scored.map(s => s.coverage)) : 0;
+    relevantBooks = scored
+      .filter(s => s.coverage === maxCoverage)
+      .sort((a, b) => b.score - a.score)
+      .slice(0, MAX_RESULTS)
+      .map(s => s.book);
+  } else {
+    relevantBooks = allBooks.slice(0, MAX_RESULTS); // Fallback
+  }
+
+  // Compression ultra-condensée : « titre | auteur | ✓ معتمدة | ~ بديلة », « ت » = محقق.
+  // Pas de labels anglais ni de catégorie => beaucoup moins de tokens.
+  const lines = relevantBooks.map(b => {
+    let line = `${b.title} | ${b.author}`;
+    const best = formatEditions(b.best_editions);
+    const alt = formatEditions(b.alt_editions);
+    if (best) line += ` | ✓ ${best}`;
+    if (alt) line += ` | ~ ${alt}`;
+    return line;
+  });
+
+  return lines.join('\n') || 'لا توجد كتب مطابقة لبحثك في قاعدة البيانات.';
+}
+
+// (7) Champs de recherche ciblés + normalisés (au lieu de tout le JSON brut).
+function bookSearchFields(book) {
+  const editions = [...(book.best_editions || []), ...(book.alt_editions || [])];
+  const publishers = editions.map(e => e.publisher).filter(Boolean).join(' ');
+  const verifiers = editions.map(e => e.verifier).filter(Boolean).join(' ');
+  const cats = Array.isArray(book.category) ? book.category.join(' ') : (book.category || '');
+  return {
+    title: normalizeArabic(book.title),
+    author: normalizeArabic(book.author),
+    category: normalizeArabic(cats),
+    editions: normalizeArabic(publishers + ' ' + verifiers),
+  };
+}
+
+// (7) Analyse d'un livre pour une requête : couverture (nb de mots distincts
+// trouvés) + score pondéré (titre > auteur > catégorie > éditeurs). La couverture
+// prime au filtrage ; le score départage à couverture égale.
+function analyzeBook(book, words) {
+  const fields = bookSearchFields(book);
+  let coverage = 0;
+  let score = 0;
+  for (const word of words) {
+    let matched = false;
+    for (const [field, weight] of Object.entries(SEARCH_WEIGHTS)) {
+      if (fields[field].includes(word)) {
+        score += weight;
+        matched = true;
+      }
+    }
+    if (matched) coverage += 1;
+  }
+  return { coverage, score };
+}
+
+function formatEditions(editions) {
+  if (!editions || editions.length === 0) return '';
+  return editions
+    .map(e => `${e.publisher}${e.verifier ? '(ت ' + e.verifier + ')' : ''}`)
+    .join('، ');
+}
+
+// =============================================================================
+// Appel IA : Gemini (principal) -> Groq (secours)
+// =============================================================================
+async function askAI(question, env) {
+  const compactBooksData = await fetchAndFilterBooks(question);
+
+  const systemPrompt = `أنت خبير في طبعات الكتب الإسلامية والعربية.
+في القائمة التالية، كل سطر: العنوان | المؤلف | ✓ الطبعات المعتمدة | ~ الطبعات البديلة، والرمز «ت» يعني المحقق.
+${compactBooksData}
+
+اعتمد على هذه القائمة فقط، وأجب بالعربية فقط بتنسيق واضح ومقروء.
+اعرض كل كتاب مطلوب بهذا الشكل بالضبط:
+
+📚 <اسم الكتاب>.
+ط.معتمدة:
+▫️ <الناشر> - ت <المحقق>
+▫️ <الناشر آخر>
+ط.بديلة:
+▪️ <الناشر> - ت <المحقق>
+
+قواعد مهمة:
+- ميّز دائمًا بين «الطبعات المعتمدة» (المأخوذة من ✓) و«الطبعات البديلة» (المأخوذة من ~)؛ لا تخلط بينهما أبدًا.
+- ضع كل طبعة في سطر مستقل يبدأ بعلامة (▫️ للمعتمدة، ▪️ للبديلة). في القائمة، النواشر المفصولون بفاصلة «،» هم طبعات منفصلة: اجعل كل ناشر في سطر مستقل، ولا تضع أكثر من ناشر في سطر واحد أبدًا.
+- إذا لم تكن هناك طبعات بديلة (~) لكتابٍ ما، فلا تكتب عنوان «الطبعات البديلة» ولا عبارة «لا توجد» إطلاقًا لذلك الكتاب؛ انتقل مباشرة إلى الكتاب التالي.
+- استعمل «ت» للمحقق (لا تكتب كلمة «تحقيق»)، ولا تكتب رموز القائمة (| ✓ ~) في جوابك.
+- إن لم يكن الكتاب موجودًا في القائمة، اعتذر بلطف وأخبره أنه غير موجود.`;
+
+  const messages = [
+    { role: 'system', content: systemPrompt },
+    { role: 'user', content: question },
+  ];
+
+  // (16) Cascade de fournisseurs : Gemini d'abord, puis Groq en secours.
+  // On retourne la première réponse réussie ; sinon on lève l'erreur cumulée.
+  const errors = [];
+
+  if (env.GEMINI_API_KEY) {
+    for (const cfg of GEMINI_MODELS) {
+      try {
+        return await callGemini(cfg, systemPrompt, question, env.GEMINI_API_KEY);
+      } catch (err) {
+        errors.push(`Gemini(${cfg.model}): ${err.message}`);
+        console.error(`Gemini "${cfg.model}" failed:`, err.message);
+      }
+    }
+  }
+
+  if (env.GROQ_API_KEY) {
+    for (const model of GROQ_MODELS) {
+      try {
+        return await callGroqModel(model, messages, env.GROQ_API_KEY);
+      } catch (err) {
+        errors.push(`Groq(${model}): ${err.message}`);
+        console.error(`Groq model "${model}" failed:`, err.message);
+      }
+    }
+  }
+
+  throw new Error('Tous les fournisseurs IA ont échoué : ' + errors.join(' | '));
+}
+
+// Appel Gemini (generativelanguage API). La config par modèle décide de la
+// réflexion et du budget de sortie (voir GEMINI_MODELS).
+async function callGemini(cfg, systemPrompt, question, apiKey) {
+  const generationConfig = {
+    temperature: 0,
+    maxOutputTokens: cfg.maxOutputTokens,
+  };
+  // Modèles 3.x : réflexion obligatoire => on la met au minimum pour rester rapide.
+  if (cfg.thinking) {
+    generationConfig.thinkingConfig = { thinkingLevel: 'low' };
+  }
+
+  const url = `https://generativelanguage.googleapis.com/v1beta/models/${cfg.model}:generateContent?key=${apiKey}`;
+  const response = await fetch(url, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      systemInstruction: { parts: [{ text: systemPrompt }] },
+      contents: [{ role: 'user', parts: [{ text: question }] }],
+      generationConfig,
+    }),
+  });
+
+  if (!response.ok) {
+    throw new Error(`Gemini API Error (${response.status}): ${await response.text()}`);
+  }
+
+  const data = await response.json();
+  const candidate = data?.candidates?.[0];
+  const text = candidate?.content?.parts?.map(p => p.text).filter(Boolean).join('').trim();
+  if (!text) throw new Error(`Empty Gemini response (finish: ${candidate?.finishReason || 'none'})`);
+  return text;
+}
+
+async function callGroqModel(model, messages, apiKey) {
+  const response = await fetch('https://api.groq.com/openai/v1/chat/completions', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      Accept: 'application/json',
+      Authorization: `Bearer ${apiKey}`,
+    },
+    body: JSON.stringify({
+      model,
+      messages,
+      temperature: 0, // réponses stables et déterministes (bot factuel)
+      max_tokens: GROQ_MAX_TOKENS, // (2)
+    }),
+  });
+
+  if (!response.ok) {
+    const errorText = await response.text();
+    throw new Error(`Groq API Error (${response.status}): ${errorText}`);
+  }
+
+  const data = await response.json();
+  const content = data?.choices?.[0]?.message?.content?.trim();
+  if (!content) throw new Error('Empty Groq response'); // (12) garde-fou
+  return content;
+}
+
+// =============================================================================
+// Telegram
+// =============================================================================
+async function sendTelegramMessage(chatId, text, botToken) {
+  // (2) Telegram plafonne à 4096 caractères => on découpe si nécessaire.
+  for (const chunk of splitText(text, TELEGRAM_MAX_CHARS)) {
+    const response = await fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ chat_id: chatId, text: chunk }),
+    });
+    if (!response.ok) {
+      console.error('Telegram API Error:', await response.text());
+    }
+  }
+}
+
+// (8) Affiche « … en train d'écrire ». Non bloquant : on ignore les erreurs.
+async function sendChatAction(chatId, action, botToken) {
+  try {
+    await fetch(`https://api.telegram.org/bot${botToken}/sendChatAction`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ chat_id: chatId, action }),
+    });
+  } catch (err) {
+    console.error('sendChatAction failed:', err.message);
+  }
+}
+
+// Découpe un texte long en morceaux <= max, en coupant de préférence sur un
+// saut de ligne pour ne pas casser une phrase au milieu.
+function splitText(text, max) {
+  if (!text) return [ERROR_MESSAGE];
+  if (text.length <= max) return [text];
+
+  const chunks = [];
+  let rest = text;
+  while (rest.length > max) {
+    let cut = rest.lastIndexOf('\n', max);
+    if (cut < max * 0.5) cut = max; // pas de saut de ligne exploitable
+    chunks.push(rest.slice(0, cut));
+    rest = rest.slice(cut).replace(/^\n/, '');
+  }
+  if (rest) chunks.push(rest);
+  return chunks;
+}
+
+// =============================================================================
+// Setup one-shot : enregistre le menu de commandes Telegram (15)
+// GET /setup?secret=<WEBHOOK_SECRET>
+// =============================================================================
+async function handleSetup(url, env) {
+  if (env.WEBHOOK_SECRET && url.searchParams.get('secret') !== env.WEBHOOK_SECRET) {
+    return new Response('Forbidden', { status: 403 });
+  }
+
+  const commands = [
+    { command: 'start', description: 'بدء المحادثة والتعريف بالبوت' },
+    { command: 'help', description: 'كيفية استخدام البوت' },
+  ];
+
+  const response = await fetch(
+    `https://api.telegram.org/bot${env.TELEGRAM_BOT_TOKEN}/setMyCommands`,
+    {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ commands }),
+    }
+  );
+
+  return new Response(await response.text(), { status: response.status });
+}
