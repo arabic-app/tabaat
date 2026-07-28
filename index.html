@@ -580,6 +580,13 @@
             opacity: 0.55;
             transition: opacity 0.2s;
         }
+        /* Modal fiche : header (barre teal) contenant le bouton de fermeture. */
+        #bookCardModal .modal-content { padding: 0; overflow: hidden; display: flex; flex-direction: column; }
+        #bookCardModal .bcm-header { display: flex; align-items: center; gap: 10px; background: var(--md-primary); color: var(--md-on-primary); padding: 12px 16px; flex-shrink: 0; }
+        #bookCardModal .bcm-title { font-weight: 700; font-size: 1rem; flex: 1; }
+        #bookCardModal .bcm-close { background: rgba(255,255,255,0.2); color: inherit; border: none; width: 34px; height: 34px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; flex-shrink: 0; }
+        #bookCardModal #bookCardModalBody { padding: 20px; overflow-y: auto; min-height: 0; }
+        #bookCardModal .share-card-btn { opacity: 1; }
         .share-card-btn:hover { opacity: 1; }
         .share-card-btn .material-icons-round { font-size: 20px; }
 
@@ -1382,9 +1389,12 @@
     <!-- ===== BOOK CARD MODAL (fiche livre, sous #infoModal pour empiler les photos par-dessus) ===== -->
     <div id="bookCardModal" class="modal" style="z-index:4800" role="dialog" aria-modal="true">
         <div class="modal-content">
-            <button class="close-modal" onclick="closeBookCardModal()" aria-label="إغلاق">
-                <span class="material-icons-round">close</span>
-            </button>
+            <div class="bcm-header">
+                <span class="bcm-title">بطاقة الكتاب</span>
+                <button class="bcm-close" onclick="closeBookCardModal()" aria-label="إغلاق">
+                    <span class="material-icons-round">close</span>
+                </button>
+            </div>
             <div id="bookCardModalBody"></div>
         </div>
     </div>
