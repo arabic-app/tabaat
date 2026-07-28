@@ -795,6 +795,8 @@
 
         .md-icon-btn.install-btn { display: none; color: #80cbc4; }
 
+        #btn-open-config-top { display: none; }
+
         /* ============================================================
            RESPONSIVE
            ============================================================ */
@@ -819,6 +821,9 @@
             .action-bar-row { display: flex; gap: 8px; width: 100%; justify-content: center; }
             .action-bar-row .md-btn,
             .action-bar-row .btn-open-suggestions { flex: 1; justify-content: center; min-width: 0; }
+            .action-bar-row-sync { justify-content: center; }
+            .action-bar-row-sync .action-bar-config { display: none; }
+            #btn-open-config-top { display: inline-flex; }
         }
     </style>
 </head>
@@ -886,8 +891,12 @@
     <button id="header-install-btn" class="md-icon-btn install-btn" aria-label="تثبيت التطبيق">
         <span class="material-icons-round">download</span>
     </button>
+    <button class="md-icon-btn" id="btn-open-config-top" aria-label="الإعدادات">
+        <span class="material-icons-round">settings</span>
+    </button>
     <button class="md-icon-btn" id="btn-new-book-top" aria-label="إضافة كتاب جديد">
         <span class="material-icons-round">add</span>
+    </button>
     </button>
 </header>
 
@@ -928,11 +937,11 @@
     <main class="main-content" id="main-content">
         <!-- Action Bar -->
         <div class="action-bar" role="toolbar" aria-label="الإجراءات الرئيسية">
-            <div class="action-bar-row">
+            <div class="action-bar-row action-bar-row-sync">
                 <button class="md-btn md-btn-purple" id="btn-open-sync" title="مزامنة البيانات">
                     <span class="material-icons-round">cloud_sync</span> مزامنة
                 </button>
-                <button class="md-btn md-btn-secondary" id="btn-open-config" title="الإعدادات">
+                <button class="md-btn md-btn-secondary action-bar-config" id="btn-open-config" title="الإعدادات">
                     <span class="material-icons-round">settings</span> الإعدادات
                 </button>
             </div>
@@ -2816,6 +2825,7 @@
 
         // Config modal
         $('#btn-open-config').addEventListener('click', () => openConfigModal(false));
+        $('#btn-open-config-top').addEventListener('click', () => openConfigModal(false));
         $('#btn-cancel-config').addEventListener('click', closeConfigModal);
         DOM.configModal.addEventListener('click', e => {
             if (e.target === DOM.configModal) closeConfigModal();
