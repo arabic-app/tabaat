@@ -2215,7 +2215,7 @@
   .tc-head .tc-title{font-weight:700;font-size:1rem;line-height:1.2}
   .tc-head .tc-sub{font-size:.72rem;opacity:.85;font-weight:400}
   .tc-close{background:none;border:none;color:inherit;cursor:pointer;display:flex;padding:2px;margin-inline-start:auto}
-  .tc-body{flex:1;overflow-y:auto;padding:14px;background:var(--md-background,#f4f6f8);display:flex;flex-direction:column;gap:10px}
+  .tc-body{flex:1;overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;padding:14px;background:var(--md-background,#f4f6f8);display:flex;flex-direction:column;gap:10px}
   .tc-msg{max-width:86%;padding:10px 13px;border-radius:14px;font-size:.9rem;line-height:1.65;white-space:pre-wrap;word-wrap:break-word}
   .tc-user{align-self:flex-start;background:var(--md-primary-container,#80cbc4);color:var(--md-on-primary-container,#00201a)}
   .tc-bot{align-self:flex-end;background:var(--md-surface,#fff);color:var(--md-on-surface,#191c1b);border:1px solid var(--md-outline-variant,#bfc9c6)}
@@ -2252,7 +2252,7 @@
   var fab=document.getElementById('tcFab'),panel=document.getElementById('tcPanel'),body=document.getElementById('tcBody'),input=document.getElementById('tcInput'),send=document.getElementById('tcSend'),closeBtn=document.getElementById('tcClose');
   var open=false,busy=false,greeted=false;
   function add(text,cls){var d=document.createElement('div');d.className='tc-msg '+cls;d.textContent=text;body.appendChild(d);body.scrollTop=body.scrollHeight;return d;}
-  function toggle(){open=!open;panel.classList.toggle('open',open);if(open){if(!greeted){var g=document.createElement('div');g.className='tc-msg tc-bot';g.innerHTML='السلام عليكم ورحمة الله وبركاته 👋<br>اسألني عن كتاب أو مؤلف أو علم لتعرف أفضل الطبعات.<br>مثال:<br>أفضل طبعة لصحيح البخاري<br>كتب ابن رجب<br>كتب العقيدة<br>كتب ابن القيم في الفقه<br><br>للتواصل مع الخبير عبر تيليجرام:<br><a class="tc-tg" href="https://t.me/AfdhalTabaaBot" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z"/></svg>تيليجرام</a>';body.appendChild(g);body.scrollTop=body.scrollHeight;greeted=true;}fitPanel();setTimeout(function(){input.focus();fitPanel();},250);}else{resetPanel();}}
+  function toggle(){open=!open;panel.classList.toggle('open',open);if(open){if(!greeted){var g=document.createElement('div');g.className='tc-msg tc-bot';g.innerHTML='السلام عليكم ورحمة الله وبركاته 👋<br>اسألني عن كتاب أو مؤلف أو علم لتعرف أفضل الطبعات.<br>مثال:<br>أفضل طبعة لصحيح البخاري<br>كتب ابن رجب<br>كتب العقيدة<br>كتب ابن القيم في الفقه<br><br>للتواصل مع الخبير عبر تيليجرام:<br><a class="tc-tg" href="https://t.me/AfdhalTabaaBot" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z"/></svg>تيليجرام</a>';body.appendChild(g);body.scrollTop=body.scrollHeight;greeted=true;}lockBg();fitPanel();setTimeout(function(){input.focus();fitPanel();},250);}else{unlockBg();resetPanel();}}
   function ask(){var q=input.value.trim();if(!q||busy)return;input.value='';add(q,'tc-user');busy=true;send.disabled=true;
     var t=document.createElement('div');t.className='tc-msg tc-bot tc-typing';t.innerHTML='<span></span><span></span><span></span>';body.appendChild(t);body.scrollTop=body.scrollHeight;
     fetch(API,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({message:q})})
@@ -2262,6 +2262,12 @@
       .finally(function(){busy=false;send.disabled=false;setTimeout(function(){input.focus();},50);});
   }
   function resetPanel(){panel.style.bottom='';panel.style.height='';panel.style.maxHeight='';}
+  // Verrouille le scroll de la page derrière le chat (mobile) pour éviter que le
+  // geste de scroll dans le chat n'entraîne la liste des livres. On sauvegarde et
+  // restaure la position pour éviter tout saut.
+  var tcScrollY=0;
+  function lockBg(){if(window.innerWidth>480)return;tcScrollY=window.scrollY||document.documentElement.scrollTop||0;var b=document.body;b.style.position='fixed';b.style.top=(-tcScrollY)+'px';b.style.left='0';b.style.right='0';b.style.width='100%';b.dataset.tcLocked='1';}
+  function unlockBg(){var b=document.body;if(b.dataset.tcLocked!=='1')return;b.style.position='';b.style.top='';b.style.left='';b.style.right='';b.style.width='';delete b.dataset.tcLocked;window.scrollTo(0,tcScrollY);}
   // Adapte le panneau à l'apparition du clavier mobile (API visualViewport) :
   // si un clavier est détecté, on remonte et on réduit le panneau pour garder
   // le champ de saisie visible ; sinon on laisse le CSS gérer la taille.
