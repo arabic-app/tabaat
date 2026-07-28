@@ -721,7 +721,7 @@
         .modal {
             display: none;
             position: fixed;
-            z-index: 1000;
+            z-index: 5000;
             left: 0;
             top: 0;
             width: 100%;
@@ -1379,6 +1379,16 @@
         </div>
     </div>
 
+    <!-- ===== BOOK CARD MODAL (fiche livre, sous #infoModal pour empiler les photos par-dessus) ===== -->
+    <div id="bookCardModal" class="modal" style="z-index:4800" role="dialog" aria-modal="true">
+        <div class="modal-content">
+            <button class="close-modal" onclick="closeBookCardModal()" aria-label="إغلاق">
+                <span class="material-icons-round">close</span>
+            </button>
+            <div id="bookCardModalBody"></div>
+        </div>
+    </div>
+
     <!-- ===== PDF VIEWER MODAL ===== -->
     <div id="pdfViewerModal" class="pdf-viewer-modal" role="dialog" aria-modal="true">
         <div class="pdf-viewer-content">
@@ -1571,6 +1581,61 @@
             displayBooks(filtered);
         }
 
+        function bookCardHTML(book) {
+            const bookCats = getBookCategories(book);
+            const catsHTML = bookCats.map(cat => `
+                    <span class="meta-chip">
+                        <span class="material-icons-round">category</span>
+                        <span class="text">${cat}</span>
+                    </span>
+                `).join('');
+
+            const renderList = (editions, isEdition, type) => (editions || []).map((ed, idx) => {
+                let actions = '';
+                const edLabel = (() => {
+                    const n = (ed.publisher || '').trim();
+                    const v = (ed.verifier || '').trim();
+                    if (n && v) return `${n} - ت ${v}`;
+                    if (v) return `ت ${v}`;
+                    return n;
+                })();
+                if (isEdition && ed.corrections && ed.corrections.length) actions += `<button class="md-icon-btn" onclick="openCorrectionsModal(${book.id}, '${type}', ${idx})" title="تصويبات الطبعة"><span class="material-icons-round">report_problem</span></button>`;
+                if (isEdition && ed.notes) actions += `<button class="md-icon-btn" onclick="openNoteModal('${encodeURIComponent(edLabel)}', '${encodeURIComponent(ed.notes)}')" title="ملاحظات حول الطبعة"><span class="material-icons-round">info</span></button>`;
+                if (isEdition && ((ed.images && ed.images.length) || ed.image)) actions += `<button class="md-icon-btn" onclick="openImageModal(${book.id}, '${type}', ${idx})" title="عرض صور الطبعة"><span class="material-icons-round">photo_library</span></button>`;
+                return isEdition
+                    ? `<li class="md-list-item"><span class="edition-name">${edLabel}</span><div class="edition-actions">${actions}</div></li>`
+                    : `<li class="md-list-item"><a href="${ed.url}" target="_blank" class="link-item"><span class="material-icons-round">open_in_new</span><span class="edition-name">${ed.title}</span></a></li>`;
+            }).join('');
+
+            let dateHTML = '';
+            if (book.date) {
+                try {
+                    const d = new Date(book.date);
+                    if (!isNaN(d.getTime())) {
+                        const greg = new Intl.DateTimeFormat('ar-EG', { day: 'numeric', month: 'long', year: 'numeric' }).format(d);
+                        const hijri = new Intl.DateTimeFormat('ar-SA-u-ca-islamic-umalqura', { day: 'numeric', month: 'long', year: 'numeric' }).format(d);
+                        dateHTML = `<div class="book-date">${hijri} / ${greg}</div>`;
+                    }
+                } catch (e) {
+                    console.error('Error formatting book date:', e);
+                }
+            }
+
+            return `
+                    <button class="share-card-btn" onclick="shareBookCard(this)" title="مشاركة الكتاب كصورة"><span class="material-icons-round">share</span></button>
+                    <h2 class="book-title">${book.title}</h2>
+                    <div class="book-meta">
+                        <span class="meta-chip"><span class="material-icons-round">person</span><span class="text">${book.author}</span></span>
+                        ${catsHTML}
+                    </div>
+                    ${book.best_editions?.length ? `<div class="section-title"><span class="material-icons-round">verified</span> أفضل الطبعات:</div><ul>${renderList(book.best_editions, true, 'best_editions')}</ul>` : ''}
+                    ${book.alt_editions?.length ? `<div class="section-title"><span class="material-icons-round">rule</span> طبعات بديلة:</div><ul>${renderList(book.alt_editions, true, 'alt_editions')}</ul>` : ''}
+                    ${book.links?.length ? `<div class="section-title"><span class="material-icons-round">link</span> روابط مفيدة:</div><ul>${renderList(book.links, false)}</ul>` : ''}
+                    ${book.notes ? `<div class="book-notes"><span class="material-icons-round">lightbulb</span><div>${book.notes}</div></div>` : ''}
+                    ${dateHTML}
+                `;
+        }
+
         function displayBooks(books) {
             const container = document.getElementById('booksContainer');
             container.innerHTML = '';
@@ -1583,61 +1648,7 @@
             books.forEach(book => {
                 const card = document.createElement('div');
                 card.className = 'md-card';
-
-                const bookCats = getBookCategories(book);
-                const catsHTML = bookCats.map(cat => `
-                    <span class="meta-chip">
-                        <span class="material-icons-round">category</span>
-                        <span class="text">${cat}</span>
-                    </span>
-                `).join('');
-
-                const renderList = (editions, isEdition, type) => (editions || []).map((ed, idx) => {
-                    let actions = '';
-                    // Build display label: publisher - ت verifier
-                    const edLabel = (() => {
-                        const n = (ed.publisher || '').trim();
-                        const v = (ed.verifier || '').trim();
-                        if (n && v) return `${n} - ت ${v}`;
-                        if (v) return `ت ${v}`;
-                        return n;
-                    })();
-                    if (isEdition && ed.corrections && ed.corrections.length) actions += `<button class="md-icon-btn" onclick="openCorrectionsModal(${book.id}, '${type}', ${idx})" title="تصويبات الطبعة"><span class="material-icons-round">report_problem</span></button>`;
-                    if (isEdition && ed.notes) actions += `<button class="md-icon-btn" onclick="openNoteModal('${encodeURIComponent(edLabel)}', '${encodeURIComponent(ed.notes)}')" title="ملاحظات حول الطبعة"><span class="material-icons-round">info</span></button>`;
-                    if (isEdition && ((ed.images && ed.images.length) || ed.image)) actions += `<button class="md-icon-btn" onclick="openImageModal(${book.id}, '${type}', ${idx})" title="عرض صور الطبعة"><span class="material-icons-round">photo_library</span></button>`;
-                    
-                    return isEdition 
-                        ? `<li class="md-list-item"><span class="edition-name">${edLabel}</span><div class="edition-actions">${actions}</div></li>`
-                        : `<li class="md-list-item"><a href="${ed.url}" target="_blank" class="link-item"><span class="material-icons-round">open_in_new</span><span class="edition-name">${ed.title}</span></a></li>`;
-                }).join('');
-
-                let dateHTML = '';
-                if (book.date) {
-                    try {
-                        const d = new Date(book.date);
-                        if (!isNaN(d.getTime())) {
-                            const greg = new Intl.DateTimeFormat('ar-EG', { day: 'numeric', month: 'long', year: 'numeric' }).format(d);
-                            const hijri = new Intl.DateTimeFormat('ar-SA-u-ca-islamic-umalqura', { day: 'numeric', month: 'long', year: 'numeric' }).format(d);
-                            dateHTML = `<div class="book-date">${hijri} / ${greg}</div>`;
-                        }
-                    } catch (e) {
-                        console.error('Error formatting book date:', e);
-                    }
-                }
-
-                card.innerHTML = `
-                    <button class="share-card-btn" onclick="shareBookCard(this)" title="مشاركة الكتاب كصورة"><span class="material-icons-round">share</span></button>
-                    <h2 class="book-title">${book.title}</h2>
-                    <div class="book-meta">
-                        <span class="meta-chip"><span class="material-icons-round">person</span><span class="text">${book.author}</span></span>
-                        ${catsHTML}
-                    </div>
-                    ${book.best_editions?.length ? `<div class="section-title"><span class="material-icons-round">verified</span> أفضل الطبعات:</div><ul>${renderList(book.best_editions, true, 'best_editions')}</ul>` : ''}
-                    ${book.alt_editions?.length ? `<div class="section-title"><span class="material-icons-round">rule</span> طبعات بديلة جيدة:</div><ul>${renderList(book.alt_editions, true, 'alt_editions')}</ul>` : ''}
-                    ${book.links?.length ? `<div class="section-title"><span class="material-icons-round">link</span> روابط مفيدة:</div><ul>${renderList(book.links, false)}</ul>` : ''}
-                    ${book.notes ? `<div class="book-notes"><span class="material-icons-round">lightbulb</span><div>${book.notes}</div></div>` : ''}
-                    ${dateHTML}
-                `;
+                card.innerHTML = bookCardHTML(book);
                 container.appendChild(card);
             });
         }
@@ -1731,6 +1742,55 @@
         }
 
         function closeModal() { document.getElementById('infoModal').style.display = 'none'; }
+
+        // Ouvre la fiche du livre dans SON PROPRE modal (#bookCardModal), pour qu'une
+        // photo (#infoModal) puisse s'ouvrir par-dessus sans fermer la fiche.
+        function openBookCardModal(bookId) {
+            const book = booksData.find(b => b.id === bookId);
+            if (!book) return;
+            document.getElementById('bookCardModalBody').innerHTML = '<div class="md-card" style="box-shadow:none;margin:0">' + bookCardHTML(book) + '</div>';
+            document.getElementById('bookCardModal').style.display = 'flex';
+        }
+        function closeBookCardModal() { document.getElementById('bookCardModal').style.display = 'none'; }
+
+        // Verrouille le scroll de l'arrière-plan tant qu'un modal est ouvert. Chaque modal
+        // a son propre verrou + garde-fou (un body déjà figé n'est pas re-verrouillé), donc
+        // fermer la photo ne déverrouille pas tant que la fiche est ouverte.
+        (function(){
+            function watch(id){
+                var modal = document.getElementById(id);
+                if (!modal) return;
+                var savedY = 0, sbw = 0, locked = false;
+                function lock(){
+                    if (locked || document.body.style.position === 'fixed') return;
+                    savedY = window.scrollY || document.documentElement.scrollTop || 0;
+                    sbw = window.innerWidth - document.documentElement.clientWidth;
+                    document.body.style.position = 'fixed';
+                    document.body.style.top = (-savedY) + 'px';
+                    document.body.style.left = '0';
+                    document.body.style.right = '0';
+                    document.body.style.width = '100%';
+                    if (sbw > 0) document.body.style.paddingRight = sbw + 'px';
+                    locked = true;
+                }
+                function unlock(){
+                    if (!locked) return;
+                    document.body.style.position = '';
+                    document.body.style.top = '';
+                    document.body.style.left = '';
+                    document.body.style.right = '';
+                    document.body.style.width = '';
+                    document.body.style.paddingRight = '';
+                    locked = false;
+                    window.scrollTo(0, savedY);
+                }
+                new MutationObserver(function(){
+                    if (getComputedStyle(modal).display !== 'none') lock(); else unlock();
+                }).observe(modal, { attributes: true, attributeFilter: ['style'] });
+            }
+            watch('bookCardModal');
+            watch('infoModal');
+        })();
         
         function openPdfViewer(url, title) {
             document.getElementById('pdfViewerTitle').innerText = title;
@@ -2221,6 +2281,8 @@
   .tc-bot{align-self:flex-end;background:var(--md-surface,#fff);color:var(--md-on-surface,#191c1b);border:1px solid var(--md-outline-variant,#bfc9c6)}
   .tc-tg{display:inline-flex;align-items:center;gap:6px;margin-top:12px;padding:7px 13px;background:#229ED9;color:#fff!important;border-radius:20px;text-decoration:none;font-size:.82rem;font-weight:700}
   .tc-tg svg{flex-shrink:0}
+  .tc-eye{display:inline-flex;align-items:center;vertical-align:middle;background:none;border:none;padding:0;margin-inline-start:3px;cursor:pointer;color:var(--md-primary,#00695c)}
+  .tc-eye .material-icons-round{font-size:19px}
   .tc-typing{display:flex;gap:5px;align-items:center}
   .tc-typing span{width:7px;height:7px;border-radius:50%;background:var(--md-outline,#707977);animation:tc-blink 1.2s infinite}
   .tc-typing span:nth-child(2){animation-delay:.2s}
@@ -2257,11 +2319,44 @@
     var t=document.createElement('div');t.className='tc-msg tc-bot tc-typing';t.innerHTML='<span></span><span></span><span></span>';body.appendChild(t);body.scrollTop=body.scrollHeight;
     fetch(API,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({message:q})})
       .then(function(r){return r.json();})
-      .then(function(d){t.remove();add((d&&d.answer)||'—','tc-bot');})
+      .then(function(d){t.remove();addBot((d&&d.answer)||'—');})
       .catch(function(){t.remove();add('تعذّر الاتصال، حاول مرة أخرى بعد قليل.','tc-bot');})
       .finally(function(){busy=false;send.disabled=false;setTimeout(function(){input.focus();},50);});
   }
   function resetPanel(){panel.style.bottom='';panel.style.height='';panel.style.maxHeight='';}
+  // Retrouve le livre correspondant à un titre renvoyé par l'IA (dans booksData de l'app).
+  function findBook(title){
+    if(typeof booksData==='undefined'||typeof normalizeArabic!=='function')return null;
+    var n=normalizeArabic(String(title).replace(/[.,،:\s]+$/,''));if(!n)return null;
+    for(var i=0;i<booksData.length;i++){if(normalizeArabic(booksData[i].title)===n)return booksData[i];}
+    for(var j=0;j<booksData.length;j++){var bt=normalizeArabic(booksData[j].title);if(bt&&(bt.indexOf(n)>=0||n.indexOf(bt)>=0))return booksData[j];}
+    return null;
+  }
+  // Affiche la réponse de l'IA : chaque ligne « 📚 titre » reçoit une icône œil
+  // qui ouvre la carte complète du livre (openBookCardModal) si on le retrouve.
+  function addBot(text){
+    var d=document.createElement('div');d.className='tc-msg tc-bot';
+    String(text).split('\n').forEach(function(line,idx){
+      if(idx>0)d.appendChild(document.createTextNode('\n'));
+      var m=line.match(/^\s*📚\s*(.+)$/);
+      if(m){
+        var title=m[1].trim();
+        var strong=document.createElement('strong');strong.textContent='📚 '+title;d.appendChild(strong);
+        var book=findBook(title);
+        if(book&&typeof openBookCardModal==='function'){
+          d.appendChild(document.createTextNode(' '));
+          var eye=document.createElement('button');eye.type='button';eye.className='tc-eye';eye.title='عرض بطاقة الكتاب';
+          eye.innerHTML='<span class="material-icons-round">zoom_in</span>';
+          eye.addEventListener('click',function(){openBookCardModal(book.id);});
+          d.appendChild(eye);
+        }
+        d.appendChild(document.createTextNode(''));
+      }else{
+        d.appendChild(document.createTextNode(line));
+      }
+    });
+    body.appendChild(d);body.scrollTop=body.scrollHeight;return d;
+  }
   // Verrouille le scroll de la page derrière le chat (mobile) pour éviter que le
   // geste de scroll dans le chat n'entraîne la liste des livres. On sauvegarde et
   // restaure la position pour éviter tout saut.

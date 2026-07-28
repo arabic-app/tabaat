@@ -34,7 +34,7 @@ const MAX_RESULTS = 30; // plafond de livres envoyés à l'IA (entrée quasi gra
 const WELCOME_MESSAGE = `السلام عليكم ورحمة الله وبركاته 👋
 
 أنا خبيرك في طبعات الكتب الإسلامية 📚
-اسألني عن أفضل طبعة لأي كتاب وسأبحث لك في قاعدة بياناتي.
+اسألني عن كتاب أو مؤلف أو علم لتعرف أفضل الطبعات.
 
 مثال:
 • ما هي أفضل طبعة لصحيح البخاري ؟
@@ -50,6 +50,7 @@ const WELCOME_MESSAGE = `السلام عليكم ورحمة الله وبركا�
 // Messages génériques destinés à l'utilisateur (3) — jamais de détail technique.
 const ERROR_MESSAGE = 'عذراً، حدث خطأ مؤقت. حاول مرة أخرى بعد قليل ⏳';
 const RATE_LIMIT_MESSAGE = 'لقد أرسلت رسائل كثيرة بسرعة. انتظر دقيقة من فضلك ⏳';
+const NOT_FOUND_MESSAGE = 'لم أجد هذا الكتاب في قاعدة بياناتي. جرّب صياغة أخرى أو تأكّد من الاسم 🙏';
 
 // En-têtes CORS : autorisent le widget de chat de l'app web à appeler POST /chat.
 const CORS_HEADERS = {
@@ -146,7 +147,7 @@ async function handleMessage(chatId, userText, env) {
 
     if (!answer) {
       answer = await askAI(userText, env);
-      if (env.CACHE && answer) {
+      if (env.CACHE && answer && answer.includes('📚')) {
         await env.CACHE.put(cacheKey, answer, { expirationTtl: RESPONSE_CACHE_TTL });
       }
     }
@@ -181,7 +182,7 @@ async function handleWebChat(request, env) {
     let answer = env.CACHE ? await env.CACHE.get(cacheKey) : null;
     if (!answer) {
       answer = await askAI(text, env);
-      if (env.CACHE && answer) {
+      if (env.CACHE && answer && answer.includes('📚')) {
         await env.CACHE.put(cacheKey, answer, { expirationTtl: RESPONSE_CACHE_TTL });
       }
     }
@@ -256,9 +257,8 @@ function searchTokens(query) {
 // =============================================================================
 // Recherche locale (RAG) : récupération + filtrage + compression
 // =============================================================================
-async function fetchAndFilterBooks(query) {
-  // (4) Cache au bord Cloudflare : le books.json (150 Ko) n'est plus
-  // re-téléchargé à chaque message.
+async function selectRelevantBooks(query) {
+  // (4) Cache au bord Cloudflare : books.json n'est pas re-téléchargé à chaque message.
   const response = await fetch(BOOKS_URL, {
     cf: { cacheTtl: BOOKS_CACHE_TTL, cacheEverything: true },
   });
@@ -266,38 +266,21 @@ async function fetchAndFilterBooks(query) {
   const allBooks = await response.json();
 
   const words = searchTokens(query);
+  if (words.length === 0) return allBooks.slice(0, MAX_RESULTS);
 
-  let relevantBooks;
-  if (words.length > 0) {
-    const scored = allBooks
-      .map(book => ({ book, ...analyzeBook(book, words) }))
-      .filter(s => s.coverage > 0);
-    // On ne garde que les livres couvrant le PLUS de mots de la requête, puis on
-    // départage par score. « صحيح البخاري » -> les livres matchant les 2 mots (le
-    // vrai البخاري), pas « صحيح مسلم » qui n'en matche qu'un. « رجب » (1 mot) ->
-    // tous les livres de l'auteur sont conservés. Gros gain de tokens.
-    const maxCoverage = scored.length ? Math.max(...scored.map(s => s.coverage)) : 0;
-    relevantBooks = scored
-      .filter(s => s.coverage === maxCoverage)
-      .sort((a, b) => b.score - a.score)
-      .slice(0, MAX_RESULTS)
-      .map(s => s.book);
-  } else {
-    relevantBooks = allBooks.slice(0, MAX_RESULTS); // Fallback
-  }
+  const scored = allBooks
+    .map(book => ({ book, ...analyzeBook(book, words) }))
+    .filter(s => s.coverage > 0);
+  if (!scored.length) return [];
 
-  // Compression ultra-condensée : « titre | auteur | ✓ معتمدة | ~ بديلة », « ت » = محقق.
-  // Pas de labels anglais ni de catégorie => beaucoup moins de tokens.
-  const lines = relevantBooks.map(b => {
-    let line = `${b.title} | ${b.author}`;
-    const best = formatEditions(b.best_editions);
-    const alt = formatEditions(b.alt_editions);
-    if (best) line += ` | ✓ ${best}`;
-    if (alt) line += ` | ~ ${alt}`;
-    return line;
-  });
-
-  return lines.join('\n') || 'لا توجد كتب مطابقة لبحثك في قاعدة البيانات.';
+  // On ne garde que les livres couvrant le PLUS de mots de la requête, puis on
+  // départage par score (« صحيح البخاري » -> le vrai البخاري ; « رجب » -> tous ses livres).
+  const maxCoverage = Math.max(...scored.map(s => s.coverage));
+  return scored
+    .filter(s => s.coverage === maxCoverage)
+    .sort((a, b) => b.score - a.score)
+    .slice(0, MAX_RESULTS)
+    .map(s => s.book);
 }
 
 // (7) Champs de recherche ciblés + normalisés (au lieu de tout le JSON brut).
@@ -334,71 +317,94 @@ function analyzeBook(book, words) {
   return { coverage, score };
 }
 
-function formatEditions(editions) {
-  if (!editions || editions.length === 0) return '';
-  return editions
-    .map(e => `${e.publisher}${e.verifier ? '(ت ' + e.verifier + ')' : ''}`)
-    .join('، ');
+// Étiquette d'une édition : « éditeur - ت محقق ».
+function edLabel(ed) {
+  const v = (ed.verifier || '').trim();
+  return ed.publisher + (v ? ' - ت ' + v : '');
+}
+
+// Réponse finale rendue de façon DÉTERMINISTE depuis les vraies données
+// (aucune reformulation par l'IA => pas de découpage, pas d'invention, pas de « لا توجد »).
+function formatAnswer(books) {
+  return books.map(b => {
+    let out = '📚 ' + b.title + '.';
+    const best = (b.best_editions || []).filter(e => e.publisher);
+    const alt = (b.alt_editions || []).filter(e => e.publisher);
+    if (best.length) { out += '\nط.معتمدة:'; best.forEach(e => { out += '\n▫️ ' + edLabel(e); }); }
+    if (alt.length) { out += '\nط.بديلة:'; alt.forEach(e => { out += '\n▪️ ' + edLabel(e); }); }
+    return out;
+  }).join('\n\n');
+}
+
+// Liste numérotée légère envoyée à l'IA pour la SÉLECTION (sans éditions => compact + sans ambiguïté).
+function booksForSelection(books) {
+  return books.map(b => {
+    const cats = Array.isArray(b.category) ? b.category.join('، ') : (b.category || '');
+    return b.id + '. ' + b.title + ' — ' + b.author + (cats ? ' (' + cats + ')' : '');
+  }).join('\n');
 }
 
 // =============================================================================
 // Appel IA : Gemini (principal) -> Groq (secours)
 // =============================================================================
 async function askAI(question, env) {
-  const compactBooksData = await fetchAndFilterBooks(question);
+  const candidates = await selectRelevantBooks(question);
+  if (!candidates.length) return NOT_FOUND_MESSAGE;
 
-  const systemPrompt = `أنت خبير في طبعات الكتب الإسلامية والعربية.
-في القائمة التالية، كل سطر: العنوان | المؤلف | ✓ الطبعات المعتمدة | ~ الطبعات البديلة، والرمز «ت» يعني المحقق.
-${compactBooksData}
+  const selectionPrompt = `أنت مساعد يختار الكتب المناسبة لسؤال المستخدم من قائمة مرقّمة.
+القائمة (رقم. العنوان — المؤلف (التصنيفات)):
+${booksForSelection(candidates)}
 
-اعتمد على هذه القائمة فقط، وأجب بالعربية فقط بتنسيق واضح ومقروء.
-اعرض كل كتاب مطلوب بهذا الشكل بالضبط:
+أعِد فقط مصفوفة JSON بأرقام الكتب المناسبة لسؤال المستخدم، مرتّبة من الأنسب إلى الأقل، دون أي نص آخر.
+- إذا سأل عن كتاب معيّن، أعِد رقم ذلك الكتاب فقط (أو الأقرب).
+- إذا سأل عن مؤلف أو علم أو موضوع (مثل «كتب العقيدة» أو «كتب ابن رجب»)، أعِد أرقام كل الكتب المطابقة في القائمة.
+- إذا لم يوجد أي كتاب مناسب، أعِد [].
+مثال للإخراج: [12, 5, 33]`;
 
-📚 <اسم الكتاب>.
-ط.معتمدة:
-▫️ <الناشر> - ت <المحقق>
-▫️ <الناشر آخر>
-ط.بديلة:
-▪️ <الناشر> - ت <المحقق>
+  let ids = null;
+  try {
+    const raw = await runAI(selectionPrompt, question, env);
+    const m = raw.match(/\[[\d\s,]*\]/);
+    if (m) ids = JSON.parse(m[0]);
+  } catch (err) {
+    console.error('AI selection failed:', err.message);
+    return formatAnswer(candidates); // repli : on rend les résultats du RAG
+  }
 
-قواعد مهمة:
-- ميّز دائمًا بين «الطبعات المعتمدة» (المأخوذة من ✓) و«الطبعات البديلة» (المأخوذة من ~)؛ لا تخلط بينهما أبدًا.
-- ضع كل طبعة في سطر مستقل يبدأ بعلامة (▫️ للمعتمدة، ▪️ للبديلة). في القائمة، النواشر المفصولون بفاصلة «،» هم طبعات منفصلة: اجعل كل ناشر في سطر مستقل، ولا تضع أكثر من ناشر في سطر واحد أبدًا.
-- إذا لم تكن هناك طبعات بديلة (~) لكتابٍ ما، فلا تكتب عنوان «الطبعات البديلة» ولا عبارة «لا توجد» إطلاقًا لذلك الكتاب؛ انتقل مباشرة إلى الكتاب التالي.
-- استعمل «ت» للمحقق (لا تكتب كلمة «تحقيق»)، ولا تكتب رموز القائمة (| ✓ ~) في جوابك.
-- إن لم يكن الكتاب موجودًا في القائمة، اعتذر بلطف وأخبره أنه غير موجود.`;
+  if (!Array.isArray(ids)) return formatAnswer(candidates);
+  const byId = new Map(candidates.map(b => [b.id, b]));
+  const chosen = ids.map(id => byId.get(id)).filter(Boolean).slice(0, MAX_RESULTS);
+  if (!chosen.length) return NOT_FOUND_MESSAGE;
+  return formatAnswer(chosen);
+}
 
+// Cascade de fournisseurs : Gemini d'abord, puis Groq en secours. Renvoie le texte brut.
+async function runAI(systemPrompt, userText, env) {
   const messages = [
     { role: 'system', content: systemPrompt },
-    { role: 'user', content: question },
+    { role: 'user', content: userText },
   ];
-
-  // (16) Cascade de fournisseurs : Gemini d'abord, puis Groq en secours.
-  // On retourne la première réponse réussie ; sinon on lève l'erreur cumulée.
   const errors = [];
-
   if (env.GEMINI_API_KEY) {
     for (const cfg of GEMINI_MODELS) {
       try {
-        return await callGemini(cfg, systemPrompt, question, env.GEMINI_API_KEY);
+        return await callGemini(cfg, systemPrompt, userText, env.GEMINI_API_KEY);
       } catch (err) {
-        errors.push(`Gemini(${cfg.model}): ${err.message}`);
-        console.error(`Gemini "${cfg.model}" failed:`, err.message);
+        errors.push('Gemini(' + cfg.model + '): ' + err.message);
+        console.error('Gemini "' + cfg.model + '" failed:', err.message);
       }
     }
   }
-
   if (env.GROQ_API_KEY) {
     for (const model of GROQ_MODELS) {
       try {
         return await callGroqModel(model, messages, env.GROQ_API_KEY);
       } catch (err) {
-        errors.push(`Groq(${model}): ${err.message}`);
-        console.error(`Groq model "${model}" failed:`, err.message);
+        errors.push('Groq(' + model + '): ' + err.message);
+        console.error('Groq model "' + model + '" failed:', err.message);
       }
     }
   }
-
   throw new Error('Tous les fournisseurs IA ont échoué : ' + errors.join(' | '));
 }
 

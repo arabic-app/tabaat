@@ -1254,7 +1254,7 @@
                 </button>
 
                 <div class="section-header">
-                    <span class="material-icons-round">rule</span> طبعات بديلة جيدة
+                    <span class="material-icons-round">rule</span> طبعات بديلة
                 </div>
                 <div id="altEditions"></div>
                 <button type="button" class="btn-add-row" onclick="addEditionRow('altEditions')">
