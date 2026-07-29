@@ -377,7 +377,7 @@
             background: var(--md-background);
             /* padding-bas assez grand pour que le fond couvre le bouton "+" qui dépasse
                (les cartes défilent sous le fond, pas sous le bouton nu) + espace avant la 1re carte */
-            padding: 12px 0 24px;
+            padding: 12px 0 15px;
             width: 100%;
         }
         .filter-bar {
@@ -1203,6 +1203,15 @@
         .confirm-modal h3 { margin: 0 0 10px 0; color: var(--md-on-surface); font-size: 1.2rem; font-weight: 800; }
         .confirm-modal p { margin: 0 0 22px 0; color: var(--md-on-surface-variant); font-size: 0.93rem; line-height: 1.6; }
         .confirm-actions { display: flex; gap: 10px; justify-content: center; }
+        /* ===== Éléments cliquables de la carte + dialogue de choix ===== */
+        .meta-chip.clickable, .edition-name.clickable { cursor: pointer; }
+        @media (hover: hover) {
+            .meta-chip.clickable:hover { filter: brightness(0.94); }
+            .edition-name.clickable:hover { color: var(--md-primary); text-decoration: underline; }
+        }
+        #choiceActions { flex-direction: column; gap: 8px; }
+        #choiceActions .conf-btn { width: 100%; }
+        #choiceTitle { white-space: pre-line; }
         .conf-btn {
             flex: 1; height: 42px; border: none; border-radius: 21px;
             font-family: inherit; font-weight: 700; font-size: 0.95rem;
@@ -1433,6 +1442,15 @@
                     نعم، أخفِه
                 </button>
             </div>
+        </div>
+    </div>
+
+    <!-- CHOICE MODAL (recherche depuis la carte) -->
+    <div id="choiceModal" class="confirm-overlay">
+        <div class="confirm-modal">
+            <span class="confirm-icon" id="choiceIcon">🔎</span>
+            <h3 id="choiceTitle"></h3>
+            <div class="confirm-actions" id="choiceActions"></div>
         </div>
     </div>
 
@@ -1676,10 +1694,83 @@
             displayBooks(filtered);
         }
 
+        // ===== Recherche depuis la carte (auteur / علم / طبعة) =====
+        function openChoice(opts) {
+            document.getElementById('choiceIcon').textContent = opts.icon || '🔎';
+            document.getElementById('choiceTitle').textContent = opts.title || '';
+            const box = document.getElementById('choiceActions');
+            box.innerHTML = '';
+            (opts.actions || []).forEach(a => {
+                const b = document.createElement('button');
+                b.className = 'conf-btn conf-btn-primary';
+                b.textContent = a.label;
+                b.onclick = () => { closeChoice(); a.run(); };
+                box.appendChild(b);
+            });
+            const cancel = document.createElement('button');
+            cancel.className = 'conf-btn conf-btn-secondary';
+            cancel.textContent = 'إلغاء';
+            cancel.onclick = closeChoice;
+            box.appendChild(cancel);
+            document.getElementById('choiceModal').classList.add('visible');
+        }
+        function closeChoice() { document.getElementById('choiceModal').classList.remove('visible'); }
+        document.getElementById('choiceModal').addEventListener('click', (e) => { if (e.target.id === 'choiceModal') closeChoice(); });
+
+        // Réinitialise tous les filtres (le nouveau choix devient le seul filtre actif).
+        function resetFilters() {
+            mainSearch.value = ''; currentSearchTerm = ''; clearSearchBtn.style.display = 'none';
+            currentCategory = 'الكل';
+            document.querySelectorAll('.chip').forEach(c => c.classList.toggle('active', c.dataset.value === 'الكل'));
+            publisherSearch.value = ''; currentPublisher = ''; clearPublisherBtn.style.display = 'none';
+            verifierSearch.value = ''; currentVerifier = ''; clearVerifierBtn.style.display = 'none';
+        }
+        function afterFilterApplied() {
+            if (typeof closeBookCardModal === 'function') closeBookCardModal();
+            filterAndDisplayBooks();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+        function cardAuthorSearch(enc) {
+            const author = decodeURIComponent(enc);
+            openChoice({ icon: '👤', title: 'عرض كتب المؤلف:\n' + author + '؟', actions: [
+                { label: 'نعم، اعرض كتبه', run: () => { resetFilters(); mainSearch.value = author; currentSearchTerm = author; clearSearchBtn.style.display = 'flex'; afterFilterApplied(); } }
+            ] });
+        }
+        function cardCategorySearch(enc) {
+            const cat = decodeURIComponent(enc);
+            openChoice({ icon: '📚', title: 'عرض كتب علم:\n' + cat + '؟', actions: [
+                { label: 'نعم، اعرض كتب هذا العلم', run: () => {
+                    resetFilters();
+                    const chip = [...document.querySelectorAll('.chip')].find(c => c.dataset.value === cat);
+                    if (chip) { document.querySelectorAll('.chip').forEach(c => c.classList.remove('active')); chip.classList.add('active'); chip.scrollIntoView({ inline: 'center', block: 'nearest' }); }
+                    currentCategory = cat;
+                    afterFilterApplied();
+                } }
+            ] });
+        }
+        function cardEditionSearch(pubEnc, verEnc) {
+            const pub = decodeURIComponent(pubEnc || ''); const ver = decodeURIComponent(verEnc || '');
+            const applyEd = (p, v) => {
+                resetFilters();
+                advSearch.classList.add('open');
+                advToggle.querySelector('.material-icons-round').textContent = 'remove';
+                advToggle.setAttribute('aria-expanded', 'true');
+                publisherSearch.value = p; currentPublisher = p; clearPublisherBtn.style.display = p ? 'flex' : 'none';
+                verifierSearch.value = v; currentVerifier = v; clearVerifierBtn.style.display = v ? 'flex' : 'none';
+                afterFilterApplied();
+            };
+            const actions = [];
+            if (pub) actions.push({ label: 'كتب دار: ' + pub, run: () => applyEd(pub, '') });
+            if (ver) actions.push({ label: 'كتب المحقق: ' + ver, run: () => applyEd('', ver) });
+            if (pub && ver) actions.push({ label: 'الدار والمحقق معًا', run: () => applyEd(pub, ver) });
+            if (!actions.length) return;
+            openChoice({ icon: '🏛️', title: 'ابحث عن كتب هذه الطبعة:', actions });
+        }
+
         function bookCardHTML(book) {
             const bookCats = getBookCategories(book);
             const catsHTML = bookCats.map(cat => `
-                    <span class="meta-chip">
+                    <span class="meta-chip clickable" role="button" onclick="cardCategorySearch('${encodeURIComponent(cat)}')">
                         <span class="material-icons-round">category</span>
                         <span class="text">${cat}</span>
                     </span>
@@ -1697,8 +1788,11 @@
                 if (isEdition && ed.corrections && ed.corrections.length) actions += `<button class="md-icon-btn" onclick="openCorrectionsModal(${book.id}, '${type}', ${idx})" title="تصويبات الطبعة"><span class="material-icons-round">report_problem</span></button>`;
                 if (isEdition && ed.notes) actions += `<button class="md-icon-btn" onclick="openNoteModal('${encodeURIComponent(edLabel)}', '${encodeURIComponent(ed.notes)}')" title="ملاحظات حول الطبعة"><span class="material-icons-round">info</span></button>`;
                 if (isEdition && ((ed.images && ed.images.length) || ed.image)) actions += `<button class="md-icon-btn" onclick="openImageModal(${book.id}, '${type}', ${idx})" title="عرض صور الطبعة"><span class="material-icons-round">photo_library</span></button>`;
+                const nameSpan = (isEdition && (ed.publisher || ed.verifier))
+                    ? `<span class="edition-name clickable" role="button" onclick="cardEditionSearch('${encodeURIComponent(ed.publisher || '')}','${encodeURIComponent(ed.verifier || '')}')">${edLabel}</span>`
+                    : `<span class="edition-name">${edLabel}</span>`;
                 return isEdition
-                    ? `<li class="md-list-item"><span class="edition-name">${edLabel}</span><div class="edition-actions">${actions}</div></li>`
+                    ? `<li class="md-list-item">${nameSpan}<div class="edition-actions">${actions}</div></li>`
                     : `<li class="md-list-item"><a href="${ed.url}" target="_blank" class="link-item"><span class="material-icons-round">open_in_new</span><span class="edition-name">${ed.title}</span></a></li>`;
             }).join('');
 
@@ -1720,7 +1814,7 @@
                     <button class="share-card-btn" onclick="shareBookCard(this)" title="مشاركة الكتاب كصورة"><span class="material-icons-round">share</span></button>
                     <h2 class="book-title">${book.title}</h2>
                     <div class="book-meta">
-                        <span class="meta-chip"><span class="material-icons-round">person</span><span class="text">${book.author}</span></span>
+                        <span class="meta-chip clickable" role="button" onclick="cardAuthorSearch('${encodeURIComponent(book.author)}')"><span class="material-icons-round">person</span><span class="text">${book.author}</span></span>
                         ${catsHTML}
                     </div>
                     ${book.best_editions?.length ? `<div class="section-title"><span class="material-icons-round">verified</span> أفضل الطبعات:</div><ul>${renderList(book.best_editions, true, 'best_editions')}</ul>` : ''}
