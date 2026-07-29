@@ -1644,7 +1644,6 @@
             const open = advSearch.classList.toggle('open');
             advToggle.querySelector('.material-icons-round').textContent = open ? 'remove' : 'add';
             advToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-            if (open) setTimeout(() => publisherSearch.focus(), 60);
         });
         const clearPublisherBtn = document.getElementById('clearPublisherBtn');
         const clearVerifierBtn = document.getElementById('clearVerifierBtn');
