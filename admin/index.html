@@ -598,6 +598,11 @@
             white-space: nowrap; pointer-events: none; z-index: 10;
         }
         .chart-bar:hover .chart-bar-tooltip { display: block; }
+        /* Barres de bord : ancrer le tooltip vers l'intérieur pour ne pas le tronquer. */
+        .chart-bar:first-child .chart-bar-tooltip,
+        .chart-bar:nth-child(2) .chart-bar-tooltip { left: auto; right: 0; transform: none; }
+        .chart-bar:last-child .chart-bar-tooltip,
+        .chart-bar:nth-last-child(2) .chart-bar-tooltip { left: 0; right: auto; transform: none; }
         .stats-countries { display: flex; flex-direction: column; gap: 6px; }
         .country-row {
             display: flex; align-items: center; gap: 10px;
@@ -1117,7 +1122,7 @@
             <div class="stats-content" id="statsContent">
                 <div class="stats-notice" id="statsNotice" style="display:none;">
                     <span class="material-icons-round" style="font-size:16px;line-height:1;margin-bottom:0;color:var(--info);">info</span>
-                    <span>GitHub Traffic API : données des 14 derniers jours. Token requis (même que la synchronisation).</span>
+                    <span>إحصائيات فعلية للموقع — تتبّع خاص محدّث فوريًا. يتطلّب مفتاح الإحصائيات في الإعدادات.</span>
                 </div>
                 <div class="stats-grid">
                     <div class="stat-card">
@@ -1128,17 +1133,30 @@
                     <div class="stat-card">
                         <span class="material-icons-round stat-icon" style="color:var(--info);">people</span>
                         <div class="stat-value" id="statUniqueVisitors">—</div>
-                        <div class="stat-label">زوار فريدون</div>
+                        <div class="stat-label">زيارات فريدة</div>
                     </div>
                     <div class="stat-card">
                         <span class="material-icons-round stat-icon" style="color:var(--tertiary);">today</span>
                         <div class="stat-value" id="statTodayViews">—</div>
                         <div class="stat-label">مشاهدات اليوم</div>
                     </div>
+                    <div class="stat-card">
+                        <span class="material-icons-round stat-icon" style="color:#00695c;">forum</span>
+                        <div class="stat-value" id="statChatTotal">—</div>
+                        <div class="stat-label">أسئلة المحادثة</div>
+                    </div>
                 </div>
                 <div class="stats-section">
-                    <h4 class="stats-section-title"><span class="material-icons-round" style="font-size:18px;line-height:1;margin-bottom:0;">show_chart</span> الزيارات (14 يومًا)</h4>
+                    <h4 class="stats-section-title"><span class="material-icons-round" style="font-size:18px;line-height:1;margin-bottom:0;">show_chart</span> الزيارات (30 يومًا)</h4>
                     <div class="stats-chart" id="statsChart"></div>
+                </div>
+                <div class="stats-section">
+                    <h4 class="stats-section-title"><span class="material-icons-round" style="font-size:18px;line-height:1;margin-bottom:0;">search</span> أكثر عمليات البحث</h4>
+                    <div class="stats-countries" id="statsTopSearches"></div>
+                </div>
+                <div class="stats-section">
+                    <h4 class="stats-section-title"><span class="material-icons-round" style="font-size:18px;line-height:1;margin-bottom:0;">menu_book</span> أكثر الكتب اطّلاعًا</h4>
+                    <div class="stats-countries" id="statsTopBooks"></div>
                 </div>
 
             </div>
@@ -1277,6 +1295,7 @@
         LOCKOUT_MS: 10 * 60 * 1000,
         GH_OWNER: 'arabic-app',
         GH_REPO: 'tabaat',
+        WORKER_URL: 'https://telegram-bot-editions.tabaat.workers.dev',
         SHEET_ID: '1x-vK9_yeaDh53NgILxexbroCbkmHC3oSFZeAAdnB4GA',
         APPS_SCRIPT_URL: 'https://script.google.com/macros/s/AKfycbyY54zDiK8ugrE-Gjm1sTdg3kx3qhMsW6gauGwkCy0i6cVHJ7YoZv-TnkVwZhLlu2fR/exec',
         TOAST_DURATION: 4500,
@@ -2116,6 +2135,7 @@
     // ================================================================
     function getConfigName() { return localStorage.getItem('sync_name') || ''; }
     function getConfigToken() { return localStorage.getItem('github_token_secured') || ''; }
+    function getStatsKey() { return localStorage.getItem('stats_key') || ''; }
 
     function isConfigComplete() {
         return getConfigName() !== '' && getConfigToken() !== '';
@@ -2609,34 +2629,23 @@
     }
 
     async function loadStats() {
-        const token = getConfigToken();
-        if (!token) {
-            $('#statsNotice').style.display = 'flex';
-            $('#statsNotice').innerHTML = `
-                <span class="material-icons-round" style="font-size:16px;line-height:1;margin-bottom:0;color:var(--error);">warning</span>
-                <span>يرجى ضبط الإعدادات أولاً (زر الإعدادات) لعرض الإحصائيات.</span>`;
-            return;
-        }
+        const key = getStatsKey();
 
         $('#statsNotice').style.display = 'flex';
         $('#statsNotice').innerHTML = `
             <span class="material-icons-round" style="font-size:16px;line-height:1;margin-bottom:0;animation:spin 1s linear infinite;color:var(--primary);">sync</span>
             <span>جاري تحميل الإحصائيات...</span>`;
 
-        const headers = { Authorization: `token ${token}`, Accept: 'application/vnd.github.v3+json' };
-        const baseUrl = `https://api.github.com/repos/${CONFIG.GH_OWNER}/${CONFIG.GH_REPO}/traffic`;
-
         try {
-            const viewsRes = await fetch(`${baseUrl}/views`, { headers });
-
-            if (!viewsRes.ok) {
-                const err = await viewsRes.json().catch(() => ({}));
-                throw new Error(err.message || `HTTP ${viewsRes.status}`);
+            const url = `${CONFIG.WORKER_URL}/stats${key ? '?key=' + encodeURIComponent(key) : ''}`;
+            const res = await fetch(url);
+            if (!res.ok) {
+                if (res.status === 403) throw new Error('مفتاح الإحصائيات مطلوب أو غير صحيح — اضبطه في الإعدادات');
+                throw new Error(`HTTP ${res.status}`);
             }
-
-            const views = await viewsRes.json();
-
-            renderStats(views);
+            const data = await res.json();
+            if (data.error) throw new Error(data.error);
+            renderStats(data);
         } catch (err) {
             $('#statsNotice').style.display = 'flex';
             $('#statsNotice').innerHTML = `
@@ -2645,41 +2654,62 @@
         }
     }
 
-    function renderStats(views) {
-        // Summary
-        $('#statTotalViews').textContent = (views.count || 0).toLocaleString('ar');
-        $('#statUniqueVisitors').textContent = (views.uniques || 0).toLocaleString('ar');
+    function renderStats(data) {
+        $('#statTotalViews').textContent = (data.totalViews || 0).toLocaleString('ar');
+        $('#statUniqueVisitors').textContent = (data.totalVisitors || 0).toLocaleString('ar');
+        $('#statTodayViews').textContent = (data.todayViews || 0).toLocaleString('ar');
+        const chatEl = $('#statChatTotal');
+        if (chatEl) chatEl.textContent = (data.totalChat || 0).toLocaleString('ar');
 
-        const today = new Date().toISOString().split('T')[0];
-        const todayData = (views.views || []).find(v => v.timestamp && v.timestamp.startsWith(today));
-        $('#statTodayViews').textContent = todayData ? todayData.count.toLocaleString('ar') : '0';
-
-        // Chart (14 days)
+        // Graphe 30 jours
         const chart = $('#statsChart');
         chart.innerHTML = '';
-        const dailyViews = views.views || [];
-        const maxCount = Math.max(...dailyViews.map(d => d.count), 1);
-
-        dailyViews.forEach(day => {
-            const height = Math.max((day.count / maxCount) * 100, 3);
-            const date = new Date(day.timestamp);
+        const days = data.chart || [];
+        const maxCount = Math.max(...days.map(d => d.views), 1);
+        days.forEach(day => {
+            const height = Math.max((day.views / maxCount) * 100, 3);
+            const date = new Date(day.date);
             const label = date.toLocaleDateString('ar', { day: 'numeric', month: 'short' });
             const bar = document.createElement('div');
             bar.className = 'chart-bar';
             bar.style.height = height + '%';
-            bar.innerHTML = `<div class="chart-bar-tooltip">${label}: ${day.count}</div>`;
+            bar.innerHTML = `<div class="chart-bar-tooltip">${label}: ${day.views}</div>`;
             chart.appendChild(bar);
         });
-
-        if (dailyViews.length === 0) {
-            chart.innerHTML = '<div style="margin:auto;color:var(--outline);font-size:0.85rem;">لا توجد بيانات</div>';
+        if (!days.some(d => d.views > 0)) {
+            chart.innerHTML = '<div style="margin:auto;color:var(--outline);font-size:0.85rem;">لا توجد بيانات بعد</div>';
         }
 
-        // Notice
+        renderRankList('#statsTopSearches', data.topSearches, 'لا توجد عمليات بحث بعد');
+        renderRankList('#statsTopBooks', data.topBooks, 'لا توجد بيانات بعد');
+
         $('#statsNotice').style.display = 'flex';
         $('#statsNotice').innerHTML = `
             <span class="material-icons-round" style="font-size:16px;line-height:1;margin-bottom:0;color:var(--info);">info</span>
-            <span>بيانات آخر 14 يومًا — مصدر: GitHub Traffic API</span>`;
+            <span>إحصائيات فعلية للموقع — تتبّع خاص محدّث فوريًا.</span>`;
+    }
+
+    function renderRankList(sel, items, emptyMsg) {
+        const el = $(sel);
+        if (!el) return;
+        el.innerHTML = '';
+        if (!items || !items.length) {
+            el.innerHTML = `<div style="color:var(--outline);font-size:0.85rem;padding:4px;">${emptyMsg}</div>`;
+            return;
+        }
+        items.forEach(it => {
+            const row = document.createElement('div');
+            row.style.cssText = 'display:flex;justify-content:space-between;align-items:center;gap:8px;padding:7px 10px;background:rgba(0,0,0,0.05);border-radius:8px;font-size:0.85rem;';
+            const label = document.createElement('span');
+            label.style.cssText = 'flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;';
+            label.textContent = it.label;
+            const count = document.createElement('span');
+            count.style.cssText = 'font-weight:700;color:var(--primary);flex-shrink:0;';
+            count.textContent = (it.count || 0).toLocaleString('ar');
+            row.appendChild(label);
+            row.appendChild(count);
+            el.appendChild(row);
+        });
     }
 
     // ================================================================

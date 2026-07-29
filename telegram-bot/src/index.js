@@ -55,7 +55,7 @@ const NOT_FOUND_MESSAGE = 'لم أجد هذا الكتاب في قاعدة بي�
 // En-têtes CORS : autorisent le widget de chat de l'app web à appeler POST /chat.
 const CORS_HEADERS = {
   'Access-Control-Allow-Origin': '*',
-  'Access-Control-Allow-Methods': 'POST, OPTIONS',
+  'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
   'Access-Control-Allow-Headers': 'Content-Type',
 };
 
@@ -74,6 +74,14 @@ export default {
     // Endpoint du widget de chat web (app arabic-app.github.io)
     if (request.method === 'POST' && url.pathname === '/chat') {
       return handleWebChat(request, env);
+    }
+
+    // Analytics maison : collecte (public) + lecture (protégée par STATS_KEY)
+    if (request.method === 'POST' && url.pathname === '/track') {
+      return handleTrack(request, env);
+    }
+    if (request.method === 'GET' && url.pathname === '/stats') {
+      return handleStats(url, env);
     }
 
     // Endpoint d'administration one-shot : enregistre le menu de commandes (15)
@@ -186,6 +194,7 @@ async function handleWebChat(request, env) {
         await env.CACHE.put(cacheKey, answer, { expirationTtl: RESPONSE_CACHE_TTL });
       }
     }
+    await bumpStat(env, (s) => { s.c = (s.c || 0) + 1; }); // compteur d'usage du chat web
     return jsonResponse({ answer });
   } catch (err) {
     console.error('Web chat error:', err);
@@ -197,6 +206,92 @@ function jsonResponse(obj, status = 200) {
   return new Response(JSON.stringify(obj), {
     status,
     headers: { 'Content-Type': 'application/json', ...CORS_HEADERS },
+  });
+}
+
+// =============================================================================
+// Analytics maison (auto-hébergé sur KV) — remplace la GitHub Traffic API.
+// 1 compteur JSON par jour : st:d:YYYY-MM-DD = {v:vues, u:visiteurs uniques/jour,
+// c:questions chat, s:{recherche:count}, b:{titre:count}}. 1 lecture + 1 écriture
+// par événement (léger, tient dans le tier gratuit KV pour un site de niche).
+// =============================================================================
+function todayKey() { return 'st:d:' + new Date().toISOString().slice(0, 10); }
+
+function topEntries(map, n) {
+  const out = {};
+  Object.entries(map || {}).sort((a, b) => b[1] - a[1]).slice(0, n).forEach(([k, v]) => { out[k] = v; });
+  return out;
+}
+
+async function bumpStat(env, mutate) {
+  if (!env.CACHE) return;
+  const key = todayKey();
+  const cur = (await env.CACHE.get(key, { type: 'json' })) || { v: 0, u: 0, c: 0, s: {}, b: {} };
+  mutate(cur);
+  cur.s = topEntries(cur.s, 60);
+  cur.b = topEntries(cur.b, 60);
+  await env.CACHE.put(key, JSON.stringify(cur), { expirationTtl: 60 * 60 * 24 * 400 });
+}
+
+// POST /track  { event: 'pageview'|'search'|'book_view', q?, title?, newVisitor? }
+async function handleTrack(request, env) {
+  try {
+    const b = await request.json().catch(() => ({}));
+    const event = String(b.event || 'pageview');
+    await bumpStat(env, (s) => {
+      if (event === 'pageview') { s.v = (s.v || 0) + 1; if (b.newVisitor) s.u = (s.u || 0) + 1; }
+      else if (event === 'search') { const q = String(b.q || '').trim().slice(0, 80); if (q) s.s[q] = (s.s[q] || 0) + 1; }
+      else if (event === 'book_view') { const t = String(b.title || '').trim().slice(0, 140); if (t) s.b[t] = (s.b[t] || 0) + 1; }
+      else if (event === 'chat') { s.c = (s.c || 0) + 1; }
+    });
+    return jsonResponse({ ok: true });
+  } catch (e) {
+    console.error('track error:', e.message);
+    return jsonResponse({ ok: false }, 200);
+  }
+}
+
+// GET /stats?key=STATS_KEY  -> agrégat pour l'admin
+async function handleStats(url, env) {
+  if (!env.CACHE) return jsonResponse({ error: 'kv_disabled' }, 200);
+  // STATS_KEY est OPTIONNEL : si elle est définie, on l'exige ; sinon /stats est ouvert.
+  if (env.STATS_KEY && url.searchParams.get('key') !== env.STATS_KEY) {
+    return jsonResponse({ error: 'unauthorized' }, 403);
+  }
+
+  const byDay = {};
+  let cursor;
+  do {
+    const list = await env.CACHE.list({ prefix: 'st:d:', cursor });
+    for (const k of list.keys) {
+      byDay[k.name.slice(5)] = (await env.CACHE.get(k.name, { type: 'json' })) || {};
+    }
+    cursor = list.list_complete ? null : list.cursor;
+  } while (cursor);
+
+  let totalViews = 0, totalVisitors = 0, totalChat = 0;
+  const searches = {}, books = {};
+  Object.values(byDay).forEach((d) => {
+    totalViews += d.v || 0; totalVisitors += d.u || 0; totalChat += d.c || 0;
+    Object.entries(d.s || {}).forEach(([q, c]) => { searches[q] = (searches[q] || 0) + c; });
+    Object.entries(d.b || {}).forEach(([t, c]) => { books[t] = (books[t] || 0) + c; });
+  });
+
+  const now = Date.now();
+  const chart = [];
+  for (let i = 29; i >= 0; i--) {
+    const date = new Date(now - i * 86400000).toISOString().slice(0, 10);
+    chart.push({ date, views: (byDay[date] && byDay[date].v) || 0 });
+  }
+  const td = byDay[new Date().toISOString().slice(0, 10)] || {};
+  const sortTop = (obj, n) => Object.entries(obj).sort((a, b) => b[1] - a[1]).slice(0, n).map(([label, count]) => ({ label, count }));
+
+  return jsonResponse({
+    totalViews, totalVisitors, totalChat,
+    todayViews: td.v || 0, todayVisitors: td.u || 0, todayChat: td.c || 0,
+    chart,
+    topSearches: sortTop(searches, 15),
+    topBooks: sortTop(books, 15),
   });
 }
 

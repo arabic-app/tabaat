@@ -1670,6 +1670,7 @@
         }
 
         function openImageModal(bookId, edType, index) {
+            try { var _bk = booksData.find(b => b.id === bookId); if (_bk && window.trackBookView) window.trackBookView(_bk.title); } catch (e) {}
             const ed = booksData.find(b => b.id === bookId)[edType][index];
             const n = (ed.publisher || '').trim();
             const v = (ed.verifier || '').trim();
@@ -1758,6 +1759,7 @@
         function openBookCardModal(bookId) {
             const book = booksData.find(b => b.id === bookId);
             if (!book) return;
+            if (window.trackBookView) window.trackBookView(book.title);
             document.getElementById('bookCardModalBody').innerHTML = '<div class="md-card" style="box-shadow:none;margin:0">' + bookCardHTML(book) + '</div>';
             document.getElementById('bookCardModal').style.display = 'flex';
         }
@@ -2402,5 +2404,22 @@
 })();
 </script>
 <!-- ============ fin widget ============ -->
+<!-- ============ Analytics maison (pageview / recherche / vue livre) ============ -->
+<script>
+(function(){
+  var TRACK='https://telegram-bot-editions.tabaat.workers.dev/track';
+  function send(payload){ try{ fetch(TRACK,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload),keepalive:true}).catch(function(){}); }catch(e){} }
+  // Page vue + visiteur unique du jour (dédup via localStorage)
+  var today=new Date().toISOString().slice(0,10), isNew=false;
+  try{ if(localStorage.getItem('tb_lastday')!==today){ isNew=true; localStorage.setItem('tb_lastday',today); } }catch(e){}
+  send({event:'pageview', newVisitor:isNew});
+  // Recherche : débounce 1.5 s, minimum 3 caractères
+  var si=document.getElementById('searchInput'), tmr;
+  if(si){ si.addEventListener('input',function(){ clearTimeout(tmr); var q=si.value.trim(); if(q.length<3) return; tmr=setTimeout(function(){ send({event:'search',q:q}); },1500); }); }
+  // Vue de livre (appelée depuis openImageModal / openBookCardModal)
+  window.trackBookView=function(title){ if(title) send({event:'book_view',title:title}); };
+})();
+</script>
+<!-- ============ fin analytics ============ -->
 </body>
 </html>
