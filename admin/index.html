@@ -575,6 +575,14 @@
         .stat-icon { font-size: 28px; margin-bottom: 6px; line-height: 1; }
         .stat-value { font-size: 1.6rem; font-weight: 800; color: var(--on-surface); margin-bottom: 2px; }
         .stat-label { font-size: 0.78rem; color: var(--on-surface-variant); font-weight: 600; }
+        /* Mobile : les 4 cartes tiennent sur une seule ligne (plus compactes). */
+        @media (max-width: 560px) {
+            .stats-grid { grid-template-columns: repeat(4, 1fr); gap: 6px; }
+            .stat-card { padding: 9px 3px; border-radius: var(--radius-sm); }
+            .stat-icon { font-size: 19px; margin-bottom: 3px; }
+            .stat-value { font-size: 1.05rem; }
+            .stat-label { font-size: 0.6rem; line-height: 1.25; }
+        }
         .stats-section { margin-bottom: 20px; }
         .stats-section-title {
             font-size: 0.9rem; font-weight: 800; color: var(--on-surface);
@@ -1153,10 +1161,6 @@
                 <div class="stats-section">
                     <h4 class="stats-section-title"><span class="material-icons-round" style="font-size:18px;line-height:1;margin-bottom:0;">search</span> أكثر عمليات البحث</h4>
                     <div class="stats-countries" id="statsTopSearches"></div>
-                </div>
-                <div class="stats-section">
-                    <h4 class="stats-section-title"><span class="material-icons-round" style="font-size:18px;line-height:1;margin-bottom:0;">menu_book</span> أكثر الكتب اطّلاعًا</h4>
-                    <div class="stats-countries" id="statsTopBooks"></div>
                 </div>
 
             </div>
@@ -2680,8 +2684,7 @@
             chart.innerHTML = '<div style="margin:auto;color:var(--outline);font-size:0.85rem;">لا توجد بيانات بعد</div>';
         }
 
-        renderRankList('#statsTopSearches', data.topSearches, 'لا توجد عمليات بحث بعد');
-        renderRankList('#statsTopBooks', data.topBooks, 'لا توجد بيانات بعد');
+        renderRankList('#statsTopSearches', (data.topSearches || []).filter(s => s.count > 1), 'لا توجد عمليات بحث متكررة بعد');
 
         $('#statsNotice').style.display = 'flex';
         $('#statsNotice').innerHTML = `
