@@ -398,8 +398,10 @@
             border: 1px solid var(--md-primary); cursor: pointer; z-index: 3;
             display: flex; align-items: center; justify-content: center;
             box-shadow: var(--md-elevation-1); transition: background 0.2s;
+            -webkit-tap-highlight-color: transparent; outline: none;
         }
-        .adv-toggle:hover { background: #00796b; border: 1px solid var(--md-on-primary); }
+        .adv-toggle:focus { outline: none; }
+        @media (hover: hover) { .adv-toggle:hover { background: #00796b; border: 1px solid var(--md-on-primary); } }
         .adv-toggle .material-icons-round { font-size: 20px; }
         .adv-search {
             display: grid; grid-template-columns: 1fr 1fr; gap: 8px;
@@ -1644,6 +1646,7 @@
             const open = advSearch.classList.toggle('open');
             advToggle.querySelector('.material-icons-round').textContent = open ? 'remove' : 'add';
             advToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+            advToggle.blur();
         });
         const clearPublisherBtn = document.getElementById('clearPublisherBtn');
         const clearVerifierBtn = document.getElementById('clearVerifierBtn');
