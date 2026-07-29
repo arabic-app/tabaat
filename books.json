@@ -11696,5 +11696,27 @@
     ],
     "alt_editions": [],
     "links": []
+  },
+  {
+    "id": 427,
+    "title": "شرح مقدمة تفسير الثعلبي",
+    "author": "مساعد بن سليمان الطيار",
+    "category": [
+      "أصول التفسير"
+    ],
+    "notes": "",
+    "date": "2026-07-29",
+    "best_editions": [
+      {
+        "publisher": "المكتب العلمي للشيخ",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1785332384662-IMG20260729153842849.jpg"
+        ],
+        "notes": "",
+        "corrections": []
+      }
+    ],
+    "alt_editions": [],
+    "links": []
   }
 ]
