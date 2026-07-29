@@ -1727,6 +1727,7 @@
         }
         function afterFilterApplied() {
             if (typeof closeBookCardModal === 'function') closeBookCardModal();
+            if (typeof window.tcCloseChat === 'function') window.tcCloseChat();
             filterAndDisplayBooks();
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
@@ -2606,6 +2607,8 @@
   window.addEventListener('orientationchange',function(){setTimeout(fitPanel,300);});
   fab.addEventListener('click',toggle);
   closeBtn.addEventListener('click',toggle);
+  // Fermeture du chat depuis l'extérieur (ex. filtre lancé depuis la fiche du chat).
+  window.tcCloseChat = function(){ if(open) toggle(); };
   send.addEventListener('click',ask);
   input.addEventListener('keydown',function(e){if(e.key==='Enter'){e.preventDefault();ask();}});
 })();
