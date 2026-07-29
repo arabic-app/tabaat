@@ -375,7 +375,9 @@
             top: 0;
             z-index: 100;
             background: var(--md-background);
-            padding: 12px 0 6px;
+            /* padding-bas assez grand pour que le fond couvre le bouton "+" qui dépasse
+               (les cartes défilent sous le fond, pas sous le bouton nu) + espace avant la 1re carte */
+            padding: 12px 0 24px;
             width: 100%;
         }
         .filter-bar {
@@ -386,7 +388,42 @@
             border-radius: 14px;
             padding: 12px;
             box-shadow: var(--md-elevation-1);
+            position: relative;
         }
+        /* ===== RECHERCHE ÉLARGIE (dar / محقق) ===== */
+        .adv-toggle {
+            position: absolute; left: 50%; bottom: -10px; transform: translateX(-50%);
+            width: 20px; height: 20px; padding: 0; border-radius: 10%;
+            background: var(--md-primary); color: var(--md-on-primary);
+            border: 1px solid var(--md-primary); cursor: pointer; z-index: 3;
+            display: flex; align-items: center; justify-content: center;
+            box-shadow: var(--md-elevation-1); transition: background 0.2s;
+        }
+        .adv-toggle:hover { background: #00796b; border: 1px solid var(--md-on-primary); }
+        .adv-toggle .material-icons-round { font-size: 20px; }
+        .adv-search {
+            display: none; grid-template-columns: 1fr 1fr; gap: 8px;
+            margin-top: 10px; padding-top: 12px;
+            border-top: 1px solid var(--md-outline-variant);
+        }
+        .adv-search.open { display: grid; }
+        .adv-field {
+            display: flex; align-items: center; gap: 6px;
+            background: var(--md-background); border: 1px solid var(--md-outline-variant);
+            border-radius: 10px; padding: 8px 10px;
+        }
+        .adv-field .material-icons-round { font-size: 18px; color: var(--md-on-surface-variant); flex-shrink: 0; }
+        .adv-field input {
+            flex: 1; min-width: 0; border: none; background: transparent; outline: none;
+            font-family: inherit; font-size: 0.88rem; color: var(--md-on-surface);
+        }
+        .adv-clear {
+            border: none; background: transparent; cursor: pointer; padding: 0;
+            color: var(--md-on-surface-variant); font-size: 18px; line-height: 1;
+            flex-shrink: 0; display: flex; align-items: center; justify-content: center;
+        }
+        .adv-clear:hover { color: var(--md-on-surface); }
+        @media (max-width: 560px) { .adv-search { grid-template-columns: 1fr; } }
 
         /* ===== MAIN SEARCH ===== */
         .search-wrapper {
@@ -851,6 +888,8 @@
         /* ===== RESPONSIVE ===== */
         @media (max-width: 480px) {
             .container { padding: 0 10px; margin: 16px auto; }
+            /* La vue accueil n'a pas besoin de marge haute : le wrapper sticky fournit déjà l'espace. */
+            #view-home { margin-top: 0; }
             .search-box { padding: 12px 40px 12px 16px; font-size: 0.95rem; }
             .search-icon { font-size: 22px; right: 12px; }
             
@@ -1328,6 +1367,20 @@
 
                 <div class="category-chips" id="categoryChips"></div>
             </div>
+
+            <div class="adv-search" id="advSearch">
+                <div class="adv-field">
+                    <span class="material-icons-round">store</span>
+                    <input type="text" id="publisherSearch" placeholder="بحث بدار النشر..." autocomplete="off">
+                    <button class="adv-clear material-icons-round" id="clearPublisherBtn" style="display:none;" aria-label="مسح">close</button>
+                </div>
+                <div class="adv-field">
+                    <span class="material-icons-round">history_edu</span>
+                    <input type="text" id="verifierSearch" placeholder="بحث بالمحقق..." autocomplete="off">
+                    <button class="adv-clear material-icons-round" id="clearVerifierBtn" style="display:none;" aria-label="مسح">close</button>
+                </div>
+            </div>
+            <button class="adv-toggle" id="advToggle" aria-label="بحث متقدم" aria-expanded="false"><span class="material-icons-round">add</span></button>
         </div>
     </div>
 
@@ -1432,6 +1485,8 @@
         
         let currentSearchTerm = '';
         let currentCategory = 'الكل';
+        let currentPublisher = '';
+        let currentVerifier = '';
         const isIOSUser = /iP(hone|od|ad)/.test(navigator.userAgent || '');
 
         function normalizeArabic(str) {
@@ -1575,18 +1630,41 @@
             filterAndDisplayBooks();
         };
 
+        // Recherche élargie : bouton +/- qui déplie les champs دار النشر / المحقق.
+        const advToggle = document.getElementById('advToggle');
+        const advSearch = document.getElementById('advSearch');
+        const publisherSearch = document.getElementById('publisherSearch');
+        const verifierSearch = document.getElementById('verifierSearch');
+        advToggle.addEventListener('click', () => {
+            const open = advSearch.classList.toggle('open');
+            advToggle.querySelector('.material-icons-round').textContent = open ? 'remove' : 'add';
+            advToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+            if (open) setTimeout(() => publisherSearch.focus(), 60);
+        });
+        const clearPublisherBtn = document.getElementById('clearPublisherBtn');
+        const clearVerifierBtn = document.getElementById('clearVerifierBtn');
+        publisherSearch.oninput = (e) => { currentPublisher = e.target.value; clearPublisherBtn.style.display = currentPublisher ? 'flex' : 'none'; filterAndDisplayBooks(); };
+        verifierSearch.oninput = (e) => { currentVerifier = e.target.value; clearVerifierBtn.style.display = currentVerifier ? 'flex' : 'none'; filterAndDisplayBooks(); };
+        clearPublisherBtn.onclick = () => { publisherSearch.value = ''; currentPublisher = ''; clearPublisherBtn.style.display = 'none'; publisherSearch.focus(); filterAndDisplayBooks(); };
+        clearVerifierBtn.onclick = () => { verifierSearch.value = ''; currentVerifier = ''; clearVerifierBtn.style.display = 'none'; verifierSearch.focus(); filterAndDisplayBooks(); };
+
         function filterAndDisplayBooks() {
-            const normalizedSearchTerm = normalizeArabic(currentSearchTerm);
+            const term = normalizeArabic(currentSearchTerm);
+            const pub = normalizeArabic(currentPublisher);
+            const ver = normalizeArabic(currentVerifier);
             const filtered = booksData.filter(book => {
-                const normalizedTitle = normalizeArabic(book.title);
-                const normalizedAuthor = normalizeArabic(book.author);
-                const matchesSearch = normalizedTitle.includes(normalizedSearchTerm) ||
-                                      normalizedAuthor.includes(normalizedSearchTerm);
-                
+                const matchesSearch = normalizeArabic(book.title).includes(term) ||
+                                      normalizeArabic(book.author).includes(term);
+
                 const cats = getBookCategories(book);
                 const matchesCategory = currentCategory === 'الكل' || cats.includes(currentCategory);
-                
-                return matchesSearch && matchesCategory;
+
+                // دار النشر / المحقق : on cherche dans toutes les éditions (معتمدة + بديلة)
+                const eds = [...(book.best_editions || []), ...(book.alt_editions || [])];
+                const matchesPublisher = !pub || eds.some(e => normalizeArabic(e.publisher || '').includes(pub));
+                const matchesVerifier = !ver || eds.some(e => normalizeArabic(e.verifier || '').includes(ver));
+
+                return matchesSearch && matchesCategory && matchesPublisher && matchesVerifier;
             });
             displayBooks(filtered);
         }
