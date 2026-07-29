@@ -1200,6 +1200,7 @@
             animation: dialogFadeIn 0.2s ease-out;
         }
         .confirm-modal .confirm-icon { font-size: 52px; margin-bottom: 10px; display: block; }
+        .confirm-modal .confirm-icon.material-icons-round { color: var(--md-primary); }
         .confirm-modal h3 { margin: 0 0 10px 0; color: var(--md-on-surface); font-size: 1.2rem; font-weight: 800; }
         .confirm-modal p { margin: 0 0 22px 0; color: var(--md-on-surface-variant); font-size: 0.93rem; line-height: 1.6; }
         .confirm-actions { display: flex; gap: 10px; justify-content: center; }
@@ -1448,7 +1449,7 @@
     <!-- CHOICE MODAL (recherche depuis la carte) -->
     <div id="choiceModal" class="confirm-overlay">
         <div class="confirm-modal">
-            <span class="confirm-icon" id="choiceIcon">🔎</span>
+            <span class="material-icons-round confirm-icon" id="choiceIcon">search</span>
             <h3 id="choiceTitle"></h3>
             <div class="confirm-actions" id="choiceActions"></div>
         </div>
@@ -1696,7 +1697,7 @@
 
         // ===== Recherche depuis la carte (auteur / علم / طبعة) =====
         function openChoice(opts) {
-            document.getElementById('choiceIcon').textContent = opts.icon || '🔎';
+            document.getElementById('choiceIcon').textContent = opts.icon || 'search';
             document.getElementById('choiceTitle').textContent = opts.title || '';
             const box = document.getElementById('choiceActions');
             box.innerHTML = '';
@@ -1733,13 +1734,13 @@
         }
         function cardAuthorSearch(enc) {
             const author = decodeURIComponent(enc);
-            openChoice({ icon: '👤', title: 'عرض كتب المؤلف:\n' + author + '؟', actions: [
+            openChoice({ icon: 'person', title: 'عرض كتب المؤلف:\n' + author + '؟', actions: [
                 { label: 'نعم، اعرض كتبه', run: () => { resetFilters(); mainSearch.value = author; currentSearchTerm = author; clearSearchBtn.style.display = 'flex'; afterFilterApplied(); } }
             ] });
         }
         function cardCategorySearch(enc) {
             const cat = decodeURIComponent(enc);
-            openChoice({ icon: '📚', title: 'عرض كتب علم:\n' + cat + '؟', actions: [
+            openChoice({ icon: 'category', title: 'عرض كتب علم:\n' + cat + '؟', actions: [
                 { label: 'نعم، اعرض كتب هذا العلم', run: () => {
                     resetFilters();
                     const chip = [...document.querySelectorAll('.chip')].find(c => c.dataset.value === cat);
@@ -1765,7 +1766,7 @@
             if (ver) actions.push({ label: 'كتب المحقق: ' + ver, run: () => applyEd('', ver) });
             if (pub && ver) actions.push({ label: 'الدار والمحقق معًا', run: () => applyEd(pub, ver) });
             if (!actions.length) return;
-            openChoice({ icon: '🏛️', title: 'ابحث عن كتب هذه الطبعة:', actions });
+            openChoice({ icon: 'account_balance', title: 'ابحث عن كتب هذه الطبعة:', actions });
         }
 
         function bookCardHTML(book) {
