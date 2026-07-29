@@ -575,14 +575,6 @@
         .stat-icon { font-size: 28px; margin-bottom: 6px; line-height: 1; }
         .stat-value { font-size: 1.6rem; font-weight: 800; color: var(--on-surface); margin-bottom: 2px; }
         .stat-label { font-size: 0.78rem; color: var(--on-surface-variant); font-weight: 600; }
-        /* Mobile : les 4 cartes tiennent sur une seule ligne (plus compactes). */
-        @media (max-width: 560px) {
-            .stats-grid { grid-template-columns: repeat(4, 1fr); gap: 6px; }
-            .stat-card { padding: 9px 3px; border-radius: var(--radius-sm); }
-            .stat-icon { font-size: 19px; margin-bottom: 3px; }
-            .stat-value { font-size: 1.05rem; }
-            .stat-label { font-size: 0.6rem; line-height: 1.25; }
-        }
         .stats-section { margin-bottom: 20px; }
         .stats-section-title {
             font-size: 0.9rem; font-weight: 800; color: var(--on-surface);
@@ -611,6 +603,16 @@
         .chart-bar:nth-child(2) .chart-bar-tooltip { left: auto; right: 0; transform: none; }
         .chart-bar:last-child .chart-bar-tooltip,
         .chart-bar:nth-last-child(2) .chart-bar-tooltip { left: 0; right: auto; transform: none; }
+        /* Mobile : cartes compactes sur une ligne + les 30 barres tiennent sans scroll. */
+        @media (max-width: 560px) {
+            .stats-grid { grid-template-columns: repeat(4, 1fr); gap: 6px; }
+            .stat-card { padding: 9px 3px; border-radius: var(--radius-sm); }
+            .stat-icon { font-size: 19px; margin-bottom: 3px; }
+            .stat-value { font-size: 1.05rem; }
+            .stat-label { font-size: 0.6rem; line-height: 1.25; }
+            .stats-chart { gap: 2px; padding-left: 8px; padding-right: 8px; overflow-x: hidden; }
+            .chart-bar { min-width: 3px; }
+        }
         .stats-countries { display: flex; flex-direction: column; gap: 6px; }
         .country-row {
             display: flex; align-items: center; gap: 10px;
