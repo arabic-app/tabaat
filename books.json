@@ -3580,18 +3580,8 @@
       "التاريخ الإسلامي"
     ],
     "notes": "",
-    "date": "2026-07-12",
+    "date": "2026-07-29",
     "best_editions": [
-      {
-        "publisher": "دار المعارف مصر",
-        "images": [
-          "https://arabic-app.github.io/tabaat/images/1782661169825-images20260628T183906.460.jpeg",
-          "https://arabic-app.github.io/tabaat/images/1782661175321-mbc.jpg"
-        ],
-        "notes": "",
-        "corrections": [],
-        "verifier": "أبي الفضل إبراهيم"
-      },
       {
         "publisher": "دارة الملك عبد العزيز",
         "images": [
@@ -3601,6 +3591,16 @@
         "notes": "",
         "corrections": [],
         "verifier": "بشار عواد"
+      },
+      {
+        "publisher": "دار المعارف مصر",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782661169825-images20260628T183906.460.jpeg",
+          "https://arabic-app.github.io/tabaat/images/1782661175321-mbc.jpg"
+        ],
+        "notes": "",
+        "corrections": [],
+        "verifier": "أبي الفضل إبراهيم"
       }
     ],
     "alt_editions": [
@@ -8100,13 +8100,13 @@
   },
   {
     "id": 284,
-    "title": "الشرح والإبانة على أصول الديانة(الإبانة الصغرى)",
+    "title": "الشرح والإبانة على أصول الديانة (الإبانة الصغرى)",
     "author": "عبيد الله بن بطة العكبري",
     "category": [
       "العقيدة"
     ],
     "notes": "",
-    "date": "2026-07-01",
+    "date": "2026-07-29",
     "best_editions": [
       {
         "publisher": "دار اللؤلؤة",
