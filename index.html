@@ -1646,21 +1646,51 @@
                 `;
         }
 
+        // Rendu paginé « à la demande » : 20 fiches par lot. Quand l'avant-dernière
+        // fiche rendue devient visible, on rend automatiquement 20 de plus (scroll infini).
+        const BOOKS_PER_PAGE = 20;
+        const _pageState = { list: [], rendered: 0, observer: null };
+
         function displayBooks(books) {
             const container = document.getElementById('booksContainer');
+            if (_pageState.observer) { _pageState.observer.disconnect(); _pageState.observer = null; }
             container.innerHTML = '';
 
-            if (books.length === 0) {
+            if (!books || books.length === 0) {
                 container.innerHTML = `<div class="empty-state"><span class="material-icons-round">search_off</span><h3>لا توجد نتائج مطابقة لبحثك في هذا القسم.</h3></div>`;
                 return;
             }
 
-            books.forEach(book => {
+            _pageState.list = books;
+            _pageState.rendered = 0;
+            renderBooksChunk();
+        }
+
+        function renderBooksChunk() {
+            const container = document.getElementById('booksContainer');
+            const next = _pageState.list.slice(_pageState.rendered, _pageState.rendered + BOOKS_PER_PAGE);
+            const frag = document.createDocumentFragment();
+            next.forEach(book => {
                 const card = document.createElement('div');
                 card.className = 'md-card';
                 card.innerHTML = bookCardHTML(book);
-                container.appendChild(card);
+                frag.appendChild(card);
             });
+            container.appendChild(frag);
+            _pageState.rendered += next.length;
+
+            if (_pageState.observer) { _pageState.observer.disconnect(); _pageState.observer = null; }
+            // Reste-t-il des fiches ? -> observer l'avant-dernière fiche rendue.
+            if (_pageState.rendered < _pageState.list.length) {
+                const cards = container.querySelectorAll('.md-card');
+                const sentinel = cards[cards.length - 2] || cards[cards.length - 1];
+                if (sentinel) {
+                    _pageState.observer = new IntersectionObserver((entries) => {
+                        if (entries.some(e => e.isIntersecting)) renderBooksChunk();
+                    }, { rootMargin: '150px' });
+                    _pageState.observer.observe(sentinel);
+                }
+            }
         }
 
         function openNoteModal(title, content) {

@@ -1138,17 +1138,17 @@
                     <div class="stat-card">
                         <span class="material-icons-round stat-icon" style="color:#2e7d32;">visibility</span>
                         <div class="stat-value" id="statTotalViews">—</div>
-                        <div class="stat-label">إجمالي المشاهدات</div>
+                        <div class="stat-label">إجمالي الزيارات</div>
                     </div>
                     <div class="stat-card">
-                        <span class="material-icons-round stat-icon" style="color:var(--info);">people</span>
+                        <span class="material-icons-round stat-icon" style="color:var(--info);">date_range</span>
                         <div class="stat-value" id="statUniqueVisitors">—</div>
-                        <div class="stat-label">زيارات فريدة</div>
+                        <div class="stat-label">زيارات آخر 30 يومًا</div>
                     </div>
                     <div class="stat-card">
                         <span class="material-icons-round stat-icon" style="color:var(--tertiary);">today</span>
                         <div class="stat-value" id="statTodayViews">—</div>
-                        <div class="stat-label">مشاهدات اليوم</div>
+                        <div class="stat-label">زيارات اليوم</div>
                     </div>
                     <div class="stat-card">
                         <span class="material-icons-round stat-icon" style="color:#00695c;">forum</span>
@@ -2662,7 +2662,8 @@
 
     function renderStats(data) {
         $('#statTotalViews').textContent = (data.totalViews || 0).toLocaleString('ar');
-        $('#statUniqueVisitors').textContent = (data.totalVisitors || 0).toLocaleString('ar');
+        const last30Views = (data.chart || []).reduce((sum, d) => sum + (d.views || 0), 0);
+        $('#statUniqueVisitors').textContent = last30Views.toLocaleString('ar');
         $('#statTodayViews').textContent = (data.todayViews || 0).toLocaleString('ar');
         const chatEl = $('#statChatTotal');
         if (chatEl) chatEl.textContent = (data.totalChat || 0).toLocaleString('ar');
