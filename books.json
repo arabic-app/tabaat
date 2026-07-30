@@ -652,7 +652,7 @@
       "شروح الحديث"
     ],
     "notes": "",
-    "date": "2026-07-07",
+    "date": "2026-07-30",
     "best_editions": [
       {
         "publisher": "مركز سطور",
@@ -660,7 +660,28 @@
           "https://arabic-app.github.io/tabaat/images/1782753648650-images20260629T174051.551.jpeg"
         ],
         "notes": "",
-        "corrections": [],
+        "corrections": [
+          {
+            "title": "مقدمة الطبعتين الثانية والثالثة",
+            "body": "",
+            "attachments": [
+              {
+                "title": "مقدمة الطبعتين الثانية والثالثة",
+                "url": "https://arabic-app.github.io/tabaat/corrections/1785393957540-.pdf"
+              }
+            ]
+          },
+          {
+            "title": "مسرد تعديلات الطبعة الثانية",
+            "body": "",
+            "attachments": [
+              {
+                "title": "مسرد تعديلات الطبعة الثانية",
+                "url": "https://arabic-app.github.io/tabaat/corrections/1785393980000-.pdf"
+              }
+            ]
+          }
+        ],
         "verifier": "مازن السرساوي"
       },
       {
@@ -671,12 +692,22 @@
         "notes": "",
         "corrections": [
           {
-            "title": "جدول أهم تعديلات الطبعة الثانية",
+            "title": "مقدمة الطبعتين الثانية والثالثة",
             "body": "",
             "attachments": [
               {
-                "title": "جدول أهم تعديلات الطبعة الثانية",
-                "url": "https://arabic-app.github.io/tabaat/corrections/1783418826520-.pdf"
+                "title": "مقدمة الطبعتين الثانية والثالثة",
+                "url": "https://arabic-app.github.io/tabaat/corrections/1785393957540-.pdf"
+              }
+            ]
+          },
+          {
+            "title": "مسرد تعديلات الطبعة الثانية",
+            "body": "",
+            "attachments": [
+              {
+                "title": "مسرد تعديلات الطبعة الثانية",
+                "url": "https://arabic-app.github.io/tabaat/corrections/1785393980000-.pdf"
               }
             ]
           }
