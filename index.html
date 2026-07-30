@@ -1591,16 +1591,27 @@
         const sfInput = document.getElementById('scienceSearchInput');
         const clearScienceBtn = document.getElementById('clearScienceBtn');
  
+        // يُطوى الحقل بصريًا فقط : النص والتصفية يبقيان محفوظين (في الذاكرة، وليس
+        // بشكل دائم) إلى حين إعادة فتحه أو إعادة تحميل الصفحة.
+        function closeScienceFilter() {
+            sfWrapper.classList.remove('expanded');
+        }
+
         sfBtn.onclick = () => {
-            sfWrapper.classList.toggle('expanded');
             if (sfWrapper.classList.contains('expanded')) {
-                sfInput.focus();
+                closeScienceFilter();
             } else {
-                sfInput.value = '';
-                clearScienceBtn.style.display = 'none';
-                filterChips(''); // إعادة إظهار التصنيفات عند إغلاق العدسة
+                sfWrapper.classList.add('expanded');
+                sfInput.focus();
             }
         };
+
+        // إغلاق حقل البحث في العلوم عند النقر خارجه.
+        document.addEventListener('click', (e) => {
+            if (sfWrapper.classList.contains('expanded') && !sfWrapper.contains(e.target)) {
+                closeScienceFilter();
+            }
+        });
  
         sfInput.onkeydown = (e) => {
             if (e.key === 'Enter') { e.preventDefault(); sfInput.blur(); sfWrapper.classList.remove('expanded'); }
@@ -1612,10 +1623,14 @@
             filterChips(term);
         };
 
+        // Empêche un bouton "مسح" de voler le focus au clic : si le champ n'était pas
+        // déjà en cours de saisie, il ne le devient pas après l'effacement.
+        function preventFocusSteal(btn) { btn.addEventListener('mousedown', e => e.preventDefault()); }
+
+        preventFocusSteal(clearScienceBtn);
         clearScienceBtn.onclick = () => {
             sfInput.value = '';
             clearScienceBtn.style.display = 'none';
-            sfInput.focus();
             filterChips('');
         };
 
@@ -1645,11 +1660,11 @@
         };
         mainSearch.onkeydown = (e) => { if(e.key === 'Enter') { e.preventDefault(); mainSearch.blur(); } };
         
+        preventFocusSteal(clearSearchBtn);
         clearSearchBtn.onclick = () => {
             mainSearch.value = '';
             currentSearchTerm = '';
             clearSearchBtn.style.display = 'none';
-            mainSearch.focus();
             filterAndDisplayBooks();
         };
 
@@ -1668,8 +1683,10 @@
         const clearVerifierBtn = document.getElementById('clearVerifierBtn');
         publisherSearch.oninput = (e) => { currentPublisher = e.target.value; clearPublisherBtn.style.display = currentPublisher ? 'flex' : 'none'; filterAndDisplayBooks(); };
         verifierSearch.oninput = (e) => { currentVerifier = e.target.value; clearVerifierBtn.style.display = currentVerifier ? 'flex' : 'none'; filterAndDisplayBooks(); };
-        clearPublisherBtn.onclick = () => { publisherSearch.value = ''; currentPublisher = ''; clearPublisherBtn.style.display = 'none'; publisherSearch.focus(); filterAndDisplayBooks(); };
-        clearVerifierBtn.onclick = () => { verifierSearch.value = ''; currentVerifier = ''; clearVerifierBtn.style.display = 'none'; verifierSearch.focus(); filterAndDisplayBooks(); };
+        preventFocusSteal(clearPublisherBtn);
+        preventFocusSteal(clearVerifierBtn);
+        clearPublisherBtn.onclick = () => { publisherSearch.value = ''; currentPublisher = ''; clearPublisherBtn.style.display = 'none'; filterAndDisplayBooks(); };
+        clearVerifierBtn.onclick = () => { verifierSearch.value = ''; currentVerifier = ''; clearVerifierBtn.style.display = 'none'; filterAndDisplayBooks(); };
 
         function filterAndDisplayBooks() {
             const term = normalizeArabic(currentSearchTerm);
