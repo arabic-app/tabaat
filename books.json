@@ -680,6 +680,16 @@
                 "url": "https://arabic-app.github.io/tabaat/corrections/1785393980000-.pdf"
               }
             ]
+          },
+          {
+            "title": "مسرد بتعديلات الطبعة الثالثة",
+            "body": "",
+            "attachments": [
+              {
+                "title": "مسرد بتعديلات الطبعة الثالثة",
+                "url": "https://arabic-app.github.io/tabaat/corrections/1785395933771-.pdf"
+              }
+            ]
           }
         ],
         "verifier": "مازن السرساوي"
@@ -710,6 +720,16 @@
                 "url": "https://arabic-app.github.io/tabaat/corrections/1785393980000-.pdf"
               }
             ]
+          },
+          {
+            "title": "مسرد بتعديلات الطبعة الثالثة",
+            "body": "",
+            "attachments": [
+              {
+                "title": "مسرد بتعديلات الطبعة الثالثة",
+                "url": "https://arabic-app.github.io/tabaat/corrections/1785395933771-.pdf"
+              }
+            ]
           }
         ],
         "verifier": "مازن السرساوي"
@@ -717,16 +737,7 @@
     ],
     "alt_editions": [
       {
-        "publisher": "المعرفة",
-        "images": [
-          "https://arabic-app.github.io/tabaat/images/1782753656959-images20260629T173927.467.jpeg"
-        ],
-        "notes": "",
-        "corrections": [],
-        "verifier": "خليل شيحا"
-      },
-      {
-        "publisher": "ابن رجب",
+        "publisher": "دار ابن رجب",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782753663814-images20260629T173953.183.jpeg"
         ],
@@ -735,13 +746,22 @@
         "verifier": "يحيى محمد سوس"
       },
       {
-        "publisher": "الصديق",
+        "publisher": "دار الصديق",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782753670225-images20260629T173911.519.jpeg"
         ],
         "notes": "مستفاد من الردود والتعقبات المشهور سلمان&nbsp;",
         "corrections": [],
         "verifier": "مازن البيروتي"
+      },
+      {
+        "publisher": "دار المعرفة",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782753656959-images20260629T173927.467.jpeg"
+        ],
+        "notes": "",
+        "corrections": [],
+        "verifier": "خليل شيحا"
       },
       {
         "publisher": "مؤسسة قرطبة مصر",
