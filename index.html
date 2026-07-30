@@ -974,7 +974,9 @@
         .pdf-viewer-modal {
             display: none;
             position: fixed;
-            z-index: 2000;
+            /* Au-dessus de #infoModal (5000) et #bookCardModal (4800) : ce visionneur
+               s'ouvre depuis la modal des تصويبات et doit s'afficher par-dessus elle. */
+            z-index: 6000;
             left: 0;
             top: 0;
             width: 100%;
