@@ -1933,7 +1933,10 @@
             return;
         }
 
-        const textInput = fileInput.closest('.dynamic-input-group').querySelector('input[type="text"]');
+        // Cible le champ URL spécifiquement (ex: .attach-url) plutôt que le 1er champ texte
+        // du groupe : les lignes de pièces jointes ont aussi un champ "عنوان" avant le lien.
+        const group = fileInput.closest('.dynamic-input-group');
+        const textInput = group.querySelector('input[type="text"][class*="url"]') || group.querySelector('input[type="text"]');
 
         const reader = new FileReader();
         reader.onload = async (event) => {
