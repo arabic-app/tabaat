@@ -21,8 +21,7 @@ const TELEGRAM_MAX_CHARS = 4096; // (2) limite dure d'un message Telegram
 const BOOKS_CACHE_TTL = 300;      // (4) cache du books.json au bord Cloudflare (s)
 const RESPONSE_CACHE_TTL = 21600; // (5) cache des réponses IA en KV (6 h)
 
-const RATE_LIMIT_MAX = 10;    // (6) messages max par utilisateur...
-const RATE_LIMIT_WINDOW = 60; // (6) ...sur cette fenêtre glissante (s)
+// (6) Rate-limit : limite/fenêtre définies dans wrangler.toml ([ratelimits.simple]).
 
 // Pondération de la recherche locale (7) : un match dans le titre vaut plus
 // qu'un match dans le nom d'un éditeur.
@@ -194,7 +193,7 @@ async function handleWebChat(request, env) {
         await env.CACHE.put(cacheKey, answer, { expirationTtl: RESPONSE_CACHE_TTL });
       }
     }
-    await bumpStat(env, (day, agg) => { agg.c = (agg.c || 0) + 1; }); // compteur d'usage du chat web
+    await bumpStat(env, (s) => { s.c = (s.c || 0) + 1; }); // compteur d'usage du chat web
     return jsonResponse({ answer });
   } catch (err) {
     console.error('Web chat error:', err);
@@ -215,11 +214,12 @@ function jsonResponse(obj, status = 200) {
 // Deux catégories de clés, pour borner le coût KV indéfiniment dans le temps :
 // - st:d:YYYY-MM-DD = {v, u} (vues, visiteurs uniques du jour) — TTL 35 j, une
 //   seule sert au graphe 30 jours ; jamais listée (dates connues à l'avance).
-// - st:agg = {v, u, c, s:{recherche:count}} — clé UNIQUE et permanente qui
-//   cumule les totaux "tout temps" + le top recherches. Élimine le fan-out
-//   list()+N×get() qui grossissait indéfiniment avec l'âge du site (jusqu'à
-//   ~400 lectures/appel avant ce correctif — risquait à terme le plafond de
-//   1000 opérations/invocation, en plus de gaspiller le quota de lectures/jour).
+// - st:d:YYYY-MM-DD = {v, u, c, s:{recherche:count}} — UNE SEULE écriture par
+//   événement (une clé "agrégat" séparée avait doublé les écritures et épuisé
+//   le plafond gratuit de 1000 put/jour — voir historique). TTL 35 j : largement
+//   suffisant puisque /stats ne lit jamais plus que les 30 derniers jours,
+//   par dates connues à l'avance (jamais de list()) => coût de lecture borné
+//   et constant quel que soit l'âge du site.
 // =============================================================================
 function todayKey() { return 'st:d:' + new Date().toISOString().slice(0, 10); }
 
@@ -229,21 +229,14 @@ function topEntries(map, n) {
   return out;
 }
 
-// 1 lecture + 1 écriture sur la clé du jour, + 1 lecture + 1 écriture sur l'agrégat
-// permanent. Le nombre de clés DISTINCTES touchées reste constant (l'agrégat est
-// toujours la même clé) ; seule st:d:<aujourd'hui> change de nom une fois par jour.
+// 1 lecture + 1 écriture, sur l'unique clé du jour.
 async function bumpStat(env, mutate) {
   if (!env.CACHE) return;
-
-  const dayKey = todayKey();
-  const day = (await env.CACHE.get(dayKey, { type: 'json' })) || { v: 0, u: 0 };
-  const agg = (await env.CACHE.get('st:agg', { type: 'json' })) || { v: 0, u: 0, c: 0, s: {} };
-
-  mutate(day, agg);
-  agg.s = topEntries(agg.s, 60);
-
-  await env.CACHE.put(dayKey, JSON.stringify(day), { expirationTtl: 60 * 60 * 24 * 35 });
-  await env.CACHE.put('st:agg', JSON.stringify(agg));
+  const key = todayKey();
+  const cur = (await env.CACHE.get(key, { type: 'json' })) || { v: 0, u: 0, c: 0, s: {} };
+  mutate(cur);
+  cur.s = topEntries(cur.s, 60);
+  await env.CACHE.put(key, JSON.stringify(cur), { expirationTtl: 60 * 60 * 24 * 35 });
 }
 
 // POST /track  { event: 'pageview'|'search'|'chat', q?, newVisitor? }
@@ -251,15 +244,15 @@ async function handleTrack(request, env) {
   try {
     const b = await request.json().catch(() => ({}));
     const event = String(b.event || 'pageview');
-    await bumpStat(env, (day, agg) => {
+    await bumpStat(env, (s) => {
       if (event === 'pageview') {
-        day.v = (day.v || 0) + 1; agg.v = (agg.v || 0) + 1;
-        if (b.newVisitor) { day.u = (day.u || 0) + 1; agg.u = (agg.u || 0) + 1; }
+        s.v = (s.v || 0) + 1;
+        if (b.newVisitor) s.u = (s.u || 0) + 1;
       } else if (event === 'search') {
         const q = String(b.q || '').trim().slice(0, 80);
-        if (q) agg.s[q] = (agg.s[q] || 0) + 1;
+        if (q) s.s[q] = (s.s[q] || 0) + 1;
       } else if (event === 'chat') {
-        agg.c = (agg.c || 0) + 1;
+        s.c = (s.c || 0) + 1;
       }
     });
     return jsonResponse({ ok: true });
@@ -270,9 +263,10 @@ async function handleTrack(request, env) {
 }
 
 // GET /stats?key=STATS_KEY -> agrégat pour l'admin.
-// Coût borné et CONSTANT dans le temps : 1 lecture (st:agg) + 30 lectures (dates
-// des 30 derniers jours, connues à l'avance) = 31 lectures, quel que soit l'âge
-// du site. Plus aucun list().
+// Coût borné et CONSTANT dans le temps : exactement 30 lectures (dates des 30
+// derniers jours, connues à l'avance), quel que soit l'âge du site. Plus de list().
+// totalViews/Visitors/Chat = somme sur ces 30 jours (le TTL de 35 j ne
+// conservait de toute façon jamais un vrai historique infini).
 async function handleStats(url, env) {
   if (!env.CACHE) return jsonResponse({ error: 'kv_disabled' }, 200);
   // STATS_KEY est OPTIONNEL : si elle est définie, on l'exige ; sinon /stats est ouvert.
@@ -280,37 +274,40 @@ async function handleStats(url, env) {
     return jsonResponse({ error: 'unauthorized' }, 403);
   }
 
-  const agg = (await env.CACHE.get('st:agg', { type: 'json' })) || { v: 0, u: 0, c: 0, s: {} };
-
   const now = Date.now();
   const dates = [];
   for (let i = 29; i >= 0; i--) dates.push(new Date(now - i * 86400000).toISOString().slice(0, 10));
   const days = await Promise.all(dates.map(d => env.CACHE.get('st:d:' + d, { type: 'json' })));
   const chart = dates.map((date, i) => ({ date, views: (days[i] && days[i].v) || 0 }));
 
-  const todayIdx = dates.length - 1;
-  const today = days[todayIdx] || {};
+  let totalViews = 0, totalVisitors = 0, totalChat = 0;
+  const searches = {};
+  days.forEach(d => {
+    if (!d) return;
+    totalViews += d.v || 0; totalVisitors += d.u || 0; totalChat += d.c || 0;
+    Object.entries(d.s || {}).forEach(([q, c]) => { searches[q] = (searches[q] || 0) + c; });
+  });
+
+  const today = days[days.length - 1] || {};
   const sortTop = (obj, n) => Object.entries(obj).sort((a, b) => b[1] - a[1]).slice(0, n).map(([label, count]) => ({ label, count }));
 
   return jsonResponse({
-    totalViews: agg.v || 0, totalVisitors: agg.u || 0, totalChat: agg.c || 0,
+    totalViews, totalVisitors, totalChat,
     todayViews: today.v || 0, todayVisitors: today.u || 0,
     chart,
-    topSearches: sortTop(agg.s || {}, 15),
+    topSearches: sortTop(searches, 15),
   });
 }
 
 // =============================================================================
-// Rate-limit (6)
+// Rate-limit (6) — binding Rate Limiting natif Cloudflare (voir wrangler.toml),
+// HORS quota KV. Écrire l'anti-abus sur KV (1 put/message) épuisait le plafond
+// gratuit de 1000 put/jour ; ce binding est un produit séparé, sans ce coût.
 // =============================================================================
-async function isRateLimited(chatId, env) {
-  if (!env.CACHE) return false; // pas de KV => pas de limite
-  const key = 'rl:' + chatId;
-  const current = parseInt((await env.CACHE.get(key)) || '0', 10);
-  if (current >= RATE_LIMIT_MAX) return true;
-  // La TTL sert de fenêtre glissante approximative.
-  await env.CACHE.put(key, String(current + 1), { expirationTtl: RATE_LIMIT_WINDOW });
-  return false;
+async function isRateLimited(key, env) {
+  if (!env.CHAT_RATE_LIMITER) return false; // binding absent (ex. dev local) => pas de limite
+  const { success } = await env.CHAT_RATE_LIMITER.limit({ key });
+  return !success;
 }
 
 // =============================================================================

@@ -16,6 +16,17 @@ enabled = true
 binding = "CACHE"
 id = "4a7cd1c22d074b589cd44639260451bb"
 
+# Rate limiting NATIF Cloudflare (hors quota KV — évite les écritures KV par
+# message qui épuisaient le plafond gratuit de 1000 put/jour). 10 messages / 60s
+# par utilisateur, identique à l'ancien réglage RATE_LIMIT_MAX/WINDOW.
+[[ratelimits]]
+name = "CHAT_RATE_LIMITER"
+namespace_id = "1001"
+
+  [ratelimits.simple]
+  limit = 10
+  period = 60
+
 # --- Secrets (à définir via `npx wrangler secret put <NOM>`) ------------------
 #   TELEGRAM_BOT_TOKEN   -> jeton du bot (BotFather)
 #   GEMINI_API_KEY       -> clé Gemini, fournisseur principal (aistudio.google.com/apikey)
