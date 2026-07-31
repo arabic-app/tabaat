@@ -1320,6 +1320,11 @@
         replyEmail: { target: '', subject: '', content: '' },
         notesRendered: false,
         configAutoTriggered: false,
+        // Modifications non encore publiées (fusionnées sur l'état distant lors du
+        // sync, pour ne jamais écraser les changements d'un autre éditeur — voir
+        // syncToGitHub()). upserts: Map<id, book> ; deletes: Set<id>.
+        pendingChanges: { upserts: new Map(), deletes: new Set() },
+        syncing: false,
     };
 
     // ================================================================
@@ -1366,6 +1371,9 @@
 
     function utf8ToBase64(str) {
         return btoa(unescape(encodeURIComponent(str)));
+    }
+    function base64ToUtf8(b64) {
+        return decodeURIComponent(escape(atob(b64.replace(/\n/g, ''))));
     }
 
     // ================================================================
@@ -2108,6 +2116,10 @@
         const idx = state.books.findIndex(b => b.id === id);
         if (idx >= 0) state.books[idx] = newBook; else state.books.push(newBook);
 
+        // Suivi pour la fusion au moment du sync (voir syncToGitHub).
+        state.pendingChanges.upserts.set(id, newBook);
+        state.pendingChanges.deletes.delete(id);
+
         DOM.bookId.value = id;
         DOM.btnDeleteBook.style.display = 'inline-flex';
 
@@ -2132,6 +2144,11 @@
         const id = parseInt(DOM.bookId.value);
         if (!id) return;
         state.books = state.books.filter(b => b.id !== id);
+
+        // Suivi pour la fusion au moment du sync (voir syncToGitHub).
+        state.pendingChanges.deletes.add(id);
+        state.pendingChanges.upserts.delete(id);
+
         closeDeleteModal();
         renderSidebar(DOM.searchInput.value);
         DOM.formContainer.setAttribute('aria-hidden', 'true');
@@ -2196,46 +2213,86 @@
         DOM.syncModal.setAttribute('aria-hidden', 'true');
     }
 
+    // Fusionne les modifications en attente de CETTE session sur un tableau de
+    // livres donné (la version la plus récente publiée sur GitHub) : remplace/
+    // ajoute les livres modifiés, retire les livres supprimés. Ainsi, un sync
+    // ne repart jamais d'un instantané périmé — il n'écrase que ce que CET
+    // utilisateur a réellement changé, en préservant tout le reste.
+    function mergeChangesOnto(baseBooks) {
+        const merged = baseBooks.map(b =>
+            state.pendingChanges.upserts.has(b.id) ? state.pendingChanges.upserts.get(b.id) : b
+        );
+        const existingIds = new Set(baseBooks.map(b => b.id));
+        state.pendingChanges.upserts.forEach((book, id) => {
+            if (!existingIds.has(id)) merged.push(book);
+        });
+        return merged.filter(b => !state.pendingChanges.deletes.has(b.id));
+    }
+
     async function syncToGitHub() {
         const token = getConfigToken();
         const name = getConfigName();
         if (!token || !name) { openConfigModal(true); return; }
 
+        if (!state.pendingChanges.upserts.size && !state.pendingChanges.deletes.size) {
+            closeSyncModal();
+            showToast('ℹ️ لا توجد تعديلات جديدة لنشرها.');
+            return;
+        }
+
         closeSyncModal();
+        showLoader();
+        state.syncing = true;
 
         const path = 'books.json';
         const apiUrl = `https://api.github.com/repos/${CONFIG.GH_OWNER}/${CONFIG.GH_REPO}/contents/${path}`;
+        const commitMsg = name
+            ? `تحديث قاعدة البيانات عبر لوحة الإدارة (${name})`
+            : 'تحديث قاعدة البيانات عبر لوحة الإدارة';
 
-        showLoader();
-
+        // Optimistic concurrency : on repart de la version GitHub la plus fraîche
+        // possible juste avant d'écrire, et on réessaie si quelqu'un d'autre a
+        // publié entre notre lecture et notre écriture (conflit de sha).
+        const MAX_ATTEMPTS = 3;
         try {
-            let sha = '';
-            const getRes = await fetch(apiUrl, { headers: { Authorization: `token ${token}` } });
-            if (getRes.ok) sha = (await getRes.json()).sha;
+            for (let attempt = 1; attempt <= MAX_ATTEMPTS; attempt++) {
+                const getRes = await fetch(apiUrl, { headers: { Authorization: `token ${token}` } });
+                if (!getRes.ok) throw new Error('تعذّر جلب النسخة الحالية من GitHub.');
+                const getData = await getRes.json();
+                const remoteBooks = JSON.parse(base64ToUtf8(getData.content));
 
-            const commitMsg = name
-                ? `تحديث قاعدة البيانات عبر لوحة الإدارة (${name})`
-                : 'تحديث قاعدة البيانات عبر لوحة الإدارة';
+                const merged = mergeChangesOnto(remoteBooks);
+                const content = JSON.stringify(merged, null, 2);
 
-            const content = JSON.stringify(state.books, null, 2);
-            const putRes = await fetch(apiUrl, {
-                method: 'PUT',
-                headers: { Authorization: `token ${token}`, 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                    message: commitMsg,
-                    content: utf8ToBase64(content),
-                    sha
-                })
-            });
+                const putRes = await fetch(apiUrl, {
+                    method: 'PUT',
+                    headers: { Authorization: `token ${token}`, 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ message: commitMsg, content: utf8ToBase64(content), sha: getData.sha })
+                });
 
-            if (putRes.ok) showToast('🚀 تم الرفع إلى GitHub بنجاح!');
-            else {
-                const err = await putRes.json();
+                if (putRes.ok) {
+                    // L'état local devient la version fusionnée réellement publiée ;
+                    // les changements en attente sont désormais publiés.
+                    state.books = merged;
+                    state.pendingChanges.upserts.clear();
+                    state.pendingChanges.deletes.clear();
+                    showToast('🚀 تم الرفع إلى GitHub بنجاح!');
+                    return;
+                }
+
+                const err = await putRes.json().catch(() => ({}));
+                // Conflit de sha (quelqu'un a publié entre notre lecture et notre
+                // écriture) : on réessaie en repartant d'une version plus fraîche.
+                if ((putRes.status === 409 || putRes.status === 422) && attempt < MAX_ATTEMPTS) continue;
+
                 showToast('❌ فشل: ' + (err.message || 'خطأ غير معروف'));
+                return;
             }
-        } catch {
-            showToast('❌ خطأ في الاتصال.');
+            showToast('❌ فشل النشر بعد عدة محاولات بسبب تعارض متكرر. حاول مرة أخرى.');
+        } catch (e) {
+            showToast('❌ خطأ في الاتصال: ' + (e.message || ''));
         } finally {
+            state.syncing = false;
             hideLoader();
         }
     }
@@ -3063,6 +3120,16 @@
     // ================================================================
     // INITIALIZATION
     // ================================================================
+    // Avertit avant de quitter/recharger si un sync est en cours (pour éviter de
+    // l'interrompre — voir syncToGitHub) ou s'il reste des modifications
+    // enregistrées localement mais jamais publiées.
+    window.addEventListener('beforeunload', (e) => {
+        if (state.syncing || state.pendingChanges.upserts.size || state.pendingChanges.deletes.size) {
+            e.preventDefault();
+            e.returnValue = '';
+        }
+    });
+
     function init() {
         cacheDom();
         initAuth();
