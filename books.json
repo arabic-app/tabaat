@@ -2478,15 +2478,26 @@
       "الفقه"
     ],
     "notes": "",
-    "date": "2026-07-03",
+    "date": "2026-07-31",
     "best_editions": [
       {
         "publisher": "دار الفلاح (دار ابن حزم)",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782304818204-.png"
         ],
-        "notes": "<span style=\"color: rgb(0, 0, 0); font-family: Tahoma; font-size: 14px; white-space: pre-wrap; background-color: rgb(253, 253, 253);\">قد يشتري أحد طلبة العلم الطبعة الثانية من المحلى تحقيق دار الفلاح ويتفاجأ بمجلدات مكتوب عليها \"الطبعة الأولى\" فيردها ويظنها معيوبة.</span><br style=\"color: rgb(0, 0, 0); font-family: Tahoma; font-size: 14px; background-color: rgb(253, 253, 253);\"><span style=\"color: rgb(0, 0, 0); font-family: Tahoma; font-size: 14px; white-space: pre-wrap; background-color: rgb(253, 253, 253);\">والواقع أن المجلد الأول فقط مكتوب عليه \"الطبعة الثانية\" وبه تصويبات كثيرة جدا وأما باقي المجلدات فمكتوب عليها \"الطبعة الأولى\" وهي مطابقة تماما للطبعة الأولى فقط تم تصويب الصفحتين 249 و 250 الساقطتين من المجلد الثالث في الطبعة الأولى.</span><br style=\"color: rgb(0, 0, 0); font-family: Tahoma; font-size: 14px; background-color: rgb(253, 253, 253);\"><span style=\"color: rgb(0, 0, 0); font-family: Tahoma; font-size: 14px; white-space: pre-wrap; background-color: rgb(253, 253, 253);\">دونكم رابط تحميل الصفحتين :</span><br style=\"color: rgb(0, 0, 0); font-family: Tahoma; font-size: 14px; background-color: rgb(253, 253, 253);\"><a href=\"https://drive.google.com/file/d/1ik6Poa5O2bLlnykauTq1kdCgDVyRPAOL/view?usp=share_link\" class=\"x1fey0fg xmper1u x1edh9d7\" style=\"font-family: Tahoma; font-size: 14px; background-color: rgb(253, 253, 253);\"><span style=\"white-space: pre-wrap;\">https://drive.google.com/file/d/1ik6Poa5O2bLlnykauTq1kdCgDVyRPAOL/view?usp=share_link</span></a>",
-        "corrections": [],
+        "notes": "<span style=\"color: rgb(0, 0, 0); font-family: Tahoma; font-size: 14px; white-space: pre-wrap; background-color: rgb(253, 253, 253);\">قد يشتري أحد طلبة العلم الطبعة الثانية من المحلى تحقيق دار الفلاح ويتفاجأ بمجلدات مكتوب عليها \"الطبعة الأولى\" فيردها ويظنها معيوبة.</span><br style=\"color: rgb(0, 0, 0); font-family: Tahoma; font-size: 14px; background-color: rgb(253, 253, 253);\"><span style=\"color: rgb(0, 0, 0); font-family: Tahoma; font-size: 14px; white-space: pre-wrap; background-color: rgb(253, 253, 253);\">والواقع أن المجلد الأول فقط مكتوب عليه \"الطبعة الثانية\" وبه تصويبات كثيرة جدا وأما باقي المجلدات فمكتوب عليها \"الطبعة الأولى\" وهي مطابقة تماما للطبعة الأولى فقط تم تصويب الصفحتين 249 و 250 الساقطتين من المجلد الثالث في الطبعة الأولى.</span><br>",
+        "corrections": [
+          {
+            "title": "الصفحتان 249 و 250 الساقطتان من المجلد الثالث في الطبعة الأولى",
+            "body": "<span style=\"white-space: pre-wrap; color: rgb(0, 0, 0); font-family: Tahoma; font-size: 14px; background-color: rgb(253, 253, 253);\">دونكم رابط تحميل الصفحتين :</span><br style=\"color: rgb(0, 0, 0); font-family: Tahoma; font-size: 14px; background-color: rgb(253, 253, 253);\"><a href=\"https://drive.google.com/file/d/1ik6Poa5O2bLlnykauTq1kdCgDVyRPAOL/view?usp=share_link\" class=\"x1fey0fg xmper1u x1edh9d7\" style=\"font-family: Tahoma; font-size: 14px; background-color: rgb(253, 253, 253);\"><span style=\"white-space: pre-wrap;\">https://drive.google.com/file/d/1ik6Poa5O2bLlnykauTq1kdCgDVyRPAOL/view?usp=share_link</span></a>",
+            "attachments": [
+              {
+                "title": "الصفحتان 249 و 250 المجلد الثالث ط الأولى",
+                "url": "https://arabic-app.github.io/tabaat/corrections/1785483813628-.pdf"
+              }
+            ]
+          }
+        ],
         "verifier": "خالد الرباط"
       },
       {
