@@ -11780,5 +11780,28 @@
     ],
     "alt_editions": [],
     "links": []
+  },
+  {
+    "id": 428,
+    "title": "الدر المنثور في التفسير بالمأثور",
+    "author": "جلال الدين السيوطي",
+    "category": [
+      "التفسير"
+    ],
+    "notes": "",
+    "date": "2026-08-03",
+    "best_editions": [
+      {
+        "publisher": "دار عالم الكتب",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1785712765808-48881.jpg"
+        ],
+        "notes": "",
+        "corrections": [],
+        "verifier": "عبد الله التركي"
+      }
+    ],
+    "alt_editions": [],
+    "links": []
   }
 ]
