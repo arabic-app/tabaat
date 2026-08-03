@@ -2746,11 +2746,11 @@
   {
     "id": 65,
     "title": "آثار البشير الإبراهيمي",
-    "author": "محمد البشير الإبراهيمي، جمع نجله أحمد طالب الإبراهيمي",
+    "author": "محمد البشير الإبراهيمي",
     "category": [
       "المجاميع"
     ],
-    "notes": "",
+    "notes": "جمع نجله أحمد طالب الإبراهيمي",
     "date": "2026-08-03",
     "best_editions": [
       {
@@ -2759,7 +2759,8 @@
           "https://arabic-app.github.io/tabaat/images/1782306772574-06bce09010ff4dba9a8d0724ef20341c.jpg"
         ],
         "notes": "",
-        "corrections": []
+        "corrections": [],
+        "volumes": 5
       }
     ],
     "alt_editions": [],
