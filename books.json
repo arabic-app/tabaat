@@ -401,7 +401,7 @@
       "الحديث"
     ],
     "notes": "",
-    "date": "2026-07-03",
+    "date": "2026-08-03",
     "best_editions": [
       {
         "publisher": "بحاشية السهارنفوري (دار البشائر / دار القلم)",
@@ -410,7 +410,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "تقي الدين الندوي"
+        "verifier": "تقي الدين الندوي",
+        "volumes": 6
       },
       {
         "publisher": "بيت السنة",
@@ -418,7 +419,8 @@
           "https://arabic-app.github.io/tabaat/images/1782579386789-48014315924173709052844896363330708385614310n.jpg"
         ],
         "notes": "",
-        "corrections": []
+        "corrections": [],
+        "volumes": 8
       },
       {
         "publisher": "التأصيل",
@@ -426,7 +428,8 @@
           "https://arabic-app.github.io/tabaat/images/1782579407411-47757527024173713119511156367729419178237330n.jpg"
         ],
         "notes": "الطبعة الثانية وما بعدها",
-        "corrections": []
+        "corrections": [],
+        "volumes": 8
       },
       {
         "publisher": "دار ابن الجوزي",
@@ -435,7 +438,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "ماهر الفحل"
+        "verifier": "ماهر الفحل",
+        "volumes": 5
       },
       {
         "publisher": "السلطانية دار المنهاج",
@@ -444,7 +448,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "عناية محمد زهير الناصر"
+        "verifier": "عناية محمد زهير الناصر",
+        "volumes": 4
       }
     ],
     "alt_editions": [
@@ -454,7 +459,8 @@
           "https://arabic-app.github.io/tabaat/images/1782818948399-baytsunnamoujarada.jpeg"
         ],
         "notes": "",
-        "corrections": []
+        "corrections": [],
+        "volumes": 2
       },
       {
         "publisher": "مؤسسة الرسالة ناشرون",
@@ -463,7 +469,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "مركز الرسالة للدراسات وتحقيق التراث"
+        "verifier": "مركز الرسالة للدراسات وتحقيق التراث",
+        "volumes": 1
       },
       {
         "publisher": "دار التأصيل مجلد واحد",
@@ -471,7 +478,8 @@
           "https://arabic-app.github.io/tabaat/images/1782579890821-images20260627T200443.775.jpeg"
         ],
         "notes": "",
-        "corrections": []
+        "corrections": [],
+        "volumes": 1
       }
     ],
     "links": []
