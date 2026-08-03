@@ -5249,19 +5249,21 @@
       "اللغة والأدب"
     ],
     "notes": "",
+    "date": "2026-08-04",
     "best_editions": [
       {
+        "publisher": "دار الغرب الإسلامي",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782631243504-04OcdE6UWL7mwC3f4zj3k5jWueZzupW6nP0dI14B.jpg"
         ],
         "notes": "",
+        "corrections": [],
         "verifier": "محمد حجي و أحمد الشرقاوي",
-        "publisher": "دار الغرب الإسلامي"
+        "volumes": 2
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 151,
