@@ -7641,7 +7641,7 @@
       "الفقه"
     ],
     "notes": "",
-    "date": "2026-07-03",
+    "date": "2026-08-03",
     "best_editions": [
       {
         "publisher": "دار الفلاح",
@@ -7651,7 +7651,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "ياسر كمال"
+        "verifier": "ياسر كمال",
+        "volumes": 15
       }
     ],
     "alt_editions": [],
