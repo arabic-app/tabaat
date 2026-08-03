@@ -10237,7 +10237,7 @@
       "أصول الفقه"
     ],
     "notes": "",
-    "date": "2026-07-02",
+    "date": "2026-08-03",
     "best_editions": [
       {
         "publisher": "دار ابن الجوزي",
@@ -10246,7 +10246,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "على ونيس"
+        "verifier": "على ونيس",
+        "volumes": 3
       },
       {
         "publisher": "مصورات تحقيق",
@@ -10256,7 +10257,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "أحمد شاكر"
+        "verifier": "أحمد شاكر",
+        "volumes": 1
       }
     ],
     "alt_editions": [],
