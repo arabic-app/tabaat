@@ -818,19 +818,21 @@
       "شروح الحديث"
     ],
     "notes": "له طبعة واحدة",
+    "date": "2026-08-03",
     "best_editions": [
       {
+        "publisher": "دار ابن الجوزي",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782728990263-2.png",
           "https://arabic-app.github.io/tabaat/images/1782728997158-1.png"
         ],
         "notes": "",
-        "publisher": "دار ابن الجوزي"
+        "corrections": [],
+        "volumes": 49
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 15,
