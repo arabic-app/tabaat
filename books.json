@@ -8129,15 +8129,16 @@
       "الأديان والفرق والمذاهب"
     ],
     "notes": "حوى عشرة كتب في الإيمان&nbsp;",
-    "date": "2026-06-30",
+    "date": "2026-08-03",
     "best_editions": [
       {
+        "publisher": "دار اللؤلؤة",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782855311486-pt9cDfABvjnjAD42OrtUml972OrbUIjoWkstr8nG.jpg"
         ],
         "notes": "ينتبه للشدة في تعليقات المحقق&nbsp;&nbsp;",
         "corrections": [],
-        "publisher": "دار اللؤلؤة"
+        "volumes": 1
       }
     ],
     "alt_editions": [],
@@ -8151,7 +8152,7 @@
       "العقيدة"
     ],
     "notes": "حوى ٦٢ عقيدة من عقائد أهل السنة&nbsp;",
-    "date": "2026-07-07",
+    "date": "2026-08-03",
     "best_editions": [
       {
         "publisher": "دار اللؤلؤة",
@@ -8181,7 +8182,8 @@
               }
             ]
           }
-        ]
+        ],
+        "volumes": 2
       }
     ],
     "alt_editions": [],
