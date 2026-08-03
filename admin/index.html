@@ -979,6 +979,10 @@
                 <input type="checkbox" id="missingPhotoFilter">
                 <label for="missingPhotoFilter">عرض الكتب التي تنقصها صور طبعات</label>
             </div>
+            <div class="filter-field">
+                <input type="checkbox" id="missingVolumesFilter">
+                <label for="missingVolumesFilter">عرض الكتب التي ينقصها عدد المجلدات</label>
+            </div>
         </div>
         <button class="btn-add-new" id="btn-new-book-sidebar" aria-label="إضافة كتاب جديد">
             <span class="material-icons-round" aria-hidden="true">add</span> إضافة كتاب جديد
@@ -1443,6 +1447,8 @@
             publisherSearchInput: $('#adminPublisherSearchInput'),
             clearPublisherSearchBtn: $('#clearPublisherSearchBtn'),
             missingPhotoFilter: $('#missingPhotoFilter'),
+            missingVolumesFilter: $('#missingVolumesFilter'),
+            btnNewBookSidebar: $('#btn-new-book-sidebar'),
             btnSyncForm: $('#btnSyncForm'),
             formContainer: $('#formContainer'),
             formTitle: $('#formTitle'),
@@ -1653,6 +1659,7 @@
         const pubTerm = normalizeArabic(DOM.publisherSearchInput ? DOM.publisherSearchInput.value : '');
         const currentId = DOM.bookId.value;
         const missingPhotoOnly = DOM.missingPhotoFilter.checked;
+        const missingVolumesOnly = DOM.missingVolumesFilter.checked;
 
         const sorted = [...state.books].sort((a, b) => (a.title || '').localeCompare(b.title || '', 'ar'));
 
@@ -1666,11 +1673,18 @@
                 if (!matchesPub) return false;
             }
 
-            if (!missingPhotoOnly) return true;
+            if (missingPhotoOnly) {
+                const getImages = ed => ed.images || (ed.image ? [ed.image] : []);
+                const hasMissingImg = arr => (arr || []).some(ed => getImages(ed).filter(Boolean).length === 0);
+                if (!hasMissingImg(b.best_editions) && !hasMissingImg(b.alt_editions)) return false;
+            }
 
-            const getImages = ed => ed.images || (ed.image ? [ed.image] : []);
-            const hasMissing = arr => (arr || []).some(ed => getImages(ed).filter(Boolean).length === 0);
-            return hasMissing(b.best_editions) || hasMissing(b.alt_editions);
+            if (missingVolumesOnly) {
+                const hasMissingVols = arr => (arr || []).some(ed => !ed.volumes || ed.volumes <= 0);
+                if (!hasMissingVols(b.best_editions) && !hasMissingVols(b.alt_editions)) return false;
+            }
+
+            return true;
         });
 
         const fragment = document.createDocumentFragment();
@@ -2902,6 +2916,7 @@
             renderSidebar('');
         });
         DOM.missingPhotoFilter.addEventListener('change', () => renderSidebar(DOM.searchInput.value));
+        DOM.missingVolumesFilter.addEventListener('change', () => renderSidebar(DOM.searchInput.value));
 
         // Publisher search with debounce
         const debouncedPubSearch = debounce(val => {

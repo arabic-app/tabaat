@@ -1999,8 +1999,8 @@
                     : `<span class="edition-name">${edLabel}</span>`;
                 
                 let volHTML = '';
-                if (isEdition && ed.volumes && ed.volumes > 1) {
-                    volHTML = `<span class="edition-volumes" title="${ed.volumes} مجلدات">${ed.volumes}</span>`;
+                if (isEdition && ed.volumes && ed.volumes > 0) {
+                    volHTML = `<span class="edition-volumes" title="عدد المجلدات: ${ed.volumes}">${ed.volumes}</span>`;
                 }
 
                 return isEdition
