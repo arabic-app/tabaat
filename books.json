@@ -5342,7 +5342,8 @@
           "https://arabic-app.github.io/tabaat/images/1782598555485-16884018199x67hSav9c7skpf06du0nVfleakwDywo7yloGGDy.jpg"
         ],
         "notes": "",
-        "corrections": []
+        "corrections": [],
+        "volumes": 2
       }
     ],
     "alt_editions": [],
@@ -5379,20 +5380,22 @@
       "السيرة"
     ],
     "notes": "",
+    "date": "2026-08-03",
     "best_editions": [
       {
+        "publisher": "جائزة دبي",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782589906904-images20260627T224348.669.jpeg",
           "https://arabic-app.github.io/tabaat/images/1782589913749-images20260627T224406.904.jpeg"
         ],
         "notes": "",
+        "corrections": [],
         "verifier": "محمد إبراهيم البنا",
-        "publisher": "جائزة دبي"
+        "volumes": 8
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 158,
