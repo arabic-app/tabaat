@@ -1991,7 +1991,7 @@
       "التراجم والرجال"
     ],
     "notes": "",
-    "date": "2026-07-24",
+    "date": "2026-08-03",
     "best_editions": [
       {
         "publisher": "دار الرسالة العالمية",
@@ -2022,7 +2022,8 @@
               }
             ]
           }
-        ]
+        ],
+        "volumes": 30
       },
       {
         "publisher": "مؤسسة الرسالة ناشرون",
@@ -2053,7 +2054,8 @@
               }
             ]
           }
-        ]
+        ],
+        "volumes": 30
       }
     ],
     "alt_editions": [
@@ -5410,7 +5412,7 @@
     "date": "2026-08-03",
     "best_editions": [
       {
-        "publisher": "ابن الجوزي",
+        "publisher": "دار ابن الجوزي",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782676552239-images78.jpeg"
         ],
