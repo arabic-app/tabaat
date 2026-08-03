@@ -2562,7 +2562,7 @@
       "الفقه"
     ],
     "notes": "",
-    "date": "2026-07-31",
+    "date": "2026-08-04",
     "best_editions": [
       {
         "publisher": "دار الفلاح (دار ابن حزم)",
@@ -2582,7 +2582,8 @@
             ]
           }
         ],
-        "verifier": "خالد الرباط"
+        "verifier": "خالد الرباط",
+        "volumes": 19
       },
       {
         "publisher": "تحقيق بشار عواد",
@@ -2591,7 +2592,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "مكتبة عبد العزيز بن خالد"
+        "verifier": "مكتبة عبد العزيز بن خالد",
+        "volumes": 20
       }
     ],
     "alt_editions": [
@@ -2602,7 +2604,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "أحمد شاكر"
+        "verifier": "أحمد شاكر",
+        "volumes": 11
       }
     ],
     "links": []
