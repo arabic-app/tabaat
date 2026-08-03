@@ -4514,7 +4514,7 @@
       "التاريخ الإسلامي"
     ],
     "notes": "",
-    "date": "2026-07-12",
+    "date": "2026-08-04",
     "best_editions": [
       {
         "publisher": "الرسالة",
@@ -4523,7 +4523,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "إبراهيم الزيبق"
+        "verifier": "إبراهيم الزيبق",
+        "volumes": 2
       }
     ],
     "alt_editions": [],
@@ -7601,18 +7602,20 @@
       "المجاميع"
     ],
     "notes": "",
+    "date": "2026-08-04",
     "best_editions": [
       {
+        "publisher": "دار عطاءات العلم",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782631350266-scaled.jpg64354ef7a46ed.jpg"
         ],
         "notes": "",
-        "publisher": "دار عطاءات العلم"
+        "corrections": [],
+        "volumes": 1
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 253,
@@ -8298,15 +8301,16 @@
       "العقيدة"
     ],
     "notes": "",
-    "date": "2026-06-30",
+    "date": "2026-08-04",
     "best_editions": [
       {
+        "publisher": "دار اللؤلؤة",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782857134838-3125421deec04247b77ef483940bcfb4695.90222861251x1000HmNKxgB6PLU8OGBd08bSQrZSLX3OjE8lwWxqBaQY.jpg"
         ],
         "notes": "ينتبه للشدة في تعليقات المحقق",
         "corrections": [],
-        "publisher": "دار اللؤلؤة"
+        "volumes": 1
       }
     ],
     "alt_editions": [],
@@ -12024,7 +12028,7 @@
       "اللغة والأدب"
     ],
     "notes": "",
-    "date": "2026-07-17",
+    "date": "2026-08-04",
     "best_editions": [
       {
         "publisher": "دار العلم للملايين",
@@ -12032,7 +12036,8 @@
           "https://arabic-app.github.io/tabaat/images/1784239908302-5719d686a8cdc8ba0bdf91683d985386.jpg.webp"
         ],
         "notes": "",
-        "corrections": []
+        "corrections": [],
+        "volumes": 1
       }
     ],
     "alt_editions": [],
