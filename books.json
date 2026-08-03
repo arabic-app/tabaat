@@ -2139,7 +2139,8 @@
             ]
           }
         ],
-        "verifier": "عبد الله التركي، مركز هجر"
+        "verifier": "عبد الله التركي، مركز هجر",
+        "volumes": 22
       },
       {
         "publisher": "دار عالم الكتب",
@@ -2148,7 +2149,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "عبد الله التركي، مركز هجر"
+        "verifier": "عبد الله التركي، مركز هجر",
+        "volumes": 21
       },
       {
         "publisher": "دار هجر",
@@ -2157,7 +2159,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "عبد الله التركي، مركز هجر"
+        "verifier": "عبد الله التركي، مركز هجر",
+        "volumes": 21
       }
     ],
     "alt_editions": [
@@ -2168,7 +2171,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "مجموعة محققين"
+        "verifier": "مجموعة محققين",
+        "volumes": 21
       },
       {
         "publisher": "دار ابن رجب",
@@ -2177,7 +2181,8 @@
         ],
         "notes": "لا تشتمل على جزء النهاية في الفتن والملاحم، يشترى مفردا",
         "corrections": [],
-        "verifier": "مجموعة محققين بإشراف مصطفى العدوي"
+        "verifier": "مجموعة محققين بإشراف مصطفى العدوي",
+        "volumes": 7
       },
       {
         "publisher": "الدار العالمية",
@@ -2186,7 +2191,8 @@
         ],
         "notes": "لا تشتمل على جزء النهاية في الفتن والملاحم، يشترى مفردا",
         "corrections": [],
-        "verifier": "محمد نصر أبي جبل"
+        "verifier": "محمد نصر أبي جبل",
+        "volumes": 7
       },
       {
         "publisher": "دار الافهام",
@@ -2195,7 +2201,8 @@
           "https://arabic-app.github.io/tabaat/images/1782572121996-images20260627T175423.525.jpeg"
         ],
         "notes": "",
-        "corrections": []
+        "corrections": [],
+        "verifier": "8"
       },
       {
         "publisher": "مؤسسة ابداع",
@@ -2203,7 +2210,8 @@
           "https://arabic-app.github.io/tabaat/images/1782572688389-images20260627T180411.790.jpeg"
         ],
         "notes": "دار ابن الجوزي القاهرة<span style=\"color: rgb(8, 8, 9); font-family: Tahoma; font-size: 15px; white-space: pre-wrap;\">،</span>&nbsp;لا تشتمل على جزء النهاية في الفتن والملاحم<span style=\"color: rgb(8, 8, 9); font-family: Tahoma; font-size: 15px; white-space: pre-wrap;\">،</span>&nbsp;يشترى مفردا",
-        "corrections": []
+        "corrections": [],
+        "verifier": "7"
       }
     ],
     "links": []
@@ -10884,7 +10892,7 @@
       "العقيدة"
     ],
     "notes": "",
-    "date": "2026-07-02",
+    "date": "2026-08-03",
     "best_editions": [
       {
         "publisher": "دار العاصمة",
@@ -10894,7 +10902,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "عبد العزيز المشيقح"
+        "verifier": "عبد العزيز المشيقح",
+        "volumes": 4
       }
     ],
     "alt_editions": [],
@@ -11246,7 +11255,7 @@
       "اللغة والأدب"
     ],
     "notes": "",
-    "date": "2026-07-06",
+    "date": "2026-08-03",
     "best_editions": [
       {
         "publisher": "دار المعارف",
@@ -11255,7 +11264,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "طه الحاجري"
+        "verifier": "طه الحاجري",
+        "volumes": 1
       },
       {
         "publisher": "دار الأرقم",
@@ -11264,7 +11274,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "عمر الطباع"
+        "verifier": "عمر الطباع",
+        "volumes": 1
       }
     ],
     "alt_editions": [],
@@ -11278,7 +11289,7 @@
       "اللغة والأدب"
     ],
     "notes": "",
-    "date": "2026-07-06",
+    "date": "2026-08-03",
     "best_editions": [
       {
         "publisher": "وزارة الثقافة، الجمهورية العربية المتحدة",
@@ -11288,7 +11299,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "أحمد بدوي، حامد عبد المجيد"
+        "verifier": "أحمد بدوي، حامد عبد المجيد",
+        "volumes": 1
       }
     ],
     "alt_editions": [],
