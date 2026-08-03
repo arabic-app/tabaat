@@ -6114,19 +6114,21 @@
       "الفقه"
     ],
     "notes": "",
+    "date": "2026-08-03",
     "best_editions": [
       {
+        "publisher": "دار عطاءات العلم",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782304077688-.png"
         ],
         "notes": "",
+        "corrections": [],
         "verifier": "محمد عزير شمس",
-        "publisher": "دار عطاءات العلم"
+        "volumes": 2
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 197,
@@ -10153,7 +10155,7 @@
       "فقه المرأة"
     ],
     "notes": "",
-    "date": "2026-07-02",
+    "date": "2026-08-03",
     "best_editions": [
       {
         "publisher": "دار البشائر",
@@ -10162,7 +10164,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "إيمان عزام"
+        "verifier": "إيمان عزام",
+        "volumes": 4
       }
     ],
     "alt_editions": [],
@@ -10522,7 +10525,7 @@
       "الفقه المقارن"
     ],
     "notes": "",
-    "date": "2026-07-02",
+    "date": "2026-08-03",
     "best_editions": [
       {
         "publisher": "عطاءات العلم",
@@ -10531,7 +10534,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "محمود النحال"
+        "verifier": "محمود النحال",
+        "volumes": 3
       }
     ],
     "alt_editions": [],
