@@ -1644,7 +1644,7 @@
       "الحديث"
     ],
     "notes": "",
-    "date": "2026-07-03",
+    "date": "2026-08-03",
     "best_editions": [
       {
         "publisher": "دار الصديق",
@@ -1653,7 +1653,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "عصام موسى هادي"
+        "verifier": "عصام موسى هادي",
+        "volumes": 1
       },
       {
         "publisher": "دار ابن الجوزي",
@@ -1662,7 +1663,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "على عبد المقصود رضوان"
+        "verifier": "على عبد المقصود رضوان",
+        "volumes": 1
       },
       {
         "publisher": "دار أطلس الخضراء",
@@ -1671,7 +1673,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "أحمد العنقري"
+        "verifier": "أحمد العنقري",
+        "volumes": 1
       }
     ],
     "alt_editions": [],
@@ -4687,19 +4690,21 @@
       "اللغة والأدب"
     ],
     "notes": "",
+    "date": "2026-08-03",
     "best_editions": [
       {
+        "publisher": "القلم",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782559302794-4.jpeg"
         ],
         "notes": "",
+        "corrections": [],
         "verifier": "عماد الدين دولة",
-        "publisher": "القلم"
+        "volumes": 1
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 133,
