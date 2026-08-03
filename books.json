@@ -3817,7 +3817,7 @@
       "الشمائل النبوية"
     ],
     "notes": "",
-    "date": "2026-07-01",
+    "date": "2026-08-04",
     "best_editions": [
       {
         "publisher": "دار اللباب",
@@ -3827,7 +3827,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "محمد خلوف"
+        "verifier": "محمد خلوف",
+        "volumes": 1
       },
       {
         "publisher": "دار الفتح",
@@ -3836,7 +3837,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "حسام الدين عبد الله"
+        "verifier": "حسام الدين عبد الله",
+        "volumes": 1
       }
     ],
     "alt_editions": [
@@ -3848,7 +3850,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "عبده كوشك"
+        "verifier": "عبده كوشك",
+        "volumes": 1
       },
       {
         "publisher": "دار ابن حزم بيروت ت عبد السلام البكاري",
@@ -3856,7 +3859,8 @@
           "https://arabic-app.github.io/tabaat/images/1782622371279-images20260628T074704.272.jpeg"
         ],
         "notes": "",
-        "corrections": []
+        "corrections": [],
+        "volumes": 1
       }
     ],
     "links": []
