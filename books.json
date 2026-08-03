@@ -1571,7 +1571,8 @@
         ],
         "notes": "صدر التحقيق سابقا عن دار ابن خزيمة",
         "corrections": [],
-        "verifier": "عامر علي ياسين"
+        "verifier": "عامر علي ياسين",
+        "volumes": 1
       },
       {
         "publisher": "دار البشائر الإسلامية",
@@ -1580,7 +1581,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "عبده كوشك"
+        "verifier": "عبده كوشك",
+        "volumes": 1
       },
       {
         "publisher": "دار المنهاج",
@@ -1588,7 +1590,8 @@
           "https://arabic-app.github.io/tabaat/images/1782559560843-images20260627T142552.522.jpeg"
         ],
         "notes": "ينتبه للتعليقات",
-        "corrections": []
+        "corrections": [],
+        "volumes": 1
       }
     ],
     "alt_editions": [],
