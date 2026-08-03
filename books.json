@@ -4445,19 +4445,21 @@
       "اللغة والأدب"
     ],
     "notes": "",
+    "date": "2026-08-04",
     "best_editions": [
       {
+        "publisher": "لجنة التأليف والترجمة",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782622556212-images20260628T075101.220.jpeg"
         ],
         "notes": "",
+        "corrections": [],
         "verifier": "أحمد أمين ورفاقه",
-        "publisher": "لجنة التأليف والترجمة"
+        "volumes": 7
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 119,
@@ -4997,8 +4999,10 @@
       "اللغة والأدب"
     ],
     "notes": "",
+    "date": "2026-08-04",
     "best_editions": [
       {
+        "publisher": "دار المنهاج بجدة",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782624322204-179b98a2b2a44ea6a0d57917d470a6de709.375x1000hER7JXYahZjcJGidvcm7J5NPuYSDMfGn9mc02un5.jpg",
           "https://arabic-app.github.io/tabaat/images/1782624332406-images20260628T081329.214.jpeg",
@@ -5006,12 +5010,11 @@
         ],
         "notes": "",
         "corrections": [],
-        "publisher": "دار المنهاج بجدة"
+        "volumes": 2
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 142,
@@ -7512,7 +7515,7 @@
       "التراجم والرجال"
     ],
     "notes": "",
-    "date": "2026-07-12",
+    "date": "2026-08-04",
     "best_editions": [
       {
         "publisher": "دار عطاءات العلم",
@@ -7521,7 +7524,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "علي العمران"
+        "verifier": "علي العمران",
+        "volumes": 1
       }
     ],
     "alt_editions": [],
@@ -9807,7 +9811,7 @@
       "حجية السنة"
     ],
     "notes": "",
-    "date": "2026-07-02",
+    "date": "2026-08-04",
     "best_editions": [
       {
         "publisher": "مؤسسة الرسالة ناشرون",
@@ -9817,7 +9821,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "شعيب الأرنؤوط"
+        "verifier": "شعيب الأرنؤوط",
+        "volumes": 5
       }
     ],
     "alt_editions": [],
