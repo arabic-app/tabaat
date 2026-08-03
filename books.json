@@ -6715,7 +6715,7 @@
       "كتب متنوعة"
     ],
     "notes": "",
-    "date": "2026-07-12",
+    "date": "2026-08-03",
     "best_editions": [
       {
         "publisher": "دار عطاءات العلم",
@@ -6723,7 +6723,8 @@
           "https://arabic-app.github.io/tabaat/images/1782588435424-v6vwQcqS9DUSjR5JUnPZYBMAG0dY29vLuI9D1ffI.jpg"
         ],
         "notes": "",
-        "corrections": []
+        "corrections": [],
+        "volumes": 1
       }
     ],
     "alt_editions": [],
@@ -7442,7 +7443,7 @@
       "التراجم والرجال"
     ],
     "notes": "",
-    "date": "2026-07-12",
+    "date": "2026-08-03",
     "best_editions": [
       {
         "publisher": "دار عطاءات العلم",
@@ -7450,7 +7451,8 @@
           "https://arabic-app.github.io/tabaat/images/1782587804420-92eaf52bd5b1412395a8f500d9716d7c335.61058923997x500HdUqJqMXKq6VA7J3hfInZWhko89bYtkrisXss4xJ.png"
         ],
         "notes": "",
-        "corrections": []
+        "corrections": [],
+        "volumes": 1
       }
     ],
     "alt_editions": [],
@@ -7831,7 +7833,7 @@
       "العقيدة"
     ],
     "notes": "",
-    "date": "2026-07-03",
+    "date": "2026-08-03",
     "best_editions": [
       {
         "publisher": "مكتبة الرشد",
@@ -7842,7 +7844,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "عبد العلي عبد الحميد، مختار أحمد الندوي"
+        "verifier": "عبد العلي عبد الحميد، مختار أحمد الندوي",
+        "volumes": 14
       }
     ],
     "alt_editions": [],
@@ -10090,7 +10093,7 @@
       "الآداب الشرعية"
     ],
     "notes": "",
-    "date": "2026-07-03",
+    "date": "2026-08-03",
     "best_editions": [
       {
         "publisher": "الناشر المتميز",
@@ -10099,7 +10102,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "محمد علي البيضاني"
+        "verifier": "محمد علي البيضاني",
+        "volumes": 3
       }
     ],
     "alt_editions": [],
