@@ -9588,7 +9588,7 @@
       "الحديث"
     ],
     "notes": "",
-    "date": "2026-07-02",
+    "date": "2026-08-03",
     "best_editions": [
       {
         "publisher": "دار ابن كثير",
@@ -9598,7 +9598,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "محمد زياد شعبان"
+        "verifier": "محمد زياد شعبان",
+        "volumes": 6
       },
       {
         "publisher": "أضواء السلف",
@@ -9608,7 +9609,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "محمد الثاني بن عمر"
+        "verifier": "محمد الثاني بن عمر",
+        "volumes": 7
       }
     ],
     "alt_editions": [],
