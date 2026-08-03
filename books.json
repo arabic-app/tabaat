@@ -6158,7 +6158,7 @@
       "العقيدة"
     ],
     "notes": "",
-    "date": "2026-07-12",
+    "date": "2026-08-04",
     "best_editions": [
       {
         "publisher": "دار عطاءات العلم",
@@ -6167,7 +6167,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "حسين عكاشة"
+        "verifier": "حسين عكاشة",
+        "volumes": 2
       }
     ],
     "alt_editions": [],
@@ -6876,20 +6877,22 @@
       "التفسير"
     ],
     "notes": "",
+    "date": "2026-08-04",
     "best_editions": [
       {
+        "publisher": "دار القبس للنشر و التوزيع",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782622511749-images20260628T074750.205.jpeg",
           "https://arabic-app.github.io/tabaat/images/1782622519150-8e86ce665c7644a8b2acc394e4167d6b666x1000o1X48Ssdclo1M3zzIaU9QsvVh8EonNgFG7U6jYNJ.jpg"
         ],
         "notes": "",
+        "corrections": [],
         "verifier": "صبري شاهين",
-        "publisher": "دار القبس للنشر و التوزيع"
+        "volumes": 7
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 224,
@@ -8056,20 +8059,21 @@
       "العقيدة"
     ],
     "notes": "",
+    "date": "2026-08-04",
     "best_editions": [
       {
+        "publisher": "دار التوحيد ودار باب العلم",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782764464389-IMG20260629214219172.jpg"
         ],
         "notes": "",
         "corrections": [],
         "verifier": "حسني الجهني",
-        "publisher": "دار التوحيد ودار باب العلم"
+        "volumes": 2
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 273,
