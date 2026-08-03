@@ -4010,7 +4010,8 @@
           "https://arabic-app.github.io/tabaat/images/1782573614173-48583.jpg"
         ],
         "notes": "",
-        "corrections": []
+        "corrections": [],
+        "volumes": 2
       },
       {
         "publisher": "مؤسسة الرسالة ناشرون",
@@ -4031,7 +4032,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "صلاح فتحي، سيد الجليمي"
+        "verifier": "صلاح فتحي، سيد الجليمي",
+        "volumes": 1
       }
     ],
     "links": []
