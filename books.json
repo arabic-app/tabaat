@@ -5126,7 +5126,7 @@
       "اللغة والأدب"
     ],
     "notes": "",
-    "date": "2026-07-03",
+    "date": "2026-08-04",
     "best_editions": [
       {
         "publisher": "دار الكتب المصرية",
@@ -5135,7 +5135,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "عبد العزيز الميمني"
+        "verifier": "عبد العزيز الميمني",
+        "volumes": 1
       }
     ],
     "alt_editions": [],
@@ -9227,7 +9228,7 @@
       "الأديان والفرق والمذاهب"
     ],
     "notes": "",
-    "date": "2026-07-02",
+    "date": "2026-08-04",
     "best_editions": [
       {
         "publisher": "دار المالكية",
@@ -9237,7 +9238,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "سمير قدوري"
+        "verifier": "سمير قدوري",
+        "volumes": 5
       }
     ],
     "alt_editions": [],
@@ -9251,7 +9253,7 @@
       "العقيدة"
     ],
     "notes": "",
-    "date": "2026-07-02",
+    "date": "2026-08-04",
     "best_editions": [
       {
         "publisher": "مكتبة المنهاج الرياض",
@@ -9260,7 +9262,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "عبد الرحمن اليحيى"
+        "verifier": "عبد الرحمن اليحيى",
+        "volumes": 1
       }
     ],
     "alt_editions": [],
