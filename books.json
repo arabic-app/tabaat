@@ -301,7 +301,7 @@
       "علوم القرآن"
     ],
     "notes": "",
-    "date": "2026-07-03",
+    "date": "2026-08-03",
     "best_editions": [
       {
         "publisher": "دار المعرفة",
@@ -310,7 +310,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "يوسف المرعشلي، جمال الذهبي، إبراهيم الكردي"
+        "verifier": "يوسف المرعشلي، جمال الذهبي، إبراهيم الكردي",
+        "volumes": 4
       }
     ],
     "alt_editions": [
@@ -321,7 +322,8 @@
           "https://arabic-app.github.io/tabaat/images/1782572522497-552223375335959825.webp"
         ],
         "notes": "طبع في عدة دور",
-        "corrections": []
+        "corrections": [],
+        "volumes": 4
       },
       {
         "publisher": "دار الحديث",
@@ -330,7 +332,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "أبي الفضل الدمياطي"
+        "verifier": "أبي الفضل الدمياطي",
+        "volumes": 1
       },
       {
         "publisher": "دار الحضارة السعودية",
@@ -339,7 +342,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "زكي ابو سريع"
+        "verifier": "زكي ابو سريع",
+        "volumes": 4
       }
     ],
     "links": []
