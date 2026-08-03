@@ -8157,7 +8157,7 @@
       "كتب متنوعة"
     ],
     "notes": "",
-    "date": "2026-07-03",
+    "date": "2026-08-04",
     "best_editions": [
       {
         "publisher": "مكتبة الكوثر",
@@ -8166,7 +8166,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "فتحي الجندي"
+        "verifier": "فتحي الجندي",
+        "volumes": 1
       },
       {
         "publisher": "دار القلم",
@@ -8175,7 +8176,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "عبد الكريم تتان، خلدون مخلوطة"
+        "verifier": "عبد الكريم تتان، خلدون مخلوطة",
+        "volumes": 2
       }
     ],
     "alt_editions": [],
@@ -9887,7 +9889,7 @@
       "مصطلح الحديث"
     ],
     "notes": "",
-    "date": "2026-07-02",
+    "date": "2026-08-04",
     "best_editions": [
       {
         "publisher": "دار اللباب",
@@ -9896,7 +9898,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "نافذ حسين حماد"
+        "verifier": "نافذ حسين حماد",
+        "volumes": 1
       }
     ],
     "alt_editions": [],
