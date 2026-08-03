@@ -1153,7 +1153,7 @@
       "شروح الحديث"
     ],
     "notes": "شرح غير كامل على سنن ابن ماجه",
-    "date": "2026-07-03",
+    "date": "2026-08-03",
     "best_editions": [
       {
         "publisher": "مكتبة ابن عباس",
@@ -1162,7 +1162,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "أحمد أبي العينين"
+        "verifier": "أحمد أبي العينين",
+        "volumes": 5
       },
       {
         "publisher": "دار كنوز اشبيليا",
@@ -1171,7 +1172,8 @@
         ],
         "notes": "طبعة ناقصة (مجلدان فقط)",
         "corrections": [],
-        "verifier": "عبد العزيز الماجد"
+        "verifier": "عبد العزيز الماجد",
+        "volumes": 2
       }
     ],
     "alt_editions": [],
@@ -3017,7 +3019,7 @@
       "كتب متنوعة"
     ],
     "notes": "",
-    "date": "2026-07-03",
+    "date": "2026-08-03",
     "best_editions": [
       {
         "publisher": "دار ابن الجوزي",
@@ -3026,7 +3028,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "محمد الشقير، سعد الحميد، هشام الصيني"
+        "verifier": "محمد الشقير، سعد الحميد، هشام الصيني",
+        "volumes": 3
       }
     ],
     "alt_editions": [],
@@ -3999,7 +4002,7 @@
       "اللغة والأدب"
     ],
     "notes": "",
-    "date": "2026-07-03",
+    "date": "2026-08-03",
     "best_editions": [
       {
         "publisher": "دار الكتب المصرية",
@@ -4016,7 +4019,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "على زينو"
+        "verifier": "على زينو",
+        "volumes": 2
       }
     ],
     "alt_editions": [
@@ -4598,20 +4602,21 @@
       "اللغة والأدب"
     ],
     "notes": "",
+    "date": "2026-08-03",
     "best_editions": [
       {
+        "publisher": "مؤسسة الرسالة ناشرون",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782573653207-images20260627T174458.427.jpeg"
         ],
         "notes": "",
         "corrections": [],
         "verifier": "موفق صالح",
-        "publisher": "مؤسسة الرسالة ناشرون"
+        "volumes": 1
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 129,
@@ -4794,19 +4799,21 @@
       "اللغة والأدب"
     ],
     "notes": "",
+    "date": "2026-08-03",
     "best_editions": [
       {
+        "publisher": "المعارف",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782573881844-images20260627T173934.678.jpeg"
         ],
         "notes": "",
+        "corrections": [],
         "verifier": "أحمد شاكر وعبد السلام هارون",
-        "publisher": "المعارف"
+        "volumes": 1
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 137,
@@ -7424,7 +7431,7 @@
       "التراجم والرجال"
     ],
     "notes": "",
-    "date": "2026-07-12",
+    "date": "2026-08-03",
     "best_editions": [
       {
         "publisher": "دار عطاءات العلم",
@@ -7433,7 +7440,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "علي العمران"
+        "verifier": "علي العمران",
+        "volumes": 1
       }
     ],
     "alt_editions": [],
@@ -7967,20 +7975,21 @@
       "العقيدة"
     ],
     "notes": "",
+    "date": "2026-08-03",
     "best_editions": [
       {
+        "publisher": "دار العمرية",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782764669392-IMG20260629214218631.jpg"
         ],
         "notes": "",
         "corrections": [],
         "verifier": "عبد الله آل غيهب",
-        "publisher": "دار العمرية"
+        "volumes": 1
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 274,
@@ -10283,7 +10292,7 @@
       "الفقه الحنبلي"
     ],
     "notes": "",
-    "date": "2026-07-02",
+    "date": "2026-08-03",
     "best_editions": [
       {
         "publisher": "دار ركائز",
@@ -10292,7 +10301,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "عبد الله أحمد كامل"
+        "verifier": "عبد الله أحمد كامل",
+        "volumes": 3
       },
       {
         "publisher": "مركز سطور",
@@ -10302,7 +10312,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "عبد الله التركي و مركز هجر"
+        "verifier": "عبد الله التركي و مركز هجر",
+        "volumes": 4
       },
       {
         "publisher": "دار عالم الكتب",
@@ -10311,7 +10322,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "عبد الله التركي و مركز هجر"
+        "verifier": "عبد الله التركي و مركز هجر",
+        "volumes": 4
       }
     ],
     "alt_editions": [],
@@ -11151,7 +11163,7 @@
       "اللغة والأدب"
     ],
     "notes": "",
-    "date": "2026-07-06",
+    "date": "2026-08-03",
     "best_editions": [
       {
         "publisher": "دار الكتب المصرية",
@@ -11161,7 +11173,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "مصطفى السقا، حامد عبد المجيد"
+        "verifier": "مصطفى السقا، حامد عبد المجيد",
+        "volumes": 2
       }
     ],
     "alt_editions": [],
