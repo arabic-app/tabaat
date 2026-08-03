@@ -1016,18 +1016,20 @@
       "شروح الحديث"
     ],
     "notes": "الشرح غير كامل",
+    "date": "2026-08-03",
     "best_editions": [
       {
+        "publisher": "دار ابن الجوزي",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782557220463-47698187424173710686178068585408484133501175n.jpg"
         ],
         "notes": "",
-        "publisher": "دار ابن الجوزي"
+        "corrections": [],
+        "volumes": 21
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 22,
@@ -2065,7 +2067,8 @@
           "https://arabic-app.github.io/tabaat/images/1782308406334-sl1600.jpeg"
         ],
         "notes": "",
-        "corrections": []
+        "corrections": [],
+        "volumes": 19
       },
       {
         "publisher": "المكتبة التوفيقية",
@@ -2073,7 +2076,8 @@
           "https://arabic-app.github.io/tabaat/images/1782667525506-images66.jpeg"
         ],
         "notes": "",
-        "corrections": []
+        "corrections": [],
+        "volumes": 17
       },
       {
         "publisher": "الدار العالمية",
@@ -2081,7 +2085,8 @@
           "https://arabic-app.github.io/tabaat/images/1782667508433-images67.jpeg"
         ],
         "notes": "",
-        "corrections": []
+        "corrections": [],
+        "volumes": 20
       }
     ],
     "links": [
@@ -2863,7 +2868,7 @@
       "كتب متنوعة"
     ],
     "notes": "",
-    "date": "2026-07-04",
+    "date": "2026-08-03",
     "best_editions": [
       {
         "publisher": "الدار الشامية",
@@ -2872,7 +2877,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "المكتب العلمي بالدار الشامية بمشاركة وليد عبد الغني"
+        "verifier": "المكتب العلمي بالدار الشامية بمشاركة وليد عبد الغني",
+        "volumes": 2
       },
       {
         "publisher": "دار ابن الجوزي",
@@ -6109,19 +6115,21 @@
       "الفقه"
     ],
     "notes": "",
+    "date": "2026-08-03",
     "best_editions": [
       {
+        "publisher": "دار عطاءات العلم",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782304077688-.png"
         ],
         "notes": "",
+        "corrections": [],
         "verifier": "محمد عزير شمس",
-        "publisher": "دار عطاءات العلم"
+        "volumes": 2
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 197,
@@ -7593,7 +7601,7 @@
       "شروح الحديث"
     ],
     "notes": "",
-    "date": "2026-07-03",
+    "date": "2026-08-03",
     "best_editions": [
       {
         "publisher": "دار عطاءات العلم",
@@ -7602,7 +7610,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "المكتب العلمي بدار الكمال المتحدة"
+        "verifier": "المكتب العلمي بدار الكمال المتحدة",
+        "volumes": 20
       }
     ],
     "alt_editions": [],
@@ -10148,7 +10157,7 @@
       "فقه المرأة"
     ],
     "notes": "",
-    "date": "2026-07-02",
+    "date": "2026-08-03",
     "best_editions": [
       {
         "publisher": "دار البشائر",
@@ -10157,7 +10166,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "إيمان عزام"
+        "verifier": "إيمان عزام",
+        "volumes": 4
       }
     ],
     "alt_editions": [],
@@ -10517,7 +10527,7 @@
       "الفقه المقارن"
     ],
     "notes": "",
-    "date": "2026-07-02",
+    "date": "2026-08-03",
     "best_editions": [
       {
         "publisher": "عطاءات العلم",
@@ -10526,7 +10536,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "محمود النحال"
+        "verifier": "محمود النحال",
+        "volumes": 3
       }
     ],
     "alt_editions": [],
@@ -10987,7 +10998,7 @@
       "النحو"
     ],
     "notes": "",
-    "date": "2026-07-05",
+    "date": "2026-08-03",
     "best_editions": [
       {
         "publisher": "مكتبة الخانجي",
@@ -10997,7 +11008,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "رجب عثمان محمد"
+        "verifier": "رجب عثمان محمد",
+        "volumes": 5
       }
     ],
     "alt_editions": [],
@@ -11465,7 +11477,7 @@
       "التفسير"
     ],
     "notes": "",
-    "date": "2026-07-10",
+    "date": "2026-08-03",
     "best_editions": [
       {
         "publisher": "أسفار",
@@ -11475,7 +11487,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "خالد اللوزي"
+        "verifier": "خالد اللوزي",
+        "volumes": 7
       }
     ],
     "alt_editions": [],
@@ -11489,7 +11502,7 @@
       "التفسير"
     ],
     "notes": "",
-    "date": "2026-07-10",
+    "date": "2026-08-03",
     "best_editions": [
       {
         "publisher": "مركز تفسير للدراسات القرآنية",
@@ -11499,7 +11512,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "محمد الأزهري، شحات البوشي، أحمد الأزهري إشراف عبد الرحمن الشهري، عبد الرحمن قائد"
+        "verifier": "محمد الأزهري، شحات البوشي، أحمد الأزهري إشراف عبد الرحمن الشهري، عبد الرحمن قائد",
+        "volumes": 9
       }
     ],
     "alt_editions": [],
