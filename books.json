@@ -352,7 +352,7 @@
       "علوم القرآن"
     ],
     "notes": "",
-    "date": "2026-07-03",
+    "date": "2026-08-03",
     "best_editions": [
       {
         "publisher": "طبعة المجمع",
@@ -361,7 +361,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "مركز الدراسات القرآنية"
+        "verifier": "مركز الدراسات القرآنية",
+        "volumes": 7
       }
     ],
     "alt_editions": [
@@ -372,7 +373,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "أحمد علي"
+        "verifier": "أحمد علي",
+        "volumes": 1
       },
       {
         "publisher": "دار السلام مصر",
@@ -381,7 +383,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "محمود مرسي، محمد عوض"
+        "verifier": "محمود مرسي، محمد عوض",
+        "volumes": 2
       }
     ],
     "links": []
