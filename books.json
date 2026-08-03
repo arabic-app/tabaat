@@ -5334,18 +5334,20 @@
       "التفسير"
     ],
     "notes": "",
+    "date": "2026-08-03",
     "best_editions": [
       {
+        "publisher": "دار المنهاج بالرياض",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782558741926-images20260627T141146.611.jpeg"
         ],
         "notes": "",
-        "publisher": "دار المنهاج بالرياض"
+        "corrections": [],
+        "volumes": 1
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 160,
@@ -5818,7 +5820,8 @@
           "https://arabic-app.github.io/tabaat/images/1782558600171-1702475391Untitled1.jpg"
         ],
         "notes": "مؤسسة العلم والتأصيل<span style=\"color: rgb(8, 8, 9); font-family: Tahoma; font-size: 15px; white-space: pre-wrap;\">،</span>&nbsp;صدرت للكتاب طبعة الثالثة",
-        "corrections": []
+        "corrections": [],
+        "volumes": 2
       }
     ],
     "alt_editions": [],
@@ -5855,19 +5858,21 @@
       "أصول الفقه"
     ],
     "notes": "",
+    "date": "2026-08-03",
     "best_editions": [
       {
+        "publisher": "دار عطاءات العلم",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782304349823-.png"
         ],
         "notes": "",
+        "corrections": [],
         "verifier": "محمد عزير و محمد أجمل",
-        "publisher": "دار عطاءات العلم"
+        "volumes": 6
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 185,
@@ -6151,19 +6156,21 @@
       "كتب متنوعة"
     ],
     "notes": "",
+    "date": "2026-08-03",
     "best_editions": [
       {
+        "publisher": "دار عطاءات العلم",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782558651631-images20260627T140933.494.jpeg"
         ],
         "notes": "",
+        "corrections": [],
         "verifier": "محمد عزير شمس",
-        "publisher": "دار عطاءات العلم"
+        "volumes": 2
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 198,
@@ -6574,19 +6581,21 @@
       "الفقه"
     ],
     "notes": "",
+    "date": "2026-08-03",
     "best_editions": [
       {
+        "publisher": "دار عطاءات العلم",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782558631595-images20260627T140946.967.jpeg"
         ],
         "notes": "",
+        "corrections": [],
         "verifier": "عبد الرحمن قائد",
-        "publisher": "دار عطاءات العلم"
+        "volumes": 1
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 216,
