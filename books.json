@@ -953,7 +953,7 @@
       "الحديث"
     ],
     "notes": "",
-    "date": "2026-07-03",
+    "date": "2026-08-03",
     "best_editions": [
       {
         "publisher": "دار الصديق",
@@ -962,7 +962,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "عصام موسى هادي"
+        "verifier": "عصام موسى هادي",
+        "volumes": 1
       },
       {
         "publisher": "دار التأصيل",
@@ -970,7 +971,8 @@
           "https://arabic-app.github.io/tabaat/images/1782578991897-images20260627T194833.753.jpeg"
         ],
         "notes": "عدة مجلدات، الطبعة الثانية وما بعدها",
-        "corrections": []
+        "corrections": [],
+        "volumes": 5
       }
     ],
     "alt_editions": [
@@ -980,7 +982,8 @@
           "https://arabic-app.github.io/tabaat/images/1782579052813-90f4eceb7f418ac71fe5ca82c63d419b.png.webp"
         ],
         "notes": "إن كانت رخيصة",
-        "corrections": []
+        "corrections": [],
+        "volumes": 1
       }
     ],
     "links": []
