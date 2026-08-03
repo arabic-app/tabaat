@@ -7198,19 +7198,21 @@
       "الفقه"
     ],
     "notes": "",
+    "date": "2026-08-03",
     "best_editions": [
       {
+        "publisher": "دار عطاءات العلم",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782589841004-images20260627T224150.997.jpeg"
         ],
         "notes": "",
+        "corrections": [],
         "verifier": "عبد الله المزروع",
-        "publisher": "دار عطاءات العلم"
+        "volumes": 2
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 239,
@@ -7289,7 +7291,7 @@
       "الأديان والفرق والمذاهب"
     ],
     "notes": "",
-    "date": "2026-07-12",
+    "date": "2026-08-03",
     "best_editions": [
       {
         "publisher": "دار عطاءات العلم",
@@ -7309,7 +7311,8 @@
             ]
           }
         ],
-        "verifier": "علي العمران"
+        "verifier": "علي العمران",
+        "volumes": 1
       }
     ],
     "alt_editions": [],
@@ -8435,7 +8438,7 @@
       "الأديان والفرق والمذاهب"
     ],
     "notes": "",
-    "date": "2026-07-01",
+    "date": "2026-08-03",
     "best_editions": [
       {
         "publisher": "دار اللؤلؤة",
@@ -8444,7 +8447,8 @@
         ],
         "notes": "ينتبه للشدة في تعليقات المحقق&nbsp;",
         "corrections": [],
-        "verifier": "عادل آل حمدان"
+        "verifier": "عادل آل حمدان",
+        "volumes": 1
       }
     ],
     "alt_editions": [],
@@ -9847,7 +9851,7 @@
       "التراجم والرجال"
     ],
     "notes": "",
-    "date": "2026-07-02",
+    "date": "2026-08-03",
     "best_editions": [
       {
         "publisher": "العبيكان",
@@ -9856,7 +9860,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "العثيمين"
+        "verifier": "العثيمين",
+        "volumes": 5
       }
     ],
     "alt_editions": [],
@@ -12008,7 +12013,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "عبد الله التركي"
+        "verifier": "عبد الله التركي",
+        "volumes": 17
       }
     ],
     "alt_editions": [],
