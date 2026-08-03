@@ -3444,7 +3444,7 @@
       "الحديث"
     ],
     "notes": "",
-    "date": "2026-07-03",
+    "date": "2026-08-04",
     "best_editions": [
       {
         "publisher": "دار كنوز اشبيليا",
@@ -3453,7 +3453,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "سعد الشثري"
+        "verifier": "سعد الشثري",
+        "volumes": 25
       }
     ],
     "alt_editions": [
@@ -3464,7 +3465,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "أسامة بن إبراهيم"
+        "verifier": "أسامة بن إبراهيم",
+        "volumes": 15
       }
     ],
     "links": []
