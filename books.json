@@ -1450,7 +1450,7 @@
       "الحديث"
     ],
     "notes": "",
-    "date": "2026-07-03",
+    "date": "2026-08-04",
     "best_editions": [
       {
         "publisher": "مركز سطور (دار الإمام مسلم)",
@@ -1460,7 +1460,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "عبد الله التركي، مركز هجر"
+        "verifier": "عبد الله التركي، مركز هجر",
+        "volumes": 24
       },
       {
         "publisher": "دار عالم الكتب",
@@ -1469,7 +1470,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "عبد الله التركي، مركز هجر"
+        "verifier": "عبد الله التركي، مركز هجر",
+        "volumes": 24
       },
       {
         "publisher": "دار هجر",
@@ -1478,7 +1480,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "عبد الله التركي، مركز هجر"
+        "verifier": "عبد الله التركي، مركز هجر",
+        "volumes": 24
       }
     ],
     "alt_editions": [
@@ -1489,7 +1492,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "إسلام منصور عبد الحميد"
+        "verifier": "إسلام منصور عبد الحميد",
+        "volumes": 11
       }
     ],
     "links": []
@@ -2606,33 +2610,38 @@
       "الفقه الحنبلي"
     ],
     "notes": "",
+    "date": "2026-08-04",
     "best_editions": [
       {
+        "publisher": "طبعة مؤسسة الشيخ",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782598493345-17d5ed9ecf0f456e8c2bf421469859761000x659.1796875Lg9Y9BJ1qflekp0RGZinbfnuEToEmP8Z09V00uWn.jpg"
         ],
         "notes": "",
-        "publisher": "طبعة مؤسسة الشيخ"
+        "corrections": [],
+        "volumes": 10
       },
       {
+        "publisher": "دار ابن الجوزي",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782305597314-.png"
         ],
         "notes": "",
-        "publisher": "دار ابن الجوزي"
+        "corrections": [],
+        "volumes": 15
       }
     ],
     "alt_editions": [
       {
+        "publisher": "دار ابن الهيثم",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782645168750-.jpg"
         ],
         "notes": "",
-        "publisher": "دار ابن الهيثم"
+        "corrections": []
       }
     ],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 58,
@@ -7271,19 +7280,21 @@
       "الفقه"
     ],
     "notes": "",
+    "date": "2026-08-04",
     "best_editions": [
       {
+        "publisher": "دار عطاءات العلم",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782598574681-b1ec9e94c7e44712a0ddb4479564513c500x500YbY2Oi1vxqEfKaMfjnh0DUn7eovHIEV78c50tWPu.jpg"
         ],
         "notes": "",
+        "corrections": [],
         "verifier": "علي العمران",
-        "publisher": "دار عطاءات العلم"
+        "volumes": 1
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 242,
@@ -8488,7 +8499,7 @@
       "العقيدة"
     ],
     "notes": "",
-    "date": "2026-07-28",
+    "date": "2026-08-04",
     "best_editions": [
       {
         "publisher": "دار اللؤلؤة",
@@ -8497,7 +8508,8 @@
         ],
         "notes": "ينتبه للشدة في تعليقات المحقق&nbsp;",
         "corrections": [],
-        "verifier": "عادل آل حمدان"
+        "verifier": "عادل آل حمدان",
+        "volumes": 2
       }
     ],
     "alt_editions": [],
@@ -9878,7 +9890,7 @@
       "التراجم والرجال"
     ],
     "notes": "",
-    "date": "2026-07-03",
+    "date": "2026-08-04",
     "best_editions": [
       {
         "publisher": "مؤسسة الرسالة ناشرون",
@@ -9888,7 +9900,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "بكر أبي زيد، عبد الرحمن العثيمين"
+        "verifier": "بكر أبي زيد، عبد الرحمن العثيمين",
+        "volumes": 3
       }
     ],
     "alt_editions": [],
