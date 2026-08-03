@@ -4088,7 +4088,7 @@
       "اللغة والأدب"
     ],
     "notes": "",
-    "date": "2026-07-03",
+    "date": "2026-08-03",
     "best_editions": [
       {
         "publisher": "",
@@ -4098,7 +4098,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "عبد السلام هارون"
+        "verifier": "عبد السلام هارون",
+        "volumes": 7
       },
       {
         "publisher": "شذرات العلم للنشر",
@@ -4107,7 +4108,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "أبي الفضل القونوي"
+        "verifier": "أبي الفضل القونوي",
+        "volumes": 4
       }
     ],
     "alt_editions": [],
@@ -4730,19 +4732,21 @@
       "اللغة والأدب"
     ],
     "notes": "",
+    "date": "2026-08-03",
     "best_editions": [
       {
+        "publisher": "القلم",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782589816083-images20260627T224100.596.jpeg"
         ],
         "notes": "",
+        "corrections": [],
         "verifier": "عماد الدين دولة",
-        "publisher": "القلم"
+        "volumes": 1
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 132,
@@ -5321,25 +5325,28 @@
       "السيرة"
     ],
     "notes": "",
+    "date": "2026-08-03",
     "best_editions": [
       {
+        "publisher": "مكتبة العلوم والحكم",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782598544449-images20260628T011245.343.jpeg"
         ],
         "notes": "",
-        "publisher": "مكتبة العلوم والحكم"
+        "corrections": [],
+        "volumes": 2
       },
       {
+        "publisher": "العبيكان",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782598555485-16884018199x67hSav9c7skpf06du0nVfleakwDywo7yloGGDy.jpg"
         ],
         "notes": "",
-        "publisher": "العبيكان"
+        "corrections": []
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 156,
@@ -5349,18 +5356,20 @@
       "السيرة"
     ],
     "notes": "",
+    "date": "2026-08-03",
     "best_editions": [
       {
+        "publisher": "مكتبة الرشد",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782598520417-images20260628T011308.546.jpeg"
         ],
         "notes": "",
-        "publisher": "مكتبة الرشد"
+        "corrections": [],
+        "volumes": 1
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 157,
@@ -6380,19 +6389,21 @@
       "كتب متنوعة"
     ],
     "notes": "",
+    "date": "2026-08-03",
     "best_editions": [
       {
+        "publisher": "دار عطاءات العلم",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782596177737-DNOWQMPaKKGexns58EYLEvSOaayqqpTgHx72S6Fc.jpg"
         ],
         "notes": "",
+        "corrections": [],
         "verifier": "محمد أجمل إصلاحي",
-        "publisher": "دار عطاءات العلم"
+        "volumes": 1
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 204,
@@ -6624,19 +6635,21 @@
       "كتب متنوعة"
     ],
     "notes": "",
+    "date": "2026-08-03",
     "best_editions": [
       {
+        "publisher": "دار عطاءات العلم",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782589884034-images20260627T224253.659.jpeg"
         ],
         "notes": "",
+        "corrections": [],
         "verifier": "محمد عزير شمس",
-        "publisher": "دار عطاءات العلم"
+        "volumes": 1
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 214,
@@ -7076,7 +7089,7 @@
       "كتب متنوعة"
     ],
     "notes": "ينتظر ط الصحابة ت عبد الفتاح سرور جمعت بين الروايتين",
-    "date": "2026-07-12",
+    "date": "2026-08-03",
     "best_editions": [
       {
         "publisher": "دار البشائر الإسلامية",
@@ -7085,7 +7098,8 @@
         ],
         "notes": "كتاب الرقائق (رواية نعيم بن حماد المروزي)",
         "corrections": [],
-        "verifier": "عامر صبري"
+        "verifier": "عامر صبري",
+        "volumes": 2
       },
       {
         "publisher": "دار الفاروق",
@@ -7094,7 +7108,8 @@
         ],
         "notes": "الزهد والرقائق (رواية الحسين بن الحسن المروزي)",
         "corrections": [],
-        "verifier": "عادل مرشد"
+        "verifier": "عادل مرشد",
+        "volumes": 2
       }
     ],
     "alt_editions": [],
@@ -8664,7 +8679,7 @@
       "الشعر والدواوين"
     ],
     "notes": "",
-    "date": "2026-07-02",
+    "date": "2026-08-03",
     "best_editions": [
       {
         "publisher": "مكتبة  الخانجي",
@@ -8673,7 +8688,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "عادل جمال"
+        "verifier": "عادل جمال",
+        "volumes": 4
       }
     ],
     "alt_editions": [],
@@ -8687,7 +8703,7 @@
       "الشعر والدواوين"
     ],
     "notes": "",
-    "date": "2026-07-02",
+    "date": "2026-08-03",
     "best_editions": [
       {
         "publisher": "وزارة الثقافة",
@@ -8696,7 +8712,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "عبد المعين الملوحي، أسماء الحمصي"
+        "verifier": "عبد المعين الملوحي، أسماء الحمصي",
+        "volumes": 2
       }
     ],
     "alt_editions": [],
@@ -8742,7 +8759,7 @@
       "الشعر والدواوين"
     ],
     "notes": "",
-    "date": "2026-07-02",
+    "date": "2026-08-03",
     "best_editions": [
       {
         "publisher": "المجمع الثقافي",
@@ -8751,7 +8768,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "محمد حور، أحمد عبيد"
+        "verifier": "محمد حور، أحمد عبيد",
+        "volumes": 1
       },
       {
         "publisher": "مؤسسة البابطين",
@@ -8760,7 +8778,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "محمد نعناع"
+        "verifier": "محمد نعناع",
+        "volumes": 3
       }
     ],
     "alt_editions": [],
@@ -8774,7 +8793,7 @@
       "الشعر والدواوين"
     ],
     "notes": "",
-    "date": "2026-07-02",
+    "date": "2026-08-03",
     "best_editions": [
       {
         "publisher": "دار الفكر",
@@ -8784,7 +8803,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "محمد رضوان الداية"
+        "verifier": "محمد رضوان الداية",
+        "volumes": 2
       }
     ],
     "alt_editions": [],
