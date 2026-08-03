@@ -49,7 +49,7 @@ const WELCOME_MESSAGE = `السلام عليكم ورحمة الله وبركا�
 // Messages génériques destinés à l'utilisateur (3) — jamais de détail technique.
 const ERROR_MESSAGE = 'عذراً، حدث خطأ مؤقت. حاول مرة أخرى بعد قليل ⏳';
 const RATE_LIMIT_MESSAGE = 'لقد أرسلت رسائل كثيرة بسرعة. انتظر دقيقة من فضلك ⏳';
-const NOT_FOUND_MESSAGE = 'لم أجد هذا الكتاب في قاعدة بياناتي. جرّب صياغة أخرى أو تأكّد من الاسم 🙏';
+const NOT_FOUND_MESSAGE = 'لم أجد هذا الكتاب في قاعدة بياناتي. جرّب صياغة أخرى أو تأكّد من الاسم';
 
 // En-têtes CORS : autorisent le widget de chat de l'app web à appeler POST /chat.
 const CORS_HEADERS = {
@@ -80,7 +80,7 @@ export default {
       return handleTrack(request, env);
     }
     if (request.method === 'GET' && url.pathname === '/stats') {
-      return handleStats(url, env);
+      return handleStats(request, env, ctx);
     }
 
     // Endpoint d'administration one-shot : enregistre le menu de commandes (15)
@@ -267,12 +267,22 @@ async function handleTrack(request, env) {
 // derniers jours, connues à l'avance), quel que soit l'âge du site. Plus de list().
 // totalViews/Visitors/Chat = somme sur ces 30 jours (le TTL de 35 j ne
 // conservait de toute façon jamais un vrai historique infini).
-async function handleStats(url, env) {
+async function handleStats(request, env, ctx) {
   if (!env.CACHE) return jsonResponse({ error: 'kv_disabled' }, 200);
+  const url = new URL(request.url);
   // STATS_KEY est OPTIONNEL : si elle est définie, on l'exige ; sinon /stats est ouvert.
   if (env.STATS_KEY && url.searchParams.get('key') !== env.STATS_KEY) {
     return jsonResponse({ error: 'unauthorized' }, 403);
   }
+
+  // Cache d'edge Cloudflare (gratuit, HORS quota KV) : /stats est un endpoint
+  // public sans clé, donc n'importe quel bot/scanner peut le taper en boucle.
+  // Ce cache plafonne le coût réel à 1 calcul (30 lectures KV) par minute,
+  // quel que soit le nombre d'appels reçus.
+  const cache = caches.default;
+  const cacheKey = new Request('https://stats-cache.internal/stats');
+  const cached = await cache.match(cacheKey);
+  if (cached) return cached;
 
   const now = Date.now();
   const dates = [];
@@ -291,12 +301,20 @@ async function handleStats(url, env) {
   const today = days[days.length - 1] || {};
   const sortTop = (obj, n) => Object.entries(obj).sort((a, b) => b[1] - a[1]).slice(0, n).map(([label, count]) => ({ label, count }));
 
-  return jsonResponse({
+  const payload = JSON.stringify({
     totalViews, totalVisitors, totalChat,
     todayViews: today.v || 0, todayVisitors: today.u || 0,
     chart,
     topSearches: sortTop(searches, 15),
   });
+  const baseHeaders = { 'Content-Type': 'application/json', ...CORS_HEADERS };
+  const response = new Response(payload, { status: 200, headers: baseHeaders });
+  const cacheResponse = new Response(payload, {
+    status: 200,
+    headers: { ...baseHeaders, 'Cache-Control': 'public, max-age=60' },
+  });
+  ctx.waitUntil(cache.put(cacheKey, cacheResponse));
+  return response;
 }
 
 // =============================================================================

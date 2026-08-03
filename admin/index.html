@@ -161,7 +161,7 @@
             gap: 8px;
         }
 
-        .search-field { position: relative; display: flex; align-items: center; }
+        .search-field { position: relative; display: flex; align-items: center; margin-bottom: 10px; }
         .search-field .search-icon { position: absolute; right: 10px; font-size: 20px; color: rgba(255,255,255,0.7); pointer-events: none; }
         .admin-search-box {
             width: 100%; padding: 10px 38px 10px 32px; border: none; border-radius: var(--radius-full);
@@ -937,6 +937,13 @@
                        aria-label="بحث في قائمة الكتب">
                 <button id="clearSearchBtn" class="clear-search-btn material-icons-round" aria-label="مسح البحث">close</button>
             </div>
+            <div class="search-field">
+                <span class="material-icons-round search-icon" aria-hidden="true">store</span>
+                <input type="search" id="adminPublisherSearchInput" class="admin-search-box"
+                       placeholder="بحث بدار النشر..." autocomplete="off"
+                       aria-label="بحث بدار النشر">
+                <button id="clearPublisherSearchBtn" class="clear-search-btn material-icons-round" style="display:none;" aria-label="مسح البحث">close</button>
+            </div>
             <div class="filter-field">
                 <input type="checkbox" id="missingPhotoFilter">
                 <label for="missingPhotoFilter">عرض الكتب التي تنقصها صور طبعات</label>
@@ -1399,6 +1406,8 @@
             booksList: $('#booksList'),
             searchInput: $('#adminSearchInput'),
             clearSearchBtn: $('#clearSearchBtn'),
+            publisherSearchInput: $('#adminPublisherSearchInput'),
+            clearPublisherSearchBtn: $('#clearPublisherSearchBtn'),
             missingPhotoFilter: $('#missingPhotoFilter'),
             formContainer: $('#formContainer'),
             formTitle: $('#formTitle'),
@@ -1606,6 +1615,7 @@
         const list = DOM.booksList;
         list.innerHTML = '';
         const term = normalizeArabic(searchTerm);
+        const pubTerm = normalizeArabic(DOM.publisherSearchInput ? DOM.publisherSearchInput.value : '');
         const currentId = DOM.bookId.value;
         const missingPhotoOnly = DOM.missingPhotoFilter.checked;
 
@@ -1614,6 +1624,13 @@
         const filtered = sorted.filter(b => {
             const matchesSearch = normalizeArabic(b.title).includes(term) || normalizeArabic(b.author).includes(term);
             if (!matchesSearch) return false;
+
+            if (pubTerm) {
+                const eds = [...(b.best_editions || []), ...(b.alt_editions || [])];
+                const matchesPub = eds.some(ed => normalizeArabic(ed.publisher || '').includes(pubTerm));
+                if (!matchesPub) return false;
+            }
+
             if (!missingPhotoOnly) return true;
 
             const getImages = ed => ed.images || (ed.image ? [ed.image] : []);
@@ -2835,6 +2852,19 @@
             renderSidebar('');
         });
         DOM.missingPhotoFilter.addEventListener('change', () => renderSidebar(DOM.searchInput.value));
+
+        // Publisher search with debounce
+        const debouncedPubSearch = debounce(val => {
+            DOM.clearPublisherSearchBtn.style.display = val ? 'flex' : 'none';
+            renderSidebar(DOM.searchInput.value);
+        }, 150);
+        DOM.publisherSearchInput.addEventListener('input', e => debouncedPubSearch(e.target.value));
+        DOM.clearPublisherSearchBtn.addEventListener('click', () => {
+            DOM.publisherSearchInput.value = '';
+            DOM.clearPublisherSearchBtn.style.display = 'none';
+            DOM.publisherSearchInput.focus();
+            renderSidebar(DOM.searchInput.value);
+        });
 
         // Title duplicate check
         DOM.titleInput.addEventListener('blur', function() {

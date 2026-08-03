@@ -412,17 +412,47 @@
         }
         .adv-search.open {
             max-height: 160px; opacity: 1; margin-top: 0; padding-top: 12px;
-             pointer-events: auto;
+             pointer-events: auto; overflow: visible;
         }
         .adv-field {
             display: flex; align-items: center; gap: 6px;
             background: var(--md-background); border: 1px solid var(--md-outline-variant);
-            border-radius: 10px; padding: 8px 10px;
+            border-radius: 10px; padding: 8px 10px; position: relative;
         }
         .adv-field .material-icons-round { font-size: 18px; color: var(--md-on-surface-variant); flex-shrink: 0; }
         .adv-field input {
             flex: 1; min-width: 0; border: none; background: transparent; outline: none;
             font-family: inherit; font-size: 0.88rem; color: var(--md-on-surface);
+        }
+        
+        /* Autocomplete Suggestions */
+        .autocomplete-suggestions {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: var(--md-surface);
+            border: 1px solid var(--md-outline-variant);
+            border-radius: 10px;
+            margin-top: 4px;
+            max-height: 200px;
+            overflow-y: auto;
+            z-index: 100;
+            box-shadow: var(--md-elevation-2);
+            display: none;
+            direction: rtl;
+        }
+        .autocomplete-suggestion {
+            padding: 8px 12px;
+            cursor: pointer;
+            font-size: 0.88rem;
+            color: var(--md-on-surface);
+            transition: background 0.2s;
+            text-align: right;
+        }
+        .autocomplete-suggestion:hover,
+        .autocomplete-suggestion.active {
+            background: var(--md-surface-variant);
         }
         .adv-clear {
             border: none; background: transparent; cursor: pointer; padding: 0;
@@ -1544,11 +1574,151 @@
                     const booksCountEl = document.getElementById('about-total-books');
                     if (booksCountEl) booksCountEl.textContent = booksData.length;
                     initCategories();
+                    initAutocompleteData();
                     filterAndDisplayBooks();
                 })
                 .catch(err => {
                     console.warn('Failed to fetch books.json, trying cache fallback...', err);
                 });
+        }
+
+        let uniquePublishers = [];
+        let uniqueVerifiers = [];
+
+        function initAutocompleteData() {
+            let publishersSet = new Set();
+            let verifiersSet = new Set();
+
+            booksData.forEach(b => {
+                const eds = [...(b.best_editions || []), ...(b.alt_editions || [])];
+                eds.forEach(e => {
+                    if (e.publisher) {
+                        // Split by slashes, commas, or "و" to get individual publishers if combined
+                        const parts = e.publisher.split(/\s*[\/,،,-]\s*/);
+                        parts.forEach(p => {
+                            const pub = p.trim();
+                            if (pub && pub.length > 2) publishersSet.add(pub);
+                        });
+                        // Also add full publisher string just in case
+                        const fullPub = e.publisher.trim();
+                        if (fullPub && fullPub.length > 2) publishersSet.add(fullPub);
+                    }
+                    if (e.verifier) {
+                        // Split by slashes, commas, or "و"
+                        const parts = e.verifier.split(/\s*[\/,،,-]\s*|\s+و\s+/);
+                        parts.forEach(p => {
+                            const ver = p.trim().replace(/\s+(آخرين|آخرون|غيرهم|مجموعة محققين)/g, '').trim();
+                            if (ver && ver.length > 2) verifiersSet.add(ver);
+                        });
+                        // Also add full verifier string just in case
+                        const fullVer = e.verifier.trim();
+                        if (fullVer && fullVer.length > 2) verifiersSet.add(fullVer);
+                    }
+                });
+            });
+
+            uniquePublishers = Array.from(publishersSet).sort((a, b) => a.localeCompare(b, 'ar'));
+            uniqueVerifiers = Array.from(verifiersSet).sort((a, b) => a.localeCompare(b, 'ar'));
+
+            setupAutocomplete(document.getElementById('publisherSearch'), uniquePublishers, (val) => {
+                currentPublisher = val;
+                clearPublisherBtn.style.display = currentPublisher ? 'flex' : 'none';
+                filterAndDisplayBooks();
+            }, 'clearPublisherBtn');
+
+            setupAutocomplete(document.getElementById('verifierSearch'), uniqueVerifiers, (val) => {
+                currentVerifier = val;
+                clearVerifierBtn.style.display = currentVerifier ? 'flex' : 'none';
+                filterAndDisplayBooks();
+            }, 'clearVerifierBtn');
+        }
+
+        function setupAutocomplete(input, dataList, onSelect, clearBtnId) {
+            const container = document.createElement('div');
+            container.className = 'autocomplete-suggestions';
+            input.parentNode.appendChild(container);
+
+            let activeIndex = -1;
+
+            function closeAll() {
+                container.style.display = 'none';
+                container.innerHTML = '';
+                activeIndex = -1;
+            }
+
+            function showSuggestions(val) {
+                closeAll();
+                if (!val) return;
+
+                const normalizedVal = normalizeArabic(val);
+                const matches = dataList.filter(item => normalizeArabic(item).includes(normalizedVal));
+
+                if (matches.length === 0) return;
+
+                container.style.display = 'block';
+                matches.slice(0, 10).forEach((match) => {
+                    const div = document.createElement('div');
+                    div.className = 'autocomplete-suggestion';
+                    div.innerText = match;
+                    div.addEventListener('click', () => {
+                        input.value = match;
+                        closeAll();
+                        onSelect(match);
+                    });
+                    container.appendChild(div);
+                });
+            }
+
+            input.addEventListener('input', (e) => {
+                showSuggestions(e.target.value);
+            });
+
+            input.addEventListener('focus', (e) => {
+                showSuggestions(e.target.value);
+            });
+
+            input.addEventListener('keydown', (e) => {
+                const items = container.querySelectorAll('.autocomplete-suggestion');
+                if (items.length === 0) return;
+
+                if (e.key === 'ArrowDown') {
+                    e.preventDefault();
+                    activeIndex = (activeIndex + 1) % items.length;
+                    setActive(items);
+                } else if (e.key === 'ArrowUp') {
+                    e.preventDefault();
+                    activeIndex = (activeIndex - 1 + items.length) % items.length;
+                    setActive(items);
+                } else if (e.key === 'Enter') {
+                    if (activeIndex > -1) {
+                        e.preventDefault();
+                        items[activeIndex].click();
+                    }
+                } else if (e.key === 'Escape') {
+                    closeAll();
+                }
+            });
+
+            function setActive(items) {
+                items.forEach(item => item.classList.remove('active'));
+                if (activeIndex > -1 && activeIndex < items.length) {
+                    items[activeIndex].classList.add('active');
+                    items[activeIndex].scrollIntoView({ block: 'nearest' });
+                }
+            }
+
+            document.addEventListener('click', (e) => {
+                if (e.target !== input && !container.contains(e.target)) {
+                    closeAll();
+                }
+            });
+
+            if (clearBtnId) {
+                const clearBtn = document.getElementById(clearBtnId);
+                if (clearBtn) {
+                    clearBtn.addEventListener('click', closeAll);
+                }
+            }
         }
 
         loadBooks();
