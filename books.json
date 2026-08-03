@@ -2797,18 +2797,20 @@
       "المجاميع"
     ],
     "notes": "",
+    "date": "2026-08-03",
     "best_editions": [
       {
+        "publisher": "دار ابن حزم",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782573590516-16.png"
         ],
         "notes": "",
-        "publisher": "دار ابن حزم"
+        "corrections": [],
+        "volumes": 6
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 67,
@@ -4847,20 +4849,22 @@
       "اللغة والأدب"
     ],
     "notes": "",
+    "date": "2026-08-03",
     "best_editions": [
       {
+        "publisher": "لجنة التأليف والترجمة والنشر",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782573559037-images20260627T175149.451.jpeg",
           "https://arabic-app.github.io/tabaat/images/1782573569326-3592ced277ce884ec271b0ea8190609c.png.webp"
         ],
         "notes": "",
+        "corrections": [],
         "verifier": "أحمد أمين و أحمد الزين",
-        "publisher": "لجنة التأليف والترجمة والنشر"
+        "volumes": 1
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 139,
@@ -11212,7 +11216,7 @@
       "اللغة والأدب"
     ],
     "notes": "",
-    "date": "2026-07-06",
+    "date": "2026-08-03",
     "best_editions": [
       {
         "publisher": "دار ابن حزم",
@@ -11221,7 +11225,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "السعدية بوخريط، للا أمينة بالعربي"
+        "verifier": "السعدية بوخريط، للا أمينة بالعربي",
+        "volumes": 4
       }
     ],
     "alt_editions": [],
