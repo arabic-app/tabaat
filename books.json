@@ -3996,19 +3996,21 @@
       "اللغة والأدب"
     ],
     "notes": "",
+    "date": "2026-08-03",
     "best_editions": [
       {
+        "publisher": "الخانجي و مصوراتها",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782574348726-images20260627T182837.824.jpeg"
         ],
         "notes": "",
+        "corrections": [],
         "verifier": "عبد السلام هارون",
-        "publisher": "الخانجي و مصوراتها"
+        "volumes": 4
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 103,
@@ -4299,8 +4301,10 @@
       "اللغة والأدب"
     ],
     "notes": "",
+    "date": "2026-08-03",
     "best_editions": [
       {
+        "publisher": "دار  صادر",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782574373353-images20260627T182858.533.jpeg",
           "https://arabic-app.github.io/tabaat/images/1782574380069-images20260627T182851.260.jpeg"
@@ -4308,12 +4312,11 @@
         "notes": "",
         "corrections": [],
         "verifier": "إحسان عباس",
-        "publisher": "دار  صادر"
+        "volumes": 10
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 115,
@@ -6274,19 +6277,21 @@
       "علوم القرآن"
     ],
     "notes": "",
+    "date": "2026-08-03",
     "best_editions": [
       {
+        "publisher": "دار عطاءات العلم",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782575275661-FrontCoverWithSideView1116c83aa9ba4852890cd924bfbdbbe2.jpg"
         ],
         "notes": "",
+        "corrections": [],
         "verifier": "عبد الله البطاطي",
-        "publisher": "دار عطاءات العلم"
+        "volumes": 1
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 201,
@@ -7706,7 +7711,7 @@
       "الحديث"
     ],
     "notes": "",
-    "date": "2026-07-07",
+    "date": "2026-08-03",
     "best_editions": [
       {
         "publisher": "الناشر المتميز",
@@ -7726,7 +7731,8 @@
             ]
           }
         ],
-        "verifier": "محمد الدباسي، إشراف محمود النحال"
+        "verifier": "محمد الدباسي، إشراف محمود النحال",
+        "volumes": 12
       }
     ],
     "alt_editions": [],
@@ -8470,7 +8476,7 @@
       "التاريخ الإسلامي"
     ],
     "notes": "",
-    "date": "2026-07-01",
+    "date": "2026-08-03",
     "best_editions": [
       {
         "publisher": "دار القلم",
@@ -8479,7 +8485,8 @@
           "https://arabic-app.github.io/tabaat/images/1782916952869-images27.jpeg"
         ],
         "notes": "",
-        "corrections": []
+        "corrections": [],
+        "volumes": 1
       }
     ],
     "alt_editions": [],
@@ -10922,7 +10929,7 @@
       "العقيدة"
     ],
     "notes": "",
-    "date": "2026-07-08",
+    "date": "2026-08-03",
     "best_editions": [
       {
         "publisher": "مكتبة دار المنهاج الرياض",
@@ -10943,7 +10950,8 @@
             ]
           }
         ],
-        "verifier": "الصادق محمد إبراهيم"
+        "verifier": "الصادق محمد إبراهيم",
+        "volumes": 3
       }
     ],
     "alt_editions": [],
