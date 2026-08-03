@@ -4347,8 +4347,10 @@
       "اللغة والأدب"
     ],
     "notes": "",
+    "date": "2026-08-03",
     "best_editions": [
       {
+        "publisher": "دار  صادر",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782574319933-images20260627T182817.594.jpeg",
           "https://arabic-app.github.io/tabaat/images/1782574330398-images20260627T182812.914.jpeg"
@@ -4356,12 +4358,11 @@
         "notes": "",
         "corrections": [],
         "verifier": "وداد القاضي",
-        "publisher": "دار  صادر"
+        "volumes": 6
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 117,
