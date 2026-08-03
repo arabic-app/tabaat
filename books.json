@@ -2887,7 +2887,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "على عبد المقصود رضوان"
+        "verifier": "على عبد المقصود رضوان",
+        "volumes": 1
       },
       {
         "publisher": "دار ابن كثير",
@@ -2896,7 +2897,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "ياسين السواس"
+        "verifier": "ياسين السواس",
+        "volumes": 1
       },
       {
         "publisher": "دار المنهاج",
@@ -2904,7 +2906,8 @@
           "https://arabic-app.github.io/tabaat/images/1782557834626-47990437124173733419509127006597511774585341n.jpg"
         ],
         "notes": "",
-        "corrections": []
+        "corrections": [],
+        "volumes": 1
       }
     ],
     "alt_editions": [],
@@ -3869,39 +3872,42 @@
       "اللغة والأدب"
     ],
     "notes": "",
+    "date": "2026-08-03",
     "best_editions": [
       {
+        "publisher": "دار الرسالة العالمية",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782558077257-images20260627T140011.590.jpeg"
         ],
         "notes": "",
         "corrections": [],
         "verifier": "محمد الدالي",
-        "publisher": "دار الرسالة العالمية"
+        "volumes": 1
       },
       {
+        "publisher": "مؤسسة الرسالة ناشرون",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782558070662-311695.jpg"
         ],
         "notes": "",
         "corrections": [],
         "verifier": "علي محمد زينو",
-        "publisher": "مؤسسة الرسالة ناشرون"
+        "volumes": 1
       }
     ],
     "alt_editions": [
       {
+        "publisher": "دار الطلائع",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782558059474-images20260627T140035.271.jpeg"
         ],
         "notes": "",
         "corrections": [],
         "verifier": "محمد محي الدين عبد الحميد",
-        "publisher": "دار الطلائع"
+        "volumes": 1
       }
     ],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 101,
@@ -6228,7 +6234,7 @@
       "العقيدة"
     ],
     "notes": "",
-    "date": "2026-07-12",
+    "date": "2026-08-03",
     "best_editions": [
       {
         "publisher": "دار عطاءات العلم",
@@ -6237,7 +6243,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "زائد النشيري"
+        "verifier": "زائد النشيري",
+        "volumes": 1
       }
     ],
     "alt_editions": [],
@@ -7286,19 +7293,21 @@
       "الفقه"
     ],
     "notes": "",
+    "date": "2026-08-03",
     "best_editions": [
       {
+        "publisher": "دار عطاءات العلم",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782557732815-08097070aa65b97c9895be6c350dce0b.jpg.webp"
         ],
         "notes": "",
+        "corrections": [],
         "verifier": "سامي جاد الله",
-        "publisher": "دار عطاءات العلم"
+        "volumes": 1
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 248,
@@ -8108,7 +8117,7 @@
       "الأديان والفرق والمذاهب"
     ],
     "notes": "",
-    "date": "2026-07-01",
+    "date": "2026-08-03",
     "best_editions": [
       {
         "publisher": "دار اللؤلؤة",
@@ -8117,7 +8126,8 @@
         ],
         "notes": "ينتبه للشدة في تعليقات المحقق",
         "corrections": [],
-        "verifier": "عادل آل حمدان"
+        "verifier": "عادل آل حمدان",
+        "volumes": 1
       }
     ],
     "alt_editions": [],
@@ -8271,7 +8281,7 @@
       "العقيدة"
     ],
     "notes": "",
-    "date": "2026-07-01",
+    "date": "2026-08-03",
     "best_editions": [
       {
         "publisher": "دار اللؤلؤة",
@@ -8280,7 +8290,8 @@
         ],
         "notes": "ينتبه للشدة في تعليقات المحقق&nbsp;",
         "corrections": [],
-        "verifier": "عادل آل حمدان"
+        "verifier": "عادل آل حمدان",
+        "volumes": 1
       }
     ],
     "alt_editions": [],
@@ -10045,7 +10056,7 @@
       "الفقه الحنبلي"
     ],
     "notes": "",
-    "date": "2026-07-02",
+    "date": "2026-08-03",
     "best_editions": [
       {
         "publisher": "دار ركائز",
@@ -10055,7 +10066,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "عبد العزيز العيدان، انس اليتامي"
+        "verifier": "عبد العزيز العيدان، انس اليتامي",
+        "volumes": 1
       },
       {
         "publisher": "البشائر الإسلامية",
@@ -10064,7 +10076,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "محمد ناصر العجمي"
+        "verifier": "محمد ناصر العجمي",
+        "volumes": 1
       }
     ],
     "alt_editions": [],
