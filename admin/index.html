@@ -831,7 +831,8 @@
             .row-inputs-horizontal { flex-direction: column; }
             .form-actions { justify-content: stretch; }
             .form-actions .btn-save,
-            .form-actions .md-btn-error { width: 100%; justify-content: center; margin-bottom: 8px; }
+            .form-actions .md-btn-error,
+            .form-actions #btnSyncForm { width: 100%; justify-content: center; margin-bottom: 8px; }
             .action-bar { flex-direction: column; gap: 10px; }
             .action-bar-row { display: flex; gap: 8px; width: 100%; justify-content: center; }
             .action-bar-row .md-btn,
@@ -1069,6 +1070,9 @@
                     <div style="flex:1;"></div>
                     <button type="submit" class="btn-save" id="btnSave">
                         <span class="material-icons-round">save</span> حفظ التعديلات
+                    </button>
+                    <button type="button" class="md-btn md-btn-purple" id="btnSyncForm" style="height:44px;display:none;" title="مزامنة البيانات">
+                        <span class="material-icons-round">cloud_sync</span> مزامنة
                     </button>
                 </div>
             </form>
@@ -1409,6 +1413,7 @@
             publisherSearchInput: $('#adminPublisherSearchInput'),
             clearPublisherSearchBtn: $('#clearPublisherSearchBtn'),
             missingPhotoFilter: $('#missingPhotoFilter'),
+            btnSyncForm: $('#btnSyncForm'),
             formContainer: $('#formContainer'),
             formTitle: $('#formTitle'),
             formIcon: $('#formIcon'),
@@ -2020,6 +2025,7 @@
         DOM.bookId.value = '';
         DOM.duplicateWarning.style.display = 'none';
         DOM.btnDeleteBook.style.display = 'none';
+        DOM.btnSyncForm.style.display = 'none';
 
         DOM.categoriesList.innerHTML = '';
         addCategoryInput();
@@ -2047,6 +2053,7 @@
         DOM.formIcon.textContent = 'edit';
         DOM.duplicateWarning.style.display = 'none';
         DOM.btnDeleteBook.style.display = 'inline-flex';
+        DOM.btnSyncForm.style.display = 'none';
 
         DOM.bookId.value = book.id;
         DOM.titleInput.value = book.title || '';
@@ -2139,6 +2146,7 @@
 
         DOM.bookId.value = id;
         DOM.btnDeleteBook.style.display = 'inline-flex';
+        DOM.btnSyncForm.style.display = 'inline-flex';
 
         // If saved from a suggestion, delete that row from sheet
         if (state.currentSuggestionRow !== null) {
@@ -2960,6 +2968,7 @@
 
         // Sync modal
         $('#btn-open-sync').addEventListener('click', () => openSyncConfirmModal());
+        DOM.btnSyncForm.addEventListener('click', () => openSyncConfirmModal());
         $('#btn-cancel-sync').addEventListener('click', closeSyncModal);
         DOM.syncModal.addEventListener('click', e => {
             if (e.target === DOM.syncModal) closeSyncModal();
