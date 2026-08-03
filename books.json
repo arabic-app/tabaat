@@ -1333,7 +1333,7 @@
         "corrections": []
       },
       {
-        "publisher": "المكنز",
+        "publisher": "جمعية المكنز الإسلامي",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782723098345-eXg8vSXcaXj4KBANT39Cjvn5DmtzYtof2hysi3to.jpg",
           "https://arabic-app.github.io/tabaat/images/1782723104134-64aa97632833429289d5efa491bbd0691000x1000LdW06BAg4aeYY1vZ8uHAyLQNyC98SXF2PZiHjiWn.jpg"
@@ -2751,7 +2751,7 @@
       "المجاميع"
     ],
     "notes": "",
-    "date": "2026-07-03",
+    "date": "2026-08-03",
     "best_editions": [
       {
         "publisher": "دار الغرب الإسلامي",
@@ -3226,7 +3226,7 @@
       "التفسير"
     ],
     "notes": "",
-    "date": "2026-07-03",
+    "date": "2026-08-03",
     "best_editions": [
       {
         "publisher": "الدار الشامية",
@@ -3239,11 +3239,11 @@
     ],
     "alt_editions": [
       {
-        "publisher": "ابن حزم (مجلد واحد)",
+        "publisher": "دار ابن حزم",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782667032718-705a3bc520a244b59cfec1a7867a6f99.jpeg"
         ],
-        "notes": "",
+        "notes": "مجلد واحد",
         "corrections": []
       },
       {
