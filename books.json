@@ -6235,19 +6235,21 @@
       "كتب متنوعة"
     ],
     "notes": "",
+    "date": "2026-08-04",
     "best_editions": [
       {
+        "publisher": "عطاءات العلم",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782622535748-whatsappimage20241101at23239pm6724e6ca785c9.jpeg"
         ],
         "notes": "",
+        "corrections": [],
         "verifier": "نايف الحمد",
-        "publisher": "عطاءات العلم"
+        "volumes": 2
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 196,
@@ -8387,7 +8389,7 @@
       "العقيدة"
     ],
     "notes": "",
-    "date": "2026-07-29",
+    "date": "2026-08-04",
     "best_editions": [
       {
         "publisher": "دار اللؤلؤة",
@@ -8396,7 +8398,8 @@
         ],
         "notes": "ينتبه للشدة في تعليقات المحقق&nbsp;",
         "corrections": [],
-        "verifier": "عادل آل حمدان"
+        "verifier": "عادل آل حمدان",
+        "volumes": 1
       }
     ],
     "alt_editions": [],
@@ -10678,7 +10681,7 @@
       "اللغة والأدب"
     ],
     "notes": "",
-    "date": "2026-07-02",
+    "date": "2026-08-04",
     "best_editions": [
       {
         "publisher": "الرسالة ناشرون",
@@ -10687,7 +10690,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "مركز الرسالة للدراسات"
+        "verifier": "مركز الرسالة للدراسات",
+        "volumes": 1
       }
     ],
     "alt_editions": [],
