@@ -5220,7 +5220,7 @@
       "اللغة والأدب"
     ],
     "notes": "",
-    "date": "2026-07-03",
+    "date": "2026-08-03",
     "best_editions": [
       {
         "publisher": "دار العاصمة عناية سليمان الخراشي",
@@ -5228,7 +5228,8 @@
           "https://arabic-app.github.io/tabaat/images/1782587714739-cover.jpg"
         ],
         "notes": "",
-        "corrections": []
+        "corrections": [],
+        "volumes": 3
       }
     ],
     "alt_editions": [],
@@ -5781,7 +5782,7 @@
       "الأديان والفرق والمذاهب"
     ],
     "notes": "",
-    "date": "2026-07-12",
+    "date": "2026-08-03",
     "best_editions": [
       {
         "publisher": "مركز تأصيل",
@@ -5790,7 +5791,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "عبد الرحمن قائد، عبد الله غالب، إبراهيم شلبي، أحمد السلوم"
+        "verifier": "عبد الرحمن قائد، عبد الله غالب، إبراهيم شلبي، أحمد السلوم",
+        "volumes": 5
       }
     ],
     "alt_editions": [],
@@ -8615,7 +8617,7 @@
       "علوم القرآن"
     ],
     "notes": "",
-    "date": "2026-07-02",
+    "date": "2026-08-03",
     "best_editions": [
       {
         "publisher": "دار الرشيد",
@@ -8624,7 +8626,8 @@
           "https://arabic-app.github.io/tabaat/images/1782972641884-83WyQMiumU3jyOqUMV87Ziggpm31bsA4LcW62JMy.png"
         ],
         "notes": "",
-        "corrections": []
+        "corrections": [],
+        "volumes": 16
       }
     ],
     "alt_editions": [],
@@ -11885,7 +11888,7 @@
       "اللغة والأدب"
     ],
     "notes": "",
-    "date": "2026-07-17",
+    "date": "2026-08-03",
     "best_editions": [
       {
         "publisher": "عالم الكتب",
@@ -11895,7 +11898,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "محمد مرسي الخولي، إحسان عباس"
+        "verifier": "محمد مرسي الخولي، إحسان عباس",
+        "volumes": 4
       }
     ],
     "alt_editions": [],
