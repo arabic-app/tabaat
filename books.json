@@ -64,7 +64,8 @@
         ],
         "notes": "أجودها مؤسسة الرسالة ناشرون",
         "corrections": [],
-        "verifier": "عبد الله التركي وآخرين"
+        "verifier": "عبد الله التركي وآخرين",
+        "volumes": 24
       },
       {
         "publisher": "دار الرسالة العالمية - طبعة التركي",
@@ -73,7 +74,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "عبد الله التركي و آخرين"
+        "verifier": "عبد الله التركي و آخرين",
+        "volumes": 24
       },
       {
         "publisher": "دار عالم الكتب - طبعة التركي",
@@ -82,7 +84,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "عبد الله التركي و آخرين"
+        "verifier": "عبد الله التركي و آخرين",
+        "volumes": 12
       }
     ],
     "alt_editions": [
@@ -94,7 +97,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "عبد الرزاق المهدي"
+        "verifier": "عبد الرزاق المهدي",
+        "volumes": 10
       },
       {
         "publisher": "دار الريان",
@@ -102,7 +106,8 @@
           "https://arabic-app.github.io/tabaat/images/1782587973497-images20260627T220849.959.jpeg"
         ],
         "notes": "",
-        "corrections": []
+        "corrections": [],
+        "volumes": 10
       },
       {
         "publisher": "مؤسسة إبداع",
@@ -110,7 +115,8 @@
           "https://arabic-app.github.io/tabaat/images/1782587981172-cl8ujcz6n0em201dwc4fv6sdlcl70ky84c09zi01kshkhhb4irD8A7D984D8ACD8A7D985D8B9D984D8A3D8ADD983D8A7D985D8A7D984D982D8B1D8A2D986.webp"
         ],
         "notes": "<div>دار ابن الجوزي القاهرة</div>",
-        "corrections": []
+        "corrections": [],
+        "volumes": 10
       }
     ],
     "links": []
