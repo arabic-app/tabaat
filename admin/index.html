@@ -1856,7 +1856,7 @@
         container.appendChild(div);
     }
 
-    function addEditionRow(containerId, name = '', imagesArray = [], notes = '', corrections = [], verifier = '') {
+    function addEditionRow(containerId, name = '', imagesArray = [], notes = '', corrections = [], verifier = '', volumes = '') {
         const container = document.getElementById(containerId);
         const row = document.createElement('div');
         row.className = 'dynamic-row';
@@ -1870,6 +1870,7 @@
             <div class="row-inputs">
                 <input type="text" class="md-input ed-publisher" placeholder="دار النشر" value="${escapeHtml(name)}" aria-label="دار النشر">
                 <input type="text" class="md-input ed-verifier" placeholder="المحقق" value="${escapeHtml(verifier)}" aria-label="المحقق">
+                <input type="text" inputmode="numeric" pattern="[0-9٠-٩]*" class="md-input ed-volumes" placeholder="عدد المجلدات" value="${volumes || ''}" aria-label="عدد المجلدات" style="max-width: 130px;">
                 <div class="sub-container">
                     <div class="sub-container-title">
                         <span class="material-icons-round" style="font-size:14px;color:var(--primary)">image</span>
@@ -2099,7 +2100,7 @@
             document.getElementById(cid).innerHTML = '';
             (arr || []).forEach(ed => {
                 const imgs = ed.images || (ed.image ? [ed.image] : []);
-                addEditionRow(cid, ed.publisher, imgs, ed.notes || '', ed.corrections || [], ed.verifier || '');
+                addEditionRow(cid, ed.publisher, imgs, ed.notes || '', ed.corrections || [], ed.verifier || '', ed.volumes || '');
             });
         };
         loadEditions('bestEditions', book.best_editions);
@@ -2153,6 +2154,17 @@
                 };
                 const verifier = $('.ed-verifier', row).value.trim();
                 if (verifier) edObj.verifier = verifier;
+
+                const volsInput = $('.ed-volumes', row);
+                if (volsInput && volsInput.value) {
+                    // Convert Arabic numerals to English numerals
+                    const normalized = volsInput.value.replace(/[٠-٩]/g, d => '٠١٢٣٤٥٦٧٨٩'.indexOf(d));
+                    const volsVal = parseInt(normalized, 10);
+                    if (!isNaN(volsVal) && volsVal > 0) {
+                        edObj.volumes = volsVal;
+                    }
+                }
+
                 arr.push(edObj);
             });
         };

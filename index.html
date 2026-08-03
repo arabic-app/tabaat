@@ -734,8 +734,28 @@
             transition: background 0.2s;
             gap: 8px;
             min-width: 0; 
+            position: relative;
         }
         .md-list-item:hover { background: var(--md-surface-variant); }
+        
+        .edition-volumes {
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            background: var(--md-primary, #00695c);
+            color: var(--md-on-primary, #ffffff);
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            font-size: 0.75rem;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 5;
+            padding-bottom: 1px;
+            padding-right: 1px;
+        }
 
         .edition-name {
             font-weight: 600;
@@ -1977,8 +1997,14 @@
                 const nameSpan = (isEdition && (ed.publisher || ed.verifier))
                     ? `<span class="edition-name clickable" role="button" onclick="cardEditionSearch('${encodeURIComponent(ed.publisher || '')}','${encodeURIComponent(ed.verifier || '')}')">${edLabel}</span>`
                     : `<span class="edition-name">${edLabel}</span>`;
+                
+                let volHTML = '';
+                if (isEdition && ed.volumes && ed.volumes > 1) {
+                    volHTML = `<span class="edition-volumes" title="${ed.volumes} مجلدات">${ed.volumes}</span>`;
+                }
+
                 return isEdition
-                    ? `<li class="md-list-item">${nameSpan}<div class="edition-actions">${actions}</div></li>`
+                    ? `<li class="md-list-item">${volHTML}${nameSpan}<div class="edition-actions">${actions}</div></li>`
                     : `<li class="md-list-item"><a href="${ed.url}" target="_blank" class="link-item"><span class="material-icons-round">open_in_new</span><span class="edition-name">${ed.title}</span></a></li>`;
             }).join('');
 
