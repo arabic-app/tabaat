@@ -10792,7 +10792,7 @@
       "التفسير"
     ],
     "notes": "",
-    "date": "2026-07-02",
+    "date": "2026-08-03",
     "best_editions": [
       {
         "publisher": "دار هجر",
@@ -10802,7 +10802,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "عبد الله التركي"
+        "verifier": "عبد الله التركي",
+        "volumes": 27
       },
       {
         "publisher": "دار الرسالة العالمية",
@@ -10810,7 +10811,8 @@
           "https://arabic-app.github.io/tabaat/images/1783000146427-images81.jpeg"
         ],
         "notes": "",
-        "corrections": []
+        "corrections": [],
+        "verifier": "22"
       }
     ],
     "alt_editions": [],
