@@ -1482,7 +1482,7 @@
       "الحديث"
     ],
     "notes": "",
-    "date": "2026-07-03",
+    "date": "2026-08-03",
     "best_editions": [
       {
         "publisher": "المعارف",
@@ -1491,7 +1491,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "تخريج وأحكام  الألباني، عناية مشهور سلمان"
+        "verifier": "تخريج وأحكام  الألباني، عناية مشهور سلمان",
+        "volumes": 4
       },
       {
         "publisher": "دار ابن كثير",
@@ -1500,7 +1501,8 @@
         ],
         "notes": "احرص على آخر طبعة لأن الطبعات الأولى انتقدها الألباني رحمة الله بشدة",
         "corrections": [],
-        "verifier": "محي الدين مستو، يوسف بديوي، سمير العطار"
+        "verifier": "محي الدين مستو، يوسف بديوي، سمير العطار",
+        "volumes": 4
       },
       {
         "publisher": "دار الفتح للإعلام",
@@ -1510,7 +1512,8 @@
         ],
         "notes": "البعض يقدمها على الجميع",
         "corrections": [],
-        "verifier": "على عبد المقصود رضوان"
+        "verifier": "على عبد المقصود رضوان",
+        "volumes": 3
       }
     ],
     "alt_editions": [],
@@ -4119,19 +4122,21 @@
       "التفسير"
     ],
     "notes": "",
+    "date": "2026-08-03",
     "best_editions": [
       {
+        "publisher": "طيبة الخضراء",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782574893962-images20260627T184122.117.jpeg"
         ],
         "notes": "إصدار الثلاث مجلدات",
+        "corrections": [],
         "verifier": "علي الصالحي",
-        "publisher": "طيبة الخضراء"
+        "volumes": 3
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 107,
@@ -4165,19 +4170,21 @@
       "التفسير"
     ],
     "notes": "",
+    "date": "2026-08-03",
     "best_editions": [
       {
+        "publisher": "العبيكان",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782577914807-images20260627T185334.035.jpeg",
           "https://arabic-app.github.io/tabaat/images/1782577922257-altfsyralbsytllwahdy.jpg"
         ],
         "notes": "",
-        "publisher": "العبيكان"
+        "corrections": [],
+        "volumes": 25
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 109,
@@ -5594,18 +5601,20 @@
       "علوم القرآن"
     ],
     "notes": "",
+    "date": "2026-08-03",
     "best_editions": [
       {
+        "publisher": "مؤسسة العثيمين",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782673731849-default1.jpg"
         ],
         "notes": "",
-        "publisher": "مؤسسة العثيمين"
+        "corrections": [],
+        "volumes": 1
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 169,
@@ -8556,7 +8565,7 @@
       "علوم القرآن"
     ],
     "notes": "",
-    "date": "2026-07-02",
+    "date": "2026-08-03",
     "best_editions": [
       {
         "publisher": "مكتبة الخطيب بالكويت",
@@ -8565,7 +8574,8 @@
           "https://arabic-app.github.io/tabaat/images/1782972458857-images27.jpeg"
         ],
         "notes": "",
-        "corrections": []
+        "corrections": [],
+        "volumes": 15
       }
     ],
     "alt_editions": [],
