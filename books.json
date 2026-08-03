@@ -3995,7 +3995,7 @@
       "اللغة والأدب"
     ],
     "notes": "",
-    "date": "2026-07-03",
+    "date": "2026-08-04",
     "best_editions": [
       {
         "publisher": "مؤسسة الرسالة ناشرون",
@@ -4004,7 +4004,8 @@
         ],
         "notes": "<span style=\"color: rgb(0, 0, 0); font-family: Tahoma; font-size: 14px; background-color: rgb(253, 253, 253);\">تشتمل على القرط على الكامل والتنبيهات على الكامل</span>",
         "corrections": [],
-        "verifier": "محمد الدالي"
+        "verifier": "محمد الدالي",
+        "volumes": 4
       },
       {
         "publisher": "دار الرسالة العالمية",
@@ -4013,7 +4014,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "محمد الدالي"
+        "verifier": "محمد الدالي",
+        "volumes": 4
       }
     ],
     "alt_editions": [
@@ -4024,7 +4026,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "محمد أبي الفضل إبراهيم"
+        "verifier": "محمد أبي الفضل إبراهيم",
+        "volumes": 4
       }
     ],
     "links": []
@@ -5472,7 +5475,7 @@
       "أصول التفسير"
     ],
     "notes": "",
-    "date": "2026-08-03",
+    "date": "2026-08-04",
     "best_editions": [
       {
         "publisher": "دار ابن الجوزي",
@@ -5481,7 +5484,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "خالد السبت"
+        "verifier": "خالد السبت",
+        "volumes": 1
       }
     ],
     "alt_editions": [],
@@ -6045,7 +6049,7 @@
       "كتب متنوعة"
     ],
     "notes": "",
-    "date": "2026-07-03",
+    "date": "2026-08-04",
     "best_editions": [
       {
         "publisher": "دار عطاءات العلم",
@@ -6055,7 +6059,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "محمد العريفي، ناصر يحيى، عبد الله الذيل، فهد المساعد"
+        "verifier": "محمد العريفي، ناصر يحيى، عبد الله الذيل، فهد المساعد",
+        "volumes": 4
       }
     ],
     "alt_editions": [],
@@ -6299,18 +6304,20 @@
       "كتب متنوعة"
     ],
     "notes": "",
+    "date": "2026-08-04",
     "best_editions": [
       {
+        "publisher": "دار عطاءات العلم",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782379434610-.png"
         ],
         "notes": "",
-        "publisher": "دار عطاءات العلم"
+        "corrections": [],
+        "volumes": 2
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 199,
@@ -6437,7 +6444,7 @@
       "كتب متنوعة"
     ],
     "notes": "",
-    "date": "2026-07-15",
+    "date": "2026-08-04",
     "best_editions": [
       {
         "publisher": "دار عطاءات العلم",
@@ -6457,7 +6464,8 @@
             ]
           }
         ],
-        "verifier": "محمد عزير شمس"
+        "verifier": "محمد عزير شمس",
+        "volumes": 1
       },
       {
         "publisher": "دار سطور العلم",
@@ -6466,7 +6474,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "نضال البرازي إشراف على العمران"
+        "verifier": "نضال البرازي إشراف على العمران",
+        "volumes": 1
       }
     ],
     "alt_editions": [],
@@ -6637,19 +6646,21 @@
       "كتب متنوعة"
     ],
     "notes": "",
+    "date": "2026-08-04",
     "best_editions": [
       {
+        "publisher": "دار عطاءات العلم",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782624397048-ca71bf74157b48a3b7d99f9951993958335.61058923997x500QsePml1LfPUs1G3k9gPa0QAdIm7TSG23xJs6eqIR.png"
         ],
         "notes": "",
+        "corrections": [],
         "verifier": "زائد النشيري",
-        "publisher": "دار عطاءات العلم"
+        "volumes": 1
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 213,
