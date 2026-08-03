@@ -180,6 +180,36 @@
         }
         .clear-search-btn:hover { background: rgba(255,255,255,0.1); }
 
+        /* Autocomplete Suggestions */
+        .autocomplete-suggestions {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: var(--surface, #ffffff);
+            border: 1px solid var(--outline-variant, #bfc9c6);
+            border-radius: 8px;
+            margin-top: 4px;
+            max-height: 200px;
+            overflow-y: auto;
+            z-index: 100;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            display: none;
+            direction: rtl;
+        }
+        .autocomplete-suggestion {
+            padding: 8px 12px;
+            cursor: pointer;
+            font-size: 0.88rem;
+            color: var(--on-surface, #191c1b);
+            transition: background var(--transition-fast);
+            text-align: right;
+        }
+        .autocomplete-suggestion:hover,
+        .autocomplete-suggestion.active {
+            background: var(--surface-variant, #eaeaea);
+        }
+
         .filter-field {
             margin-top: 10px;
             display: flex; align-items: center; gap: 8px;
@@ -3152,8 +3182,125 @@
             state.sciences = [];
         }
 
+        initAutocompleteData();
         renderSidebar();
         loadSuggestions();
+    }
+
+    let uniquePublishers = [];
+
+    function initAutocompleteData() {
+        let publishersSet = new Set();
+
+        state.books.forEach(b => {
+            const eds = [...(b.best_editions || []), ...(b.alt_editions || [])];
+            eds.forEach(e => {
+                if (e.publisher) {
+                    const parts = e.publisher.split(/\s*[\/,،,-]\s*/);
+                    parts.forEach(p => {
+                        const pub = p.trim();
+                        if (pub && pub.length > 2) publishersSet.add(pub);
+                    });
+                    const fullPub = e.publisher.trim();
+                    if (fullPub && fullPub.length > 2) publishersSet.add(fullPub);
+                }
+            });
+        });
+
+        uniquePublishers = Array.from(publishersSet).sort((a, b) => a.localeCompare(b, 'ar'));
+
+        setupAutocomplete(DOM.publisherSearchInput, uniquePublishers, (val) => {
+            DOM.clearPublisherSearchBtn.style.display = val ? 'flex' : 'none';
+            renderSidebar(DOM.searchInput.value);
+        }, DOM.clearPublisherSearchBtn);
+    }
+
+    function setupAutocomplete(input, dataList, onSelect, clearBtn) {
+        let container = input.parentNode.querySelector('.autocomplete-suggestions');
+        if (!container) {
+            container = document.createElement('div');
+            container.className = 'autocomplete-suggestions';
+            input.parentNode.appendChild(container);
+        }
+
+        let activeIndex = -1;
+
+        function closeAll() {
+            container.style.display = 'none';
+            container.innerHTML = '';
+            activeIndex = -1;
+        }
+
+        function showSuggestions(val) {
+            closeAll();
+            if (!val) return;
+
+            const normalizedVal = normalizeArabic(val);
+            const matches = dataList.filter(item => normalizeArabic(item).includes(normalizedVal));
+
+            if (matches.length === 0) return;
+
+            container.style.display = 'block';
+            matches.slice(0, 10).forEach((match) => {
+                const div = document.createElement('div');
+                div.className = 'autocomplete-suggestion';
+                div.innerText = match;
+                div.addEventListener('click', () => {
+                    input.value = match;
+                    closeAll();
+                    onSelect(match);
+                });
+                container.appendChild(div);
+            });
+        }
+
+        input.addEventListener('input', (e) => {
+            showSuggestions(e.target.value);
+        });
+
+        input.addEventListener('focus', (e) => {
+            showSuggestions(e.target.value);
+        });
+
+        input.addEventListener('keydown', (e) => {
+            const items = container.querySelectorAll('.autocomplete-suggestion');
+            if (items.length === 0) return;
+
+            if (e.key === 'ArrowDown') {
+                e.preventDefault();
+                activeIndex = (activeIndex + 1) % items.length;
+                setActive(items);
+            } else if (e.key === 'ArrowUp') {
+                e.preventDefault();
+                activeIndex = (activeIndex - 1 + items.length) % items.length;
+                setActive(items);
+            } else if (e.key === 'Enter') {
+                if (activeIndex > -1) {
+                    e.preventDefault();
+                    items[activeIndex].click();
+                }
+            } else if (e.key === 'Escape') {
+                closeAll();
+            }
+        });
+
+        function setActive(items) {
+            items.forEach(item => item.classList.remove('active'));
+            if (activeIndex > -1 && activeIndex < items.length) {
+                items[activeIndex].classList.add('active');
+                items[activeIndex].scrollIntoView({ block: 'nearest' });
+            }
+        }
+
+        document.addEventListener('click', (e) => {
+            if (e.target !== input && !container.contains(e.target)) {
+                closeAll();
+            }
+        });
+
+        if (clearBtn) {
+            clearBtn.addEventListener('click', closeAll);
+        }
     }
 
     // ================================================================
