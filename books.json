@@ -4871,7 +4871,7 @@
       "كتب متنوعة"
     ],
     "notes": "",
-    "date": "2026-07-19",
+    "date": "2026-08-03",
     "best_editions": [
       {
         "publisher": "دار ابن حزم",
@@ -4880,7 +4880,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "عبد الحق التركماني"
+        "verifier": "عبد الحق التركماني",
+        "volumes": 1
       },
       {
         "publisher": "دار القلم",
@@ -4889,7 +4890,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "محمد مطر الكعبي"
+        "verifier": "محمد مطر الكعبي",
+        "volumes": 1
       }
     ],
     "alt_editions": [],
