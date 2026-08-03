@@ -3854,12 +3854,13 @@
         "volumes": 1
       },
       {
-        "publisher": "دار ابن حزم بيروت ت عبد السلام البكاري",
+        "publisher": "دار ابن حزم بيروت",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782622371279-images20260628T074704.272.jpeg"
         ],
         "notes": "",
         "corrections": [],
+        "verifier": "عبد السلام البكاري",
         "volumes": 1
       }
     ],
