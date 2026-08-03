@@ -1303,7 +1303,7 @@
       "شروح الحديث"
     ],
     "notes": "",
-    "date": "2026-07-03",
+    "date": "2026-08-03",
     "best_editions": [
       {
         "publisher": "دار الفاروق الحديثة",
@@ -1313,7 +1313,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "أسامة إبراهيم محمد"
+        "verifier": "أسامة إبراهيم محمد",
+        "volumes": 19
       }
     ],
     "alt_editions": [],
@@ -2211,7 +2212,7 @@
       "التراجم والرجال"
     ],
     "notes": "",
-    "date": "2026-07-12",
+    "date": "2026-08-03",
     "best_editions": [
       {
         "publisher": "مركز سطور  (دار الإمام مسلم)",
@@ -2220,7 +2221,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "عبد الله التركي، مركز هجر"
+        "verifier": "عبد الله التركي، مركز هجر",
+        "volumes": 16
       },
       {
         "publisher": "دار عالم الكتب",
@@ -2240,7 +2242,8 @@
             ]
           }
         ],
-        "verifier": "عبد الله التركي، مركز هجر"
+        "verifier": "عبد الله التركي، مركز هجر",
+        "volumes": 16
       },
       {
         "publisher": "دار هجر",
@@ -2260,7 +2263,8 @@
             ]
           }
         ],
-        "verifier": "عبد الله التركي، مركز هجر"
+        "verifier": "عبد الله التركي، مركز هجر",
+        "volumes": 16
       }
     ],
     "alt_editions": [],
@@ -5786,7 +5790,7 @@
       "الأديان والفرق والمذاهب"
     ],
     "notes": "",
-    "date": "2026-07-12",
+    "date": "2026-08-03",
     "best_editions": [
       {
         "publisher": "الدرر السنية",
@@ -5794,7 +5798,8 @@
           "https://arabic-app.github.io/tabaat/images/1782568163506-images20260627T164910.020.jpeg"
         ],
         "notes": "",
-        "corrections": []
+        "corrections": [],
+        "volumes": 1
       }
     ],
     "alt_editions": [],
@@ -10720,7 +10725,7 @@
       "العقيدة"
     ],
     "notes": "",
-    "date": "2026-07-04",
+    "date": "2026-08-03",
     "best_editions": [
       {
         "publisher": "دار المنهاج الرياض",
@@ -10729,7 +10734,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "عبد الله السهيلي"
+        "verifier": "عبد الله السهيلي",
+        "volumes": 1
       }
     ],
     "alt_editions": [],
@@ -11097,7 +11103,7 @@
       "اللغة والأدب"
     ],
     "notes": "",
-    "date": "2026-07-05",
+    "date": "2026-08-03",
     "best_editions": [
       {
         "publisher": "مكتبة الخانجي",
@@ -11106,7 +11112,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "عبد السلام هارون"
+        "verifier": "عبد السلام هارون",
+        "volumes": 1
       }
     ],
     "alt_editions": [],
