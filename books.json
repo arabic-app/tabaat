@@ -8,10 +8,10 @@
       "علوم القرآن"
     ],
     "notes": "",
-    "date": "2026-07-03",
+    "date": "2026-08-03",
     "best_editions": [
       {
-        "publisher": "دار ابن الجوزي السعودية",
+        "publisher": "دار ابن الجوزي",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782741900242-tabarijawzi.png",
           "https://arabic-app.github.io/tabaat/images/1783106112370-fda6fac34f744480ba6bb7b71d73e0fc778.50589777195x1000XBfbJV0wiAkFISECINTsPSUeMWlUQpUSN6uWBmbT.png"
@@ -54,7 +54,7 @@
       "التفسير"
     ],
     "notes": "",
-    "date": "2026-07-03",
+    "date": "2026-08-03",
     "best_editions": [
       {
         "publisher": "مؤسسة الرسالة ناشرون - طبعة التركي",
@@ -105,11 +105,11 @@
         "corrections": []
       },
       {
-        "publisher": "دار ابن الجوزي مصر",
+        "publisher": "مؤسسة إبداع",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782587981172-cl8ujcz6n0em201dwc4fv6sdlcl70ky84c09zi01kshkhhb4irD8A7D984D8ACD8A7D985D8B9D984D8A3D8ADD983D8A7D985D8A7D984D982D8B1D8A2D986.webp"
         ],
-        "notes": "",
+        "notes": "<div>دار ابن الجوزي القاهرة</div>",
         "corrections": []
       }
     ],
@@ -123,7 +123,7 @@
       "التفسير"
     ],
     "notes": "لا يوجد حاليا \"أفضل طبعة\" لكتاب تفسير ابن كثير، لكل واحدة مميزات وعيوب، ومن أراد الاكتفاء بواحدة يأخذ واحدة من المذكورة. ننتظر صدور طبعة الدكتور محمد الفالح من سنوات، يسر الله صدورها.",
-    "date": "2026-07-08",
+    "date": "2026-08-03",
     "best_editions": [
       {
         "publisher": "دار ابن حزم",
@@ -135,11 +135,11 @@
         "verifier": "محمد ابراهيم البنا"
       },
       {
-        "publisher": "دار عالم الكتب (أولاد الشيخ)",
+        "publisher": "دار عالم الكتب",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782765983441-images5.jpeg"
         ],
-        "notes": "",
+        "notes": "طبعة أولاد الشيخ",
         "corrections": [],
         "verifier": "مجموعة محققين"
       },
@@ -246,47 +246,52 @@
       "التفسير"
     ],
     "notes": "",
+    "date": "2026-08-03",
     "best_editions": [
       {
+        "publisher": "دار ابن الجوزي",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782310771353-47683783424173711752844628917825563208893249n.jpg"
         ],
-        "notes": "",
-        "publisher": "دار ابن الجوزي 4 مجلدات"
+        "notes": "4 مجلدات",
+        "corrections": []
       },
       {
+        "publisher": "دار ابن الجوزي",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782659493970-OZ2qjLmFZBmg6qlXxvo8RMO74REOZJbN6Ui7WtMv.jpg"
         ],
-        "notes": "",
-        "publisher": "دار ابن الجوزي مجلد واحد"
+        "notes": "مجلد واحد",
+        "corrections": []
       }
     ],
     "alt_editions": [
       {
+        "publisher": "طيبة الخضراء",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782659487366-images90.jpeg"
         ],
         "notes": "",
-        "publisher": "طيبة الخضراء"
+        "corrections": []
       },
       {
+        "publisher": "دار الإمام مالك",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782659482155-images20260628T181056.799.jpeg"
         ],
         "notes": "",
-        "publisher": "دار الإمام مالك"
+        "corrections": []
       },
       {
+        "publisher": "دار عباد الرحمن ودار الفرقان بالإمارات ومصر",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782659475336-images89.jpeg"
         ],
         "notes": "",
-        "publisher": "دار عباد الرحمن ودار الفرقان بالإمارات ومصر"
+        "corrections": []
       }
     ],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 6,
@@ -473,7 +478,7 @@
       "شروح الحديث"
     ],
     "notes": "انتظر طبعة عطاءات العلم",
-    "date": "2026-07-04",
+    "date": "2026-08-03",
     "best_editions": [
       {
         "publisher": "مؤسات الرسالة ناشرون",
@@ -513,11 +518,11 @@
         "corrections": []
       },
       {
-        "publisher": "ابداع (ابن الجوزي القاهرة)",
+        "publisher": "مؤسسة إبداع",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782681065149-images27.jpeg"
         ],
-        "notes": "",
+        "notes": "<div>دار ابن الجوزي القاهرة</div>",
         "corrections": []
       }
     ],
@@ -1316,7 +1321,7 @@
       "الحديث"
     ],
     "notes": "",
-    "date": "2026-07-04",
+    "date": "2026-08-03",
     "best_editions": [
       {
         "publisher": "دار التأصيل",
@@ -1328,32 +1333,41 @@
         "corrections": []
       },
       {
-        "publisher": "المكنز (دار المنهاج) بإشراف أحمد معبد عبد الكريم",
+        "publisher": "المكنز",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782723098345-eXg8vSXcaXj4KBANT39Cjvn5DmtzYtof2hysi3to.jpg",
           "https://arabic-app.github.io/tabaat/images/1782723104134-64aa97632833429289d5efa491bbd0691000x1000LdW06BAg4aeYY1vZ8uHAyLQNyC98SXF2PZiHjiWn.jpg"
         ],
-        "notes": "",
-        "corrections": []
+        "notes": "دار المنهاج",
+        "corrections": [],
+        "verifier": "إشراف أحمد معبد عبد الكريم"
       },
       {
-        "publisher": "الرسالة",
+        "publisher": "مؤسسة الرسالة ناشرون",
         "images": [
-          "https://arabic-app.github.io/tabaat/images/1782307073639-.png",
+          "https://arabic-app.github.io/tabaat/images/1782307073639-.png"
+        ],
+        "notes": "&nbsp;<span style=\"font-size: 15.2px;\">نفس تحقيق دار الرسالة العالمية،&nbsp;</span>مهمة للمعتنين بالتخريج.",
+        "corrections": [],
+        "verifier": "مركز الرسالة للدراسات وتحقيق التراث بإشراف شعيب الأرناؤوط"
+      },
+      {
+        "publisher": "دار الرسالة العالمية",
+        "images": [
           "https://arabic-app.github.io/tabaat/images/1782307363431-musnadalamia.png"
         ],
-        "notes": "مهمة للمعتنين بالتخريج",
+        "notes": "<span style=\"font-size: 15.2px;\">نفس تحقيق مؤسسة الرسالة ناشرون،</span><span style=\"font-size: 15.2px;\">&nbsp;مهمة للمعتنين بالتخريج.</span>",
         "corrections": [],
         "verifier": "مركز الرسالة للدراسات وتحقيق التراث بإشراف شعيب الأرناؤوط"
       }
     ],
     "alt_editions": [
       {
-        "publisher": "دار ابن الجوزي القاهرة (مؤسسة إبداع)",
+        "publisher": "مؤسسة إبداع",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782307106243-.png"
         ],
-        "notes": "",
+        "notes": "دار ابن الجوزي القاهرة",
         "corrections": [],
         "verifier": "محمود خليل الصعيدي"
       }
@@ -1542,14 +1556,14 @@
       "الحديث"
     ],
     "notes": "",
-    "date": "2026-07-03",
+    "date": "2026-08-03",
     "best_editions": [
       {
-        "publisher": "دار ابن الجوزي (ابن خزيمة)",
+        "publisher": "دار ابن الجوزي",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782559574540-FBb6rsNXEAo3u6m.jpg"
         ],
-        "notes": "",
+        "notes": "صدر التحقيق سابقا عن دار ابن خزيمة",
         "corrections": [],
         "verifier": "عامر علي ياسين"
       },
@@ -2083,7 +2097,7 @@
       "التاريخ الإسلامي"
     ],
     "notes": "",
-    "date": "2026-07-28",
+    "date": "2026-08-03",
     "best_editions": [
       {
         "publisher": "مركز سطور",
@@ -2162,11 +2176,11 @@
         "corrections": []
       },
       {
-        "publisher": "ابداع ابن الجوزي القاهرة",
+        "publisher": "مؤسسة ابداع",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782572688389-images20260627T180411.790.jpeg"
         ],
-        "notes": "لا تشتمل على جزء النهاية في الفتن والملاحم، يشترى مفردا",
+        "notes": "دار ابن الجوزي القاهرة<span style=\"color: rgb(8, 8, 9); font-family: Tahoma; font-size: 15px; white-space: pre-wrap;\">،</span>&nbsp;لا تشتمل على جزء النهاية في الفتن والملاحم<span style=\"color: rgb(8, 8, 9); font-family: Tahoma; font-size: 15px; white-space: pre-wrap;\">،</span>&nbsp;يشترى مفردا",
         "corrections": []
       }
     ],
@@ -2804,7 +2818,7 @@
       "كتب متنوعة"
     ],
     "notes": "",
-    "date": "2026-07-03",
+    "date": "2026-08-03",
     "best_editions": [
       {
         "publisher": "روائع الكتب",
@@ -2818,7 +2832,7 @@
     ],
     "alt_editions": [
       {
-        "publisher": "دار ابن الجوزي السعودية",
+        "publisher": "دار ابن الجوزي",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782658593988-images63.jpeg"
         ],
@@ -3041,14 +3055,14 @@
       "كتب متنوعة"
     ],
     "notes": "",
-    "date": "2026-07-04",
+    "date": "2026-08-03",
     "best_editions": [
       {
-        "publisher": "دار ابن الجوزي (ابن خزيمة)",
+        "publisher": "دار ابن الجوزي",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782719669506-48206509724365180367031098258730087937348946n.jpg"
         ],
-        "notes": "",
+        "notes": "<div>صدر التحقيق سابقا عن دار ابن خزيمة</div>",
         "corrections": [],
         "verifier": "عامر علي ياسين"
       },
@@ -3136,7 +3150,7 @@
       "كتب متنوعة"
     ],
     "notes": "",
-    "date": "2026-07-04",
+    "date": "2026-08-03",
     "best_editions": [
       {
         "publisher": "دار الفتح",
@@ -3149,12 +3163,12 @@
         "verifier": "محمد عاطف التراس"
       },
       {
-        "publisher": "دار ابن الجوزي (ابن خزيمة)",
+        "publisher": "دار ابن الجوزي",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782680204658-images89.jpeg",
           "https://arabic-app.github.io/tabaat/images/1782680213187-images88.jpeg"
         ],
-        "notes": "فيها تعليقات عقدية مفيدة",
+        "notes": "فيها تعليقات عقدية مفيدة<span style=\"color: rgb(8, 8, 9); font-family: Tahoma; font-size: 15px; white-space: pre-wrap;\">،</span>&nbsp;صدر التحقيق سابقا عن دار ابن خزيمة.",
         "corrections": [],
         "verifier": "عامر علي ياسين"
       }
@@ -3284,10 +3298,10 @@
       "التفسير"
     ],
     "notes": "",
-    "date": "2026-07-04",
+    "date": "2026-08-03",
     "best_editions": [
       {
-        "publisher": "دار ابن الجوزي السعودية",
+        "publisher": "دار ابن الجوزي",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782302658518-.png"
         ],
@@ -3642,7 +3656,7 @@
       "التاريخ الإسلامي"
     ],
     "notes": "",
-    "date": "2026-07-29",
+    "date": "2026-08-03",
     "best_editions": [
       {
         "publisher": "دارة الملك عبد العزيز",
@@ -3667,11 +3681,11 @@
     ],
     "alt_editions": [
       {
-        "publisher": "ابن الجوزي القاهرة (ابداع)",
+        "publisher": "مؤسسة إبداع",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782661191869-images20260628T183815.085.jpeg"
         ],
-        "notes": "",
+        "notes": "<div>دار ابن الجوزي القاهرة</div>",
         "corrections": []
       }
     ],
@@ -3814,10 +3828,10 @@
       "العقيدة"
     ],
     "notes": "",
-    "date": "2026-07-01",
+    "date": "2026-08-03",
     "best_editions": [
       {
-        "publisher": "ابن الجوزي السعودية",
+        "publisher": "دار ابن الجوزي",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782622309653-f83e2146cfcf47ff947ab161bc63bac61000x922rPTXElfOvI6waUbCHshZjydtwLRZblvJuR5oU6dn.jpg"
         ],
@@ -4139,10 +4153,10 @@
       "التفسير"
     ],
     "notes": "",
-    "date": "2026-07-04",
+    "date": "2026-08-03",
     "best_editions": [
       {
-        "publisher": "ابن الجوزي السعودية",
+        "publisher": "ابن الجوزي",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782717009647-16810765675.jpg"
         ],
@@ -4162,18 +4176,19 @@
       "التفسير"
     ],
     "notes": "",
+    "date": "2026-08-03",
     "best_editions": [
       {
+        "publisher": "دار ابن الجوزي",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782658946305-images88.jpeg"
         ],
         "notes": "",
-        "publisher": "ابن الجوزي السعودية"
+        "corrections": []
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 112,
@@ -5127,10 +5142,10 @@
       "اللغة والأدب"
     ],
     "notes": "",
-    "date": "2026-07-03",
+    "date": "2026-08-03",
     "best_editions": [
       {
-        "publisher": "دار ابن الجوزي السعودية",
+        "publisher": "دار ابن الجوزي",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782658769654-images87.jpeg"
         ],
@@ -5322,19 +5337,20 @@
       "أصول التفسير"
     ],
     "notes": "",
+    "date": "2026-08-03",
     "best_editions": [
       {
+        "publisher": "دار ابن الجوزي",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782624855143-44abde5a592941088886cc753bd485eb1000x1000Z5MGcIlmdQLoG9JwAnDRmVL1xniovtPctzFcwd9x.jpg"
         ],
         "notes": "",
-        "verifier": "خالد السبت",
-        "publisher": "ابن الجوزي السعودية"
+        "corrections": [],
+        "verifier": "خالد السبت"
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 161,
@@ -5345,18 +5361,19 @@
       "علوم القرآن"
     ],
     "notes": "",
+    "date": "2026-08-03",
     "best_editions": [
       {
+        "publisher": "دار ابن الجوزي",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782717346273-images76.jpeg"
         ],
         "notes": "",
-        "publisher": "ابن الجوزي السعودية"
+        "corrections": []
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 162,
@@ -5366,18 +5383,19 @@
       "علوم القرآن"
     ],
     "notes": "",
+    "date": "2026-08-03",
     "best_editions": [
       {
+        "publisher": "دار ابن الجوزي",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782653510265-rFmLnbemzFbkpd8CK945NW7h29Cx6h8LwZiKkTHd1.jpg"
         ],
         "notes": "",
-        "publisher": "ابن الجوزي السعودية"
+        "corrections": []
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 163,
@@ -5388,18 +5406,19 @@
       "علوم القرآن"
     ],
     "notes": "",
+    "date": "2026-08-03",
     "best_editions": [
       {
+        "publisher": "ابن الجوزي",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782676552239-images78.jpeg"
         ],
         "notes": "",
-        "publisher": "ابن الجوزي السعودية"
+        "corrections": []
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 164,
@@ -5410,18 +5429,19 @@
       "أصول التفسير"
     ],
     "notes": "",
+    "date": "2026-08-03",
     "best_editions": [
       {
+        "publisher": "دار ابن الجوزي",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782685129223-3.jpeg"
         ],
         "notes": "",
-        "publisher": "دار ابن الجوزي السعودية"
+        "corrections": []
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 165,
@@ -5432,10 +5452,10 @@
       "أصول التفسير"
     ],
     "notes": "",
-    "date": "2026-07-04",
+    "date": "2026-08-03",
     "best_editions": [
       {
-        "publisher": "دار ابن الجوزي السعودية",
+        "publisher": "دار ابن الجوزي",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782685097981-images751796238984359759.jpeg"
         ],
@@ -5455,18 +5475,19 @@
       "أصول التفسير"
     ],
     "notes": "",
+    "date": "2026-08-03",
     "best_editions": [
       {
+        "publisher": "دار ابن الجوزي",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782682433595-images771796239060288405.jpeg"
         ],
         "notes": "",
-        "publisher": "دار ابن الجوزي السعودية"
+        "corrections": []
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 167,
@@ -5632,20 +5653,20 @@
       "العقيدة"
     ],
     "notes": "",
+    "date": "2026-08-03",
     "best_editions": [
       {
+        "publisher": "دار ابن الجوزي",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782723207285-images20260629T115313.214.jpeg"
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "محمد صبحي حلاق",
-        "publisher": "ابن الجوزي السعودية"
+        "verifier": "محمد صبحي حلاق"
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 176,
@@ -5746,10 +5767,10 @@
       "الأديان والفرق والمذاهب"
     ],
     "notes": "",
-    "date": "2026-07-12",
+    "date": "2026-08-03",
     "best_editions": [
       {
-        "publisher": "دار ابن الجوزي السعودية",
+        "publisher": "دار ابن الجوزي",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782752466513-646x1000.jpg"
         ],
@@ -5768,19 +5789,19 @@
       "كتب متنوعة"
     ],
     "notes": "",
+    "date": "2026-08-03",
     "best_editions": [
       {
+        "publisher": "دار ابن الجوزي",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782558600171-1702475391Untitled1.jpg"
         ],
-        "notes": "الطبعة الثالثة",
-        "corrections": [],
-        "publisher": "دار ابن الجوزي السعودية (مؤسسة العلم والتأصيل)"
+        "notes": "مؤسسة العلم والتأصيل<span style=\"color: rgb(8, 8, 9); font-family: Tahoma; font-size: 15px; white-space: pre-wrap;\">،</span>&nbsp;صدرت للكتاب طبعة الثالثة",
+        "corrections": []
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 183,
@@ -6678,19 +6699,19 @@
       "التفسير"
     ],
     "notes": "",
+    "date": "2026-08-03",
     "best_editions": [
       {
+        "publisher": "دار ابن الجوزي",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782741579000-badaiitafsir.jpg"
         ],
         "notes": "",
-        "corrections": [],
-        "publisher": "دار ابن الجوزي السعودية"
+        "corrections": []
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 223,
