@@ -2342,7 +2342,7 @@
       "التاريخ الإسلامي"
     ],
     "notes": "",
-    "date": "2026-07-12",
+    "date": "2026-08-04",
     "best_editions": [
       {
         "publisher": "الطبعة التونسية",
@@ -2350,7 +2350,8 @@
           "https://arabic-app.github.io/tabaat/images/1782661240884-47749034124173711819511281414428992132843586n.jpg"
         ],
         "notes": "",
-        "corrections": []
+        "corrections": [],
+        "volumes": 14
       }
     ],
     "alt_editions": [],
@@ -3790,7 +3791,7 @@
       "التاريخ الإسلامي"
     ],
     "notes": "",
-    "date": "2026-08-03",
+    "date": "2026-08-04",
     "best_editions": [
       {
         "publisher": "دارة الملك عبد العزيز",
@@ -3800,7 +3801,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "بشار عواد"
+        "verifier": "بشار عواد",
+        "volumes": 20
       },
       {
         "publisher": "دار المعارف مصر",
@@ -3810,7 +3812,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "أبي الفضل إبراهيم"
+        "verifier": "أبي الفضل إبراهيم",
+        "volumes": 11
       }
     ],
     "alt_editions": [
@@ -3820,7 +3823,8 @@
           "https://arabic-app.github.io/tabaat/images/1782661191869-images20260628T183815.085.jpeg"
         ],
         "notes": "<div>دار ابن الجوزي القاهرة</div>",
-        "corrections": []
+        "corrections": [],
+        "volumes": 10
       }
     ],
     "links": []
@@ -5135,7 +5139,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "محمد نصر أبي جبل"
+        "verifier": "محمد نصر أبي جبل",
+        "volumes": 1
       }
     ],
     "links": []
@@ -9594,7 +9599,7 @@
       "التاريخ الإسلامي"
     ],
     "notes": "",
-    "date": "2026-07-02",
+    "date": "2026-08-04",
     "best_editions": [
       {
         "publisher": "دار الغرب الإسلامي",
@@ -9604,7 +9609,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "بشار عواد"
+        "verifier": "بشار عواد",
+        "volumes": 17
       }
     ],
     "alt_editions": [],
@@ -11562,7 +11568,7 @@
       "اللغة والأدب"
     ],
     "notes": "",
-    "date": "2026-07-06",
+    "date": "2026-08-04",
     "best_editions": [
       {
         "publisher": "الطبعة الكويتية",
@@ -11573,7 +11579,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "مجموعة محققين"
+        "verifier": "مجموعة محققين",
+        "volumes": 40
       }
     ],
     "alt_editions": [],
