@@ -2707,18 +2707,20 @@
       "الفقه"
     ],
     "notes": "",
+    "date": "2026-08-04",
     "best_editions": [
       {
+        "publisher": "دار القاسم",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782658756224-images81.jpeg"
         ],
         "notes": "",
-        "publisher": "دار القاسم"
+        "corrections": [],
+        "volumes": 7
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 59,
@@ -3704,18 +3706,20 @@
       "الفقه المالكي"
     ],
     "notes": "",
+    "date": "2026-08-04",
     "best_editions": [],
     "alt_editions": [
       {
+        "publisher": "دار الفكر بيروت",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782658741064-images78.jpeg"
         ],
         "notes": "",
-        "publisher": "دار الفكر بيروت"
+        "corrections": [],
+        "volumes": 4
       }
     ],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 91,
@@ -10584,7 +10588,7 @@
       "الفقه الحنبلي"
     ],
     "notes": "",
-    "date": "2026-07-03",
+    "date": "2026-08-04",
     "best_editions": [
       {
         "publisher": "أطلس الخضراء",
@@ -10594,7 +10598,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "أحمد بن عبد العزيز الجماز"
+        "verifier": "أحمد بن عبد العزيز الجماز",
+        "volumes": 6
       }
     ],
     "alt_editions": [],
