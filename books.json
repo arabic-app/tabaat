@@ -4374,7 +4374,7 @@
       "التفسير"
     ],
     "notes": "",
-    "date": "2026-08-03",
+    "date": "2026-08-04",
     "best_editions": [
       {
         "publisher": "ابن الجوزي",
@@ -4383,7 +4383,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "عناية عبد الرزاق البدر"
+        "verifier": "عناية عبد الرزاق البدر",
+        "volumes": 1
       }
     ],
     "alt_editions": [],
@@ -7686,19 +7687,21 @@
       "الفقه"
     ],
     "notes": "",
+    "date": "2026-08-04",
     "best_editions": [
       {
+        "publisher": "دار عطاءات العلم",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782685068604-images801796239199485280.jpeg"
         ],
         "notes": "",
+        "corrections": [],
         "verifier": "علي العمران",
-        "publisher": "دار عطاءات العلم"
+        "volumes": 1
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 249,
@@ -9541,7 +9544,7 @@
       "الفقه الحنبلي"
     ],
     "notes": "",
-    "date": "2026-07-03",
+    "date": "2026-08-04",
     "best_editions": [
       {
         "publisher": "دار أطلس الخضراء",
@@ -9551,7 +9554,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "أحمد عبد العزيز الجماز"
+        "verifier": "أحمد عبد العزيز الجماز",
+        "volumes": 6
       }
     ],
     "alt_editions": [],
