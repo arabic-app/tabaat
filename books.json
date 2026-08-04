@@ -1672,26 +1672,30 @@
       "الحديث"
     ],
     "notes": "",
+    "date": "2026-08-04",
     "best_editions": [
       {
+        "publisher": "دار أطلس الخضراء",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782815009199-atlas.jpg"
         ],
         "notes": "",
         "corrections": [],
         "verifier": "نظر الفاريابي",
-        "publisher": "دار أطلس الخضراء"
+        "volumes": 1
       },
       {
+        "publisher": "دار الحضارة",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782311028341-47972881324173709086178222877491447485082406n.jpg"
         ],
         "notes": "",
         "corrections": [],
         "verifier": "علي العمران",
-        "publisher": "دار الحضارة"
+        "volumes": 1
       },
       {
+        "publisher": "مؤسسة دار الحديث",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782815033560-fahl.jpg",
           "https://arabic-app.github.io/tabaat/images/1782666178651-GqWV22JW8AAVm16.jpg"
@@ -1699,12 +1703,11 @@
         "notes": "",
         "corrections": [],
         "verifier": "الفحل",
-        "publisher": "مؤسسة دار الحديث"
+        "volumes": 1
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 38,
@@ -3620,7 +3623,7 @@
       "الفقه الحنفي"
     ],
     "notes": "",
-    "date": "2026-07-03",
+    "date": "2026-08-04",
     "best_editions": [],
     "alt_editions": [
       {
@@ -3630,7 +3633,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "عادل عبد الموجود، علي معوض"
+        "verifier": "عادل عبد الموجود، علي معوض",
+        "volumes": 13
       }
     ],
     "links": []
@@ -8380,16 +8384,17 @@
       "التاريخ الإسلامي"
     ],
     "notes": "",
-    "date": "2026-07-01",
+    "date": "2026-08-04",
     "best_editions": [
       {
+        "publisher": "مركز العوجا للبحوث والدراسات",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782847028189-IMG20260630210628729.jpg"
         ],
         "notes": "",
         "corrections": [],
         "verifier": "فهد ال سعود",
-        "publisher": "مركز العوجا للبحوث والدراسات"
+        "volumes": 2
       }
     ],
     "alt_editions": [],
