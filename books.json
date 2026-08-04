@@ -9679,7 +9679,7 @@
       "الفقه الحنبلي"
     ],
     "notes": "",
-    "date": "2026-07-03",
+    "date": "2026-08-04",
     "best_editions": [
       {
         "publisher": "دار طيبة الخضراء",
@@ -9689,7 +9689,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "محمد الربعي"
+        "verifier": "محمد الربعي",
+        "volumes": 3
       },
       {
         "publisher": "دار الأوراق الثقافية",
@@ -9699,7 +9700,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "أبي جنة الحنبلي"
+        "verifier": "أبي جنة الحنبلي",
+        "volumes": 4
       }
     ],
     "alt_editions": [],
@@ -10867,7 +10869,7 @@
       "التراجم والرجال"
     ],
     "notes": "",
-    "date": "2026-07-03",
+    "date": "2026-08-04",
     "best_editions": [
       {
         "publisher": "دار الغرب الإسلامي",
@@ -10877,7 +10879,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "بشير البكوس"
+        "verifier": "بشير البكوس",
+        "volumes": 3
       }
     ],
     "alt_editions": [],
