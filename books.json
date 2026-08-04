@@ -2424,7 +2424,7 @@
       "السيرة"
     ],
     "notes": "",
-    "date": "2026-07-04",
+    "date": "2026-08-04",
     "best_editions": [
       {
         "publisher": "دار الفاروق",
@@ -2433,7 +2433,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "همام سعيد، عادل مرشد"
+        "verifier": "همام سعيد، عادل مرشد",
+        "volumes": 4
       },
       {
         "publisher": "إقليد المعرفة",
@@ -2442,7 +2443,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "حسين عكاشة"
+        "verifier": "حسين عكاشة",
+        "volumes": 4
       }
     ],
     "alt_editions": [
@@ -2452,7 +2454,8 @@
           "https://arabic-app.github.io/tabaat/images/1782667653465-d4c127cd9f8d49ea91dcb37ea51512a51000x750cD3NImpGnDnJC42sJhRq9wbySL31jcPdt5fad4Ns.jpg"
         ],
         "notes": "",
-        "corrections": []
+        "corrections": [],
+        "volumes": 1
       },
       {
         "publisher": "دار ابن كثير",
@@ -2461,7 +2464,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "مصطفي السقا،إبراهيم الإبياري، عبد الحفيظ شلبي"
+        "verifier": "مصطفي السقا،إبراهيم الإبياري، عبد الحفيظ شلبي",
+        "volumes": 4
       }
     ],
     "links": []
@@ -3047,8 +3051,10 @@
       "كتب متنوعة"
     ],
     "notes": "",
+    "date": "2026-08-04",
     "best_editions": [
       {
+        "publisher": "أروقة",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782666142622-images20260628T195651.032.jpeg",
           "https://arabic-app.github.io/tabaat/images/1782666149112-cm21x2yx70e6o01kf73pd7czfScreenshot20241009160649.jpg"
@@ -3056,12 +3062,11 @@
         "notes": "",
         "corrections": [],
         "verifier": "محمد عايش",
-        "publisher": "أروقة"
+        "volumes": 1
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 71,
@@ -4631,20 +4636,22 @@
       "اللغة والأدب"
     ],
     "notes": "",
+    "date": "2026-08-04",
     "best_editions": [
       {
+        "publisher": "",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782667107985-GfG3jptXQAAHP02.jpg",
           "https://arabic-app.github.io/tabaat/images/1782667114170-ZhrolAadab.jpeg"
         ],
         "notes": "",
+        "corrections": [],
         "verifier": "علي البجاوي",
-        "publisher": ""
+        "volumes": 2
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 123,
@@ -5260,28 +5267,32 @@
       "اللغة والأدب"
     ],
     "notes": "",
+    "date": "2026-08-04",
     "best_editions": [
       {
+        "publisher": "أوقاف العراق",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782666044014-7aeacb2b795c4b07b258f65c4971ef14987.76908023483x1000NXlrnX9NF9SY6zEcbttrpdstS72aJ386rmoEP4VF.jpg",
           "https://arabic-app.github.io/tabaat/images/1782666052211-images20260628T195257.472.jpeg"
         ],
         "notes": "",
+        "corrections": [],
         "verifier": "سليم النعيمي",
-        "publisher": "أوقاف العراق"
+        "volumes": 4
       },
       {
+        "publisher": "دار الكتب المصرية",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782666058025-images20260628T195141.131.jpeg"
         ],
         "notes": "",
+        "corrections": [],
         "verifier": "عبد المجيد دياب",
-        "publisher": "دار الكتب المصرية"
+        "volumes": 4
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 148,
@@ -5441,19 +5452,21 @@
       "السيرة"
     ],
     "notes": "",
+    "date": "2026-08-04",
     "best_editions": [
       {
+        "publisher": "المجلس الأعلى للشئون الإسلامية بمصر",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782667129409-images29.jpeg",
           "https://arabic-app.github.io/tabaat/images/1782667136820-images63.jpeg"
         ],
         "notes": "",
-        "publisher": "المجلس الأعلى للشئون الإسلامية بمصر"
+        "corrections": [],
+        "volumes": 13
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 155,
@@ -5543,20 +5556,21 @@
       "التفسير"
     ],
     "notes": "",
+    "date": "2026-08-04",
     "best_editions": [
       {
+        "publisher": "دار النفائس",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782667059100-61ijKLxJ4rL.ACUF10001000QL80.jpg",
           "https://arabic-app.github.io/tabaat/images/1782667066871-images27.jpeg"
         ],
         "notes": "",
         "corrections": [],
-        "publisher": "دار النفائس"
+        "volumes": 1
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 159,
@@ -6664,19 +6678,21 @@
       "الفقه"
     ],
     "notes": "",
+    "date": "2026-08-04",
     "best_editions": [
       {
+        "publisher": "دار عطاءات العلم",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782666114972-images20260628T195636.689.jpeg"
         ],
         "notes": "",
+        "corrections": [],
         "verifier": "علي العمران",
-        "publisher": "دار عطاءات العلم"
+        "volumes": 1
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 208,
@@ -6757,19 +6773,21 @@
       "كتب متنوعة"
     ],
     "notes": "",
+    "date": "2026-08-04",
     "best_editions": [
       {
+        "publisher": "دار عطاءات العلم",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782666162853-images20260628T195724.166.jpeg"
         ],
         "notes": "",
+        "corrections": [],
         "verifier": "محمد عزير شمس",
-        "publisher": "دار عطاءات العلم"
+        "volumes": 1
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 212,
@@ -6828,20 +6846,22 @@
       "كتب متنوعة"
     ],
     "notes": "",
+    "date": "2026-08-04",
     "best_editions": [
       {
+        "publisher": "دار عطاءات العلم",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782666093654-bf1f8130c3c6459e85374c1185273892thumbnail1000x100070.jpg",
           "https://arabic-app.github.io/tabaat/images/1782666099509-images20260628T195526.697.jpeg"
         ],
         "notes": "",
+        "corrections": [],
         "verifier": "عبد الله المديفر",
-        "publisher": "دار عطاءات العلم"
+        "volumes": 1
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 215,
@@ -11048,7 +11068,7 @@
       "أصول الفقه"
     ],
     "notes": "",
-    "date": "2026-07-03",
+    "date": "2026-08-04",
     "best_editions": [
       {
         "publisher": "دار العاصمة",
@@ -11058,7 +11078,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "عبد الرحمن الجميزي"
+        "verifier": "عبد الرحمن الجميزي",
+        "volumes": 1
       }
     ],
     "alt_editions": [],
