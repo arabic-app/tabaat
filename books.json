@@ -7388,7 +7388,7 @@
       "الفقه"
     ],
     "notes": "",
-    "date": "2026-07-04",
+    "date": "2026-08-04",
     "best_editions": [
       {
         "publisher": "دار عطاءات العلم",
@@ -7397,7 +7397,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "العمران و عزير و إصلاحي"
+        "verifier": "العمران و عزير و إصلاحي",
+        "volumes": 5
       }
     ],
     "alt_editions": [],
@@ -11386,7 +11387,7 @@
       "شروح الحديث"
     ],
     "notes": "",
-    "date": "2026-07-03",
+    "date": "2026-08-04",
     "best_editions": [
       {
         "publisher": "دار اللباب",
@@ -11397,7 +11398,8 @@
         ],
         "notes": "معه العدة على شرح العمدة للصنعاني",
         "corrections": [],
-        "verifier": "محمد خلوف العبد الله"
+        "verifier": "محمد خلوف العبد الله",
+        "volumes": 7
       },
       {
         "publisher": "أسفار",
@@ -11406,7 +11408,8 @@
           "https://arabic-app.github.io/tabaat/images/1783030101921-scaled.jpg"
         ],
         "notes": "",
-        "corrections": []
+        "corrections": [],
+        "volumes": 4
       }
     ],
     "alt_editions": [],
