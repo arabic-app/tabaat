@@ -1020,7 +1020,7 @@
       "شروح الحديث"
     ],
     "notes": "",
-    "date": "2026-07-03",
+    "date": "2026-08-04",
     "best_editions": [
       {
         "publisher": "دار الفيحاء، دار المنهل عناية يوسف الحاج أحمد",
@@ -1028,7 +1028,8 @@
           "https://arabic-app.github.io/tabaat/images/1782661017318-.png"
         ],
         "notes": "",
-        "corrections": []
+        "corrections": [],
+        "volumes": 10
       },
       {
         "publisher": "مؤسسة الرسالة ناشرون",
@@ -1037,7 +1038,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "مركز الرسالة للدراسات وتحقيق التراث"
+        "verifier": "مركز الرسالة للدراسات وتحقيق التراث",
+        "volumes": 16
       }
     ],
     "alt_editions": [],
@@ -11595,7 +11597,7 @@
       "اللغة والأدب"
     ],
     "notes": "",
-    "date": "2026-07-06",
+    "date": "2026-08-04",
     "best_editions": [
       {
         "publisher": "لجنة إحياء التراث الإسلامي",
@@ -11604,7 +11606,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "عبد العزيز مطر"
+        "verifier": "عبد العزيز مطر",
+        "volumes": 1
       }
     ],
     "alt_editions": [],
@@ -11618,7 +11621,7 @@
       "النحو"
     ],
     "notes": "",
-    "date": "2026-07-06",
+    "date": "2026-08-04",
     "best_editions": [
       {
         "publisher": "دار ابن حزم، مكتبة الإرشاد",
@@ -11627,7 +11630,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "بشير المساري"
+        "verifier": "بشير المساري",
+        "volumes": 1
       }
     ],
     "alt_editions": [],
