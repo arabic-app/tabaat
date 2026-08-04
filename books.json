@@ -1244,7 +1244,7 @@
       "الحديث"
     ],
     "notes": "",
-    "date": "2026-07-03",
+    "date": "2026-08-04",
     "best_editions": [
       {
         "publisher": "الطبعة المغربية الثانية",
@@ -1253,7 +1253,8 @@
           "https://arabic-app.github.io/tabaat/images/1782641746688-4799492172417370828617830824058624194841538n.jpg"
         ],
         "notes": "",
-        "corrections": []
+        "corrections": [],
+        "volumes": 4
       },
       {
         "publisher": "مؤسسة الرسالة ناشرون",
@@ -1262,7 +1263,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "مركز الرسالة للدراسات وتحقيق التراث"
+        "verifier": "مركز الرسالة للدراسات وتحقيق التراث",
+        "volumes": 1
       },
       {
         "publisher": "دار الغرب الإسلامي",
@@ -1271,7 +1273,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "بشار عواد"
+        "verifier": "بشار عواد",
+        "volumes": 2
       }
     ],
     "alt_editions": [],
@@ -1931,7 +1934,7 @@
       "غريب الحديث"
     ],
     "notes": "",
-    "date": "2026-07-03",
+    "date": "2026-08-04",
     "best_editions": [
       {
         "publisher": "دار الفاروق المنصورة",
@@ -1941,7 +1944,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "محمود الطناحي، الطاهر الزاوي"
+        "verifier": "محمود الطناحي، الطاهر الزاوي",
+        "volumes": 6
       },
       {
         "publisher": "دار المنهاج جدة",
@@ -1951,7 +1955,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "أحمد الخراط"
+        "verifier": "أحمد الخراط",
+        "volumes": 8
       }
     ],
     "alt_editions": [
@@ -1962,7 +1967,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "رضوان مامو"
+        "verifier": "رضوان مامو",
+        "volumes": 1
       }
     ],
     "links": []
@@ -9844,7 +9850,7 @@
       "الناسخ والمنسوخ"
     ],
     "notes": "",
-    "date": "2026-07-02",
+    "date": "2026-08-04",
     "best_editions": [
       {
         "publisher": "دار ابن الجوزي",
@@ -9854,7 +9860,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "سليمان اللاحم"
+        "verifier": "سليمان اللاحم",
+        "volumes": 3
       }
     ],
     "alt_editions": [],
