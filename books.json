@@ -11297,7 +11297,7 @@
       "الحديث"
     ],
     "notes": "",
-    "date": "2026-07-03",
+    "date": "2026-08-04",
     "best_editions": [
       {
         "publisher": "دار التأصيل",
@@ -11306,7 +11306,8 @@
           "https://arabic-app.github.io/tabaat/images/1783032067112-182cfe142a124407964627ba823e5e521000x902.50965250965MtW6A0yjCBVa8wnBm4M2kaD2MKoPtYeeMiQVjlFz.jpg"
         ],
         "notes": "",
-        "corrections": []
+        "corrections": [],
+        "volumes": 9
       },
       {
         "publisher": "دار الرسالة العالمية",
@@ -11315,7 +11316,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "شعيب الأرنؤوط"
+        "verifier": "شعيب الأرنؤوط",
+        "volumes": 18
       }
     ],
     "alt_editions": [],
@@ -11329,7 +11331,7 @@
       "الحديث"
     ],
     "notes": "",
-    "date": "2026-07-03",
+    "date": "2026-08-04",
     "best_editions": [
       {
         "publisher": "دار ابن حزم",
@@ -11339,7 +11341,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "محمد علي، خالص آي"
+        "verifier": "محمد علي، خالص آي",
+        "volumes": 8
       }
     ],
     "alt_editions": [],
@@ -12005,7 +12008,7 @@
       "كتب متنوعة"
     ],
     "notes": "",
-    "date": "2026-07-15",
+    "date": "2026-08-04",
     "best_editions": [
       {
         "publisher": "دار مكة العالمية",
@@ -12014,7 +12017,8 @@
         ],
         "notes": "النسخة الكبرى المسندة",
         "corrections": [],
-        "verifier": "محمود بن خيري أبو شمة"
+        "verifier": "محمود بن خيري أبو شمة",
+        "volumes": 7
       }
     ],
     "alt_editions": [],
