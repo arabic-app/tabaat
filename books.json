@@ -1843,16 +1843,18 @@
       "مصطلح الحديث"
     ],
     "notes": "",
-    "date": "2026-07-03",
+    "date": "2026-08-04",
     "best_editions": [
       {
         "publisher": "دار ابن الجوزي",
         "images": [
-          "https://arabic-app.github.io/tabaat/images/1782660921368-47756847624173712052844595222847720586818676n.jpg"
+          "https://arabic-app.github.io/tabaat/images/1782660921368-47756847624173712052844595222847720586818676n.jpg",
+          "https://arabic-app.github.io/tabaat/images/1785832224985-images54.jpeg"
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "مازن السرساوي"
+        "verifier": "مازن السرساوي",
+        "volumes": 2
       }
     ],
     "alt_editions": [],
@@ -11645,7 +11647,7 @@
       "كتب متنوعة"
     ],
     "notes": "",
-    "date": "2026-07-06",
+    "date": "2026-08-04",
     "best_editions": [
       {
         "publisher": "مكتبة الخانجي",
@@ -11653,7 +11655,8 @@
           "https://arabic-app.github.io/tabaat/images/1783288961551-images53.jpeg"
         ],
         "notes": "",
-        "corrections": []
+        "corrections": [],
+        "volumes": 1
       }
     ],
     "alt_editions": [],
