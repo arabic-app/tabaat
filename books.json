@@ -878,7 +878,7 @@
       "الحديث"
     ],
     "notes": "",
-    "date": "2026-07-13",
+    "date": "2026-08-04",
     "best_editions": [
       {
         "publisher": "دار الصديق",
@@ -887,7 +887,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "عصام موسى هادي"
+        "verifier": "عصام موسى هادي",
+        "volumes": 1
       },
       {
         "publisher": "دار التأصيل",
@@ -895,7 +896,8 @@
           "https://arabic-app.github.io/tabaat/images/1782667187722-47697390624173708452844952209115303197773551n.jpg"
         ],
         "notes": "عدة مجلدات",
-        "corrections": []
+        "corrections": [],
+        "volumes": 8
       }
     ],
     "alt_editions": [
@@ -905,7 +907,8 @@
           "https://arabic-app.github.io/tabaat/images/1782667194280-643e176c03d44cb6bd59a55732632f8a683.76068376068x10000EYF3Yb6pPHonRC0z30V4mju177YQfmnQOfiTUuZ.jpg"
         ],
         "notes": "إن كانت رخيصة",
-        "corrections": []
+        "corrections": [],
+        "volumes": 1
       }
     ],
     "links": []
@@ -9880,7 +9883,7 @@
       "شروح الحديث"
     ],
     "notes": "",
-    "date": "2026-07-03",
+    "date": "2026-08-04",
     "best_editions": [
       {
         "publisher": "دار ابن الجوزي",
@@ -9890,7 +9893,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "محمد صبحي حلاق"
+        "verifier": "محمد صبحي حلاق",
+        "volumes": 5
       }
     ],
     "alt_editions": [],
