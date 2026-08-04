@@ -3389,7 +3389,7 @@
       "التفسير"
     ],
     "notes": "",
-    "date": "2026-08-03",
+    "date": "2026-08-04",
     "best_editions": [
       {
         "publisher": "الدار الشامية",
@@ -3397,7 +3397,8 @@
           "https://arabic-app.github.io/tabaat/images/1782667025626-aIhOvEqcar6x8Z9FMEfjOxuippqShuQqHILo1fMf.webp"
         ],
         "notes": "",
-        "corrections": []
+        "corrections": [],
+        "volumes": 15
       }
     ],
     "alt_editions": [
@@ -3407,7 +3408,8 @@
           "https://arabic-app.github.io/tabaat/images/1782667032718-705a3bc520a244b59cfec1a7867a6f99.jpeg"
         ],
         "notes": "مجلد واحد",
-        "corrections": []
+        "corrections": [],
+        "volumes": 1
       },
       {
         "publisher": "دار الفكر",
@@ -3416,7 +3418,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "محمد عبد الرحمن عبد الله"
+        "verifier": "محمد عبد الرحمن عبد الله",
+        "volumes": 4
       }
     ],
     "links": []
@@ -6109,7 +6112,7 @@
       "السيرة"
     ],
     "notes": "",
-    "date": "2026-07-04",
+    "date": "2026-08-04",
     "best_editions": [
       {
         "publisher": "دار عطاءات العلم",
@@ -6118,7 +6121,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "محمد أجمل، محمد عزير، نبيل سندي، علي العمران"
+        "verifier": "محمد أجمل، محمد عزير، نبيل سندي، علي العمران",
+        "volumes": 7
       }
     ],
     "alt_editions": [],
@@ -12275,7 +12279,7 @@
       "الفقه الحنبلي"
     ],
     "notes": "",
-    "date": "2026-07-21",
+    "date": "2026-08-04",
     "best_editions": [
       {
         "publisher": "شركة إثراء المتون",
@@ -12283,7 +12287,8 @@
           "https://arabic-app.github.io/tabaat/images/1784628448287-zadm.jpeg"
         ],
         "notes": "",
-        "corrections": []
+        "corrections": [],
+        "volumes": 1
       }
     ],
     "alt_editions": [],
