@@ -4804,19 +4804,21 @@
       "اللغة والأدب"
     ],
     "notes": "",
+    "date": "2026-08-04",
     "best_editions": [
       {
+        "publisher": "طيبة الخضراء",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782718783887-DXXn9vhqHr6RvdKSHe0p75q9Js4HQNHVVITjM8OV.jpg"
         ],
         "notes": "",
+        "corrections": [],
         "verifier": "علي الصالحي",
-        "publisher": "طيبة الخضراء"
+        "volumes": 1
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 128,
@@ -12231,7 +12233,7 @@
       "اللغة والأدب"
     ],
     "notes": "",
-    "date": "2026-07-17",
+    "date": "2026-08-04",
     "best_editions": [
       {
         "publisher": "دار الغرب الإسلامي",
@@ -12241,7 +12243,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "يحيى الجبوري"
+        "verifier": "يحيى الجبوري",
+        "volumes": 1
       }
     ],
     "alt_editions": [],
