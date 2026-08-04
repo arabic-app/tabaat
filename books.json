@@ -1820,7 +1820,7 @@
       "مصطلح الحديث"
     ],
     "notes": "",
-    "date": "2026-07-04",
+    "date": "2026-08-04",
     "best_editions": [
       {
         "publisher": "دار المنهاج القويم",
@@ -1829,7 +1829,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "نور الدين عتر"
+        "verifier": "نور الدين عتر",
+        "volumes": 1
       },
       {
         "publisher": "دار ابن كثير",
@@ -1838,7 +1839,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "محمد مرابي"
+        "verifier": "محمد مرابي",
+        "volumes": 1
       }
     ],
     "alt_editions": [],
