@@ -3226,7 +3226,7 @@
       "كتب متنوعة"
     ],
     "notes": "",
-    "date": "2026-08-03",
+    "date": "2026-08-04",
     "best_editions": [
       {
         "publisher": "دار ابن الجوزي",
@@ -3235,7 +3235,8 @@
         ],
         "notes": "<div>صدر التحقيق سابقا عن دار ابن خزيمة</div>",
         "corrections": [],
-        "verifier": "عامر علي ياسين"
+        "verifier": "عامر علي ياسين",
+        "volumes": 1
       },
       {
         "publisher": "دار ابن كثير",
@@ -3244,7 +3245,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "ياسين السواس"
+        "verifier": "ياسين السواس",
+        "volumes": 1
       },
       {
         "publisher": "دار الصديق",
@@ -3253,7 +3255,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "عصام موسى هادي"
+        "verifier": "عصام موسى هادي",
+        "volumes": 1
       }
     ],
     "alt_editions": [],
@@ -7019,19 +7022,21 @@
       "كتب متنوعة"
     ],
     "notes": "",
+    "date": "2026-08-04",
     "best_editions": [
       {
+        "publisher": "دار الخزانة و دار العمرية",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782721431162-images20260629T112345.583.jpeg"
         ],
         "notes": "",
+        "corrections": [],
         "verifier": "محمد عزير و عبد الله آل غيهب",
-        "publisher": "دار الخزانة و دار العمرية"
+        "volumes": 1
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 219,
