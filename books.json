@@ -2048,7 +2048,7 @@
       "التراجم والرجال"
     ],
     "notes": "",
-    "date": "2026-07-12",
+    "date": "2026-08-04",
     "best_editions": [
       {
         "publisher": "مؤسسة الرسالة",
@@ -2056,7 +2056,8 @@
           "https://arabic-app.github.io/tabaat/images/1782660488181-4798997312417370851951161917521951672161142n.jpg"
         ],
         "notes": "",
-        "corrections": []
+        "corrections": [],
+        "volumes": 1
       }
     ],
     "alt_editions": [],
@@ -8823,7 +8824,7 @@
       "اللغة والأدب"
     ],
     "notes": "",
-    "date": "2026-07-02",
+    "date": "2026-08-04",
     "best_editions": [
       {
         "publisher": "نماء للبحوث والدراسات",
@@ -8832,7 +8833,8 @@
           "https://arabic-app.github.io/tabaat/images/1782972817403-images66.jpeg"
         ],
         "notes": "",
-        "corrections": []
+        "corrections": [],
+        "volumes": 1
       }
     ],
     "alt_editions": [],
@@ -10452,7 +10454,7 @@
       "القواعد الفقهية"
     ],
     "notes": "",
-    "date": "2026-07-02",
+    "date": "2026-08-04",
     "best_editions": [
       {
         "publisher": "دار ركائز",
@@ -10462,7 +10464,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "خالد المشيقح، عبد العزيز العبيدان، أنس الشامي"
+        "verifier": "خالد المشيقح، عبد العزيز العبيدان، أنس الشامي",
+        "volumes": 3
       }
     ],
     "alt_editions": [],
