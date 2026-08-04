@@ -5180,20 +5180,21 @@
       "السيرة"
     ],
     "notes": "",
+    "date": "2026-08-04",
     "best_editions": [
       {
+        "publisher": "دار الوسيلة",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782748953531-mawsuatnadratalnaim12vol51.jpg",
           "https://arabic-app.github.io/tabaat/images/1782748960275-.png"
         ],
         "notes": "",
         "corrections": [],
-        "publisher": "دار الوسيلة"
+        "volumes": 12
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 143,
@@ -8292,20 +8293,22 @@
       "اللغة والأدب"
     ],
     "notes": "",
+    "date": "2026-08-04",
     "best_editions": [
       {
+        "publisher": "دار القلم",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782762259626-IMG20260629214157158.jpg",
           "https://arabic-app.github.io/tabaat/images/1782762272079-IMG20260629214156283.jpg"
         ],
         "notes": "",
         "corrections": [],
-        "publisher": "دار القلم ت محمد عبد الله قاسم"
+        "verifier": "محمد عبد الله قاسم",
+        "volumes": 12
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 271,
