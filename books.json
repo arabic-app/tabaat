@@ -2780,7 +2780,7 @@
       "المجاميع"
     ],
     "notes": "هناك طبعة منتظرة عن دار المحدث",
-    "date": "2026-07-04",
+    "date": "2026-08-04",
     "best_editions": [
       {
         "publisher": "دار اللباب",
@@ -2791,7 +2791,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "محمد مجير الخطيب"
+        "verifier": "محمد مجير الخطيب",
+        "volumes": 8
       }
     ],
     "alt_editions": [
@@ -2802,7 +2803,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "طلعت الحلواني"
+        "verifier": "طلعت الحلواني",
+        "volumes": 5
       },
       {
         "publisher": "دار أولاد الشيخ",
@@ -2810,7 +2812,8 @@
           "https://arabic-app.github.io/tabaat/images/1782722257464-majmurasailalhafidhibnrajabalhanbali5vol.jpg"
         ],
         "notes": "",
-        "corrections": []
+        "corrections": [],
+        "volumes": 5
       }
     ],
     "links": []
