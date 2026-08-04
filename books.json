@@ -8,7 +8,7 @@
       "علوم القرآن"
     ],
     "notes": "",
-    "date": "2026-08-03",
+    "date": "2026-08-04",
     "best_editions": [
       {
         "publisher": "دار ابن الجوزي",
@@ -18,7 +18,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "أحمد الوكيل"
+        "verifier": "أحمد الوكيل",
+        "volumes": 20
       },
       {
         "publisher": "سطور / دار عالم الكتب / دار هجر",
@@ -30,7 +31,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "عبد الله التركي، مركز هجر"
+        "verifier": "عبد الله التركي، مركز هجر",
+        "volumes": 26
       }
     ],
     "alt_editions": [
@@ -41,7 +43,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "إسلام منصور"
+        "verifier": "إسلام منصور",
+        "volumes": 12
       }
     ],
     "links": []
