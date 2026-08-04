@@ -4602,7 +4602,7 @@
       "التاريخ الإسلامي"
     ],
     "notes": "",
-    "date": "2026-07-12",
+    "date": "2026-08-04",
     "best_editions": [
       {
         "publisher": "الرسالة",
@@ -4612,7 +4612,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "إبراهيم الزيبق"
+        "verifier": "إبراهيم الزيبق",
+        "volumes": 5
       }
     ],
     "alt_editions": [],
@@ -6308,19 +6309,21 @@
       "كتب متنوعة"
     ],
     "notes": "",
+    "date": "2026-08-04",
     "best_editions": [
       {
+        "publisher": "دار عطاءات العلم",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782717617475-images81.jpeg"
         ],
         "notes": "",
+        "corrections": [],
         "verifier": "محمد إصلاحي",
-        "publisher": "دار عطاءات العلم"
+        "volumes": 2
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 191,
@@ -6762,19 +6765,21 @@
       "كتب متنوعة"
     ],
     "notes": "",
+    "date": "2026-08-04",
     "best_editions": [
       {
+        "publisher": "دار عطاءات العلم",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782718686047-images88.jpeg"
         ],
         "notes": "",
+        "corrections": [],
         "verifier": "عدنان البخاري",
-        "publisher": "دار عطاءات العلم"
+        "volumes": 1
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 209,
@@ -7204,7 +7209,7 @@
       "التراجم والرجال"
     ],
     "notes": "",
-    "date": "2026-07-12",
+    "date": "2026-08-04",
     "best_editions": [
       {
         "publisher": "مركز الملك فيصل",
@@ -7213,7 +7218,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "أبي جنة الحنبلي"
+        "verifier": "أبي جنة الحنبلي",
+        "volumes": 1
       }
     ],
     "alt_editions": [],
@@ -7227,7 +7233,7 @@
       "التراجم والرجال"
     ],
     "notes": "",
-    "date": "2026-07-12",
+    "date": "2026-08-04",
     "best_editions": [
       {
         "publisher": "أروقة",
@@ -7236,7 +7242,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "أبي جنة الحنبلي"
+        "verifier": "أبي جنة الحنبلي",
+        "volumes": 1
       }
     ],
     "alt_editions": [],
@@ -7852,19 +7859,21 @@
       "كتب متنوعة"
     ],
     "notes": "",
+    "date": "2026-08-04",
     "best_editions": [
       {
+        "publisher": "دار الفاروق",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782717700556-HGhhUSBWQAEDJyU.jpg"
         ],
         "notes": "",
+        "corrections": [],
         "verifier": "عادل مرشد",
-        "publisher": "دار الفاروق"
+        "volumes": 5
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 256,
