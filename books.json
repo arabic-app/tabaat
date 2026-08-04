@@ -4306,13 +4306,13 @@
   },
   {
     "id": 111,
-    "title": "تيسير اللطيف المنان",
+    "title": "تيسير اللطيف المنان في خلاصة تفسير القرآن",
     "author": "عبد الرحمن السعدي",
     "category": [
       "التفسير"
     ],
     "notes": "",
-    "date": "2026-08-03",
+    "date": "2026-08-04",
     "best_editions": [
       {
         "publisher": "دار ابن الجوزي",
@@ -4320,7 +4320,8 @@
           "https://arabic-app.github.io/tabaat/images/1782658946305-images88.jpeg"
         ],
         "notes": "",
-        "corrections": []
+        "corrections": [],
+        "volumes": 1
       }
     ],
     "alt_editions": [],
@@ -10623,7 +10624,7 @@
       "العقيدة"
     ],
     "notes": "",
-    "date": "2026-07-03",
+    "date": "2026-08-04",
     "best_editions": [
       {
         "publisher": "دار الصميعي",
@@ -10632,7 +10633,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "أسامة بن عطايا العتيبي"
+        "verifier": "أسامة بن عطايا العتيبي",
+        "volumes": 2
       }
     ],
     "alt_editions": [],
@@ -11615,7 +11617,7 @@
       "اللغة والأدب"
     ],
     "notes": "",
-    "date": "2026-07-06",
+    "date": "2026-08-04",
     "best_editions": [
       {
         "publisher": "المؤسسة المصرية العامة",
@@ -11624,7 +11626,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "عبد السلام هارون"
+        "verifier": "عبد السلام هارون",
+        "volumes": 17
       }
     ],
     "alt_editions": [],
