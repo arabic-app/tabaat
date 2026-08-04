@@ -6395,19 +6395,21 @@
       "مصطلح الحديث"
     ],
     "notes": "",
+    "date": "2026-08-04",
     "best_editions": [
       {
+        "publisher": "دار عطاءات العلم",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782642331231-images67.jpeg"
         ],
         "notes": "",
+        "corrections": [],
         "verifier": "يحيى الثمالي",
-        "publisher": "دار عطاءات العلم"
+        "volumes": 1
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 200,
@@ -9064,7 +9066,7 @@
       "اللغة والأدب"
     ],
     "notes": "",
-    "date": "2026-07-02",
+    "date": "2026-08-04",
     "best_editions": [
       {
         "publisher": "مطبعة عيسى الحلبي",
@@ -9075,7 +9077,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "محمد أبو الفضل إبراهيم، على البجاوي"
+        "verifier": "محمد أبو الفضل إبراهيم، على البجاوي",
+        "volumes": 1
       }
     ],
     "alt_editions": [],
@@ -11443,7 +11446,7 @@
       "اللغة والأدب"
     ],
     "notes": "",
-    "date": "2026-07-06",
+    "date": "2026-08-04",
     "best_editions": [
       {
         "publisher": "دار الرائد العربي قدم له وعلق عليه إحسان عباس",
@@ -11451,7 +11454,8 @@
           "https://arabic-app.github.io/tabaat/images/1783285880535-images11.jpeg"
         ],
         "notes": "",
-        "corrections": []
+        "corrections": [],
+        "volumes": 1
       }
     ],
     "alt_editions": [],
