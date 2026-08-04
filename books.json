@@ -5981,7 +5981,7 @@
       "العقيدة"
     ],
     "notes": "",
-    "date": "2026-08-03",
+    "date": "2026-08-04",
     "best_editions": [
       {
         "publisher": "دار ابن الجوزي",
@@ -5990,7 +5990,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "محمد صبحي حلاق"
+        "verifier": "محمد صبحي حلاق",
+        "volumes": 3
       }
     ],
     "alt_editions": [],
@@ -6099,7 +6100,7 @@
       "الأديان والفرق والمذاهب"
     ],
     "notes": "",
-    "date": "2026-08-03",
+    "date": "2026-08-04",
     "best_editions": [
       {
         "publisher": "دار ابن الجوزي",
@@ -6107,7 +6108,8 @@
           "https://arabic-app.github.io/tabaat/images/1782752466513-646x1000.jpg"
         ],
         "notes": "",
-        "corrections": []
+        "corrections": [],
+        "volumes": 2
       }
     ],
     "alt_editions": [],
