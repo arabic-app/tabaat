@@ -1596,6 +1596,21 @@
                     initCategories();
                     initAutocompleteData();
                     filterAndDisplayBooks();
+                    
+                    // Vérifier si un ID de livre est passé dans l'URL pour l'ouvrir directement
+                    const urlParams = new URLSearchParams(window.location.search);
+                    const directBookId = urlParams.get('book');
+                    if (directBookId) {
+                        const parsedId = parseInt(directBookId);
+                        if (!isNaN(parsedId)) {
+                            // On attend un court instant que l'UI soit prête
+                            setTimeout(() => {
+                                if (typeof openBookCardModal === 'function') {
+                                    openBookCardModal(parsedId);
+                                }
+                            }, 100);
+                        }
+                    }
                 })
                 .catch(err => {
                     console.warn('Failed to fetch books.json, trying cache fallback...', err);
@@ -2064,6 +2079,7 @@
             next.forEach(book => {
                 const card = document.createElement('div');
                 card.className = 'md-card';
+                card.dataset.id = book.id;
                 card.innerHTML = bookCardHTML(book);
                 frag.appendChild(card);
             });
@@ -2179,10 +2195,19 @@
         function openBookCardModal(bookId) {
             const book = booksData.find(b => b.id === bookId);
             if (!book) return;
-            document.getElementById('bookCardModalBody').innerHTML = '<div class="md-card" style="box-shadow:none;margin:0">' + bookCardHTML(book) + '</div>';
+            document.getElementById('bookCardModalBody').innerHTML = `<div class="md-card" data-id="${book.id}" style="box-shadow:none;margin:0">${bookCardHTML(book)}</div>`;
             document.getElementById('bookCardModal').style.display = 'flex';
         }
-        function closeBookCardModal() { document.getElementById('bookCardModal').style.display = 'none'; }
+        function closeBookCardModal() {
+            document.getElementById('bookCardModal').style.display = 'none';
+            if (window.history && window.history.replaceState) {
+                const url = new URL(window.location.href);
+                if (url.searchParams.has('book')) {
+                    url.searchParams.delete('book');
+                    window.history.replaceState({}, '', url.pathname + url.search + url.hash);
+                }
+            }
+        }
 
         // Verrouille le scroll de l'arrière-plan tant qu'un modal est ouvert. Chaque modal
         // a son propre verrou + garde-fou (un body déjà figé n'est pas re-verrouillé), donc
@@ -2389,12 +2414,16 @@
                 if (!blob) return;
 
                 const title = card.querySelector('.book-title')?.textContent || 'كتاب';
+                const bookId = card.dataset.id || '';
+                const baseUrl = window.location.origin + window.location.pathname;
+                const shareUrl = bookId ? `${baseUrl}?book=${bookId}` : baseUrl;
+                
                 const file = new File([blob], title + '.png', { type: 'image/png' });
 
                 if (navigator.canShare && navigator.canShare({ files: [file] })) {
                     await navigator.share({
                         title: title,
-                        text: 'أفضل طبعة — ' + title + '\nhttps://arabic-app.github.io/tabaat',
+                        text: 'أفضل طبعة — ' + title + '\n' + shareUrl,
                         files: [file]
                     });
                 } else {
