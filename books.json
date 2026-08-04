@@ -1223,18 +1223,20 @@
       "شروح الحديث"
     ],
     "notes": "",
+    "date": "2026-08-04",
     "best_editions": [
       {
+        "publisher": "مكتبة نبت السلام",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782653452749-explicationdesunanibnmajahjanbazanjazalhajtshrhsnnabnmajhjanbaz.jpg"
         ],
         "notes": "",
-        "publisher": "مكتبة نبت السلام"
+        "corrections": [],
+        "volumes": 9
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 27,
@@ -3603,7 +3605,7 @@
       "الفقه الحنفي"
     ],
     "notes": "",
-    "date": "2026-07-03",
+    "date": "2026-08-04",
     "best_editions": [],
     "alt_editions": [
       {
@@ -3615,7 +3617,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "محمد عدنان"
+        "verifier": "محمد عدنان",
+        "volumes": 6
       },
       {
         "publisher": "دار الحديث",
@@ -3625,7 +3628,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "محمد تامر، محمد السعيد، وجيه محمد"
+        "verifier": "محمد تامر، محمد السعيد، وجيه محمد",
+        "volumes": 10
       }
     ],
     "links": []
@@ -6945,7 +6949,7 @@
       "التفسير"
     ],
     "notes": "",
-    "date": "2026-08-03",
+    "date": "2026-08-04",
     "best_editions": [
       {
         "publisher": "دار ابن الجوزي",
@@ -6953,7 +6957,8 @@
           "https://arabic-app.github.io/tabaat/images/1782741579000-badaiitafsir.jpg"
         ],
         "notes": "",
-        "corrections": []
+        "corrections": [],
+        "volumes": 3
       }
     ],
     "alt_editions": [],
