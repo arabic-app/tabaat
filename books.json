@@ -1130,25 +1130,29 @@
       "الحديث"
     ],
     "notes": "",
+    "date": "2026-08-04",
     "best_editions": [
       {
+        "publisher": "دار ابن الجوزي",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782666016618-images20260628T200007.891.jpeg"
         ],
         "notes": "",
-        "publisher": "دار ابن الجوزي"
+        "corrections": [],
+        "volumes": 22
       },
       {
+        "publisher": "دار آل بروم (الطبعة القديمة)",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782666026640-1.jpeg"
         ],
         "notes": "",
-        "publisher": "دار آل بروم (الطبعة القديمة)"
+        "corrections": [],
+        "volumes": 42
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 24,
