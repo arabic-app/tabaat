@@ -3909,8 +3909,10 @@
       "العقيدة"
     ],
     "notes": "",
+    "date": "2026-08-04",
     "best_editions": [
       {
+        "publisher": "مركز سطور",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782716935655-2fca2f403c0a477ca7e1a4be6f65dd90.jpg",
           "https://arabic-app.github.io/tabaat/images/1782716945353-CV3hjmKdpwcgGWL9aB1SOudgNLK18tE8MeU53Y3n.jpg",
@@ -3919,21 +3921,21 @@
         "notes": "<span style=\"font-size: 15.2px;\">طبع في دور أخرى مثل أضواء السلف </span><span style=\"font-size: 15.2px;\">و</span><span style=\"font-size: 15.2px;\">دار الفرقان</span>",
         "corrections": [],
         "verifier": "أسامة عطايا العتيبي",
-        "publisher": "مركز سطور"
+        "volumes": 2
       },
       {
+        "publisher": "عالم الفوائد",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782716977399-vDHi62b1JNK4yIpOht0a4ByamIIyF7fwsyeH5mv4.jpg"
         ],
         "notes": "",
         "corrections": [],
         "verifier": "الوليد الفريان",
-        "publisher": "عالم الفوائد"
+        "volumes": 2
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 97,
@@ -12266,7 +12268,7 @@
       "اللغة والأدب"
     ],
     "notes": "",
-    "date": "2026-07-17",
+    "date": "2026-08-04",
     "best_editions": [
       {
         "publisher": "دار الفكر",
@@ -12275,7 +12277,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "يحيى الجبوري"
+        "verifier": "يحيى الجبوري",
+        "volumes": 1
       }
     ],
     "alt_editions": [],
