@@ -5383,7 +5383,7 @@
       "اللغة والأدب"
     ],
     "notes": "",
-    "date": "2026-08-03",
+    "date": "2026-08-04",
     "best_editions": [
       {
         "publisher": "دار ابن الجوزي",
@@ -5392,7 +5392,8 @@
         ],
         "notes": "الطبعة الثانية",
         "corrections": [],
-        "verifier": "كريم محمدي بإشراف فيصل المنصور"
+        "verifier": "كريم محمدي بإشراف فيصل المنصور",
+        "volumes": 1
       },
       {
         "publisher": "جامعة الإمام محمد بن سعود",
@@ -5401,7 +5402,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "عبد الله عسيلان"
+        "verifier": "عبد الله عسيلان",
+        "volumes": 1
       }
     ],
     "alt_editions": [],
@@ -8710,7 +8712,7 @@
       "اللغة والأدب"
     ],
     "notes": "",
-    "date": "2026-07-01",
+    "date": "2026-08-04",
     "best_editions": [
       {
         "publisher": "نهضة مصر",
@@ -8719,7 +8721,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "على عبد العظيم"
+        "verifier": "على عبد العظيم",
+        "volumes": 1
       }
     ],
     "alt_editions": [],
@@ -9158,7 +9161,7 @@
       "الشعر والدواوين"
     ],
     "notes": "",
-    "date": "2026-07-02",
+    "date": "2026-08-04",
     "best_editions": [
       {
         "publisher": "دار المعارف",
@@ -9168,7 +9171,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "محمد عبده عزام"
+        "verifier": "محمد عبده عزام",
+        "volumes": 4
       }
     ],
     "alt_editions": [],
@@ -9182,7 +9186,7 @@
       "الشعر والدواوين"
     ],
     "notes": "",
-    "date": "2026-07-02",
+    "date": "2026-08-04",
     "best_editions": [
       {
         "publisher": "دار المعارف",
@@ -9192,7 +9196,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "حسن الصيرفي"
+        "verifier": "حسن الصيرفي",
+        "volumes": 5
       }
     ],
     "alt_editions": [],
@@ -11823,7 +11828,7 @@
       "اللغة والأدب"
     ],
     "notes": "",
-    "date": "2026-07-06",
+    "date": "2026-08-04",
     "best_editions": [
       {
         "publisher": "دار الحديث",
@@ -11832,7 +11837,8 @@
           "https://arabic-app.github.io/tabaat/images/1783321280201-images5.jpeg"
         ],
         "notes": "",
-        "corrections": []
+        "corrections": [],
+        "volumes": 11
       }
     ],
     "alt_editions": [],
