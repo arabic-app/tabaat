@@ -1158,7 +1158,7 @@
       "الحديث"
     ],
     "notes": "",
-    "date": "2026-07-03",
+    "date": "2026-08-04",
     "best_editions": [
       {
         "publisher": "دار الصديق",
@@ -1167,7 +1167,8 @@
         ],
         "notes": "الطبعة الثانية وما بعدها",
         "corrections": [],
-        "verifier": "عصام موسى هادي"
+        "verifier": "عصام موسى هادي",
+        "volumes": 1
       },
       {
         "publisher": "دار التأصيل",
@@ -1175,7 +1176,8 @@
           "https://arabic-app.github.io/tabaat/images/1782311313755-47972023524173711252844675772007664386129417n.jpg"
         ],
         "notes": "عدة مجلدات، الطبعة الثانية وما بعدها",
-        "corrections": []
+        "corrections": [],
+        "volumes": 5
       }
     ],
     "alt_editions": [
@@ -1185,7 +1187,8 @@
           "https://arabic-app.github.io/tabaat/images/1782658894635-ccfb3b8e9a0f4d58833dd971d829792d750x1000p5vaCpTA8wzz2pErP1FdBZfgSy2HAi2bIWADlPgN1.jpg"
         ],
         "notes": "إن كانت رخيصة",
-        "corrections": []
+        "corrections": [],
+        "volumes": 1
       }
     ],
     "links": []
@@ -1755,7 +1758,7 @@
       "الحديث"
     ],
     "notes": "",
-    "date": "2026-07-03",
+    "date": "2026-08-04",
     "best_editions": [
       {
         "publisher": "دار البشائر",
@@ -1764,7 +1767,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "عبده كوشك"
+        "verifier": "عبده كوشك",
+        "volumes": 2
       },
       {
         "publisher": "دار ابن الجوزي",
@@ -1773,7 +1777,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "طارق عوض الله"
+        "verifier": "طارق عوض الله",
+        "volumes": 1
       },
       {
         "publisher": "دار ابن الجوزي",
@@ -1782,7 +1787,8 @@
         ],
         "notes": "يعاد العمل عليه في مؤسسة دار الحديث",
         "corrections": [],
-        "verifier": "الفحل"
+        "verifier": "الفحل",
+        "volumes": 1
       }
     ],
     "alt_editions": [],
