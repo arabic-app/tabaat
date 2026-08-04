@@ -623,7 +623,7 @@
       "الحديث"
     ],
     "notes": "",
-    "date": "2026-07-08",
+    "date": "2026-08-04",
     "best_editions": [
       {
         "publisher": "التأصيل",
@@ -631,7 +631,8 @@
           "https://arabic-app.github.io/tabaat/images/1782632476136-47757959624173712986177835519393077196940699n.jpg"
         ],
         "notes": "",
-        "corrections": []
+        "corrections": [],
+        "volumes": 8
       },
       {
         "publisher": "مصورة العامرة دار المنهاج",
@@ -639,7 +640,8 @@
           "https://arabic-app.github.io/tabaat/images/1782632603062-47697390624173711419511326317269452434028510n.jpg"
         ],
         "notes": "",
-        "corrections": []
+        "corrections": [],
+        "volumes": 4
       },
       {
         "publisher": "دار قرطبة",
@@ -659,7 +661,8 @@
             ]
           }
         ],
-        "verifier": "نظر الفاريابي"
+        "verifier": "نظر الفاريابي",
+        "volumes": 2
       }
     ],
     "alt_editions": [
@@ -669,7 +672,8 @@
           "https://arabic-app.github.io/tabaat/images/1782633084363-47689151824173709286178208705605142039291752n.jpg"
         ],
         "notes": "",
-        "corrections": []
+        "corrections": [],
+        "volumes": 1
       }
     ],
     "links": []
@@ -2438,7 +2442,7 @@
       "الفقه"
     ],
     "notes": "هناك عدة أعمال في الطريق إن شاء الله",
-    "date": "2026-07-08",
+    "date": "2026-08-04",
     "best_editions": [
       {
         "publisher": "مركز سطور",
@@ -2447,7 +2451,8 @@
         ],
         "notes": "<span style=\"color: rgb(0, 0, 0); font-family: Tahoma; font-size: 14px; background-color: rgb(253, 253, 253);\">أعيد تحقيق الكتاب وهناك تعديلات وتصويبات مقارنة بالتحقيق الأول (دار عالم الكتب / دار هجر / الدارة)</span>",
         "corrections": [],
-        "verifier": "عبد الله التركي، مركز هجر"
+        "verifier": "عبد الله التركي، مركز هجر",
+        "volumes": 17
       }
     ],
     "alt_editions": [
@@ -2481,7 +2486,8 @@
             ]
           }
         ],
-        "verifier": "عبد الله التركي، عبد الفتاح الحلو"
+        "verifier": "عبد الله التركي، عبد الفتاح الحلو",
+        "volumes": 15
       },
       {
         "publisher": "دار هجر",
@@ -2513,7 +2519,8 @@
             ]
           }
         ],
-        "verifier": "عبد الله التركي، عبد الفتاح الحلو"
+        "verifier": "عبد الله التركي، عبد الفتاح الحلو",
+        "volumes": 15
       },
       {
         "publisher": "دارة الملك عبد العزيز (الدارة)",
@@ -2545,7 +2552,8 @@
             ]
           }
         ],
-        "verifier": "عبد الله التركي، عبد الفتاح الحلو"
+        "verifier": "عبد الله التركي، عبد الفتاح الحلو",
+        "volumes": 15
       },
       {
         "publisher": "طبعة دار الحديث مصر",
@@ -2554,7 +2562,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "محمد شرف الدين، سيد إبراهيم ، السيد محمد"
+        "verifier": "محمد شرف الدين، سيد إبراهيم ، السيد محمد",
+        "volumes": 13
       }
     ],
     "links": []
@@ -7759,34 +7768,40 @@
       "الحديث"
     ],
     "notes": "",
+    "date": "2026-08-04",
     "best_editions": [
       {
+        "publisher": "دار المنهاج بجدة",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782632145328-1992d5b0b3ff4418a700be9263123826685.18518518519x1000sZnhKJ2rgDEwlSjGubSofF9bbUkBoKmMBJ0ThyYM.jpg",
           "https://arabic-app.github.io/tabaat/images/1782632154182-01a2a3d9f9c94e43be47a37e51e327331000x379.79797979798hNKdfsj3wivyc0nGYI9CDjzMOOvuutlhva6ENzek.jpg"
         ],
         "notes": "",
+        "corrections": [],
         "verifier": "محمود ميرة",
-        "publisher": "دار المنهاج بجدة"
+        "volumes": 22
       },
       {
+        "publisher": "دار المنهاج القويم",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782632161664-DZJ3EK6X0AAPAt5.jpg"
         ],
         "notes": "",
-        "publisher": "دار المنهاج القويم"
+        "corrections": [],
+        "volumes": 11
       },
       {
+        "publisher": "دار الرسالة العالمية",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782303800122-.png"
         ],
         "notes": "",
-        "publisher": "دار الرسالة العالمية"
+        "corrections": [],
+        "volumes": 9
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 259,
@@ -7940,7 +7955,7 @@
       "الحديث"
     ],
     "notes": "",
-    "date": "2026-07-03",
+    "date": "2026-08-04",
     "best_editions": [
       {
         "publisher": "دار التأصيل",
@@ -7948,7 +7963,8 @@
           "https://arabic-app.github.io/tabaat/images/1782377994001-.png"
         ],
         "notes": "الطبعة الثانية&nbsp;",
-        "corrections": []
+        "corrections": [],
+        "volumes": 12
       }
     ],
     "alt_editions": [],
@@ -9736,7 +9752,7 @@
       "شروح الحديث"
     ],
     "notes": "",
-    "date": "2026-07-02",
+    "date": "2026-08-04",
     "best_editions": [
       {
         "publisher": "دار الغرب الإسلامي",
@@ -9745,7 +9761,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "محمد السليماني، عائشة السليماني"
+        "verifier": "محمد السليماني، عائشة السليماني",
+        "volumes": 8
       }
     ],
     "alt_editions": [],
