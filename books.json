@@ -513,7 +513,7 @@
       "شروح الحديث"
     ],
     "notes": "انتظر طبعة عطاءات العلم",
-    "date": "2026-08-03",
+    "date": "2026-08-04",
     "best_editions": [
       {
         "publisher": "مؤسات الرسالة ناشرون",
@@ -522,7 +522,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "مركز الرسالة للدراسات وتحقيق التراث بإشراف عز الدين ضلي"
+        "verifier": "مركز الرسالة للدراسات وتحقيق التراث بإشراف عز الدين ضلي",
+        "volumes": 30
       },
       {
         "publisher": "دار الرسالة العالمية بإشراف شعيب الأرناؤوط و عادل مرشد",
@@ -530,7 +531,8 @@
           "https://arabic-app.github.io/tabaat/images/1782681033672-images63.jpeg"
         ],
         "notes": "",
-        "corrections": []
+        "corrections": [],
+        "volumes": 24
       },
       {
         "publisher": "دار طيبة",
@@ -539,7 +541,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "نظر الفريابي"
+        "verifier": "نظر الفريابي",
+        "volumes": 17
       }
     ],
     "alt_editions": [
@@ -550,7 +553,8 @@
           "https://arabic-app.github.io/tabaat/images/1782685428948-images5.jpeg"
         ],
         "notes": "",
-        "corrections": []
+        "corrections": [],
+        "volumes": 14
       },
       {
         "publisher": "مؤسسة إبداع",
@@ -558,7 +562,8 @@
           "https://arabic-app.github.io/tabaat/images/1782681065149-images27.jpeg"
         ],
         "notes": "<div>دار ابن الجوزي القاهرة</div>",
-        "corrections": []
+        "corrections": [],
+        "volumes": 14
       }
     ],
     "links": [
