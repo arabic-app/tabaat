@@ -5686,7 +5686,7 @@
       "علوم القرآن"
     ],
     "notes": "",
-    "date": "2026-08-03",
+    "date": "2026-08-04",
     "best_editions": [
       {
         "publisher": "دار ابن الجوزي",
@@ -5694,7 +5694,8 @@
           "https://arabic-app.github.io/tabaat/images/1782717346273-images76.jpeg"
         ],
         "notes": "",
-        "corrections": []
+        "corrections": [],
+        "volumes": 1
       }
     ],
     "alt_editions": [],
@@ -6980,20 +6981,22 @@
       "كتب متنوعة"
     ],
     "notes": "",
+    "date": "2026-08-04",
     "best_editions": [
       {
+        "publisher": "دار عطاءات العلم",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782717361646-images75.jpeg",
           "https://arabic-app.github.io/tabaat/images/1782717366744-images74.jpeg"
         ],
         "notes": "",
+        "corrections": [],
         "verifier": "عبد الله البطاطي",
-        "publisher": "دار عطاءات العلم"
+        "volumes": 1
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 217,
@@ -7053,20 +7056,21 @@
       "كتب متنوعة"
     ],
     "notes": "",
+    "date": "2026-08-04",
     "best_editions": [
       {
+        "publisher": "دار المحدث",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782717329359-b5976559bfd7430f954ae5c45330d58a803.34907685702x1000i7Yl6CheggDWVxUXBYxpSumU25Ahmvn0mV8fpO0L.jpg"
         ],
         "notes": "",
         "corrections": [],
         "verifier": "الحسين بن محمد بن إغويلة",
-        "publisher": "دار المحدث"
+        "volumes": 1
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 221,
@@ -9720,7 +9724,7 @@
       "الفقه المقارن"
     ],
     "notes": "",
-    "date": "2026-07-02",
+    "date": "2026-08-04",
     "best_editions": [
       {
         "publisher": "مؤسسة الرسالة",
@@ -9728,7 +9732,8 @@
           "https://arabic-app.github.io/tabaat/images/1782989371523-images27.jpeg"
         ],
         "notes": "",
-        "corrections": []
+        "corrections": [],
+        "volumes": 3
       }
     ],
     "alt_editions": [],
