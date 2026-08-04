@@ -3598,34 +3598,36 @@
   },
   {
     "id": 86,
-    "title": "شرح رياض الصالحين - محمد بن صالح العثيمين",
+    "title": "شرح رياض الصالحين",
     "author": "محمد بن صالح العثيمين",
     "category": [
       "الحديث",
       "شروح الحديث"
     ],
     "notes": "",
+    "date": "2026-08-04",
     "best_editions": [
       {
+        "publisher": "مؤسسة العثيمين",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782683205046-images741796238921091009.jpeg"
         ],
         "notes": "",
         "corrections": [],
-        "publisher": "مؤسسة العثيمين"
+        "volumes": 4
       },
       {
+        "publisher": "مؤسسة الرسالة ناشرون",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782683240928-1270x1444.jpg"
         ],
         "notes": "",
         "corrections": [],
-        "publisher": "مؤسسة الرسالة ناشرون"
+        "volumes": 1
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 87,
@@ -8203,7 +8205,7 @@
       "شروح الحديث"
     ],
     "notes": "",
-    "date": "2026-07-04",
+    "date": "2026-08-04",
     "best_editions": [
       {
         "publisher": "مكتبة الرشد",
@@ -8212,7 +8214,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "ياسر بن إبراهيم"
+        "verifier": "ياسر بن إبراهيم",
+        "volumes": 11
       }
     ],
     "alt_editions": [],
