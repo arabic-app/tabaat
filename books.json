@@ -1597,7 +1597,7 @@
       "شروح الحديث"
     ],
     "notes": "",
-    "date": "2026-07-04",
+    "date": "2026-08-04",
     "best_editions": [
       {
         "publisher": "دار ابن الجوزي",
@@ -1606,7 +1606,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "محمد صبحي حلاق"
+        "verifier": "محمد صبحي حلاق",
+        "volumes": 16
       }
     ],
     "alt_editions": [],
@@ -5345,19 +5346,20 @@
       "اللغة والأدب"
     ],
     "notes": "",
+    "date": "2026-08-04",
     "best_editions": [
       {
+        "publisher": "دار الكتب المصرية",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782752448861-0a21d75f4d2243d8bb6d82470b5580e3thumbnail770x77070.jpg"
         ],
         "notes": "",
         "corrections": [],
-        "publisher": "دار الكتب المصرية"
+        "volumes": 8
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 149,
