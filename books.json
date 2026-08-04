@@ -3991,7 +3991,7 @@
       "العقيدة"
     ],
     "notes": "",
-    "date": "2026-07-01",
+    "date": "2026-08-04",
     "best_editions": [
       {
         "publisher": "دار اللؤلؤة",
@@ -4000,7 +4000,8 @@
         ],
         "notes": "لا تشتمل على كتاب كرامات الأولياء<div>وينتبه للشدة في تعليقات المحقق&nbsp;</div>",
         "corrections": [],
-        "verifier": "عادل آل حمدان"
+        "verifier": "عادل آل حمدان",
+        "volumes": 3
       },
       {
         "publisher": "الناشر المتميز",
@@ -4009,15 +4010,15 @@
         ],
         "notes": "تشتمل على كتاب كرامات الأولياء",
         "corrections": [],
-        "verifier": "الرياشي"
+        "verifier": "الرياشي",
+        "volumes": 5
       }
     ],
     "alt_editions": [
       {
         "publisher": "مكتبة غرناطة مصر",
         "images": [
-          "https://arabic-app.github.io/tabaat/images/1782674883483-iathumb.jpg",
-          "https://arabic-app.github.io/tabaat/images/1782674890880-images71.jpeg"
+          "https://arabic-app.github.io/tabaat/images/1782674883483-iathumb.jpg"
         ],
         "notes": "",
         "corrections": []
