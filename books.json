@@ -4865,7 +4865,7 @@
       "اللغة والأدب"
     ],
     "notes": "",
-    "date": "2026-07-06",
+    "date": "2026-08-04",
     "best_editions": [
       {
         "publisher": "الشروق",
@@ -4875,7 +4875,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "عبد الوهاب عزام"
+        "verifier": "عبد الوهاب عزام",
+        "volumes": 1
       },
       {
         "publisher": "المعارف-  ت عبد الوهاب عزام",
@@ -4883,7 +4884,8 @@
           "https://arabic-app.github.io/tabaat/images/1782719493647-68d1b32f4bfa49da8626a9aba096e0bc722.65625x1000AXzjh2Lys87rz77pes6PyTH8rTGcrL2sC5ILDtmG.jpg"
         ],
         "notes": "",
-        "corrections": []
+        "corrections": [],
+        "volumes": 1
       }
     ],
     "alt_editions": [],
@@ -5236,18 +5238,20 @@
       "اللغة والأدب"
     ],
     "notes": "",
+    "date": "2026-08-04",
     "best_editions": [
       {
+        "publisher": "مكتبة السنة ت أحمد شاكر",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782719629566-images20260629T105328.029.jpeg"
         ],
         "notes": "",
-        "publisher": "مكتبة السنة ت أحمد شاكر"
+        "corrections": [],
+        "volumes": 1
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 145,
@@ -7137,7 +7141,7 @@
       "الفقه"
     ],
     "notes": "",
-    "date": "2026-07-04",
+    "date": "2026-08-04",
     "best_editions": [
       {
         "publisher": "دار الفتح",
@@ -7147,7 +7151,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "عمروشوقي، عمرو الحويني"
+        "verifier": "عمروشوقي، عمرو الحويني",
+        "volumes": 1
       }
     ],
     "alt_editions": [],
