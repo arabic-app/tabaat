@@ -3102,19 +3102,21 @@
       "أصول الفقه"
     ],
     "notes": "",
+    "date": "2026-08-04",
     "best_editions": [
       {
+        "publisher": "منشورات البشير",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782303631165-.png"
         ],
         "notes": "",
+        "corrections": [],
         "verifier": "آيت سعيد",
-        "publisher": "منشورات البشير"
+        "volumes": 7
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 74,
@@ -3222,7 +3224,7 @@
       "الأديان والفرق والمذاهب"
     ],
     "notes": "",
-    "date": "2026-07-12",
+    "date": "2026-08-04",
     "best_editions": [
       {
         "publisher": "دار الفضيلة",
@@ -3232,7 +3234,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "محمد معصوم"
+        "verifier": "محمد معصوم",
+        "volumes": 2
       }
     ],
     "alt_editions": [],
@@ -4255,8 +4258,10 @@
       "التفسير"
     ],
     "notes": "",
+    "date": "2026-08-04",
     "best_editions": [
       {
+        "publisher": "دار اللؤلؤة",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782641881485-images69.jpeg",
           "https://arabic-app.github.io/tabaat/images/1782641889966-images71.jpeg"
@@ -4264,12 +4269,11 @@
         "notes": "",
         "corrections": [],
         "verifier": "شعبان العودة",
-        "publisher": "دار اللؤلؤة"
+        "volumes": 2
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 110,
@@ -6037,20 +6041,22 @@
       "كتب متنوعة"
     ],
     "notes": "",
+    "date": "2026-08-04",
     "best_editions": [
       {
+        "publisher": "دار عطاءات العلم",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782653774104-images63.jpeg",
           "https://arabic-app.github.io/tabaat/images/1782653782332-images29.jpeg"
         ],
         "notes": "",
+        "corrections": [],
         "verifier": "علي العمران",
-        "publisher": "دار عطاءات العلم"
+        "volumes": 5
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 186,
@@ -7096,19 +7102,21 @@
       "التفسير"
     ],
     "notes": "",
+    "date": "2026-08-04",
     "best_editions": [
       {
+        "publisher": "المجلس الأعلى للشئون الإسلامية بمصر",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782641137662-CLpy5AmXAAEdgZy.jpg"
         ],
         "notes": "",
+        "corrections": [],
         "verifier": "محمد حسن الزفيتي",
-        "publisher": "المجلس الأعلى للشئون الإسلامية بمصر"
+        "volumes": 2
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 231,
@@ -7451,7 +7459,7 @@
       "الأديان والفرق والمذاهب"
     ],
     "notes": "",
-    "date": "2026-07-12",
+    "date": "2026-08-04",
     "best_editions": [
       {
         "publisher": "دار عطاءات العلم",
@@ -7460,7 +7468,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "علي العمران"
+        "verifier": "علي العمران",
+        "volumes": 1
       }
     ],
     "alt_editions": [],
@@ -11880,7 +11889,7 @@
       "الحديث"
     ],
     "notes": "",
-    "date": "2026-07-12",
+    "date": "2026-08-04",
     "best_editions": [
       {
         "publisher": "دار التأصيل",
@@ -11888,7 +11897,8 @@
           "https://arabic-app.github.io/tabaat/images/1783843696039-cover2.jpg"
         ],
         "notes": "",
-        "corrections": []
+        "corrections": [],
+        "volumes": 1
       }
     ],
     "alt_editions": [],
@@ -11989,14 +11999,14 @@
   },
   {
     "id": 423,
-    "title": "المستجاد من فعلان الأجواد",
+    "title": "المستجاد من فعلات الأجواد",
     "author": "المحسن بن علي التنوخي",
     "category": [
       "اللغة والأدب",
       "كتب متنوعة"
     ],
     "notes": "",
-    "date": "2026-07-17",
+    "date": "2026-08-04",
     "best_editions": [
       {
         "publisher": "دار صادر",
@@ -12005,7 +12015,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "محمد كرد علي"
+        "verifier": "محمد كرد علي",
+        "volumes": 1
       }
     ],
     "alt_editions": [],
