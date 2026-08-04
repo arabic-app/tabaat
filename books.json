@@ -8142,7 +8142,7 @@
       "شروح الحديث"
     ],
     "notes": "",
-    "date": "2026-07-04",
+    "date": "2026-08-04",
     "best_editions": [
       {
         "publisher": "الرسالة",
@@ -8152,7 +8152,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "شعيب الأرناؤوط"
+        "verifier": "شعيب الأرناؤوط",
+        "volumes": 16
       }
     ],
     "alt_editions": [],
@@ -10366,7 +10367,7 @@
       "علل الحديث"
     ],
     "notes": "",
-    "date": "2026-07-03",
+    "date": "2026-08-04",
     "best_editions": [
       {
         "publisher": "دار المنهاج القويم",
@@ -10376,7 +10377,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "نور الدين عتر"
+        "verifier": "نور الدين عتر",
+        "volumes": 2
       },
       {
         "publisher": "دار الفاروق الأردن",
@@ -10386,7 +10388,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "همام سعيد"
+        "verifier": "همام سعيد",
+        "volumes": 2
       }
     ],
     "alt_editions": [],
