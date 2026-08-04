@@ -1993,7 +1993,7 @@
       "التراجم والرجال"
     ],
     "notes": "",
-    "date": "2026-07-12",
+    "date": "2026-08-04",
     "best_editions": [
       {
         "publisher": "مؤسسة الرسالة ناشرون",
@@ -2002,7 +2002,8 @@
         ],
         "notes": "8 مجلدات قطع كبير",
         "corrections": [],
-        "verifier": "بشار عواد"
+        "verifier": "بشار عواد",
+        "volumes": 8
       }
     ],
     "alt_editions": [],
@@ -2016,7 +2017,7 @@
       "التراجم والرجال"
     ],
     "notes": "",
-    "date": "2026-07-12",
+    "date": "2026-08-04",
     "best_editions": [
       {
         "publisher": "جمعية دار البر",
@@ -2024,7 +2025,8 @@
           "https://arabic-app.github.io/tabaat/images/1782310833821-47762023624173711186178016039187345317028932n.jpg"
         ],
         "notes": "",
-        "corrections": []
+        "corrections": [],
+        "volumes": 16
       }
     ],
     "alt_editions": [
@@ -2035,7 +2037,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "إبراهيم الزيبق، عادل مرشد"
+        "verifier": "إبراهيم الزيبق، عادل مرشد",
+        "volumes": 4
       }
     ],
     "links": []
@@ -11047,7 +11050,7 @@
       "كتب متنوعة"
     ],
     "notes": "",
-    "date": "2026-07-03",
+    "date": "2026-08-04",
     "best_editions": [
       {
         "publisher": "دار الفيحاء",
@@ -11056,7 +11059,8 @@
         ],
         "notes": "الإصدار الجديد بمراجعة يوسفان",
         "corrections": [],
-        "verifier": "عبده كوشك"
+        "verifier": "عبده كوشك",
+        "volumes": 4
       }
     ],
     "alt_editions": [],
