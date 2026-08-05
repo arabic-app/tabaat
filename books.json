@@ -10974,7 +10974,7 @@
       "اللغة والأدب"
     ],
     "notes": "",
-    "date": "2026-07-02",
+    "date": "2026-08-05",
     "best_editions": [
       {
         "publisher": "الدار الشامية",
@@ -10983,7 +10983,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "المكتب العلمي بالدار الشامية"
+        "verifier": "المكتب العلمي بالدار الشامية",
+        "volumes": 6
       },
       {
         "publisher": "دار صادر",
@@ -10992,7 +10993,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "عبود الشالجي"
+        "verifier": "عبود الشالجي",
+        "volumes": 5
       }
     ],
     "alt_editions": [],
