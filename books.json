@@ -9502,7 +9502,7 @@
       "الحديث"
     ],
     "notes": "",
-    "date": "2026-07-03",
+    "date": "2026-08-05",
     "best_editions": [
       {
         "publisher": "دار التأصيل",
@@ -9510,7 +9510,8 @@
           "https://arabic-app.github.io/tabaat/images/1783033464747-images692029172401853383.jpeg"
         ],
         "notes": "",
-        "corrections": []
+        "corrections": [],
+        "volumes": 20
       },
       {
         "publisher": "دار الرسالة العالمية",
@@ -9519,7 +9520,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "حسن شلبي"
+        "verifier": "حسن شلبي",
+        "volumes": 12
       }
     ],
     "alt_editions": [],
@@ -10579,7 +10581,7 @@
       "الجرح والتعديل"
     ],
     "notes": "",
-    "date": "2026-07-02",
+    "date": "2026-08-05",
     "best_editions": [
       {
         "publisher": "مكتبة الرشد",
@@ -10588,7 +10590,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "مازن السرساوي"
+        "verifier": "مازن السرساوي",
+        "volumes": 7
       }
     ],
     "alt_editions": [],
@@ -11216,7 +11219,7 @@
       "العقيدة"
     ],
     "notes": "",
-    "date": "2026-07-03",
+    "date": "2026-08-05",
     "best_editions": [
       {
         "publisher": "أضواء السلف",
@@ -11226,7 +11229,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "سيد الجليمي، أيمن الدمشقي"
+        "verifier": "سيد الجليمي، أيمن الدمشقي",
+        "volumes": 1
       }
     ],
     "alt_editions": [],
