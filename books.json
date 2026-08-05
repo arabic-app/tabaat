@@ -2870,7 +2870,7 @@
       "الفتاوى"
     ],
     "notes": "",
-    "date": "2026-07-04",
+    "date": "2026-08-05",
     "best_editions": [
       {
         "publisher": "دار الكلمة الطيبة عناية مروان كجك",
@@ -2878,7 +2878,8 @@
           "https://arabic-app.github.io/tabaat/images/1782660407987-43043.jpg"
         ],
         "notes": "",
-        "corrections": []
+        "corrections": [],
+        "volumes": 40
       },
       {
         "publisher": "طبعة المجمع",
@@ -2887,7 +2888,8 @@
           "https://arabic-app.github.io/tabaat/images/1782721503225-DWO6jPpXkAAQLDy.jpg"
         ],
         "notes": "",
-        "corrections": []
+        "corrections": [],
+        "volumes": 37
       },
       {
         "publisher": "دار القاسم الجديدة",
@@ -2895,7 +2897,8 @@
           "https://arabic-app.github.io/tabaat/images/1782377495562-fatawakacem.jpg"
         ],
         "notes": "مصورة على طبعة المجمع",
-        "corrections": []
+        "corrections": [],
+        "volumes": 37
       },
       {
         "publisher": "الصفوة",
@@ -2903,7 +2906,8 @@
           "https://arabic-app.github.io/tabaat/images/1782377539126-fatawasafwa.jpg"
         ],
         "notes": "خطها صغير، الصفحة عمودان",
-        "corrections": []
+        "corrections": [],
+        "volumes": 6
       }
     ],
     "alt_editions": [
@@ -2915,7 +2919,8 @@
           "https://arabic-app.github.io/tabaat/images/1783156174577-images8.jpeg"
         ],
         "notes": "",
-        "corrections": []
+        "corrections": [],
+        "volumes": 20
       }
     ],
     "links": []
@@ -7908,18 +7913,20 @@
       "المجاميع"
     ],
     "notes": "",
+    "date": "2026-08-05",
     "best_editions": [
       {
+        "publisher": "دار عطاءات العلم",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782721561676-majmuatatharshaykhalislamibntaymiyyah30volumes.jpg"
         ],
         "notes": "",
-        "publisher": "دار عطاءات العلم"
+        "corrections": [],
+        "volumes": 30
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 255,
