@@ -151,7 +151,26 @@
             background: var(--primary);
             color: var(--on-primary);
             padding: 16px;
+            position: relative;
+            margin-bottom: 5px;
         }
+        .adv-search {
+            max-height: 0; opacity: 0; overflow: hidden; pointer-events: none;
+            transition: max-height 0.3s ease, opacity 0.3s ease;
+        }
+        .adv-search.open {
+            max-height: 200px; opacity: 1; pointer-events: auto; overflow: visible;
+        }
+        .adv-toggle {
+            position: absolute; left: 50%; bottom: -12px; transform: translateX(-50%);
+            width: 20px; height: 20px; padding: 3px; border-radius: 10%;
+            background: var(--primary); color: var(--on-primary);
+            border: 2px solid var(--surface); cursor: pointer; z-index: 10;
+            display: flex; align-items: center; justify-content: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2); transition: background 0.2s;
+            outline: none;
+        }
+        .adv-toggle .material-icons-round { font-size: 18px; }
         .sidebar-header h2 {
             margin: 0 0 12px;
             font-size: 1.1rem;
@@ -961,28 +980,32 @@
     <aside class="sidebar" id="sidebar" role="navigation" aria-label="قائمة الكتب" aria-expanded="false">
         <div class="sidebar-header">
             <h2><span class="material-icons-round" aria-hidden="true">menu_book</span> الكتب المسجّلة</h2>
-            <div class="search-field">
+            <div class="search-field" style="margin-bottom:0;">
                 <span class="material-icons-round search-icon" aria-hidden="true">search</span>
                 <input type="search" id="adminSearchInput" class="admin-search-box"
                        placeholder="بحث بالعنوان أو المؤلف..." autocomplete="off"
                        aria-label="بحث في قائمة الكتب">
                 <button id="clearSearchBtn" class="clear-search-btn material-icons-round" aria-label="مسح البحث">close</button>
             </div>
-            <div class="search-field">
-                <span class="material-icons-round search-icon" aria-hidden="true">store</span>
-                <input type="search" id="adminPublisherSearchInput" class="admin-search-box"
-                       placeholder="بحث بدار النشر..." autocomplete="off"
-                       aria-label="بحث بدار النشر">
-                <button id="clearPublisherSearchBtn" class="clear-search-btn material-icons-round" style="display:none;" aria-label="مسح البحث">close</button>
+            
+            <div class="adv-search" id="advSearchAdmin">
+                <div class="search-field" style="margin-top:10px;">
+                    <span class="material-icons-round search-icon" aria-hidden="true">store</span>
+                    <input type="search" id="adminPublisherSearchInput" class="admin-search-box"
+                           placeholder="بحث بدار النشر..." autocomplete="off"
+                           aria-label="بحث بدار النشر">
+                    <button id="clearPublisherSearchBtn" class="clear-search-btn material-icons-round" style="display:none;" aria-label="مسح البحث">close</button>
+                </div>
+                <div class="filter-field">
+                    <input type="checkbox" id="missingPhotoFilter">
+                    <label for="missingPhotoFilter">عرض الكتب التي تنقصها صور طبعات</label>
+                </div>
+                <div class="filter-field">
+                    <input type="checkbox" id="missingVolumesFilter">
+                    <label for="missingVolumesFilter">عرض الكتب التي ينقصها عدد المجلدات</label>
+                </div>
             </div>
-            <div class="filter-field">
-                <input type="checkbox" id="missingPhotoFilter">
-                <label for="missingPhotoFilter">عرض الكتب التي تنقصها صور طبعات</label>
-            </div>
-            <div class="filter-field">
-                <input type="checkbox" id="missingVolumesFilter">
-                <label for="missingVolumesFilter">عرض الكتب التي ينقصها عدد المجلدات</label>
-            </div>
+            <button class="adv-toggle" id="advToggleAdmin" aria-label="بحث متقدم" aria-expanded="false"><span class="material-icons-round">add</span></button>
         </div>
         <button class="btn-add-new" id="btn-new-book-sidebar" aria-label="إضافة كتاب جديد">
             <span class="material-icons-round" aria-hidden="true">add</span> إضافة كتاب جديد
@@ -2902,6 +2925,18 @@
             loadBookIntoForm(id, li);
             closeSidebar();
         });
+
+        // Toggle advanced search in sidebar
+        const advToggleAdmin = document.getElementById('advToggleAdmin');
+        const advSearchAdmin = document.getElementById('advSearchAdmin');
+        if (advToggleAdmin && advSearchAdmin) {
+            advToggleAdmin.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const isOpen = advSearchAdmin.classList.toggle('open');
+                advToggleAdmin.setAttribute('aria-expanded', isOpen);
+                advToggleAdmin.innerHTML = isOpen ? '<span class="material-icons-round">remove</span>' : '<span class="material-icons-round">add</span>';
+            });
+        }
 
         // Search with debounce
         const debouncedSearch = debounce(val => {
