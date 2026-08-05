@@ -218,7 +218,7 @@
       "التفسير"
     ],
     "notes": "",
-    "date": "2026-07-04",
+    "date": "2026-08-05",
     "best_editions": [
       {
         "publisher": "دار إحياء التراث",
@@ -228,7 +228,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "عبد الرزاق المهدي"
+        "verifier": "عبد الرزاق المهدي",
+        "volumes": 5
       },
       {
         "publisher": "دار طيبة",
@@ -237,7 +238,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "محمد النمر، عثمان ضميرية، سليمان الحرش"
+        "verifier": "محمد النمر، عثمان ضميرية، سليمان الحرش",
+        "volumes": 4
       }
     ],
     "alt_editions": [
@@ -248,7 +250,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "خالد عبد الرحمن، مروان سوار"
+        "verifier": "خالد عبد الرحمن، مروان سوار",
+        "volumes": 4
       }
     ],
     "links": []
@@ -1624,19 +1627,20 @@
       "شروح الحديث"
     ],
     "notes": "",
+    "date": "2026-08-05",
     "best_editions": [
       {
+        "publisher": "دار ابن الجوزي",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782752125507-IMG6482.jpg"
         ],
         "notes": "",
         "corrections": [],
-        "publisher": "دار ابن الجوزي"
+        "volumes": 11
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 36,
@@ -1905,7 +1909,7 @@
       "مصطلح الحديث"
     ],
     "notes": "",
-    "date": "2026-07-04",
+    "date": "2026-08-05",
     "best_editions": [
       {
         "publisher": "دار المنهاج القويم",
@@ -1914,7 +1918,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "نور الدين عتر"
+        "verifier": "نور الدين عتر",
+        "volumes": 1
       },
       {
         "publisher": "دار الفكر",
@@ -1923,7 +1928,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "نور الدين عتر"
+        "verifier": "نور الدين عتر",
+        "volumes": 1
       },
       {
         "publisher": "دار الكتب العلمية",
@@ -1932,7 +1938,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "ماهر الفحل"
+        "verifier": "ماهر الفحل",
+        "volumes": 1
       },
       {
         "publisher": "المعارف",
@@ -1941,7 +1948,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "عائشة عبد الرحمن \"بنت الشاطئ\""
+        "verifier": "عائشة عبد الرحمن",
+        "volumes": 1
       }
     ],
     "alt_editions": [],
