@@ -8655,16 +8655,17 @@
       "الأديان والفرق والمذاهب"
     ],
     "notes": "",
-    "date": "2026-07-01",
+    "date": "2026-08-05",
     "best_editions": [
       {
+        "publisher": "دار اللؤلؤة",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782890814061-b4e085f7118d45b8bcbe1c895c8ccb2ethumbnail1000x100070.jpg"
         ],
         "notes": "ينتبه للشدة في تعليقات المحقق&nbsp;",
         "corrections": [],
-        "publisher": "دار اللؤلؤة",
-        "verifier": "عادل آل حمدان"
+        "verifier": "عادل آل حمدان",
+        "volumes": 2
       }
     ],
     "alt_editions": [],
