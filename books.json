@@ -3402,20 +3402,21 @@
       "العقيدة"
     ],
     "notes": "",
+    "date": "2026-08-05",
     "best_editions": [
       {
+        "publisher": "دار التوحيد للنشر",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782719944534-EqvljlW8AEDv9t.jpg"
         ],
         "notes": "",
         "corrections": [],
         "verifier": "خالد القحطاني، اسماعيل العدوى، مبارك المطيري",
-        "publisher": "دار التوحيد للنشر"
+        "volumes": 3
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 80,
