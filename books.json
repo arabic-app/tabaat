@@ -5965,18 +5965,20 @@
       "علوم القرآن"
     ],
     "notes": "",
+    "date": "2026-08-05",
     "best_editions": [
       {
+        "publisher": "دار ابن عفان",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782717414542-images77.jpeg"
         ],
         "notes": "",
-        "publisher": "دار ابن عفان"
+        "corrections": [],
+        "volumes": 2
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 174,
@@ -10447,7 +10449,7 @@
       "مصطلح الحديث"
     ],
     "notes": "",
-    "date": "2026-07-06",
+    "date": "2026-08-05",
     "best_editions": [
       {
         "publisher": "مكتبة دار المنهاج",
@@ -10457,7 +10459,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "عبد الكريم الخضير، محمد آل فهيد"
+        "verifier": "عبد الكريم الخضير، محمد آل فهيد",
+        "volumes": 5
       }
     ],
     "alt_editions": [],
@@ -10507,7 +10510,7 @@
       "علل الحديث"
     ],
     "notes": "",
-    "date": "2026-07-03",
+    "date": "2026-08-05",
     "best_editions": [
       {
         "publisher": "دار عالم الكتب",
@@ -10516,7 +10519,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "السيد صبحي السامرائي، السيد ابو المعاطي النوري"
+        "verifier": "السيد صبحي السامرائي، السيد ابو المعاطي النوري",
+        "volumes": 1
       }
     ],
     "alt_editions": [],
