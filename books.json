@@ -1969,19 +1969,21 @@
       "علل الحديث"
     ],
     "notes": "",
+    "date": "2026-08-05",
     "best_editions": [
       {
+        "publisher": "طبعة سعد الحميد والجريسي",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782308331299-FBIMG1615656241046.jpeg",
           "https://arabic-app.github.io/tabaat/images/1782308355742-ilal.jpeg"
         ],
         "notes": "لهم طبعة جديدة في الطريق إن شاء الله",
-        "publisher": "طبعة سعد الحميد والجريسي"
+        "corrections": [],
+        "volumes": 7
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 45,
