@@ -3604,33 +3604,39 @@
       "شروح الحديث"
     ],
     "notes": "",
+    "date": "2026-08-05",
     "best_editions": [
       {
+        "publisher": "مؤسسة العثيمين",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782717156374-images71.jpeg"
         ],
         "notes": "",
-        "publisher": "مؤسسة العثيمين"
+        "corrections": [],
+        "volumes": 9
       },
       {
+        "publisher": "مدار الوطن",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782717161809-images73.jpeg"
         ],
         "notes": "",
-        "publisher": "مدار الوطن"
+        "corrections": [],
+        "volumes": 15
       }
     ],
     "alt_editions": [
       {
+        "publisher": "مكتبة الطبري",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782717167462-images72.jpeg"
         ],
         "notes": "",
-        "publisher": "مكتبة الطبري"
+        "corrections": [],
+        "volumes": 8
       }
     ],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 86,
@@ -7943,27 +7949,31 @@
       "العقيدة"
     ],
     "notes": "",
+    "date": "2026-08-05",
     "best_editions": [
       {
+        "publisher": "دار المغني الثانية",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782717563923-images80.jpeg"
         ],
         "notes": "",
+        "corrections": [],
         "verifier": "سمير الزهيري",
-        "publisher": "دار المغني الثانية"
+        "volumes": 2
       },
       {
+        "publisher": "الناشر المتميز",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782717556889-images78.jpeg"
         ],
         "notes": "الطبعة الأخيرة",
+        "corrections": [],
         "verifier": "الرياشي",
-        "publisher": "الناشر المتميز"
+        "volumes": 2
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 257,
