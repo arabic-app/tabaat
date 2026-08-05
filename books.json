@@ -5398,7 +5398,7 @@
       "اللغة والأدب"
     ],
     "notes": "",
-    "date": "2026-07-04",
+    "date": "2026-08-05",
     "best_editions": [
       {
         "publisher": "المجمع الثقافي بأبي ظبي",
@@ -5407,7 +5407,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "حياة قارة"
+        "verifier": "حياة قارة",
+        "volumes": 2
       }
     ],
     "alt_editions": [],
@@ -7443,19 +7444,21 @@
       "كتب متنوعة"
     ],
     "notes": "",
+    "date": "2026-08-05",
     "best_editions": [
       {
+        "publisher": "مركز الملك فيصل",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782719064653-images20260629T104412.728.jpeg"
         ],
         "notes": "",
+        "corrections": [],
         "verifier": "أبي جنة الحنبلي",
-        "publisher": "مركز الملك فيصل"
+        "volumes": 1
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 236,
@@ -8753,7 +8756,7 @@
       "كتب متنوعة"
     ],
     "notes": "",
-    "date": "2026-07-01",
+    "date": "2026-08-05",
     "best_editions": [
       {
         "publisher": "دار اللؤلؤة",
@@ -8762,7 +8765,8 @@
         ],
         "notes": "ينتبه للشدة في تعليقات المحقق&nbsp;",
         "corrections": [],
-        "verifier": "عادل آل حمدان"
+        "verifier": "عادل آل حمدان",
+        "volumes": 1
       }
     ],
     "alt_editions": [],
@@ -9778,7 +9782,7 @@
       "فقه المرأة"
     ],
     "notes": "",
-    "date": "2026-07-02",
+    "date": "2026-08-05",
     "best_editions": [
       {
         "publisher": "دار المنهاج القويم",
@@ -9787,7 +9791,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "أبي جنة الحنبلي"
+        "verifier": "أبي جنة الحنبلي",
+        "volumes": 1
       }
     ],
     "alt_editions": [],
@@ -9945,7 +9950,7 @@
       "الحديث"
     ],
     "notes": "",
-    "date": "2026-07-03",
+    "date": "2026-08-05",
     "best_editions": [
       {
         "publisher": "دار البشائر الإسلامية",
@@ -9955,7 +9960,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "نبيل هاشم الغمري"
+        "verifier": "نبيل هاشم الغمري",
+        "volumes": 3
       }
     ],
     "alt_editions": [],
@@ -10137,7 +10143,7 @@
       "علل الحديث"
     ],
     "notes": "",
-    "date": "2026-07-02",
+    "date": "2026-08-05",
     "best_editions": [
       {
         "publisher": "أضواء السلف",
@@ -10146,7 +10152,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "نور الدين بن شكري"
+        "verifier": "نور الدين بن شكري",
+        "volumes": 4
       }
     ],
     "alt_editions": [],
@@ -11084,7 +11091,7 @@
       "التاريخ الإسلامي"
     ],
     "notes": "",
-    "date": "2026-07-03",
+    "date": "2026-08-05",
     "best_editions": [
       {
         "publisher": "دار الفنون والعلوم والآداب",
@@ -11094,7 +11101,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "عبد السلام الشدادي"
+        "verifier": "عبد السلام الشدادي",
+        "volumes": 3
       },
       {
         "publisher": "دار نهضة مصر",
@@ -11103,16 +11111,18 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "على عبد الواحد وافي"
+        "verifier": "على عبد الواحد وافي",
+        "volumes": 3
       },
       {
         "publisher": "تونس",
         "images": [
-          "https://arabic-app.github.io/tabaat/images/1783034847747-GAH3zeWwAAKa0P.jpg"
+          "https://arabic-app.github.io/tabaat/images/1785922349514-images56.jpeg"
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "إبراهيم شبوح"
+        "verifier": "إبراهيم شبوح",
+        "volumes": 2
       }
     ],
     "alt_editions": [],
