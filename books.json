@@ -975,7 +975,7 @@
       "شروح الحديث"
     ],
     "notes": "",
-    "date": "2026-07-04",
+    "date": "2026-08-05",
     "best_editions": [
       {
         "publisher": "مؤسسة الرسالة ناشرون",
@@ -984,7 +984,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "سعد نجدت، شعبان العودة"
+        "verifier": "سعد نجدت، شعبان العودة",
+        "volumes": 4
       }
     ],
     "alt_editions": [],
@@ -9606,7 +9607,7 @@
       "الحديث"
     ],
     "notes": "",
-    "date": "2026-07-03",
+    "date": "2026-08-05",
     "best_editions": [
       {
         "publisher": "دار هجر",
@@ -9616,7 +9617,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "محمد عبد المحسن التركي"
+        "verifier": "محمد عبد المحسن التركي",
+        "volumes": 4
       }
     ],
     "alt_editions": [],
