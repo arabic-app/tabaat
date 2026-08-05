@@ -8460,19 +8460,20 @@
       "الحديث"
     ],
     "notes": "",
+    "date": "2026-08-05",
     "best_editions": [
       {
+        "publisher": "دار الصديق ت عصام موسى  هادي",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782846683396-IMG20260630210635471.jpg"
         ],
         "notes": "",
         "corrections": [],
-        "publisher": "دار الصديق ت عصام موسى  هادي"
+        "volumes": 1
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 276,
