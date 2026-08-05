@@ -12536,5 +12536,63 @@
     ],
     "alt_editions": [],
     "links": []
+  },
+  {
+    "id": 429,
+    "title": "أنوار التنزيل وأسرار التأويل (تفسير البيضاوي)",
+    "author": "ناصر الدين أبو سعيد عبد الله بن عمر بن محمد الشيرازي البيضاوي",
+    "category": [
+      "التفسير"
+    ],
+    "notes": "",
+    "date": "2026-08-05",
+    "best_editions": [
+      {
+        "publisher": "مركز تفسير للدراسات القرآنية",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1785919909458-baydhawitafsirall.png",
+          "https://arabic-app.github.io/tabaat/images/1785919920685-baydhawitafsircover.png"
+        ],
+        "notes": "",
+        "corrections": [],
+        "verifier": "علم لاحياء التراث والخدمات الرقمية، إشراف عبد الرحمن الشهري وعبد الرحمن قائد",
+        "volumes": 7
+      },
+      {
+        "publisher": "دار اللباب",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1785920288720-baydhawiloubaball.png",
+          "https://arabic-app.github.io/tabaat/images/1785920295265-baydhawiloubabcover.png",
+          "https://arabic-app.github.io/tabaat/images/1785920300116-baydhawirissala1v.jpg"
+        ],
+        "notes": "لها إصدار في مجلد واحد",
+        "corrections": [],
+        "verifier": "ماهر اديب حبوش، محمد خلوف العبد الله",
+        "volumes": 5
+      },
+      {
+        "publisher": "مؤسسة الرسالة ناشرون",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1785920606154-baydhawirissalaall.jpeg",
+          "https://arabic-app.github.io/tabaat/images/1785920610467-baydhawirissalacover.jpg",
+          "https://arabic-app.github.io/tabaat/images/1785920614541-baydhawirissala1v.jpg"
+        ],
+        "notes": "<div>لها إصدار في مجلد واحد</div>",
+        "corrections": [],
+        "verifier": "فادي المغربي",
+        "volumes": 5
+      }
+    ],
+    "alt_editions": [],
+    "links": [
+      {
+        "title": "التعليق على المخالفات العقدية في تفسير البيضاوي",
+        "url": "https://archive.org/details/20240919_20240919_1248"
+      },
+      {
+        "title": "مقارنة بين طبعات تفسير البيضاوي",
+        "url": "https://archive.org/details/baydhawi_editions"
+      }
+    ]
   }
 ]
