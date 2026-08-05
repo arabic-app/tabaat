@@ -5127,19 +5127,21 @@
       "كتب متنوعة"
     ],
     "notes": "",
+    "date": "2026-08-05",
     "best_editions": [
       {
+        "publisher": "العاصمة",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782718718725-images89.jpeg"
         ],
         "notes": "",
+        "corrections": [],
         "verifier": "رضاء الله المباركفوري",
-        "publisher": "العاصمة"
+        "volumes": 5
       }
     ],
     "alt_editions": [],
-    "links": [],
-    "date": "2026-06-30"
+    "links": []
   },
   {
     "id": 140,
@@ -11216,7 +11218,7 @@
       "الفقه الحنبلي"
     ],
     "notes": "",
-    "date": "2026-07-02",
+    "date": "2026-08-05",
     "best_editions": [
       {
         "publisher": "دار العمرية",
@@ -11226,7 +11228,8 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "عبد الله آل غيهب"
+        "verifier": "عبد الله آل غيهب",
+        "volumes": 1
       }
     ],
     "alt_editions": [],
