@@ -1286,7 +1286,7 @@
       "الحديث"
     ],
     "notes": "",
-    "date": "2026-08-04",
+    "date": "2026-08-06",
     "best_editions": [
       {
         "publisher": "الطبعة المغربية الثانية",
@@ -1316,6 +1316,16 @@
         "notes": "",
         "corrections": [],
         "verifier": "بشار عواد",
+        "volumes": 2
+      },
+      {
+        "publisher": "المكنز الإسلامي",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1786022268912-mwatamaknaz.jpeg"
+        ],
+        "notes": "",
+        "corrections": [],
+        "verifier": "أحمد معبد عبد الكريم",
         "volumes": 2
       }
     ],
@@ -12707,6 +12717,29 @@
         "notes": "",
         "corrections": [],
         "verifier": "هشام مصباح",
+        "volumes": 3
+      }
+    ],
+    "alt_editions": [],
+    "links": []
+  },
+  {
+    "id": 434,
+    "title": "الموطأ (رواية أبي مصعب الزهري)",
+    "author": "مالك بن أنس",
+    "category": [
+      "الحديث"
+    ],
+    "notes": "",
+    "date": "2026-08-06",
+    "best_editions": [
+      {
+        "publisher": "دار التأصيل",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1786022489393-mwatazohritaassil.jpeg"
+        ],
+        "notes": "",
+        "corrections": [],
         "volumes": 3
       }
     ],
