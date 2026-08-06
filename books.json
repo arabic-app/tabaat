@@ -12656,5 +12656,27 @@
     ],
     "alt_editions": [],
     "links": []
+  },
+  {
+    "id": 432,
+    "title": "تطريز رياض الصالحين",
+    "author": "فيصل بن عبد العزيز آل مبارك",
+    "category": [],
+    "notes": "",
+    "date": "2026-08-06",
+    "best_editions": [
+      {
+        "publisher": "دار العاصمة",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1786021136515-tatriz.jpg"
+        ],
+        "notes": "",
+        "corrections": [],
+        "verifier": "عبدالعزيز آل حمد",
+        "volumes": 2
+      }
+    ],
+    "alt_editions": [],
+    "links": []
   }
 ]
