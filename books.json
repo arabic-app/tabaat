@@ -12678,5 +12678,39 @@
     ],
     "alt_editions": [],
     "links": []
+  },
+  {
+    "id": 433,
+    "title": "الموطأ (رواية عبد الله بن مسلمة القعنبي)",
+    "author": "مالك بن أنس",
+    "category": [
+      "الحديث"
+    ],
+    "notes": "",
+    "date": "2026-08-06",
+    "best_editions": [
+      {
+        "publisher": "جمعية دار البر",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1786021814386-mwataberr.jpg"
+        ],
+        "notes": "",
+        "corrections": [],
+        "verifier": "عمر بن أحمد ابن الشيخ علي الأحمد آل عباس",
+        "volumes": 1
+      },
+      {
+        "publisher": "دار الحديث الكتانية ودار الرسالة العالمية",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1786021829622-mwatarissala.jpg"
+        ],
+        "notes": "",
+        "corrections": [],
+        "verifier": "هشام مصباح",
+        "volumes": 3
+      }
+    ],
+    "alt_editions": [],
+    "links": []
   }
 ]
