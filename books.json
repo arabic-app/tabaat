@@ -12608,5 +12608,29 @@
         "url": "https://archive.org/details/baydhawi_editions"
       }
     ]
+  },
+  {
+    "id": 430,
+    "title": "الدراية في تخريج أحاديث الهداية",
+    "author": "أحمد بن علي بن حجر العسقلاني",
+    "category": [
+      "الحديث"
+    ],
+    "notes": "",
+    "date": "2026-08-06",
+    "best_editions": [
+      {
+        "publisher": "دار اللباب",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1786001801537-aldiraya.jpeg"
+        ],
+        "notes": "الشيخ عبد الله البطاطي\nhttps://youtu.be/bedpDOFVlbQ",
+        "corrections": [],
+        "verifier": "توفيق محمود تكلة",
+        "volumes": 3
+      }
+    ],
+    "alt_editions": [],
+    "links": []
   }
 ]
