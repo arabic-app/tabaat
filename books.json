@@ -263,36 +263,29 @@
   },
   {
     "id": 5,
-    "title": "تيسير الكريم الرحمن في تفسير كلام المنان",
+    "title": "تيسير الكريم الرحمن في تفسير كلام المنان (تفسير السعدي)",
     "author": "عبد الرحمن بن ناصر السعدي",
     "category": [
       "التفسير"
     ],
     "notes": "",
-    "date": "2026-08-04",
+    "date": "2026-08-05",
     "best_editions": [
       {
         "publisher": "دار ابن الجوزي",
         "images": [
-          "https://arabic-app.github.io/tabaat/images/1782310771353-47683783424173711752844628917825563208893249n.jpg"
-        ],
-        "notes": "4 مجلدات",
-        "corrections": [],
-        "volumes": 4
-      },
-      {
-        "publisher": "دار ابن الجوزي",
-        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782310771353-47683783424173711752844628917825563208893249n.jpg",
           "https://arabic-app.github.io/tabaat/images/1782659493970-OZ2qjLmFZBmg6qlXxvo8RMO74REOZJbN6Ui7WtMv.jpg"
         ],
-        "notes": "مجلد واحد",
+        "notes": "<span style=\"color: rgb(0, 0, 0); font-family: Tahoma; font-size: 14px; background-color: rgb(253, 253, 253);\">يوجد أيضا إصدار في مجلد واحد.</span>",
         "corrections": [],
-        "volumes": 1
+        "verifier": "سعد بن فواز الصميل",
+        "volumes": 4
       }
     ],
     "alt_editions": [
       {
-        "publisher": "طيبة الخضراء",
+        "publisher": "دار طيبة الخضراء",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782659487366-images90.jpeg"
         ],
@@ -301,13 +294,13 @@
         "volumes": 1
       },
       {
-        "publisher": "دار الإمام مالك",
+        "publisher": "دار الإمام مالك الجزائر",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782659482155-images20260628T181056.799.jpeg"
         ],
         "notes": "",
         "corrections": [],
-        "volumes": 4
+        "volumes": 2
       },
       {
         "publisher": "دار عباد الرحمن ودار الفرقان بالإمارات ومصر",
@@ -316,7 +309,7 @@
         ],
         "notes": "",
         "corrections": [],
-        "volumes": 1
+        "volumes": 2
       }
     ],
     "links": []
@@ -12615,5 +12608,53 @@
         "url": "https://archive.org/details/baydhawi_editions"
       }
     ]
+  },
+  {
+    "id": 430,
+    "title": "الدراية في تخريج أحاديث الهداية",
+    "author": "أحمد بن علي بن حجر العسقلاني",
+    "category": [
+      "الحديث"
+    ],
+    "notes": "",
+    "date": "2026-08-06",
+    "best_editions": [
+      {
+        "publisher": "دار اللباب",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1786001801537-aldiraya.jpeg"
+        ],
+        "notes": "الشيخ عبد الله البطاطي\nhttps://youtu.be/bedpDOFVlbQ",
+        "corrections": [],
+        "verifier": "توفيق محمود تكلة",
+        "volumes": 3
+      }
+    ],
+    "alt_editions": [],
+    "links": []
+  },
+  {
+    "id": 431,
+    "title": "منهج الراغبين في اختصار منهاج الطالبين",
+    "author": "شمس الدين محمد بن يوسف بن إلياس القونوي الحنفي",
+    "category": [
+      "شروح الحديث"
+    ],
+    "notes": "",
+    "date": "2026-08-06",
+    "best_editions": [
+      {
+        "publisher": "دار طيبة الخضراء",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1786002083868-manhajraghibin.jpg"
+        ],
+        "notes": "https://youtu.be/11vmxO_lHXM",
+        "corrections": [],
+        "verifier": "مشاري بن عبدالعزيز الأسلمي",
+        "volumes": 6
+      }
+    ],
+    "alt_editions": [],
+    "links": []
   }
 ]
