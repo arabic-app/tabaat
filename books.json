@@ -12632,5 +12632,29 @@
     ],
     "alt_editions": [],
     "links": []
+  },
+  {
+    "id": 431,
+    "title": "منهج الراغبين في اختصار منهاج الطالبين",
+    "author": "شمس الدين محمد بن يوسف بن إلياس القونوي الحنفي",
+    "category": [
+      "شروح الحديث"
+    ],
+    "notes": "",
+    "date": "2026-08-06",
+    "best_editions": [
+      {
+        "publisher": "دار طيبة الخضراء",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1786002083868-manhajraghibin.jpg"
+        ],
+        "notes": "https://youtu.be/11vmxO_lHXM",
+        "corrections": [],
+        "verifier": "مشاري بن عبدالعزيز الأسلمي",
+        "volumes": 6
+      }
+    ],
+    "alt_editions": [],
+    "links": []
   }
 ]
