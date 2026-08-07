@@ -8,7 +8,7 @@
       "علوم القرآن"
     ],
     "notes": "",
-    "date": "2026-08-04",
+    "date": "2026-08-07",
     "best_editions": [
       {
         "publisher": "دار ابن الجوزي",
@@ -22,14 +22,14 @@
         "volumes": 20
       },
       {
-        "publisher": "سطور / دار عالم الكتب / دار هجر",
+        "publisher": "مركز سطور",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782741919387-tabariturki.jpeg",
           "https://arabic-app.github.io/tabaat/images/1783106081435-1748863138281583467.webp",
           "https://arabic-app.github.io/tabaat/images/1783106088395-images27.jpeg",
           "https://arabic-app.github.io/tabaat/images/1783106097416-images29.jpeg"
         ],
-        "notes": "",
+        "notes": "طبع التحقيق سابقا في&nbsp;دار عالم الكتب ودار هجر",
         "corrections": [],
         "verifier": "عبد الله التركي، مركز هجر",
         "volumes": 26
