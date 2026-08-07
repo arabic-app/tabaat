@@ -336,6 +336,80 @@
         .md-btn-error { background: var(--error); color: white; box-shadow: var(--elevation-1); }
         .md-btn-info { background: var(--info); color: white; box-shadow: var(--elevation-1); }
 
+        /* Searchable Select */
+        .searchable-select {
+            position: relative;
+            flex: 1;
+        }
+        .searchable-select-display {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            cursor: pointer;
+            background: white;
+            user-select: none;
+        }
+        .searchable-select-display .material-icons-round {
+            font-size: 20px;
+            color: var(--on-surface-variant);
+        }
+        .searchable-select-dropdown {
+            position: absolute;
+            top: 100%;
+            left: 0; right: 0;
+            background: white;
+            border: 1px solid var(--outline-variant);
+            border-radius: 8px;
+            margin-top: 4px;
+            z-index: 100;
+            box-shadow: var(--elevation-3);
+            display: none;
+            flex-direction: column;
+            overflow: hidden;
+        }
+        .searchable-select-dropdown.open {
+            display: flex;
+        }
+        .searchable-select-search {
+            padding: 8px;
+            border-bottom: 1px solid var(--outline-variant);
+        }
+        .searchable-select-search input {
+            width: 100%;
+            padding: 6px 12px;
+            border: 1px solid var(--outline-variant);
+            border-radius: 4px;
+            outline: none;
+            font-family: inherit;
+        }
+        .searchable-select-search input:focus {
+            border-color: var(--primary);
+        }
+        .searchable-select-options {
+            max-height: 200px;
+            overflow-y: auto;
+        }
+        .searchable-select-option {
+            padding: 10px 12px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .searchable-select-option:hover {
+            background: rgba(0,105,92,0.05);
+        }
+        .searchable-select-option.selected {
+            background: rgba(0,105,92,0.1);
+            color: var(--primary);
+            font-weight: bold;
+        }
+        .searchable-select-option.hidden {
+            display: none;
+        }
+
+        .dynamic-input-group {
+            display: flex; align-items: center; gap: 6px; margin-bottom: 6px;
+            background: white; border: 1px dashed var(--outline-variant); padding: 4px; border-radius: var(--radius-sm);
+        }
         .btn-open-suggestions {
             display: flex; align-items: center; gap: 6px;
             height: 36px; padding: 0 14px;
@@ -1063,9 +1137,9 @@
                     </div>
                 </div>
 
-                <div class="form-group">
+                <div class="form-group" style="position: relative;">
                     <label for="author">المؤلف *</label>
-                    <input type="text" id="author" class="md-input" required aria-required="true">
+                    <input type="text" id="author" class="md-input" autocomplete="off" required aria-required="true">
                 </div>
 
                 <div class="form-group">
@@ -1747,29 +1821,102 @@
         const list = DOM.categoriesList;
         const div = document.createElement('div');
         div.className = 'dynamic-input-group';
+        
+        // Searchable Select Container
+        const selectContainer = document.createElement('div');
+        selectContainer.className = 'searchable-select';
 
-        const options = [...state.sciences];
-        if (val && !options.includes(val)) options.unshift(val);
-
-        const select = document.createElement('select');
-        select.className = 'md-input cat-input';
-        select.required = true;
-        select.setAttribute('aria-label', 'اختر العلم');
-
-        const defaultOpt = document.createElement('option');
-        defaultOpt.value = '';
-        defaultOpt.disabled = true;
-        defaultOpt.selected = !val;
-        defaultOpt.textContent = 'اختر العلم من القائمة...';
-        select.appendChild(defaultOpt);
-
-        options.forEach(s => {
-            const opt = document.createElement('option');
-            opt.value = s;
-            opt.textContent = s;
-            if (s === val) opt.selected = true;
-            select.appendChild(opt);
+        // Hidden input for the form value
+        const hiddenInput = document.createElement('input');
+        hiddenInput.type = 'hidden';
+        hiddenInput.className = 'cat-input';
+        hiddenInput.value = val;
+        
+        // Display area
+        const display = document.createElement('div');
+        display.className = 'md-input searchable-select-display';
+        display.innerHTML = `
+            <span class="selected-text">${val || 'اختر العلم من القائمة...'}</span>
+            <span class="material-icons-round">expand_more</span>
+        `;
+        
+        // Dropdown
+        const dropdown = document.createElement('div');
+        dropdown.className = 'searchable-select-dropdown';
+        
+        // Search input
+        const searchBox = document.createElement('div');
+        searchBox.className = 'searchable-select-search';
+        const searchInput = document.createElement('input');
+        searchInput.type = 'text';
+        searchInput.placeholder = 'ابحث...';
+        searchBox.appendChild(searchInput);
+        
+        // Options list
+        const optionsContainer = document.createElement('div');
+        optionsContainer.className = 'searchable-select-options';
+        
+        function renderOptions(filter = '') {
+            optionsContainer.innerHTML = '';
+            const normalizedFilter = normalizeArabic(filter);
+            
+            const options = [...state.sciences];
+            if (val && !options.includes(val)) options.unshift(val);
+            
+            options.forEach(s => {
+                if (filter && !normalizeArabic(s).includes(normalizedFilter)) return;
+                
+                const opt = document.createElement('div');
+                opt.className = 'searchable-select-option';
+                if (s === hiddenInput.value) opt.classList.add('selected');
+                opt.textContent = s;
+                
+                opt.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    hiddenInput.value = s;
+                    display.querySelector('.selected-text').textContent = s;
+                    dropdown.classList.remove('open');
+                });
+                
+                optionsContainer.appendChild(opt);
+            });
+            
+            if (optionsContainer.children.length === 0) {
+                const noRes = document.createElement('div');
+                noRes.className = 'searchable-select-option';
+                noRes.style.color = '#777';
+                noRes.textContent = 'لا يوجد نتائج';
+                optionsContainer.appendChild(noRes);
+            }
+        }
+        
+        display.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const isOpen = dropdown.classList.contains('open');
+            document.querySelectorAll('.searchable-select-dropdown').forEach(d => d.classList.remove('open')); // close others
+            if (!isOpen) {
+                dropdown.classList.add('open');
+                searchInput.value = '';
+                renderOptions();
+                searchInput.focus();
+            }
         });
+        
+        searchInput.addEventListener('input', (e) => {
+            renderOptions(e.target.value);
+        });
+        
+        document.addEventListener('click', (e) => {
+            if (!selectContainer.contains(e.target)) {
+                dropdown.classList.remove('open');
+            }
+        });
+
+        dropdown.appendChild(searchBox);
+        dropdown.appendChild(optionsContainer);
+        selectContainer.appendChild(hiddenInput);
+        selectContainer.appendChild(display);
+        selectContainer.appendChild(dropdown);
 
         const removeBtn = document.createElement('button');
         removeBtn.type = 'button';
@@ -1780,7 +1927,7 @@
             if (list.children.length > 1) div.remove();
         });
 
-        div.appendChild(select);
+        div.appendChild(selectContainer);
         div.appendChild(removeBtn);
         list.appendChild(div);
     }
@@ -1906,8 +2053,8 @@
         row.innerHTML = `
             <span class="drag-handle" title="اسحب للترتيب" aria-hidden="true">☰</span>
             <div class="row-inputs">
-                <input type="text" class="md-input ed-publisher" placeholder="دار النشر" value="${escapeHtml(name)}" aria-label="دار النشر">
-                <input type="text" class="md-input ed-verifier" placeholder="المحقق" value="${escapeHtml(verifier)}" aria-label="المحقق">
+                <div style="position:relative;"><input type="text" class="md-input ed-publisher" placeholder="دار النشر" autocomplete="off" value="${escapeHtml(name)}" aria-label="دار النشر"></div>
+                <div style="position:relative;"><input type="text" class="md-input ed-verifier" placeholder="المحقق" autocomplete="off" value="${escapeHtml(verifier)}" aria-label="المحقق"></div>
                 <input type="text" inputmode="numeric" pattern="[0-9٠-٩]*" class="md-input ed-volumes" placeholder="عدد المجلدات" value="${volumes || ''}" aria-label="عدد المجلدات" style="max-width: 130px;">
                 <div class="sub-container">
                     <div class="sub-container-title">
@@ -1961,6 +2108,13 @@
 
         // Remove button
         row.querySelector('.btn-remove').addEventListener('click', () => row.remove());
+
+        // Autocomplete
+        const pubInput = row.querySelector('.ed-publisher');
+        if (pubInput && typeof uniquePublishers !== 'undefined') setupAutocomplete(pubInput, uniquePublishers, () => {}, null);
+        
+        const verInput = row.querySelector('.ed-verifier');
+        if (verInput && typeof uniqueVerifiers !== 'undefined') setupAutocomplete(verInput, uniqueVerifiers, () => {}, null);
 
         container.appendChild(row);
     }
@@ -3251,11 +3405,16 @@
     }
 
     let uniquePublishers = [];
+    let uniqueAuthors = [];
+    let uniqueVerifiers = [];
 
     function initAutocompleteData() {
         let publishersSet = new Set();
+        let authorsSet = new Set();
+        let verifiersSet = new Set();
 
         state.books.forEach(b => {
+            if (b.author) authorsSet.add(b.author.trim());
             const eds = [...(b.best_editions || []), ...(b.alt_editions || [])];
             eds.forEach(e => {
                 if (e.publisher) {
@@ -3267,15 +3426,25 @@
                     const fullPub = e.publisher.trim();
                     if (fullPub && fullPub.length > 2) publishersSet.add(fullPub);
                 }
+                if (e.verifier) {
+                    verifiersSet.add(e.verifier.trim());
+                }
             });
         });
 
         uniquePublishers = Array.from(publishersSet).sort((a, b) => a.localeCompare(b, 'ar'));
+        uniqueAuthors = Array.from(authorsSet).sort((a, b) => a.localeCompare(b, 'ar'));
+        uniqueVerifiers = Array.from(verifiersSet).sort((a, b) => a.localeCompare(b, 'ar'));
 
         setupAutocomplete(DOM.publisherSearchInput, uniquePublishers, (val) => {
             DOM.clearPublisherSearchBtn.style.display = val ? 'flex' : 'none';
             renderSidebar(DOM.searchInput.value);
         }, DOM.clearPublisherSearchBtn);
+
+        const authorInput = document.getElementById('author');
+        if (authorInput) {
+            setupAutocomplete(authorInput, uniqueAuthors, () => {}, null);
+        }
     }
 
     function setupAutocomplete(input, dataList, onSelect, clearBtn) {
