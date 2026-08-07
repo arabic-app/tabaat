@@ -60,28 +60,28 @@
     "date": "2026-08-05",
     "best_editions": [
       {
-        "publisher": "مؤسسة الرسالة ناشرون - طبعة التركي",
+        "publisher": "مؤسسة الرسالة ناشرون",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782729226229-68457110414916589760409617283073222551480932n.jpg",
           "https://arabic-app.github.io/tabaat/images/1782587885085-images20260627T220656.445.jpeg"
         ],
         "notes": "أجودها مؤسسة الرسالة ناشرون",
         "corrections": [],
-        "verifier": "عبد الله التركي وآخرين",
+        "verifier": "عبد الله التركي",
         "volumes": 24
       },
       {
-        "publisher": "دار الرسالة العالمية - طبعة التركي",
+        "publisher": "دار الرسالة العالمية",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782302992332-.png"
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "عبد الله التركي و آخرين",
+        "verifier": "عبد الله التركي",
         "volumes": 24
       },
       {
-        "publisher": "دار عالم الكتب - طبعة التركي",
+        "publisher": "دار عالم الكتب",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782587952362-images20260627T221902.339.jpeg"
         ],
@@ -10896,7 +10896,7 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "عبد الله التركي و مركز هجر",
+        "verifier": "عبد الله التركي، مركز هجر",
         "volumes": 4
       },
       {
@@ -10906,7 +10906,7 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "عبد الله التركي و مركز هجر",
+        "verifier": "عبد الله التركي، مركز هجر",
         "volumes": 4
       }
     ],
