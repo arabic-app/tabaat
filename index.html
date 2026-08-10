@@ -772,7 +772,9 @@
             line-height: 1.5;
         }
 
-        .edition-actions { display: flex; gap: 4px; flex-shrink: 0; }
+        .edition-actions { display: flex; gap: 0px; flex-shrink: 0; }
+        .edition-actions .md-icon-btn { width: 32px; height: 32px; }
+        .edition-actions .md-icon-btn .material-icons-round { font-size: 18px; }
 
         /* ===== ICON BUTTONS ===== */
         .md-icon-btn {
@@ -2012,6 +2014,7 @@
                     return n;
                 })();
                 if (isEdition && ed.corrections && ed.corrections.length) actions += `<button class="md-icon-btn" onclick="openCorrectionsModal(${book.id}, '${type}', ${idx})" title="تصويبات الطبعة"><span class="material-icons-round">report_problem</span></button>`;
+                if (isEdition && ed.attachments && ed.attachments.length) actions += `<button class="md-icon-btn" onclick="openAttachmentsModal(${book.id}, '${type}', ${idx})" title="ملحقات الطبعة"><span class="material-icons-round">attach_file</span></button>`;
                 if (isEdition && ed.notes) actions += `<button class="md-icon-btn" onclick="openNoteModal('${encodeURIComponent(edLabel)}', '${encodeURIComponent(ed.notes)}')" title="ملاحظات حول الطبعة"><span class="material-icons-round">info</span></button>`;
                 if (isEdition && ((ed.images && ed.images.length) || ed.image)) actions += `<button class="md-icon-btn" onclick="openImageModal(${book.id}, '${type}', ${idx})" title="عرض صور الطبعة"><span class="material-icons-round">photo_library</span></button>`;
                 const nameSpan = (isEdition && (ed.publisher || ed.verifier))
@@ -2139,6 +2142,37 @@
         }
         
         function changeSlide(dir) { currentSlideIndex = (currentSlideIndex + dir + currentCarouselImages.length) % currentCarouselImages.length; renderCarousel(); }
+
+        function openAttachmentsModal(bookId, edType, edIdx) {
+            const ed = booksData.find(b => b.id === bookId)[edType][edIdx];
+            document.getElementById('modalTitle').innerText = 'ملحقات الطبعة';
+            
+            const list = (ed.attachments || []).map(att => {
+                const isPdf = att.url && att.url.toLowerCase().endsWith('.pdf');
+                const isYoutube = att.url && (att.url.includes('youtube.com') || att.url.includes('youtu.be'));
+                let icon = 'link';
+                if (isPdf) icon = 'picture_as_pdf';
+                else if (isYoutube) icon = 'play_circle_filled';
+                
+                const cleanTitle = (att.title || 'مرفق').replace(/'/g, "\\'");
+                if (isPdf) {
+                    return `<button onclick="openPdfViewer('${att.url}', '${cleanTitle}')" class="pdf-link" style="width:100%;margin-bottom:8px;justify-content:flex-start;">
+                        <span class="material-icons-round">${icon}</span>
+                        <span style="margin-right:8px;">${att.title || 'ملف PDF'}</span>
+                    </button>`;
+                } else {
+                    return `<a href="${att.url}" target="_blank" class="pdf-link" style="width:100%;margin-bottom:8px;justify-content:flex-start;text-decoration:none;">
+                        <span class="material-icons-round">${icon}</span>
+                        <span style="margin-right:8px;">${att.title || 'رابط'}</span>
+                    </a>`;
+                }
+            }).join('');
+
+            document.getElementById('modalBody').innerHTML = `
+                <div class="modal-corrections-list" style="margin-top:10px;">${list}</div>
+            `;
+            document.getElementById('infoModal').style.display = 'flex';
+        }
 
         function openCorrectionsModal(bookId, edType, edIdx) {
             const ed = booksData.find(b => b.id === bookId)[edType][edIdx];

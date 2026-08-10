@@ -2026,7 +2026,7 @@
         container.appendChild(card);
     }
 
-    function renderAttachmentRow(container, title = '', url = '') {
+    function renderAttachmentRow(container, title = '', url = '', dirPath = 'corrections') {
         const div = document.createElement('div');
         div.className = 'attachment-row dynamic-input-group';
         div.innerHTML = `
@@ -2037,11 +2037,11 @@
             <button type="button" class="btn-remove-item" title="حذف الملحق">−</button>`;
 
         div.querySelector('.btn-remove-item').addEventListener('click', () => div.remove());
-        bindDragAndDrop(div, div.querySelector('input[type="file"]'), 'corrections', ['png', 'jpg', 'jpeg', 'webp', 'pdf']);
+        bindDragAndDrop(div, div.querySelector('input[type="file"]'), dirPath, ['png', 'jpg', 'jpeg', 'webp', 'pdf']);
         container.appendChild(div);
     }
 
-    function addEditionRow(containerId, name = '', imagesArray = [], notes = '', corrections = [], verifier = '', volumes = '') {
+    function addEditionRow(containerId, name = '', imagesArray = [], notes = '', corrections = [], verifier = '', volumes = '', attachments = []) {
         const container = document.getElementById(containerId);
         const row = document.createElement('div');
         row.className = 'dynamic-row';
@@ -2082,6 +2082,16 @@
                         <span class="material-icons-round" style="font-size:14px">add_alert</span> إضافة تصويب
                     </button>
                 </div>
+                <div class="sub-container" style="margin-top:10px;">
+                    <div class="sub-container-title" style="margin-bottom:8px;">
+                        <span class="material-icons-round" style="font-size:14px;color:var(--primary)">attachment</span>
+                        ملحقات الطبعة (ملف PDF، فيديو يوتيوب، أو رابط):
+                    </div>
+                    <div class="editions-attachments-list"></div>
+                    <button type="button" class="btn-add-item btn-add-ed-attachment" style="margin-top:6px;">
+                        <span class="material-icons-round" style="font-size:14px">attach_file</span> إضافة ملحق للطبعة
+                    </button>
+                </div>
             </div>
             <button type="button" class="btn-remove" title="حذف">
                 <span class="material-icons-round">delete</span>
@@ -2104,6 +2114,13 @@
         (corrections || []).forEach(c => renderCorrectionCard(corrList, c.title, c.body, c.attachments));
         row.querySelector('.btn-add-correction').addEventListener('click', () => {
             renderCorrectionCard(corrList);
+        });
+
+        // Editions Attachments
+        const edAttachList = row.querySelector('.editions-attachments-list');
+        (attachments || []).forEach(a => renderAttachmentRow(edAttachList, a.title, a.url, 'editions_attachments'));
+        row.querySelector('.btn-add-ed-attachment').addEventListener('click', () => {
+            renderAttachmentRow(edAttachList, '', '', 'editions_attachments');
         });
 
         // Remove button
@@ -2292,7 +2309,7 @@
             document.getElementById(cid).innerHTML = '';
             (arr || []).forEach(ed => {
                 const imgs = ed.images || (ed.image ? [ed.image] : []);
-                addEditionRow(cid, ed.publisher, imgs, ed.notes || '', ed.corrections || [], ed.verifier || '', ed.volumes || '');
+                addEditionRow(cid, ed.publisher, imgs, ed.notes || '', ed.corrections || [], ed.verifier || '', ed.volumes || '', ed.attachments || []);
             });
         };
         loadEditions('bestEditions', book.best_editions);
@@ -2338,12 +2355,18 @@
                     return { title, body, attachments };
                 }).filter(c => c.title || c.body || c.attachments.length);
 
+                const editionAttachments = $$('.editions-attachments-list .attachment-row', row).map(att => ({
+                    title: $('.attach-title', att).value.trim(),
+                    url: $('.attach-url', att).value.trim()
+                })).filter(a => a.title || a.url);
+
                 const edObj = {
                     publisher: $('.ed-publisher', row).value.trim(),
                     images,
                     notes: notesHtml,
                     corrections
                 };
+                if (editionAttachments.length > 0) edObj.attachments = editionAttachments;
                 const verifier = $('.ed-verifier', row).value.trim();
                 if (verifier) edObj.verifier = verifier;
 
@@ -2784,7 +2807,7 @@
         if (editions.length > 0) {
             editions.forEach((ed, i) => {
                 const notes = (i === 0 && source) ? source : '';
-                addEditionRow('bestEditions', ed, [], notes, [], verifiers[i] || '');
+                addEditionRow('bestEditions', ed, [], notes, [], verifiers[i] || '', '', []);
             });
         } else {
             addEditionRow('bestEditions');
