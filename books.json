@@ -514,7 +514,7 @@
       "شروح الحديث"
     ],
     "notes": "انتظر طبعة عطاءات العلم",
-    "date": "2026-08-04",
+    "date": "2026-08-10",
     "best_editions": [
       {
         "publisher": "مؤسات الرسالة ناشرون",
@@ -527,12 +527,13 @@
         "volumes": 30
       },
       {
-        "publisher": "دار الرسالة العالمية بإشراف شعيب الأرناؤوط و عادل مرشد",
+        "publisher": "دار الرسالة العالمية",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782681033672-images63.jpeg"
         ],
         "notes": "",
         "corrections": [],
+        "verifier": "شعيب الأرناؤوط وعادل مرشد",
         "volumes": 24
       },
       {
