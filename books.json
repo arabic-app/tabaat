@@ -2542,16 +2542,11 @@
           "https://arabic-app.github.io/tabaat/images/1782633395773-almughniofibnqudamaalmaqdissi.jpg"
         ],
         "notes": "<span style=\"color: rgb(0, 0, 0); font-family: Tahoma; font-size: 14px; background-color: rgb(253, 253, 253);\">أعيد تحقيق الكتاب وهناك تعديلات وتصويبات مقارنة بالتحقيق الأول (دار عالم الكتب / دار هجر / الدارة)</span>",
-        "corrections": [
+        "corrections": [],
+        "attachments": [
           {
             "title": "مقدمة طبعة سطور",
-            "body": "",
-            "attachments": [
-              {
-                "title": "مقدمة طبعة سطور",
-                "url": "https://arabic-app.github.io/tabaat/corrections/1786348226841-.pdf"
-              }
-            ]
+            "url": "https://arabic-app.github.io/tabaat/corrections/1786348226841-.pdf"
           }
         ],
         "verifier": "عبد الله التركي، مركز هجر",
