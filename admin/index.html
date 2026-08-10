@@ -2141,17 +2141,23 @@
         const row = document.createElement('div');
         row.className = 'dynamic-row';
         row.setAttribute('role', 'listitem');
+        row.style.alignItems = 'center';
         row.innerHTML = `
             <span class="drag-handle" title="اسحب للترتيب" aria-hidden="true">☰</span>
-            <div class="row-inputs-horizontal">
-                <input type="text" class="md-input link-title" placeholder="عنوان الرابط..." value="${escapeHtml(title)}" required aria-label="عنوان الرابط">
-                <input type="text" class="md-input link-url" placeholder="الرابط الكامل (URL)..." value="${escapeHtml(url)}" required style="direction:ltr" aria-label="عنوان URL">
+            <div class="row-inputs-horizontal" style="align-items: center;">
+                <input type="text" class="md-input link-title" placeholder="عنوان الرابط أو الملحق..." value="${escapeHtml(title)}" style="flex:1;" required aria-label="عنوان الرابط">
+                <input type="text" class="md-input link-url" placeholder="الرابط الكامل أو اسحب/ارفع..." value="${escapeHtml(url)}" required style="flex:1.5;direction:ltr;" aria-label="عنوان URL">
+                <input type="file" accept="image/*,application/pdf" style="display:none" tabindex="-1">
             </div>
-            <button type="button" class="btn-remove" title="حذف">
-                <span class="material-icons-round">delete</span>
-            </button>`;
+            <div style="display: flex; gap: 4px; align-items: center;">
+                <button type="button" class="btn-upload-img" title="رفع ملف" style="height: 36px; padding: 0 10px;"><span class="material-icons-round">file_upload</span></button>
+                <button type="button" class="btn-remove" title="حذف" style="margin-top: 0;">
+                    <span class="material-icons-round">delete</span>
+                </button>
+            </div>`;
 
         row.querySelector('.btn-remove').addEventListener('click', () => row.remove());
+        bindDragAndDrop(row, row.querySelector('input[type="file"]'), 'books_attachments', ['png', 'jpg', 'jpeg', 'webp', 'pdf']);
         container.appendChild(row);
     }
 

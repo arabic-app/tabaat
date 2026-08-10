@@ -2026,9 +2026,22 @@
                     volHTML = `<span class="edition-volumes" title="عدد المجلدات: ${ed.volumes}">${ed.volumes}</span>`;
                 }
 
-                return isEdition
-                    ? `<li class="md-list-item">${volHTML}${nameSpan}<div class="edition-actions">${actions}</div></li>`
-                    : `<li class="md-list-item"><a href="${ed.url}" target="_blank" class="link-item"><span class="material-icons-round">open_in_new</span><span class="edition-name">${ed.title}</span></a></li>`;
+                if (isEdition) {
+                    return `<li class="md-list-item">${volHTML}${nameSpan}<div class="edition-actions">${actions}</div></li>`;
+                } else {
+                    const isPdf = ed.url && ed.url.toLowerCase().endsWith('.pdf');
+                    const isYoutube = ed.url && (ed.url.includes('youtube.com') || ed.url.includes('youtu.be'));
+                    let icon = 'open_in_new';
+                    if (isPdf) icon = 'picture_as_pdf';
+                    else if (isYoutube) icon = 'play_circle_filled';
+                    
+                    if (isPdf) {
+                        const cleanTitle = (ed.title || 'ملف PDF').replace(/'/g, "\\'");
+                        return `<li class="md-list-item"><button onclick="openPdfViewer('${ed.url}', '${cleanTitle}')" class="link-item" style="background:none;border:none;padding:0;font:inherit;cursor:pointer;display:flex;align-items:center;color:var(--md-primary);font-weight:600;"><span class="material-icons-round" style="margin-left:4px;">${icon}</span><span class="edition-name">${ed.title}</span></button></li>`;
+                    } else {
+                        return `<li class="md-list-item"><a href="${ed.url}" target="_blank" class="link-item" style="display:flex;align-items:center;"><span class="material-icons-round" style="margin-left:4px;">${icon}</span><span class="edition-name">${ed.title}</span></a></li>`;
+                    }
+                }
             }).join('');
 
             let dateHTML = '';
