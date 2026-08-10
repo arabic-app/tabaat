@@ -12678,15 +12678,21 @@
       "الحديث"
     ],
     "notes": "",
-    "date": "2026-08-06",
+    "date": "2026-08-10",
     "best_editions": [
       {
         "publisher": "دار اللباب",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1786001801537-aldiraya.jpeg"
         ],
-        "notes": "الشيخ عبد الله البطاطي\nhttps://youtu.be/bedpDOFVlbQ",
+        "notes": "",
         "corrections": [],
+        "attachments": [
+          {
+            "title": "تعريف الشيخ عبد الله البطاطي",
+            "url": "https://youtu.be/bedpDOFVlbQ"
+          }
+        ],
         "verifier": "توفيق محمود تكلة",
         "volumes": 3
       }
