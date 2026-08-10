@@ -2534,7 +2534,7 @@
       "الفقه"
     ],
     "notes": "هناك عدة أعمال في الطريق إن شاء الله",
-    "date": "2026-08-04",
+    "date": "2026-08-10",
     "best_editions": [
       {
         "publisher": "مركز سطور",
@@ -2542,7 +2542,18 @@
           "https://arabic-app.github.io/tabaat/images/1782633395773-almughniofibnqudamaalmaqdissi.jpg"
         ],
         "notes": "<span style=\"color: rgb(0, 0, 0); font-family: Tahoma; font-size: 14px; background-color: rgb(253, 253, 253);\">أعيد تحقيق الكتاب وهناك تعديلات وتصويبات مقارنة بالتحقيق الأول (دار عالم الكتب / دار هجر / الدارة)</span>",
-        "corrections": [],
+        "corrections": [
+          {
+            "title": "مقدمة طبعة سطور",
+            "body": "",
+            "attachments": [
+              {
+                "title": "مقدمة طبعة سطور",
+                "url": "https://arabic-app.github.io/tabaat/corrections/1786348226841-.pdf"
+              }
+            ]
+          }
+        ],
         "verifier": "عبد الله التركي، مركز هجر",
         "volumes": 17
       }
@@ -2574,6 +2585,16 @@
               {
                 "title": "الحلقة الرابعة",
                 "url": "https://arabic-app.github.io/tabaat/corrections/1783517752565-.pdf"
+              }
+            ]
+          },
+          {
+            "title": "مقدمة طبعة سطور",
+            "body": "",
+            "attachments": [
+              {
+                "title": "مقدمة طبعة سطور",
+                "url": "https://arabic-app.github.io/tabaat/corrections/1786348226841-.pdf"
               }
             ]
           }
@@ -2609,6 +2630,16 @@
                 "url": "https://arabic-app.github.io/tabaat/corrections/1783517752565-.pdf"
               }
             ]
+          },
+          {
+            "title": "مقدمة طبعة سطور",
+            "body": "",
+            "attachments": [
+              {
+                "title": "مقدمة طبعة سطور",
+                "url": "https://arabic-app.github.io/tabaat/corrections/1786348226841-.pdf"
+              }
+            ]
           }
         ],
         "verifier": "عبد الله التركي، عبد الفتاح الحلو",
@@ -2640,6 +2671,16 @@
               {
                 "title": "الحلقة الرابعة",
                 "url": "https://arabic-app.github.io/tabaat/corrections/1783517752565-.pdf"
+              }
+            ]
+          },
+          {
+            "title": "مقدمة طبعة سطور",
+            "body": "",
+            "attachments": [
+              {
+                "title": "مقدمة طبعة سطور",
+                "url": "https://arabic-app.github.io/tabaat/corrections/1786348226841-.pdf"
               }
             ]
           }
