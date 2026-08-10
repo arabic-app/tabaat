@@ -12816,5 +12816,35 @@
     ],
     "alt_editions": [],
     "links": []
+  },
+  {
+    "id": 435,
+    "title": "الروض الباسم في الذب عن سنة أبي القاسم ﷺ",
+    "author": "محمد بن ابراهيم الوزير",
+    "category": [
+      "كتب متنوعة"
+    ],
+    "notes": "",
+    "date": "2026-08-10",
+    "best_editions": [
+      {
+        "publisher": "دار الحضارة",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1786365501430-rawdhbassem.jpg"
+        ],
+        "notes": "الطبعة الثانية، صدر سابقا في مجلدين عن عالم الفوائد<br>",
+        "corrections": [],
+        "attachments": [
+          {
+            "title": "تعريف الشيخ عبد الله البطاطي",
+            "url": "https://youtu.be/rmhp0eSLqcY?si=UXIN80zRAqlfv4A5"
+          }
+        ],
+        "verifier": "علي العمران",
+        "volumes": 1
+      }
+    ],
+    "alt_editions": [],
+    "links": []
   }
 ]
