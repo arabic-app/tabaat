@@ -12846,5 +12846,29 @@
     ],
     "alt_editions": [],
     "links": []
+  },
+  {
+    "id": 436,
+    "title": "العواصم والقواصم في الذب عن سنة أبي القاسم ﷺ",
+    "author": "محمد بن ابراهيم الوزير",
+    "category": [
+      "كتب متنوعة"
+    ],
+    "notes": "",
+    "date": "2026-08-10",
+    "best_editions": [
+      {
+        "publisher": "مؤسسة الرسالة ناشرون",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1786365827210-awassem.jpg"
+        ],
+        "notes": "",
+        "corrections": [],
+        "verifier": "شعيب الأرناؤوط",
+        "volumes": 5
+      }
+    ],
+    "alt_editions": [],
+    "links": []
   }
 ]
