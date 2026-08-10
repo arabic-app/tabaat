@@ -8,7 +8,7 @@
       "علوم القرآن"
     ],
     "notes": "",
-    "date": "2026-08-04",
+    "date": "2026-08-07",
     "best_editions": [
       {
         "publisher": "دار ابن الجوزي",
@@ -22,14 +22,14 @@
         "volumes": 20
       },
       {
-        "publisher": "سطور / دار عالم الكتب / دار هجر",
+        "publisher": "مركز سطور",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782741919387-tabariturki.jpeg",
           "https://arabic-app.github.io/tabaat/images/1783106081435-1748863138281583467.webp",
           "https://arabic-app.github.io/tabaat/images/1783106088395-images27.jpeg",
           "https://arabic-app.github.io/tabaat/images/1783106097416-images29.jpeg"
         ],
-        "notes": "",
+        "notes": "طبع التحقيق سابقا في&nbsp;دار عالم الكتب ودار هجر",
         "corrections": [],
         "verifier": "عبد الله التركي، مركز هجر",
         "volumes": 26
@@ -60,28 +60,28 @@
     "date": "2026-08-05",
     "best_editions": [
       {
-        "publisher": "مؤسسة الرسالة ناشرون - طبعة التركي",
+        "publisher": "مؤسسة الرسالة ناشرون",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782729226229-68457110414916589760409617283073222551480932n.jpg",
           "https://arabic-app.github.io/tabaat/images/1782587885085-images20260627T220656.445.jpeg"
         ],
         "notes": "أجودها مؤسسة الرسالة ناشرون",
         "corrections": [],
-        "verifier": "عبد الله التركي وآخرين",
+        "verifier": "عبد الله التركي",
         "volumes": 24
       },
       {
-        "publisher": "دار الرسالة العالمية - طبعة التركي",
+        "publisher": "دار الرسالة العالمية",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782302992332-.png"
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "عبد الله التركي و آخرين",
+        "verifier": "عبد الله التركي",
         "volumes": 24
       },
       {
-        "publisher": "دار عالم الكتب - طبعة التركي",
+        "publisher": "دار عالم الكتب",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782587952362-images20260627T221902.339.jpeg"
         ],
@@ -2534,7 +2534,7 @@
       "الفقه"
     ],
     "notes": "هناك عدة أعمال في الطريق إن شاء الله",
-    "date": "2026-08-04",
+    "date": "2026-08-10",
     "best_editions": [
       {
         "publisher": "مركز سطور",
@@ -2542,7 +2542,18 @@
           "https://arabic-app.github.io/tabaat/images/1782633395773-almughniofibnqudamaalmaqdissi.jpg"
         ],
         "notes": "<span style=\"color: rgb(0, 0, 0); font-family: Tahoma; font-size: 14px; background-color: rgb(253, 253, 253);\">أعيد تحقيق الكتاب وهناك تعديلات وتصويبات مقارنة بالتحقيق الأول (دار عالم الكتب / دار هجر / الدارة)</span>",
-        "corrections": [],
+        "corrections": [
+          {
+            "title": "مقدمة طبعة سطور",
+            "body": "",
+            "attachments": [
+              {
+                "title": "مقدمة طبعة سطور",
+                "url": "https://arabic-app.github.io/tabaat/corrections/1786348226841-.pdf"
+              }
+            ]
+          }
+        ],
         "verifier": "عبد الله التركي، مركز هجر",
         "volumes": 17
       }
@@ -2574,6 +2585,16 @@
               {
                 "title": "الحلقة الرابعة",
                 "url": "https://arabic-app.github.io/tabaat/corrections/1783517752565-.pdf"
+              }
+            ]
+          },
+          {
+            "title": "مقدمة طبعة سطور",
+            "body": "",
+            "attachments": [
+              {
+                "title": "مقدمة طبعة سطور",
+                "url": "https://arabic-app.github.io/tabaat/corrections/1786348226841-.pdf"
               }
             ]
           }
@@ -2609,6 +2630,16 @@
                 "url": "https://arabic-app.github.io/tabaat/corrections/1783517752565-.pdf"
               }
             ]
+          },
+          {
+            "title": "مقدمة طبعة سطور",
+            "body": "",
+            "attachments": [
+              {
+                "title": "مقدمة طبعة سطور",
+                "url": "https://arabic-app.github.io/tabaat/corrections/1786348226841-.pdf"
+              }
+            ]
           }
         ],
         "verifier": "عبد الله التركي، عبد الفتاح الحلو",
@@ -2640,6 +2671,16 @@
               {
                 "title": "الحلقة الرابعة",
                 "url": "https://arabic-app.github.io/tabaat/corrections/1783517752565-.pdf"
+              }
+            ]
+          },
+          {
+            "title": "مقدمة طبعة سطور",
+            "body": "",
+            "attachments": [
+              {
+                "title": "مقدمة طبعة سطور",
+                "url": "https://arabic-app.github.io/tabaat/corrections/1786348226841-.pdf"
               }
             ]
           }
@@ -3116,10 +3157,11 @@
     "title": "روضة العقلاء ونزهة الفضلاء",
     "author": "محمد بن حبان البُستي",
     "category": [
-      "كتب متنوعة"
+      "الآداب الشرعية",
+      "اللغة والأدب"
     ],
     "notes": "",
-    "date": "2026-08-04",
+    "date": "2026-08-07",
     "best_editions": [
       {
         "publisher": "أروقة",
@@ -4453,7 +4495,7 @@
     "date": "2026-08-04",
     "best_editions": [
       {
-        "publisher": "ابن الجوزي",
+        "publisher": "دار ابن الجوزي",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782717009647-16810765675.jpg"
         ],
@@ -5248,10 +5290,11 @@
     "title": "نضرة النعيم في مكارم أخلاق الرسول الكريم",
     "author": "مجموعة من المختصين",
     "category": [
-      "السيرة"
+      "السيرة",
+      "الآداب الشرعية"
     ],
     "notes": "",
-    "date": "2026-08-04",
+    "date": "2026-08-07",
     "best_editions": [
       {
         "publisher": "دار الوسيلة",
@@ -6489,11 +6532,12 @@
       "كتب متنوعة"
     ],
     "notes": "",
-    "date": "2026-08-04",
+    "date": "2026-08-07",
     "best_editions": [
       {
         "publisher": "دار عطاءات العلم",
         "images": [
+          "https://arabic-app.github.io/tabaat/images/1786097438293-49092.jpg",
           "https://arabic-app.github.io/tabaat/images/1782658723181-images77.jpeg"
         ],
         "notes": "",
@@ -6513,11 +6557,12 @@
       "كتب متنوعة"
     ],
     "notes": "",
-    "date": "2026-08-04",
+    "date": "2026-08-07",
     "best_editions": [
       {
         "publisher": "عطاءات العلم",
         "images": [
+          "https://arabic-app.github.io/tabaat/images/1786097586000-49106.jpg",
           "https://arabic-app.github.io/tabaat/images/1782622535748-whatsappimage20241101at23239pm6724e6ca785c9.jpeg"
         ],
         "notes": "",
@@ -10600,7 +10645,7 @@
       "الآداب الشرعية"
     ],
     "notes": "",
-    "date": "2026-08-03",
+    "date": "2026-08-09",
     "best_editions": [
       {
         "publisher": "الناشر المتميز",
@@ -10611,6 +10656,17 @@
         "corrections": [],
         "verifier": "محمد علي البيضاني",
         "volumes": 3
+      },
+      {
+        "publisher": "دار اللؤلؤة",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1786295338901-49337.jpg",
+          "https://arabic-app.github.io/tabaat/images/1786295344966-49340.jpg"
+        ],
+        "notes": "",
+        "corrections": [],
+        "verifier": "أبي عبد الله أحمد بن إبراهيم بن أبي العينين",
+        "volumes": 2
       }
     ],
     "alt_editions": [],
@@ -10896,7 +10952,7 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "عبد الله التركي و مركز هجر",
+        "verifier": "عبد الله التركي، مركز هجر",
         "volumes": 4
       },
       {
@@ -10906,7 +10962,7 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "عبد الله التركي و مركز هجر",
+        "verifier": "عبد الله التركي، مركز هجر",
         "volumes": 4
       }
     ],
@@ -12080,10 +12136,10 @@
     "title": "خزانة الأدب ولب لباب لسان العرب",
     "author": "عبد القادر البغدادي",
     "category": [
-      "الآداب الشرعية"
+      "اللغة والأدب"
     ],
     "notes": "",
-    "date": "2026-08-04",
+    "date": "2026-08-07",
     "best_editions": [
       {
         "publisher": "مكتبة الخانجي",
