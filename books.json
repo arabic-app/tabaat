@@ -2481,7 +2481,7 @@
       "السيرة"
     ],
     "notes": "",
-    "date": "2026-08-04",
+    "date": "2026-08-10",
     "best_editions": [
       {
         "publisher": "دار الفاروق",
@@ -2490,6 +2490,12 @@
         ],
         "notes": "",
         "corrections": [],
+        "attachments": [
+          {
+            "title": "سيرة ابن هشام دراسة مقارنة بين طبعتين - سامح عثمان - مجلة روى",
+            "url": "https://arabic-app.github.io/tabaat/editions_attachments/1786364300941-.pdf"
+          }
+        ],
         "verifier": "همام سعيد، عادل مرشد",
         "volumes": 4
       },
@@ -2500,6 +2506,12 @@
         ],
         "notes": "",
         "corrections": [],
+        "attachments": [
+          {
+            "title": "سيرة ابن هشام دراسة مقارنة بين طبعتين - سامح عثمان - مجلة روى",
+            "url": "https://arabic-app.github.io/tabaat/editions_attachments/1786364300941-.pdf"
+          }
+        ],
         "verifier": "حسين عكاشة",
         "volumes": 4
       }
