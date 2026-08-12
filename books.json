@@ -12893,5 +12893,39 @@
     ],
     "alt_editions": [],
     "links": []
+  },
+  {
+    "id": 439,
+    "title": "الفروق",
+    "author": "أحمد بن إدريس القرافي المالكي",
+    "category": [
+      "الفقه"
+    ],
+    "notes": "",
+    "date": "2026-08-12",
+    "best_editions": [
+      {
+        "publisher": "مؤسسة الرسالة ناشرون",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1786521962756-frourouknachiroun.jpeg"
+        ],
+        "notes": "",
+        "corrections": [],
+        "verifier": "عمر حسن القيام",
+        "volumes": 4
+      },
+      {
+        "publisher": "دار الرسالة العالمية",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1786521769959-frouroukalamia.jpg"
+        ],
+        "notes": "",
+        "corrections": [],
+        "verifier": "عمر حسن القيام",
+        "volumes": 4
+      }
+    ],
+    "alt_editions": [],
+    "links": []
   }
 ]
