@@ -8035,11 +8035,11 @@
     "date": "2026-08-12",
     "best_editions": [
       {
-        "publisher": "دار المغني الثانية",
+        "publisher": "دار المغني",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782717563923-images80.jpeg"
         ],
-        "notes": "",
+        "notes": "الطبعة الثانية",
         "corrections": [],
         "attachments": [
           {
@@ -8055,13 +8055,24 @@
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782717556889-images78.jpeg"
         ],
-        "notes": "الطبعة الأخيرة",
+        "notes": "الطبعة المنقحة",
         "corrections": [],
         "verifier": "الرياشي",
         "volumes": 2
       }
     ],
-    "alt_editions": [],
+    "alt_editions": [
+      {
+        "publisher": "مكتبة الرشد",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1786524051149-49553.jpg"
+        ],
+        "notes": "",
+        "corrections": [],
+        "verifier": "عبد العزيز بن إبراهيم الشهوان",
+        "volumes": 2
+      }
+    ],
     "links": []
   },
   {
