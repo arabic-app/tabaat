@@ -2032,7 +2032,7 @@
         div.innerHTML = `
             <input type="text" class="md-input attach-title" placeholder="عنوان الملحق..." value="${escapeHtml(title)}" style="flex:1;" required aria-label="عنوان الملحق">
             <input type="text" class="md-input attach-url" placeholder="رابط الملف أو اسحب/ارفع..." value="${escapeHtml(url)}" style="flex:1.5;direction:ltr;" required aria-label="رابط الملحق">
-            <input type="file" accept="image/*,application/pdf" style="display:none" tabindex="-1">
+            <input type="file" accept="image/*,application/pdf" style="display:none" tabindex="-1" data-dir="${dirPath}">
             <button type="button" class="btn-upload-img" title="رفع ملف"><span class="material-icons-round">file_upload</span></button>
             <button type="button" class="btn-remove-item" title="حذف الملحق">−</button>`;
 
@@ -2147,7 +2147,7 @@
             <div class="row-inputs-horizontal" style="align-items: center;">
                 <input type="text" class="md-input link-title" placeholder="عنوان الرابط أو الملحق..." value="${escapeHtml(title)}" style="flex:1;" required aria-label="عنوان الرابط">
                 <input type="text" class="md-input link-url" placeholder="الرابط الكامل أو اسحب/ارفع..." value="${escapeHtml(url)}" required style="flex:1.5;direction:ltr;" aria-label="عنوان URL">
-                <input type="file" accept="image/*,application/pdf" style="display:none" tabindex="-1">
+                <input type="file" accept="image/*,application/pdf" style="display:none" tabindex="-1" data-dir="books_attachments">
             </div>
             <div style="display: flex; gap: 4px; align-items: center;">
                 <button type="button" class="btn-upload-img" title="رفع ملف" style="height: 36px; padding: 0 10px;"><span class="material-icons-round">file_upload</span></button>
@@ -3197,19 +3197,19 @@
         document.addEventListener('click', e => {
             const uploadBtn = e.target.closest('.btn-upload-img');
             if (uploadBtn) {
-                const fileInput = uploadBtn.closest('.dynamic-input-group').querySelector('input[type="file"]');
-                if (fileInput) fileInput.click();
+                const container = uploadBtn.closest('.dynamic-input-group') || uploadBtn.closest('.dynamic-row');
+                if (container) {
+                    const fileInput = container.querySelector('input[type="file"]');
+                    if (fileInput) fileInput.click();
+                }
             }
         });
 
         // File input change (event delegation)
         document.addEventListener('change', e => {
-            if (e.target.type === 'file' && e.target.closest('.dynamic-input-group')) {
-                const group = e.target.closest('.dynamic-input-group');
-                const isCorrection = group.closest('.sub-container[style*="background"]') ||
-                                     group.classList.contains('attachment-row');
-                const dir = isCorrection ? 'corrections' : 'images';
-                const ext = isCorrection ? ['png', 'jpg', 'jpeg', 'webp', 'pdf'] : ['png', 'jpg', 'jpeg', 'webp'];
+            if (e.target.type === 'file') {
+                const dir = e.target.getAttribute('data-dir') || 'images';
+                const ext = dir === 'images' ? ['png', 'jpg', 'jpeg', 'webp'] : ['png', 'jpg', 'jpeg', 'webp', 'pdf'];
                 uploadFileToGitHub(e.target, dir, ext);
             }
         });
