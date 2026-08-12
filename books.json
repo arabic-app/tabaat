@@ -422,14 +422,14 @@
       "الحديث"
     ],
     "notes": "",
-    "date": "2026-08-03",
+    "date": "2026-08-12",
     "best_editions": [
       {
-        "publisher": "بحاشية السهارنفوري (دار البشائر / دار القلم)",
+        "publisher": "دار البشائر / دار القلم",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782579823190-ea9d3ec1f28a4be6acf4d65543e37c331000x10002wHhqGSw1zuZUO4WYuJafuNdy9xil88xrtlfnLMt.jpg"
         ],
-        "notes": "",
+        "notes": "بحاشية السهارنفوري",
         "corrections": [],
         "verifier": "تقي الدين الندوي",
         "volumes": 6
@@ -444,7 +444,7 @@
         "volumes": 8
       },
       {
-        "publisher": "التأصيل",
+        "publisher": "دار التأصيل",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782579407411-47757527024173713119511156367729419178237330n.jpg"
         ],
@@ -463,11 +463,11 @@
         "volumes": 5
       },
       {
-        "publisher": "السلطانية دار المنهاج",
+        "publisher": "دار المنهاج",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782579472469-47701442524173710852844717625350440410297329n.jpg"
         ],
-        "notes": "",
+        "notes": "السلطانية",
         "corrections": [],
         "verifier": "عناية محمد زهير الناصر",
         "volumes": 4
@@ -494,11 +494,11 @@
         "volumes": 1
       },
       {
-        "publisher": "دار التأصيل مجلد واحد",
+        "publisher": "دار التأصيل",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782579890821-images20260627T200443.775.jpeg"
         ],
-        "notes": "",
+        "notes": "مجلد واحد",
         "corrections": [],
         "volumes": 1
       }
