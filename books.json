@@ -8032,7 +8032,7 @@
       "العقيدة"
     ],
     "notes": "",
-    "date": "2026-08-05",
+    "date": "2026-08-12",
     "best_editions": [
       {
         "publisher": "دار المغني الثانية",
@@ -8041,6 +8041,12 @@
         ],
         "notes": "",
         "corrections": [],
+        "attachments": [
+          {
+            "title": "مقدمة التحقيق",
+            "url": "https://arabic-app.github.io/tabaat/editions_attachments/1786522819346-tawhidmokadima.pdf"
+          }
+        ],
         "verifier": "سمير الزهيري",
         "volumes": 2
       },
