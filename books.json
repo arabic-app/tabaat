@@ -1342,14 +1342,14 @@
       "شروح الحديث"
     ],
     "notes": "<ul><li>صدرت مؤخرا ط سطور ت مركز هجر فلتنظر.&nbsp;</li><li>طبعة بشار عواد فيها خلل كبير لذلك لم تذكر (راجع الروابط المرفقة) .</li></ul>",
-    "date": "2026-08-03",
+    "date": "2026-08-12",
     "best_editions": [
       {
-        "publisher": "موسوعة شروح الموطأ (دار عالم الكتب / دار هجر)",
+        "publisher": "دار عالم الكتب",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782575920511-images20260627T185657.533.jpeg"
         ],
-        "notes": "",
+        "notes": "موسوعة شروح الموطأ",
         "corrections": [],
         "verifier": "عبد الله التركي، مركز هجر",
         "volumes": 25
@@ -1378,7 +1378,7 @@
     "links": [
       {
         "title": "من مزالق المحققين - عبد المنعم الذكر الله",
-        "url": "https://drive.google.com/file/d/1XKO0yZNe6OmdGHRrd2hfmhMvLpOKrvGt/view?usp=sharing"
+        "url": ""
       },
       {
         "title": "وقع الحافر - عبد المنعم الذكر الله",
@@ -12865,6 +12865,30 @@
         "notes": "",
         "corrections": [],
         "volumes": 7
+      }
+    ],
+    "alt_editions": [],
+    "links": []
+  },
+  {
+    "id": 438,
+    "title": "الاستيعاب في معرفة الأصحاب",
+    "author": "يوسف بن عبد البر",
+    "category": [
+      "التراجم والرجال"
+    ],
+    "notes": "",
+    "date": "2026-08-12",
+    "best_editions": [
+      {
+        "publisher": "دار هجر",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1786518290715-estiaab.jpg"
+        ],
+        "notes": "",
+        "corrections": [],
+        "verifier": "عبد الله التركي",
+        "volumes": 9
       }
     ],
     "alt_editions": [],
