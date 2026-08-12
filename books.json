@@ -463,7 +463,7 @@
         "volumes": 5
       },
       {
-        "publisher": "دار المنهاج",
+        "publisher": "دار المنهاج جدة",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782579472469-47701442524173710852844717625350440410297329n.jpg"
         ],
@@ -644,7 +644,7 @@
     "date": "2026-08-04",
     "best_editions": [
       {
-        "publisher": "التأصيل",
+        "publisher": "دار التأصيل",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782632476136-47757959624173712986177835519393077196940699n.jpg"
         ],
@@ -653,11 +653,11 @@
         "volumes": 8
       },
       {
-        "publisher": "مصورة العامرة دار المنهاج",
+        "publisher": "دار المنهاج جدة",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782632603062-47697390624173711419511326317269452434028510n.jpg"
         ],
-        "notes": "",
+        "notes": "العامرة",
         "corrections": [],
         "volumes": 4
       },
@@ -1442,7 +1442,7 @@
           "https://arabic-app.github.io/tabaat/images/1782723098345-eXg8vSXcaXj4KBANT39Cjvn5DmtzYtof2hysi3to.jpg",
           "https://arabic-app.github.io/tabaat/images/1782723104134-64aa97632833429289d5efa491bbd0691000x1000LdW06BAg4aeYY1vZ8uHAyLQNyC98SXF2PZiHjiWn.jpg"
         ],
-        "notes": "دار المنهاج",
+        "notes": "دار المنهاج جدة",
         "corrections": [],
         "verifier": "إشراف أحمد معبد عبد الكريم",
         "volumes": 12
@@ -1698,11 +1698,11 @@
         "volumes": 1
       },
       {
-        "publisher": "دار المنهاج",
+        "publisher": "دار المنهاج جدة",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782559560843-images20260627T142552.522.jpeg"
         ],
-        "notes": "ينتبه للتعليقات",
+        "notes": "بها تعليقات على مذهب الأشاعرة في الحاشية",
         "corrections": [],
         "volumes": 1
       }
@@ -3148,7 +3148,7 @@
         "volumes": 1
       },
       {
-        "publisher": "دار المنهاج",
+        "publisher": "دار المنهاج جدة",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782557834626-47990437124173733419509127006597511774585341n.jpg"
         ],
@@ -5279,7 +5279,7 @@
     "date": "2026-08-04",
     "best_editions": [
       {
-        "publisher": "دار المنهاج بجدة",
+        "publisher": "دار المنهاج جدة",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782624322204-179b98a2b2a44ea6a0d57917d470a6de709.375x1000hER7JXYahZjcJGidvcm7J5NPuYSDMfGn9mc02un5.jpg",
           "https://arabic-app.github.io/tabaat/images/1782624332406-images20260628T081329.214.jpeg",
@@ -5752,7 +5752,7 @@
     "date": "2026-08-03",
     "best_editions": [
       {
-        "publisher": "دار المنهاج بالرياض",
+        "publisher": "مكتبة دار المنهاج الرياض",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782558741926-images20260627T141146.611.jpeg"
         ],
@@ -6040,7 +6040,7 @@
     "date": "2026-08-04",
     "best_editions": [
       {
-        "publisher": "دار المنهاج بالرياض",
+        "publisher": "مكتبة دار المنهاج الرياض",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782683575714-41796239127672780.jpeg"
         ],
@@ -6087,7 +6087,7 @@
     "date": "2026-08-04",
     "best_editions": [
       {
-        "publisher": "دار المنهاج بجدة",
+        "publisher": "دار المنهاج جدة",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782752168179-images20260629T173330.593.jpeg"
         ],
@@ -8111,7 +8111,7 @@
     "date": "2026-08-04",
     "best_editions": [
       {
-        "publisher": "دار المنهاج بجدة",
+        "publisher": "دار المنهاج جدة",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782632145328-1992d5b0b3ff4418a700be9263123826685.18518518519x1000sZnhKJ2rgDEwlSjGubSofF9bbUkBoKmMBJ0ThyYM.jpg",
           "https://arabic-app.github.io/tabaat/images/1782632154182-01a2a3d9f9c94e43be47a37e51e327331000x379.79797979798hNKdfsj3wivyc0nGYI9CDjzMOOvuutlhva6ENzek.jpg"
@@ -9723,7 +9723,7 @@
     "date": "2026-08-04",
     "best_editions": [
       {
-        "publisher": "مكتبة المنهاج الرياض",
+        "publisher": "مكتبة دار المنهاج الرياض",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1783007380813-images8.jpeg"
         ],
@@ -10562,7 +10562,7 @@
     "date": "2026-08-05",
     "best_editions": [
       {
-        "publisher": "مكتبة دار المنهاج",
+        "publisher": "مكتبة دار المنهاج الرياض",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1783033076733-almghythjpg64259463b7b8067926ad46fa08.jpg",
           "https://arabic-app.github.io/tabaat/images/1783033092260-images59.jpeg"
@@ -11398,7 +11398,7 @@
     "date": "2026-08-03",
     "best_editions": [
       {
-        "publisher": "دار المنهاج الرياض",
+        "publisher": "مكتبة دار المنهاج الرياض",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782991378104-images77.jpeg"
         ],
