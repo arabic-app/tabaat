@@ -550,12 +550,12 @@
     ],
     "alt_editions": [
       {
-        "publisher": "دار السلام (الفيحاء)",
+        "publisher": "دار السلام",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782681048388-scaled1.jpg",
           "https://arabic-app.github.io/tabaat/images/1782685428948-images5.jpeg"
         ],
-        "notes": "",
+        "notes": "صدرت أيضا لدى دار الفيحاء",
         "corrections": [],
         "volumes": 14
       },
@@ -1057,12 +1057,13 @@
     "date": "2026-08-04",
     "best_editions": [
       {
-        "publisher": "دار الفيحاء، دار المنهل عناية يوسف الحاج أحمد",
+        "publisher": "دار الفيحاء",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782661017318-.png"
         ],
         "notes": "",
         "corrections": [],
+        "verfifier": "يوسف الحاج أحمد",
         "volumes": 10
       },
       {
@@ -2723,7 +2724,7 @@
     "date": "2026-08-04",
     "best_editions": [
       {
-        "publisher": "دار الفلاح (دار ابن حزم)",
+        "publisher": "دار الفلاح ودار ابن حزم",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782304818204-.png"
         ],
@@ -4602,7 +4603,7 @@
     "date": "2026-08-03",
     "best_editions": [
       {
-        "publisher": "دار  صادر",
+        "publisher": "دار صادر",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782574373353-images20260627T182858.533.jpeg",
           "https://arabic-app.github.io/tabaat/images/1782574380069-images20260627T182851.260.jpeg"
@@ -4652,7 +4653,7 @@
     "date": "2026-08-03",
     "best_editions": [
       {
-        "publisher": "دار  صادر",
+        "publisher": "دار صادر",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782574319933-images20260627T182817.594.jpeg",
           "https://arabic-app.github.io/tabaat/images/1782574330398-images20260627T182812.914.jpeg"
@@ -12028,7 +12029,7 @@
     "date": "2026-08-04",
     "best_editions": [
       {
-        "publisher": "دار ابن حزم، مكتبة الإرشاد",
+        "publisher": "مكتبة الإرشاد ودار ابن حزم",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1783288800598-images52.jpeg"
         ],
