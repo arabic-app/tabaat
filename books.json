@@ -12944,5 +12944,40 @@
     ],
     "alt_editions": [],
     "links": []
+  },
+  {
+    "id": 440,
+    "title": "شرح مختصر الروضة",
+    "author": "نجم الدين سليمان بن عبدالقوي الطوفي",
+    "category": [
+      "أصول الفقه"
+    ],
+    "notes": "",
+    "date": "2026-08-12",
+    "best_editions": [
+      {
+        "publisher": "مؤسسة الرسالة ناشرون",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1786524629667-rawdhanachiroun.jpg"
+        ],
+        "notes": "",
+        "corrections": [],
+        "verifier": "عبد الله التركي",
+        "volumes": 3
+      },
+      {
+        "publisher": "دار الرسالة العالمية",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1786524639361-rawdhaalamia2.jpg",
+          "https://arabic-app.github.io/tabaat/images/1786524644768-rawdhaalamia1.jpg"
+        ],
+        "notes": "",
+        "corrections": [],
+        "verifier": "عبد الله التركي",
+        "volumes": 3
+      }
+    ],
+    "alt_editions": [],
+    "links": []
   }
 ]
