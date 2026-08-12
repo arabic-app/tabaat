@@ -3905,7 +3905,7 @@
     "date": "2026-08-04",
     "best_editions": [
       {
-        "publisher": "تحقيق المطيعي (دار الإرشاد بجدة / دار عالم الكتب / المكتبة التوفيقية)",
+        "publisher": "دار الإرشاد بجدة / دار عالم الكتب / المكتبة التوفيقية",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782631264465-images20260628T101731.045.jpeg",
           "https://arabic-app.github.io/tabaat/images/1783090654364-images11.jpeg",
@@ -3913,6 +3913,7 @@
         ],
         "notes": "",
         "corrections": [],
+        "verifier": "المطيعي"
         "volumes": 23
       }
     ],
