@@ -2211,7 +2211,8 @@
 
         // Cible le champ URL spécifiquement (ex: .attach-url) plutôt que le 1er champ texte
         // du groupe : les lignes de pièces jointes ont aussi un champ "عنوان" avant le lien.
-        const group = fileInput.closest('.dynamic-input-group');
+        const group = fileInput.closest('.dynamic-input-group') || fileInput.closest('.dynamic-row');
+        if (!group) return;
         const textInput = group.querySelector('input[type="text"][class*="url"]') || group.querySelector('input[type="text"]');
 
         const reader = new FileReader();
