@@ -1336,20 +1336,20 @@
   {
     "id": 28,
     "title": "التمهيد لما في الموطأ من المعاني والأسانيد",
-    "author": "يوسف بن عبد البر",
+    "author": "أبو عمر يوسف بن عبد البر",
     "category": [
       "الحديث",
       "شروح الحديث"
     ],
     "notes": "<ul><li>صدرت مؤخرا ط سطور ت مركز هجر فلتنظر.&nbsp;</li><li>طبعة بشار عواد فيها خلل كبير لذلك لم تذكر (راجع الروابط المرفقة) .</li></ul>",
-    "date": "2026-08-03",
+    "date": "2026-08-12",
     "best_editions": [
       {
-        "publisher": "موسوعة شروح الموطأ (دار عالم الكتب / دار هجر)",
+        "publisher": "دار عالم الكتب",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782575920511-images20260627T185657.533.jpeg"
         ],
-        "notes": "",
+        "notes": "موسوعة شروح الموطأ",
         "corrections": [],
         "verifier": "عبد الله التركي، مركز هجر",
         "volumes": 25
@@ -1378,7 +1378,7 @@
     "links": [
       {
         "title": "من مزالق المحققين - عبد المنعم الذكر الله",
-        "url": "https://drive.google.com/file/d/1XKO0yZNe6OmdGHRrd2hfmhMvLpOKrvGt/view?usp=sharing"
+        "url": ""
       },
       {
         "title": "وقع الحافر - عبد المنعم الذكر الله",
@@ -1393,7 +1393,7 @@
   {
     "id": 29,
     "title": "الاستذكار الجامع لمذاهب فقهاء الأمصار",
-    "author": "يوسف بن عبد البر",
+    "author": "أبو عمر يوسف بن عبد البر",
     "category": [
       "الحديث",
       "شروح الحديث"
@@ -3065,7 +3065,7 @@
   {
     "id": 68,
     "title": "جامع بيان العلم وفضله",
-    "author": "يوسف بن عبد البر",
+    "author": "أبو عمر يوسف بن عبد البر",
     "category": [
       "كتب متنوعة"
     ],
@@ -4276,14 +4276,14 @@
       "اللغة والأدب"
     ],
     "notes": "",
-    "date": "2026-08-03",
+    "date": "2026-08-11",
     "best_editions": [
       {
-        "publisher": "الخانجي و مصوراتها",
+        "publisher": "مكتبة الخانجي",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782574348726-images20260627T182837.824.jpeg"
         ],
-        "notes": "",
+        "notes": "&nbsp;و مصوراتها مثل دار الجيل",
         "corrections": [],
         "verifier": "عبد السلام هارون",
         "volumes": 4
@@ -5089,10 +5089,10 @@
       "اللغة والأدب"
     ],
     "notes": "",
-    "date": "2026-08-04",
+    "date": "2026-08-11",
     "best_editions": [
       {
-        "publisher": "الخانجي",
+        "publisher": "مكتبة الخانجي",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782629849589-6750053.jpg"
         ],
@@ -5121,10 +5121,10 @@
       "اللغة والأدب"
     ],
     "notes": "",
-    "date": "2026-08-04",
+    "date": "2026-08-11",
     "best_editions": [
       {
-        "publisher": "الخانجي",
+        "publisher": "مكتبة الخانجي",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782658696962-images73.jpeg"
         ],
@@ -5218,10 +5218,10 @@
       "كتب متنوعة"
     ],
     "notes": "",
-    "date": "2026-08-05",
+    "date": "2026-08-11",
     "best_editions": [
       {
-        "publisher": "العاصمة",
+        "publisher": "دار العاصمة",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782718718725-images89.jpeg"
         ],
@@ -5538,15 +5538,16 @@
       "اللغة والأدب"
     ],
     "notes": "",
-    "date": "2026-08-03",
+    "date": "2026-08-11",
     "best_editions": [
       {
-        "publisher": "دار العاصمة عناية سليمان الخراشي",
+        "publisher": "دار العاصمة",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782587714739-cover.jpg"
         ],
         "notes": "",
         "corrections": [],
+        "verifier": "سليمان الخراشي",
         "volumes": 3
       }
     ],
@@ -9156,10 +9157,10 @@
       "الشعر والدواوين"
     ],
     "notes": "",
-    "date": "2026-08-03",
+    "date": "2026-08-11",
     "best_editions": [
       {
-        "publisher": "مكتبة  الخانجي",
+        "publisher": "مكتبة الخانجي",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782978484548-images67.jpeg"
         ],
@@ -10283,32 +10284,6 @@
         "corrections": [],
         "verifier": "وصي الله عباس",
         "volumes": 2
-      }
-    ],
-    "alt_editions": [],
-    "links": []
-  },
-  {
-    "id": 340,
-    "title": "العواصم والقواصم",
-    "author": "محمد بن إبراهيم بن الوزير",
-    "category": [
-      "العقيدة",
-      "حجية السنة"
-    ],
-    "notes": "",
-    "date": "2026-08-04",
-    "best_editions": [
-      {
-        "publisher": "مؤسسة الرسالة ناشرون",
-        "images": [
-          "https://arabic-app.github.io/tabaat/images/1783007232685-311711.jpg",
-          "https://arabic-app.github.io/tabaat/images/1783007238390-images6.jpeg"
-        ],
-        "notes": "",
-        "corrections": [],
-        "verifier": "شعيب الأرنؤوط",
-        "volumes": 5
       }
     ],
     "alt_editions": [],
@@ -12852,10 +12827,11 @@
     "title": "العواصم والقواصم في الذب عن سنة أبي القاسم ﷺ",
     "author": "محمد بن ابراهيم الوزير",
     "category": [
-      "كتب متنوعة"
+      "العقيدة",
+      "حجية السنة"
     ],
     "notes": "",
-    "date": "2026-08-10",
+    "date": "2026-08-11",
     "best_editions": [
       {
         "publisher": "مؤسسة الرسالة ناشرون",
@@ -12866,6 +12842,53 @@
         "corrections": [],
         "verifier": "شعيب الأرناؤوط",
         "volumes": 5
+      }
+    ],
+    "alt_editions": [],
+    "links": []
+  },
+  {
+    "id": 437,
+    "title": "دولة الإسلام في الأندلس",
+    "author": "محمد عبد الله عنان",
+    "category": [
+      "التاريخ الإسلامي"
+    ],
+    "notes": "",
+    "date": "2026-08-11",
+    "best_editions": [
+      {
+        "publisher": "مكتبة الخانجي",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1786478586383-3a9771819e804938973187368dc721211000x1000B8QAZAXWEGOC3B6tgifCRTpUCWsQ0RNJf52QpOkF.png"
+        ],
+        "notes": "",
+        "corrections": [],
+        "volumes": 7
+      }
+    ],
+    "alt_editions": [],
+    "links": []
+  },
+  {
+    "id": 438,
+    "title": "الاستيعاب في معرفة الأصحاب",
+    "author": "أبو عمر يوسف بن عبد البر",
+    "category": [
+      "التراجم والرجال"
+    ],
+    "notes": "",
+    "date": "2026-08-12",
+    "best_editions": [
+      {
+        "publisher": "دار هجر",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1786518290715-estiaab.jpg"
+        ],
+        "notes": "",
+        "corrections": [],
+        "verifier": "عبد الله التركي",
+        "volumes": 9
       }
     ],
     "alt_editions": [],
