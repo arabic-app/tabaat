@@ -12992,7 +12992,10 @@
     "best_editions": [
       {
         "publisher": "دار الجيل",
-        "images": [],
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1786526028813-49554.jpg",
+          "https://arabic-app.github.io/tabaat/images/1786526037013-49555.jpg"
+        ],
         "notes": "",
         "corrections": [],
         "verifier": "عبد الرحمن بن سلامة بن عبد الله المزيني",
