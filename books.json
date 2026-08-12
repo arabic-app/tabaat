@@ -6783,7 +6783,7 @@
       "كتب متنوعة"
     ],
     "notes": "",
-    "date": "2026-08-04",
+    "date": "2026-08-12",
     "best_editions": [
       {
         "publisher": "دار عطاءات العلم",
@@ -6807,13 +6807,13 @@
         "volumes": 1
       },
       {
-        "publisher": "دار سطور العلم",
+        "publisher": "مركز سطور",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1783840839751-10c1153662664346bfbc293f2e7a3fe1thumbnail1000x100070.jpg"
         ],
-        "notes": "",
+        "notes": "إشراف علي العمران",
         "corrections": [],
-        "verifier": "نضال البرازي إشراف على العمران",
+        "verifier": "نضال البرازي",
         "volumes": 1
       }
     ],
