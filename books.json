@@ -12979,5 +12979,27 @@
     ],
     "alt_editions": [],
     "links": []
+  },
+  {
+    "id": 441,
+    "title": "الجمع والفرق",
+    "author": "أبو محمد عبد الله بن يوسف الجويني",
+    "category": [
+      "الفقه"
+    ],
+    "notes": "",
+    "date": "2026-08-12",
+    "best_editions": [
+      {
+        "publisher": "دار الجيل",
+        "images": [],
+        "notes": "",
+        "corrections": [],
+        "verifier": "عبد الرحمن بن سلامة بن عبد الله المزيني",
+        "volumes": 3
+      }
+    ],
+    "alt_editions": [],
+    "links": []
   }
 ]
