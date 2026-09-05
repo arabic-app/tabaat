@@ -3512,7 +3512,7 @@
       "التفسير"
     ],
     "notes": "",
-    "date": "2026-08-04",
+    "date": "2026-08-28",
     "best_editions": [
       {
         "publisher": "الدار الشامية",
@@ -3526,11 +3526,20 @@
     ],
     "alt_editions": [
       {
+        "publisher": "المكتب الإسلامي",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1787903742244-zadalmassir.jpeg"
+        ],
+        "notes": "",
+        "corrections": [],
+        "volumes": 9
+      },
+      {
         "publisher": "دار ابن حزم",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782667032718-705a3bc520a244b59cfec1a7867a6f99.jpeg"
         ],
-        "notes": "مجلد واحد",
+        "notes": "المكتب الإسلامي<span style=\"color: rgb(0, 0, 0); font-family: Tahoma; font-size: 14px; background-color: rgb(253, 253, 253);\">،</span>&nbsp;مجلد واحد",
         "corrections": [],
         "volumes": 1
       },
@@ -7819,13 +7828,13 @@
   },
   {
     "id": 246,
-    "title": "مختصر الصارم المسلول على شاتم الرسول صلى الله عليه وسلم",
+    "title": "مختصر الصارم المسلول على شاتم الرسول ﷺ",
     "author": "محمد البعلي الحنبلي",
     "category": [
       "العقيدة"
     ],
     "notes": "",
-    "date": "2026-08-04",
+    "date": "2026-09-03",
     "best_editions": [
       {
         "publisher": "دار عطاءات العلم",
@@ -8508,13 +8517,13 @@
   },
   {
     "id": 272,
-    "title": "الصارم المسلول على شاتم الرسول صلى الله عليه وسلم",
+    "title": "الصارم المسلول على شاتم الرسول ﷺ",
     "author": "أحمد بن عبد الحليم بن تيمية",
     "category": [
       "العقيدة"
     ],
     "notes": "",
-    "date": "2026-08-04",
+    "date": "2026-09-03",
     "best_editions": [
       {
         "publisher": "دار التوحيد ودار باب العلم",
@@ -9972,7 +9981,7 @@
       "التاريخ الإسلامي"
     ],
     "notes": "",
-    "date": "2026-08-04",
+    "date": "2026-08-26",
     "best_editions": [
       {
         "publisher": "دار الغرب الإسلامي",
@@ -9980,10 +9989,10 @@
           "https://arabic-app.github.io/tabaat/images/1783021434279-images272014016079374445.jpeg",
           "https://arabic-app.github.io/tabaat/images/1783021450343-GFgDsoQX0AAHf6l.jpg"
         ],
-        "notes": "",
+        "notes": "<span style=\"color: rgb(0, 0, 0); font-family: Tahoma; font-size: 14px; background-color: rgb(253, 253, 253);\">يوجد إصدار قديم في 17 مجلدا</span>",
         "corrections": [],
         "verifier": "بشار عواد",
-        "volumes": 17
+        "volumes": 33
       }
     ],
     "alt_editions": [],

@@ -615,9 +615,11 @@
             overflow-x: auto;
             padding: 4px 0;
             -ms-overflow-style: none; 
-            scrollbar-width: none; 
+            scrollbar-width: none;
+            cursor: grab;
         }
-        .category-chips::-webkit-scrollbar { display: none; } 
+        .category-chips::-webkit-scrollbar { display: none; }
+        .category-chips.dragging { cursor: grabbing; user-select: none; } 
 
         .chip {
             background: var(--md-surface-variant);
@@ -1879,6 +1881,28 @@
             });
         }
 
+        // Drag-to-scroll pour la barre de chips (souris classique)
+        (function() {
+            const chips = document.getElementById('categoryChips');
+            let isDown = false, startX, scrollLeft;
+            chips.addEventListener('mousedown', (e) => {
+                isDown = true; chips.classList.add('dragging');
+                startX = e.pageX - chips.offsetLeft; scrollLeft = chips.scrollLeft;
+            });
+            chips.addEventListener('mouseleave', () => { isDown = false; chips.classList.remove('dragging'); });
+            chips.addEventListener('mouseup', () => { isDown = false; chips.classList.remove('dragging'); });
+            chips.addEventListener('mousemove', (e) => {
+                if (!isDown) return; e.preventDefault();
+                chips.scrollLeft = scrollLeft - (e.pageX - chips.offsetLeft - startX);
+            });
+            // Scroll horizontal avec la molette
+            chips.addEventListener('wheel', (e) => {
+                if (Math.abs(e.deltaX) < Math.abs(e.deltaY)) {
+                    e.preventDefault(); chips.scrollLeft -= e.deltaY;
+                }
+            }, { passive: false });
+        })();
+
         const mainSearch = document.getElementById('searchInput');
         const clearSearchBtn = document.getElementById('clearSearchBtn');
         
@@ -2014,12 +2038,11 @@
 
         function bookCardHTML(book) {
             const bookCats = getBookCategories(book);
-            const catsHTML = bookCats.map(cat => `
-                    <span class="meta-chip clickable" role="button" onclick="cardCategorySearch('${encodeURIComponent(cat)}')">
+            const catsHTML = bookCats.length ? `
+                    <span class="meta-chip">
                         <span class="material-icons-round">category</span>
-                        <span class="text">${cat}</span>
-                    </span>
-                `).join('');
+                        <span class="text">${bookCats.join('، ')}</span>
+                    </span>` : '';
 
             const renderList = (editions, isEdition, type) => (editions || []).map((ed, idx) => {
                 let actions = '';
