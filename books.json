@@ -13048,5 +13048,28 @@
     ],
     "alt_editions": [],
     "links": []
+  },
+  {
+    "id": 443,
+    "title": "الأمالي على مختصر صحيح البخاري",
+    "author": "عبد الرحمن بن صالح الدهش",
+    "category": [
+      "شروح الحديث"
+    ],
+    "notes": "<span style=\"font-family: inherit; font-size: 0.95rem;\">الطبعة الأولى التي صدرت عن دار التدمرية مليئة بالأخطاء.</span>",
+    "date": "2026-09-16",
+    "best_editions": [
+      {
+        "publisher": "دار ابن الجوزي",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1789541486961-59056.webp"
+        ],
+        "notes": "",
+        "corrections": [],
+        "verifier": "أحمد بن صالح بن علي الشويهي"
+      }
+    ],
+    "alt_editions": [],
+    "links": []
   }
 ]
