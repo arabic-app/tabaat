@@ -10828,18 +10828,19 @@
       "القواعد الفقهية"
     ],
     "notes": "",
-    "date": "2026-08-04",
+    "date": "2026-09-17",
     "best_editions": [
       {
         "publisher": "دار ركائز",
         "images": [
+          "https://arabic-app.github.io/tabaat/images/1789655839306-59492.jpg",
           "https://arabic-app.github.io/tabaat/images/1783025600694-db57214980ef4ecaa300b965abaa0671thumbnail370x37070.jpg",
           "https://arabic-app.github.io/tabaat/images/1783025634637-m3KpVMew1k9finoD5YMzqQTJivPwPLusmUyfzIrT.jpg"
         ],
-        "notes": "",
+        "notes": "صدرت سابقا في 3 مجلدات",
         "corrections": [],
         "verifier": "خالد المشيقح، عبد العزيز العيدان، أنس اليتامى",
-        "volumes": 3
+        "volumes": 2
       }
     ],
     "alt_editions": [],
