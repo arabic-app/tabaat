@@ -1939,24 +1939,15 @@
       "مصطلح الحديث"
     ],
     "notes": "",
-    "date": "2026-08-05",
+    "date": "2026-09-21",
     "best_editions": [
       {
         "publisher": "دار المنهاج القويم",
         "images": [
-          "https://arabic-app.github.io/tabaat/images/1782743137789-images20260629T172518.575.jpeg"
-        ],
-        "notes": "",
-        "corrections": [],
-        "verifier": "نور الدين عتر",
-        "volumes": 1
-      },
-      {
-        "publisher": "دار الفكر",
-        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782743137789-images20260629T172518.575.jpeg",
           "https://arabic-app.github.io/tabaat/images/1782743209312-images20260629T120208.759.jpeg"
         ],
-        "notes": "",
+        "notes": "صدر التحقيق سابقا عند دار الفكر",
         "corrections": [],
         "verifier": "نور الدين عتر",
         "volumes": 1
