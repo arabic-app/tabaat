@@ -525,6 +525,43 @@
             margin-bottom: 8px; display: flex; align-items: center; gap: 4px;
         }
 
+        /* ============================================================
+           COLLAPSIBLE EDITION SECTIONS
+           ============================================================ */
+        .ed-section {
+            border: 1px solid var(--outline-variant);
+            border-radius: var(--radius-sm);
+            margin-top: 8px;
+            background: var(--surface);
+            overflow: hidden;
+        }
+        .ed-section-toggle {
+            display: flex; align-items: center; gap: 6px;
+            width: 100%; background: var(--surface-variant);
+            border: none; padding: 8px 12px; cursor: pointer;
+            font-family: inherit; font-size: 0.82rem; font-weight: 700;
+            color: var(--on-surface-variant); text-align: right;
+            transition: background var(--transition-fast);
+        }
+        .ed-section-toggle:hover { background: rgba(0,105,92,0.08); color: var(--primary); }
+        .ed-section-toggle[aria-expanded="true"] { color: var(--primary); }
+        .ed-section-toggle .toggle-icon {
+            font-size: 18px; transition: transform 0.2s ease; margin-right: auto; flex-shrink: 0;
+        }
+        .ed-section-toggle[aria-expanded="true"] .toggle-icon { transform: rotate(180deg); }
+        .ed-section-toggle .badge {
+            background: var(--primary); color: white;
+            font-size: 0.68rem; font-weight: 800;
+            padding: 1px 7px; border-radius: 10px; min-width: 18px;
+            text-align: center; display: none;
+        }
+        .ed-section-toggle .badge.has-data { display: inline-block; }
+        .ed-section-body {
+            padding: 10px 12px;
+            display: none;
+        }
+        .ed-section-body.open { display: block; }
+
         .dynamic-input-group {
             display: flex; gap: 6px; margin-bottom: 6px; align-items: center;
             transition: all var(--transition-fast);
@@ -2219,70 +2256,145 @@
                         <span class="material-icons-round" style="font-size:14px">add_photo_alternate</span> إضافة حقل صورة
                     </button>
                 </div>
-                <div class="rich-editor">
-                    <!-- toolbar injected below -->
-                    <div class="rich-editor-content ed-notes" contenteditable="true"
-                         data-placeholder="ملاحظات خاصة بهذه الطبعة (تظهر كـ ℹ في الموقع)..."
-                         role="textbox" aria-multiline="true" aria-label="ملاحظات الطبعة">${notes}</div>
-                </div>
-                <div class="sub-container" style="margin-top:10px;">
-                    <div class="sub-container-title" style="margin-bottom:8px;">
-                        <span class="material-icons-round" style="font-size:14px;color:var(--primary)">report_problem</span>
-                        تصويبات الطبعة (أخطاء مطبعية أو علمية):
-                    </div>
-                    <div class="corrections-list"></div>
-                    <button type="button" class="btn-add-item btn-add-correction" style="margin-top:6px;">
-                        <span class="material-icons-round" style="font-size:14px">add_alert</span> إضافة تصويب
+
+                <!-- Collapsible: Remarques -->
+                <div class="ed-section">
+                    <button type="button" class="ed-section-toggle" aria-expanded="false">
+                        <span class="material-icons-round" style="font-size:14px">rate_review</span>
+                        ملاحظات الطبعة
+                        <span class="badge ed-notes-badge"></span>
+                        <span class="material-icons-round toggle-icon">expand_more</span>
                     </button>
-                </div>
-                <div class="sub-container" style="margin-top:10px;">
-                    <div class="sub-container-title" style="margin-bottom:8px;">
-                        <span class="material-icons-round" style="font-size:14px;color:var(--primary)">attachment</span>
-                        ملحقات الطبعة (ملف PDF، فيديو يوتيوب، أو رابط):
+                    <div class="ed-section-body">
+                        <div class="rich-editor">
+                            <!-- toolbar injected below -->
+                            <div class="rich-editor-content ed-notes" contenteditable="true"
+                                 data-placeholder="ملاحظات خاصة بهذه الطبعة (تظهر كـ ℹ في الموقع)..."
+                                 role="textbox" aria-multiline="true" aria-label="ملاحظات الطبعة">${notes}</div>
+                        </div>
                     </div>
-                    <div class="editions-attachments-list"></div>
-                    <button type="button" class="btn-add-item btn-add-ed-attachment" style="margin-top:6px;">
-                        <span class="material-icons-round" style="font-size:14px">attach_file</span> إضافة ملحق للطبعة
+                </div>
+
+                <!-- Collapsible: Correctifs -->
+                <div class="ed-section">
+                    <button type="button" class="ed-section-toggle" aria-expanded="false">
+                        <span class="material-icons-round" style="font-size:14px;color:#e65100">report_problem</span>
+                        تصويبات الطبعة
+                        <span class="badge ed-corrections-badge"></span>
+                        <span class="material-icons-round toggle-icon">expand_more</span>
                     </button>
+                    <div class="ed-section-body">
+                        <div class="corrections-list"></div>
+                        <button type="button" class="btn-add-item btn-add-correction" style="margin-top:6px;">
+                            <span class="material-icons-round" style="font-size:14px">add_alert</span> إضافة تصويب
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Collapsible: Docs attachés -->
+                <div class="ed-section">
+                    <button type="button" class="ed-section-toggle" aria-expanded="false">
+                        <span class="material-icons-round" style="font-size:14px;color:#1565c0">attachment</span>
+                        ملحقات الطبعة
+                        <span class="badge ed-attachments-badge"></span>
+                        <span class="material-icons-round toggle-icon">expand_more</span>
+                    </button>
+                    <div class="ed-section-body">
+                        <div class="editions-attachments-list"></div>
+                        <button type="button" class="btn-add-item btn-add-ed-attachment" style="margin-top:6px;">
+                            <span class="material-icons-round" style="font-size:14px">attach_file</span> إضافة ملحق للطبعة
+                        </button>
+                    </div>
                 </div>
             </div>
             <button type="button" class="btn-remove" title="حذف">
                 <span class="material-icons-round">delete</span>
             </button>`;
 
-        // Inject toolbar before editor content
+        // ── Helper: toggle an ed-section ──────────────────────────────
+        function toggleEdSection(btn) {
+            const body = btn.nextElementSibling;
+            const isOpen = btn.getAttribute('aria-expanded') === 'true';
+            btn.setAttribute('aria-expanded', String(!isOpen));
+            body.classList.toggle('open', !isOpen);
+        }
+
+        // ── Helper: update badge count ────────────────────────────────
+        function updateBadge(badge, count) {
+            badge.textContent = count || '';
+            badge.classList.toggle('has-data', count > 0);
+        }
+
+        // ── Inject toolbar before editor content ─────────────────────
         const richEditor = row.querySelector('.rich-editor');
         richEditor.insertBefore(createRichToolbar(), richEditor.firstChild);
 
-        // Images
+        // ── Images ───────────────────────────────────────────────────
         const imagesList = row.querySelector('.images-list');
         imgs.forEach(img => imagesList.appendChild(createImageInput(img)));
-
         row.querySelector('.btn-add-image').addEventListener('click', () => {
             imagesList.appendChild(createImageInput());
         });
 
-        // Corrections
-        const corrList = row.querySelector('.corrections-list');
+        // ── Collapsible sections ──────────────────────────────────────
+        const sections = row.querySelectorAll('.ed-section');
+
+        // Notes section (index 0)
+        const notesSection    = sections[0];
+        const notesToggleBtn  = notesSection.querySelector('.ed-section-toggle');
+        const notesBadge      = notesSection.querySelector('.ed-notes-badge');
+        const hasNotes        = notes && notes.trim() !== '';
+        if (hasNotes) {
+            notesToggleBtn.setAttribute('aria-expanded', 'true');
+            notesSection.querySelector('.ed-section-body').classList.add('open');
+            notesBadge.textContent = '✓';
+            notesBadge.classList.add('has-data');
+        }
+        notesToggleBtn.addEventListener('click', () => toggleEdSection(notesToggleBtn));
+
+        // Corrections section (index 1)
+        const corrSection   = sections[1];
+        const corrToggleBtn = corrSection.querySelector('.ed-section-toggle');
+        const corrBadge     = corrSection.querySelector('.ed-corrections-badge');
+        const corrList      = corrSection.querySelector('.corrections-list');
         (corrections || []).forEach(c => renderCorrectionCard(corrList, c.title, c.body, c.attachments));
-        row.querySelector('.btn-add-correction').addEventListener('click', () => {
+        const hasCorrData = (corrections || []).length > 0;
+        if (hasCorrData) {
+            corrToggleBtn.setAttribute('aria-expanded', 'true');
+            corrSection.querySelector('.ed-section-body').classList.add('open');
+            updateBadge(corrBadge, corrections.length);
+        }
+        corrToggleBtn.addEventListener('click', () => toggleEdSection(corrToggleBtn));
+        corrSection.querySelector('.btn-add-correction').addEventListener('click', () => {
             renderCorrectionCard(corrList);
+            updateBadge(corrBadge, corrList.querySelectorAll('.correction-card').length);
         });
 
-        // Editions Attachments
-        const edAttachList = row.querySelector('.editions-attachments-list');
+        // Attachments section (index 2)
+        const attSection   = sections[2];
+        const attToggleBtn = attSection.querySelector('.ed-section-toggle');
+        const attBadge     = attSection.querySelector('.ed-attachments-badge');
+        const edAttachList = attSection.querySelector('.editions-attachments-list');
         (attachments || []).forEach(a => renderAttachmentRow(edAttachList, a.title, a.url, 'editions_attachments'));
-        row.querySelector('.btn-add-ed-attachment').addEventListener('click', () => {
+        const hasAttData = (attachments || []).length > 0;
+        if (hasAttData) {
+            attToggleBtn.setAttribute('aria-expanded', 'true');
+            attSection.querySelector('.ed-section-body').classList.add('open');
+            updateBadge(attBadge, attachments.length);
+        }
+        attToggleBtn.addEventListener('click', () => toggleEdSection(attToggleBtn));
+        attSection.querySelector('.btn-add-ed-attachment').addEventListener('click', () => {
             renderAttachmentRow(edAttachList, '', '', 'editions_attachments');
+            updateBadge(attBadge, edAttachList.querySelectorAll('.attachment-row').length);
         });
 
-        // Remove button
+        // ── Remove button ─────────────────────────────────────────────
         row.querySelector('.btn-remove').addEventListener('click', () => row.remove());
 
-        // Autocomplete
+        // ── Autocomplete ──────────────────────────────────────────────
         const pubInput = row.querySelector('.ed-publisher');
         if (pubInput && typeof uniquePublishers !== 'undefined') setupAutocomplete(pubInput, uniquePublishers, () => {}, null);
-        
+
         const verInput = row.querySelector('.ed-verifier');
         if (verInput && typeof uniqueVerifiers !== 'undefined') setupAutocomplete(verInput, uniqueVerifiers, () => {}, null);
 
