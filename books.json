@@ -3423,7 +3423,7 @@
       "كتب متنوعة"
     ],
     "notes": "",
-    "date": "2026-08-04",
+    "date": "2026-09-25",
     "best_editions": [
       {
         "publisher": "دار الفتح",
@@ -3433,6 +3433,12 @@
         ],
         "notes": "خالية من التعليقات العقدية",
         "corrections": [],
+        "attachments": [
+          {
+            "title": "تعليقات الشيخ عامر ياسين على صيد الخاطر ومواضعها من ط دار الفتح",
+            "url": "https://arabic-app.github.io/tabaat/editions_attachments/1790321367395-.pdf"
+          }
+        ],
         "verifier": "محمد عاطف التراس",
         "volumes": 1
       },
