@@ -1269,6 +1269,7 @@
         .confirm-modal {
             background: var(--md-surface); border-radius: 24px; padding: 24px;
             width: 100%; max-width: 400px; text-align: center;
+            max-height: calc(100vh - 32px); overflow-y: auto;
             box-shadow: 0px 2px 6px 2px rgba(0,0,0,0.15);
             animation: dialogFadeIn 0.2s ease-out;
         }
@@ -2006,16 +2007,27 @@
             ] });
         }
         function cardCategorySearch(enc) {
-            const cat = decodeURIComponent(enc);
-            openChoice({ icon: 'category', title: 'عرض كتب علم:\n' + cat + '؟', actions: [
-                { label: 'نعم، اعرض كتب هذا العلم', run: () => {
-                    resetFilters();
-                    const chip = [...document.querySelectorAll('.chip')].find(c => c.dataset.value === cat);
-                    if (chip) { document.querySelectorAll('.chip').forEach(c => c.classList.remove('active')); chip.classList.add('active'); chip.scrollIntoView({ inline: 'center', block: 'nearest' }); }
-                    currentCategory = cat;
-                    afterFilterApplied();
-                } }
-            ] });
+            let cats = [];
+            try { cats = JSON.parse(decodeURIComponent(enc)); } catch (e) { cats = [decodeURIComponent(enc)]; }
+            if (!Array.isArray(cats)) cats = [cats];
+            cats = cats.filter(Boolean);
+            if (!cats.length) return;
+
+            const applyCat = (cat) => {
+                resetFilters();
+                const chip = [...document.querySelectorAll('.chip')].find(c => c.dataset.value === cat);
+                if (chip) { document.querySelectorAll('.chip').forEach(c => c.classList.remove('active')); chip.classList.add('active'); chip.scrollIntoView({ inline: 'center', block: 'nearest' }); }
+                currentCategory = cat;
+                afterFilterApplied();
+            };
+
+            if (cats.length === 1) {
+                openChoice({ icon: 'category', title: 'عرض كتب علم:\n' + cats[0] + '؟', actions: [
+                    { label: 'نعم، اعرض كتب هذا العلم', run: () => applyCat(cats[0]) }
+                ] });
+            } else {
+                openChoice({ icon: 'category', title: 'هذا الكتاب ينتمي إلى عدة علوم، اختر العلم:', actions: cats.map(cat => ({ label: cat, run: () => applyCat(cat) })) });
+            }
         }
         function cardEditionSearch(pubEnc, verEnc) {
             const pub = decodeURIComponent(pubEnc || ''); const ver = decodeURIComponent(verEnc || '');
@@ -2039,7 +2051,7 @@
         function bookCardHTML(book) {
             const bookCats = getBookCategories(book);
             const catsHTML = bookCats.length ? `
-                    <span class="meta-chip">
+                    <span class="meta-chip clickable" role="button" onclick="cardCategorySearch('${encodeURIComponent(JSON.stringify(bookCats))}')">
                         <span class="material-icons-round">category</span>
                         <span class="text">${bookCats.join('، ')}</span>
                     </span>` : '';
