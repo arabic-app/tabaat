@@ -706,7 +706,7 @@
       "شروح الحديث"
     ],
     "notes": "",
-    "date": "2026-08-05",
+    "date": "2026-10-01",
     "best_editions": [
       {
         "publisher": "مركز سطور",
@@ -832,6 +832,24 @@
         "notes": "",
         "corrections": [],
         "volumes": 9
+      },
+      {
+        "publisher": "مؤسسة الرسالة ناشرون",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1790842864489-63593.jpg"
+        ],
+        "notes": "",
+        "corrections": [],
+        "volumes": 8
+      },
+      {
+        "publisher": "دار الفيحاء",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1790842893232-63592.jpg"
+        ],
+        "notes": "",
+        "corrections": [],
+        "volumes": 6
       }
     ],
     "links": []
