@@ -40,6 +40,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js" defer></script>
+    <script src="vendor/purify.min.js"></script>
+    <script src="js/content-security.js"></script>
     <style>
         :root {
             --md-primary: #00695c;
@@ -825,6 +827,7 @@
             width: 100%;
             min-width: 0;
         }
+        button.link-item { background: none; border: none; padding: 0; font: inherit; color: var(--md-primary); font-weight: 600; cursor: pointer; text-align: start; }
         .link-item:hover { text-decoration: underline; }
         .link-item .material-icons-round { flex-shrink: 0; font-size: 18px; }
 
@@ -1565,7 +1568,8 @@
                 </button>
             </div>
             <div class="pdf-viewer-body">
-                <iframe id="pdfViewerIframe" src="" frameborder="0"></iframe>
+                <div id="pdfViewerStatus" role="status" hidden style="padding:24px;text-align:center"></div>
+                <iframe id="pdfViewerIframe" src="" frameborder="0" title="ملف PDF"></iframe>
                 <div id="pdfViewerImgWrap" class="pdf-viewer-img-wrap" style="display:none;">
                     <button class="viewer-nav-btn right" id="viewerNavRight" onclick="changeViewerImage(-1)" dir="ltr" style="display:none;"><span class="material-icons-round">chevron_right</span></button>
                     <img id="pdfViewerImg" src="" alt="">
@@ -2048,82 +2052,101 @@
             openChoice({ icon: 'account_balance', title: 'ابحث عن كتب هذه الطبعة:', actions });
         }
 
+        const { escapeHtml: h, safeUrl, isPdf, sanitizeRichHtml } = TabaatContent;
+
+        function actionAttrs(action, data = {}) {
+            return `data-action="${h(action)}" ` + Object.entries(data)
+                .map(([key, value]) => `data-${key}="${h(value)}"`).join(' ');
+        }
+
+        function attachmentHTML(att, className = 'pdf-link') {
+            const url = safeUrl(att.url);
+            const title = att.title || 'مرفق';
+            if (!url) return `<span class="${className}">${h(title)}</span>`;
+            if (isPdf(url)) return `<button ${actionAttrs('pdf', {url, title})} class="${className}">
+                <span class="material-icons-round">picture_as_pdf</span><span class="edition-name">${h(title)}</span></button>`;
+            return `<a href="${h(url)}" target="_blank" rel="noopener noreferrer" class="${className}">
+                <span class="material-icons-round">open_in_new</span><span class="edition-name">${h(title)}</span></a>`;
+        }
+
         function bookCardHTML(book) {
             const bookCats = getBookCategories(book);
             const catsHTML = bookCats.length ? `
-                    <span class="meta-chip clickable" role="button" onclick="cardCategorySearch('${encodeURIComponent(JSON.stringify(bookCats))}')">
-                        <span class="material-icons-round">category</span>
-                        <span class="text">${bookCats.join('، ')}</span>
-                    </span>` : '';
-
+                <span class="meta-chip clickable" role="button" tabindex="0" ${actionAttrs('category', {categories: JSON.stringify(bookCats)})}>
+                    <span class="material-icons-round">category</span><span class="text">${h(bookCats.join('، '))}</span>
+                </span>` : '';
             const renderList = (editions, isEdition, type) => (editions || []).map((ed, idx) => {
+                if (!isEdition) return `<li class="md-list-item">${attachmentHTML(ed, 'link-item')}</li>`;
+                const n = (ed.publisher || '').trim();
+                const v = (ed.verifier || '').trim();
+                const label = n && v ? `${n} - ت ${v}` : (v ? `ت ${v}` : n);
+                const data = {book: book.id, type, edition: idx};
                 let actions = '';
-                const edLabel = (() => {
-                    const n = (ed.publisher || '').trim();
-                    const v = (ed.verifier || '').trim();
-                    if (n && v) return `${n} - ت ${v}`;
-                    if (v) return `ت ${v}`;
-                    return n;
-                })();
-                if (isEdition && ed.corrections && ed.corrections.length) actions += `<button class="md-icon-btn" onclick="openCorrectionsModal(${book.id}, '${type}', ${idx})" title="تصويبات الطبعة"><span class="material-icons-round">report_problem</span></button>`;
-                if (isEdition && ed.attachments && ed.attachments.length) actions += `<button class="md-icon-btn" onclick="openAttachmentsModal(${book.id}, '${type}', ${idx})" title="ملحقات الطبعة"><span class="material-icons-round">attach_file</span></button>`;
-                if (isEdition && ed.notes) actions += `<button class="md-icon-btn" onclick="openNoteModal('${encodeURIComponent(edLabel)}', '${encodeURIComponent(ed.notes)}')" title="ملاحظات حول الطبعة"><span class="material-icons-round">info</span></button>`;
-                if (isEdition && ((ed.images && ed.images.length) || ed.image)) actions += `<button class="md-icon-btn" onclick="openImageModal(${book.id}, '${type}', ${idx})" title="عرض صور الطبعة"><span class="material-icons-round">photo_library</span></button>`;
-                const nameSpan = (isEdition && (ed.publisher || ed.verifier))
-                    ? `<span class="edition-name clickable" role="button" onclick="cardEditionSearch('${encodeURIComponent(ed.publisher || '')}','${encodeURIComponent(ed.verifier || '')}')">${edLabel}</span>`
-                    : `<span class="edition-name">${edLabel}</span>`;
-                
-                let volHTML = '';
-                if (isEdition && ed.volumes && ed.volumes > 0) {
-                    volHTML = `<span class="edition-volumes" title="عدد المجلدات: ${ed.volumes}">${ed.volumes}</span>`;
-                }
-
-                if (isEdition) {
-                    return `<li class="md-list-item">${volHTML}${nameSpan}<div class="edition-actions">${actions}</div></li>`;
-                } else {
-                    const isPdf = ed.url && ed.url.toLowerCase().endsWith('.pdf');
-                    const isYoutube = ed.url && (ed.url.includes('youtube.com') || ed.url.includes('youtu.be'));
-                    let icon = 'open_in_new';
-                    if (isPdf) icon = 'picture_as_pdf';
-                    else if (isYoutube) icon = 'play_circle_filled';
-                    
-                    if (isPdf) {
-                        const cleanTitle = (ed.title || 'ملف PDF').replace(/'/g, "\\'");
-                        return `<li class="md-list-item"><button onclick="openPdfViewer('${ed.url}', '${cleanTitle}')" class="link-item" style="background:none;border:none;padding:0;font:inherit;cursor:pointer;display:flex;align-items:center;color:var(--md-primary);font-weight:600;"><span class="material-icons-round" style="margin-left:4px;">${icon}</span><span class="edition-name">${ed.title}</span></button></li>`;
-                    } else {
-                        return `<li class="md-list-item"><a href="${ed.url}" target="_blank" class="link-item" style="display:flex;align-items:center;"><span class="material-icons-round" style="margin-left:4px;">${icon}</span><span class="edition-name">${ed.title}</span></a></li>`;
-                    }
-                }
+                if (ed.corrections?.length) actions += `<button class="md-icon-btn" ${actionAttrs('corrections', data)} title="تصويبات الطبعة"><span class="material-icons-round">report_problem</span></button>`;
+                if (ed.attachments?.length) actions += `<button class="md-icon-btn" ${actionAttrs('attachments', data)} title="ملحقات الطبعة"><span class="material-icons-round">attach_file</span></button>`;
+                if (ed.notes) actions += `<button class="md-icon-btn" ${actionAttrs('note', data)} title="ملاحظات حول الطبعة"><span class="material-icons-round">info</span></button>`;
+                if (ed.images?.length || ed.image) actions += `<button class="md-icon-btn" ${actionAttrs('images', data)} title="عرض صور الطبعة"><span class="material-icons-round">photo_library</span></button>`;
+                const nameSpan = n || v ? `<span class="edition-name clickable" role="button" tabindex="0" ${actionAttrs('edition', {publisher:n, verifier:v})}>${h(label)}</span>` : `<span class="edition-name">${h(label)}</span>`;
+                const volHTML = ed.volumes && ed.volumes > 0 ? `<span class="edition-volumes" title="عدد المجلدات: ${h(ed.volumes)}">${h(ed.volumes)}</span>` : '';
+                return `<li class="md-list-item">${volHTML}${nameSpan}<div class="edition-actions">${actions}</div></li>`;
             }).join('');
-
             let dateHTML = '';
             if (book.date) {
                 try {
                     const d = new Date(book.date);
                     if (!isNaN(d.getTime())) {
-                        const greg = new Intl.DateTimeFormat('ar-EG', { day: 'numeric', month: 'long', year: 'numeric' }).format(d);
-                        const hijri = new Intl.DateTimeFormat('ar-SA-u-ca-islamic-umalqura', { day: 'numeric', month: 'long', year: 'numeric' }).format(d);
-                        dateHTML = `<div class="book-date">${hijri} / ${greg}</div>`;
+                        const greg = new Intl.DateTimeFormat('ar-EG', {day:'numeric', month:'long', year:'numeric'}).format(d);
+                        const hijri = new Intl.DateTimeFormat('ar-SA-u-ca-islamic-umalqura', {day:'numeric', month:'long', year:'numeric'}).format(d);
+                        dateHTML = `<div class="book-date">${h(hijri)} / ${h(greg)}</div>`;
                     }
-                } catch (e) {
-                    console.error('Error formatting book date:', e);
+                } catch (e) { console.error('Error formatting book date:', e); }
+            }
+            return `<button class="share-card-btn" ${actionAttrs('share')} title="مشاركة الكتاب كصورة"><span class="material-icons-round">share</span></button>
+                <h2 class="book-title">${h(book.title)}</h2>
+                <div class="book-meta">
+                    <span class="meta-chip clickable" role="button" tabindex="0" ${actionAttrs('author', {author:book.author})}><span class="material-icons-round">person</span><span class="text">${h(book.author)}</span></span>${catsHTML}
+                </div>
+                ${book.best_editions?.length ? `<div class="section-title"><span class="material-icons-round">verified</span> أفضل الطبعات:</div><ul>${renderList(book.best_editions,true,'best_editions')}</ul>` : ''}
+                ${book.alt_editions?.length ? `<div class="section-title"><span class="material-icons-round">rule</span> طبعات بديلة:</div><ul>${renderList(book.alt_editions,true,'alt_editions')}</ul>` : ''}
+                ${book.links?.length ? `<div class="section-title"><span class="material-icons-round">link</span> روابط مفيدة:</div><ul>${renderList(book.links,false)}</ul>` : ''}
+                ${book.notes ? `<div class="book-notes"><span class="material-icons-round">lightbulb</span><div>${sanitizeRichHtml(book.notes)}</div></div>` : ''}${dateHTML}`;
+        }
+
+        // Dynamic catalogue actions never interpolate data into executable handlers.
+        function handleContentAction(event) {
+            const target = event.target.closest('[data-action]');
+            if (!target) return;
+            if (event.type === 'keydown') {
+                if (target.getAttribute('role') !== 'button' || !['Enter', ' '].includes(event.key)) return;
+                event.preventDefault();
+            }
+            const d = target.dataset;
+            if (d.action === 'author') return cardAuthorSearch(encodeURIComponent(d.author));
+            if (d.action === 'category') return cardCategorySearch(encodeURIComponent(d.categories));
+            if (d.action === 'edition') return cardEditionSearch(encodeURIComponent(d.publisher), encodeURIComponent(d.verifier));
+            if (d.action === 'share') return shareBookCard(target);
+            if (d.action === 'pdf') return openPdfViewer(d.url, d.title);
+            if (d.action === 'slide') return changeSlide(Number(d.direction));
+            const id = Number(d.book), index = Number(d.edition);
+            if (!Number.isSafeInteger(id) || !Number.isSafeInteger(index) || index < 0 || !['best_editions','alt_editions'].includes(d.type)) return;
+            const book = booksData.find(b => b.id === id);
+            const ed = book && book[d.type]?.[index];
+            if (!ed) return;
+            switch (d.action) {
+                case 'note': return openNoteModal(encodeURIComponent((ed.publisher || '') + (ed.verifier ? ' - ت ' + ed.verifier : '')), encodeURIComponent(ed.notes || ''));
+                case 'images': return openImageModal(id,d.type,index);
+                case 'attachments': return openAttachmentsModal(id,d.type,index);
+                case 'corrections': return openCorrectionsModal(id,d.type,index);
+                case 'correction': return showCorrectionDetail(id,d.type,index,Number(d.correction));
+                case 'correction-image': {
+                    const corr = ed.corrections?.[Number(d.correction)];
+                    const images = (corr?.attachments || []).filter(a => safeUrl(a.url) && !isPdf(a.url));
+                    return openImageViewer(images,Number(d.image));
                 }
             }
-
-            return `
-                    <button class="share-card-btn" onclick="shareBookCard(this)" title="مشاركة الكتاب كصورة"><span class="material-icons-round">share</span></button>
-                    <h2 class="book-title">${book.title}</h2>
-                    <div class="book-meta">
-                        <span class="meta-chip clickable" role="button" onclick="cardAuthorSearch('${encodeURIComponent(book.author)}')"><span class="material-icons-round">person</span><span class="text">${book.author}</span></span>
-                        ${catsHTML}
-                    </div>
-                    ${book.best_editions?.length ? `<div class="section-title"><span class="material-icons-round">verified</span> أفضل الطبعات:</div><ul>${renderList(book.best_editions, true, 'best_editions')}</ul>` : ''}
-                    ${book.alt_editions?.length ? `<div class="section-title"><span class="material-icons-round">rule</span> طبعات بديلة:</div><ul>${renderList(book.alt_editions, true, 'alt_editions')}</ul>` : ''}
-                    ${book.links?.length ? `<div class="section-title"><span class="material-icons-round">link</span> روابط مفيدة:</div><ul>${renderList(book.links, false)}</ul>` : ''}
-                    ${book.notes ? `<div class="book-notes"><span class="material-icons-round">lightbulb</span><div>${book.notes}</div></div>` : ''}
-                    ${dateHTML}
-                `;
         }
+        document.addEventListener('click', handleContentAction);
+        document.addEventListener('keydown', handleContentAction);
 
         // Rendu paginé « à la demande » : 20 fiches par lot. Quand l'avant-dernière
         // fiche rendue devient visible, on rend automatiquement 20 de plus (scroll infini).
@@ -2174,122 +2197,67 @@
         }
 
         function openNoteModal(title, content) {
-            document.getElementById('modalTitle').innerText = decodeURIComponent(title);
-            document.getElementById('modalBody').innerHTML = decodeURIComponent(content);
+            document.getElementById('modalTitle').textContent = decodeURIComponent(title);
+            document.getElementById('modalBody').innerHTML = sanitizeRichHtml(decodeURIComponent(content));
             document.getElementById('infoModal').style.display = 'flex';
         }
-
         function openImageModal(bookId, edType, index) {
-            const ed = booksData.find(b => b.id === bookId)[edType][index];
-            const n = (ed.publisher || '').trim();
-            const v = (ed.verifier || '').trim();
-            const edLabel = (n && v) ? `${n} - ت ${v}` : (v ? `ت ${v}` : n);
-            document.getElementById('modalTitle').innerText = edLabel;
-            currentCarouselImages = ed.images?.length ? ed.images : (ed.image ? [ed.image] : []);
+            const ed = booksData.find(b => b.id === bookId)?.[edType]?.[index];
+            if (!ed) return;
+            const n = (ed.publisher || '').trim(), v = (ed.verifier || '').trim();
+            document.getElementById('modalTitle').textContent = n && v ? `${n} - ت ${v}` : (v ? `ت ${v}` : n);
+            currentCarouselImages = (ed.images?.length ? ed.images : (ed.image ? [ed.image] : [])).map(safeUrl).filter(Boolean);
             currentSlideIndex = 0;
             renderCarousel();
             document.getElementById('infoModal').style.display = 'flex';
         }
-
         function renderCarousel() {
             const body = document.getElementById('modalBody');
-            if (currentCarouselImages.length <= 1) {
-                body.innerHTML = `<div class="carousel-container"><img src="${currentCarouselImages[0]}" class="carousel-img"></div>`;
-            } else {
-                body.innerHTML = `
-                    <div class="carousel-container">
-                        <button class="carousel-btn right" dir="ltr" onclick="changeSlide(-1)"><span class="material-icons-round">chevron_right</span></button>
-                        <img src="${currentCarouselImages[currentSlideIndex]}" class="carousel-img">
-                        <button class="carousel-btn left" dir="ltr" onclick="changeSlide(1)"><span class="material-icons-round">chevron_left</span></button>
-                    </div>
-                    <div class="carousel-dots">صورة ${currentSlideIndex + 1} من ${currentCarouselImages.length}</div>`;
-            }
+            if (!currentCarouselImages.length) { body.textContent = 'لا توجد صور متاحة'; return; }
+            const url = safeUrl(currentCarouselImages[currentSlideIndex]);
+            body.innerHTML = `<div class="carousel-container">
+                ${currentCarouselImages.length > 1 ? `<button class="carousel-btn right" dir="ltr" ${actionAttrs('slide',{direction:-1})}><span class="material-icons-round">chevron_right</span></button>` : ''}
+                <img src="${h(url)}" class="carousel-img" alt="صورة الطبعة">
+                ${currentCarouselImages.length > 1 ? `<button class="carousel-btn left" dir="ltr" ${actionAttrs('slide',{direction:1})}><span class="material-icons-round">chevron_left</span></button>` : ''}
+                </div>${currentCarouselImages.length > 1 ? `<div class="carousel-dots">صورة ${currentSlideIndex+1} من ${currentCarouselImages.length}</div>` : ''}`;
         }
-        
-        function changeSlide(dir) { currentSlideIndex = (currentSlideIndex + dir + currentCarouselImages.length) % currentCarouselImages.length; renderCarousel(); }
-
+        function changeSlide(dir) {
+            if (!currentCarouselImages.length) return;
+            currentSlideIndex = (currentSlideIndex + dir + currentCarouselImages.length) % currentCarouselImages.length;
+            renderCarousel();
+        }
         function openAttachmentsModal(bookId, edType, edIdx) {
-            const ed = booksData.find(b => b.id === bookId)[edType][edIdx];
-            document.getElementById('modalTitle').innerText = 'ملحقات الطبعة';
-            
-            const list = (ed.attachments || []).map(att => {
-                const isPdf = att.url && att.url.toLowerCase().endsWith('.pdf');
-                const isYoutube = att.url && (att.url.includes('youtube.com') || att.url.includes('youtu.be'));
-                let icon = 'link';
-                if (isPdf) icon = 'picture_as_pdf';
-                else if (isYoutube) icon = 'play_circle_filled';
-                
-                const cleanTitle = (att.title || 'مرفق').replace(/'/g, "\\'");
-                if (isPdf) {
-                    return `<button onclick="openPdfViewer('${att.url}', '${cleanTitle}')" class="pdf-link" style="width:100%;margin-bottom:8px;justify-content:flex-start;">
-                        <span class="material-icons-round">${icon}</span>
-                        <span style="margin-right:8px;">${att.title || 'ملف PDF'}</span>
-                    </button>`;
-                } else {
-                    return `<a href="${att.url}" target="_blank" class="pdf-link" style="width:100%;margin-bottom:8px;justify-content:flex-start;text-decoration:none;">
-                        <span class="material-icons-round">${icon}</span>
-                        <span style="margin-right:8px;">${att.title || 'رابط'}</span>
-                    </a>`;
-                }
-            }).join('');
-
-            document.getElementById('modalBody').innerHTML = `
-                <div class="modal-corrections-list" style="margin-top:10px;">${list}</div>
-            `;
+            const ed = booksData.find(b => b.id === bookId)?.[edType]?.[edIdx];
+            if (!ed) return;
+            document.getElementById('modalTitle').textContent = 'ملحقات الطبعة';
+            document.getElementById('modalBody').innerHTML = `<div class="modal-corrections-list" style="margin-top:10px;">${(ed.attachments || []).map(a => attachmentHTML(a)).join('')}</div>`;
             document.getElementById('infoModal').style.display = 'flex';
         }
-
         function openCorrectionsModal(bookId, edType, edIdx) {
-            const ed = booksData.find(b => b.id === bookId)[edType][edIdx];
-            document.getElementById('modalTitle').innerText = 'صحح نسختك';
-            const list = (ed.corrections || []).map((corr, ci) => `
-                <div class="corr-item-clickable" onclick="showCorrectionDetail(${bookId}, '${edType}', ${edIdx}, ${ci})">
-                    <span class="material-icons-round">chevron_left</span>
-                    <span>${corr.title || 'تصويب ' + (ci + 1)}</span>
-                </div>
-            `).join('');
-            document.getElementById('modalBody').innerHTML = `
-                <p style="font-size:0.85rem;color:var(--md-outline);margin-bottom:12px;">اضغط على تصويب لعرض تفاصيله:</p>
-                <div class="modal-corrections-list">${list}</div>
-            `;
+            const ed = booksData.find(b => b.id === bookId)?.[edType]?.[edIdx];
+            if (!ed) return;
+            document.getElementById('modalTitle').textContent = 'صحح نسختك';
+            const list = (ed.corrections || []).map((corr, ci) => `<div class="corr-item-clickable" role="button" tabindex="0" ${actionAttrs('correction',{book:bookId,type:edType,edition:edIdx,correction:ci})}>
+                <span class="material-icons-round">chevron_left</span><span>${h(corr.title || 'تصويب '+(ci+1))}</span></div>`).join('');
+            document.getElementById('modalBody').innerHTML = `<p style="font-size:0.85rem;color:var(--md-outline);margin-bottom:12px;">اضغط على تصويب لعرض تفاصيله:</p><div class="modal-corrections-list">${list}</div>`;
             document.getElementById('infoModal').style.display = 'flex';
         }
-
         function showCorrectionDetail(bookId, edType, edIdx, corrIdx) {
-            const ed = booksData.find(b => b.id === bookId)[edType][edIdx];
-            const corr = ed.corrections[corrIdx];
-            const attachments = corr.attachments || [];
-            const imageAttachments = attachments.filter(att => att.url && !att.url.toLowerCase().endsWith('.pdf'));
+            const ed = booksData.find(b => b.id === bookId)?.[edType]?.[edIdx];
+            const corr = ed?.corrections?.[corrIdx];
+            if (!corr) return;
+            const attachments = (corr.attachments || []).filter(a => safeUrl(a.url));
+            const images = attachments.filter(a => !isPdf(a.url));
             const attachmentsHTML = attachments.map(att => {
-                const isPdf = att.url && att.url.toLowerCase().endsWith('.pdf');
-                if (isPdf) {
-                    const cleanTitle = (att.title || 'ملف PDF').replace(/'/g, "\\'");
-                    return `<button onclick="openPdfViewer('${att.url}', '${cleanTitle}')" class="pdf-link">
-                        <span class="material-icons-round">picture_as_pdf</span>
-                        <span>${att.title || 'ملف PDF'}</span>
-                    </button>`;
-                } else {
-                    const imgIdx = imageAttachments.indexOf(att);
-                    const imagesJson = JSON.stringify(imageAttachments.map(a => ({ url: a.url, title: a.title || '' }))).replace(/"/g, '&quot;');
-                    return `<div class="attach-thumb" style="cursor:pointer;" onclick="openImageViewer(JSON.parse(this.dataset.images), ${imgIdx})" data-images="${imagesJson}">
-                        <img src="${att.url}" alt="${att.title || 'مرفق'}" loading="lazy" onerror="this.parentElement.style.display='none'">
-                        <span>${att.title || 'مرفق'}</span>
-                    </div>`;
-                }
+                if (isPdf(att.url)) return attachmentHTML(att);
+                return `<div class="attach-thumb" role="button" tabindex="0" ${actionAttrs('correction-image',{book:bookId,type:edType,edition:edIdx,correction:corrIdx,image:images.indexOf(att)})}>
+                    <img src="${h(safeUrl(att.url))}" alt="${h(att.title || 'مرفق')}" loading="lazy"><span>${h(att.title || 'مرفق')}</span></div>`;
             }).join('');
-            document.getElementById('modalBody').innerHTML = `
-                <button class="corr-back-btn" onclick="openCorrectionsModal(${bookId}, '${edType}', ${edIdx})">
-                    <span class="material-icons-round" style="font-size:18px">arrow_forward</span> رجوع للقائمة
-                </button>
-                <div class="corr-detail-title">${corr.title || ''}</div>
-                ${corr.body ? `<div class="corr-detail-body">${corr.body}</div>` : ''}
-                ${attachmentsHTML ? `
-                    <div class="corr-attachments-title">
-                        <span class="material-icons-round" style="font-size:16px">attachment</span> الملحقات:
-                    </div>
-                    <div class="corr-attachments-list">${attachmentsHTML}</div>
-                ` : ''}
-            `;
+            document.getElementById('modalBody').innerHTML = `<button class="corr-back-btn" ${actionAttrs('corrections',{book:bookId,type:edType,edition:edIdx})}><span class="material-icons-round" style="font-size:18px">arrow_forward</span> رجوع للقائمة</button>
+                <div class="corr-detail-title">${h(corr.title)}</div>
+                ${corr.body ? `<div class="corr-detail-body">${sanitizeRichHtml(corr.body)}</div>` : ''}
+                ${attachmentsHTML ? `<div class="corr-attachments-title"><span class="material-icons-round">attachment</span> الملحقات:</div><div class="corr-attachments-list">${attachmentsHTML}</div>` : ''}`;
+            document.querySelectorAll('#modalBody .attach-thumb img').forEach(img => img.addEventListener('error', () => { img.parentElement.style.display='none'; }));
         }
 
         function closeModal() { document.getElementById('infoModal').style.display = 'none'; }
@@ -2299,7 +2267,7 @@
         function openBookCardModal(bookId) {
             const book = booksData.find(b => b.id === bookId);
             if (!book) return;
-            document.getElementById('bookCardModalBody').innerHTML = `<div class="md-card" data-id="${book.id}" style="box-shadow:none;margin:0">${bookCardHTML(book)}</div>`;
+            document.getElementById('bookCardModalBody').innerHTML = `<div class="md-card" data-id="${h(book.id)}" style="box-shadow:none;margin:0">${bookCardHTML(book)}</div>`;
             document.getElementById('bookCardModal').style.display = 'flex';
         }
         function closeBookCardModal() {
@@ -2352,27 +2320,80 @@
             watch('infoModal');
         })();
         
-        function openPdfViewer(url, title) {
-            document.getElementById('pdfViewerTitle').innerText = title;
-            document.getElementById('pdfViewerIframe').src = url;
-            document.getElementById('pdfViewerIframe').style.display = 'block';
+        let pdfLoadController = null;
+        let pdfObjectUrl = null;
+
+        function resetPdfPreview() {
+            if (pdfLoadController) pdfLoadController.abort();
+            pdfLoadController = null;
+            document.getElementById('pdfViewerIframe').src = '';
+            if (pdfObjectUrl) URL.revokeObjectURL(pdfObjectUrl);
+            pdfObjectUrl = null;
+            document.getElementById('pdfViewerStatus').hidden = true;
+        }
+
+        async function openPdfViewer(url, title) {
+            url = safeUrl(url);
+            if (!url || !isPdf(url)) return;
+            resetPdfPreview();
+            const frame = document.getElementById('pdfViewerIframe');
+            const status = document.getElementById('pdfViewerStatus');
+            document.getElementById('pdfViewerTitle').textContent = title;
+            frame.style.display = 'none';
             document.getElementById('pdfViewerImgWrap').style.display = 'none';
-            
+            status.textContent = 'جاري تحميل ملف PDF...';
+            status.hidden = false;
             const downloadBtn = document.getElementById('pdfBtnDownload');
             downloadBtn.style.display = '';
             downloadBtn.onclick = () => downloadPdf(url, title + '.pdf');
-            
             document.getElementById('pdfViewerModal').style.display = 'flex';
+
+            const controller = new AbortController();
+            pdfLoadController = controller;
+            const timeout = setTimeout(() => controller.abort(), 20000);
+            try {
+                const response = await fetch(url, { signal: controller.signal });
+                if (!response.ok) throw new Error('network');
+                const bytes = await response.arrayBuffer();
+                if (pdfLoadController !== controller) return;
+                const signature = String.fromCharCode(...new Uint8Array(bytes).slice(0, 5));
+                if (signature !== '%PDF-') throw new Error('invalid_pdf');
+                // Native PDF rendering is blocked by iframe sandbox in Chrome.
+                // A typed blob prevents an HTML response from executing under our origin.
+                pdfObjectUrl = URL.createObjectURL(new Blob([bytes], {type:'application/pdf'}));
+                frame.src = pdfObjectUrl;
+                frame.style.display = 'block';
+                status.hidden = true;
+            } catch (error) {
+                if (pdfLoadController !== controller) return;
+                status.textContent = error.message === 'invalid_pdf'
+                    ? 'الملف ليس ملف PDF صالحاً.'
+                    : 'تعذّر تحميل ملف PDF. حاول مرة أخرى.';
+                // Some external hosts disallow cross-origin fetch. Give the user an
+                // explicit, isolated navigation instead of embedding unverified HTML.
+                if (error.message !== 'invalid_pdf' && new URL(url).origin !== location.origin) {
+                    const link = document.createElement('a');
+                    link.href = url;
+                    link.target = '_blank';
+                    link.rel = 'noopener noreferrer';
+                    link.textContent = ' فتح الملف في نافذة جديدة';
+                    status.appendChild(link);
+                }
+            } finally {
+                clearTimeout(timeout);
+            }
         }
 
         function openImageViewer(images, startIndex, title) {
-            corrViewerImages = images;
-            corrViewerIndex = startIndex;
+            resetPdfPreview();
+            corrViewerImages = (images || []).filter(img => safeUrl(img.url));
+            if (!corrViewerImages.length) return;
+            corrViewerIndex = Math.max(0, Math.min(Number(startIndex) || 0, corrViewerImages.length - 1));
             document.getElementById('pdfViewerIframe').style.display = 'none';
             document.getElementById('pdfViewerIframe').src = '';
             document.getElementById('pdfViewerImgWrap').style.display = 'flex';
 
-            const hasMultiple = images.length > 1;
+            const hasMultiple = corrViewerImages.length > 1;
             document.getElementById('viewerNavRight').style.display = hasMultiple ? 'flex' : 'none';
             document.getElementById('viewerNavLeft').style.display  = hasMultiple ? 'flex' : 'none';
             document.getElementById('viewerImgCounter').style.display = hasMultiple ? 'block' : 'none';
@@ -2386,9 +2407,9 @@
 
         function renderViewerImage() {
             const img = corrViewerImages[corrViewerIndex];
-            document.getElementById('pdfViewerImg').src = img.url;
+            document.getElementById('pdfViewerImg').src = safeUrl(img.url);
             document.getElementById('pdfViewerImg').alt = img.title || '';
-            document.getElementById('pdfViewerTitle').innerText = img.title || '';
+            document.getElementById('pdfViewerTitle').textContent = img.title || '';
             document.getElementById('viewerImgCounter').innerText =
                 'صورة ' + (corrViewerIndex + 1) + ' من ' + corrViewerImages.length;
             const downloadBtn = document.getElementById('pdfBtnDownload');
@@ -2402,6 +2423,7 @@
         }
 
         function closePdfViewer() {
+            resetPdfPreview();
             document.getElementById('pdfViewerModal').style.display = 'none';
             document.getElementById('pdfViewerIframe').src = '';
             document.getElementById('pdfViewerImg').src = '';
@@ -2409,6 +2431,8 @@
         }
 
         function downloadPdf(url, filename) {
+            url = safeUrl(url);
+            if (!url) return;
             fetch(url)
                 .then(response => {
                     if (!response.ok) throw new Error('Network error');
@@ -2426,7 +2450,7 @@
                 })
                 .catch(err => {
                     console.error('Failed to download PDF via blob, falling back to direct link', err);
-                    window.open(url, '_blank');
+                    window.open(url, '_blank', 'noopener,noreferrer');
                 });
         }
 

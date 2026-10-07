@@ -25,6 +25,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+    <script src="../vendor/purify.min.js"></script>
+    <script src="../js/content-security.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.6/Sortable.min.js"></script>
 
     <style>
@@ -1660,11 +1662,7 @@
     const $ = (sel, ctx = document) => ctx.querySelector(sel);
     const $$ = (sel, ctx = document) => [...ctx.querySelectorAll(sel)];
 
-    function escapeHtml(str) {
-        const div = document.createElement('div');
-        div.textContent = String(str || '');
-        return div.innerHTML;
-    }
+    const { escapeHtml, safeUrl, sanitizeRichHtml } = TabaatContent;
 
     function normalizeArabic(str) {
         if (!str) return '';
@@ -1678,7 +1676,7 @@
 
     function cleanHtml(html) {
         const empty = ['<br>', '<div><br></div>', '<p><br></p>'];
-        const trimmed = (html || '').trim();
+        const trimmed = sanitizeRichHtml(html).trim();
         return empty.includes(trimmed) ? '' : trimmed;
     }
 
@@ -2020,7 +2018,7 @@
         const display = document.createElement('div');
         display.className = 'md-input searchable-select-display';
         display.innerHTML = `
-            <span class="selected-text">${val || 'اختر العلم من القائمة...'}</span>
+            <span class="selected-text">${escapeHtml(val || 'اختر العلم من القائمة...')}</span>
             <span class="material-icons-round">expand_more</span>
         `;
         
@@ -2183,7 +2181,7 @@
         editorContent.dataset.placeholder = 'تفاصيل التصويب...';
         editorContent.setAttribute('role', 'textbox');
         editorContent.setAttribute('aria-multiline', 'true');
-        editorContent.innerHTML = corrBody;
+        editorContent.innerHTML = sanitizeRichHtml(corrBody);
         editor.appendChild(editorContent);
 
         const attachContainer = document.createElement('div');
@@ -2245,7 +2243,7 @@
             <div class="row-inputs">
                 <div style="position:relative;"><input type="text" class="md-input ed-publisher" placeholder="دار النشر" autocomplete="off" value="${escapeHtml(name)}" aria-label="دار النشر"></div>
                 <div style="position:relative;"><input type="text" class="md-input ed-verifier" placeholder="المحقق" autocomplete="off" value="${escapeHtml(verifier)}" aria-label="المحقق"></div>
-                <input type="text" inputmode="numeric" pattern="[0-9٠-٩]*" class="md-input ed-volumes" placeholder="عدد المجلدات" value="${volumes || ''}" aria-label="عدد المجلدات">
+                <input type="text" inputmode="numeric" pattern="[0-9٠-٩]*" class="md-input ed-volumes" placeholder="عدد المجلدات" value="${escapeHtml(volumes || '')}" aria-label="عدد المجلدات">
                 <div class="sub-container">
                     <div class="sub-container-title">
                         <span class="material-icons-round" style="font-size:14px;color:var(--primary)">image</span>
@@ -2270,7 +2268,7 @@
                             <!-- toolbar injected below -->
                             <div class="rich-editor-content ed-notes" contenteditable="true"
                                  data-placeholder="ملاحظات خاصة بهذه الطبعة (تظهر كـ ℹ في الموقع)..."
-                                 role="textbox" aria-multiline="true" aria-label="ملاحظات الطبعة">${notes}</div>
+                                 role="textbox" aria-multiline="true" aria-label="ملاحظات الطبعة">${sanitizeRichHtml(notes)}</div>
                         </div>
                     </div>
                 </div>
@@ -2569,7 +2567,7 @@
         DOM.bookId.value = book.id;
         DOM.titleInput.value = book.title || '';
         DOM.authorInput.value = book.author || '';
-        DOM.notesEditor.innerHTML = book.notes || '';
+        DOM.notesEditor.innerHTML = sanitizeRichHtml(book.notes);
 
         DOM.categoriesList.innerHTML = '';
         let cats = Array.isArray(book.category) ? book.category : (book.category ? [book.category] : []);
@@ -2595,6 +2593,12 @@
 
     function saveBook(e) {
         e.preventDefault();
+        const invalidUrl = $$('#bookForm .ed-image-url, #bookForm .attach-url, #bookForm .link-url').find(input => input.value.trim() && !safeUrl(input.value));
+        if (invalidUrl) {
+            showToast('⚠️ رابط غير صالح. استخدم رابط HTTP أو HTTPS أو مسار ملف محلي.');
+            invalidUrl.focus();
+            return;
+        }
         let id = DOM.bookId.value;
         id = id ? parseInt(id) : (state.books.length > 0 ? Math.max(...state.books.map(b => b.id)) + 1 : 1);
 
@@ -3356,7 +3360,11 @@
 
         if (cmd === 'createLink') {
             const url = prompt('أدخل رابط URL:');
-            if (url) document.execCommand('createLink', false, url);
+            if (url) {
+                const safe = safeUrl(url);
+                if (safe) document.execCommand('createLink', false, safe);
+                else showToast('⚠️ رابط غير صالح.');
+            }
         } else {
             document.execCommand(cmd, false, null);
         }
@@ -3366,6 +3374,8 @@
     // EVENT DELEGATION
     // ================================================================
     function bindEvents() {
+        TabaatContent.protectRichEditors(DOM.bookForm);
+
         // Sidebar navigation (event delegation)
         DOM.booksList.addEventListener('click', e => {
             const li = e.target.closest('li');

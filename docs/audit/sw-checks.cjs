@@ -1,0 +1,6 @@
+const fs=require('node:fs'); const vm=require('node:vm'); const assert=require('node:assert/strict');
+const handlers={}; const store=new Map(); let online=true;
+const ctx={URL,Response,console,self:{addEventListener:(name,fn)=>handlers[name]=fn},caches:{open:async()=>({put:async(req,res)=>store.set(req.url,res),match:async(req,opts)=>{for(const [key,res] of store)if(opts?.ignoreSearch?key.split('?')[0]===req.url.split('?')[0]:key===req.url)return res.clone()}}),match:async()=>undefined},fetch:async()=>{if(!online)throw Error('offline');return new Response(JSON.stringify([{id:store.size+1}]))}};
+vm.createContext(ctx);vm.runInContext(fs.readFileSync(require('node:path').resolve(__dirname, '../../sw.js'),'utf8'),ctx);
+async function req(n){let p;handlers.fetch({request:{url:'https://example.test/tabaat/books.json?_t='+n,method:'GET'},respondWith:v=>p=v});return await p}
+(async()=>{for(let i=1;i<=3;i++){await req(i);await new Promise(r=>setImmediate(r))}assert.equal(store.size,3);console.log('3 chargements books.json: 3 entrées de cache');online=false;console.log('Hors ligne ignoreSearch retourne:',await (await req(4)).text());store.clear();console.log('Hors ligne cache vide:',(await req(5)).status,await (await req(6)).text())})().catch(e=>{console.error(e);process.exitCode=1});

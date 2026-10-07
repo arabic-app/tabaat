@@ -8,6 +8,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+    <script src="vendor/purify.min.js"></script>
+    <script src="js/content-security.js"></script>
     <style>
         html { direction: ltr; } /* scrollbar on right */
         :root {
@@ -117,9 +119,9 @@
                 <div class="review-card">
                     <div class="review-name">
                         <span class="material-icons-round">person</span>
-                        ${r.name || ''}
+                        ${TabaatContent.escapeHtml(r.name)}
                     </div>
-                    <div class="review-message">${r.message || ''}</div>
+                    <div class="review-message">${TabaatContent.sanitizeRichHtml(r.message)}</div>
                 </div>`).join('');
         })
         .catch(() => {
