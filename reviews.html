@@ -102,7 +102,7 @@
         }
     });
 
-    fetch('reviews.json?_t=' + Date.now(), { cache: 'no-store' })
+    fetch('reviews.json', { cache: 'no-store' })
         .then(r => {
             if (!r.ok) throw new Error('HTTP ' + r.status);
             return r.text();

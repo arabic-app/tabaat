@@ -66,3 +66,49 @@ est absent, le bot passe directement à Groq.
 
 Si `GEMINI_API_KEY` n'est pas défini, le bot utilise directement Groq.
 Réglages dans `GEMINI_MODEL` / `GROQ_MODELS` (`src/index.js`).
+
+## Statistiques (audit, point 7)
+
+`/track` enregistre les événements `pageview`, `search` et `chat` dans le
+Durable Object SQLite `StatsAggregator`, binding `ANALYTICS`, instance
+`tabaat-stats-v1`. Les incréments sont atomiques. Les données quotidiennes
+sont conservées 35 jours, et `/stats?key=STATS_KEY` restitue les 30 derniers
+jours UTC, aujourd'hui inclus. `totalVisitors` additionne les visiteurs
+quotidiens déclarés par le navigateur : une personne présente plusieurs jours
+peut être comptée plusieurs fois. Il ne mesure pas les personnes distinctes
+sur toute la période.
+
+`/chat` programme sa collecte avec `ctx.waitUntil` et absorbe les erreurs du
+compteur, sans attendre son résultat. `/track` renvoie 503 si l'événement ne
+peut pas être enregistré. Sans binding `ANALYTICS`, les statistiques sont
+indisponibles; aucun retour aux incréments KV concurrents. Le cache de lecture
+`/stats` dure 60 secondes et ses erreurs ne bloquent pas la lecture SQLite.
+Le contrôle d'accès existant est inchangé : configurer `STATS_KEY`; le refus
+obligatoire en absence de secret et l'anti-abus de `/track` restent au point 8.
+
+### Migration et mise en production
+
+La première lecture ou collecte importe les 35 agrégats KV `st:d:YYYY-MM-DD`
+encore présents. Les valeurs et le marqueur d'import sont enregistrés dans une
+seule transaction. Un redémarrage ne relance pas l'import. Une lecture ou une
+validation échouée bloque l'import et les nouvelles collectes jusqu'à une
+nouvelle tentative réussie. Les données KV ne sont pas supprimées.
+
+La configuration Wrangler déclare le binding et le stockage SQLite via
+`[exports.StatsAggregator]`. Le déploiement reste une opération séparée :
+
+1. Vérifier `npm test` à la racine puis `npx wrangler deploy --dry-run` ici.
+2. Prévoir une fenêtre sans collecte par les anciennes instances avant le
+   premier import. Vérifier qu'elles ont terminé leurs écritures, puis que
+   les dernières valeurs KV sont visibles; ne pas activer les deux collecteurs
+   en parallèle. L'import ne rattrape pas les écritures KV arrivées ensuite.
+3. Après déploiement autorisé, contrôler le binding et les réponses `/track`,
+   `/stats` (avec clé) et `/chat`, ainsi que les journaux d'import.
+
+Les pertes historiques dues aux anciens incréments concurrents ne sont pas
+reconstructibles. Un retour à l'ancien Worker réactiverait ces compteurs KV
+et ne lirait pas les événements ajoutés dans SQLite.
+
+Tests locaux : `tests/analytics.test.cjs` (SQLite réel via Miniflare),
+`tests/admin-stats.test.cjs` et `tests/syntax.test.cjs`. Aucun déploiement
+n'est effectué par ces tests.

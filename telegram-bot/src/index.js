@@ -1,3 +1,6 @@
+import { recordAnalytics, readAnalytics, scheduleAnalytics } from './analytics.js';
+export { StatsAggregator } from './analytics.js';
+
 // =============================================================================
 // Configuration
 // =============================================================================
@@ -72,7 +75,7 @@ export default {
 
     // Endpoint du widget de chat web (app arabic-app.github.io)
     if (request.method === 'POST' && url.pathname === '/chat') {
-      return handleWebChat(request, env);
+      return handleWebChat(request, env, ctx);
     }
 
     // Analytics maison : collecte (public) + lecture (protégée par STATS_KEY)
@@ -169,7 +172,7 @@ async function handleMessage(chatId, userText, env) {
 // =============================================================================
 // Endpoint du widget de chat web (POST /chat) — réutilise le pipeline Telegram
 // =============================================================================
-async function handleWebChat(request, env) {
+async function handleWebChat(request, env, ctx) {
   try {
     const body = await request.json().catch(() => ({}));
     const message = (body.message || '').trim();
@@ -193,7 +196,7 @@ async function handleWebChat(request, env) {
         await env.CACHE.put(cacheKey, answer, { expirationTtl: RESPONSE_CACHE_TTL });
       }
     }
-    await bumpStat(env, (s) => { s.c = (s.c || 0) + 1; }); // compteur d'usage du chat web
+    scheduleAnalytics(ctx, env, { event: 'chat' });
     return jsonResponse({ answer });
   } catch (err) {
     console.error('Web chat error:', err);
@@ -209,112 +212,46 @@ function jsonResponse(obj, status = 200) {
 }
 
 // =============================================================================
-// Analytics maison (auto-hébergé sur KV) — remplace la GitHub Traffic API.
-//
-// Deux catégories de clés, pour borner le coût KV indéfiniment dans le temps :
-// - st:d:YYYY-MM-DD = {v, u} (vues, visiteurs uniques du jour) — TTL 35 j, une
-//   seule sert au graphe 30 jours ; jamais listée (dates connues à l'avance).
-// - st:d:YYYY-MM-DD = {v, u, c, s:{recherche:count}} — UNE SEULE écriture par
-//   événement (une clé "agrégat" séparée avait doublé les écritures et épuisé
-//   le plafond gratuit de 1000 put/jour — voir historique). TTL 35 j : largement
-//   suffisant puisque /stats ne lit jamais plus que les 30 derniers jours,
-//   par dates connues à l'avance (jamais de list()) => coût de lecture borné
-//   et constant quel que soit l'âge du site.
+// Analytics SQLite (Durable Object) — independent of the answer cache in KV.
 // =============================================================================
-function todayKey() { return 'st:d:' + new Date().toISOString().slice(0, 10); }
-
-function topEntries(map, n) {
-  const out = {};
-  Object.entries(map || {}).sort((a, b) => b[1] - a[1]).slice(0, n).forEach(([k, v]) => { out[k] = v; });
-  return out;
-}
-
-// 1 lecture + 1 écriture, sur l'unique clé du jour.
-async function bumpStat(env, mutate) {
-  if (!env.CACHE) return;
-  const key = todayKey();
-  const cur = (await env.CACHE.get(key, { type: 'json' })) || { v: 0, u: 0, c: 0, s: {} };
-  mutate(cur);
-  cur.s = topEntries(cur.s, 60);
-  await env.CACHE.put(key, JSON.stringify(cur), { expirationTtl: 60 * 60 * 24 * 35 });
-}
-
-// POST /track  { event: 'pageview'|'search'|'chat', q?, newVisitor? }
 async function handleTrack(request, env) {
   try {
-    const b = await request.json().catch(() => ({}));
-    const event = String(b.event || 'pageview');
-    await bumpStat(env, (s) => {
-      if (event === 'pageview') {
-        s.v = (s.v || 0) + 1;
-        if (b.newVisitor) s.u = (s.u || 0) + 1;
-      } else if (event === 'search') {
-        const q = String(b.q || '').trim().slice(0, 80);
-        if (q) s.s[q] = (s.s[q] || 0) + 1;
-      } else if (event === 'chat') {
-        s.c = (s.c || 0) + 1;
-      }
-    });
+    const body = await request.json();
+    if (!body || !['pageview', 'search', 'chat'].includes(body.event) || (body.event === 'search' && typeof body.q !== 'string')) return jsonResponse({ ok: false, error: 'invalid_event' }, 400);
+    await recordAnalytics(env, body);
     return jsonResponse({ ok: true });
-  } catch (e) {
-    console.error('track error:', e.message);
-    return jsonResponse({ ok: false }, 200);
+  } catch (error) {
+    console.error('Analytics event failed:', error.message);
+    return jsonResponse({ ok: false, error: 'analytics_unavailable' }, 503);
   }
 }
 
-// GET /stats?key=STATS_KEY -> agrégat pour l'admin.
-// Coût borné et CONSTANT dans le temps : exactement 30 lectures (dates des 30
-// derniers jours, connues à l'avance), quel que soit l'âge du site. Plus de list().
-// totalViews/Visitors/Chat = somme sur ces 30 jours (le TTL de 35 j ne
-// conservait de toute façon jamais un vrai historique infini).
+// GET /stats?key=STATS_KEY — 30 UTC days, cache is optional and lasts 60s.
 async function handleStats(request, env, ctx) {
-  if (!env.CACHE) return jsonResponse({ error: 'kv_disabled' }, 200);
   const url = new URL(request.url);
-  // STATS_KEY est OPTIONNEL : si elle est définie, on l'exige ; sinon /stats est ouvert.
-  if (env.STATS_KEY && url.searchParams.get('key') !== env.STATS_KEY) {
-    return jsonResponse({ error: 'unauthorized' }, 403);
+  if (env.STATS_KEY && url.searchParams.get('key') !== env.STATS_KEY) return jsonResponse({ error: 'unauthorized' }, 403);
+  if (!env.ANALYTICS) return jsonResponse({ error: 'analytics_disabled' }, 503);
+  const cacheKey = new Request('https://stats-cache.internal/stats-v2');
+  let cache;
+  try {
+    cache = caches.default;
+    const saved = await cache.match(cacheKey);
+    if (saved) return saved;
+  } catch (error) { console.warn('Stats cache unavailable:', error.message); }
+  try {
+    const data = await readAnalytics(env);
+    const response = jsonResponse(data);
+    response.headers.set('Cache-Control', 'no-store');
+    if (cache) {
+      const copy = response.clone();
+      copy.headers.set('Cache-Control', 'public, max-age=60');
+      ctx.waitUntil(Promise.resolve().then(() => cache.put(cacheKey, copy)).catch(error => console.warn('Stats cache write failed:', error.message)));
+    }
+    return response;
+  } catch (error) {
+    console.error('Stats unavailable:', error.message);
+    return jsonResponse({ error: 'analytics_unavailable' }, 503);
   }
-
-  // Cache d'edge Cloudflare (gratuit, HORS quota KV) : /stats est un endpoint
-  // public sans clé, donc n'importe quel bot/scanner peut le taper en boucle.
-  // Ce cache plafonne le coût réel à 1 calcul (30 lectures KV) par minute,
-  // quel que soit le nombre d'appels reçus.
-  const cache = caches.default;
-  const cacheKey = new Request('https://stats-cache.internal/stats');
-  const cached = await cache.match(cacheKey);
-  if (cached) return cached;
-
-  const now = Date.now();
-  const dates = [];
-  for (let i = 29; i >= 0; i--) dates.push(new Date(now - i * 86400000).toISOString().slice(0, 10));
-  const days = await Promise.all(dates.map(d => env.CACHE.get('st:d:' + d, { type: 'json' })));
-  const chart = dates.map((date, i) => ({ date, views: (days[i] && days[i].v) || 0 }));
-
-  let totalViews = 0, totalVisitors = 0, totalChat = 0;
-  const searches = {};
-  days.forEach(d => {
-    if (!d) return;
-    totalViews += d.v || 0; totalVisitors += d.u || 0; totalChat += d.c || 0;
-    Object.entries(d.s || {}).forEach(([q, c]) => { searches[q] = (searches[q] || 0) + c; });
-  });
-
-  const today = days[days.length - 1] || {};
-  const sortTop = (obj, n) => Object.entries(obj).sort((a, b) => b[1] - a[1]).slice(0, n).map(([label, count]) => ({ label, count }));
-
-  const payload = JSON.stringify({
-    totalViews, totalVisitors, totalChat,
-    todayViews: today.v || 0, todayVisitors: today.u || 0,
-    chart,
-    topSearches: sortTop(searches, 15),
-  });
-  const baseHeaders = { 'Content-Type': 'application/json', ...CORS_HEADERS };
-  const response = new Response(payload, { status: 200, headers: baseHeaders });
-  const cacheResponse = new Response(payload, {
-    status: 200,
-    headers: { ...baseHeaders, 'Cache-Control': 'public, max-age=60' },
-  });
-  ctx.waitUntil(cache.put(cacheKey, cacheResponse));
-  return response;
 }
 
 // =============================================================================
