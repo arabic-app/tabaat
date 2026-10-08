@@ -31,6 +31,7 @@ async function app(books, storage = new IDBFactory(), options = {}) {
   w.localStorage.setItem('sync_name', 'test');
   w.localStorage.setItem('github_token_secured', 'test-token');
   w.sessionStorage.setItem('__adm_auth__', '776804fd62f4788b');
+  if (options.journal) w.localStorage.setItem('tabaat-admin-drafts-v1', JSON.stringify(options.journal));
   for (const name of ['vendor/purify.min.js', 'js/content-security.js', 'js/admin-draft-store.js', 'js/catalogue-data.js']) {
     if (fs.existsSync(path.join(root, name))) w.eval(fs.readFileSync(path.join(root, name), 'utf8'));
   }
@@ -47,6 +48,67 @@ async function app(books, storage = new IDBFactory(), options = {}) {
 function input(a, id, value) { const el=a.document.getElementById(id); el.value=value; el.dispatchEvent(new a.w.Event('input',{bubbles:true})); }
 function save(a) { a.w.__admin.saveBook({preventDefault(){}}); }
 async function reload(a, books, storage) { await settle(); a.w.close(); return app(books,storage); }
+test('viewing and clicking an unchanged book never creates a draft, including after reload', async () => {
+ const db = new IDBFactory(); let a = await app([fixture(), fixture(2)], db);
+ try {
+ a.w.__admin.loadBookIntoForm(1);
+ a.document.getElementById('title').click();
+ a.document.getElementById('title').dispatchEvent(new a.w.Event('change', {bubbles: true}));
+ await settle();
+ assert.equal(a.document.getElementById('localSaveStatus').dataset.state, 'published');
+ assert.equal(a.document.getElementById('localDrafts').hidden, true);
+ a.w.__admin.loadBookIntoForm(2);
+ await settle();
+ const exit = new a.w.Event('beforeunload', {cancelable: true});
+ a.w.dispatchEvent(exit);
+ assert.equal(exit.defaultPrevented, false);
+ a = await reload(a, [fixture(), fixture(2)], db);
+ assert.equal(a.document.getElementById('title').value, 'Original 2');
+ assert.equal(a.document.getElementById('localSaveStatus').dataset.state, 'published');
+ assert.equal(a.document.getElementById('localDrafts').hidden, true);
+ assert.equal(a.w.__admin.state.pendingChanges.upserts.size, 0);
+ } finally { a.w.close(); }
+});
+test('reverting a real edit clears its draft even after restoring it from local storage', async () => {
+ const db = new IDBFactory(); let a = await app([fixture()], db);
+ try {
+ a.w.__admin.loadBookIntoForm(1); input(a, 'title', 'Changed'); await settle();
+ assert.equal(a.document.getElementById('localSaveStatus').dataset.state, 'draft');
+ a = await reload(a, [fixture()], db);
+ input(a, 'title', 'Original 1'); await settle();
+ assert.equal(a.document.getElementById('localSaveStatus').dataset.state, 'published');
+ assert.equal(a.document.getElementById('formTitle').textContent, 'تعديل: Original 1');
+ assert.equal(a.document.getElementById('localDrafts').hidden, true);
+ } finally { a.w.close(); }
+});
+test('reverting an edit to an already saved book keeps its pending publication', async () => {
+ const a = await app([fixture()]);
+ try {
+ a.w.__admin.loadBookIntoForm(1); input(a, 'title', 'Saved locally'); save(a);
+ input(a, 'title', 'Unsaved'); await settle();
+ assert.equal(a.document.getElementById('localSaveStatus').dataset.state, 'draft');
+ input(a, 'title', 'Saved locally'); await settle();
+ assert.equal(a.document.getElementById('localSaveStatus').dataset.state, 'saved');
+ assert.equal(a.w.__admin.state.pendingChanges.upserts.get(1).title, 'Saved locally');
+ } finally { a.w.close(); }
+});
+for (const changed of [false, true]) test(`legacy stored drafts preserve real edits and clear false drafts: changed=${changed}`, async () => {
+ const book = {...fixture(), category: [''], notes: ''};
+ if (changed) book.title = 'Real old edit';
+ const a = await app([fixture()], new IDBFactory(), {journal: {
+ version: 1, updatedAt: Date.now(), active: '1',
+ drafts: [['1', {book, suggestion: null, dirty: true}]], suggestions: [], upserts: [], deletes: []
+ }});
+ try {
+ assert.equal(a.document.getElementById('title').value, book.title);
+ assert.equal(a.document.getElementById('localSaveStatus').dataset.state, changed ? 'draft' : 'published');
+ assert.equal(a.document.getElementById('formTitle').textContent, (changed ? 'مسودة: ' : 'تعديل: ') + book.title);
+ if (changed) {
+ input(a, 'title', 'Original 1'); await settle();
+ assert.equal(a.document.getElementById('localSaveStatus').dataset.state, 'published');
+ }
+ } finally { a.w.close(); }
+});
 test('saved changes survive reload and merge onto the freshly loaded catalogue',async()=>{
  const db=new IDBFactory(); let a=await app([fixture()],db);
  try { a.w.__admin.loadBookIntoForm(1); input(a,'title','Local saved'); save(a);

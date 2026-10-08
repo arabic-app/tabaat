@@ -14,9 +14,7 @@ Les écritures sont attachées à `event.waitUntil` et sérialisées. Une ancien
 
 ## Interface du catalogue
 
-La page affiche le chargement, la disponibilité du catalogue, l’utilisation d’une copie conservée, l’absence de connexion ou l’échec d’une actualisation. Le bouton permet d’actualiser ou de réessayer. Une erreur d’actualisation conserve les livres déjà affichés et leur date; une reconnexion déclenche une nouvelle tentative.
-
-La date correspond à `Last-Modified` si cet en-tête est valide. Sinon, elle indique explicitement la date de récupération connue; une ancienne copie sans métadonnées affiche que sa date est inconnue. Elle ne prétend pas connaître la date de modification du catalogue dans ce cas.
+La barre de statut et son bouton d'actualisation ont été retirés à la demande de l'utilisateur. Le code d'affichage, les dates associées et les styles de cette barre sont supprimés. Le rechargement de la page conserve le chargement réseau avec repli sur le catalogue validé en cache; une reconnexion déclenche aussi une nouvelle tentative. Un échec d'actualisation conserve les livres déjà affichés.
 
 Les données sont aussi validées dans la page, pour couvrir le premier chargement ou un navigateur sans service worker. Les filtres ne présentent pas « aucun résultat » lorsque le catalogue n’a pas pu être chargé. L’actualisation conserve les filtres disponibles et ne multiplie pas les gestionnaires d’autocomplétion.
 

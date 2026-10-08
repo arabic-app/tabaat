@@ -44,10 +44,6 @@
     <script src="js/content-security.js"></script>
     <script src="js/catalogue-data.js"></script>
     <style>
-        .catalogue-status-bar { display:flex; align-items:center; flex-wrap:wrap; gap:8px; margin:12px 0; color:var(--md-on-surface-variant); font-size:.85rem; }
-        .catalogue-status-bar p { flex:1; min-width:220px; margin:0; }
-        .catalogue-status-bar [data-state="error"], .catalogue-status-bar [data-state="stale"] { color:var(--md-on-surface); }
-        .catalogue-status-bar button:disabled { opacity:.6; cursor:wait; }
         :root {
             --md-primary: #00695c;
             --md-on-primary: #ffffff;
@@ -1608,46 +1604,9 @@
                 .trim();
         }
 
-        const catalogueState = { loaded: false, mode: 'loading', date: null, dateKind: null, generation: 0 };
-        function catalogueDate(response) {
-            for (const [header, kind] of [['Last-Modified', 'modified'], ['X-Tabaat-Cached-At', 'fetched'], ['Date', 'fetched']]) {
-                const date = new Date(response.headers.get(header) || 'invalid');
-                if (Number.isFinite(date.getTime())) return { date, kind };
-            }
-            return response.headers.get('X-Tabaat-Source') === 'cache' ? { date: null, kind: null } : { date: new Date(), kind: 'fetched' };
-        }
-        function updateCatalogueStatus() {
-            const status = document.getElementById('catalogueStatus');
-            const mode = catalogueState.mode;
-            status.dataset.state = mode;
-            const text = document.createElement('span');
-            const messages = {
-                loading: 'جارٍ تحميل دليل الطبعات…',
-                fresh: 'دليل الطبعات متاح',
-                cached: 'تُعرض نسخة محفوظة — تعذّر جلب نسخة أحدث',
-                offline: 'أنت غير متصل بالإنترنت — تُعرض النسخة المتاحة',
-                stale: 'تعذّر تحديث الدليل — ما زالت النسخة السابقة معروضة',
-                error: 'تعذّر تحميل دليل الطبعات ولا توجد نسخة متاحة. اتصل بالإنترنت ثم أعد المحاولة.'
-            };
-            text.textContent = messages[mode];
-            status.replaceChildren(text);
-            if (catalogueState.date) {
-                const time = document.createElement('time');
-                time.dateTime = catalogueState.date.toISOString();
-                time.textContent = ' — ' + (catalogueState.dateKind === 'modified' ? 'تحديث النسخة: ' : 'جُلبت النسخة: ')
-                    + new Intl.DateTimeFormat('ar-EG', { dateStyle: 'medium', timeStyle: 'short' }).format(catalogueState.date);
-                status.appendChild(time);
-            } else if (catalogueState.loaded) {
-                status.append(' — تاريخ النسخة غير متاح');
-            }
-            const retry = document.getElementById('retryCatalogue');
-            retry.disabled = mode === 'loading';
-            retry.textContent = mode === 'error' || mode === 'stale' ? 'إعادة المحاولة' : 'تحديث الدليل';
-        }
+        const catalogueState = { loaded: false, generation: 0 };
         async function loadBooks() {
             const generation = ++catalogueState.generation;
-            catalogueState.mode = 'loading';
-            updateCatalogueStatus();
             const controller = new AbortController();
             const timeout = setTimeout(() => controller.abort(), 12000);
             try {
@@ -1657,31 +1616,19 @@
                 if (!TabaatData.valid('books.json', data)) throw new Error('Invalid catalogue');
                 if (generation !== catalogueState.generation) return;
                 booksData = data.sort((a, b) => (a.title || '').localeCompare(b.title || '', 'ar'));
-                const metadata = catalogueDate(response);
-                catalogueState.date = metadata.date;
-                catalogueState.dateKind = metadata.kind;
                 catalogueState.loaded = true;
-                catalogueState.mode = response.headers.get('X-Tabaat-Source') === 'cache' ? 'cached' : navigator.onLine === false ? 'offline' : 'fresh';
                 const booksCountEl = document.getElementById('about-total-books');
                 if (booksCountEl) booksCountEl.textContent = booksData.length;
                 initCategories();
                 initAutocompleteData();
                 filterAndDisplayBooks();
-                updateCatalogueStatus();
                 const directBookId = parseInt(new URLSearchParams(window.location.search).get('book'));
                 if (!isNaN(directBookId)) setTimeout(() => openBookCardModal(directBookId), 100);
             } catch {
                 if (generation !== catalogueState.generation) return;
-                catalogueState.mode = catalogueState.loaded ? 'stale' : 'error';
                 if (!catalogueState.loaded) document.getElementById('booksContainer').replaceChildren();
-                updateCatalogueStatus();
             } finally { clearTimeout(timeout); }
         }
-        document.getElementById('retryCatalogue').addEventListener('click', loadBooks);
-        window.addEventListener('offline', () => {
-            if (catalogueState.loaded) catalogueState.mode = 'offline';
-            updateCatalogueStatus();
-        });
         window.addEventListener('online', loadBooks);
 
         let uniquePublishers = [];

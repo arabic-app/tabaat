@@ -298,6 +298,29 @@
         }
         .action-bar-row { display: flex; gap: 8px; align-items: center; }
 
+        .local-editing-bar {
+            display: flex; align-items: center; flex-wrap: wrap; gap: 12px;
+            margin-bottom: 24px; padding: 14px 16px;
+            background: var(--surface); border: 1px solid var(--outline-variant);
+            border-radius: var(--radius-lg); box-shadow: var(--elevation-1);
+        }
+        .local-editing-message {
+            display: flex; align-items: center; gap: 10px;
+            flex: 1; min-width: 0; color: var(--on-surface-variant);
+        }
+        .local-editing-message .material-icons-round { color: var(--primary); flex-shrink: 0; }
+        #localSaveStatus { margin: 0; font-size: 0.85rem; line-height: 1.7; }
+        .local-editing-bar[data-state="error"] .local-editing-message,
+        .local-editing-bar[data-state="error"] .material-icons-round { color: var(--error); }
+        .local-editing-bar[data-state="locked"] .local-editing-message,
+        .local-editing-bar[data-state="locked"] .material-icons-round { color: var(--outline); }
+        #localDrafts { flex: 0 1 260px; width: auto; max-width: 100%; }
+        @media (max-width: 600px) {
+            .local-editing-message { flex-basis: 100%; }
+            #localDrafts { flex: 1 1 100%; width: 100%; }
+            #retryLocalSave { white-space: normal; height: auto; min-height: 36px; }
+        }
+
         /* ============================================================
            SYNC MODAL
            ============================================================ */
@@ -1307,10 +1330,15 @@
         </div>
 
         <!-- Local editing status stays visible even after deleting a book. -->
-            <div style="padding:0 20px 16px">
-                <p id="localSaveStatus" role="status" aria-live="polite">جارٍ تحميل الحفظ المحلي…</p>
+            <div class="local-editing-bar" id="localEditingBar">
+                <div class="local-editing-message">
+                    <span class="material-icons-round" id="localSaveIcon" aria-hidden="true">sync</span>
+                    <p id="localSaveStatus" role="status" aria-live="polite">جارٍ تحميل الحفظ المحلي…</p>
+                </div>
                 <select id="localDrafts" class="md-input" aria-label="المسودات المحفوظة" hidden></select>
-                <button id="retryLocalSave" type="button" class="md-btn md-btn-text">إعادة محاولة الحفظ المحلي</button>
+                <button id="retryLocalSave" type="button" class="md-btn md-btn-secondary" hidden>
+                    <span class="material-icons-round" aria-hidden="true">refresh</span> إعادة محاولة الحفظ المحلي
+                </button>
             </div>
         <!-- Book Form -->
         <section class="form-card" id="formContainer" aria-hidden="true" aria-label="نموذج تعديل الكتاب">
@@ -2576,14 +2604,16 @@
         const pending = state.pendingChanges.upserts.size + state.pendingChanges.deletes.size;
         const status = $('#localSaveStatus');
         status.dataset.state = localEditing.locked ? 'locked' : localEditing.error ? 'error' : localEditing.revision > localEditing.durableRevision ? 'saving' : dirty ? 'draft' : pending ? 'saved' : 'published';
+        $('#localEditingBar').dataset.state = status.dataset.state;
+        $('#localSaveIcon').textContent = { locked: 'lock', error: 'error_outline', saving: 'sync', draft: 'edit_note', saved: 'cloud_upload', published: 'check_circle' }[status.dataset.state];
         status.textContent = localEditing.locked
-            ? localEditing.locked === 'busy' ? '🔒 التحرير مفتوح في تبويب آخر — أغلقه ثم أعد تحميل هذه الصفحة' : '🔒 تعذّر تأمين الحفظ المحلي — افتح الصفحة عبر HTTPS في متصفح حديث'
+            ? localEditing.locked === 'busy' ? 'التحرير مفتوح في تبويب آخر — أغلقه ثم أعد تحميل هذه الصفحة' : 'تعذّر تأمين الحفظ المحلي — افتح الصفحة عبر HTTPS في متصفح حديث'
             : localEditing.error
-            ? '⚠️ تعذّر الحفظ على هذا الجهاز — احتفظ بالصفحة مفتوحة وأعد المحاولة'
+            ? 'تعذّر الحفظ على هذا الجهاز — احتفظ بالصفحة مفتوحة وأعد المحاولة'
             : localEditing.revision > localEditing.durableRevision
-                ? '⏳ جارٍ الحفظ على هذا الجهاز…'
-                : dirty ? '📝 مسودة محفوظة على هذا الجهاز — لم تُنشر'
-                    : pending ? '💾 محفوظ على هذا الجهاز — بانتظار النشر' : '✅ منشور';
+                ? 'جارٍ الحفظ على هذا الجهاز…'
+                : dirty ? 'مسودة محفوظة على هذا الجهاز — لم تُنشر'
+                    : pending ? 'محفوظ على هذا الجهاز — بانتظار النشر' : 'منشور';
         $('#retryLocalSave').hidden = !localEditing.error;
         const select = $('#localDrafts');
         select.replaceChildren(new Option('المسودات المحفوظة', ''));
@@ -2619,13 +2649,21 @@
         const previous = localEditing.drafts.get(localEditing.active);
         const suggestion = state.currentSuggestionRow;
         if (previous && JSON.stringify(previous.book) === JSON.stringify(book) && JSON.stringify(previous.suggestion) === JSON.stringify(suggestion)) return;
-        localEditing.drafts.set(localEditing.active, { book, suggestion, dirty: true });
+        const baseline = previous?.baseline;
+        const dirty = !baseline || JSON.stringify(baseline) !== JSON.stringify(book);
+        localEditing.drafts.set(localEditing.active, { book, baseline, suggestion, dirty });
+        if (book.id) DOM.formTitle.textContent = (dirty ? 'مسودة: ' : 'تعديل: ') + (book.title || 'كتاب جديد');
         persistLocalEditing();
     }
 
     function finishFormRendering(key, suggestion = null) {
         localEditing.active = key;
         state.currentSuggestionRow = suggestion;
+        if (!key.startsWith('new:') && !localEditing.drafts.has(key)) {
+            // Compare rendered fields: optional defaults and rich HTML are normalized by the form.
+            const book = readDraftForm();
+            localEditing.drafts.set(key, { book, baseline: book, suggestion, dirty: false });
+        }
         localEditing.observer?.takeRecords();
         DOM.btnSyncForm.style.display = state.pendingChanges.upserts.has(Number(DOM.bookId.value)) ? 'inline-flex' : 'none';
         updateLocalStatus();
@@ -2635,8 +2673,15 @@
         const draft = localEditing.drafts.get(key);
         if (!draft) return;
         const book = draft.book;
+        // Older snapshots did not record a baseline and may contain false drafts.
+        if (!draft.baseline && book.id) {
+            const original = state.books.find(value => value.id === book.id);
+            if (original) {
+                renderBookFields(original);
+                draft.baseline = readDraftForm();
+            }
+        }
         DOM.formContainer.setAttribute('aria-hidden', 'false');
-        DOM.formTitle.textContent = (draft.dirty ? 'مسودة: ' : 'تعديل: ') + (book.title || 'كتاب جديد');
         DOM.bookId.value = book.id || '';
         DOM.titleInput.value = book.title || '';
         DOM.authorInput.value = book.author || '';
@@ -2651,6 +2696,8 @@
         (book.links || []).forEach(link => addLinkRow('links', link.title, link.url));
         DOM.duplicateWarning.style.display = 'none';
         DOM.btnDeleteBook.style.display = book.id ? 'inline-flex' : 'none';
+        if (draft.baseline) draft.dirty = JSON.stringify(draft.baseline) !== JSON.stringify(readDraftForm());
+        DOM.formTitle.textContent = (draft.dirty ? 'مسودة: ' : 'تعديل: ') + (book.title || 'كتاب جديد');
         finishFormRendering(key, draft.suggestion);
         initSortable();
     }
@@ -2754,24 +2801,7 @@
         captureDraft();
     }
 
-    function loadBookIntoForm(id, liElement) {
-        if (!localEditing.ready) return;
-        if (localEditing.readFailed) { showToast('⚠️ أعد محاولة قراءة الحفظ المحلي قبل تعديل كتاب موجود.'); return; }
-        captureDraft();
-        if (localEditing.drafts.has(String(id))) { restoreDraft(String(id)); persistLocalEditing(); return; }
-        $$('.sidebar-list li').forEach(li => li.removeAttribute('aria-selected'));
-        if (liElement) liElement.setAttribute('aria-selected', 'true');
-
-        const book = state.books.find(b => b.id === id);
-        if (!book) return;
-
-        DOM.formContainer.setAttribute('aria-hidden', 'false');
-        DOM.formTitle.textContent = 'تعديل: ' + book.title;
-        DOM.formIcon.textContent = 'edit';
-        DOM.duplicateWarning.style.display = 'none';
-        DOM.btnDeleteBook.style.display = 'inline-flex';
-        DOM.btnSyncForm.style.display = 'none';
-
+    function renderBookFields(book) {
         DOM.bookId.value = book.id;
         DOM.titleInput.value = book.title || '';
         DOM.authorInput.value = book.author || '';
@@ -2794,6 +2824,27 @@
 
         DOM.linksContainer.innerHTML = '';
         (book.links || []).forEach(l => addLinkRow('links', l.title, l.url));
+    }
+
+    function loadBookIntoForm(id, liElement) {
+        if (!localEditing.ready) return;
+        if (localEditing.readFailed) { showToast('⚠️ أعد محاولة قراءة الحفظ المحلي قبل تعديل كتاب موجود.'); return; }
+        captureDraft();
+        if (localEditing.drafts.has(String(id))) { restoreDraft(String(id)); persistLocalEditing(); return; }
+        $$('.sidebar-list li').forEach(li => li.removeAttribute('aria-selected'));
+        if (liElement) liElement.setAttribute('aria-selected', 'true');
+
+        const book = state.books.find(b => b.id === id);
+        if (!book) return;
+
+        DOM.formContainer.setAttribute('aria-hidden', 'false');
+        DOM.formTitle.textContent = 'تعديل: ' + book.title;
+        DOM.formIcon.textContent = 'edit';
+        DOM.duplicateWarning.style.display = 'none';
+        DOM.btnDeleteBook.style.display = 'inline-flex';
+        DOM.btnSyncForm.style.display = 'none';
+
+        renderBookFields(book);
 
         initSortable();
         window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -2895,7 +2946,9 @@
         if (state.currentSuggestionRow !== null) localEditing.suggestions.set(id, state.currentSuggestionRow);
         localEditing.drafts.delete(localEditing.active);
         localEditing.active = String(id);
-        localEditing.drafts.set(String(id), { book: readDraftForm(), suggestion: state.currentSuggestionRow, dirty: false });
+        const savedForm = readDraftForm();
+        localEditing.drafts.set(String(id), { book: savedForm, baseline: savedForm, suggestion: state.currentSuggestionRow, dirty: false });
+        DOM.formTitle.textContent = 'تعديل: ' + newBook.title;
         localEditing.observer?.takeRecords();
         persistLocalEditing();
 

@@ -32,28 +32,39 @@ async function app(fetcher) {
   return {dom, w, document:w.document};
 }
 
-test('catalogue without data shows availability failure and a working retry',async()=>{
+test('catalogue loads after reconnecting when its initial fetch failed',async()=>{
  let unavailable=true;const a=await app(async()=>{if(unavailable)throw Error('offline');return response([book(1)]);});
- try {const status=a.document.getElementById('catalogueStatus');assert.ok(status);assert.equal(status.dataset.state,'error');
- assert.equal(a.document.querySelector('.md-card'),null);unavailable=false;a.document.getElementById('retryCatalogue').click();
- await new Promise(r=>a.w.setTimeout(r,30));assert.equal(a.document.querySelector('.book-title').textContent,'Book 1');assert.equal(status.dataset.state,'fresh');
+ try {
+  assert.equal(a.document.querySelector('.md-card'),null);
+  unavailable=false;a.w.dispatchEvent(new a.w.Event('online'));
+  await new Promise(r=>a.w.setTimeout(r,30));
+  assert.equal(a.document.querySelector('.book-title').textContent,'Book 1');
  }finally{a.w.close();}
 });
-test('cached catalogue displays its source and the date of the displayed data',async()=>{
- const a=await app(async()=>response([book(1)],{'X-Tabaat-Source':'cache','Last-Modified':'Wed, 07 Oct 2026 10:00:00 GMT','X-Tabaat-Cached-At':'2026-10-07T12:00:00.000Z'}));
- try {const status=a.document.getElementById('catalogueStatus');assert.ok(status);assert.equal(status.dataset.state,'cached');
- assert.ok(status.textContent.includes('محفوظة'));assert.ok(status.querySelector('time'));assert.equal(status.querySelector('time').dateTime,'2026-10-07T10:00:00.000Z');
+test('cached catalogue renders without status controls',async()=>{
+ const a=await app(async()=>response([book(1)],{'X-Tabaat-Source':'cache','Last-Modified':'Wed, 07 Oct 2026 10:00:00 GMT'}));
+ try {assert.equal(a.document.querySelector('.book-title').textContent,'Book 1');}
+ finally{a.w.close();}
+});
+test('refresh failure preserves the displayed catalogue',async()=>{
+ let failed=false;const a=await app(async()=>{if(failed)throw Error('failed');return response([book(1)]);});
+ try {
+  failed=true;await a.w.loadBooks();
+  assert.equal(a.document.querySelector('.book-title').textContent,'Book 1');
  }finally{a.w.close();}
 });
-test('refresh failure preserves the displayed catalogue and its original date',async()=>{
- let failed=false;const a=await app(async()=>{if(failed)throw Error('failed');return response([book(1)],{'Last-Modified':'Wed, 07 Oct 2026 10:00:00 GMT'});});
- try {const status=a.document.getElementById('catalogueStatus');assert.ok(status);failed=true;await a.w.loadBooks();
- assert.equal(a.document.querySelector('.book-title').textContent,'Book 1');assert.equal(status.dataset.state,'stale');
- assert.equal(status.querySelector('time').dateTime,'2026-10-07T10:00:00.000Z');
- }finally{a.w.close();}
-});
-test('invalid catalogue data without a service worker is rejected visibly',async()=>{
+test('invalid catalogue data without a service worker never renders as books',async()=>{
  const a=await app(async()=>response([{id:1,title:'Invalid',best_editions:'broken'}]));
- try {const status=a.document.getElementById('catalogueStatus');assert.ok(status);assert.equal(status.dataset.state,'error');assert.equal(a.document.querySelector('.md-card'),null);
+ try {assert.equal(a.document.querySelector('.md-card'),null);}
+ finally{a.w.close();}
+});
+test('catalogue refreshes on reconnection without status controls',async()=>{
+ let data=[book(1)];const a=await app(async()=>response(data));
+ try {
+  assert.equal(a.document.querySelector('.book-title').textContent,'Book 1');
+  a.w.dispatchEvent(new a.w.Event('offline'));
+  data=[book(2)];a.w.dispatchEvent(new a.w.Event('online'));
+  await new Promise(r=>a.w.setTimeout(r,30));
+  assert.equal(a.document.querySelector('.book-title').textContent,'Book 2');
  }finally{a.w.close();}
 });
