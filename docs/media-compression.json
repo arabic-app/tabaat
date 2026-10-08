@@ -1,0 +1,380 @@
+{
+  "createdAt": "2026-10-08T22:11:05.483Z",
+  "scope": "17 catalogue cover images over 2 MiB replaced with WebP variants; originals deleted at explicit user request",
+  "encoding": {
+    "format": "webp",
+    "quality": 85,
+    "maximumWidth": 1600,
+    "maximumHeight": 2200,
+    "fit": "inside",
+    "withoutEnlargement": true,
+    "autoOrientation": true
+  },
+  "beforeBytes": 63049607,
+  "afterBytes": 6001370,
+  "catalogueBeforeSHA256": "43604d587d3802d1681824328902c145a4d1f1dff254ab65b96edaa12ba48573",
+  "replacements": [
+    {
+      "bookId": 1,
+      "editionType": "best_editions",
+      "editionIndex": 0,
+      "imageIndex": 0,
+      "oldURL": "https://arabic-app.github.io/tabaat/images/1782741900242-tabarijawzi.png",
+      "newURL": "https://arabic-app.github.io/tabaat/images/screen/1782741900242-tabarijawzi.webp"
+    },
+    {
+      "bookId": 2,
+      "editionType": "best_editions",
+      "editionIndex": 1,
+      "imageIndex": 0,
+      "oldURL": "https://arabic-app.github.io/tabaat/images/1782302992332-.png",
+      "newURL": "https://arabic-app.github.io/tabaat/images/screen/1782302992332-.webp"
+    },
+    {
+      "bookId": 12,
+      "editionType": "best_editions",
+      "editionIndex": 1,
+      "imageIndex": 0,
+      "oldURL": "https://arabic-app.github.io/tabaat/images/1782303762491-.png",
+      "newURL": "https://arabic-app.github.io/tabaat/images/screen/1782303762491-.webp"
+    },
+    {
+      "bookId": 14,
+      "editionType": "best_editions",
+      "editionIndex": 0,
+      "imageIndex": 1,
+      "oldURL": "https://arabic-app.github.io/tabaat/images/1782728997158-1.png",
+      "newURL": "https://arabic-app.github.io/tabaat/images/screen/1782728997158-1.webp"
+    },
+    {
+      "bookId": 30,
+      "editionType": "best_editions",
+      "editionIndex": 2,
+      "imageIndex": 0,
+      "oldURL": "https://arabic-app.github.io/tabaat/images/1782307073639-.png",
+      "newURL": "https://arabic-app.github.io/tabaat/images/screen/1782307073639-.webp"
+    },
+    {
+      "bookId": 49,
+      "editionType": "best_editions",
+      "editionIndex": 0,
+      "imageIndex": 0,
+      "oldURL": "https://arabic-app.github.io/tabaat/images/1782302806905-2.png",
+      "newURL": "https://arabic-app.github.io/tabaat/images/screen/1782302806905-2.webp"
+    },
+    {
+      "bookId": 51,
+      "editionType": "best_editions",
+      "editionIndex": 0,
+      "imageIndex": 0,
+      "oldURL": "https://arabic-app.github.io/tabaat/images/1782304389870-.png",
+      "newURL": "https://arabic-app.github.io/tabaat/images/screen/1782304389870-.webp"
+    },
+    {
+      "bookId": 64,
+      "editionType": "best_editions",
+      "editionIndex": 0,
+      "imageIndex": 0,
+      "oldURL": "https://arabic-app.github.io/tabaat/images/1782660407987-43043.jpg",
+      "newURL": "https://arabic-app.github.io/tabaat/images/screen/1782660407987-43043.webp"
+    },
+    {
+      "bookId": 84,
+      "editionType": "best_editions",
+      "editionIndex": 0,
+      "imageIndex": 0,
+      "oldURL": "https://arabic-app.github.io/tabaat/images/1782303976978-.png",
+      "newURL": "https://arabic-app.github.io/tabaat/images/screen/1782303976978-.webp"
+    },
+    {
+      "bookId": 110,
+      "editionType": "best_editions",
+      "editionIndex": 0,
+      "imageIndex": 0,
+      "oldURL": "https://arabic-app.github.io/tabaat/images/1782717009647-16810765675.jpg",
+      "newURL": "https://arabic-app.github.io/tabaat/images/screen/1782717009647-16810765675.webp"
+    },
+    {
+      "bookId": 261,
+      "editionType": "best_editions",
+      "editionIndex": 0,
+      "imageIndex": 0,
+      "oldURL": "https://arabic-app.github.io/tabaat/images/1782305864805-.png",
+      "newURL": "https://arabic-app.github.io/tabaat/images/screen/1782305864805-.webp"
+    },
+    {
+      "bookId": 262,
+      "editionType": "best_editions",
+      "editionIndex": 0,
+      "imageIndex": 0,
+      "oldURL": "https://arabic-app.github.io/tabaat/images/1782306065076-.png",
+      "newURL": "https://arabic-app.github.io/tabaat/images/screen/1782306065076-.webp"
+    },
+    {
+      "bookId": 263,
+      "editionType": "best_editions",
+      "editionIndex": 1,
+      "imageIndex": 0,
+      "oldURL": "https://arabic-app.github.io/tabaat/images/1782306907912-.png",
+      "newURL": "https://arabic-app.github.io/tabaat/images/screen/1782306907912-.webp"
+    },
+    {
+      "bookId": 269,
+      "editionType": "best_editions",
+      "editionIndex": 0,
+      "imageIndex": 0,
+      "oldURL": "https://arabic-app.github.io/tabaat/images/1782732350402-.png",
+      "newURL": "https://arabic-app.github.io/tabaat/images/screen/1782732350402-.webp"
+    },
+    {
+      "bookId": 352,
+      "editionType": "best_editions",
+      "editionIndex": 1,
+      "imageIndex": 0,
+      "oldURL": "https://arabic-app.github.io/tabaat/images/1783031362494-39940b69495a4298befa0659170b5f03.jpg",
+      "newURL": "https://arabic-app.github.io/tabaat/images/screen/1783031362494-39940b69495a4298befa0659170b5f03.webp"
+    },
+    {
+      "bookId": 429,
+      "editionType": "best_editions",
+      "editionIndex": 0,
+      "imageIndex": 0,
+      "oldURL": "https://arabic-app.github.io/tabaat/images/1785919909458-baydhawitafsirall.png",
+      "newURL": "https://arabic-app.github.io/tabaat/images/screen/1785919909458-baydhawitafsirall.webp"
+    },
+    {
+      "bookId": 429,
+      "editionType": "best_editions",
+      "editionIndex": 0,
+      "imageIndex": 1,
+      "oldURL": "https://arabic-app.github.io/tabaat/images/1785919920685-baydhawitafsircover.png",
+      "newURL": "https://arabic-app.github.io/tabaat/images/screen/1785919920685-baydhawitafsircover.webp"
+    }
+  ],
+  "images": [
+    {
+      "original": "images/1782302806905-2.png",
+      "screen": "images/screen/1782302806905-2.webp",
+      "originalBytes": 2119589,
+      "screenBytes": 254812,
+      "originalWidth": 1814,
+      "originalHeight": 600,
+      "screenWidth": 1600,
+      "screenHeight": 529,
+      "originalSHA256": "4033171d369022e4c6cf01132e45eeff77dab2f3fa294ff1e27b45c6e987901c",
+      "screenSHA256": "826f6cc5e979a9df973fef9ffbf7cc5a1f6bb090050a5f79893fe5e3c4e0c58e",
+      "originalStatus": "deleted"
+    },
+    {
+      "original": "images/1782302992332-.png",
+      "screen": "images/screen/1782302992332-.webp",
+      "originalBytes": 2565953,
+      "screenBytes": 316612,
+      "originalWidth": 1815,
+      "originalHeight": 800,
+      "screenWidth": 1600,
+      "screenHeight": 705,
+      "originalSHA256": "9ebb5e85a6755a64c2dc6763053cfcd6013436e9607677e4aa8801d275c5c179",
+      "screenSHA256": "a34ebba3e478cbbf20280ae487ff64e9bc158a977ec72992698de3fb20b8f590",
+      "originalStatus": "deleted"
+    },
+    {
+      "original": "images/1782303762491-.png",
+      "screen": "images/screen/1782303762491-.webp",
+      "originalBytes": 2209470,
+      "screenBytes": 379894,
+      "originalWidth": 1393,
+      "originalHeight": 800,
+      "screenWidth": 1393,
+      "screenHeight": 800,
+      "originalSHA256": "5e9a3fa92329a145cf881a60d548ca7b5125e9c4c2019a9f5ab8e041d0270760",
+      "screenSHA256": "f2ff4d9a0b134c41c15adfcbafe56f309cbbccc98856dd8643250c7cc37ed63a",
+      "originalStatus": "deleted"
+    },
+    {
+      "original": "images/1782303976978-.png",
+      "screen": "images/screen/1782303976978-.webp",
+      "originalBytes": 3476394,
+      "screenBytes": 217850,
+      "originalWidth": 2487,
+      "originalHeight": 800,
+      "screenWidth": 1600,
+      "screenHeight": 515,
+      "originalSHA256": "cf4b90222b5803808045dffc572d3ebed1822dd6cb660989595a7c56ae1af631",
+      "screenSHA256": "823a28a8a5a27f5b9962326983877fed60e6f2a2a425a759e2ccdc2998dd9757",
+      "originalStatus": "deleted"
+    },
+    {
+      "original": "images/1782304389870-.png",
+      "screen": "images/screen/1782304389870-.webp",
+      "originalBytes": 2230445,
+      "screenBytes": 355588,
+      "originalWidth": 2358,
+      "originalHeight": 1200,
+      "screenWidth": 1600,
+      "screenHeight": 814,
+      "originalSHA256": "efb91a6680d7b944746fb0fcc9843b9447fa75736dd27aae8d9e35f9b31276f9",
+      "screenSHA256": "57e602331c8c3e52c224237a3e1da3dffc88fa87b9f3a54e53f407dab195466f",
+      "originalStatus": "deleted"
+    },
+    {
+      "original": "images/1782305864805-.png",
+      "screen": "images/screen/1782305864805-.webp",
+      "originalBytes": 2941686,
+      "screenBytes": 326886,
+      "originalWidth": 1913,
+      "originalHeight": 800,
+      "screenWidth": 1600,
+      "screenHeight": 669,
+      "originalSHA256": "d6e10eaa16eb00b9d2e4f3de721097492cfe3560cca9c1b84621c10c12099699",
+      "screenSHA256": "e56411c9313ea4507819f351801e15645a95900bb4d80133e7cfe34454b84b44",
+      "originalStatus": "deleted"
+    },
+    {
+      "original": "images/1782306065076-.png",
+      "screen": "images/screen/1782306065076-.webp",
+      "originalBytes": 2179010,
+      "screenBytes": 332182,
+      "originalWidth": 1403,
+      "originalHeight": 800,
+      "screenWidth": 1403,
+      "screenHeight": 800,
+      "originalSHA256": "fe38f71e3c847b8ac3902415eff31150a096d35055af70cda915ace6cadcb0ef",
+      "screenSHA256": "e43238cca824f371f333691c6ae67afd92d7157cb953db549390cbb940786547",
+      "originalStatus": "deleted"
+    },
+    {
+      "original": "images/1782306907912-.png",
+      "screen": "images/screen/1782306907912-.webp",
+      "originalBytes": 2525477,
+      "screenBytes": 276966,
+      "originalWidth": 1849,
+      "originalHeight": 800,
+      "screenWidth": 1600,
+      "screenHeight": 692,
+      "originalSHA256": "0ec1ab598945a62c698b44b2ed416199c0642b05b3b3616d0d37684a63da527b",
+      "screenSHA256": "fbb51b7eb847415613a51995aa2b05936eee06d3cc9534cb70c7fe4067e02037",
+      "originalStatus": "deleted"
+    },
+    {
+      "original": "images/1782307073639-.png",
+      "screen": "images/screen/1782307073639-.webp",
+      "originalBytes": 7126757,
+      "screenBytes": 246108,
+      "originalWidth": 3977,
+      "originalHeight": 800,
+      "screenWidth": 1600,
+      "screenHeight": 322,
+      "originalSHA256": "7b3e4af8b8e7cb844e3707b2ef5a0dddcb6203aa39de7718f1c4d2b2f818663b",
+      "screenSHA256": "e47ef3704000c7374b4a7d4ed14778c14c238befe6ce261a9de931982b097072",
+      "originalStatus": "deleted"
+    },
+    {
+      "original": "images/1782660407987-43043.jpg",
+      "screen": "images/screen/1782660407987-43043.webp",
+      "originalBytes": 8760985,
+      "screenBytes": 606454,
+      "originalWidth": 4096,
+      "originalHeight": 3072,
+      "screenWidth": 1600,
+      "screenHeight": 1200,
+      "originalSHA256": "5c0d9eccf879ba2a0800a2f975bc8f7d8bcfbf74b342fe994be78bc624368154",
+      "screenSHA256": "3fd38b11a7746929596d7f67ba5a05261071776949e0b0ca379c72ce0b2f57c4",
+      "originalStatus": "deleted"
+    },
+    {
+      "original": "images/1782717009647-16810765675.jpg",
+      "screen": "images/screen/1782717009647-16810765675.webp",
+      "originalBytes": 4694113,
+      "screenBytes": 830810,
+      "originalWidth": 1718,
+      "originalHeight": 2560,
+      "screenWidth": 1476,
+      "screenHeight": 2200,
+      "originalSHA256": "2ea5c7d3aa52f07d6d23c41c7beaf4f5c491f219f37868b3dd29c6d3bc13edcd",
+      "screenSHA256": "f2621cdfd081846bf07dc55da19f8eb3bcdae7924ee7fad4d088f2f3ac616608",
+      "originalStatus": "deleted"
+    },
+    {
+      "original": "images/1782728997158-1.png",
+      "screen": "images/screen/1782728997158-1.webp",
+      "originalBytes": 6889077,
+      "screenBytes": 207452,
+      "originalWidth": 4324,
+      "originalHeight": 800,
+      "screenWidth": 1600,
+      "screenHeight": 296,
+      "originalSHA256": "5f9a7b24eb6f20f6599f19b972e465a14f62a35b13e000836fae360cd92def94",
+      "screenSHA256": "9433ccf8ce3d276e520a6c5f5f5af11796e86349e0b0a55e4557da57007e81d6",
+      "originalStatus": "deleted"
+    },
+    {
+      "original": "images/1782732350402-.png",
+      "screen": "images/screen/1782732350402-.webp",
+      "originalBytes": 2352277,
+      "screenBytes": 374214,
+      "originalWidth": 1467,
+      "originalHeight": 800,
+      "screenWidth": 1467,
+      "screenHeight": 800,
+      "originalSHA256": "3fb799150ded669d0158d1822eb1294dbb41b3e4c09e944f107972fbc434bbed",
+      "screenSHA256": "34128944c53f8cb7984fbb41dbe453a4ab421641bd2c6e4eb57f71aad1781857",
+      "originalStatus": "deleted"
+    },
+    {
+      "original": "images/1782741900242-tabarijawzi.png",
+      "screen": "images/screen/1782741900242-tabarijawzi.webp",
+      "originalBytes": 4111815,
+      "screenBytes": 272930,
+      "originalWidth": 2726,
+      "originalHeight": 800,
+      "screenWidth": 1600,
+      "screenHeight": 470,
+      "originalSHA256": "e6e4983ad9332421cd2ed47a8fa4bd0d1db246a7d8c0a5ed86848dcf0f737548",
+      "screenSHA256": "96598e3f9c6ce6fecdd5c89eb0e87a94c9d89e8a8b539dd9f63309db798475f3",
+      "originalStatus": "deleted"
+    },
+    {
+      "original": "images/1783031362494-39940b69495a4298befa0659170b5f03.jpg",
+      "screen": "images/screen/1783031362494-39940b69495a4298befa0659170b5f03.webp",
+      "originalBytes": 3115322,
+      "screenBytes": 304862,
+      "originalWidth": 2250,
+      "originalHeight": 3336,
+      "screenWidth": 1484,
+      "screenHeight": 2200,
+      "originalSHA256": "49b8eb6c213910040c5a07c6cce281683b37e454866a45d6877642a9b3ac314f",
+      "screenSHA256": "693baaa535d092669a49f3c97c90dbc85e561fdc770add7a97e0b409e3a617c5",
+      "originalStatus": "deleted"
+    },
+    {
+      "original": "images/1785919909458-baydhawitafsirall.png",
+      "screen": "images/screen/1785919909458-baydhawitafsirall.webp",
+      "originalBytes": 2163702,
+      "screenBytes": 341570,
+      "originalWidth": 1417,
+      "originalHeight": 1344,
+      "screenWidth": 1417,
+      "screenHeight": 1344,
+      "originalSHA256": "c6685dd5b75eaed6779f53643b575bc5ac0c288dab661bcb1debe8a12cc8c78b",
+      "screenSHA256": "f9ba6492f7d76aee5aa5c80a768bc82b06e27bde297c8a05856d5766ddedcb1c",
+      "originalStatus": "deleted"
+    },
+    {
+      "original": "images/1785919920685-baydhawitafsircover.png",
+      "screen": "images/screen/1785919920685-baydhawitafsircover.webp",
+      "originalBytes": 3587535,
+      "screenBytes": 356180,
+      "originalWidth": 1628,
+      "originalHeight": 2268,
+      "screenWidth": 1579,
+      "screenHeight": 2200,
+      "originalSHA256": "283aac51fc1e7c129b4ad8a0e6f6229a01f42aaab4c298156d8ab50bc69a11a9",
+      "screenSHA256": "ac5a616428bda9cca5d50dce3bb6f313503f591d569194566ee3b573bcebedd3",
+      "originalStatus": "deleted"
+    }
+  ],
+  "originalsDeletedAt": "2026-10-08T22:32:38.408Z",
+  "originalsRetained": false,
+  "backupReferencesUpdated": 17
+}

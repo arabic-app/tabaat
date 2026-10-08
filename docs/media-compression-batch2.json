@@ -1,0 +1,1219 @@
+{
+  "createdAt": "2026-10-08T22:37:45.737Z",
+  "scope": "31 remaining covers over 1 MiB and correction image from book49 volume10 page504",
+  "originalsRetained": false,
+  "coverEncoding": {
+    "format": "webp",
+    "quality": 85,
+    "maximumWidth": 1600,
+    "maximumHeight": 2200,
+    "fit": "inside",
+    "withoutEnlargement": true,
+    "autoOrientation": true
+  },
+  "correctionEncoding": {
+    "format": "webp",
+    "quality": 95,
+    "effort": 6,
+    "preserveDimensions": true
+  },
+  "beforeBytes": 53343249,
+  "afterBytes": 12423910,
+  "catalogueBeforeSHA256": "db7440c4af6cd5f057bb5c8690eba0023c9951ef8b98ad4cf6917a51bf4d5407",
+  "backupBeforeSHA256": "87214ca76dda2ce712b22cc8626dd9d1430bd0648b7cd6bfb2b1ff2a3ccbddb2",
+  "replacements": [
+    {
+      "pointer": [
+        0,
+        "best_editions",
+        1,
+        "images",
+        0
+      ],
+      "oldURL": "https://arabic-app.github.io/tabaat/images/1782741919387-tabariturki.jpeg",
+      "newURL": "https://arabic-app.github.io/tabaat/images/screen/1782741919387-tabariturki.webp"
+    },
+    {
+      "pointer": [
+        2,
+        "best_editions",
+        3,
+        "images",
+        0
+      ],
+      "oldURL": "https://arabic-app.github.io/tabaat/images/1782303334712-.png",
+      "newURL": "https://arabic-app.github.io/tabaat/images/screen/1782303334712-.webp"
+    },
+    {
+      "pointer": [
+        15,
+        "best_editions",
+        0,
+        "images",
+        0
+      ],
+      "oldURL": "https://arabic-app.github.io/tabaat/images/1782302506832-.png",
+      "newURL": "https://arabic-app.github.io/tabaat/images/screen/1782302506832-.webp"
+    },
+    {
+      "pointer": [
+        15,
+        "best_editions",
+        1,
+        "images",
+        0
+      ],
+      "oldURL": "https://arabic-app.github.io/tabaat/images/1782302558397-.png",
+      "newURL": "https://arabic-app.github.io/tabaat/images/screen/1782302558397-.webp"
+    },
+    {
+      "pointer": [
+        15,
+        "alt_editions",
+        0,
+        "images",
+        0
+      ],
+      "oldURL": "https://arabic-app.github.io/tabaat/images/1784658186341-47328.jpg",
+      "newURL": "https://arabic-app.github.io/tabaat/images/screen/1784658186341-47328.webp"
+    },
+    {
+      "pointer": [
+        15,
+        "alt_editions",
+        0,
+        "images",
+        1
+      ],
+      "oldURL": "https://arabic-app.github.io/tabaat/images/1784658194668-47332.jpg",
+      "newURL": "https://arabic-app.github.io/tabaat/images/screen/1784658194668-47332.webp"
+    },
+    {
+      "pointer": [
+        18,
+        "best_editions",
+        0,
+        "images",
+        0
+      ],
+      "oldURL": "https://arabic-app.github.io/tabaat/images/1782661017318-.png",
+      "newURL": "https://arabic-app.github.io/tabaat/images/screen/1782661017318-.webp"
+    },
+    {
+      "pointer": [
+        18,
+        "best_editions",
+        1,
+        "images",
+        0
+      ],
+      "oldURL": "https://arabic-app.github.io/tabaat/images/1782661039211-.png",
+      "newURL": "https://arabic-app.github.io/tabaat/images/screen/1782661039211-.webp"
+    },
+    {
+      "pointer": [
+        28,
+        "alt_editions",
+        0,
+        "images",
+        0
+      ],
+      "oldURL": "https://arabic-app.github.io/tabaat/images/1782307106243-.png",
+      "newURL": "https://arabic-app.github.io/tabaat/images/screen/1782307106243-.webp"
+    },
+    {
+      "pointer": [
+        30,
+        "alt_editions",
+        0,
+        "images",
+        0
+      ],
+      "oldURL": "https://arabic-app.github.io/tabaat/images/1782731053483-sounanbayhaki2.jpeg",
+      "newURL": "https://arabic-app.github.io/tabaat/images/screen/1782731053483-sounanbayhaki2.webp"
+    },
+    {
+      "pointer": [
+        32,
+        "best_editions",
+        0,
+        "images",
+        0
+      ],
+      "oldURL": "https://arabic-app.github.io/tabaat/images/1782377902686-.png",
+      "newURL": "https://arabic-app.github.io/tabaat/images/screen/1782377902686-.webp"
+    },
+    {
+      "pointer": [
+        47,
+        "best_editions",
+        0,
+        "corrections",
+        0,
+        "attachments",
+        0,
+        "url"
+      ],
+      "oldURL": "https://arabic-app.github.io/tabaat/corrections/1783516980614-10504.jpeg",
+      "newURL": "https://arabic-app.github.io/tabaat/corrections/screen/1783516980614-10504.webp"
+    },
+    {
+      "pointer": [
+        47,
+        "best_editions",
+        1,
+        "images",
+        0
+      ],
+      "oldURL": "https://arabic-app.github.io/tabaat/images/1782302766274-.jpeg",
+      "newURL": "https://arabic-app.github.io/tabaat/images/screen/1782302766274-.webp"
+    },
+    {
+      "pointer": [
+        47,
+        "best_editions",
+        1,
+        "corrections",
+        0,
+        "attachments",
+        0,
+        "url"
+      ],
+      "oldURL": "https://arabic-app.github.io/tabaat/corrections/1783516980614-10504.jpeg",
+      "newURL": "https://arabic-app.github.io/tabaat/corrections/screen/1783516980614-10504.webp"
+    },
+    {
+      "pointer": [
+        54,
+        "best_editions",
+        0,
+        "images",
+        0
+      ],
+      "oldURL": "https://arabic-app.github.io/tabaat/images/1782304818204-.png",
+      "newURL": "https://arabic-app.github.io/tabaat/images/screen/1782304818204-.webp"
+    },
+    {
+      "pointer": [
+        55,
+        "best_editions",
+        1,
+        "images",
+        0
+      ],
+      "oldURL": "https://arabic-app.github.io/tabaat/images/1782305597314-.png",
+      "newURL": "https://arabic-app.github.io/tabaat/images/screen/1782305597314-.webp"
+    },
+    {
+      "pointer": [
+        62,
+        "best_editions",
+        0,
+        "images",
+        0
+      ],
+      "oldURL": "https://arabic-app.github.io/tabaat/images/1782573590516-16.png",
+      "newURL": "https://arabic-app.github.io/tabaat/images/screen/1782573590516-16.webp"
+    },
+    {
+      "pointer": [
+        69,
+        "best_editions",
+        0,
+        "images",
+        0
+      ],
+      "oldURL": "https://arabic-app.github.io/tabaat/images/1782303631165-.png",
+      "newURL": "https://arabic-app.github.io/tabaat/images/screen/1782303631165-.webp"
+    },
+    {
+      "pointer": [
+        77,
+        "alt_editions",
+        0,
+        "images",
+        0
+      ],
+      "oldURL": "https://arabic-app.github.io/tabaat/images/1782303369969-.png",
+      "newURL": "https://arabic-app.github.io/tabaat/images/screen/1782303369969-.webp"
+    },
+    {
+      "pointer": [
+        78,
+        "best_editions",
+        0,
+        "images",
+        0
+      ],
+      "oldURL": "https://arabic-app.github.io/tabaat/images/1782302658518-.png",
+      "newURL": "https://arabic-app.github.io/tabaat/images/screen/1782302658518-.webp"
+    },
+    {
+      "pointer": [
+        248,
+        "best_editions",
+        2,
+        "images",
+        0
+      ],
+      "oldURL": "https://arabic-app.github.io/tabaat/images/1782303800122-.png",
+      "newURL": "https://arabic-app.github.io/tabaat/images/screen/1782303800122-.webp"
+    },
+    {
+      "pointer": [
+        253,
+        "best_editions",
+        0,
+        "images",
+        0
+      ],
+      "oldURL": "https://arabic-app.github.io/tabaat/images/1782306889719-.png",
+      "newURL": "https://arabic-app.github.io/tabaat/images/screen/1782306889719-.webp"
+    },
+    {
+      "pointer": [
+        254,
+        "best_editions",
+        0,
+        "images",
+        0
+      ],
+      "oldURL": "https://arabic-app.github.io/tabaat/images/1782377994001-.png",
+      "newURL": "https://arabic-app.github.io/tabaat/images/screen/1782377994001-.webp"
+    },
+    {
+      "pointer": [
+        255,
+        "best_editions",
+        0,
+        "images",
+        0
+      ],
+      "oldURL": "https://arabic-app.github.io/tabaat/images/1782731166349-.png",
+      "newURL": "https://arabic-app.github.io/tabaat/images/screen/1782731166349-.webp"
+    },
+    {
+      "pointer": [
+        256,
+        "best_editions",
+        0,
+        "images",
+        0
+      ],
+      "oldURL": "https://arabic-app.github.io/tabaat/images/1782731289214-.png",
+      "newURL": "https://arabic-app.github.io/tabaat/images/screen/1782731289214-.webp"
+    },
+    {
+      "pointer": [
+        257,
+        "best_editions",
+        0,
+        "images",
+        0
+      ],
+      "oldURL": "https://arabic-app.github.io/tabaat/images/1782731340081-.png",
+      "newURL": "https://arabic-app.github.io/tabaat/images/screen/1782731340081-.webp"
+    },
+    {
+      "pointer": [
+        280,
+        "best_editions",
+        0,
+        "images",
+        0
+      ],
+      "oldURL": "https://arabic-app.github.io/tabaat/images/1782911719143-623ea0e49a2a4666a2464d9270bf896b.jpg",
+      "newURL": "https://arabic-app.github.io/tabaat/images/screen/1782911719143-623ea0e49a2a4666a2464d9270bf896b.webp"
+    },
+    {
+      "pointer": [
+        286,
+        "best_editions",
+        0,
+        "images",
+        1
+      ],
+      "oldURL": "https://arabic-app.github.io/tabaat/images/1782972641884-83WyQMiumU3jyOqUMV87Ziggpm31bsA4LcW62JMy.png",
+      "newURL": "https://arabic-app.github.io/tabaat/images/screen/1782972641884-83WyQMiumU3jyOqUMV87Ziggpm31bsA4LcW62JMy.webp"
+    },
+    {
+      "pointer": [
+        377,
+        "best_editions",
+        0,
+        "images",
+        0
+      ],
+      "oldURL": "https://arabic-app.github.io/tabaat/images/1783030008405-fc7dc66a2a53401a83814a3cc695625b898.93617021277x1000NxZgHotIvJC3JCuK47SGYs4tzsyBMQH7YQ3OgVDs.png",
+      "newURL": "https://arabic-app.github.io/tabaat/images/screen/1783030008405-fc7dc66a2a53401a83814a3cc695625b898.93617021277x1000NxZgHotIvJC3JCuK47SGYs4tzsyBMQH7YQ3OgVDs.webp"
+    },
+    {
+      "pointer": [
+        377,
+        "best_editions",
+        1,
+        "images",
+        1
+      ],
+      "oldURL": "https://arabic-app.github.io/tabaat/images/1783030101921-scaled.jpg",
+      "newURL": "https://arabic-app.github.io/tabaat/images/screen/1783030101921-scaled.webp"
+    },
+    {
+      "pointer": [
+        417,
+        "best_editions",
+        1,
+        "images",
+        0
+      ],
+      "oldURL": "https://arabic-app.github.io/tabaat/images/1785920288720-baydhawiloubaball.png",
+      "newURL": "https://arabic-app.github.io/tabaat/images/screen/1785920288720-baydhawiloubaball.webp"
+    },
+    {
+      "pointer": [
+        417,
+        "best_editions",
+        1,
+        "images",
+        1
+      ],
+      "oldURL": "https://arabic-app.github.io/tabaat/images/1785920295265-baydhawiloubabcover.png",
+      "newURL": "https://arabic-app.github.io/tabaat/images/screen/1785920295265-baydhawiloubabcover.webp"
+    },
+    {
+      "pointer": [
+        429,
+        "best_editions",
+        0,
+        "images",
+        0
+      ],
+      "oldURL": "https://arabic-app.github.io/tabaat/images/1786526028813-49554.jpg",
+      "newURL": "https://arabic-app.github.io/tabaat/images/screen/1786526028813-49554.webp"
+    }
+  ],
+  "backupReplacements": [
+    {
+      "pointer": [
+        0,
+        "best_editions",
+        1,
+        "images",
+        0
+      ],
+      "oldURL": "https://arabic-app.github.io/tabaat/images/1782741919387-tabariturki.jpeg",
+      "newURL": "https://arabic-app.github.io/tabaat/images/screen/1782741919387-tabariturki.webp"
+    },
+    {
+      "pointer": [
+        2,
+        "best_editions",
+        3,
+        "images",
+        0
+      ],
+      "oldURL": "https://arabic-app.github.io/tabaat/images/1782303334712-.png",
+      "newURL": "https://arabic-app.github.io/tabaat/images/screen/1782303334712-.webp"
+    },
+    {
+      "pointer": [
+        15,
+        "best_editions",
+        0,
+        "images",
+        0
+      ],
+      "oldURL": "https://arabic-app.github.io/tabaat/images/1782302506832-.png",
+      "newURL": "https://arabic-app.github.io/tabaat/images/screen/1782302506832-.webp"
+    },
+    {
+      "pointer": [
+        15,
+        "best_editions",
+        1,
+        "images",
+        0
+      ],
+      "oldURL": "https://arabic-app.github.io/tabaat/images/1782302558397-.png",
+      "newURL": "https://arabic-app.github.io/tabaat/images/screen/1782302558397-.webp"
+    },
+    {
+      "pointer": [
+        15,
+        "alt_editions",
+        0,
+        "images",
+        0
+      ],
+      "oldURL": "https://arabic-app.github.io/tabaat/images/1784658186341-47328.jpg",
+      "newURL": "https://arabic-app.github.io/tabaat/images/screen/1784658186341-47328.webp"
+    },
+    {
+      "pointer": [
+        15,
+        "alt_editions",
+        0,
+        "images",
+        1
+      ],
+      "oldURL": "https://arabic-app.github.io/tabaat/images/1784658194668-47332.jpg",
+      "newURL": "https://arabic-app.github.io/tabaat/images/screen/1784658194668-47332.webp"
+    },
+    {
+      "pointer": [
+        18,
+        "best_editions",
+        0,
+        "images",
+        0
+      ],
+      "oldURL": "https://arabic-app.github.io/tabaat/images/1782661017318-.png",
+      "newURL": "https://arabic-app.github.io/tabaat/images/screen/1782661017318-.webp"
+    },
+    {
+      "pointer": [
+        18,
+        "best_editions",
+        1,
+        "images",
+        0
+      ],
+      "oldURL": "https://arabic-app.github.io/tabaat/images/1782661039211-.png",
+      "newURL": "https://arabic-app.github.io/tabaat/images/screen/1782661039211-.webp"
+    },
+    {
+      "pointer": [
+        28,
+        "alt_editions",
+        0,
+        "images",
+        0
+      ],
+      "oldURL": "https://arabic-app.github.io/tabaat/images/1782307106243-.png",
+      "newURL": "https://arabic-app.github.io/tabaat/images/screen/1782307106243-.webp"
+    },
+    {
+      "pointer": [
+        30,
+        "alt_editions",
+        0,
+        "images",
+        0
+      ],
+      "oldURL": "https://arabic-app.github.io/tabaat/images/1782731053483-sounanbayhaki2.jpeg",
+      "newURL": "https://arabic-app.github.io/tabaat/images/screen/1782731053483-sounanbayhaki2.webp"
+    },
+    {
+      "pointer": [
+        32,
+        "best_editions",
+        0,
+        "images",
+        0
+      ],
+      "oldURL": "https://arabic-app.github.io/tabaat/images/1782377902686-.png",
+      "newURL": "https://arabic-app.github.io/tabaat/images/screen/1782377902686-.webp"
+    },
+    {
+      "pointer": [
+        47,
+        "best_editions",
+        0,
+        "corrections",
+        0,
+        "attachments",
+        0,
+        "url"
+      ],
+      "oldURL": "https://arabic-app.github.io/tabaat/corrections/1783516980614-10504.jpeg",
+      "newURL": "https://arabic-app.github.io/tabaat/corrections/screen/1783516980614-10504.webp"
+    },
+    {
+      "pointer": [
+        47,
+        "best_editions",
+        1,
+        "images",
+        0
+      ],
+      "oldURL": "https://arabic-app.github.io/tabaat/images/1782302766274-.jpeg",
+      "newURL": "https://arabic-app.github.io/tabaat/images/screen/1782302766274-.webp"
+    },
+    {
+      "pointer": [
+        47,
+        "best_editions",
+        1,
+        "corrections",
+        0,
+        "attachments",
+        0,
+        "url"
+      ],
+      "oldURL": "https://arabic-app.github.io/tabaat/corrections/1783516980614-10504.jpeg",
+      "newURL": "https://arabic-app.github.io/tabaat/corrections/screen/1783516980614-10504.webp"
+    },
+    {
+      "pointer": [
+        54,
+        "best_editions",
+        0,
+        "images",
+        0
+      ],
+      "oldURL": "https://arabic-app.github.io/tabaat/images/1782304818204-.png",
+      "newURL": "https://arabic-app.github.io/tabaat/images/screen/1782304818204-.webp"
+    },
+    {
+      "pointer": [
+        55,
+        "best_editions",
+        1,
+        "images",
+        0
+      ],
+      "oldURL": "https://arabic-app.github.io/tabaat/images/1782305597314-.png",
+      "newURL": "https://arabic-app.github.io/tabaat/images/screen/1782305597314-.webp"
+    },
+    {
+      "pointer": [
+        62,
+        "best_editions",
+        0,
+        "images",
+        0
+      ],
+      "oldURL": "https://arabic-app.github.io/tabaat/images/1782573590516-16.png",
+      "newURL": "https://arabic-app.github.io/tabaat/images/screen/1782573590516-16.webp"
+    },
+    {
+      "pointer": [
+        69,
+        "best_editions",
+        0,
+        "images",
+        0
+      ],
+      "oldURL": "https://arabic-app.github.io/tabaat/images/1782303631165-.png",
+      "newURL": "https://arabic-app.github.io/tabaat/images/screen/1782303631165-.webp"
+    },
+    {
+      "pointer": [
+        77,
+        "alt_editions",
+        0,
+        "images",
+        0
+      ],
+      "oldURL": "https://arabic-app.github.io/tabaat/images/1782303369969-.png",
+      "newURL": "https://arabic-app.github.io/tabaat/images/screen/1782303369969-.webp"
+    },
+    {
+      "pointer": [
+        78,
+        "best_editions",
+        0,
+        "images",
+        0
+      ],
+      "oldURL": "https://arabic-app.github.io/tabaat/images/1782302658518-.png",
+      "newURL": "https://arabic-app.github.io/tabaat/images/screen/1782302658518-.webp"
+    },
+    {
+      "pointer": [
+        248,
+        "best_editions",
+        2,
+        "images",
+        0
+      ],
+      "oldURL": "https://arabic-app.github.io/tabaat/images/1782303800122-.png",
+      "newURL": "https://arabic-app.github.io/tabaat/images/screen/1782303800122-.webp"
+    },
+    {
+      "pointer": [
+        253,
+        "best_editions",
+        0,
+        "images",
+        0
+      ],
+      "oldURL": "https://arabic-app.github.io/tabaat/images/1782306889719-.png",
+      "newURL": "https://arabic-app.github.io/tabaat/images/screen/1782306889719-.webp"
+    },
+    {
+      "pointer": [
+        254,
+        "best_editions",
+        0,
+        "images",
+        0
+      ],
+      "oldURL": "https://arabic-app.github.io/tabaat/images/1782377994001-.png",
+      "newURL": "https://arabic-app.github.io/tabaat/images/screen/1782377994001-.webp"
+    },
+    {
+      "pointer": [
+        255,
+        "best_editions",
+        0,
+        "images",
+        0
+      ],
+      "oldURL": "https://arabic-app.github.io/tabaat/images/1782731166349-.png",
+      "newURL": "https://arabic-app.github.io/tabaat/images/screen/1782731166349-.webp"
+    },
+    {
+      "pointer": [
+        256,
+        "best_editions",
+        0,
+        "images",
+        0
+      ],
+      "oldURL": "https://arabic-app.github.io/tabaat/images/1782731289214-.png",
+      "newURL": "https://arabic-app.github.io/tabaat/images/screen/1782731289214-.webp"
+    },
+    {
+      "pointer": [
+        257,
+        "best_editions",
+        0,
+        "images",
+        0
+      ],
+      "oldURL": "https://arabic-app.github.io/tabaat/images/1782731340081-.png",
+      "newURL": "https://arabic-app.github.io/tabaat/images/screen/1782731340081-.webp"
+    },
+    {
+      "pointer": [
+        280,
+        "best_editions",
+        0,
+        "images",
+        0
+      ],
+      "oldURL": "https://arabic-app.github.io/tabaat/images/1782911719143-623ea0e49a2a4666a2464d9270bf896b.jpg",
+      "newURL": "https://arabic-app.github.io/tabaat/images/screen/1782911719143-623ea0e49a2a4666a2464d9270bf896b.webp"
+    },
+    {
+      "pointer": [
+        286,
+        "best_editions",
+        0,
+        "images",
+        1
+      ],
+      "oldURL": "https://arabic-app.github.io/tabaat/images/1782972641884-83WyQMiumU3jyOqUMV87Ziggpm31bsA4LcW62JMy.png",
+      "newURL": "https://arabic-app.github.io/tabaat/images/screen/1782972641884-83WyQMiumU3jyOqUMV87Ziggpm31bsA4LcW62JMy.webp"
+    },
+    {
+      "pointer": [
+        377,
+        "best_editions",
+        0,
+        "images",
+        0
+      ],
+      "oldURL": "https://arabic-app.github.io/tabaat/images/1783030008405-fc7dc66a2a53401a83814a3cc695625b898.93617021277x1000NxZgHotIvJC3JCuK47SGYs4tzsyBMQH7YQ3OgVDs.png",
+      "newURL": "https://arabic-app.github.io/tabaat/images/screen/1783030008405-fc7dc66a2a53401a83814a3cc695625b898.93617021277x1000NxZgHotIvJC3JCuK47SGYs4tzsyBMQH7YQ3OgVDs.webp"
+    },
+    {
+      "pointer": [
+        377,
+        "best_editions",
+        1,
+        "images",
+        1
+      ],
+      "oldURL": "https://arabic-app.github.io/tabaat/images/1783030101921-scaled.jpg",
+      "newURL": "https://arabic-app.github.io/tabaat/images/screen/1783030101921-scaled.webp"
+    },
+    {
+      "pointer": [
+        417,
+        "best_editions",
+        1,
+        "images",
+        0
+      ],
+      "oldURL": "https://arabic-app.github.io/tabaat/images/1785920288720-baydhawiloubaball.png",
+      "newURL": "https://arabic-app.github.io/tabaat/images/screen/1785920288720-baydhawiloubaball.webp"
+    },
+    {
+      "pointer": [
+        417,
+        "best_editions",
+        1,
+        "images",
+        1
+      ],
+      "oldURL": "https://arabic-app.github.io/tabaat/images/1785920295265-baydhawiloubabcover.png",
+      "newURL": "https://arabic-app.github.io/tabaat/images/screen/1785920295265-baydhawiloubabcover.webp"
+    },
+    {
+      "pointer": [
+        429,
+        "best_editions",
+        0,
+        "images",
+        0
+      ],
+      "oldURL": "https://arabic-app.github.io/tabaat/images/1786526028813-49554.jpg",
+      "newURL": "https://arabic-app.github.io/tabaat/images/screen/1786526028813-49554.webp"
+    }
+  ],
+  "images": [
+    {
+      "original": "images/1782302506832-.png",
+      "kind": "cover",
+      "screen": "images/screen/1782302506832-.webp",
+      "originalBytes": 1313264,
+      "screenBytes": 228442,
+      "originalWidth": 824,
+      "originalHeight": 800,
+      "screenWidth": 824,
+      "screenHeight": 800,
+      "originalSHA256": "7599ebf16e1b29dc5c02bc4ab32e730c936e58924925e5cd3cd1bd3098d7f626",
+      "screenSHA256": "4eb7182fb3f30aa41feb55fe4304146fcf561136457f884a6f7d15ebee73271c",
+      "originalStatus": "deleted"
+    },
+    {
+      "original": "images/1782302558397-.png",
+      "kind": "cover",
+      "screen": "images/screen/1782302558397-.webp",
+      "originalBytes": 1862235,
+      "screenBytes": 312954,
+      "originalWidth": 1138,
+      "originalHeight": 800,
+      "screenWidth": 1138,
+      "screenHeight": 800,
+      "originalSHA256": "a60573ff86354180dff15840be7f5fb4a006a733fe65e3e0a68176067fe885aa",
+      "screenSHA256": "ad3524c63c91fb6cabb9b2ec89f37f670533cdec55891723473ef39999442e69",
+      "originalStatus": "deleted"
+    },
+    {
+      "original": "images/1782302658518-.png",
+      "kind": "cover",
+      "screen": "images/screen/1782302658518-.webp",
+      "originalBytes": 1950621,
+      "screenBytes": 325956,
+      "originalWidth": 1207,
+      "originalHeight": 800,
+      "screenWidth": 1207,
+      "screenHeight": 800,
+      "originalSHA256": "fa548746382b768f03b4b920c15a068c48a5d0d81a07a78e5d087d3348188d8c",
+      "screenSHA256": "b610210248f2a6cf075baf06aea52e7bc4f5caa4055d734500b4e8f539c47024",
+      "originalStatus": "deleted"
+    },
+    {
+      "original": "images/1782302766274-.jpeg",
+      "kind": "cover",
+      "screen": "images/screen/1782302766274-.webp",
+      "originalBytes": 2078274,
+      "screenBytes": 273280,
+      "originalWidth": 2604,
+      "originalHeight": 800,
+      "screenWidth": 1600,
+      "screenHeight": 492,
+      "originalSHA256": "12467c343a1e58161ffcca2287e78e98def5c4d16ae0d278105bec90cb6e1101",
+      "screenSHA256": "08e592aa0ed5d8909e3c0b1036abe8675755912521f6926cbd35053c57994f4d",
+      "originalStatus": "deleted"
+    },
+    {
+      "original": "images/1782303334712-.png",
+      "kind": "cover",
+      "screen": "images/screen/1782303334712-.webp",
+      "originalBytes": 1259469,
+      "screenBytes": 216326,
+      "originalWidth": 813,
+      "originalHeight": 800,
+      "screenWidth": 813,
+      "screenHeight": 800,
+      "originalSHA256": "737b60fdbfdd50a6646a07a6381dc5b5d0c73de9658597fc6479bfb3ad52c212",
+      "screenSHA256": "fbad14a8d8e48c1359c7a7e0b64f39454d4ae55f1c77472ddf2cd524bc1d308a",
+      "originalStatus": "deleted"
+    },
+    {
+      "original": "images/1782303369969-.png",
+      "kind": "cover",
+      "screen": "images/screen/1782303369969-.webp",
+      "originalBytes": 1832514,
+      "screenBytes": 318420,
+      "originalWidth": 1065,
+      "originalHeight": 800,
+      "screenWidth": 1065,
+      "screenHeight": 800,
+      "originalSHA256": "c59da4d1334e43c44110f2f0e677aa5fddb68790cf4b469f4eb214b3676f3fc4",
+      "screenSHA256": "c0cd20f4af4d64d07104d2f19e31ca7f6c72f59c581298a1dc63988587d49325",
+      "originalStatus": "deleted"
+    },
+    {
+      "original": "images/1782303631165-.png",
+      "kind": "cover",
+      "screen": "images/screen/1782303631165-.webp",
+      "originalBytes": 1295282,
+      "screenBytes": 194756,
+      "originalWidth": 892,
+      "originalHeight": 800,
+      "screenWidth": 892,
+      "screenHeight": 800,
+      "originalSHA256": "6f1e3c7ee4d4dac14d7cf69f45181a27f3e9d30a6655b2f4b2ebcfa6d087a118",
+      "screenSHA256": "b116037efd3aedc81a484dacc080b0a06d1449773d67171d9b5d844869f13e34",
+      "originalStatus": "deleted"
+    },
+    {
+      "original": "images/1782303800122-.png",
+      "kind": "cover",
+      "screen": "images/screen/1782303800122-.webp",
+      "originalBytes": 1311561,
+      "screenBytes": 213238,
+      "originalWidth": 813,
+      "originalHeight": 800,
+      "screenWidth": 813,
+      "screenHeight": 800,
+      "originalSHA256": "d50e8df38f2e890ca116f5d5927b64f0485ec4a3bdf945b2cb8304bf92f3a0ea",
+      "screenSHA256": "3defe4bc63701fa55db27bd2a510fd4ea38743164afcebf0764cfbbbec3ebb47",
+      "originalStatus": "deleted"
+    },
+    {
+      "original": "images/1782304818204-.png",
+      "kind": "cover",
+      "screen": "images/screen/1782304818204-.webp",
+      "originalBytes": 2081815,
+      "screenBytes": 290238,
+      "originalWidth": 1548,
+      "originalHeight": 800,
+      "screenWidth": 1548,
+      "screenHeight": 800,
+      "originalSHA256": "3b4d5ded72b211bb7fc3d43447c9282b2515e24b3555f79d7f19368378300479",
+      "screenSHA256": "7101292907f3f8d01e9a58150bc2673aa9a6b3a0c195fc62a256e26e4e8f6fbe",
+      "originalStatus": "deleted"
+    },
+    {
+      "original": "images/1782305597314-.png",
+      "kind": "cover",
+      "screen": "images/screen/1782305597314-.webp",
+      "originalBytes": 1737138,
+      "screenBytes": 271202,
+      "originalWidth": 1281,
+      "originalHeight": 800,
+      "screenWidth": 1281,
+      "screenHeight": 800,
+      "originalSHA256": "b8528db0294c5b3794a5e7b7a3dd4b6dd92c7aaf709790646b95fda99ee443f8",
+      "screenSHA256": "c78c905cd2843081ea7f0fa57ef448e4a1f6490ed125604a602730dd99ee4b2f",
+      "originalStatus": "deleted"
+    },
+    {
+      "original": "images/1782306889719-.png",
+      "kind": "cover",
+      "screen": "images/screen/1782306889719-.webp",
+      "originalBytes": 1573018,
+      "screenBytes": 244846,
+      "originalWidth": 1103,
+      "originalHeight": 800,
+      "screenWidth": 1103,
+      "screenHeight": 800,
+      "originalSHA256": "ef8e8646a44592072ad4b3f6a74ec455831e68a313fe3a3201891d408e48a252",
+      "screenSHA256": "e03723691531c20fcf5a18640326faab340fcdb356238476962cdbac33c66d59",
+      "originalStatus": "deleted"
+    },
+    {
+      "original": "images/1782307106243-.png",
+      "kind": "cover",
+      "screen": "images/screen/1782307106243-.webp",
+      "originalBytes": 1746373,
+      "screenBytes": 266366,
+      "originalWidth": 1109,
+      "originalHeight": 800,
+      "screenWidth": 1109,
+      "screenHeight": 800,
+      "originalSHA256": "668dbe2fd3eacb986d1d8f7cb1e8b96e0dde410aa8863b9c1636d724b6e8a310",
+      "screenSHA256": "e9733098d1b738d12d317dfe07008c5e76c93b9cdf83c22a31e133bd83b9bb13",
+      "originalStatus": "deleted"
+    },
+    {
+      "original": "images/1782377902686-.png",
+      "kind": "cover",
+      "screen": "images/screen/1782377902686-.webp",
+      "originalBytes": 1949631,
+      "screenBytes": 301524,
+      "originalWidth": 1390,
+      "originalHeight": 800,
+      "screenWidth": 1390,
+      "screenHeight": 800,
+      "originalSHA256": "a92fd2099b383027fab83f75774a9edb873858b978eebb7947eb42e2b19cf2b3",
+      "screenSHA256": "34632d9f1fcacb3aefa7bc0dd2905d0a0e8238f7813c031ca7ac8b3c76500798",
+      "originalStatus": "deleted"
+    },
+    {
+      "original": "images/1782377994001-.png",
+      "kind": "cover",
+      "screen": "images/screen/1782377994001-.webp",
+      "originalBytes": 1735470,
+      "screenBytes": 278788,
+      "originalWidth": 1117,
+      "originalHeight": 800,
+      "screenWidth": 1117,
+      "screenHeight": 800,
+      "originalSHA256": "a3dbf9802f6982481927fbee39c5c659cde1a53b5a86762af0f26b37d4c4f148",
+      "screenSHA256": "5ffc8880098558c6ef1c0fb1c38724f985702637b9a884f45f7d28a5e96efabb",
+      "originalStatus": "deleted"
+    },
+    {
+      "original": "images/1782573590516-16.png",
+      "kind": "cover",
+      "screen": "images/screen/1782573590516-16.webp",
+      "originalBytes": 1618012,
+      "screenBytes": 301084,
+      "originalWidth": 1000,
+      "originalHeight": 724,
+      "screenWidth": 1000,
+      "screenHeight": 724,
+      "originalSHA256": "27d1716539a960c61836fd3db83a6921c8da9d0e43a9fa3c316f6aefef79e398",
+      "screenSHA256": "cd3b06390cf8bb58d0fced74b4ac38fcff865f556f9e4854deacd690ae6e02d7",
+      "originalStatus": "deleted"
+    },
+    {
+      "original": "images/1782661017318-.png",
+      "kind": "cover",
+      "screen": "images/screen/1782661017318-.webp",
+      "originalBytes": 1549048,
+      "screenBytes": 251080,
+      "originalWidth": 1017,
+      "originalHeight": 800,
+      "screenWidth": 1017,
+      "screenHeight": 800,
+      "originalSHA256": "fd026c9d783a9dd808bd68bc6b9291d9810b5f36e22249d1ff7e19444f3eb4f4",
+      "screenSHA256": "1eb6dd7861cab31dc758658275ea8a9d61fbba710ab80907fdde1561530ec43b",
+      "originalStatus": "deleted"
+    },
+    {
+      "original": "images/1782661039211-.png",
+      "kind": "cover",
+      "screen": "images/screen/1782661039211-.webp",
+      "originalBytes": 1883718,
+      "screenBytes": 272654,
+      "originalWidth": 1271,
+      "originalHeight": 800,
+      "screenWidth": 1271,
+      "screenHeight": 800,
+      "originalSHA256": "580e6c829c2abe6cbf6aafc16c79333b15ea3a10f605b77e0d47b8db6b031d46",
+      "screenSHA256": "d00071fd9f80a4ca073e52f7d3c002092e8bed182fbb3acbbcdbdedde61c51eb",
+      "originalStatus": "deleted"
+    },
+    {
+      "original": "images/1782731053483-sounanbayhaki2.jpeg",
+      "kind": "cover",
+      "screen": "images/screen/1782731053483-sounanbayhaki2.webp",
+      "originalBytes": 1110214,
+      "screenBytes": 349260,
+      "originalWidth": 1418,
+      "originalHeight": 800,
+      "screenWidth": 1418,
+      "screenHeight": 800,
+      "originalSHA256": "0ffd7c83358032fb789b65d029be716652fae7c06a91406275b7f1d8650b772f",
+      "screenSHA256": "7c66bb264d35a591b4b16c46a9fa839ffc9afeba418b26531563113d18af4130",
+      "originalStatus": "deleted"
+    },
+    {
+      "original": "images/1782731166349-.png",
+      "kind": "cover",
+      "screen": "images/screen/1782731166349-.webp",
+      "originalBytes": 1938802,
+      "screenBytes": 342562,
+      "originalWidth": 1253,
+      "originalHeight": 800,
+      "screenWidth": 1253,
+      "screenHeight": 800,
+      "originalSHA256": "d549a762dd26e2dd693d5b47f46fd3e12ebf7c60b3b36df145121c6c92fc6808",
+      "screenSHA256": "56bf18eda7be9350f64ad7bc66bc0f026788c5955f91b8e0598c43060013f000",
+      "originalStatus": "deleted"
+    },
+    {
+      "original": "images/1782731289214-.png",
+      "kind": "cover",
+      "screen": "images/screen/1782731289214-.webp",
+      "originalBytes": 1696732,
+      "screenBytes": 291872,
+      "originalWidth": 1138,
+      "originalHeight": 800,
+      "screenWidth": 1138,
+      "screenHeight": 800,
+      "originalSHA256": "206675d3f70d38a489af5fcb486a886cc74c62e72da51ce7e1368eb1f76b024a",
+      "screenSHA256": "417296d720eefaf346077893ebb79c405be03620a6b4c8aaa216c39875b1f270",
+      "originalStatus": "deleted"
+    },
+    {
+      "original": "images/1782731340081-.png",
+      "kind": "cover",
+      "screen": "images/screen/1782731340081-.webp",
+      "originalBytes": 1136370,
+      "screenBytes": 181230,
+      "originalWidth": 795,
+      "originalHeight": 800,
+      "screenWidth": 795,
+      "screenHeight": 800,
+      "originalSHA256": "f5771bbe5106bbe476b38a9bde477ceb5ca9388ba4fd8e7687159fd55abe4f29",
+      "screenSHA256": "95694143ec6b8fbae988abb22f4490de5af8d374c2c23be30d9a00466cc1285c",
+      "originalStatus": "deleted"
+    },
+    {
+      "original": "images/1782741919387-tabariturki.jpeg",
+      "kind": "cover",
+      "screen": "images/screen/1782741919387-tabariturki.webp",
+      "originalBytes": 1983982,
+      "screenBytes": 223734,
+      "originalWidth": 2850,
+      "originalHeight": 800,
+      "screenWidth": 1600,
+      "screenHeight": 449,
+      "originalSHA256": "8fbd0f219170a23835357511b08852c1b8c7286a85690d49358c316b455dc57b",
+      "screenSHA256": "186ebbd87aeb4f1a346a3d52f2a8ef068c8dda9c32720b03ff6fee390f44c770",
+      "originalStatus": "deleted"
+    },
+    {
+      "original": "images/1782911719143-623ea0e49a2a4666a2464d9270bf896b.jpg",
+      "kind": "cover",
+      "screen": "images/screen/1782911719143-623ea0e49a2a4666a2464d9270bf896b.webp",
+      "originalBytes": 1569823,
+      "screenBytes": 1170914,
+      "originalWidth": 2101,
+      "originalHeight": 2929,
+      "screenWidth": 1578,
+      "screenHeight": 2200,
+      "originalSHA256": "6e8dbc3d8144e6090e805a2cf0cdcd94e957bcd993754b0663fa994e80160110",
+      "screenSHA256": "70c9640dbc19317def82cdc7e900e717d33b6b401c5559f5cc62b3340d18a9cd",
+      "originalStatus": "deleted"
+    },
+    {
+      "original": "images/1782972641884-83WyQMiumU3jyOqUMV87Ziggpm31bsA4LcW62JMy.png",
+      "kind": "cover",
+      "screen": "images/screen/1782972641884-83WyQMiumU3jyOqUMV87Ziggpm31bsA4LcW62JMy.webp",
+      "originalBytes": 1146458,
+      "screenBytes": 127408,
+      "originalWidth": 1000,
+      "originalHeight": 1000,
+      "screenWidth": 1000,
+      "screenHeight": 1000,
+      "originalSHA256": "7739866ba9e4beb6a329bba3f02e710929728cf98b363b168cc3ecd50ba85e6d",
+      "screenSHA256": "487db83287923ca2be2dac35dcb05db5be9745b7d6b2a418512c0c5ffd7028c7",
+      "originalStatus": "deleted"
+    },
+    {
+      "original": "images/1783030008405-fc7dc66a2a53401a83814a3cc695625b898.93617021277x1000NxZgHotIvJC3JCuK47SGYs4tzsyBMQH7YQ3OgVDs.png",
+      "kind": "cover",
+      "screen": "images/screen/1783030008405-fc7dc66a2a53401a83814a3cc695625b898.93617021277x1000NxZgHotIvJC3JCuK47SGYs4tzsyBMQH7YQ3OgVDs.webp",
+      "originalBytes": 1396613,
+      "screenBytes": 198188,
+      "originalWidth": 898,
+      "originalHeight": 1000,
+      "screenWidth": 898,
+      "screenHeight": 1000,
+      "originalSHA256": "f628324809ece311ee483c30eb34ed2dabed2c39211544744083f87ff3a744f4",
+      "screenSHA256": "876b1b8f8987e6623656770254044cd91b5bc307aaae09b2f2a056435f69e704",
+      "originalStatus": "deleted"
+    },
+    {
+      "original": "images/1783030101921-scaled.jpg",
+      "kind": "cover",
+      "screen": "images/screen/1783030101921-scaled.webp",
+      "originalBytes": 1098945,
+      "screenBytes": 840810,
+      "originalWidth": 1776,
+      "originalHeight": 2560,
+      "screenWidth": 1526,
+      "screenHeight": 2200,
+      "originalSHA256": "a9e1f26e384ccc5d3bf684450d0c2d738ff79c8ed8a3ed620e7bf8848b4473be",
+      "screenSHA256": "300d91c03718cad3eb5d5c65340610d04b02b2f0cfd7a6bddc411b4f603ff63e",
+      "originalStatus": "deleted"
+    },
+    {
+      "original": "images/1784658186341-47328.jpg",
+      "kind": "cover",
+      "screen": "images/screen/1784658186341-47328.webp",
+      "originalBytes": 1228781,
+      "screenBytes": 333890,
+      "originalWidth": 1151,
+      "originalHeight": 1286,
+      "screenWidth": 1151,
+      "screenHeight": 1286,
+      "originalSHA256": "d59b393d49ee92e7d5d2bdac40b89f86eccd95cbeae642b86d10a16011cda24b",
+      "screenSHA256": "bd6219811e82e5ee67f51313675232fb3710c2090f43bafe498fcf5f7ffdb397",
+      "originalStatus": "deleted"
+    },
+    {
+      "original": "images/1784658194668-47332.jpg",
+      "kind": "cover",
+      "screen": "images/screen/1784658194668-47332.webp",
+      "originalBytes": 1603554,
+      "screenBytes": 373218,
+      "originalWidth": 1268,
+      "originalHeight": 1625,
+      "screenWidth": 1268,
+      "screenHeight": 1625,
+      "originalSHA256": "1a972ad951331bf8d93c23c9b7f427e6c6f568aedc68ed64f61e37f1cc385e54",
+      "screenSHA256": "e401df2c18b7c8ea23ce37d12848d0e03032091155c7fb67600b10515ea27fdb",
+      "originalStatus": "deleted"
+    },
+    {
+      "original": "images/1785920288720-baydhawiloubaball.png",
+      "kind": "cover",
+      "screen": "images/screen/1785920288720-baydhawiloubaball.webp",
+      "originalBytes": 1386853,
+      "screenBytes": 186406,
+      "originalWidth": 842,
+      "originalHeight": 1000,
+      "screenWidth": 842,
+      "screenHeight": 1000,
+      "originalSHA256": "a414b836db89846d53e0e8ec20c9c665ea55f7d89d46f5fa257ba6fb395acb01",
+      "screenSHA256": "50abbac4dcc47a6f75d7cf6fbe056bc5d283483d2b54cec50058de4fb968b1d5",
+      "originalStatus": "deleted"
+    },
+    {
+      "original": "images/1785920295265-baydhawiloubabcover.png",
+      "kind": "cover",
+      "screen": "images/screen/1785920295265-baydhawiloubabcover.webp",
+      "originalBytes": 1296077,
+      "screenBytes": 215622,
+      "originalWidth": 699,
+      "originalHeight": 1000,
+      "screenWidth": 699,
+      "screenHeight": 1000,
+      "originalSHA256": "5a11c941bbe2f4beb36d71b87545559034b1e2638dc8c2f47c9f46ae4c147683",
+      "screenSHA256": "8dea50a3a42f8ce672f8b58f334d9ff898299978919064ab2077027297265557",
+      "originalStatus": "deleted"
+    },
+    {
+      "original": "images/1786526028813-49554.jpg",
+      "kind": "cover",
+      "screen": "images/screen/1786526028813-49554.webp",
+      "originalBytes": 1176591,
+      "screenBytes": 645564,
+      "originalWidth": 1920,
+      "originalHeight": 2560,
+      "screenWidth": 1600,
+      "screenHeight": 2133,
+      "originalSHA256": "593a37d4aca872d7c39268bce94008d1799fba14421efe3c826259718c8c6602",
+      "screenSHA256": "f894643999cc6106c5abd155bc9d98bb8db83db33fc94c78901c391d311a969b",
+      "originalStatus": "deleted"
+    },
+    {
+      "original": "corrections/1783516980614-10504.jpeg",
+      "kind": "correction",
+      "screen": "corrections/screen/1783516980614-10504.webp",
+      "originalBytes": 4796011,
+      "screenBytes": 2382078,
+      "originalWidth": 4000,
+      "originalHeight": 3000,
+      "screenWidth": 4000,
+      "screenHeight": 3000,
+      "originalSHA256": "18846bc581f20229ce7ebc530df40d21ec07ce6e6ac307f744882163ea0db59d",
+      "screenSHA256": "baa8e9100a128fe39f0843032e77a150da579c9b43aaff3d5cdd87f478e8edcc",
+      "originalStatus": "deleted"
+    }
+  ],
+  "originalsDeletedAt": "2026-10-08T22:59:33.493Z",
+  "deletedOriginalBytes": 53343249,
+  "deletionAuthorization": "Explicit user request: supprime les originaux des compressés"
+}

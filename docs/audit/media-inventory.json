@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-08T21:40:19.058Z",
+  "generatedAt": "2026-10-08T22:59:33.536Z",
   "notice": "Candidates for manual review only. Local browser drafts, unpublished branches and external consumers are not included. No deletion is performed.",
   "scannedSources": [
     "about.html",
@@ -13,6 +13,8 @@
     "docs/audit/sw-checks.cjs",
     "docs/AUDIT-2026-10-07.md",
     "docs/CONTENT-SECURITY.md",
+    "docs/media-compression-batch2.json",
+    "docs/media-compression.json",
     "docs/MEDIA-UNREFERENCED-CHECK.md",
     "docs/MEDIA-UPLOAD.md",
     "docs/OFFLINE-CATALOGUE.md",
@@ -48,7 +50,7 @@
     "vendor/purify.min.js",
     "vendor/README.md"
   ],
-  "totalBytes": 291593421,
+  "totalBytes": 193625845,
   "files": [
     {
       "path": "books_attachments/1786519423373-01.pdf",
@@ -149,14 +151,6 @@
     {
       "path": "corrections/1783516516359-2817.pdf",
       "bytes": 49350,
-      "referencedBy": [
-        "books.json",
-        "books.json.bak"
-      ]
-    },
-    {
-      "path": "corrections/1783516980614-10504.jpeg",
-      "bytes": 4796011,
       "referencedBy": [
         "books.json",
         "books.json.bak"
@@ -283,6 +277,15 @@
       ]
     },
     {
+      "path": "corrections/screen/1783516980614-10504.webp",
+      "bytes": 2382078,
+      "referencedBy": [
+        "books.json",
+        "books.json.bak",
+        "docs/media-compression-batch2.json"
+      ]
+    },
+    {
       "path": "editions_attachments/1786364300941-.pdf",
       "bytes": 1983186,
       "referencedBy": [
@@ -306,104 +309,8 @@
       ]
     },
     {
-      "path": "images/1782302506832-.png",
-      "bytes": 1313264,
-      "referencedBy": [
-        "books.json",
-        "books.json.bak"
-      ]
-    },
-    {
-      "path": "images/1782302558397-.png",
-      "bytes": 1862235,
-      "referencedBy": [
-        "books.json",
-        "books.json.bak"
-      ]
-    },
-    {
       "path": "images/1782302605929-.png",
       "bytes": 970746,
-      "referencedBy": [
-        "books.json",
-        "books.json.bak"
-      ]
-    },
-    {
-      "path": "images/1782302658518-.png",
-      "bytes": 1950621,
-      "referencedBy": [
-        "books.json",
-        "books.json.bak"
-      ]
-    },
-    {
-      "path": "images/1782302766274-.jpeg",
-      "bytes": 2078274,
-      "referencedBy": [
-        "books.json",
-        "books.json.bak"
-      ]
-    },
-    {
-      "path": "images/1782302806905-2.png",
-      "bytes": 2119589,
-      "referencedBy": [
-        "books.json",
-        "books.json.bak"
-      ]
-    },
-    {
-      "path": "images/1782302992332-.png",
-      "bytes": 2565953,
-      "referencedBy": [
-        "books.json",
-        "books.json.bak"
-      ]
-    },
-    {
-      "path": "images/1782303334712-.png",
-      "bytes": 1259469,
-      "referencedBy": [
-        "books.json",
-        "books.json.bak"
-      ]
-    },
-    {
-      "path": "images/1782303369969-.png",
-      "bytes": 1832514,
-      "referencedBy": [
-        "books.json",
-        "books.json.bak"
-      ]
-    },
-    {
-      "path": "images/1782303631165-.png",
-      "bytes": 1295282,
-      "referencedBy": [
-        "books.json",
-        "books.json.bak"
-      ]
-    },
-    {
-      "path": "images/1782303762491-.png",
-      "bytes": 2209470,
-      "referencedBy": [
-        "books.json",
-        "books.json.bak"
-      ]
-    },
-    {
-      "path": "images/1782303800122-.png",
-      "bytes": 1311561,
-      "referencedBy": [
-        "books.json",
-        "books.json.bak"
-      ]
-    },
-    {
-      "path": "images/1782303976978-.png",
-      "bytes": 3476394,
       "referencedBy": [
         "books.json",
         "books.json.bak"
@@ -474,38 +381,6 @@
       ]
     },
     {
-      "path": "images/1782304389870-.png",
-      "bytes": 2230445,
-      "referencedBy": [
-        "books.json",
-        "books.json.bak"
-      ]
-    },
-    {
-      "path": "images/1782304818204-.png",
-      "bytes": 2081815,
-      "referencedBy": [
-        "books.json",
-        "books.json.bak"
-      ]
-    },
-    {
-      "path": "images/1782305597314-.png",
-      "bytes": 1737138,
-      "referencedBy": [
-        "books.json",
-        "books.json.bak"
-      ]
-    },
-    {
-      "path": "images/1782305864805-.png",
-      "bytes": 2941686,
-      "referencedBy": [
-        "books.json",
-        "books.json.bak"
-      ]
-    },
-    {
       "path": "images/1782305911573-.png",
       "bytes": 681494,
       "referencedBy": [
@@ -522,48 +397,8 @@
       ]
     },
     {
-      "path": "images/1782306065076-.png",
-      "bytes": 2179010,
-      "referencedBy": [
-        "books.json",
-        "books.json.bak"
-      ]
-    },
-    {
       "path": "images/1782306772574-06bce09010ff4dba9a8d0724ef20341c.jpg",
       "bytes": 221168,
-      "referencedBy": [
-        "books.json",
-        "books.json.bak"
-      ]
-    },
-    {
-      "path": "images/1782306889719-.png",
-      "bytes": 1573018,
-      "referencedBy": [
-        "books.json",
-        "books.json.bak"
-      ]
-    },
-    {
-      "path": "images/1782306907912-.png",
-      "bytes": 2525477,
-      "referencedBy": [
-        "books.json",
-        "books.json.bak"
-      ]
-    },
-    {
-      "path": "images/1782307073639-.png",
-      "bytes": 7126757,
-      "referencedBy": [
-        "books.json",
-        "books.json.bak"
-      ]
-    },
-    {
-      "path": "images/1782307106243-.png",
-      "bytes": 1746373,
       "referencedBy": [
         "books.json",
         "books.json.bak"
@@ -740,22 +575,6 @@
     {
       "path": "images/1782377539126-fatawasafwa.jpg",
       "bytes": 96561,
-      "referencedBy": [
-        "books.json",
-        "books.json.bak"
-      ]
-    },
-    {
-      "path": "images/1782377902686-.png",
-      "bytes": 1949631,
-      "referencedBy": [
-        "books.json",
-        "books.json.bak"
-      ]
-    },
-    {
-      "path": "images/1782377994001-.png",
-      "bytes": 1735470,
       "referencedBy": [
         "books.json",
         "books.json.bak"
@@ -1180,14 +999,6 @@
     {
       "path": "images/1782573569326-3592ced277ce884ec271b0ea8190609c.png.webp",
       "bytes": 6870,
-      "referencedBy": [
-        "books.json",
-        "books.json.bak"
-      ]
-    },
-    {
-      "path": "images/1782573590516-16.png",
-      "bytes": 1618012,
       "referencedBy": [
         "books.json",
         "books.json.bak"
@@ -2601,14 +2412,6 @@
       ]
     },
     {
-      "path": "images/1782660407987-43043.jpg",
-      "bytes": 8760985,
-      "referencedBy": [
-        "books.json",
-        "books.json.bak"
-      ]
-    },
-    {
       "path": "images/1782660488181-4798997312417370851951161917521951672161142n.jpg",
       "bytes": 256323,
       "referencedBy": [
@@ -2643,22 +2446,6 @@
     {
       "path": "images/1782660951434-images20260628T183546.235.jpeg",
       "bytes": 38177,
-      "referencedBy": [
-        "books.json",
-        "books.json.bak"
-      ]
-    },
-    {
-      "path": "images/1782661017318-.png",
-      "bytes": 1549048,
-      "referencedBy": [
-        "books.json",
-        "books.json.bak"
-      ]
-    },
-    {
-      "path": "images/1782661039211-.png",
-      "bytes": 1883718,
       "referencedBy": [
         "books.json",
         "books.json.bak"
@@ -3345,14 +3132,6 @@
       ]
     },
     {
-      "path": "images/1782717009647-16810765675.jpg",
-      "bytes": 4694113,
-      "referencedBy": [
-        "books.json",
-        "books.json.bak"
-      ]
-    },
-    {
       "path": "images/1782717156374-images71.jpeg",
       "bytes": 75842,
       "referencedBy": [
@@ -3849,48 +3628,8 @@
       ]
     },
     {
-      "path": "images/1782728997158-1.png",
-      "bytes": 6889077,
-      "referencedBy": [
-        "books.json",
-        "books.json.bak"
-      ]
-    },
-    {
       "path": "images/1782729226229-68457110414916589760409617283073222551480932n.jpg",
       "bytes": 125054,
-      "referencedBy": [
-        "books.json",
-        "books.json.bak"
-      ]
-    },
-    {
-      "path": "images/1782731053483-sounanbayhaki2.jpeg",
-      "bytes": 1110214,
-      "referencedBy": [
-        "books.json",
-        "books.json.bak"
-      ]
-    },
-    {
-      "path": "images/1782731166349-.png",
-      "bytes": 1938802,
-      "referencedBy": [
-        "books.json",
-        "books.json.bak"
-      ]
-    },
-    {
-      "path": "images/1782731289214-.png",
-      "bytes": 1696732,
-      "referencedBy": [
-        "books.json",
-        "books.json.bak"
-      ]
-    },
-    {
-      "path": "images/1782731340081-.png",
-      "bytes": 1136370,
       "referencedBy": [
         "books.json",
         "books.json.bak"
@@ -3905,32 +3644,8 @@
       ]
     },
     {
-      "path": "images/1782732350402-.png",
-      "bytes": 2352277,
-      "referencedBy": [
-        "books.json",
-        "books.json.bak"
-      ]
-    },
-    {
       "path": "images/1782741579000-badaiitafsir.jpg",
       "bytes": 122922,
-      "referencedBy": [
-        "books.json",
-        "books.json.bak"
-      ]
-    },
-    {
-      "path": "images/1782741900242-tabarijawzi.png",
-      "bytes": 4111815,
-      "referencedBy": [
-        "books.json",
-        "books.json.bak"
-      ]
-    },
-    {
-      "path": "images/1782741919387-tabariturki.jpeg",
-      "bytes": 1983982,
       "referencedBy": [
         "books.json",
         "books.json.bak"
@@ -4425,14 +4140,6 @@
       ]
     },
     {
-      "path": "images/1782911719143-623ea0e49a2a4666a2464d9270bf896b.jpg",
-      "bytes": 1569823,
-      "referencedBy": [
-        "books.json",
-        "books.json.bak"
-      ]
-    },
-    {
       "path": "images/1782916774548-images681948684512758372.jpeg",
       "bytes": 55330,
       "referencedBy": [
@@ -4531,14 +4238,6 @@
     {
       "path": "images/1782972635431-images63.jpeg",
       "bytes": 96549,
-      "referencedBy": [
-        "books.json",
-        "books.json.bak"
-      ]
-    },
-    {
-      "path": "images/1782972641884-83WyQMiumU3jyOqUMV87Ziggpm31bsA4LcW62JMy.png",
-      "bytes": 1146458,
       "referencedBy": [
         "books.json",
         "books.json.bak"
@@ -5577,14 +5276,6 @@
       ]
     },
     {
-      "path": "images/1783030008405-fc7dc66a2a53401a83814a3cc695625b898.93617021277x1000NxZgHotIvJC3JCuK47SGYs4tzsyBMQH7YQ3OgVDs.png",
-      "bytes": 1396613,
-      "referencedBy": [
-        "books.json",
-        "books.json.bak"
-      ]
-    },
-    {
       "path": "images/1783030078696-images29.jpeg",
       "bytes": 44317,
       "referencedBy": [
@@ -5595,14 +5286,6 @@
     {
       "path": "images/1783030090866-GLmlSeKXYAAXGa0.jpg",
       "bytes": 110112,
-      "referencedBy": [
-        "books.json",
-        "books.json.bak"
-      ]
-    },
-    {
-      "path": "images/1783030101921-scaled.jpg",
-      "bytes": 1098945,
       "referencedBy": [
         "books.json",
         "books.json.bak"
@@ -5643,14 +5326,6 @@
     {
       "path": "images/1783031121798-bb1eb374ca404652bfcdef970ecd889a680x1000lD9Tjs1Act1dOTOS3ZeKJCmYlr0LTrZijoyiiCpJ.jpg",
       "bytes": 157875,
-      "referencedBy": [
-        "books.json",
-        "books.json.bak"
-      ]
-    },
-    {
-      "path": "images/1783031362494-39940b69495a4298befa0659170b5f03.jpg",
-      "bytes": 3115322,
       "referencedBy": [
         "books.json",
         "books.json.bak"
@@ -6657,22 +6332,6 @@
       ]
     },
     {
-      "path": "images/1784658186341-47328.jpg",
-      "bytes": 1228781,
-      "referencedBy": [
-        "books.json",
-        "books.json.bak"
-      ]
-    },
-    {
-      "path": "images/1784658194668-47332.jpg",
-      "bytes": 1603554,
-      "referencedBy": [
-        "books.json",
-        "books.json.bak"
-      ]
-    },
-    {
       "path": "images/1785332384662-IMG20260729153842849.jpg",
       "bytes": 166985,
       "referencedBy": [
@@ -6691,38 +6350,6 @@
     {
       "path": "images/1785832224985-images54.jpeg",
       "bytes": 54343,
-      "referencedBy": [
-        "books.json",
-        "books.json.bak"
-      ]
-    },
-    {
-      "path": "images/1785919909458-baydhawitafsirall.png",
-      "bytes": 2163702,
-      "referencedBy": [
-        "books.json",
-        "books.json.bak"
-      ]
-    },
-    {
-      "path": "images/1785919920685-baydhawitafsircover.png",
-      "bytes": 3587535,
-      "referencedBy": [
-        "books.json",
-        "books.json.bak"
-      ]
-    },
-    {
-      "path": "images/1785920288720-baydhawiloubaball.png",
-      "bytes": 1386853,
-      "referencedBy": [
-        "books.json",
-        "books.json.bak"
-      ]
-    },
-    {
-      "path": "images/1785920295265-baydhawiloubabcover.png",
-      "bytes": 1296077,
       "referencedBy": [
         "books.json",
         "books.json.bak"
@@ -6953,14 +6580,6 @@
       ]
     },
     {
-      "path": "images/1786526028813-49554.jpg",
-      "bytes": 1176591,
-      "referencedBy": [
-        "books.json",
-        "books.json.bak"
-      ]
-    },
-    {
       "path": "images/1786526037013-49555.jpg",
       "bytes": 862039,
       "referencedBy": [
@@ -7032,6 +6651,438 @@
       "referencedBy": [
         "books.json"
       ]
+    },
+    {
+      "path": "images/screen/1782302506832-.webp",
+      "bytes": 228442,
+      "referencedBy": [
+        "books.json",
+        "books.json.bak",
+        "docs/media-compression-batch2.json"
+      ]
+    },
+    {
+      "path": "images/screen/1782302558397-.webp",
+      "bytes": 312954,
+      "referencedBy": [
+        "books.json",
+        "books.json.bak",
+        "docs/media-compression-batch2.json"
+      ]
+    },
+    {
+      "path": "images/screen/1782302658518-.webp",
+      "bytes": 325956,
+      "referencedBy": [
+        "books.json",
+        "books.json.bak",
+        "docs/media-compression-batch2.json"
+      ]
+    },
+    {
+      "path": "images/screen/1782302766274-.webp",
+      "bytes": 273280,
+      "referencedBy": [
+        "books.json",
+        "books.json.bak",
+        "docs/media-compression-batch2.json"
+      ]
+    },
+    {
+      "path": "images/screen/1782302806905-2.webp",
+      "bytes": 254812,
+      "referencedBy": [
+        "books.json",
+        "books.json.bak",
+        "docs/media-compression.json"
+      ]
+    },
+    {
+      "path": "images/screen/1782302992332-.webp",
+      "bytes": 316612,
+      "referencedBy": [
+        "books.json",
+        "books.json.bak",
+        "docs/media-compression.json"
+      ]
+    },
+    {
+      "path": "images/screen/1782303334712-.webp",
+      "bytes": 216326,
+      "referencedBy": [
+        "books.json",
+        "books.json.bak",
+        "docs/media-compression-batch2.json"
+      ]
+    },
+    {
+      "path": "images/screen/1782303369969-.webp",
+      "bytes": 318420,
+      "referencedBy": [
+        "books.json",
+        "books.json.bak",
+        "docs/media-compression-batch2.json"
+      ]
+    },
+    {
+      "path": "images/screen/1782303631165-.webp",
+      "bytes": 194756,
+      "referencedBy": [
+        "books.json",
+        "books.json.bak",
+        "docs/media-compression-batch2.json"
+      ]
+    },
+    {
+      "path": "images/screen/1782303762491-.webp",
+      "bytes": 379894,
+      "referencedBy": [
+        "books.json",
+        "books.json.bak",
+        "docs/media-compression.json"
+      ]
+    },
+    {
+      "path": "images/screen/1782303800122-.webp",
+      "bytes": 213238,
+      "referencedBy": [
+        "books.json",
+        "books.json.bak",
+        "docs/media-compression-batch2.json"
+      ]
+    },
+    {
+      "path": "images/screen/1782303976978-.webp",
+      "bytes": 217850,
+      "referencedBy": [
+        "books.json",
+        "books.json.bak",
+        "docs/media-compression.json"
+      ]
+    },
+    {
+      "path": "images/screen/1782304389870-.webp",
+      "bytes": 355588,
+      "referencedBy": [
+        "books.json",
+        "books.json.bak",
+        "docs/media-compression.json"
+      ]
+    },
+    {
+      "path": "images/screen/1782304818204-.webp",
+      "bytes": 290238,
+      "referencedBy": [
+        "books.json",
+        "books.json.bak",
+        "docs/media-compression-batch2.json"
+      ]
+    },
+    {
+      "path": "images/screen/1782305597314-.webp",
+      "bytes": 271202,
+      "referencedBy": [
+        "books.json",
+        "books.json.bak",
+        "docs/media-compression-batch2.json"
+      ]
+    },
+    {
+      "path": "images/screen/1782305864805-.webp",
+      "bytes": 326886,
+      "referencedBy": [
+        "books.json",
+        "books.json.bak",
+        "docs/media-compression.json"
+      ]
+    },
+    {
+      "path": "images/screen/1782306065076-.webp",
+      "bytes": 332182,
+      "referencedBy": [
+        "books.json",
+        "books.json.bak",
+        "docs/media-compression.json"
+      ]
+    },
+    {
+      "path": "images/screen/1782306889719-.webp",
+      "bytes": 244846,
+      "referencedBy": [
+        "books.json",
+        "books.json.bak",
+        "docs/media-compression-batch2.json"
+      ]
+    },
+    {
+      "path": "images/screen/1782306907912-.webp",
+      "bytes": 276966,
+      "referencedBy": [
+        "books.json",
+        "books.json.bak",
+        "docs/media-compression.json"
+      ]
+    },
+    {
+      "path": "images/screen/1782307073639-.webp",
+      "bytes": 246108,
+      "referencedBy": [
+        "books.json",
+        "books.json.bak",
+        "docs/media-compression.json"
+      ]
+    },
+    {
+      "path": "images/screen/1782307106243-.webp",
+      "bytes": 266366,
+      "referencedBy": [
+        "books.json",
+        "books.json.bak",
+        "docs/media-compression-batch2.json"
+      ]
+    },
+    {
+      "path": "images/screen/1782377902686-.webp",
+      "bytes": 301524,
+      "referencedBy": [
+        "books.json",
+        "books.json.bak",
+        "docs/media-compression-batch2.json"
+      ]
+    },
+    {
+      "path": "images/screen/1782377994001-.webp",
+      "bytes": 278788,
+      "referencedBy": [
+        "books.json",
+        "books.json.bak",
+        "docs/media-compression-batch2.json"
+      ]
+    },
+    {
+      "path": "images/screen/1782573590516-16.webp",
+      "bytes": 301084,
+      "referencedBy": [
+        "books.json",
+        "books.json.bak",
+        "docs/media-compression-batch2.json"
+      ]
+    },
+    {
+      "path": "images/screen/1782660407987-43043.webp",
+      "bytes": 606454,
+      "referencedBy": [
+        "books.json",
+        "books.json.bak",
+        "docs/media-compression.json"
+      ]
+    },
+    {
+      "path": "images/screen/1782661017318-.webp",
+      "bytes": 251080,
+      "referencedBy": [
+        "books.json",
+        "books.json.bak",
+        "docs/media-compression-batch2.json"
+      ]
+    },
+    {
+      "path": "images/screen/1782661039211-.webp",
+      "bytes": 272654,
+      "referencedBy": [
+        "books.json",
+        "books.json.bak",
+        "docs/media-compression-batch2.json"
+      ]
+    },
+    {
+      "path": "images/screen/1782717009647-16810765675.webp",
+      "bytes": 830810,
+      "referencedBy": [
+        "books.json",
+        "books.json.bak",
+        "docs/media-compression.json"
+      ]
+    },
+    {
+      "path": "images/screen/1782728997158-1.webp",
+      "bytes": 207452,
+      "referencedBy": [
+        "books.json",
+        "books.json.bak",
+        "docs/media-compression.json"
+      ]
+    },
+    {
+      "path": "images/screen/1782731053483-sounanbayhaki2.webp",
+      "bytes": 349260,
+      "referencedBy": [
+        "books.json",
+        "books.json.bak",
+        "docs/media-compression-batch2.json"
+      ]
+    },
+    {
+      "path": "images/screen/1782731166349-.webp",
+      "bytes": 342562,
+      "referencedBy": [
+        "books.json",
+        "books.json.bak",
+        "docs/media-compression-batch2.json"
+      ]
+    },
+    {
+      "path": "images/screen/1782731289214-.webp",
+      "bytes": 291872,
+      "referencedBy": [
+        "books.json",
+        "books.json.bak",
+        "docs/media-compression-batch2.json"
+      ]
+    },
+    {
+      "path": "images/screen/1782731340081-.webp",
+      "bytes": 181230,
+      "referencedBy": [
+        "books.json",
+        "books.json.bak",
+        "docs/media-compression-batch2.json"
+      ]
+    },
+    {
+      "path": "images/screen/1782732350402-.webp",
+      "bytes": 374214,
+      "referencedBy": [
+        "books.json",
+        "books.json.bak",
+        "docs/media-compression.json"
+      ]
+    },
+    {
+      "path": "images/screen/1782741900242-tabarijawzi.webp",
+      "bytes": 272930,
+      "referencedBy": [
+        "books.json",
+        "books.json.bak",
+        "docs/media-compression.json"
+      ]
+    },
+    {
+      "path": "images/screen/1782741919387-tabariturki.webp",
+      "bytes": 223734,
+      "referencedBy": [
+        "books.json",
+        "books.json.bak",
+        "docs/media-compression-batch2.json"
+      ]
+    },
+    {
+      "path": "images/screen/1782911719143-623ea0e49a2a4666a2464d9270bf896b.webp",
+      "bytes": 1170914,
+      "referencedBy": [
+        "books.json",
+        "books.json.bak",
+        "docs/media-compression-batch2.json"
+      ]
+    },
+    {
+      "path": "images/screen/1782972641884-83WyQMiumU3jyOqUMV87Ziggpm31bsA4LcW62JMy.webp",
+      "bytes": 127408,
+      "referencedBy": [
+        "books.json",
+        "books.json.bak",
+        "docs/media-compression-batch2.json"
+      ]
+    },
+    {
+      "path": "images/screen/1783030008405-fc7dc66a2a53401a83814a3cc695625b898.93617021277x1000NxZgHotIvJC3JCuK47SGYs4tzsyBMQH7YQ3OgVDs.webp",
+      "bytes": 198188,
+      "referencedBy": [
+        "books.json",
+        "books.json.bak",
+        "docs/media-compression-batch2.json"
+      ]
+    },
+    {
+      "path": "images/screen/1783030101921-scaled.webp",
+      "bytes": 840810,
+      "referencedBy": [
+        "books.json",
+        "books.json.bak",
+        "docs/media-compression-batch2.json"
+      ]
+    },
+    {
+      "path": "images/screen/1783031362494-39940b69495a4298befa0659170b5f03.webp",
+      "bytes": 304862,
+      "referencedBy": [
+        "books.json",
+        "books.json.bak",
+        "docs/media-compression.json"
+      ]
+    },
+    {
+      "path": "images/screen/1784658186341-47328.webp",
+      "bytes": 333890,
+      "referencedBy": [
+        "books.json",
+        "books.json.bak",
+        "docs/media-compression-batch2.json"
+      ]
+    },
+    {
+      "path": "images/screen/1784658194668-47332.webp",
+      "bytes": 373218,
+      "referencedBy": [
+        "books.json",
+        "books.json.bak",
+        "docs/media-compression-batch2.json"
+      ]
+    },
+    {
+      "path": "images/screen/1785919909458-baydhawitafsirall.webp",
+      "bytes": 341570,
+      "referencedBy": [
+        "books.json",
+        "books.json.bak",
+        "docs/media-compression.json"
+      ]
+    },
+    {
+      "path": "images/screen/1785919920685-baydhawitafsircover.webp",
+      "bytes": 356180,
+      "referencedBy": [
+        "books.json",
+        "books.json.bak",
+        "docs/media-compression.json"
+      ]
+    },
+    {
+      "path": "images/screen/1785920288720-baydhawiloubaball.webp",
+      "bytes": 186406,
+      "referencedBy": [
+        "books.json",
+        "books.json.bak",
+        "docs/media-compression-batch2.json"
+      ]
+    },
+    {
+      "path": "images/screen/1785920295265-baydhawiloubabcover.webp",
+      "bytes": 215622,
+      "referencedBy": [
+        "books.json",
+        "books.json.bak",
+        "docs/media-compression-batch2.json"
+      ]
+    },
+    {
+      "path": "images/screen/1786526028813-49554.webp",
+      "bytes": 645564,
+      "referencedBy": [
+        "books.json",
+        "books.json.bak",
+        "docs/media-compression-batch2.json"
+      ]
     }
   ],
   "unreferenced": [],
@@ -7069,14 +7120,6 @@
       ]
     },
     {
-      "path": "corrections/1783516980614-10504.jpeg",
-      "bytes": 4796011,
-      "referencedBy": [
-        "books.json",
-        "books.json.bak"
-      ]
-    },
-    {
       "path": "corrections/1783543975090-.pdf",
       "bytes": 2130212,
       "referencedBy": [
@@ -7098,6 +7141,15 @@
       "referencedBy": [
         "books.json",
         "books.json.bak"
+      ]
+    },
+    {
+      "path": "corrections/screen/1783516980614-10504.webp",
+      "bytes": 2382078,
+      "referencedBy": [
+        "books.json",
+        "books.json.bak",
+        "docs/media-compression-batch2.json"
       ]
     },
     {
@@ -7124,387 +7176,12 @@
       ]
     },
     {
-      "path": "images/1782302506832-.png",
-      "bytes": 1313264,
+      "path": "images/screen/1782911719143-623ea0e49a2a4666a2464d9270bf896b.webp",
+      "bytes": 1170914,
       "referencedBy": [
         "books.json",
-        "books.json.bak"
-      ]
-    },
-    {
-      "path": "images/1782302558397-.png",
-      "bytes": 1862235,
-      "referencedBy": [
-        "books.json",
-        "books.json.bak"
-      ]
-    },
-    {
-      "path": "images/1782302658518-.png",
-      "bytes": 1950621,
-      "referencedBy": [
-        "books.json",
-        "books.json.bak"
-      ]
-    },
-    {
-      "path": "images/1782302766274-.jpeg",
-      "bytes": 2078274,
-      "referencedBy": [
-        "books.json",
-        "books.json.bak"
-      ]
-    },
-    {
-      "path": "images/1782302806905-2.png",
-      "bytes": 2119589,
-      "referencedBy": [
-        "books.json",
-        "books.json.bak"
-      ]
-    },
-    {
-      "path": "images/1782302992332-.png",
-      "bytes": 2565953,
-      "referencedBy": [
-        "books.json",
-        "books.json.bak"
-      ]
-    },
-    {
-      "path": "images/1782303334712-.png",
-      "bytes": 1259469,
-      "referencedBy": [
-        "books.json",
-        "books.json.bak"
-      ]
-    },
-    {
-      "path": "images/1782303369969-.png",
-      "bytes": 1832514,
-      "referencedBy": [
-        "books.json",
-        "books.json.bak"
-      ]
-    },
-    {
-      "path": "images/1782303631165-.png",
-      "bytes": 1295282,
-      "referencedBy": [
-        "books.json",
-        "books.json.bak"
-      ]
-    },
-    {
-      "path": "images/1782303762491-.png",
-      "bytes": 2209470,
-      "referencedBy": [
-        "books.json",
-        "books.json.bak"
-      ]
-    },
-    {
-      "path": "images/1782303800122-.png",
-      "bytes": 1311561,
-      "referencedBy": [
-        "books.json",
-        "books.json.bak"
-      ]
-    },
-    {
-      "path": "images/1782303976978-.png",
-      "bytes": 3476394,
-      "referencedBy": [
-        "books.json",
-        "books.json.bak"
-      ]
-    },
-    {
-      "path": "images/1782304389870-.png",
-      "bytes": 2230445,
-      "referencedBy": [
-        "books.json",
-        "books.json.bak"
-      ]
-    },
-    {
-      "path": "images/1782304818204-.png",
-      "bytes": 2081815,
-      "referencedBy": [
-        "books.json",
-        "books.json.bak"
-      ]
-    },
-    {
-      "path": "images/1782305597314-.png",
-      "bytes": 1737138,
-      "referencedBy": [
-        "books.json",
-        "books.json.bak"
-      ]
-    },
-    {
-      "path": "images/1782305864805-.png",
-      "bytes": 2941686,
-      "referencedBy": [
-        "books.json",
-        "books.json.bak"
-      ]
-    },
-    {
-      "path": "images/1782306065076-.png",
-      "bytes": 2179010,
-      "referencedBy": [
-        "books.json",
-        "books.json.bak"
-      ]
-    },
-    {
-      "path": "images/1782306889719-.png",
-      "bytes": 1573018,
-      "referencedBy": [
-        "books.json",
-        "books.json.bak"
-      ]
-    },
-    {
-      "path": "images/1782306907912-.png",
-      "bytes": 2525477,
-      "referencedBy": [
-        "books.json",
-        "books.json.bak"
-      ]
-    },
-    {
-      "path": "images/1782307073639-.png",
-      "bytes": 7126757,
-      "referencedBy": [
-        "books.json",
-        "books.json.bak"
-      ]
-    },
-    {
-      "path": "images/1782307106243-.png",
-      "bytes": 1746373,
-      "referencedBy": [
-        "books.json",
-        "books.json.bak"
-      ]
-    },
-    {
-      "path": "images/1782377902686-.png",
-      "bytes": 1949631,
-      "referencedBy": [
-        "books.json",
-        "books.json.bak"
-      ]
-    },
-    {
-      "path": "images/1782377994001-.png",
-      "bytes": 1735470,
-      "referencedBy": [
-        "books.json",
-        "books.json.bak"
-      ]
-    },
-    {
-      "path": "images/1782573590516-16.png",
-      "bytes": 1618012,
-      "referencedBy": [
-        "books.json",
-        "books.json.bak"
-      ]
-    },
-    {
-      "path": "images/1782660407987-43043.jpg",
-      "bytes": 8760985,
-      "referencedBy": [
-        "books.json",
-        "books.json.bak"
-      ]
-    },
-    {
-      "path": "images/1782661017318-.png",
-      "bytes": 1549048,
-      "referencedBy": [
-        "books.json",
-        "books.json.bak"
-      ]
-    },
-    {
-      "path": "images/1782661039211-.png",
-      "bytes": 1883718,
-      "referencedBy": [
-        "books.json",
-        "books.json.bak"
-      ]
-    },
-    {
-      "path": "images/1782717009647-16810765675.jpg",
-      "bytes": 4694113,
-      "referencedBy": [
-        "books.json",
-        "books.json.bak"
-      ]
-    },
-    {
-      "path": "images/1782728997158-1.png",
-      "bytes": 6889077,
-      "referencedBy": [
-        "books.json",
-        "books.json.bak"
-      ]
-    },
-    {
-      "path": "images/1782731053483-sounanbayhaki2.jpeg",
-      "bytes": 1110214,
-      "referencedBy": [
-        "books.json",
-        "books.json.bak"
-      ]
-    },
-    {
-      "path": "images/1782731166349-.png",
-      "bytes": 1938802,
-      "referencedBy": [
-        "books.json",
-        "books.json.bak"
-      ]
-    },
-    {
-      "path": "images/1782731289214-.png",
-      "bytes": 1696732,
-      "referencedBy": [
-        "books.json",
-        "books.json.bak"
-      ]
-    },
-    {
-      "path": "images/1782731340081-.png",
-      "bytes": 1136370,
-      "referencedBy": [
-        "books.json",
-        "books.json.bak"
-      ]
-    },
-    {
-      "path": "images/1782732350402-.png",
-      "bytes": 2352277,
-      "referencedBy": [
-        "books.json",
-        "books.json.bak"
-      ]
-    },
-    {
-      "path": "images/1782741900242-tabarijawzi.png",
-      "bytes": 4111815,
-      "referencedBy": [
-        "books.json",
-        "books.json.bak"
-      ]
-    },
-    {
-      "path": "images/1782741919387-tabariturki.jpeg",
-      "bytes": 1983982,
-      "referencedBy": [
-        "books.json",
-        "books.json.bak"
-      ]
-    },
-    {
-      "path": "images/1782911719143-623ea0e49a2a4666a2464d9270bf896b.jpg",
-      "bytes": 1569823,
-      "referencedBy": [
-        "books.json",
-        "books.json.bak"
-      ]
-    },
-    {
-      "path": "images/1782972641884-83WyQMiumU3jyOqUMV87Ziggpm31bsA4LcW62JMy.png",
-      "bytes": 1146458,
-      "referencedBy": [
-        "books.json",
-        "books.json.bak"
-      ]
-    },
-    {
-      "path": "images/1783030008405-fc7dc66a2a53401a83814a3cc695625b898.93617021277x1000NxZgHotIvJC3JCuK47SGYs4tzsyBMQH7YQ3OgVDs.png",
-      "bytes": 1396613,
-      "referencedBy": [
-        "books.json",
-        "books.json.bak"
-      ]
-    },
-    {
-      "path": "images/1783030101921-scaled.jpg",
-      "bytes": 1098945,
-      "referencedBy": [
-        "books.json",
-        "books.json.bak"
-      ]
-    },
-    {
-      "path": "images/1783031362494-39940b69495a4298befa0659170b5f03.jpg",
-      "bytes": 3115322,
-      "referencedBy": [
-        "books.json",
-        "books.json.bak"
-      ]
-    },
-    {
-      "path": "images/1784658186341-47328.jpg",
-      "bytes": 1228781,
-      "referencedBy": [
-        "books.json",
-        "books.json.bak"
-      ]
-    },
-    {
-      "path": "images/1784658194668-47332.jpg",
-      "bytes": 1603554,
-      "referencedBy": [
-        "books.json",
-        "books.json.bak"
-      ]
-    },
-    {
-      "path": "images/1785919909458-baydhawitafsirall.png",
-      "bytes": 2163702,
-      "referencedBy": [
-        "books.json",
-        "books.json.bak"
-      ]
-    },
-    {
-      "path": "images/1785919920685-baydhawitafsircover.png",
-      "bytes": 3587535,
-      "referencedBy": [
-        "books.json",
-        "books.json.bak"
-      ]
-    },
-    {
-      "path": "images/1785920288720-baydhawiloubaball.png",
-      "bytes": 1386853,
-      "referencedBy": [
-        "books.json",
-        "books.json.bak"
-      ]
-    },
-    {
-      "path": "images/1785920295265-baydhawiloubabcover.png",
-      "bytes": 1296077,
-      "referencedBy": [
-        "books.json",
-        "books.json.bak"
-      ]
-    },
-    {
-      "path": "images/1786526028813-49554.jpg",
-      "bytes": 1176591,
-      "referencedBy": [
-        "books.json",
-        "books.json.bak"
+        "books.json.bak",
+        "docs/media-compression-batch2.json"
       ]
     }
   ],
@@ -8765,5 +8442,23 @@
         "No deletion performed"
       ]
     }
+  },
+  "compression": {
+    "manifest": "docs/media-compression.json",
+    "covers": 17,
+    "beforeBytes": 63049607,
+    "afterBytes": 6001370,
+    "originalsRetained": false,
+    "originalsDeletedAt": "2026-10-08T22:32:38.408Z",
+    "deletedOriginalBytes": 63049607
+  },
+  "compressionBatch2": {
+    "manifest": "docs/media-compression-batch2.json",
+    "images": 32,
+    "beforeBytes": 53343249,
+    "afterBytes": 12423910,
+    "originalsRetained": false,
+    "originalsDeletedAt": "2026-10-08T22:59:33.493Z",
+    "deletedOriginalBytes": 53343249
   }
 }

@@ -30,7 +30,7 @@ node scripts/media-inventory.cjs > docs/audit/media-inventory.json
 
 Le script lit les quatre dossiers médias et recherche les références dans les données JSON, la sauvegarde du catalogue et les sources HTML/CSS/JS/Markdown locales. Les liens locaux et ceux de `https://arabic-app.github.io/tabaat/` sont reconnus, y compris les chemins encodés. Le rapport inclut poids, sources des références, fichiers dépassant 1 Mio et candidats sans référence. Il n’effectue aucune suppression.
 
-**Les candidats ne sont pas une autorisation de suppression.** Vérifier les brouillons présents sur les appareils, les branches non publiées et les consommateurs externes. Régénérer l’inventaire sur un dépôt à jour avant toute intervention. Les anciens médias ne sont ni modifiés ni recompressés.
+**Les candidats ne sont pas une autorisation de suppression.** Vérifier les brouillons présents sur les appareils, les branches non publiées et les consommateurs externes. Régénérer l’inventaire sur un dépôt à jour avant toute intervention. Les fichiers sources des médias hors du lot de compression restent intacts. Le premier lot de compression, réalisé le 9 octobre, crée 17 variantes WebP dans `images/screen` et remplace uniquement les 17 URL correspondantes dans le catalogue. Le manifeste `docs/media-compression.json` conserve les correspondances, dimensions, poids et empreintes SHA-256, ainsi que la date de suppression des originaux.
 
 ## Vérifications
 
@@ -39,3 +39,19 @@ Le script lit les quatre dossiers médias et recherche les références dans les
 Vérification manuelle à effectuer dans l’administration avant déploiement : choisir une couverture photographique lourde, contrôler la lisibilité des petits caractères dans l’aperçu sur ordinateur et mobile, annuler et vérifier que le champ reste intact, puis confirmer dans un environnement de test. Vérifier également une image de correction, un PDF, Échap et la navigation Tab. La vérification visuelle automatisée n’a pas été réalisée : l’accès du navigateur à la page locale `file:` a été bloqué.
 
 Ces contrôles côté navigateur réduisent les erreurs du parcours d’upload. Ils ne constituent pas une autorisation serveur ni un antivirus PDF; la protection administrative de l’audit, point 2, reste distincte.
+
+## Premier lot de compression du catalogue — 9 octobre 2026
+
+Les 17 couvertures de plus de 2 Mio passent de **63 049 607 à 6 001 370 octets**, soit **90,5 % de réduction pour les images servies**. WebP qualité 85, maximum 1 600 × 2 200 px, proportions conservées, orientation appliquée, sans agrandissement. Après demande explicite de l’utilisateur, les 17 originaux ont été supprimés le 9 octobre, libérant 63 049 607 octets. Seules les variantes restent présentes pour ce lot. Les 17 liens de `books.json.bak` ont également été mis à jour pour conserver une sauvegarde utilisable.
+
+Les 17 variantes ont été décodées et leurs aperçus examinés en planche contact. Ce contrôle confirme l’affichage des couvertures à la taille de consultation, sans garantir la lisibilité de tous les petits caractères lors d’un zoom. Les 432 livres et leurs autres champs sont conservés. Aucun média du catalogue ne manque et l’inventaire ne relève aucun fichier sans référence.
+
+Le [manifeste de compression](media-compression.json) conserve les correspondances historiques; les sources supprimées restent récupérables depuis leur version suivie dans Git. Aucune publication distante n’a été effectuée.
+
+## Deuxième lot — 9 octobre 2026
+
+Les 31 couvertures restantes dépassant 1 Mio ont des variantes WebP qualité 85, maximum 1 600 × 2 200 px, sans agrandissement : **48 547 238 → 10 041 832 octets** (−79,3 %). Les 17 variantes du premier lot ne sont pas recompressées.
+
+L’image de correction du livre 49, *سير أعلام النبلاء*, volume 10, page 504, passe de **4 796 011 → 2 382 078 octets** (−50,3 %). Dimensions conservées : 4 000 × 3 000 px. La tentative WebP sans perte produisait un fichier plus lourd; la variante retenue utilise WebP qualité 95 et effort 6. Une comparaison de texte à taille réelle a été examinée. La compression est avec perte; le JPEG source a ensuite été supprimé à la demande explicite de l’utilisateur.
+
+Les 32 sources de ce lot ont ensuite été supprimées localement à la demande explicite de l’utilisateur, libérant **53 343 249 octets (53,3 Mo)**. Les variantes sont conservées et vérifiées. Le [manifeste du deuxième lot](media-compression-batch2.json) garde leurs correspondances, empreintes et la date de suppression; les originaux restent récupérables depuis Git. Les liens du catalogue courant et de sa sauvegarde sont mis à jour. Le manifeste conserve les correspondances, empreintes et chemins des champs modifiés. Le poids des variantes, **12,4 Mo au lieu de 53,3 Mo**, réduit les transferts de 76,7 %. Après suppression des sources, le gain de stockage net par rapport au lot initial est de 40,9 Mo. Aucun lien média ne manque dans le catalogue courant ni sa sauvegarde. Aucun déploiement effectué.
