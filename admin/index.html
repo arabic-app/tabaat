@@ -28,6 +28,7 @@
     <script src="../vendor/purify.min.js"></script>
     <script src="../js/content-security.js"></script>
     <script src="../js/admin-draft-store.js"></script>
+    <script src="../js/media-upload.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.6/Sortable.min.js"></script>
 
     <style>
@@ -1176,6 +1177,13 @@
             .image-input-actions { width: 100%; justify-content: flex-end; }
             .image-input-actions .btn-upload-img { flex: 1; }
         }
+        .media-upload-preview { border: 0; border-radius: 20px; padding: 24px; width: min(600px, calc(100vw - 32px)); max-height: 90vh; overflow: auto; box-sizing: border-box; background: var(--surface); color: var(--on-surface); font-family: inherit; text-align: center; }
+        .media-upload-preview::backdrop { background: rgba(0,0,0,0.55); }
+        .media-upload-preview h3 { margin: 0 0 12px; }
+        .media-upload-preview img { display: block; margin: 12px auto; max-width: 100%; max-height: 45vh; object-fit: contain; }
+        .media-upload-preview p { line-height: 1.6; overflow-wrap: anywhere; }
+        .media-upload-preview .media-metrics { direction: ltr; unicode-bidi: isolate; }
+        .media-upload-preview .modal-actions { margin-top: 18px; }
     </style>
 </head>
 <body>
@@ -2253,7 +2261,7 @@
                 <input type="text" class="md-input attach-title" placeholder="عنوان الملحق (مثال: فهرس، مقدمة، ملحق...)" value="${escapeHtml(title)}" required aria-label="عنوان الملحق">
                 <div class="attachment-url-row">
                     <input type="text" class="md-input attach-url" placeholder="رابط الملف أو اسحب/ارفع..." value="${escapeHtml(url)}" style="direction:ltr;" required aria-label="رابط الملحق">
-                    <input type="file" accept="image/*,application/pdf" style="display:none" tabindex="-1" data-dir="${dirPath}">
+                    <input type="file" accept="image/png,image/jpeg,image/webp,application/pdf" style="display:none" tabindex="-1" data-dir="${dirPath}">
                     <button type="button" class="btn-upload-img" title="رفع ملف"><span class="material-icons-round">file_upload</span></button>
                     <button type="button" class="btn-remove-item" title="حذف الملحق">−</button>
                 </div>
@@ -2444,7 +2452,7 @@
             <div class="row-inputs-horizontal">
                 <input type="text" class="md-input link-title" placeholder="عنوان الرابط أو الملحق..." value="${escapeHtml(title)}" required aria-label="عنوان الرابط">
                 <input type="text" class="md-input link-url" placeholder="الرابط الكامل أو اسحب/ارفع..." value="${escapeHtml(url)}" required style="direction:ltr;" aria-label="عنوان URL">
-                <input type="file" accept="image/*,application/pdf" style="display:none" tabindex="-1" data-dir="books_attachments">
+                <input type="file" accept="image/png,image/jpeg,image/webp,application/pdf" style="display:none" tabindex="-1" data-dir="books_attachments">
             </div>
             <div class="link-row-actions">
                 <button type="button" class="btn-upload-img" title="رفع ملف" style="height: 36px; padding: 0 10px;"><span class="material-icons-round">file_upload</span></button>
@@ -2487,75 +2495,138 @@
     // ================================================================
     // FILE UPLOAD
     // ================================================================
+    const mediaUploadBusy = new WeakSet();
+    let mediaUploadActive = false;
+
+    function previewMediaUpload(prepared, file) {
+        return new Promise((resolve, reject) => {
+            const dialog = document.createElement('dialog');
+            dialog.className = 'media-upload-preview';
+            dialog.dir = 'rtl';
+            dialog.setAttribute('aria-labelledby', 'media-preview-title');
+            dialog.innerHTML = `<h3 id="media-preview-title">معاينة الملف قبل الرفع</h3>
+                <p class="media-filename"></p><p class="media-metrics"></p><p class="media-help"></p>
+                <div class="modal-actions">
+                    <button type="button" class="md-btn md-btn-secondary" data-upload-cancel>إلغاء</button>
+                    <button type="button" class="md-btn md-btn-primary" data-upload-confirm>رفع الملف</button>
+                </div>`;
+            dialog.querySelector('.media-filename').textContent = file.name;
+            const size = bytes => bytes >= 1048576 ? (bytes / 1048576).toFixed(2) + ' MiB' : (bytes / 1024).toFixed(1) + ' KiB';
+            const dimensions = prepared.width ? ` · ${prepared.width} × ${prepared.height} px` : '';
+            dialog.querySelector('.media-metrics').textContent = `${size(prepared.originalBytes)} → ${size(prepared.blob.size)}${dimensions}`;
+            dialog.querySelector('.media-help').textContent = prepared.optimized
+                ? 'هذه نسخة مهيأة للشاشة. تأكد من وضوح النص قبل رفعها.'
+                : 'سيُرفع الملف الأصلي دون تغيير للحفاظ على التفاصيل.';
+            let url, done = false;
+            const previousFocus = document.activeElement;
+            const finish = accepted => {
+                if (done) return;
+                done = true;
+                dialog.close();
+                dialog.remove();
+                if (url) URL.revokeObjectURL(url);
+                if (previousFocus && previousFocus.isConnected) previousFocus.focus();
+                resolve(accepted);
+            };
+            try {
+                if (prepared.width) {
+                    url = URL.createObjectURL(prepared.blob);
+                    const img = document.createElement('img');
+                    img.src = url; img.alt = 'معاينة الصورة التي سيتم رفعها';
+                    dialog.querySelector('.media-metrics').before(img);
+                }
+                dialog.querySelector('[data-upload-cancel]').addEventListener('click', () => finish(false));
+                dialog.querySelector('[data-upload-confirm]').addEventListener('click', () => finish(true));
+                dialog.addEventListener('cancel', e => { e.preventDefault(); finish(false); });
+                dialog.addEventListener('close', () => finish(false));
+                dialog.addEventListener('keydown', e => { if (e.key === 'Escape') e.stopPropagation(); });
+                document.body.appendChild(dialog);
+                dialog.showModal();
+                dialog.querySelector('[data-upload-cancel]').focus();
+            } catch (error) {
+                dialog.remove();
+                if (url) URL.revokeObjectURL(url);
+                reject(error);
+            }
+        });
+    }
+
+    function mediaAsBase64(blob) {
+        return new Promise((resolve, reject) => {
+            const reader = new FileReader();
+            reader.onload = () => resolve(reader.result.split(',')[1]);
+            reader.onerror = () => reject(new Error('تعذّر قراءة الملف للرفع.'));
+            reader.onabort = () => reject(new Error('أُلغيت قراءة الملف.'));
+            reader.readAsDataURL(blob);
+        });
+    }
+
     async function uploadFileToGitHub(fileInput, dirPath = 'images', allowedExt = ['png', 'jpg', 'jpeg', 'webp']) {
         const file = fileInput.files[0];
-        if (!file) return;
-
-        const ext = file.name.split('.').pop().toLowerCase();
-        if (!allowedExt.includes(ext)) {
-            showToast('⚠️ امتداد الملف غير مسموح: ' + allowedExt.join(', '));
-            fileInput.value = '';
-            return;
+        if (!file || mediaUploadBusy.has(fileInput)) return;
+        if (mediaUploadActive) {
+            showToast('⚠️ انتظر انتهاء رفع الملف الحالي أولاً.');
+            fileInput.value = ''; return;
         }
-
-        const token = getConfigToken();
-        if (!token) {
-            showToast('⚠️ يرجى ضبط الإعدادات أولاً (الاسم و Token)!');
-            openConfigModal(false);
-            fileInput.value = '';
-            return;
-        }
-
-        // Cible le champ URL spécifiquement (ex: .attach-url) plutôt que le 1er champ texte
-        // du groupe : les lignes de pièces jointes ont aussi un champ "عنوان" avant le lien.
         const group = fileInput.closest('.dynamic-input-group') || fileInput.closest('.dynamic-row');
         if (!group) return;
         const textInput = group.querySelector('input[type="text"][class*="url"]') || group.querySelector('input[type="text"]');
-
-        const reader = new FileReader();
-        reader.onload = async (event) => {
-            const base64Content = event.target.result.split(',')[1];
-            const safeName = file.name.replace(/[^a-zA-Z0-9.]/g, '');
-            const uniqueName = Date.now() + '-' + safeName;
+        if (!textInput) return;
+        const uploadButton = group.querySelector('.btn-upload-img');
+        const token = getConfigToken();
+        if (!token) {
+            showToast('⚠️ يرجى ضبط الإعدادات أولاً (الاسم و Token)!');
+            openConfigModal(false); fileInput.value = ''; return;
+        }
+        mediaUploadBusy.add(fileInput);
+        mediaUploadActive = true;
+        fileInput.disabled = true;
+        if (uploadButton) uploadButton.disabled = true;
+        let loading = false, timeout;
+        try {
+            if (!['images','corrections','books_attachments','editions_attachments'].includes(dirPath)) throw new Error('مسار الرفع غير مسموح.');
+            if (!allowedExt.includes(file.name.split('.').pop().toLowerCase())) throw new Error('امتداد الملف غير مسموح.');
+            showToast('جارٍ التحقق من الملف وتجهيز المعاينة…');
+            const prepared = await TabaatMediaUpload.prepareFile(file, { preserveOriginal: dirPath !== 'images' });
+            if (!group.isConnected || !textInput.isConnected) return;
+            if (!await previewMediaUpload(prepared, file)) return;
+            if (!group.isConnected || !textInput.isConnected) return;
+            const base64Content = await mediaAsBase64(prepared.blob);
+            if (!group.isConnected || !textInput.isConnected) return;
+            const stem = file.name.replace(/\.[^.]+$/, '').replace(/[^a-zA-Z0-9_-]/g, '').slice(0,80) || 'media';
+            const uniqueName = Date.now() + '-' + crypto.randomUUID() + '-' + stem + '.' + prepared.extension;
             const filePath = dirPath + '/' + uniqueName;
             const apiUrl = `https://api.github.com/repos/${CONFIG.GH_OWNER}/${CONFIG.GH_REPO}/contents/${filePath}`;
             const uploaderName = getConfigName();
-            const uploadMsg = uploaderName
-                ? `Upload: ${uniqueName} (${uploaderName})`
-                : `Upload: ${uniqueName}`;
-
-            showLoader();
-
-            try {
-                const response = await fetch(apiUrl, {
-                    method: 'PUT',
-                    headers: {
-                        'Authorization': `token ${token}`,
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({
-                        message: uploadMsg,
-                        content: base64Content
-                    })
-                });
-
-                if (response.ok) {
-                    const publicUrl = `https://${CONFIG.GH_OWNER}.github.io/${CONFIG.GH_REPO}/${filePath}`;
-                    textInput.value = publicUrl;
-                    textInput.dispatchEvent(new Event('input', { bubbles: true }));
-                    showToast('✅ تم رفع الملف بنجاح!');
-                } else {
-                    const err = await response.json();
-                    showToast('❌ فشل الرفع: ' + (err.message || 'خطأ غير معروف'));
-                }
-            } catch {
-                showToast('❌ حدث خطأ أثناء الاتصال بـ GitHub.');
-            } finally {
-                hideLoader();
-                fileInput.value = '';
+            const controller = new AbortController();
+            timeout = setTimeout(() => controller.abort(), 30000);
+            showLoader(); loading = true;
+            const response = await fetch(apiUrl, {
+                method: 'PUT', signal: controller.signal,
+                headers: { 'Authorization': `token ${token}`, 'Content-Type': 'application/json' },
+                body: JSON.stringify({ message: `Upload: ${uniqueName}` + (uploaderName ? ` (${uploaderName})` : ''), content: base64Content })
+            });
+            if (!response.ok) {
+                const err = await response.json().catch(() => ({}));
+                throw new Error(err.message || 'فشل الرفع إلى GitHub.');
             }
-        };
-        reader.readAsDataURL(file);
+            if (!textInput.isConnected) {
+                showToast('⚠️ رُفع الملف لكن النموذج أُغلق. يمكن العثور عليه في جرد الوسائط غير المرتبطة.');
+                return;
+            }
+            textInput.value = `https://${CONFIG.GH_OWNER}.github.io/${CONFIG.GH_REPO}/${filePath}`;
+            textInput.dispatchEvent(new Event('input', { bubbles: true }));
+            showToast('✅ تم رفع الملف! احفظ الكتاب ثم انشر التغييرات لربطه بالموسوعة.');
+        } catch (error) {
+            showToast('❌ ' + (error.name === 'AbortError' ? 'انتهت مهلة الرفع. تحقق من GitHub قبل إعادة المحاولة.' : error.message || 'حدث خطأ أثناء رفع الملف.'));
+        } finally {
+            clearTimeout(timeout);
+            if (loading) hideLoader();
+            fileInput.value = ''; fileInput.disabled = false;
+            if (uploadButton) uploadButton.disabled = false;
+            mediaUploadBusy.delete(fileInput);
+            mediaUploadActive = false;
+        }
     }
 
     // ================================================================
