@@ -766,7 +766,7 @@
 
     // Load books.json + Google Sheet CSV in parallel
     Promise.all([
-        fetch('books.json?_t=' + Date.now(), { cache: 'no-store' })
+        fetch('books.json', { cache: 'no-store' })
             .then(r => r.ok ? r.json() : []).catch(() => []),
         fetch('https://docs.google.com/spreadsheets/d/' + SHEET_ID + '/export?format=csv&t=' + Date.now(), { cache: 'no-store' })
             .then(r => r.ok ? r.text() : '').catch(() => '')

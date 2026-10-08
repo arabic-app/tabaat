@@ -3,12 +3,16 @@ const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const path = require('node:path');
 const { JSDOM } = require('jsdom');
+const { IDBFactory } = require('fake-indexeddb');
 const root = path.resolve(__dirname, '..');
 const fixture = (overrides = {}) => ({ id: 1, title: 'كتاب', author: "O'Neil", category: ['علوم'], best_editions: [], alt_editions: [], links: [], ...overrides });
 async function app(file, books) {
   const html = fs.readFileSync(path.join(root, file), 'utf8');
   const dom = new JSDOM(html, { url: 'https://example.test/tabaat/' + file, runScripts: 'outside-only', pretendToBeVisual: true });
   const w = dom.window;
+  w.indexedDB = new IDBFactory();
+  w.structuredClone = structuredClone;
+  Object.defineProperty(w.navigator, 'locks', {value:{request:async(name, options, callback)=>callback({})}});
   w.scrollTo = () => {};
   w.HTMLElement.prototype.scrollIntoView = () => {};
   w.matchMedia = () => ({matches: false, addEventListener() {}});
@@ -20,7 +24,7 @@ async function app(file, books) {
   w.URL.revokeObjectURL = url => w.__blobs.delete(url);
   w.fetch = async url => ({ok: true, headers: {get: () => null}, arrayBuffer: async () => w.__pdfBytes, json: async () => String(url).includes('sciences') ? ['علوم'] : books, text: async () => String(url).includes('reviews.json') ? JSON.stringify(books) : ''});
   w.sessionStorage.setItem('__adm_auth__', '776804fd62f4788b');
-  for (const name of ['vendor/purify.min.js', 'js/content-security.js']) {
+  for (const name of ['vendor/purify.min.js', 'js/content-security.js', 'js/admin-draft-store.js', 'js/catalogue-data.js']) {
     if (fs.existsSync(path.join(root, name))) w.eval(fs.readFileSync(path.join(root, name), 'utf8'));
   }
   for (const match of html.matchAll(/<script\b([^>]*)>([\s\S]*?)<\/script>/gi)) {
