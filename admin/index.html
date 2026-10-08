@@ -1461,18 +1461,18 @@
             <div class="stats-content" id="statsContent">
                 <div class="stats-notice" id="statsNotice" style="display:none;">
                     <span class="material-icons-round" style="font-size:16px;line-height:1;margin-bottom:0;color:var(--info);">info</span>
-                    <span>إحصائيات فعلية للموقع — تتبّع خاص محدّث فوريًا. يتطلّب مفتاح الإحصائيات في الإعدادات.</span>
+                    <span>إحصائيات آخر 30 يومًا بتوقيت UTC — قد تتأخر 60 ثانية. يتطلّب مفتاح الإحصائيات في الإعدادات.</span>
                 </div>
                 <div class="stats-grid">
                     <div class="stat-card">
                         <span class="material-icons-round stat-icon" style="color:#2e7d32;">visibility</span>
                         <div class="stat-value" id="statTotalViews">—</div>
-                        <div class="stat-label">إجمالي الزيارات</div>
+                        <div class="stat-label">الزيارات خلال 30 يومًا</div>
                     </div>
                     <div class="stat-card">
                         <span class="material-icons-round stat-icon" style="color:var(--info);">date_range</span>
                         <div class="stat-value" id="statUniqueVisitors">—</div>
-                        <div class="stat-label">زيارات آخر 30 يومًا</div>
+                        <div class="stat-label">مجموع الزوار اليوميين خلال 30 يومًا</div>
                     </div>
                     <div class="stat-card">
                         <span class="material-icons-round stat-icon" style="color:var(--tertiary);">today</span>
@@ -1482,7 +1482,7 @@
                     <div class="stat-card">
                         <span class="material-icons-round stat-icon" style="color:#00695c;">forum</span>
                         <div class="stat-value" id="statChatTotal">—</div>
-                        <div class="stat-label">أسئلة المحادثة</div>
+                        <div class="stat-label">أسئلة المحادثة خلال 30 يومًا</div>
                     </div>
                 </div>
                 <div class="stats-section">
@@ -3279,8 +3279,7 @@
 
     function renderStats(data) {
         $('#statTotalViews').textContent = (data.totalViews || 0).toLocaleString('ar');
-        const last30Views = (data.chart || []).reduce((sum, d) => sum + (d.views || 0), 0);
-        $('#statUniqueVisitors').textContent = last30Views.toLocaleString('ar');
+        $('#statUniqueVisitors').textContent = (data.totalVisitors || 0).toLocaleString('ar');
         $('#statTodayViews').textContent = (data.todayViews || 0).toLocaleString('ar');
         const chatEl = $('#statChatTotal');
         if (chatEl) chatEl.textContent = (data.totalChat || 0).toLocaleString('ar');
@@ -3293,7 +3292,7 @@
         days.forEach(day => {
             const height = Math.max((day.views / maxCount) * 100, 3);
             const date = new Date(day.date);
-            const label = date.toLocaleDateString('ar', { day: 'numeric', month: 'short' });
+            const label = date.toLocaleDateString('ar', { day: 'numeric', month: 'short', timeZone: 'UTC' });
             const bar = document.createElement('div');
             bar.className = 'chart-bar';
             bar.style.height = height + '%';
@@ -3309,7 +3308,7 @@
         $('#statsNotice').style.display = 'flex';
         $('#statsNotice').innerHTML = `
             <span class="material-icons-round" style="font-size:16px;line-height:1;margin-bottom:0;color:var(--info);">info</span>
-            <span>إحصائيات فعلية للموقع — تتبّع خاص محدّث فوريًا.</span>`;
+            <span>إحصائيات آخر 30 يومًا بتوقيت UTC — قد تتأخر 60 ثانية بسبب التخزين المؤقت. مجموع الزوار اليوميين قد يحتسب الشخص نفسه في أيام مختلفة؛ وليس عدد أشخاص مميزين خلال الفترة.</span>`;
     }
 
     function renderRankList(sel, items, emptyMsg) {

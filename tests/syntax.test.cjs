@@ -2,6 +2,7 @@ const test=require('node:test');
 const fs=require('node:fs');
 const path=require('node:path');
 const vm=require('node:vm');
+const {execFileSync}=require('node:child_process');
 const root=path.resolve(__dirname,'..');
 
 test('all application scripts remain syntactically valid',()=>{
@@ -14,5 +15,5 @@ test('all application scripts remain syntactically valid',()=>{
     }
   }
   for(const file of ['js/content-security.js','vendor/purify.min.js','sw.js']) new vm.Script(fs.readFileSync(path.join(root,file),'utf8'),{filename:file});
-  new vm.Script(fs.readFileSync(path.join(root,'telegram-bot/src/index.js'),'utf8').replace('export default','const worker ='),{filename:'telegram-bot/src/index.js'});
+  for (const file of ['telegram-bot/src/index.js', 'telegram-bot/src/analytics.js']) execFileSync(process.execPath, ['--check', path.join(root, file)], {stdio:'pipe'});
 });

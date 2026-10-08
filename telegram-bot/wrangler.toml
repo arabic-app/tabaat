@@ -32,3 +32,12 @@ namespace_id = "1001"
 #   GEMINI_API_KEY       -> clé Gemini, fournisseur principal (aistudio.google.com/apikey)
 #   GROQ_API_KEY         -> clé Groq, secours automatique (console.groq.com/keys)
 #   WEBHOOK_SECRET       -> secret partagé anti-abus (voir README)
+
+# Compteurs sérialisés SQLite. Namespace créé automatiquement au déploiement.
+[[durable_objects.bindings]]
+name = "ANALYTICS"
+class_name = "StatsAggregator"
+
+[exports.StatsAggregator]
+type = "durable-object"
+storage = "sqlite"
