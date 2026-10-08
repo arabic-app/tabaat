@@ -13088,5 +13088,29 @@
     ],
     "alt_editions": [],
     "links": []
+  },
+  {
+    "id": 444,
+    "title": "مرآة الزمان في تواريخ الأعيان",
+    "author": "شمس الدين ابي المظفر يوسف بن قزاوغلي بن عبد الله المعروف بـ سبط ابن الجوزي",
+    "category": [
+      "التاريخ الإسلامي"
+    ],
+    "notes": "",
+    "date": "2026-10-08",
+    "best_editions": [
+      {
+        "publisher": "دار الرسالة العالمية",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1791496399810-64363.jpg",
+          "https://arabic-app.github.io/tabaat/images/1791496692415-554f24c4-1cff-4a06-92bb-ac68a9e23149-64362.jpg"
+        ],
+        "notes": "",
+        "corrections": [],
+        "volumes": 23
+      }
+    ],
+    "alt_editions": [],
+    "links": []
   }
 ]
