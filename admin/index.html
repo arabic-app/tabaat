@@ -2,6 +2,7 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
+    <script src="../js/arabic-search.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>لوحة الإدارة - دليل طبعات الكتب الإسلامية</title>
 
@@ -1707,15 +1708,7 @@
 
     const { escapeHtml, safeUrl, sanitizeRichHtml } = TabaatContent;
 
-    function normalizeArabic(str) {
-        if (!str) return '';
-        return String(str)
-            .toLowerCase()
-            .replace(/[أإآ]/g, 'ا')
-            .replace(/ة/g, 'ه')
-            .replace(/[\u064B-\u0652]/g, '')
-            .trim();
-    }
+    const normalizeArabic = TabaatSearch.normalize;
 
     function cleanHtml(html) {
         const empty = ['<br>', '<div><br></div>', '<p><br></p>'];
@@ -1723,13 +1716,7 @@
         return empty.includes(trimmed) ? '' : trimmed;
     }
 
-    function debounce(fn, delay = 200) {
-        let timer;
-        return (...args) => {
-            clearTimeout(timer);
-            timer = setTimeout(() => fn(...args), delay);
-        };
-    }
+    const debounce = TabaatSearch.debounce;
 
     function getLocalDate() {
         const now = new Date();
@@ -1984,15 +1971,16 @@
         const missingPhotoOnly = DOM.missingPhotoFilter.checked;
         const missingVolumesOnly = DOM.missingVolumesFilter.checked;
 
+        TabaatSearch.prepare(state.books);
         const sorted = [...state.books].sort((a, b) => (a.title || '').localeCompare(b.title || '', 'ar'));
 
         const filtered = sorted.filter(b => {
-            const matchesSearch = normalizeArabic(b.title).includes(term) || normalizeArabic(b.author).includes(term);
+            const fields = TabaatSearch.fields(b);
+            const matchesSearch = fields.title.includes(term) || fields.author.includes(term);
             if (!matchesSearch) return false;
 
             if (pubTerm) {
-                const eds = [...(b.best_editions || []), ...(b.alt_editions || [])];
-                const matchesPub = eds.some(ed => normalizeArabic(ed.publisher || '').includes(pubTerm));
+                const matchesPub = fields.publishers.some(value => value.includes(pubTerm));
                 if (!matchesPub) return false;
             }
 
@@ -3800,9 +3788,10 @@
         const debouncedSearch = debounce(val => {
             DOM.clearSearchBtn.style.display = val ? 'flex' : 'none';
             renderSidebar(val);
-        }, 150);
+        }, 180);
         DOM.searchInput.addEventListener('input', e => debouncedSearch(e.target.value));
         DOM.clearSearchBtn.addEventListener('click', () => {
+            debouncedSearch.cancel();
             DOM.searchInput.value = '';
             DOM.clearSearchBtn.style.display = 'none';
             DOM.searchInput.focus();
@@ -3815,9 +3804,10 @@
         const debouncedPubSearch = debounce(val => {
             DOM.clearPublisherSearchBtn.style.display = val ? 'flex' : 'none';
             renderSidebar(DOM.searchInput.value);
-        }, 150);
+        }, 180);
         DOM.publisherSearchInput.addEventListener('input', e => debouncedPubSearch(e.target.value));
         DOM.clearPublisherSearchBtn.addEventListener('click', () => {
+            debouncedPubSearch.cancel();
             DOM.publisherSearchInput.value = '';
             DOM.clearPublisherSearchBtn.style.display = 'none';
             DOM.publisherSearchInput.focus();

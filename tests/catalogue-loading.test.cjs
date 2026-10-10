@@ -20,7 +20,7 @@ async function app(fetcher) {
   w.Sortable = class {};
   w.fetch = fetcher;
   w.sessionStorage.setItem('__adm_auth__', '776804fd62f4788b');
-  for (const name of ['vendor/purify.min.js', 'js/content-security.js', 'js/admin-draft-store.js', 'js/catalogue-data.js']) {
+  for (const name of ['js/arabic-search.js', 'vendor/purify.min.js', 'js/content-security.js', 'js/admin-draft-store.js', 'js/catalogue-data.js']) {
     if (fs.existsSync(path.join(root, name))) w.eval(fs.readFileSync(path.join(root, name), 'utf8'));
   }
   for (const match of html.matchAll(/<script\b([^>]*)>([\s\S]*?)<\/script>/gi)) {
@@ -66,5 +66,31 @@ test('catalogue refreshes on reconnection without status controls',async()=>{
   data=[book(2)];a.w.dispatchEvent(new a.w.Event('online'));
   await new Promise(r=>a.w.setTimeout(r,30));
   assert.equal(a.document.querySelector('.book-title').textContent,'Book 2');
+ }finally{a.w.close();}
+});
+
+test('public Arabic search debounces input, matches names and clears pending searches', async()=>{
+ const a=await app(async()=>response([
+  {...book(1),title:'مصطفى',author:'إِبْـن رجب',best_editions:[{publisher:'مؤسسة الرسالة',verifier:'الأرناؤوط'}]},
+  {...book(2),title:'آخر'}
+ ]));
+ try {
+  const input=a.document.getElementById('searchInput');
+  input.value='مصطفي';input.dispatchEvent(new a.w.Event('input'));
+  assert.equal(a.document.querySelectorAll('.md-card').length,2);
+  await new Promise(r=>a.w.setTimeout(r,220));
+  assert.equal(a.document.querySelectorAll('.md-card').length,1);
+  assert.equal(a.document.querySelector('.book-title').textContent,'مصطفى');
+  input.value='بن رجب';input.dispatchEvent(new a.w.Event('input'));
+  await new Promise(r=>a.w.setTimeout(r,220));
+  assert.equal(a.document.querySelectorAll('.md-card').length,1);
+  input.value='absent';input.dispatchEvent(new a.w.Event('input'));
+  a.document.getElementById('clearSearchBtn').click();
+  await new Promise(r=>a.w.setTimeout(r,220));
+  assert.equal(a.document.querySelectorAll('.md-card').length,2);
+  const publisher=a.document.getElementById('publisherSearch');
+  publisher.value='موسسه الرساله';publisher.dispatchEvent(new a.w.Event('input'));
+  await new Promise(r=>a.w.setTimeout(r,220));
+  assert.equal(a.document.querySelectorAll('.md-card').length,1);
  }finally{a.w.close();}
 });

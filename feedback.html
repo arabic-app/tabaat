@@ -2,6 +2,7 @@
 <html lang="ar">
 <head>
     <meta charset="UTF-8">
+    <script src="js/arabic-search.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>اقتراح أفضل طبعة</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -740,15 +741,7 @@
     let booksData = [];
     let sheetData = []; // rows already submitted to the Google Sheet
 
-    function normalizeArabic(str) {
-        if (!str) return '';
-        return String(str)
-            .toLowerCase()
-            .replace(/[أإآ]/g, 'ا')
-            .replace(/ة/g, 'ه')
-            .replace(/[\u064B-\u0652]/g, '')
-            .trim();
-    }
+    const normalizeArabic = TabaatSearch.normalize;
 
     // Parse CSV text → array of objects keyed by header
     function parseCSV(text) {
@@ -772,6 +765,7 @@
             .then(r => r.ok ? r.text() : '').catch(() => '')
     ]).then(([books, csvText]) => {
         booksData = books;
+        TabaatSearch.prepare(booksData);
         sheetData = csvText ? parseCSV(csvText) : [];
     });
 
@@ -785,13 +779,11 @@
     }
 
     function highlightMatch(text, term) {
-        if (!term) return escapeHTML(text);
-        const norm = normalizeArabic(text);
-        const normTerm = normalizeArabic(term);
-        const idx = norm.indexOf(normTerm);
-        if (idx === -1) return escapeHTML(text);
-        return escapeHTML(text.slice(0, idx))
-            + '<mark>' + escapeHTML(text.slice(idx, idx + term.length)) + '</mark>'
+        // Normalization can change offsets; only highlight an exact original span.
+        const idx = text.toLowerCase().indexOf(term.toLowerCase());
+        if (!term || idx < 0) return escapeHTML(text);
+        return escapeHTML(text.slice(0, idx)) + '<mark>'
+            + escapeHTML(text.slice(idx, idx + term.length)) + '</mark>'
             + escapeHTML(text.slice(idx + term.length));
     }
 
@@ -804,7 +796,7 @@
         }
         const normTerm = normalizeArabic(term);
         const matches = booksData
-            .filter(b => b.title && normalizeArabic(b.title).includes(normTerm))
+            .filter(b => b.title && TabaatSearch.fields(b).title.includes(normTerm))
             .slice(0, 8);
 
         if (matches.length === 0) {
@@ -817,6 +809,8 @@
                     + (book.author ? `<span style="font-size:0.78rem;color:var(--md-outline);margin-right:8px;">${escapeHTML(book.author)}</span>` : '');
                 item.addEventListener('mousedown', e => {
                     e.preventDefault();
+                    scheduleSuggestions.cancel();
+                    highlightedIndex = -1;
                     bookInput.value = book.title;
                     bookInput.classList.add('valid');
                     autocompleteList.classList.remove('visible');
@@ -828,13 +822,21 @@
         autocompleteList.classList.add('visible');
     }
 
+    const scheduleSuggestions = TabaatSearch.debounce(() => {
+        if (document.activeElement === bookInput) showSuggestions(bookInput.value.trim());
+    });
     bookInput.addEventListener('input', e => {
-        showSuggestions(e.target.value.trim());
+        highlightedIndex = -1;
+        autocompleteList.replaceChildren();
+        autocompleteList.classList.remove('visible');
+        scheduleSuggestions();
         validateInput(bookInput);
         hideExistsCard(); // reset while typing
     });
 
     bookInput.addEventListener('blur', () => {
+        scheduleSuggestions.cancel();
+        autocompleteList.classList.remove('visible');
         // Small delay so autocomplete mousedown fires first
         setTimeout(() => {
             const val = bookInput.value.trim();
@@ -843,7 +845,8 @@
     });
 
     bookInput.addEventListener('keydown', e => {
-        const items = autocompleteList.querySelectorAll('.autocomplete-item');
+        const items = autocompleteList.classList.contains('visible')
+            ? autocompleteList.querySelectorAll('.autocomplete-item') : [];
         if (e.key === 'ArrowDown') {
             e.preventDefault();
             highlightedIndex = Math.min(highlightedIndex + 1, items.length - 1);
@@ -852,10 +855,11 @@
             e.preventDefault();
             highlightedIndex = Math.max(highlightedIndex - 1, -1);
             items.forEach((it, i) => it.classList.toggle('highlighted', i === highlightedIndex));
-        } else if (e.key === 'Enter' && highlightedIndex >= 0) {
+        } else if (e.key === 'Enter' && highlightedIndex >= 0 && items[highlightedIndex]) {
             e.preventDefault();
             items[highlightedIndex].dispatchEvent(new MouseEvent('mousedown'));
         } else if (e.key === 'Escape') {
+            scheduleSuggestions.cancel();
             autocompleteList.classList.remove('visible');
         }
     });
@@ -872,7 +876,7 @@
         if (!norm) { hideExistsCard(); return false; }
 
         // 1. Check books.json
-        const dbBook = booksData.find(b => normalizeArabic(b.title) === norm);
+        const dbBook = booksData.find(b => TabaatSearch.fields(b).title === norm);
 
         // 2. Check Google Sheet rows (column: الكتاب)
         const sheetRows = sheetData.filter(row => normalizeArabic(row['الكتاب'] || '') === norm);

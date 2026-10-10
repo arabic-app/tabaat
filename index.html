@@ -2,6 +2,7 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
+    <script src="js/arabic-search.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>دليل طبعات الكتب الإسلامية</title>
 
@@ -1594,15 +1595,7 @@
         let currentVerifier = '';
         const isIOSUser = /iP(hone|od|ad)/.test(navigator.userAgent || '');
 
-        function normalizeArabic(str) {
-            if (!str) return '';
-            return String(str)
-                .toLowerCase()
-                .replace(/[أإآ]/g, 'ا')
-                .replace(/ة/g, 'ه')
-                .replace(/[\u064B-\u0652]/g, '') // remove Arabic diacritics (harakat)
-                .trim();
-        }
+        const normalizeArabic = TabaatSearch.normalize;
 
         const catalogueState = { loaded: false, generation: 0 };
         async function loadBooks() {
@@ -1616,6 +1609,7 @@
                 if (!TabaatData.valid('books.json', data)) throw new Error('Invalid catalogue');
                 if (generation !== catalogueState.generation) return;
                 booksData = data.sort((a, b) => (a.title || '').localeCompare(b.title || '', 'ar'));
+                TabaatSearch.prepare(booksData);
                 catalogueState.loaded = true;
                 const booksCountEl = document.getElementById('about-total-books');
                 if (booksCountEl) booksCountEl.textContent = booksData.length;
@@ -1895,13 +1889,14 @@
             }, { passive: false });
         })();
 
+        const scheduleSearch = TabaatSearch.debounce(filterAndDisplayBooks);
         const mainSearch = document.getElementById('searchInput');
         const clearSearchBtn = document.getElementById('clearSearchBtn');
         
         mainSearch.oninput = (e) => { 
             currentSearchTerm = e.target.value; 
             clearSearchBtn.style.display = currentSearchTerm ? 'flex' : 'none';
-            filterAndDisplayBooks(); 
+            scheduleSearch();
         };
         mainSearch.onkeydown = (e) => { if(e.key === 'Enter') { e.preventDefault(); mainSearch.blur(); } };
         
@@ -1926,28 +1921,28 @@
         });
         const clearPublisherBtn = document.getElementById('clearPublisherBtn');
         const clearVerifierBtn = document.getElementById('clearVerifierBtn');
-        publisherSearch.oninput = (e) => { currentPublisher = e.target.value; clearPublisherBtn.style.display = currentPublisher ? 'flex' : 'none'; filterAndDisplayBooks(); };
-        verifierSearch.oninput = (e) => { currentVerifier = e.target.value; clearVerifierBtn.style.display = currentVerifier ? 'flex' : 'none'; filterAndDisplayBooks(); };
+        publisherSearch.oninput = (e) => { currentPublisher = e.target.value; clearPublisherBtn.style.display = currentPublisher ? 'flex' : 'none'; scheduleSearch(); };
+        verifierSearch.oninput = (e) => { currentVerifier = e.target.value; clearVerifierBtn.style.display = currentVerifier ? 'flex' : 'none'; scheduleSearch(); };
         preventFocusSteal(clearPublisherBtn);
         preventFocusSteal(clearVerifierBtn);
         clearPublisherBtn.onclick = () => { publisherSearch.value = ''; currentPublisher = ''; clearPublisherBtn.style.display = 'none'; filterAndDisplayBooks(); };
         clearVerifierBtn.onclick = () => { verifierSearch.value = ''; currentVerifier = ''; clearVerifierBtn.style.display = 'none'; filterAndDisplayBooks(); };
 
         function filterAndDisplayBooks() {
+            scheduleSearch.cancel();
             const term = normalizeArabic(currentSearchTerm);
             const pub = normalizeArabic(currentPublisher);
             const ver = normalizeArabic(currentVerifier);
             const filtered = booksData.filter(book => {
-                const matchesSearch = normalizeArabic(book.title).includes(term) ||
-                                      normalizeArabic(book.author).includes(term);
+                const fields = TabaatSearch.fields(book);
+                const matchesSearch = fields.title.includes(term) || fields.author.includes(term);
 
                 const cats = getBookCategories(book);
                 const matchesCategory = currentCategory === 'الكل' || cats.includes(currentCategory);
 
                 // دار النشر / المحقق : on cherche dans toutes les éditions (معتمدة + بديلة)
-                const eds = [...(book.best_editions || []), ...(book.alt_editions || [])];
-                const matchesPublisher = !pub || eds.some(e => normalizeArabic(e.publisher || '').includes(pub));
-                const matchesVerifier = !ver || eds.some(e => normalizeArabic(e.verifier || '').includes(ver));
+                const matchesPublisher = !pub || fields.publishers.some(value => value.includes(pub));
+                const matchesVerifier = !ver || fields.verifiers.some(value => value.includes(ver));
 
                 return matchesSearch && matchesCategory && matchesPublisher && matchesVerifier;
             });

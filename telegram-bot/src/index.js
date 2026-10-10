@@ -1,3 +1,4 @@
+import '../../js/arabic-search.js';
 import { recordAnalytics, readAnalytics, scheduleAnalytics } from './analytics.js';
 export { StatsAggregator } from './analytics.js';
 
@@ -268,19 +269,7 @@ async function isRateLimited(key, env) {
 // =============================================================================
 // Normalisation arabe — identique à la recherche de l'app web (index.html)
 // =============================================================================
-function normalizeArabic(str) {
-  if (!str) return '';
-  return String(str)
-    .toLowerCase()
-    .replace(/[أإآ]/g, 'ا')  // variantes de alef -> ا
-    .replace(/ى/g, 'ي')      // alef maqsura -> ya (المصطفى ~ المصطفي)
-    .replace(/ؤ/g, 'و')      // hamza sur waw -> waw (الأرناؤوط ~ الارناووط)
-    .replace(/ئ/g, 'ي')      // hamza sur ya -> ya
-    .replace(/ء/g, '')       // hamza isolée retirée
-    .replace(/ة/g, 'ه')      // ta marbuta -> ha
-    .replace(/[ً-ْ]/g, '')   // retire les diacritiques (harakat)
-    .trim();
-}
+const normalizeArabic = globalThis.TabaatSearch.normalize;
 
 // Retire l'article défini « ال » en tête de mot (البخاري -> بخاري) pour tolérer
 // sa présence/absence. Appliqué côté requête uniquement : « بخاري » reste une
@@ -309,13 +298,22 @@ function searchTokens(query) {
 // =============================================================================
 // Recherche locale (RAG) : récupération + filtrage + compression
 // =============================================================================
+let indexedCatalogueBody;
+let indexedCatalogueBooks;
 async function selectRelevantBooks(query) {
   // (4) Cache au bord Cloudflare : books.json n'est pas re-téléchargé à chaque message.
   const response = await fetch(BOOKS_URL, {
     cf: { cacheTtl: BOOKS_CACHE_TTL, cacheEverything: true },
   });
   if (!response.ok) throw new Error('Failed to fetch books.json from GitHub');
-  const allBooks = await response.json();
+  const body = await response.text();
+  if (body !== indexedCatalogueBody) {
+    const books = JSON.parse(body);
+    globalThis.TabaatSearch.prepare(books);
+    indexedCatalogueBooks = books;
+    indexedCatalogueBody = body;
+  }
+  const allBooks = indexedCatalogueBooks;
 
   const words = searchTokens(query);
   if (words.length === 0) return allBooks.slice(0, MAX_RESULTS);
@@ -336,18 +334,7 @@ async function selectRelevantBooks(query) {
 }
 
 // (7) Champs de recherche ciblés + normalisés (au lieu de tout le JSON brut).
-function bookSearchFields(book) {
-  const editions = [...(book.best_editions || []), ...(book.alt_editions || [])];
-  const publishers = editions.map(e => e.publisher).filter(Boolean).join(' ');
-  const verifiers = editions.map(e => e.verifier).filter(Boolean).join(' ');
-  const cats = Array.isArray(book.category) ? book.category.join(' ') : (book.category || '');
-  return {
-    title: normalizeArabic(book.title),
-    author: normalizeArabic(book.author),
-    category: normalizeArabic(cats),
-    editions: normalizeArabic(publishers + ' ' + verifiers),
-  };
-}
+const bookSearchFields = globalThis.TabaatSearch.fields;
 
 // (7) Analyse d'un livre pour une requête : couverture (nb de mots distincts
 // trouvés) + score pondéré (titre > auteur > catégorie > éditeurs). La couverture

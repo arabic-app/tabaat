@@ -32,7 +32,7 @@ async function app(books, storage = new IDBFactory(), options = {}) {
   w.localStorage.setItem('github_token_secured', 'test-token');
   w.sessionStorage.setItem('__adm_auth__', '776804fd62f4788b');
   if (options.journal) w.localStorage.setItem('tabaat-admin-drafts-v1', JSON.stringify(options.journal));
-  for (const name of ['vendor/purify.min.js', 'js/content-security.js', 'js/admin-draft-store.js', 'js/catalogue-data.js']) {
+  for (const name of ['js/arabic-search.js', 'vendor/purify.min.js', 'js/content-security.js', 'js/admin-draft-store.js', 'js/catalogue-data.js']) {
     if (fs.existsSync(path.join(root, name))) w.eval(fs.readFileSync(path.join(root, name), 'utf8'));
   }
   for (const match of html.matchAll(/<script\b([^>]*)>([\s\S]*?)<\/script>/gi)) {
@@ -269,5 +269,18 @@ test('an unknown stored schema is preserved instead of being overwritten',async(
  try {a.w.__admin.createNewBook();input(a,'title','New memory draft');save(a);await settle();
  assert.equal(a.w.localStorage.getItem('tabaat-admin-drafts-v1'),null);
  assert.equal(a.document.getElementById('localSaveStatus').dataset.state,'error');
+ }finally{a.w.close();}
+});
+
+test('admin search matches Arabic variants and clearing cancels the pending query', async()=>{
+ const a=await app([{...fixture(),title:'مصطفى',author:'ابن رجب'},fixture(2)]);
+ try {
+  input(a,'adminSearchInput','مصطفي');
+  await new Promise(r=>setTimeout(r,220));
+  assert.equal(a.document.querySelectorAll('#booksList li').length,1);
+  input(a,'adminSearchInput','absent');
+  a.document.getElementById('clearSearchBtn').click();
+  await new Promise(r=>setTimeout(r,220));
+  assert.equal(a.document.querySelectorAll('#booksList li').length,2);
  }finally{a.w.close();}
 });

@@ -24,7 +24,7 @@ async function app(file, books) {
   w.URL.revokeObjectURL = url => w.__blobs.delete(url);
   w.fetch = async url => ({ok: true, headers: {get: () => null}, arrayBuffer: async () => w.__pdfBytes, json: async () => String(url).includes('sciences') ? ['علوم'] : books, text: async () => String(url).includes('reviews.json') ? JSON.stringify(books) : ''});
   w.sessionStorage.setItem('__adm_auth__', '776804fd62f4788b');
-  for (const name of ['vendor/purify.min.js', 'js/content-security.js', 'js/admin-draft-store.js', 'js/catalogue-data.js']) {
+  for (const name of ['js/arabic-search.js', 'vendor/purify.min.js', 'js/content-security.js', 'js/admin-draft-store.js', 'js/catalogue-data.js']) {
     if (fs.existsSync(path.join(root, name))) w.eval(fs.readFileSync(path.join(root, name), 'utf8'));
   }
   for (const match of html.matchAll(/<script\b([^>]*)>([\s\S]*?)<\/script>/gi)) {
@@ -262,4 +262,31 @@ test('correction image selection uses the matching validated attachment',async()
     assert.equal(d.getElementById('pdfViewerImg').src,'https://example.test/b.png');
     assert.equal(d.getElementById('pdfViewerTitle').textContent,'B');
   });
+});
+
+test('feedback autocomplete matches normalized Arabic while preserving the displayed title', async()=>{
+ await using('feedback.html',[fixture({title:'إِبْـن رجب'})],async({w,document:d})=>{
+  const input=d.getElementById('bookInput');input.focus();input.value='بن رجب';
+  input.dispatchEvent(new w.Event('input'));
+  assert.equal(d.querySelectorAll('.autocomplete-item').length,0);
+  await new Promise(r=>w.setTimeout(r,220));
+  const item=d.querySelector('.autocomplete-item');assert.ok(item);
+  assert.ok(item.textContent.startsWith('إِبْـن رجب'));
+  item.dispatchEvent(new w.MouseEvent('mousedown'));
+  assert.equal(input.value,'إِبْـن رجب');
+  input.value='no result';input.dispatchEvent(new w.Event('input'));input.blur();
+  await new Promise(r=>w.setTimeout(r,220));
+  assert.equal(d.getElementById('autocompleteList').classList.contains('visible'),false);
+ });
+});
+
+test('feedback cannot select a hidden stale suggestion while a new query is pending', async()=>{
+ await using('feedback.html',[fixture({title:'كتاب سابق'})],async({w,document:d})=>{
+  const input=d.getElementById('bookInput');input.focus();input.value='كتاب';
+  input.dispatchEvent(new w.Event('input'));await new Promise(r=>w.setTimeout(r,220));
+  input.dispatchEvent(new w.KeyboardEvent('keydown',{key:'ArrowDown',bubbles:true}));
+  input.value='عنوان جديد';input.dispatchEvent(new w.Event('input'));
+  input.dispatchEvent(new w.KeyboardEvent('keydown',{key:'Enter',bubbles:true}));
+  assert.equal(input.value,'عنوان جديد');
+ });
 });

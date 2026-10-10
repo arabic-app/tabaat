@@ -1,14 +1,14 @@
 /* Tabaat: validated network-first data, bounded local images, network-only admin. */
 importScripts('./js/catalogue-data.js');
-const CACHE_NAME = 'tabaat-v17';
-const DATA_CACHE = 'tabaat-data-v17';
-const IMAGE_CACHE = 'tabaat-images-v17';
+const CACHE_NAME = 'tabaat-v18';
+const DATA_CACHE = 'tabaat-data-v18';
+const IMAGE_CACHE = 'tabaat-images-v18';
 const CURRENT_CACHES = new Set([CACHE_NAME, DATA_CACHE, IMAGE_CACHE]);
 const ROOT = new URL(self.registration.scope);
 const DATA_FILES = ['books.json', 'sciences.json', 'reviews.json'];
 const STATIC_ASSETS = [
   './', './index.html', './vendor/purify.min.js', './js/content-security.js',
-  './js/catalogue-data.js', './manifest.json', './icons/icon-192.png',
+  './js/arabic-search.js', './js/catalogue-data.js', './manifest.json', './icons/icon-192.png',
   './icons/icon-512.png', './icons/apple-touch-icon.png'
 ];
 const MAX_IMAGES = 100;
