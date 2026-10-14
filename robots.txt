@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /admin.html
+Disallow: /admin
+
+Sitemap: https://arabic-app.github.io/tabaat/sitemap.xml

@@ -17,22 +17,66 @@
     <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
     <link rel="icon" type="image/svg+xml" href="icons/favicon.svg">
     <!-- SEO -->
+    <meta name="google-site-verification" content="googleed73c222ce779f74">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
     <meta name="description" content="دليل شامل لأفضل طبعات الكتب الإسلامية - ابحث عن الكتاب، المؤلف، أو العلم">
+    <meta name="keywords" content="طبعات الكتب, تحقيقات الكتب, الكتب الإسلامية, أفضل طبعة, دار النشر, كتب الحديث, الفقه, التفسير, العقيدة">
+    <meta name="author" content="أفضل طبعة">
     <link rel="canonical" href="https://arabic-app.github.io/tabaat/">
     <meta property="og:site_name" content="أفضل طبعة">
     <meta property="og:title" content="دليل طبعات الكتب الإسلامية - أفضل طبعة">
     <meta property="og:description" content="دليل شامل لأفضل طبعات الكتب الإسلامية - ابحث عن الكتاب، المؤلف، أو العلم">
     <meta property="og:url" content="https://arabic-app.github.io/tabaat/">
     <meta property="og:type" content="website">
+    <meta property="og:locale" content="ar_SA">
+    <meta property="og:image" content="https://arabic-app.github.io/tabaat/icons/icon-512.png">
+    <meta property="og:image:width" content="512">
+    <meta property="og:image:height" content="512">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:alt" content="شعار دليل أفضل طبعة">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="دليل طبعات الكتب الإسلامية - أفضل طبعة">
+    <meta name="twitter:description" content="دليل شامل وموثوق لأفضل طبعات وتحقيقات الكتب الإسلامية - ابحث عن الكتاب، المؤلف، أو دار النشر">
+    <meta name="twitter:image" content="https://arabic-app.github.io/tabaat/icons/icon-512.png">
 
-    <!-- Google Search Site Name (JSON-LD) -->
+    <!-- Structured Data (JSON-LD) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": "أفضل طبعة",
-      "alternateName": ["دليل طبعات الكتب الإسلامية", "Tabaat"],
-      "url": "https://arabic-app.github.io/tabaat/"
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": "https://arabic-app.github.io/tabaat/#website",
+          "url": "https://arabic-app.github.io/tabaat/",
+          "name": "أفضل طبعة",
+          "alternateName": ["دليل طبعات الكتب الإسلامية", "Tabaat", "Afdal Tabaat"],
+          "description": "دليل شامل لأفضل طبعات الكتب الإسلامية والتحقيقات المعتمدة",
+          "inLanguage": "ar",
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": {
+              "@type": "EntryPoint",
+              "urlTemplate": "https://arabic-app.github.io/tabaat/?q={search_term_string}"
+            },
+            "query-input": "required name=search_term_string"
+          }
+        },
+        {
+          "@type": "CollectionPage",
+          "@id": "https://arabic-app.github.io/tabaat/#webpage",
+          "url": "https://arabic-app.github.io/tabaat/",
+          "name": "دليل طبعات الكتب الإسلامية - أفضل طبعة",
+          "isPartOf": {
+            "@id": "https://arabic-app.github.io/tabaat/#website"
+          },
+          "about": {
+            "@type": "Thing",
+            "name": "Islamic Books and Editions",
+            "description": "طبعات وتحقيقات أمهات كتب التراث الإسلامي"
+          },
+          "inLanguage": "ar"
+        }
+      ]
     }
     </script>
 
@@ -1367,6 +1411,14 @@
     </style>
 </head>
 <body>
+    <noscript>
+        <div style="padding: 16px; margin: 16px auto; max-width: 800px; background: #ffffff; border-radius: 8px; text-align: center; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+            <h2 style="color: #00695c; margin-top: 0;">دليل طبعات الكتب الإسلامية - أفضل طبعة</h2>
+            <p>دليل شامل وموثوق لأفضل طبعات وتحقيقات أمهات كتب التراث الإسلامي في العقيدة والتفسير والحديث والفقه والسيرة واللغة العربية.</p>
+            <p>يتطلب هذا الموقع تفعيل JavaScript للبحث التفاعلي واستعراض الطبعات والتحقيقات المعتمدة.</p>
+            <p><a href="about.html" style="color: #00695c; font-weight: bold;">عن التطبيق</a> | <a href="infos.html" style="color: #00695c; font-weight: bold;">إرشادات ومعلومات</a> | <a href="reviews.html" style="color: #00695c; font-weight: bold;">تقريظ</a></p>
+        </div>
+    </noscript>
     <header>
         <div class="header-inner">
             <div class="header-text">
@@ -1615,6 +1667,11 @@
                 if (booksCountEl) booksCountEl.textContent = booksData.length;
                 initCategories();
                 initAutocompleteData();
+                const searchParam = new URLSearchParams(window.location.search).get('q');
+                if (searchParam) {
+                    const si = document.getElementById('searchInput');
+                    if (si) si.value = searchParam;
+                }
                 filterAndDisplayBooks();
                 const directBookId = parseInt(new URLSearchParams(window.location.search).get('book'));
                 if (!isNaN(directBookId)) setTimeout(() => openBookCardModal(directBookId), 100);
@@ -2252,9 +2309,18 @@
             if (!book) return;
             document.getElementById('bookCardModalBody').innerHTML = `<div class="md-card" data-id="${h(book.id)}" style="box-shadow:none;margin:0">${bookCardHTML(book)}</div>`;
             document.getElementById('bookCardModal').style.display = 'flex';
+            if (window.history && window.history.replaceState) {
+                const url = new URL(window.location.href);
+                url.searchParams.set('book', book.id);
+                window.history.replaceState({}, '', url.pathname + url.search + url.hash);
+            }
+            if (book.title) {
+                document.title = book.title + ' - أفضل طبعة';
+            }
         }
         function closeBookCardModal() {
             document.getElementById('bookCardModal').style.display = 'none';
+            document.title = 'دليل طبعات الكتب الإسلامية - أفضل طبعة';
             if (window.history && window.history.replaceState) {
                 const url = new URL(window.location.href);
                 if (url.searchParams.has('book')) {
