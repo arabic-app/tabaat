@@ -190,6 +190,8 @@ test('admin rich local links resolve against catalogue root and survive save',as
   await using('admin/index.html',[fixture({notes:'<a href="corrections/a.pdf">PDF</a>'})],({w,document:d})=>{
     w.__admin.loadBookIntoForm(1);
     assert.equal(d.querySelector('#notes a').href,'https://example.test/tabaat/corrections/a.pdf');
+    d.getElementById('title').value = 'عنوان معدل';
+    d.getElementById('title').dispatchEvent(new w.Event('input', {bubbles:true}));
     w.__admin.saveBook({preventDefault(){}});
     assert.equal(w.__admin.state.pendingChanges.upserts.get(1).notes,'<a href="https://example.test/tabaat/corrections/a.pdf" rel="noopener noreferrer">PDF</a>');
   });
