@@ -21,9 +21,8 @@ test('admin displays daily visitor sum instead of chart views', () => {
         for (const id of ['statTotalViews', 'statUniqueVisitors', 'statChatTotal']) {
             assert.match(doc.getElementById(id).parentElement.querySelector('.stat-label').textContent, /30/);
         }
-        assert.match(doc.querySelector('#statsNotice').textContent, /UTC/);
-        assert.match(doc.querySelector('#statsNotice').textContent, /60/);
-        assert.doesNotMatch(doc.querySelector('#statsNotice').textContent, /فوري/);
+        assert.equal(doc.querySelector('#statsNotice').style.display, 'none');
+        assert.equal(doc.querySelector('#statsNotice').textContent, '');
     } finally { dom.window.close(); }
 });
 

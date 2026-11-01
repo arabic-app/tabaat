@@ -1504,10 +1504,7 @@
         </div>
         <div class="suggestions-modal-body" id="statsContainer">
             <div class="stats-content" id="statsContent">
-                <div class="stats-notice" id="statsNotice" style="display:none;">
-                    <span class="material-icons-round" style="font-size:16px;line-height:1;margin-bottom:0;color:var(--info);">info</span>
-                    <span>إحصائيات آخر 30 يومًا بتوقيت UTC — قد تتأخر 60 ثانية. يتطلّب مفتاح الإحصائيات في الإعدادات.</span>
-                </div>
+                <div class="stats-notice" id="statsNotice" style="display:none;"></div>
                 <div class="stats-grid">
                     <div class="stat-card">
                         <span class="material-icons-round stat-icon" style="color:#2e7d32;">visibility</span>
@@ -3694,10 +3691,8 @@
 
         renderRankList('#statsTopSearches', (data.topSearches || []).filter(s => s.count > 1), 'لا توجد عمليات بحث متكررة بعد');
 
-        $('#statsNotice').style.display = 'flex';
-        $('#statsNotice').innerHTML = `
-            <span class="material-icons-round" style="font-size:16px;line-height:1;margin-bottom:0;color:var(--info);">info</span>
-            <span>إحصائيات آخر 30 يومًا بتوقيت UTC — قد تتأخر 60 ثانية بسبب التخزين المؤقت. مجموع الزوار اليوميين قد يحتسب الشخص نفسه في أيام مختلفة؛ وليس عدد أشخاص مميزين خلال الفترة.</span>`;
+        $('#statsNotice').style.display = 'none';
+        $('#statsNotice').innerHTML = '';
     }
 
     function renderRankList(sel, items, emptyMsg) {
