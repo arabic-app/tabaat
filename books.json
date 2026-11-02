@@ -1365,9 +1365,25 @@
       "الحديث",
       "شروح الحديث"
     ],
-    "notes": "<ul><li>صدرت مؤخرا ط سطور ت مركز هجر فلتنظر.&nbsp;</li><li>طبعة بشار عواد فيها خلل كبير لذلك لم تذكر (راجع الروابط المرفقة) .</li></ul>",
-    "date": "2026-08-12",
+    "notes": "<ul><li><span>طبعة بشار عواد فيها خلل كبير لذلك لم تذكر (راجع الروابط المرفقة) .</span></li></ul>",
     "best_editions": [
+      {
+        "publisher": "مركز سطور",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1793654262993-c03e1595-ccca-43aa-bbf9-a444a21efa01-73259.jpg",
+          "https://arabic-app.github.io/tabaat/images/1793654276769-98cd153e-e494-4dbb-81b0-ceb8c45f2b7d-73258.webp"
+        ],
+        "notes": "مفرد من موسوعة شروح الموطأ بترتيب التمهيد مع بعض التصحيحات والاستدراكات على طبعة بشار.&nbsp;",
+        "corrections": [],
+        "attachments": [
+          {
+            "title": "جزء من المقدمة",
+            "url": "https://arabic-app.github.io/tabaat/editions_attachments/1793654323246-3937386a-5e77-4958-b07b-d4e7c5c32055-_______1.pdf"
+          }
+        ],
+        "verifier": "عبد الله التركي، مركز هجر",
+        "volumes": 15
+      },
       {
         "publisher": "دار عالم الكتب",
         "images": [
@@ -1412,7 +1428,8 @@
         "title": "نقد الطبعات السابقة - المغراوي",
         "url": "https://arabic-app.github.io/tabaat/books_attachments/1786519444897-03.pdf"
       }
-    ]
+    ],
+    "date": "2026-11-02"
   },
   {
     "id": 29,
