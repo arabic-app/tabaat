@@ -2454,7 +2454,6 @@
       "التاريخ الإسلامي"
     ],
     "notes": "",
-    "date": "2026-08-04",
     "best_editions": [
       {
         "publisher": "الطبعة التونسية",
@@ -2463,11 +2462,13 @@
         ],
         "notes": "",
         "corrections": [],
+        "verifier": "إبراهيم شبوح",
         "volumes": 14
       }
     ],
     "alt_editions": [],
-    "links": []
+    "links": [],
+    "date": "2026-11-10"
   },
   {
     "id": 53,
