@@ -4063,7 +4063,6 @@
       "العقيدة"
     ],
     "notes": "",
-    "date": "2026-08-04",
     "best_editions": [
       {
         "publisher": "مركز سطور",
@@ -4072,9 +4071,9 @@
           "https://arabic-app.github.io/tabaat/images/1782716945353-CV3hjmKdpwcgGWL9aB1SOudgNLK18tE8MeU53Y3n.jpg",
           "https://arabic-app.github.io/tabaat/images/1782716953452-1679130496202202136209191d1277f.png"
         ],
-        "notes": "<span style=\"font-size: 15.2px;\">طبع في دور أخرى مثل أضواء السلف </span><span style=\"font-size: 15.2px;\">و</span><span style=\"font-size: 15.2px;\">دار الفرقان</span>",
+        "notes": "<span>طبع في دور أخرى مثل أضواء السلف </span><span>و</span><span>دار الفرقان</span>",
         "corrections": [],
-        "verifier": "أسامة عطايا العتيبي",
+        "verifier": "أسامة بن عطايا العتيبي",
         "volumes": 2
       },
       {
@@ -4089,7 +4088,8 @@
       }
     ],
     "alt_editions": [],
-    "links": []
+    "links": [],
+    "date": "2026-11-12"
   },
   {
     "id": 97,
