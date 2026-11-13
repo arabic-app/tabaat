@@ -1848,7 +1848,6 @@
       "الحديث"
     ],
     "notes": "",
-    "date": "2026-08-04",
     "best_editions": [
       {
         "publisher": "دار البشائر الإسلامية",
@@ -1871,18 +1870,19 @@
         "volumes": 1
       },
       {
-        "publisher": "دار ابن الجوزي",
+        "publisher": "مؤسسة دار الحديث",
         "images": [
-          "https://arabic-app.github.io/tabaat/images/1782658528589-E1kRIqWYAQn0E6.jpg"
+          "https://arabic-app.github.io/tabaat/images/1794567128476-9c0abb2a-f5a5-4f38-aa27-dbae0dbad508-74533.webp"
         ],
-        "notes": "يعاد العمل عليه في مؤسسة دار الحديث",
+        "notes": "",
         "corrections": [],
         "verifier": "ماهر ياسين الفحل",
-        "volumes": 1
+        "volumes": 2
       }
     ],
     "alt_editions": [],
-    "links": []
+    "links": [],
+    "date": "2026-11-13"
   },
   {
     "id": 40,
