@@ -4100,7 +4100,6 @@
       "الشمائل النبوية"
     ],
     "notes": "",
-    "date": "2026-08-04",
     "best_editions": [
       {
         "publisher": "دار اللباب",
@@ -4147,7 +4146,13 @@
         "volumes": 1
       }
     ],
-    "links": []
+    "links": [
+      {
+        "title": "مقارنة بين طبعة دار اللباب وطبعة دار الفتح لكتاب الشفا - عبد الله الداغستاني",
+        "url": "https://arabic-app.github.io/tabaat/books_attachments/1794904953284-2bab62ae-bf6c-4384-b1e6-8dbf25377081--.pdf"
+      }
+    ],
+    "date": "2026-11-17"
   },
   {
     "id": 98,
