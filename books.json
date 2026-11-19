@@ -1975,7 +1975,6 @@
       "مصطلح الحديث"
     ],
     "notes": "",
-    "date": "2026-09-21",
     "best_editions": [
       {
         "publisher": "دار المنهاج القويم",
@@ -1999,6 +1998,16 @@
         "volumes": 1
       },
       {
+        "publisher": "دار السمان",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1795094802859-ef0b909c-436c-4579-9b4c-2b63e29f5a5a-mokadima.webp"
+        ],
+        "notes": "",
+        "corrections": [],
+        "verifier": "محمد محمود شعبان",
+        "volumes": 1
+      },
+      {
         "publisher": "دار المعارف",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1782743223920-images20260629T120305.812.jpeg"
@@ -2010,7 +2019,8 @@
       }
     ],
     "alt_editions": [],
-    "links": []
+    "links": [],
+    "date": "2026-11-19"
   },
   {
     "id": 44,
