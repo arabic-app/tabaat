@@ -1870,16 +1870,6 @@
         "volumes": 2
       },
       {
-        "publisher": "دار ابن الجوزي",
-        "images": [
-          "https://arabic-app.github.io/tabaat/images/1782658539924-48008553324173708852844915201437015327089534n.jpg"
-        ],
-        "notes": "",
-        "corrections": [],
-        "verifier": "طارق عوض الله",
-        "volumes": 1
-      },
-      {
         "publisher": "مؤسسة دار الحديث",
         "images": [
           "https://arabic-app.github.io/tabaat/images/1794567128476-9c0abb2a-f5a5-4f38-aa27-dbae0dbad508-74533.webp"
@@ -1888,11 +1878,21 @@
         "corrections": [],
         "verifier": "ماهر ياسين الفحل",
         "volumes": 2
+      },
+      {
+        "publisher": "دار ابن الجوزي",
+        "images": [
+          "https://arabic-app.github.io/tabaat/images/1782658539924-48008553324173708852844915201437015327089534n.jpg"
+        ],
+        "notes": "",
+        "corrections": [],
+        "verifier": "طارق عوض الله",
+        "volumes": 1
       }
     ],
     "alt_editions": [],
     "links": [],
-    "date": "2026-11-13"
+    "date": "2026-11-20"
   },
   {
     "id": 40,
