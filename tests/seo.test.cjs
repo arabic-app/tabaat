@@ -35,7 +35,7 @@ test('index.html contains required Google SEO tags and structured data', () => {
   const html = fs.readFileSync(indexPath, 'utf8');
 
   // Google site verification
-  assert.match(html, /<meta\s+name=["']google-site-verification["']\s+content=["']googleed73c222ce779f74["']/i);
+  assert.match(html, /<meta\s+name=["']google-site-verification["']\s+content=["']google1a1bdef30965f2c3["']/i);
 
   // Robots meta
   assert.match(html, /<meta\s+name=["']robots["']\s+content=["'][^"']*index[^"']*follow[^"']*["']/i);
