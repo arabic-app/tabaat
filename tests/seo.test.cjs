@@ -13,7 +13,7 @@ test('robots.txt exists and contains proper directives', () => {
   assert.match(content, /User-agent:\s*\*/i);
   assert.match(content, /Allow:\s*\//i);
   assert.match(content, /Disallow:\s*\/admin/i);
-  assert.match(content, /Sitemap:\s*https:\/\/arabic-app\.github\.io\/tabaat\/sitemap\.xml/i);
+  assert.match(content, /Sitemap:\s*https:\/\/tabaat\.vercel\.app\/sitemap\.xml/i);
 });
 
 test('sitemap.xml exists and is well-formed with core pages', () => {
@@ -23,11 +23,11 @@ test('sitemap.xml exists and is well-formed with core pages', () => {
 
   assert.ok(content.startsWith('<?xml'), 'sitemap should start with xml declaration');
   assert.match(content, /<urlset\b[^>]*xmlns="http:\/\/www\.sitemaps\.org\/schemas\/sitemap\/0\.9"/);
-  assert.match(content, /<loc>https:\/\/arabic-app\.github\.io\/tabaat\/<\/loc>/);
-  assert.match(content, /<loc>https:\/\/arabic-app\.github\.io\/tabaat\/about\.html<\/loc>/);
-  assert.match(content, /<loc>https:\/\/arabic-app\.github\.io\/tabaat\/infos\.html<\/loc>/);
-  assert.match(content, /<loc>https:\/\/arabic-app\.github\.io\/tabaat\/feedback\.html<\/loc>/);
-  assert.match(content, /<loc>https:\/\/arabic-app\.github\.io\/tabaat\/reviews\.html<\/loc>/);
+  assert.match(content, /<loc>https:\/\/tabaat\.vercel\.app\/<\/loc>/);
+  assert.match(content, /<loc>https:\/\/tabaat\.vercel\.app\/about\.html<\/loc>/);
+  assert.match(content, /<loc>https:\/\/tabaat\.vercel\.app\/infos\.html<\/loc>/);
+  assert.match(content, /<loc>https:\/\/tabaat\.vercel\.app\/feedback\.html<\/loc>/);
+  assert.match(content, /<loc>https:\/\/tabaat\.vercel\.app\/reviews\.html<\/loc>/);
 });
 
 test('index.html contains required Google SEO tags and structured data', () => {
