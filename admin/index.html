@@ -3901,7 +3901,7 @@
         state.rejecting = true;
         if (btn) btn.disabled = true;
         try {
-            const result = await deleteSuggestionFromSheet(row);
+            const result = await deleteSuggestionFromSheet(row, { allowDuplicate: true });
             state.suggestions = result.rows;
             renderSuggestions();
             renderNotes();
@@ -3948,18 +3948,20 @@
     }
 
     let sheetOperations = Promise.resolve();
-    function deleteSuggestionFromSheet(row) {
+    function deleteSuggestionFromSheet(row, { allowDuplicate = false } = {}) {
         const operation = sheetOperations.catch(() => {}).then(async () => {
             const fingerprint = suggestionFingerprint(row);
             const rows = await readSuggestionRows();
             const matches = rows.filter(value => suggestionFingerprint(value) === fingerprint);
             if (!matches.length) return { confirmed: true, rows };
-            if (matches.length !== 1) throw new Error('توجد اقتراحات متطابقة؛ تعذّر تحديد الاقتراح بأمان.');
-            submitSheetForm({ action: 'delete', rowIndex: matches[0]._rowIndex });
-            // Elapsed time is not success: only a fresh read proving absence confirms deletion.
+            if (matches.length !== 1 && !allowDuplicate) throw new Error('توجد اقتراحات متطابقة؛ تعذّر تحديد الاقتراح بأمان.');
+            const target = matches.find(value => value._rowIndex === row._rowIndex) || matches[matches.length - 1];
+            submitSheetForm({ action: 'delete', rowIndex: target._rowIndex });
+            // Elapsed time is not success: only a fresh read proving the count decreased confirms deletion.
             await new Promise(resolve => setTimeout(resolve, 1200));
             const currentRows = await readSuggestionRows();
-            return { confirmed: !currentRows.some(value => suggestionFingerprint(value) === fingerprint), rows: currentRows };
+            const remaining = currentRows.filter(value => suggestionFingerprint(value) === fingerprint).length;
+            return { confirmed: remaining < matches.length, rows: currentRows };
         });
         sheetOperations = operation;
         return operation;

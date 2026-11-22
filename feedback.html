@@ -1040,8 +1040,11 @@
     });
 
     // ===== SUBMIT =====
+    let isSubmitting = false;
+    let submitTimer = null;
     document.getElementById('suggestionForm').addEventListener('submit', async function(e) {
         e.preventDefault();
+        if (isSubmitting) return;
 
         let payload = {};
         let valid = true;
@@ -1090,6 +1093,7 @@
             return;
         }
 
+        isSubmitting = true;
         setLoading(true);
         hideError();
 
@@ -1115,23 +1119,22 @@
 
             // iframe load = response received (cross-origin, opaque → assume success)
             const frame = document.getElementById('formResponseFrame');
-            const onResp = () => {
-                frame.removeEventListener('load', onResp);
+            const finishSubmit = () => {
+                clearTimeout(submitTimer);
+                submitTimer = null;
+                frame.removeEventListener('load', finishSubmit);
+                if (!isSubmitting) return;
+                isSubmitting = false;
                 setLoading(false);
                 showSuccess();
             };
-            frame.addEventListener('load', onResp);
+            frame.addEventListener('load', finishSubmit);
             // Safety timeout if load never fires
-            setTimeout(() => {
-                frame.removeEventListener('load', onResp);
-                setLoading(false);
-                showSuccess();
-            }, 6000);
-            return; // don't reach the finally below
+            submitTimer = setTimeout(finishSubmit, 6000);
         } catch (err) {
-            showError('حدث خطأ في الاتصال. تأكد من اتصالك بالإنترنت وأعد المحاولة.');
-        } finally {
+            isSubmitting = false;
             setLoading(false);
+            showError('حدث خطأ في الاتصال. تأكد من اتصالك بالإنترنت وأعد المحاولة.');
         }
     });
 
@@ -1163,6 +1166,10 @@
     }
 
     window.resetForm = function() {
+        clearTimeout(submitTimer);
+        submitTimer = null;
+        isSubmitting = false;
+        setLoading(false);
         document.getElementById('suggestionForm').reset();
         document.getElementById('suggestionForm').style.display = 'block';
         document.getElementById('successState').classList.remove('visible');

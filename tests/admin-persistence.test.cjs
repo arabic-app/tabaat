@@ -515,10 +515,17 @@ for(const confirmed of [false,true]) test(`reject resolves the current row by co
  }finally{a.w.close();}
 });
 
-test('ambiguous duplicate suggestions are not rejected by row number',async()=>{
- const a=await app([fixture()],new IDBFactory(),{fetch:async url=>({ok:true,json:async()=>String(url).includes('sciences')?[]:[fixture()],text:async()=> 'type,book,edition\nbook,Target,Publisher\nbook,Target,Publisher'})});
+test('duplicate notes or suggestions can be deleted one by one via executeReject',async()=>{
+ let csv='type,book,edition\ngeneral,Note,Duplicate body\ngeneral,Note,Duplicate body';
+ const a=await app([fixture()],new IDBFactory(),{
+  fetch:async url=>({ok:true,json:async()=>String(url).includes('sciences')?[]:[fixture()],text:async()=>csv}),
+  onSubmit:request=>{if(request.action==='delete'&&Number(request.rowIndex)===3)csv='type,book,edition\ngeneral,Note,Duplicate body';}
+ });
  try {
-  a.w.__admin.openRejectModal(2,null);await a.w.__admin.executeReject();assert.deepEqual(a.deletions,[]);
+  a.w.__admin.openRejectModal(3,null);await a.w.__admin.executeReject();
+  assert.deepEqual(a.deletions,[3]);
+  assert.equal(a.w.__admin.state.suggestions.length,1);
+  assert.match(a.document.getElementById('toast').textContent,/تم حذف الاقتراح/);
  }finally{a.w.close();}
 });
 
@@ -930,4 +937,35 @@ test('admin html has no orphan closing button and repeated category/autocomplete
   a.document.body.click();
   assert.equal(a.document.querySelectorAll('#categoriesList .searchable-select-dropdown.open').length,0);
  }finally{a.w.close();}
+});
+
+test('feedback note submission keeps submit button disabled in flight and blocks duplicate submissions', async()=>{
+ const fbHtml=fs.readFileSync(path.join(root,'feedback.html'),'utf8');
+ const fbDom=new JSDOM(fbHtml,{url:'https://example.test/tabaat/feedback.html',runScripts:'outside-only',pretendToBeVisual:true});
+ const fw=fbDom.window;
+ try {
+  fw.fetch=async()=>({ok:true,json:async()=>[],text:async()=>''});
+  const submissions=[];
+  fw.HTMLFormElement.prototype.submit=function(){
+   submissions.push(Object.fromEntries([...this.querySelectorAll('input')].map(i=>[i.name,i.value])));
+  };
+  for(const name of ['js/arabic-search.js','js/catalogue-data.js']){
+   if(fs.existsSync(path.join(root,name))) fw.eval(fs.readFileSync(path.join(root,name),'utf8'));
+  }
+  for(const match of fbHtml.matchAll(/<script\b([^>]*)>([\s\S]*?)<\/script>/gi)){
+   if(match[2].trim()) fw.eval(match[2]);
+  }
+  await new Promise(r=>fw.setTimeout(r,30));
+  fw.switchType('general');
+  fw.document.getElementById('subjectInput').value='ملاحظة عامة';
+  fw.document.getElementById('contentInput').value='تفاصيل الملاحظة';
+  const form=fw.document.getElementById('suggestionForm');
+  form.dispatchEvent(new fw.Event('submit',{bubbles:true,cancelable:true}));
+  assert.equal(fw.document.getElementById('submitBtn').disabled,true);
+  form.dispatchEvent(new fw.Event('submit',{bubbles:true,cancelable:true}));
+  assert.equal(submissions.length,1);
+  fw.document.getElementById('formResponseFrame').dispatchEvent(new fw.Event('load'));
+  assert.equal(fw.document.getElementById('submitBtn').disabled,false);
+  assert.equal(fw.document.getElementById('successState').classList.contains('visible'),true);
+ }finally{fw.close();}
 });
