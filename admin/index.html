@@ -284,6 +284,19 @@
             background: var(--primary-container); color: var(--on-primary-container); font-weight: 700;
         }
         .sidebar-list li[aria-selected="true"]::before { background: var(--primary); }
+        .sidebar-list li[data-status="draft"]::before { background: var(--tertiary); }
+        .sidebar-list li[data-status="saved"]::before { background: #7b1fa2; }
+        .sidebar-list li[data-status="draft"]::after,
+        .sidebar-list li[data-status="saved"]::after {
+            margin-right: auto; font-size: 0.7rem; font-weight: 700;
+            padding: 1px 7px; border-radius: var(--radius-full); flex-shrink: 0;
+        }
+        .sidebar-list li[data-status="draft"]::after {
+            content: 'مسودة'; background: #fff3e0; color: var(--tertiary);
+        }
+        .sidebar-list li[data-status="saved"]::after {
+            content: 'جاهز'; background: #f3e5f5; color: #7b1fa2;
+        }
 
         /* ============================================================
            MAIN CONTENT
@@ -1129,6 +1142,8 @@
             .form-actions { justify-content: stretch; }
             .form-actions .btn-save,
             .form-actions .md-btn-error,
+            .form-actions #btnDiscardDraft,
+            .form-actions #btnRevertSaved,
             .form-actions #btnSyncForm { width: 100%; justify-content: center; margin-bottom: 8px; }
             .action-bar { flex-direction: column; gap: 10px; }
             .action-bar-row { display: flex; gap: 8px; width: 100%; justify-content: center; }
@@ -1258,7 +1273,6 @@
     </button>
     <button class="md-icon-btn" id="btn-new-book-top" aria-label="إضافة كتاب جديد">
         <span class="material-icons-round">add</span>
-    </button>
     </button>
 </header>
 
@@ -1438,6 +1452,12 @@
                     <button type="button" id="btnDeleteBook" class="md-btn md-btn-error" style="height:44px;display:none;">
                         <span class="material-icons-round">delete_forever</span> حذف الكتاب
                     </button>
+                    <button type="button" id="btnDiscardDraft" class="md-btn md-btn-secondary" style="height:44px;display:none;">
+                        <span class="material-icons-round">undo</span> إلغاء المسودة
+                    </button>
+                    <button type="button" id="btnRevertSaved" class="md-btn md-btn-secondary" style="height:44px;display:none;">
+                        <span class="material-icons-round">history</span> التراجع عن التعديل المحفوظ
+                    </button>
                     <div style="flex:1;"></div>
                     <button type="submit" class="btn-save" id="btnSave">
                         <span class="material-icons-round">save</span> حفظ التعديلات
@@ -1594,6 +1614,10 @@
             <input type="password" id="configToken" class="github-token-input"
                    placeholder="ghp_xxxxxxxxxxxx..."
                    aria-label="GitHub Token" autocomplete="off" required>
+            <label for="configStatsKey" style="margin-top:14px;">مفتاح الإحصائيات (اختياري)</label>
+            <input type="password" id="configStatsKey" class="github-token-input"
+                   placeholder="مفتاح الوصول للإحصائيات..."
+                   aria-label="مفتاح الإحصائيات" autocomplete="off">
             <div class="sync-hint">
                 <span class="material-icons-round" style="font-size:14px;line-height:1;margin-bottom:0;">info</span>
                 تُحفظ هذه البيانات محلياً في المتصفح فقط
@@ -1692,6 +1716,7 @@
     // ================================================================
     const state = {
         books: [],
+        remoteBooks: [],
         sciences: [],
         suggestions: [],
         currentSuggestionRow: null,
@@ -1709,8 +1734,8 @@
         configAutoTriggered: false,
         // Modifications non encore publiées (fusionnées sur l'état distant lors du
         // sync, pour ne jamais écraser les changements d'un autre éditeur — voir
-        // syncToGitHub()). upserts: Map<id, book> ; deletes: Set<id>.
-        pendingChanges: { upserts: new Map(), deletes: new Set() },
+        // syncToGitHub()). upserts: Map<id, book> ; deletes: Set<id> ; created: Set<id>.
+        pendingChanges: { upserts: new Map(), deletes: new Set(), created: new Set() },
         syncing: false,
     };
 
@@ -1789,6 +1814,8 @@
             duplicateWarning: $('#duplicateWarning'),
             btnEditDuplicate: $('#btnEditDuplicate'),
             btnDeleteBook: $('#btnDeleteBook'),
+            btnDiscardDraft: $('#btnDiscardDraft'),
+            btnRevertSaved: $('#btnRevertSaved'),
             deleteModal: $('#deleteModal'),
             rejectModal: $('#rejectModal'),
             suggestionsOverlay: $('#suggestionsModalOverlay'),
@@ -1808,6 +1835,7 @@
             configModal: $('#configModal'),
             configName: $('#configName'),
             configToken: $('#configToken'),
+            configStatsKey: $('#configStatsKey'),
             syncConfirmName: $('#syncConfirmName'),
             toast: $('#toast'),
             pwaBanner: $('#pwa-banner'),
@@ -2022,9 +2050,26 @@
             if (currentId && parseInt(currentId) === book.id) {
                 li.setAttribute('aria-selected', 'true');
             }
+            const hasDraft = Boolean(localEditing.drafts.get(String(book.id))?.dirty);
+            const hasPending = state.pendingChanges.upserts.has(book.id);
+            if (hasDraft) li.dataset.status = 'draft';
+            else if (hasPending) li.dataset.status = 'saved';
             fragment.appendChild(li);
         });
         list.appendChild(fragment);
+    }
+
+    function updateSidebarIndicators() {
+        if (!DOM.booksList) return;
+        for (const li of DOM.booksList.children) {
+            const id = Number(li.dataset.id);
+            if (!id) continue;
+            const hasDraft = Boolean(localEditing.drafts.get(String(id))?.dirty);
+            const hasPending = state.pendingChanges.upserts.has(id);
+            if (hasDraft) li.dataset.status = 'draft';
+            else if (hasPending) li.dataset.status = 'saved';
+            else delete li.dataset.status;
+        }
     }
 
     function toggleSidebar() {
@@ -2132,12 +2177,6 @@
         
         searchInput.addEventListener('input', (e) => {
             renderOptions(e.target.value);
-        });
-        
-        document.addEventListener('click', (e) => {
-            if (!selectContainer.contains(e.target)) {
-                dropdown.classList.remove('open');
-            }
         });
 
         dropdown.appendChild(searchBox);
@@ -2652,10 +2691,10 @@
             verifier: $('.ed-verifier', row).value,
             volumes: $('.ed-volumes', row).value,
             images: $$('.ed-image-url', row).map(input => input.value),
-            notes: sanitizeRichHtml($('.ed-notes', row).innerHTML),
+            notes: cleanHtml($('.ed-notes', row).innerHTML),
             corrections: $$('.correction-card', row).map(card => ({
                 title: $('.corr-title', card).value,
-                body: sanitizeRichHtml($('.corr-body', card).innerHTML),
+                body: cleanHtml($('.corr-body', card).innerHTML),
                 attachments: attachments(card)
             })),
             attachments: attachments($('.editions-attachments-list', row))
@@ -2664,12 +2703,123 @@
             id: DOM.bookId.value ? Number(DOM.bookId.value) : null,
             title: DOM.titleInput.value, author: DOM.authorInput.value,
             category: $$('#categoriesList .cat-input').map(input => input.value),
-            notes: sanitizeRichHtml(DOM.notesEditor.innerHTML),
+            notes: cleanHtml(DOM.notesEditor.innerHTML),
             best_editions: editions('bestEditions'), alt_editions: editions('altEditions'),
             links: $$('#links > .dynamic-row').map(row => ({
                 title: $('.link-title', row).value, url: $('.link-url', row).value
             }))
         };
+    }
+
+    function buildFormBaseline(book) {
+        const attachments = list => (list || []).map(a => ({
+            title: String(a.title || ''), url: String(a.url || '')
+        }));
+        const editions = list => (list || []).map(ed => {
+            let imgs = Array.isArray(ed.images) ? ed.images : (ed.image ? [ed.image] : []);
+            if (imgs.length === 0) imgs = [''];
+            return {
+                publisher: String(ed.publisher || ''),
+                verifier: String(ed.verifier || ''),
+                volumes: ed.volumes ? String(ed.volumes) : '',
+                images: imgs.map(img => String(img || '')),
+                notes: cleanHtml(ed.notes || ''),
+                corrections: (ed.corrections || []).map(c => ({
+                    title: String(c.title || ''),
+                    body: cleanHtml(c.body || ''),
+                    attachments: attachments(c.attachments)
+                })),
+                attachments: attachments(ed.attachments)
+            };
+        });
+        let cats = Array.isArray(book.category) ? book.category.map(c => String(c || '')) : (book.category ? [String(book.category)] : []);
+        if (cats.length === 0) cats = [''];
+        return {
+            id: book.id ? Number(book.id) : null,
+            title: String(book.title || ''),
+            author: String(book.author || ''),
+            category: cats,
+            notes: cleanHtml(book.notes || ''),
+            best_editions: editions(book.best_editions),
+            alt_editions: editions(book.alt_editions),
+            links: (book.links || []).map(l => ({
+                title: String(l.title || ''), url: String(l.url || '')
+            }))
+        };
+    }
+
+    function blankNewBookBaseline() {
+        return buildFormBaseline({
+            id: null, title: '', author: '', category: [''], notes: '',
+            best_editions: [{}], alt_editions: [], links: []
+        });
+    }
+
+    function cleanDraftBookRichFields(book) {
+        if (!book || typeof book !== 'object') return;
+        if (typeof book.notes === 'string') book.notes = cleanHtml(book.notes);
+        ['best_editions', 'alt_editions'].forEach(field => {
+            if (!Array.isArray(book[field])) return;
+            book[field].forEach(ed => {
+                if (typeof ed.notes === 'string') ed.notes = cleanHtml(ed.notes);
+                if (Array.isArray(ed.corrections)) {
+                    ed.corrections.forEach(c => {
+                        if (typeof c.body === 'string') c.body = cleanHtml(c.body);
+                    });
+                }
+            });
+        });
+    }
+
+    function cleanupLeavingEmptyNewDraft(nextKey) {
+        const key = localEditing.active;
+        if (!key || key === nextKey || !key.startsWith('new:')) return;
+        const leaving = localEditing.drafts.get(key);
+        if (leaving && !leaving.dirty && !leaving.suggestion) {
+            localEditing.drafts.delete(key);
+        }
+    }
+
+    function sameFormState(a, b) {
+        if (a === b) return true;
+        if (!a || !b || typeof a !== 'object' || typeof b !== 'object') return false;
+        if (Array.isArray(a) !== Array.isArray(b)) return false;
+        if (Array.isArray(a)) return a.length === b.length && a.every((item, i) => sameFormState(item, b[i]));
+        const keysA = Object.keys(a);
+        const keysB = Object.keys(b);
+        return keysA.length === keysB.length && keysA.every(k => Object.prototype.hasOwnProperty.call(b, k) && sameFormState(a[k], b[k]));
+    }
+
+    function reconcileDraftsWithCatalogue() {
+        if (!state.catalogueReady) return;
+        const isFormOpen = DOM.formContainer.getAttribute('aria-hidden') === 'false';
+        localEditing.drafts.forEach((draft, key) => {
+            if (!draft || !draft.book) { localEditing.drafts.delete(key); return; }
+            cleanDraftBookRichFields(draft.book);
+            if (key.startsWith('new:')) {
+                if (!draft.baseline) draft.baseline = blankNewBookBaseline();
+                draft.dirty = !sameFormState(draft.baseline, draft.book) || !!draft.suggestion;
+                if (!draft.dirty && (key !== localEditing.active || !isFormOpen)) {
+                    localEditing.drafts.delete(key);
+                    if (localEditing.active === key) localEditing.active = null;
+                }
+                return;
+            }
+            if (!draft.baseline && draft.book.id) {
+                const original = state.books.find(value => value.id === draft.book.id);
+                if (original) draft.baseline = buildFormBaseline(original);
+            }
+            if (draft.baseline) {
+                if ((!draft.book.category || draft.book.category.length === 0) &&
+                    Array.isArray(draft.baseline.category) && draft.baseline.category.length === 1 && draft.baseline.category[0] === '') {
+                    draft.book.category = [''];
+                }
+                draft.dirty = !sameFormState(draft.baseline, draft.book);
+            }
+            if (!draft.dirty && (key !== localEditing.active || !state.pendingChanges.upserts.has(draft.book.id))) {
+                localEditing.drafts.delete(key);
+            }
+        });
     }
 
     function updateLocalStatus() {
@@ -2681,19 +2831,28 @@
         status.dataset.state = localEditing.locked ? 'locked' : localEditing.error ? 'error' : localEditing.revision > localEditing.durableRevision ? 'saving' : dirty ? 'draft' : pending ? 'saved' : 'published';
         $('#localEditingBar').dataset.state = status.dataset.state;
         $('#localSaveIcon').textContent = { locked: 'lock', error: 'error_outline', saving: 'sync', draft: 'edit_note', saved: 'cloud_upload', published: 'check_circle' }[status.dataset.state];
+        const statusParts = [];
+        if (draftCount > 0) statusParts.push(`${draftCount} مسودة محفوظة على هذا الجهاز`);
+        if (pending > 0) statusParts.push(`${pending} تغيير محفوظ بانتظار النشر`);
         status.textContent = localEditing.locked
             ? localEditing.locked === 'busy' ? 'التحرير مفتوح في تبويب آخر — أغلقه ثم أعد تحميل هذه الصفحة' : 'تعذّر تأمين الحفظ المحلي — افتح الصفحة عبر HTTPS في متصفح حديث'
             : localEditing.error
             ? 'تعذّر الحفظ على هذا الجهاز — احتفظ بالصفحة مفتوحة وأعد المحاولة'
             : localEditing.revision > localEditing.durableRevision
                 ? 'جارٍ الحفظ على هذا الجهاز…'
-                : dirty || pending
-                    ? `البيانات: ${draftCount} مسودة محفوظة على هذا الجهاز؛ ${pending} تغيير محفوظ بانتظار النشر`
+                : statusParts.length
+                    ? 'البيانات: ' + statusParts.join('؛ ')
                     : 'البيانات: لا توجد تغييرات محلية بانتظار النشر';
+        const isFormOpen = Boolean(localEditing.active && DOM.formContainer.getAttribute('aria-hidden') !== 'true');
+        const currentBookId = Number(DOM.bookId.value);
         const bookStatus = $('#bookSyncStatus');
-        bookStatus.hidden = !localEditing.active || DOM.formContainer.getAttribute('aria-hidden') === 'true';
-        bookStatus.dataset.state = draft?.dirty ? 'draft' : state.pendingChanges.upserts.has(Number(DOM.bookId.value)) ? 'saved' : 'published';
+        bookStatus.hidden = !isFormOpen;
+        bookStatus.dataset.state = draft?.dirty ? 'draft' : (currentBookId && state.pendingChanges.upserts.has(currentBookId)) ? 'saved' : 'published';
         bookStatus.textContent = 'الكتاب المفتوح: ' + ({ draft: 'مسودة لم تُجهّز للنشر', saved: 'بانتظار النشر', published: 'لا توجد تغييرات محلية' }[bookStatus.dataset.state]);
+        if (DOM.btnDiscardDraft) DOM.btnDiscardDraft.style.display = (isFormOpen && draft?.dirty) ? 'inline-flex' : 'none';
+        const isPendingUpsert = Boolean(isFormOpen && currentBookId && state.pendingChanges.upserts.has(currentBookId));
+        if (DOM.btnRevertSaved) DOM.btnRevertSaved.style.display = isPendingUpsert ? 'inline-flex' : 'none';
+        if (DOM.btnSyncForm) DOM.btnSyncForm.style.display = isPendingUpsert ? 'inline-flex' : 'none';
         $('#retryLocalSave').hidden = !localEditing.error;
         const select = $('#localDrafts');
         select.replaceChildren(new Option('المسودات المحفوظة', ''));
@@ -2701,6 +2860,7 @@
             if (value.dirty) select.add(new Option(value.book.title || 'كتاب جديد بدون عنوان', key));
         });
         select.hidden = ![...localEditing.drafts.values()].some(value => value.dirty);
+        updateSidebarIndicators();
     }
 
     function persistLocalEditing() {
@@ -2710,7 +2870,8 @@
         const snapshot = {
             version: 1, updatedAt: Date.now(), active: localEditing.active,
             drafts: [...localEditing.drafts], suggestions: [...localEditing.suggestions],
-            upserts: [...state.pendingChanges.upserts], deletes: [...state.pendingChanges.deletes]
+            upserts: [...state.pendingChanges.upserts], deletes: [...state.pendingChanges.deletes],
+            created: [...state.pendingChanges.created]
         };
         updateLocalStatus();
         return TabaatDraftStore.save(snapshot).then(() => {
@@ -2725,23 +2886,24 @@
 
     function captureDraft() {
         if (!localEditing.ready || !localEditing.active || DOM.formContainer.getAttribute('aria-hidden') === 'true') return;
+        const key = localEditing.active;
         const book = readDraftForm();
-        const previous = localEditing.drafts.get(localEditing.active);
+        const previous = localEditing.drafts.get(key);
         const suggestion = state.currentSuggestionRow;
-        if (previous && JSON.stringify(previous.book) === JSON.stringify(book) && JSON.stringify(previous.suggestion) === JSON.stringify(suggestion)) return;
+        if (previous && sameFormState(previous.book, book) && sameFormState(previous.suggestion, suggestion)) return;
         const baseline = previous?.baseline;
-        const dirty = !baseline || JSON.stringify(baseline) !== JSON.stringify(book);
+        const dirty = !baseline || !sameFormState(baseline, book) || (key.startsWith('new:') && !!suggestion);
         if (state.catalogueReady && previous?.dirty && !dirty && book.id && !state.pendingChanges.upserts.has(book.id)) {
             // The draft is fully undone. Its old baseline may predate a remote update.
             const currentBook = state.books.find(value => value.id === book.id);
             if (currentBook) {
                 renderBookFields(currentBook);
                 const freshForm = readDraftForm();
-                localEditing.drafts.set(localEditing.active, { book: freshForm, baseline: freshForm, suggestion, dirty: false });
+                localEditing.drafts.set(key, { book: freshForm, baseline: freshForm, suggestion, dirty: false });
                 DOM.formTitle.textContent = 'تعديل: ' + currentBook.title;
                 localEditing.observer?.takeRecords();
             } else {
-                localEditing.drafts.delete(localEditing.active);
+                localEditing.drafts.delete(key);
                 localEditing.active = null;
                 state.currentSuggestionRow = null;
                 DOM.formContainer.setAttribute('aria-hidden', 'true');
@@ -2749,7 +2911,7 @@
             persistLocalEditing();
             return;
         }
-        localEditing.drafts.set(localEditing.active, { book, baseline, suggestion, dirty });
+        localEditing.drafts.set(key, { book, baseline, suggestion, dirty });
         if (book.id) DOM.formTitle.textContent = (dirty ? 'مسودة: ' : 'تعديل: ') + (book.title || 'كتاب جديد');
         persistLocalEditing();
     }
@@ -2757,13 +2919,12 @@
     function finishFormRendering(key, suggestion = null) {
         localEditing.active = key;
         state.currentSuggestionRow = suggestion;
-        if (!key.startsWith('new:') && !localEditing.drafts.has(key)) {
+        if (!localEditing.drafts.has(key)) {
             // Compare rendered fields: optional defaults and rich HTML are normalized by the form.
             const book = readDraftForm();
             localEditing.drafts.set(key, { book, baseline: book, suggestion, dirty: false });
         }
         localEditing.observer?.takeRecords();
-        DOM.btnSyncForm.style.display = state.pendingChanges.upserts.has(Number(DOM.bookId.value)) ? 'inline-flex' : 'none';
         updateLocalStatus();
     }
 
@@ -2771,12 +2932,14 @@
         const draft = localEditing.drafts.get(key);
         if (!draft) return;
         const book = draft.book;
+        cleanDraftBookRichFields(book);
         // Older snapshots did not record a baseline and may contain false drafts.
-        if (!draft.baseline && book.id) {
-            const original = state.books.find(value => value.id === book.id);
-            if (original) {
-                renderBookFields(original);
-                draft.baseline = readDraftForm();
+        if (!draft.baseline) {
+            if (key.startsWith('new:')) {
+                draft.baseline = blankNewBookBaseline();
+            } else if (book.id) {
+                const original = state.books.find(value => value.id === book.id);
+                if (original) draft.baseline = buildFormBaseline(original);
             }
         }
         DOM.formContainer.setAttribute('aria-hidden', 'false');
@@ -2785,7 +2948,9 @@
         DOM.authorInput.value = book.author || '';
         DOM.notesEditor.innerHTML = sanitizeRichHtml(book.notes);
         DOM.categoriesList.innerHTML = '';
-        (book.category || []).forEach(category => addCategoryInput(category));
+        let cats = Array.isArray(book.category) ? book.category : (book.category ? [book.category] : []);
+        if (cats.length === 0) cats = [''];
+        cats.forEach(category => addCategoryInput(category));
         ['bestEditions', 'altEditions'].forEach((cid, i) => {
             document.getElementById(cid).innerHTML = '';
             (book[i ? 'alt_editions' : 'best_editions'] || []).forEach(ed => addEditionRow(cid, ed.publisher, ed.images, ed.notes, ed.corrections, ed.verifier, ed.volumes, ed.attachments));
@@ -2794,8 +2959,11 @@
         (book.links || []).forEach(link => addLinkRow('links', link.title, link.url));
         DOM.duplicateWarning.style.display = 'none';
         DOM.btnDeleteBook.style.display = book.id ? 'inline-flex' : 'none';
-        if (draft.baseline) draft.dirty = JSON.stringify(draft.baseline) !== JSON.stringify(readDraftForm());
-        DOM.formTitle.textContent = (draft.dirty ? 'مسودة: ' : 'تعديل: ') + (book.title || 'كتاب جديد');
+        DOM.formIcon.textContent = book.id ? 'edit' : 'add_circle';
+        if (draft.baseline) draft.dirty = !sameFormState(draft.baseline, readDraftForm()) || (key.startsWith('new:') && !!draft.suggestion);
+        DOM.formTitle.textContent = book.id
+            ? (draft.dirty ? 'مسودة: ' : 'تعديل: ') + (book.title || 'كتاب جديد')
+            : (draft.dirty ? 'مسودة: ' + (book.title || 'كتاب جديد') : 'إضافة كتاب جديد');
         finishFormRendering(key, draft.suggestion);
         initSortable();
     }
@@ -2806,23 +2974,26 @@
         const suggestions = new Map(snapshot.suggestions);
         const upserts = new Map(snapshot.upserts);
         const deletes = new Set(snapshot.deletes);
+        const created = new Set(Array.isArray(snapshot.created) ? snapshot.created : []);
         if (keepCurrent) {
             localEditing.drafts.forEach((draft, key) => drafts.set(key, draft));
             localEditing.suggestions.forEach((row, id) => suggestions.set(id, row));
             state.pendingChanges.upserts.forEach((book, id) => { upserts.set(id, book); deletes.delete(id); });
-            state.pendingChanges.deletes.forEach(id => { deletes.add(id); upserts.delete(id); });
+            state.pendingChanges.deletes.forEach(id => { deletes.add(id); upserts.delete(id); created.delete(id); });
+            state.pendingChanges.created.forEach(id => { if (!deletes.has(id)) created.add(id); });
         }
-        deletes.forEach(id => { drafts.delete(String(id)); suggestions.delete(id); });
-        // A clean form is a cache, not a local edit: reopen it from the fresh catalogue.
-        drafts.forEach((draft, key) => {
-            if (state.catalogueReady && draft.book.id && draft.dirty === false && !upserts.has(draft.book.id)) drafts.delete(key);
-        });
+        deletes.forEach(id => { drafts.delete(String(id)); suggestions.delete(id); created.delete(id); });
         localEditing.drafts = drafts;
         localEditing.suggestions = suggestions;
         state.pendingChanges.upserts = upserts;
         state.pendingChanges.deletes = deletes;
+        state.pendingChanges.created = created;
         state.books = mergeChangesOnto(state.books);
         if (!keepCurrent) localEditing.active = snapshot.active;
+        if (state.catalogueReady) reconcileDraftsWithCatalogue();
+        if (!keepCurrent && localEditing.active && localEditing.active.startsWith('new:') && !localEditing.drafts.has(localEditing.active)) {
+            localEditing.active = null;
+        }
     }
 
     async function retryLocalSaving() {
@@ -2869,6 +3040,7 @@
             const key = event.target.value;
             if (!key) return;
             captureDraft();
+            cleanupLeavingEmptyNewDraft(key);
             restoreDraft(key);
             persistLocalEditing();
         });
@@ -2881,6 +3053,8 @@
         if (!requireCatalogue()) return;
         if (!localEditing.ready) return;
         captureDraft();
+        const nextKey = 'new:' + crypto.randomUUID();
+        cleanupLeavingEmptyNewDraft(nextKey);
         DOM.formContainer.setAttribute('aria-hidden', 'false');
         DOM.formTitle.textContent = 'إضافة كتاب جديد';
         DOM.formIcon.textContent = 'add_circle';
@@ -2903,8 +3077,8 @@
         initSortable();
         window.scrollTo({ top: 0, behavior: 'smooth' });
         closeSidebar();
-        finishFormRendering('new:' + crypto.randomUUID());
-        captureDraft();
+        finishFormRendering(nextKey);
+        persistLocalEditing();
     }
 
     function renderBookFields(book) {
@@ -2936,12 +3110,16 @@
         if (!localEditing.ready) return;
         if (localEditing.readFailed) { showToast('⚠️ أعد محاولة قراءة الحفظ المحلي قبل تعديل كتاب موجود.'); return; }
         captureDraft();
+        cleanupLeavingEmptyNewDraft(String(id));
         if (localEditing.drafts.has(String(id))) { restoreDraft(String(id)); persistLocalEditing(); return; }
         $$('.sidebar-list li').forEach(li => li.removeAttribute('aria-selected'));
         if (liElement) liElement.setAttribute('aria-selected', 'true');
 
         const book = state.books.find(b => b.id === id);
-        if (!book) return;
+        if (!book) {
+            if (localEditing.active === String(id)) localEditing.active = null;
+            return;
+        }
 
         DOM.formContainer.setAttribute('aria-hidden', 'false');
         DOM.formTitle.textContent = 'تعديل: ' + book.title;
@@ -3007,7 +3185,7 @@
         const newBook = normalizeBookForm(readDraftForm());
         const currentDraft = localEditing.drafts.get(localEditing.active);
         const existing = state.books.find(book => book.id === id);
-        if (existing && currentDraft?.baseline && JSON.stringify(newBook) === JSON.stringify(normalizeBookForm(currentDraft.baseline))) {
+        if (existing && currentDraft?.baseline && sameFormState(newBook, normalizeBookForm(currentDraft.baseline))) {
             // Discard only formatting differences, preserving any queued publication.
             renderBookFields(existing);
             const cleanForm = readDraftForm();
@@ -3019,12 +3197,35 @@
             return;
         }
         newBook.id = id;
+        const remoteBook = state.remoteBooks.find(book => book.id === id);
+        if (remoteBook && sameFormState(newBook, normalizeBookForm(buildFormBaseline(remoteBook)))) {
+            const idx = state.books.findIndex(b => b.id === id);
+            if (idx >= 0) state.books[idx] = remoteBook;
+            state.pendingChanges.upserts.delete(id);
+            state.pendingChanges.deletes.delete(id);
+            state.pendingChanges.created.delete(id);
+            localEditing.suggestions.delete(id);
+            localEditing.drafts.delete(localEditing.active);
+            renderBookFields(remoteBook);
+            DOM.btnDeleteBook.style.display = 'inline-flex';
+            localEditing.active = String(id);
+            const cleanForm = readDraftForm();
+            localEditing.drafts.set(String(id), { book: cleanForm, baseline: cleanForm, suggestion: null, dirty: false });
+            state.currentSuggestionRow = null;
+            DOM.formTitle.textContent = 'تعديل: ' + remoteBook.title;
+            localEditing.observer?.takeRecords();
+            persistLocalEditing();
+            renderSidebar(DOM.searchInput.value);
+            showToast('↩️ التعديلات مطابقة للنسخة المنشورة؛ تمت استعادة الحالة المنشورة.');
+            return;
+        }
         newBook.date = getLocalDate();
 
         const idx = state.books.findIndex(b => b.id === id);
         if (idx >= 0) state.books[idx] = newBook; else state.books.push(newBook);
 
         // Suivi pour la fusion au moment du sync (voir syncToGitHub).
+        if (!remoteBook) state.pendingChanges.created.add(id);
         state.pendingChanges.upserts.set(id, newBook);
         state.pendingChanges.deletes.delete(id);
 
@@ -3045,6 +3246,77 @@
         showToast('💾 تم تجهيز التعديلات. تحقق من حالة الحفظ المحلي ثم انشرها لتحديث الموقع.');
     }
 
+    function discardCurrentDraft() {
+        if (!localEditing.ready || localEditing.readFailed || !localEditing.active) return;
+        const key = localEditing.active;
+        const draft = localEditing.drafts.get(key);
+        if (!draft?.dirty) return;
+        localEditing.drafts.delete(key);
+        if (key.startsWith('new:')) {
+            localEditing.active = null;
+            state.currentSuggestionRow = null;
+            DOM.formContainer.setAttribute('aria-hidden', 'true');
+            renderSidebar(DOM.searchInput.value);
+            persistLocalEditing();
+            showToast('🗑️ تم إلغاء المسودة.');
+            return;
+        }
+        const id = Number(DOM.bookId.value || key);
+        const cleanBook = state.books.find(b => b.id === id);
+        if (cleanBook) {
+            renderBookFields(cleanBook);
+            DOM.formTitle.textContent = 'تعديل: ' + cleanBook.title;
+            DOM.formIcon.textContent = 'edit';
+            DOM.duplicateWarning.style.display = 'none';
+            DOM.btnDeleteBook.style.display = 'inline-flex';
+            initSortable();
+            finishFormRendering(String(id), localEditing.suggestions.get(id) || null);
+            renderSidebar(DOM.searchInput.value);
+            persistLocalEditing();
+            showToast('↩️ تم إلغاء المسودة واستعادة النسخة المحفوظة.');
+        } else {
+            localEditing.active = null;
+            state.currentSuggestionRow = null;
+            DOM.formContainer.setAttribute('aria-hidden', 'true');
+            renderSidebar(DOM.searchInput.value);
+            persistLocalEditing();
+            showToast('🗑️ تم إلغاء المسودة.');
+        }
+    }
+
+    function revertSavedBook() {
+        if (!requireCatalogue() || !localEditing.ready || localEditing.readFailed) return;
+        const id = Number(DOM.bookId.value);
+        if (!id || !state.pendingChanges.upserts.has(id)) return;
+        state.pendingChanges.upserts.delete(id);
+        state.pendingChanges.deletes.delete(id);
+        state.pendingChanges.created.delete(id);
+        localEditing.drafts.delete(String(id));
+        localEditing.suggestions.delete(id);
+        const remoteBook = state.remoteBooks.find(b => b.id === id);
+        if (remoteBook) {
+            const idx = state.books.findIndex(b => b.id === id);
+            if (idx >= 0) state.books[idx] = remoteBook;
+            else state.books.push(remoteBook);
+            renderBookFields(remoteBook);
+            DOM.formTitle.textContent = 'تعديل: ' + remoteBook.title;
+            DOM.formIcon.textContent = 'edit';
+            DOM.duplicateWarning.style.display = 'none';
+            DOM.btnDeleteBook.style.display = 'inline-flex';
+            initSortable();
+            finishFormRendering(String(id), null);
+        } else {
+            state.books = state.books.filter(b => b.id !== id);
+            localEditing.active = null;
+            state.currentSuggestionRow = null;
+            DOM.formContainer.setAttribute('aria-hidden', 'true');
+            updateLocalStatus();
+        }
+        renderSidebar(DOM.searchInput.value);
+        persistLocalEditing();
+        showToast('↩️ تم التراجع عن التعديل المحفوظ.');
+    }
+
     function openDeleteModal() { DOM.deleteModal.setAttribute('aria-hidden', 'false'); }
     function closeDeleteModal() { if (document.activeElement) document.activeElement.blur(); DOM.deleteModal.setAttribute('aria-hidden', 'true'); }
 
@@ -3058,6 +3330,7 @@
         // Suivi pour la fusion au moment du sync (voir syncToGitHub).
         state.pendingChanges.deletes.add(id);
         state.pendingChanges.upserts.delete(id);
+        state.pendingChanges.created.delete(id);
         localEditing.drafts.delete(String(id));
         localEditing.suggestions.delete(id);
         localEditing.active = null;
@@ -3085,6 +3358,7 @@
     function openConfigModal(autoTriggered = false) {
         DOM.configName.value = getConfigName();
         DOM.configToken.value = getConfigToken();
+        if (DOM.configStatsKey) DOM.configStatsKey.value = getStatsKey();
         state.configAutoTriggered = autoTriggered;
         DOM.configModal.setAttribute('aria-hidden', 'false');
     }
@@ -3099,6 +3373,7 @@
         e.preventDefault();
         const name = DOM.configName.value.trim();
         const token = DOM.configToken.value.trim();
+        const statsKey = DOM.configStatsKey ? DOM.configStatsKey.value.trim() : '';
         if (!name || !token) {
             if (!name) DOM.configName.focus();
             else DOM.configToken.focus();
@@ -3106,6 +3381,8 @@
         }
         localStorage.setItem('sync_name', name);
         localStorage.setItem('github_token_secured', token);
+        if (statsKey) localStorage.setItem('stats_key', statsKey);
+        else localStorage.removeItem('stats_key');
         closeConfigModal();
         showToast('✅ تم حفظ الإعدادات');
         if (state.configAutoTriggered) {
@@ -3185,7 +3462,12 @@
         closeSyncModal();
         showLoader();
         state.syncing = true;
-        const published = { upserts: new Map(state.pendingChanges.upserts), deletes: new Set(state.pendingChanges.deletes) };
+        const published = {
+            upserts: new Map(state.pendingChanges.upserts),
+            deletes: new Set(state.pendingChanges.deletes),
+            created: new Set(state.pendingChanges.created)
+        };
+        const knownRemoteIds = new Set(state.remoteBooks.map(b => b.id));
         const publishedSuggestions = new Map(localEditing.suggestions);
 
         const path = 'books.json';
@@ -3204,8 +3486,22 @@
                 if (!getRes.ok) throw new Error('تعذّر جلب النسخة الحالية من GitHub.');
                 const getData = await getRes.json();
                 const remoteBooks = JSON.parse(base64ToUtf8(getData.content));
+                const remoteIds = new Set(remoteBooks.map(b => b.id));
+                const directChanges = { upserts: new Map(), deletes: published.deletes };
+                const collidingCreates = [];
+                published.upserts.forEach((book, id) => {
+                    const isNewCreation = published.created.has(id) || !knownRemoteIds.has(id);
+                    if (isNewCreation && remoteIds.has(id)) collidingCreates.push([id, book]);
+                    else directChanges.upserts.set(id, book);
+                });
 
-                const merged = mergeChangesOnto(remoteBooks, published);
+                const merged = mergeChangesOnto(remoteBooks, directChanges);
+                const idMap = new Map();
+                for (const [oldId, book] of collidingCreates) {
+                    const newId = Math.max(0, ...remoteBooks.map(b => b.id), ...merged.map(b => b.id)) + 1;
+                    merged.push({ ...book, id: newId });
+                    idMap.set(oldId, newId);
+                }
                 const content = JSON.stringify(merged, null, 2);
 
                 const putRes = await fetch(apiUrl, {
@@ -3216,23 +3512,48 @@
 
                 if (putRes.ok) {
                     captureDraft();
+                    state.remoteBooks = merged;
                     // Clear only the exact mutations included in this request.
-                    published.upserts.forEach((book, id) => {
-                        if (state.pendingChanges.upserts.get(id) === book) {
-                            state.pendingChanges.upserts.delete(id);
+                    published.upserts.forEach((book, oldId) => {
+                        const newId = idMap.get(oldId) || oldId;
+                        if (state.pendingChanges.upserts.get(oldId) === book) {
+                            state.pendingChanges.upserts.delete(oldId);
+                            state.pendingChanges.created.delete(oldId);
+                        } else if (newId !== oldId && state.pendingChanges.upserts.has(oldId)) {
+                            const inFlight = state.pendingChanges.upserts.get(oldId);
+                            state.pendingChanges.upserts.delete(oldId);
+                            state.pendingChanges.created.delete(oldId);
+                            state.pendingChanges.upserts.set(newId, { ...inFlight, id: newId });
+                        } else if (state.pendingChanges.upserts.get(oldId) !== book) {
+                            state.pendingChanges.created.delete(oldId);
+                        }
+                        if (newId !== oldId) {
+                            const draft = localEditing.drafts.get(String(oldId));
+                            if (draft) {
+                                localEditing.drafts.delete(String(oldId));
+                                draft.book = { ...draft.book, id: newId };
+                                if (draft.baseline) draft.baseline = { ...draft.baseline, id: newId };
+                                localEditing.drafts.set(String(newId), draft);
+                            }
+                            if (localEditing.active === String(oldId)) {
+                                localEditing.active = String(newId);
+                                DOM.bookId.value = String(newId);
+                            }
                         }
                     });
                     published.deletes.forEach(id => {
                         if (!state.pendingChanges.upserts.has(id)) state.pendingChanges.deletes.delete(id);
                     });
                     state.books = mergeChangesOnto(merged);
-                    published.upserts.forEach((book, id) => {
-                        const suggestion = publishedSuggestions.get(id);
+                    published.upserts.forEach((book, oldId) => {
+                        const newId = idMap.get(oldId) || oldId;
+                        const suggestion = publishedSuggestions.get(oldId);
                         if (!suggestion) return;
-                        localEditing.suggestions.set(id, { ...suggestion, _published: true });
-                        const draft = localEditing.drafts.get(String(id));
+                        if (newId !== oldId) localEditing.suggestions.delete(oldId);
+                        localEditing.suggestions.set(newId, { ...suggestion, _published: true });
+                        const draft = localEditing.drafts.get(String(newId));
                         if (draft) draft.suggestion = null;
-                        if (Number(DOM.bookId.value) === id) state.currentSuggestionRow = null;
+                        if (Number(DOM.bookId.value) === newId) state.currentSuggestionRow = null;
                     });
                     refreshCleanForms();
                     await persistLocalEditing();
@@ -3393,6 +3714,14 @@
         }
     }
 
+    function parseSuggestionEditions(edition = '', verifier = '') {
+        const rawEditions = edition.split('##').map(s => s.trim());
+        const rawVerifiers = verifier.split('##').map(s => s.trim());
+        return rawEditions
+            .map((ed, i) => ({ edition: ed, verifier: rawVerifiers[i] || '' }))
+            .filter(pair => pair.edition);
+    }
+
     function renderSuggestions() {
         const container = DOM.suggestionsContainer;
         const bookRows = state.suggestions.filter(isBookRow);
@@ -3414,15 +3743,14 @@
             const source = row['مصدر التفضيل'] || row['source'] || '';
             const rowIdx = row._rowIndex;
 
-            const editions = edition.split('##').map(s => s.trim()).filter(Boolean);
-            const verifiers = verifier.split('##').map(s => s.trim()).filter(Boolean);
+            const pairs = parseSuggestionEditions(edition, verifier);
 
             let editionsHTML = '';
-            if (editions.length) {
-                editionsHTML = editions.map((ed, i) => {
-                    const label = editions.length > 1 ? `<strong style="color:var(--primary)">طبعة ${i + 1}:</strong> ` : '<strong>الطبعة:</strong> ';
-                    const ver = verifiers[i] ? ` — <span style="color:var(--outline)">المحقق: ${escapeHtml(verifiers[i])}</span>` : '';
-                    return `<div style="margin-bottom:3px">${label}${escapeHtml(ed)}${ver}</div>`;
+            if (pairs.length) {
+                editionsHTML = pairs.map((pair, i) => {
+                    const label = pairs.length > 1 ? `<strong style="color:var(--primary)">طبعة ${i + 1}:</strong> ` : '<strong>الطبعة:</strong> ';
+                    const ver = pair.verifier ? ` — <span style="color:var(--outline)">المحقق: ${escapeHtml(pair.verifier)}</span>` : '';
+                    return `<div style="margin-bottom:3px">${label}${escapeHtml(pair.edition)}${ver}</div>`;
                 }).join('');
             }
 
@@ -3499,24 +3827,42 @@
         const row = state.suggestions[arrIdx];
         if (!row) return;
 
+        const fp = suggestionFingerprint(row);
+        const existingEntry = [...localEditing.drafts.entries()].find(([key, draft]) =>
+            key.startsWith('new:') && draft?.suggestion && suggestionFingerprint(draft.suggestion) === fp
+        );
+        if (existingEntry) {
+            const [existingKey, existingDraft] = existingEntry;
+            if (existingKey !== localEditing.active) {
+                captureDraft();
+                cleanupLeavingEmptyNewDraft(existingKey);
+                restoreDraft(existingKey);
+            }
+            existingDraft.suggestion = { ...row };
+            state.currentSuggestionRow = { ...row };
+            persistLocalEditing();
+            closeSuggestionsModal();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            showToast('✅ تم تحميل الاقتراح في النموذج — راجع البيانات قبل الحفظ');
+            return;
+        }
+
         const book = row['الكتاب'] || row['book'] || '';
         const edition = row['أفضل طبعة'] || row['edition'] || '';
         const verifier = row['المحقق'] || row['verifier'] || '';
         const source = row['مصدر التفضيل'] || row['source'] || '';
-        const rowIndex = row._rowIndex;
 
-        const editions = edition.split('##').map(s => s.trim()).filter(Boolean);
-        const verifiers = verifier.split('##').map(s => s.trim()).filter(Boolean);
+        const pairs = parseSuggestionEditions(edition, verifier);
 
         createNewBook();
         DOM.titleInput.value = book;
         DOM.authorInput.value = '';
 
         DOM.bestEditions.innerHTML = '';
-        if (editions.length > 0) {
-            editions.forEach((ed, i) => {
+        if (pairs.length > 0) {
+            pairs.forEach((pair, i) => {
                 const notes = (i === 0 && source) ? source : '';
-                addEditionRow('bestEditions', ed, [], notes, [], verifiers[i] || '', '', []);
+                addEditionRow('bestEditions', pair.edition, [], notes, [], pair.verifier, '', []);
             });
         } else {
             addEditionRow('bestEditions');
@@ -3985,6 +4331,10 @@
         // Form save
         DOM.bookForm.addEventListener('submit', saveBook);
 
+        // Discard draft / revert saved pending edit
+        if (DOM.btnDiscardDraft) DOM.btnDiscardDraft.addEventListener('click', discardCurrentDraft);
+        if (DOM.btnRevertSaved) DOM.btnRevertSaved.addEventListener('click', revertSavedBook);
+
         // Delete book
         DOM.btnDeleteBook.addEventListener('click', openDeleteModal);
         $('#btn-cancel-delete').addEventListener('click', closeDeleteModal);
@@ -4073,6 +4423,26 @@
                 e.preventDefault();
                 handleToolbarCommand(e);
             }
+        });
+
+        // Close open category dropdowns and autocomplete popups with one delegated listener
+        document.addEventListener('click', e => {
+            document.querySelectorAll('.searchable-select-dropdown.open').forEach(dropdown => {
+                const selectContainer = dropdown.closest('.searchable-select');
+                if (selectContainer && !selectContainer.contains(e.target)) {
+                    dropdown.classList.remove('open');
+                }
+            });
+            document.querySelectorAll('.autocomplete-suggestions').forEach(container => {
+                if (container.style.display === 'block') {
+                    const wrap = container.parentNode;
+                    const input = wrap ? wrap.querySelector('input') : null;
+                    if (e.target !== input && !container.contains(e.target)) {
+                        if (container._closeAutocomplete) container._closeAutocomplete();
+                        else { container.style.display = 'none'; container.innerHTML = ''; }
+                    }
+                }
+            });
         });
 
         // Keyboard: Escape to close modals
@@ -4188,6 +4558,7 @@
             if (!booksRes?.ok) throw new Error('Catalogue unavailable');
             const books = await booksRes.json();
             if (!TabaatData.valid('books.json', books)) throw new Error('Invalid catalogue');
+            state.remoteBooks = books;
             state.books = mergeChangesOnto(books);
             state.catalogueReady = true;
             // A failure in optional autocomplete data must not discard the catalogue.
@@ -4206,6 +4577,7 @@
             }
             if (state.catalogueReady) {
                 captureDraft();
+                reconcileDraftsWithCatalogue();
                 refreshCleanForms();
                 await persistLocalEditing();
             }
@@ -4269,20 +4641,25 @@
             input.parentNode.appendChild(container);
         }
 
-        let activeIndex = -1;
+        const stateObj = input._autocompleteState || { dataList, onSelect, activeIndex: -1 };
+        stateObj.dataList = dataList;
+        stateObj.onSelect = onSelect;
+        if (input._autocompleteState) return;
+        input._autocompleteState = stateObj;
 
         function closeAll() {
             container.style.display = 'none';
             container.innerHTML = '';
-            activeIndex = -1;
+            stateObj.activeIndex = -1;
         }
+        container._closeAutocomplete = closeAll;
 
         function showSuggestions(val) {
             closeAll();
             if (!val) return;
 
             const normalizedVal = normalizeArabic(val);
-            const matches = dataList.filter(item => normalizeArabic(item).includes(normalizedVal));
+            const matches = stateObj.dataList.filter(item => normalizeArabic(item).includes(normalizedVal));
 
             if (matches.length === 0) return;
 
@@ -4294,7 +4671,7 @@
                 div.addEventListener('click', () => {
                     input.value = match;
                     closeAll();
-                    onSelect(match);
+                    stateObj.onSelect(match);
                 });
                 container.appendChild(div);
             });
@@ -4314,16 +4691,16 @@
 
             if (e.key === 'ArrowDown') {
                 e.preventDefault();
-                activeIndex = (activeIndex + 1) % items.length;
+                stateObj.activeIndex = (stateObj.activeIndex + 1) % items.length;
                 setActive(items);
             } else if (e.key === 'ArrowUp') {
                 e.preventDefault();
-                activeIndex = (activeIndex - 1 + items.length) % items.length;
+                stateObj.activeIndex = (stateObj.activeIndex - 1 + items.length) % items.length;
                 setActive(items);
             } else if (e.key === 'Enter') {
-                if (activeIndex > -1) {
+                if (stateObj.activeIndex > -1) {
                     e.preventDefault();
-                    items[activeIndex].click();
+                    items[stateObj.activeIndex].click();
                 }
             } else if (e.key === 'Escape') {
                 closeAll();
@@ -4332,17 +4709,11 @@
 
         function setActive(items) {
             items.forEach(item => item.classList.remove('active'));
-            if (activeIndex > -1 && activeIndex < items.length) {
-                items[activeIndex].classList.add('active');
-                items[activeIndex].scrollIntoView({ block: 'nearest' });
+            if (stateObj.activeIndex > -1 && stateObj.activeIndex < items.length) {
+                items[stateObj.activeIndex].classList.add('active');
+                items[stateObj.activeIndex].scrollIntoView({ block: 'nearest' });
             }
         }
-
-        document.addEventListener('click', (e) => {
-            if (e.target !== input && !container.contains(e.target)) {
-                closeAll();
-            }
-        });
 
         if (clearBtn) {
             clearBtn.addEventListener('click', closeAll);

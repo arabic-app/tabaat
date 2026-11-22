@@ -641,3 +641,293 @@ test('a reply that fails before submission stays editable after reopening',async
   a.w.__admin.sendReplyEmail();assert.equal(a.submissions.length,1);
  }finally{a.w.close();}
 });
+
+test('createNewBook without edits never creates a dirty draft, accumulates empty drafts, or blocks reload', async()=>{
+ const db=new IDBFactory(); let a=await app([fixture()],db);
+ try {
+  a.w.__admin.createNewBook();
+  await settle();
+  assert.equal(a.document.getElementById('localSaveStatus').dataset.state,'published');
+  assert.equal(a.document.getElementById('localDrafts').hidden,true);
+  const exit=new a.w.Event('beforeunload',{cancelable:true}); a.w.dispatchEvent(exit);
+  assert.equal(exit.defaultPrevented,false);
+  a.w.__admin.createNewBook();
+  a.w.__admin.loadBookIntoForm(1);
+  await settle();
+  assert.equal(a.document.getElementById('localSaveStatus').dataset.state,'published');
+  assert.equal(a.document.getElementById('localDrafts').hidden,true);
+  a.w.__admin.createNewBook();
+  await settle();
+  a=await reload(a,[fixture()],db);
+  assert.equal(a.document.getElementById('localSaveStatus').dataset.state,'published');
+  assert.equal(a.document.getElementById('localDrafts').hidden,true);
+ }finally{a.w.close();}
+});
+
+test('editing a new book then clearing all fields resets dirty to false', async()=>{
+ const a=await app([fixture()]);
+ try {
+  a.w.__admin.createNewBook();
+  input(a,'title','Temporary'); await settle();
+  assert.equal(a.document.getElementById('localSaveStatus').dataset.state,'draft');
+  assert.equal(a.document.getElementById('localDrafts').hidden,false);
+  input(a,'title',''); await settle();
+  assert.equal(a.document.getElementById('localSaveStatus').dataset.state,'published');
+  assert.equal(a.document.getElementById('localDrafts').hidden,true);
+  const exit=new a.w.Event('beforeunload',{cancelable:true}); a.w.dispatchEvent(exit);
+  assert.equal(exit.defaultPrevented,false);
+ }finally{a.w.close();}
+});
+
+test('startup cleans all legacy unchanged non-active drafts and category=[] asymmetry', async()=>{
+ const cleanOne={...fixture(1),category:[],notes:''};
+ const cleanTwo={...fixture(2),category:[],notes:''};
+ const dirtyThree={...fixture(3),title:'Real Edit 3',category:[''],notes:''};
+ const emptyNew={id:null,title:'',author:'',category:[''],notes:'',best_editions:[{publisher:'',verifier:'',volumes:'',images:[''],notes:'',corrections:[],attachments:[]}],alt_editions:[],links:[]};
+ const a=await app([fixture(1),fixture(2),fixture(3)],new IDBFactory(),{journal:{
+  version:1,updatedAt:Date.now(),active:'1',
+  drafts:[
+   ['1',{book:cleanOne,suggestion:null,dirty:true}],
+   ['2',{book:cleanTwo,suggestion:null,dirty:true}],
+   ['3',{book:dirtyThree,suggestion:null,dirty:true}],
+   ['new:ghost',{book:emptyNew,suggestion:null,dirty:true}]
+  ],
+  suggestions:[],upserts:[],deletes:[]
+ }});
+ try {
+  const options=[...a.document.getElementById('localDrafts').options].map(o=>o.value).filter(Boolean);
+  assert.deepEqual(options,['3']);
+  assert.equal(a.document.getElementById('localSaveStatus').dataset.state,'draft');
+  assert.equal(a.document.getElementById('bookSyncStatus').dataset.state,'published');
+  a.w.__admin.loadBookIntoForm(2); await settle();
+  assert.equal(a.document.getElementById('bookSyncStatus').dataset.state,'published');
+ }finally{a.w.close();}
+});
+
+test('rich editors leaving <br>, <div><br></div> or <p><br></p> do not create false dirty drafts', async()=>{
+ const a=await app([{...fixture(),best_editions:[{publisher:'P',images:[],notes:'',corrections:[{title:'C',body:'',attachments:[]}]}]}]);
+ try {
+  a.w.__admin.loadBookIntoForm(1);
+  const notes=a.document.getElementById('notes');
+  const edNotes=a.document.querySelector('.ed-notes');
+  const corrBody=a.document.querySelector('.corr-body');
+  notes.innerHTML='<br>';
+  edNotes.innerHTML='<div><br></div>';
+  corrBody.innerHTML='<p><br></p>';
+  notes.dispatchEvent(new a.w.Event('input',{bubbles:true}));
+  await settle();
+  assert.equal(a.document.getElementById('localSaveStatus').dataset.state,'published');
+  assert.equal(a.document.getElementById('localDrafts').hidden,true);
+ }finally{a.w.close();}
+});
+
+test('localSaveStatus omits 0 مسودة when only pending changes exist', async()=>{
+ const a=await app([fixture()]);
+ try {
+  a.w.__admin.loadBookIntoForm(1);
+  input(a,'title','Saved only');
+  save(a);
+  await settle();
+  const status=a.document.getElementById('localSaveStatus');
+  assert.equal(status.dataset.state,'saved');
+  assert.doesNotMatch(status.textContent,/0 مسودة/);
+  assert.match(status.textContent,/1 تغيير/);
+ }finally{a.w.close();}
+});
+
+test('btnDiscardDraft discards dirty new and existing book drafts appropriately', async()=>{
+ const a=await app([fixture(1),fixture(2)]);
+ try {
+  a.w.__admin.createNewBook();
+  assert.equal(a.document.getElementById('btnDiscardDraft').style.display,'none');
+  input(a,'title','New Draft'); await settle();
+  assert.equal(a.document.getElementById('btnDiscardDraft').style.display,'inline-flex');
+  a.document.getElementById('btnDiscardDraft').click(); await settle();
+  assert.equal(a.document.getElementById('formContainer').getAttribute('aria-hidden'),'true');
+  assert.equal(a.document.getElementById('localSaveStatus').dataset.state,'published');
+
+  a.w.__admin.loadBookIntoForm(1);
+  input(a,'title','Saved Title'); save(a);
+  input(a,'title','Dirty Over Saved'); await settle();
+  assert.equal(a.document.getElementById('btnDiscardDraft').style.display,'inline-flex');
+  a.document.getElementById('btnDiscardDraft').click(); await settle();
+  assert.equal(a.document.getElementById('title').value,'Saved Title');
+  assert.equal(a.document.getElementById('bookSyncStatus').dataset.state,'saved');
+  assert.equal(a.document.getElementById('btnDiscardDraft').style.display,'none');
+
+  a.w.__admin.loadBookIntoForm(2);
+  input(a,'title','Dirty Published'); await settle();
+  a.document.getElementById('btnDiscardDraft').click(); await settle();
+  assert.equal(a.document.getElementById('title').value,'Original 2');
+  assert.equal(a.document.getElementById('bookSyncStatus').dataset.state,'published');
+  assert.equal(a.document.getElementById('localSaveStatus').dataset.state,'saved');
+ }finally{a.w.close();}
+});
+
+test('saving values identical to remoteBooks clears the pending publication and restores date', async()=>{
+ const original={...fixture(1),date:'2021-05-10'};
+ const a=await app([original]);
+ try {
+  a.w.__admin.loadBookIntoForm(1);
+  input(a,'title','Temporary Save'); save(a);
+  assert.equal(a.w.__admin.state.pendingChanges.upserts.size,1);
+  input(a,'title','Original 1'); save(a); await settle();
+  assert.equal(a.w.__admin.state.pendingChanges.upserts.size,0);
+  assert.equal(a.w.__admin.state.books[0].date,'2021-05-10');
+  assert.equal(a.document.getElementById('localSaveStatus').dataset.state,'published');
+ }finally{a.w.close();}
+});
+
+test('btnRevertSaved reverts pending edits on existing books and removes unpublished new books', async()=>{
+ const original={...fixture(1),date:'2020-02-02'};
+ const a=await app([original]);
+ try {
+  a.w.__admin.loadBookIntoForm(1);
+  assert.equal(a.document.getElementById('btnRevertSaved').style.display,'none');
+  input(a,'title','Pending Edit'); save(a);
+  assert.equal(a.document.getElementById('btnRevertSaved').style.display,'inline-flex');
+  a.document.getElementById('btnRevertSaved').click(); await settle();
+  assert.equal(a.w.__admin.state.pendingChanges.upserts.size,0);
+  assert.equal(a.w.__admin.state.books[0].title,'Original 1');
+  assert.equal(a.w.__admin.state.books[0].date,'2020-02-02');
+  assert.equal(a.document.getElementById('title').value,'Original 1');
+  assert.equal(a.document.getElementById('localSaveStatus').dataset.state,'published');
+
+  a.w.__admin.createNewBook();
+  input(a,'title','Unpublished New'); save(a);
+  assert.equal(a.w.__admin.state.books.length,2);
+  a.document.getElementById('btnRevertSaved').click(); await settle();
+  assert.equal(a.w.__admin.state.books.length,1);
+  assert.equal(a.w.__admin.state.pendingChanges.upserts.size,0);
+  assert.equal(a.document.getElementById('formContainer').getAttribute('aria-hidden'),'true');
+ }finally{a.w.close();}
+});
+
+test('sidebar items expose draft and saved status attributes without altering textContent', async()=>{
+ const a=await app([fixture(1),fixture(2)]);
+ try {
+  a.w.__admin.loadBookIntoForm(1);
+  input(a,'title','Draft 1'); await settle();
+  let li1=a.document.querySelector('#booksList li[data-id="1"]');
+  assert.equal(li1.dataset.status,'draft');
+  assert.equal(li1.textContent,'Original 1');
+  save(a); await settle();
+  li1=a.document.querySelector('#booksList li[data-id="1"]');
+  assert.equal(li1.dataset.status,'saved');
+  assert.equal(li1.textContent,'Draft 1');
+  const li2=a.document.querySelector('#booksList li[data-id="2"]');
+  assert.equal(li2.dataset.status,undefined);
+ }finally{a.w.close();}
+});
+
+test('acceptSuggestion reuses an existing unpublished draft for the same suggestion instead of duplicating', async()=>{
+ const a=await app([fixture(1)]);
+ try {
+  a.w.__admin.state.suggestions=[{_rowIndex:2,type:'book',book:'Suggested Book',edition:'Ed 1',verifier:'Ver 1'}];
+  a.w.__admin.acceptSuggestion(0); await settle();
+  a.w.__admin.loadBookIntoForm(1);
+  a.w.__admin.acceptSuggestion(0); await settle();
+  const options=[...a.document.getElementById('localDrafts').options].map(o=>o.value).filter(Boolean);
+  assert.equal(options.length,1);
+ }finally{a.w.close();}
+});
+
+test('suggestions and feedback keep edition and verifier aligned by index when a verifier is empty', async()=>{
+ const a=await app([fixture(1)]);
+ try {
+  a.w.__admin.state.suggestions=[{_rowIndex:2,type:'book',book:'Aligned Book',edition:'دار ١ ## دار ٢',verifier:' ## محقق ٢',source:'مصدر'}];
+  a.w.__admin.acceptSuggestion(0);
+  const rows=[...a.document.querySelectorAll('#bestEditions > .dynamic-row')];
+  assert.equal(rows.length,2);
+  assert.equal(rows[0].querySelector('.ed-publisher').value,'دار ١');
+  assert.equal(rows[0].querySelector('.ed-verifier').value,'');
+  assert.equal(rows[1].querySelector('.ed-publisher').value,'دار ٢');
+  assert.equal(rows[1].querySelector('.ed-verifier').value,'محقق ٢');
+ }finally{a.w.close();}
+
+ const fbHtml=fs.readFileSync(path.join(root,'feedback.html'),'utf8');
+ const fbDom=new JSDOM(fbHtml,{url:'https://example.test/tabaat/feedback.html',runScripts:'outside-only',pretendToBeVisual:true});
+ const fw=fbDom.window;
+ try {
+  fw.fetch=async()=>({ok:true,json:async()=>[]});
+  let submitted=null;
+  fw.HTMLFormElement.prototype.submit=function(){
+   submitted=Object.fromEntries([...this.querySelectorAll('input')].map(i=>[i.name,i.value]));
+  };
+  for(const name of ['js/arabic-search.js','js/catalogue-data.js']){
+   if(fs.existsSync(path.join(root,name))) fw.eval(fs.readFileSync(path.join(root,name),'utf8'));
+  }
+  for(const match of fbHtml.matchAll(/<script\b([^>]*)>([\s\S]*?)<\/script>/gi)){
+   if(match[2].trim()) fw.eval(match[2]);
+  }
+  await new Promise(r=>fw.setTimeout(r,30));
+  fw.addEditionRow();
+  fw.addEditionRow();
+  const eds=fw.document.querySelectorAll('#editionsList .edition-input');
+  const vers=fw.document.querySelectorAll('#editionsList .verifier-input');
+  eds[0].value='طبعة ١'; vers[0].value='محقق ١';
+  eds[1].value='طبعة ٢'; vers[1].value='';
+  eds[2].value='طبعة ٣'; vers[2].value='محقق ٣';
+  fw.document.getElementById('bookInput').value='كتاب اختبار';
+  fw.document.getElementById('sourceInput').value='عالم';
+  fw.document.getElementById('suggestionForm').dispatchEvent(new fw.Event('submit',{bubbles:true,cancelable:true}));
+  await new Promise(r=>fw.setTimeout(r,20));
+  assert.equal(submitted.edition,'طبعة ١##طبعة ٢##طبعة ٣');
+  assert.equal(submitted.verifier,'محقق ١####محقق ٣');
+ }finally{fw.close();}
+});
+
+test('syncToGitHub reallocates colliding new book IDs instead of overwriting concurrent remote books', async()=>{
+ let pushed=null;
+ const concurrentRemote=[fixture(1),{...fixture(2),title:'Concurrent Remote Book'}];
+ const a=await app([fixture(1)],new IDBFactory(),{fetch:async(url,opts={})=>{
+  if(String(url).includes('api.github.com')){
+   if(opts.method==='PUT'){pushed=JSON.parse(Buffer.from(JSON.parse(opts.body).content,'base64').toString('utf8')); return {ok:true};}
+   return {ok:true,json:async()=>({sha:'sha',content:Buffer.from(JSON.stringify(concurrentRemote)).toString('base64')})};
+  }
+  return {ok:true,json:async()=>String(url).includes('sciences')?[]:[fixture(1)],text:async()=>''};
+ }});
+ try {
+  a.w.__admin.createNewBook();
+  input(a,'title','Local New Book'); save(a);
+  assert.equal(a.w.__admin.state.pendingChanges.upserts.get(2).title,'Local New Book');
+  await a.w.__admin.syncToGitHub();
+  assert.equal(pushed.length,3);
+  assert.equal(pushed.find(b=>b.id===2).title,'Concurrent Remote Book');
+  assert.equal(pushed.find(b=>b.id===3).title,'Local New Book');
+  assert.equal(a.document.getElementById('bookId').value,'3');
+  assert.equal(a.w.__admin.state.pendingChanges.upserts.size,0);
+ }finally{a.w.close();}
+});
+
+test('config modal reads, saves and clears stats_key', async()=>{
+ const a=await app([fixture(1)]);
+ try {
+  a.w.localStorage.setItem('stats_key','secret-stats-key');
+  a.document.getElementById('btn-open-config').click();
+  assert.equal(a.document.getElementById('configStatsKey').value,'secret-stats-key');
+  input(a,'configStatsKey','updated-key');
+  a.document.getElementById('configForm').dispatchEvent(new a.w.Event('submit',{bubbles:true,cancelable:true}));
+  assert.equal(a.w.localStorage.getItem('stats_key'),'updated-key');
+  a.document.getElementById('btn-open-config').click();
+  input(a,'configStatsKey','');
+  a.document.getElementById('configForm').dispatchEvent(new a.w.Event('submit',{bubbles:true,cancelable:true}));
+  assert.equal(a.w.localStorage.getItem('stats_key'),null);
+ }finally{a.w.close();}
+});
+
+test('admin html has no orphan closing button and repeated category/autocomplete setups close cleanly', async()=>{
+ const html=fs.readFileSync(path.join(root,'admin/index.html'),'utf8');
+ assert.doesNotMatch(html,/<\/button>\s*<\/button>\s*<\/header>/);
+ const a=await app([fixture(1)]);
+ try {
+  a.w.__admin.loadBookIntoForm(1);
+  a.w.__admin.addCategoryInput('فقه');
+  const displays=a.document.querySelectorAll('#categoriesList .searchable-select-display');
+  displays[displays.length-1].click();
+  const dropdowns=a.document.querySelectorAll('#categoriesList .searchable-select-dropdown.open');
+  assert.equal(dropdowns.length,1);
+  a.document.body.click();
+  assert.equal(a.document.querySelectorAll('#categoriesList .searchable-select-dropdown.open').length,0);
+ }finally{a.w.close();}
+});

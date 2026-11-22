@@ -1072,11 +1072,14 @@
             if (!sourceVal)   { validateInput(document.getElementById('sourceInput')); valid = false; }
             if (!valid) return;
             if (checkBookExists(bookVal)) return;
+            const editionPairs = editions
+                .map((ed, i) => ({ edition: ed, verifier: verifiers[i] || '' }))
+                .filter(pair => pair.edition);
             payload = {
                 type:     'book',
                 book:     bookVal,
-                edition:  editions.filter(Boolean).join('##'),
-                verifier: verifiers.filter(Boolean).join('##'),
+                edition:  editionPairs.map(pair => pair.edition).join('##'),
+                verifier: editionPairs.map(pair => pair.verifier).join('##'),
                 source:   sourceVal
             };
         }
