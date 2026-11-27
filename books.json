@@ -3247,7 +3247,6 @@
       "كتب متنوعة"
     ],
     "notes": "",
-    "date": "2026-08-03",
     "best_editions": [
       {
         "publisher": "دار ركائز",
@@ -3257,7 +3256,7 @@
         ],
         "notes": "",
         "corrections": [],
-        "verifier": "أسامة الشطي، سائد قطوم",
+        "verifier": "أسامة الشنطي، سائد قطوم",
         "volumes": 5
       },
       {
@@ -3267,7 +3266,7 @@
           "https://arabic-app.github.io/tabaat/images/1783070140046-images6.jpeg",
           "https://arabic-app.github.io/tabaat/images/1783070147073-images5.jpeg"
         ],
-        "notes": "<p dir=\"rtl\" style=\"margin: 0px 0px 0.2em; padding: 0px;\">الآداب الشرعية الكبرى</p>",
+        "notes": "<p dir=\"rtl\">الآداب الشرعية الكبرى</p>",
         "corrections": [],
         "verifier": "وائل الشنشوري، حاتم الدسوقي",
         "volumes": 5
@@ -3295,7 +3294,8 @@
         "volumes": 4
       }
     ],
-    "links": []
+    "links": [],
+    "date": "2026-11-27"
   },
   {
     "id": 72,
